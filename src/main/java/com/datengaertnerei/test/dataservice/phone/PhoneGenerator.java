@@ -17,7 +17,7 @@ public class PhoneGenerator implements IPhoneGenerator {
 	private static final String[] prefixes = { "1511", "1512", "1514", "1515", "1516", "1517", "1520", "1521", "1522",
 			"1525", "1526", "1570", "1573", "1575", "1577", "1578", "1579", "160", "162", "163", "170", "171", "172",
 			"173", "174", "175", "176", "177", "178", "179" };
-	Map<String, String> cityPrefixes;
+	private Map<String, String> cityPrefixes;
 	private Random rnd;
 
 	public PhoneGenerator() {

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PhoneController {
 	
 	@Autowired
-	IPhoneGenerator gen;
+	private IPhoneGenerator gen;
 	
 	@RequestMapping("/mobile")
 	public String mobile() {

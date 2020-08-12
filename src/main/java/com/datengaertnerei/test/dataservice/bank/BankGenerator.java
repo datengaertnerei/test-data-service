@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BankGenerator implements IBankGenerator {
-	Map<String, Map<String, Bank>> bankDirectory;
+	private Map<String, Map<String, Bank>> bankDirectory;
 	private Random rnd;
 
 	public BankGenerator() {

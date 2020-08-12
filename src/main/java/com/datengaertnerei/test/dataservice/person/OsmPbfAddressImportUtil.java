@@ -85,7 +85,7 @@ class AddressSink implements Sink {
 	private static final String ADDR_CITY = "addr:city";
 	private static final String ADDR_COUNTRY = "addr:country";
 
-	Set<PostalAddress> uniqueAdresses;	
+	private Set<PostalAddress> uniqueAdresses;	
 	
 	public AddressSink(Set<PostalAddress> uniqueAdresses) {
 		super();
