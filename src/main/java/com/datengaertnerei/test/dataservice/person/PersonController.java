@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonController {
 
 	@Autowired
-	IPersonGenerator gen;
+	private IPersonGenerator gen;
 	
 	@RequestMapping("/person")
 	public Person person() {

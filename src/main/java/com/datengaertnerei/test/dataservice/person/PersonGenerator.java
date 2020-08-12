@@ -40,7 +40,7 @@ public class PersonGenerator implements IPersonGenerator {
 	private Integer maxAddressId;
 
 	@Autowired
-	PostalAddressRepository repository;
+	private PostalAddressRepository repository;
 
 	@PostConstruct
 	public void init() {
@@ -56,7 +56,7 @@ public class PersonGenerator implements IPersonGenerator {
 		random = new Random(System.currentTimeMillis());
 		maxAddressId = (int) repository.count();
 		if (0 == maxAddressId) {
-			OsmPbfAddressImport.importAddresses("germany-latest.osm.pbf", repository);
+			OsmPbfAddressImportUtil.importAddresses("germany-latest.osm.pbf", repository);
 			maxAddressId = (int) repository.count();
 		}
 

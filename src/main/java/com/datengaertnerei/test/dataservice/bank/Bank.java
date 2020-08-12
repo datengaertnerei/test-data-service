@@ -1,9 +1,9 @@
 package com.datengaertnerei.test.dataservice.bank;
 
 public class Bank {
-	String bankCode;
-	String desc;
-	String bic;
+	private String bankCode;
+	private String desc;
+	private String bic;
 
 	public String getBankCode() {
 		return bankCode;

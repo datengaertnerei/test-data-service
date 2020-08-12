@@ -13,10 +13,10 @@ import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
 public class FrontController {
 
 	@Autowired
-	IPersonGenerator persong;
+	private IPersonGenerator persong;
 	
 	@Autowired
-	IPhoneGenerator phoneg;	
+	private IPhoneGenerator phoneg;	
 	
 	@RequestMapping("/")
 	public String index(Model model) {

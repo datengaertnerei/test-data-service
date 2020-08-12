@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class IbanController {
 	
 	@Autowired
-	IBankGenerator gen;
+	private IBankGenerator gen;
 		
 	@RequestMapping("/account")
 	public String account() {
