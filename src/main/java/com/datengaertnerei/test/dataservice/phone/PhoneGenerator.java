@@ -33,10 +33,16 @@ import java.util.Random;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
+
+import com.datengaertnerei.test.dataservice.person.PersonGenerator;
 
 @Service
 public class PhoneGenerator implements IPhoneGenerator {
+	private static Log log = LogFactory.getLog(PhoneGenerator.class);
+
 	private static final String[] prefixes = { "1511", "1512", "1514", "1515", "1516", "1517", "1520", "1521", "1522",
 			"1525", "1526", "1570", "1573", "1575", "1577", "1578", "1579", "160", "162", "163", "170", "171", "172",
 			"173", "174", "175", "176", "177", "178", "179" };
@@ -61,22 +67,21 @@ public class PhoneGenerator implements IPhoneGenerator {
 				}
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.fatal("could not load prefix directory", e);
 		}
 
 	}
 
-	private String generateNumber(String prefix) {
+	private PhoneNumber generateNumber(String prefix) {
 		String phoneNum = Integer.toString(rnd.nextInt(99999999));
 		phoneNum = "123456789".substring(0, 9 - phoneNum.length()) + phoneNum; // padding
 		phoneNum = phoneNum.substring(prefix.length() - 2);
 
-		return "+49 " + prefix + " " + phoneNum;
+		return new PhoneNumber("+49 " + prefix + " " + phoneNum);
 	}
 
 	@Override
-	public String generateMobileNumber() {
+	public PhoneNumber generateMobileNumber() {
 
 		int index = rnd.nextInt(prefixes.length);
 		String prefix = prefixes[index];
@@ -85,13 +90,16 @@ public class PhoneGenerator implements IPhoneGenerator {
 	}
 
 	@Override
-	public String generatePhoneNumber(String city) {
+	public PhoneNumber generatePhoneNumber(String city) {
 		String prefix = "032";
+		String comment = "";
 		String cityLower = city.toLowerCase();
 		if (cityPrefixes.containsKey(cityLower)) {
 			prefix = cityPrefixes.get(cityLower);
+		}else {
+			comment = "city not found in prefix directory";
 		}
 
-		return generateNumber(prefix);
+		return generateNumber(prefix).setComment(comment);
 	}
 }

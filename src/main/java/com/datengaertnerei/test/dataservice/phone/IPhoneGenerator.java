@@ -25,8 +25,8 @@ package com.datengaertnerei.test.dataservice.phone;
 
 public interface IPhoneGenerator {
 
-	public String generateMobileNumber();
+	public PhoneNumber generateMobileNumber();
 
-	public String generatePhoneNumber(String city);
+	public PhoneNumber generatePhoneNumber(String city);
 
 }

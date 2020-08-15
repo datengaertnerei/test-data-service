@@ -29,10 +29,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.bank.IBankGenerator;
 import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
+import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 
 @RestController
 @RequestMapping(value = "/api/v1")
@@ -48,27 +50,27 @@ public class RestApiController {
 	private IPhoneGenerator phoneGen;
 	
 	@RequestMapping(value = "/mobile", method = RequestMethod.GET)
-	public String mobile() {
+	public PhoneNumber mobile() {
 		return phoneGen.generateMobileNumber();
 	}
 
 	@RequestMapping(value = "/landline", method = RequestMethod.GET)
-	public String landline() {
+	public PhoneNumber landline() {
 		return phoneGen.generatePhoneNumber("unknown");
 	}
 
 	@RequestMapping(value = "/landline/{city}", method = RequestMethod.GET)
-	public String landlineForCity(@PathVariable("city") String city) {
+	public PhoneNumber landlineForCity(@PathVariable("city") String city) {
 		return phoneGen.generatePhoneNumber(city);
 	}	
 	
 	@RequestMapping(value = "/account", method = RequestMethod.GET)
-	public String account() {
+	public BankAccount account() {
 		return bankGen.generateAccount("unknown");
 	}
 
 	@RequestMapping(value = "/account/{city}", method = RequestMethod.GET)
-	public String accountForCity(@PathVariable("city") String city) {
+	public BankAccount accountForCity(@PathVariable("city") String city) {
 		return bankGen.generateAccount(city);
 	}	
 	

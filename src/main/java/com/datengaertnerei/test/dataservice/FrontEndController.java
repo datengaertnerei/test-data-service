@@ -54,8 +54,8 @@ public class FrontEndController {
 		model.addAttribute("streetAddress", p.getAddress().getStreetAddress());
 		model.addAttribute("houseNumber", p.getAddress().getHouseNumber());
 
-		model.addAttribute("landline", phoneg.generatePhoneNumber(p.getAddress().getAddressLocality()));
-		model.addAttribute("mobile", phoneg.generateMobileNumber());
+		model.addAttribute("landline", phoneg.generatePhoneNumber(p.getAddress().getAddressLocality()).getPhoneNumer());
+		model.addAttribute("mobile", phoneg.generateMobileNumber().getPhoneNumer());
 
 		return "front";
 	}

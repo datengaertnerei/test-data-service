@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Random Test Data</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+    <h1>Random Test Person</h1>
     <p th:text="${givenName} + ' ' + ${familyName}" />
     <p th:text="${streetAddress} + ' ' + ${houseNumber}" />
     <p th:text="${postalCode} + ' ' + ${addressLocality}" />
@@ -12,5 +13,6 @@
     <p th:text="${email}" />
     <p th:text="${mobile}" />
     <p th:text="${landline}" />
+    <p><a href="/swagger-ui/">Swagger UI</a></p>
 </body>
 </html>

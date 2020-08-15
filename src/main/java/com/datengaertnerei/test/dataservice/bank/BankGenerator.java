@@ -28,18 +28,24 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Random;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.iban4j.CountryCode;
 import org.iban4j.Iban;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BankGenerator implements IBankGenerator {
+	private static final String DEFAULT_CITY = "frankfurt am main";
+
+	private static Log log = LogFactory.getLog(BankGenerator.class);
+
 	private Map<String, Map<String, Bank>> bankDirectory;
 	private Random rnd;
 
@@ -68,8 +74,8 @@ public class BankGenerator implements IBankGenerator {
 					}
 
 					Bank b = new Bank(bankCode, desc, bic);
-					if (bankDirectory.containsKey(city)) {
-						Map<String, Bank> cityMap = bankDirectory.get(city);
+					if (bankDirectory.containsKey(city.toLowerCase())) {
+						Map<String, Bank> cityMap = bankDirectory.get(city.toLowerCase());
 						cityMap.put(bankCode, b);
 					} else {
 						Map<String, Bank> cityMap = new HashMap<>();
@@ -79,37 +85,39 @@ public class BankGenerator implements IBankGenerator {
 				}
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.fatal("could not read bank list", e);
 		}
 
 	}
 
 	@Override
-	public String generateAccount(String city) {
+	public BankAccount generateAccount(String city) {
+		// create valid internal account number
 		Integer num = rnd.nextInt(999999999);
 		int[] toCalc = Integer.toString(num).chars().map(c -> c - '0').toArray();
 		Integer crc = calculateCheckDigit(toCalc);
 
+		// and convert to string
 		String rawAccount = num.toString() + crc.toString();
 		String account = "0000000000".substring(rawAccount.length()) + rawAccount;
 
-		String cityLow = city.toLowerCase();
-		Map<String, Bank> cityMap = bankDirectory.getOrDefault(cityLow, bankDirectory.get("berlin"));
+		// get banks for city or default
+		Map<String, Bank> cityMap = bankDirectory.getOrDefault(city.toLowerCase(), bankDirectory.get(DEFAULT_CITY));
 
+		// fetch random bank from list
 		int bankIndex = rnd.nextInt(cityMap.keySet().size());
-		Iterator<Bank> itr = cityMap.values().iterator();
-		Iban iban = null;
-		for (int i = 0; itr.hasNext(); i++) {
-			Bank b = itr.next();
-			if (i == bankIndex) {
-				iban = new Iban.Builder().countryCode(CountryCode.DE).bankCode(b.getBankCode()).accountNumber(account)
-						.build();
-				break;
-			}
-		}
-
-		return iban.toString();
+		Optional<Bank> bankContainer = cityMap.values().stream().skip(bankIndex).findFirst();
+		Bank bank = bankContainer.get();
+		// and build IBAN
+		Iban iban = new Iban.Builder().countryCode(CountryCode.DE).bankCode(bank.getBankCode()).accountNumber(account)
+				.build();
+		
+		// combine to result
+		BankAccount result = new BankAccount();
+		result.setBank(bank);
+		result.setIban(iban.toString());
+		
+		return result;
 	}
 
 	private int calculateCheckDigit(int[] digits) {

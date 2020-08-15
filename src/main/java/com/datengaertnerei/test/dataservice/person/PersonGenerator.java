@@ -84,10 +84,6 @@ public class PersonGenerator implements IPersonGenerator {
 		}
 
 		log.info("Address count: " + maxAddressId);
-
-		Optional<PostalAddress> dummy = repository.findById(maxAddressId);
-		log.info(dummy.get().toString());
-
 	}
 
 	/**
