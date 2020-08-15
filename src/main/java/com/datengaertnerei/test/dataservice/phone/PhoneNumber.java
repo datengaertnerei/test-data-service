@@ -17,11 +17,6 @@ public class PhoneNumber {
 		return phoneNumer;
 	}
 
-	public PhoneNumber setPhoneNumer(String phoneNumer) {
-		this.phoneNumer = phoneNumer;
-		return this;
-	}
-
 	public String getComment() {
 		return comment;
 	}

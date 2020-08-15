@@ -53,16 +53,8 @@ public class Person {
 		return givenName;
 	}
 
-	public void setGivenName(String givenName) {
-		this.givenName = givenName;
-	}
-
 	public String getFamilyName() {
 		return familyName;
-	}
-
-	public void setFamilyName(String familyName) {
-		this.familyName = familyName;
 	}
 
 	public String getBirthName() {
@@ -77,36 +69,16 @@ public class Person {
 		return gender;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
 	public LocalDate getBirthDate() {
 		return birthDate;
-	}
-
-	public void setBirthDate(LocalDate birthDate) {
-		this.birthDate = birthDate;
 	}
 
 	public int getHeight() {
 		return height;
 	}
 
-	public void setHeight(int height) {
-		this.height = height;
-	}
-
 	public String getEyecolor() {
 		return eyecolor;
-	}
-
-	public void setEyecolor(String eyecolor) {
-		this.eyecolor = eyecolor;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getEmail() {
@@ -127,9 +99,6 @@ public class Person {
 
 	public void setComment(String comment) {
 		this.comment = comment;
-	}
-
-	public Person() {
 	}
 
 	/**
