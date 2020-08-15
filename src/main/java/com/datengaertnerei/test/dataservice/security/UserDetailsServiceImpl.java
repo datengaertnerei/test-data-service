@@ -2,7 +2,6 @@ package com.datengaertnerei.test.dataservice.security;
 
 import java.util.Arrays;
 import java.util.Optional;
-import java.util.Random;
 import java.util.UUID;
 
 import javax.annotation.PostConstruct;
@@ -25,7 +24,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	private static final Logger log = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
 	private static final GrantedAuthority[] role = { new SimpleGrantedAuthority("user") };
 
-	private Random rnd;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Autowired
@@ -72,8 +70,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@PostConstruct
 	private void setup() {
 		log.info("setting up user details service");
-		rnd = new Random();
-		rnd.setSeed(System.currentTimeMillis());
 		bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
 		UserDetails admin = loadUserByUsername("admin");

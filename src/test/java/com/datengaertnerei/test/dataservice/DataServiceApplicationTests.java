@@ -17,7 +17,7 @@ import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 class DataServiceApplicationTests {
 
 	@Autowired
-	RestApiController restController;
+	private RestApiController restController;
 
 	@Test
 	void contextLoads() {
