@@ -21,32 +21,57 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-package com.datengaertnerei.test.dataservice.phone;
+package com.datengaertnerei.test.dataservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.datengaertnerei.test.dataservice.bank.IBankGenerator;
+import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
+import com.datengaertnerei.test.dataservice.person.Person;
+import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
+
 @RestController
-public class PhoneController {
-	
+@RequestMapping("/api/v1")
+public class RestApiController {
+
 	@Autowired
-	private IPhoneGenerator gen;
+	private IPersonGenerator personGen;
+
+	@Autowired
+	private IBankGenerator bankGen;
+
+	@Autowired
+	private IPhoneGenerator phoneGen;
 	
 	@RequestMapping("/mobile")
 	public String mobile() {
-		return gen.generateMobileNumber();
+		return phoneGen.generateMobileNumber();
 	}
 
 	@RequestMapping("/landline")
 	public String landline() {
-		return gen.generatePhoneNumber("unknown");
+		return phoneGen.generatePhoneNumber("unknown");
 	}
 
 	@RequestMapping("/landline/{city}")
 	public String landlineForCity(@PathVariable("city") String city) {
-		return gen.generatePhoneNumber(city);
+		return phoneGen.generatePhoneNumber(city);
+	}	
+	@RequestMapping("/account")
+	public String account() {
+		return bankGen.generateAccount("unknown");
 	}
-		
+
+	@RequestMapping("/account/{city}")
+	public String accountForCity(@PathVariable("city") String city) {
+		return bankGen.generateAccount(city);
+	}	
+	
+	@RequestMapping("/person")
+	public Person person() {
+		return personGen.createRandomPerson();
+	}	
 }

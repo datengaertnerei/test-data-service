@@ -33,7 +33,7 @@ import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
 
 @Controller
-public class FrontController {
+public class FrontEndController {
 
 	@Autowired
 	private IPersonGenerator persong;
