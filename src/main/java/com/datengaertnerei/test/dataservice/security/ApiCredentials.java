@@ -2,8 +2,8 @@ package com.datengaertnerei.test.dataservice.security;
 
 public class ApiCredentials {
 
-	String accountId;
-	String password;
+	private String accountId;
+	private String password;
 
 	public String getAccountId() {
 		return accountId;

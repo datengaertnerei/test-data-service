@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 	
 	@Autowired
-	UserDetailsServiceImpl userDetailsService;
+	private UserDetailsServiceImpl userDetailsService;
 
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ApiCredentials generateNew() {

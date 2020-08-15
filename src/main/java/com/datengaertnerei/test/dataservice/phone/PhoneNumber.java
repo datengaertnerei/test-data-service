@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class PhoneNumber {
 
-	String phoneNumer;
-	String comment;
+	private String phoneNumer;
+	private String comment;
 
 	public PhoneNumber(String phoneNumer) {
 		this.phoneNumer = phoneNumer;
