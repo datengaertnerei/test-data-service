@@ -24,6 +24,7 @@ SOFTWARE.
 package com.datengaertnerei.test.dataservice.bank;
 
 public class Bank {
+	private String city;
 	private String bankCode;
 	private String desc;
 	private String bic;
@@ -40,9 +41,14 @@ public class Bank {
 		return bic;
 	}
 
-	public Bank(String bankCode, String desc, String bic) {
+	public String getCity() {
+		return city;
+	}
+
+	public Bank(String bankCode, String desc, String bic, String city) {
 		this.bankCode = bankCode;
 		this.desc = desc;
 		this.bic = bic;
+		this.city = city;
 	}
 }

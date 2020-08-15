@@ -58,6 +58,7 @@ public class BankGenerator implements IBankGenerator {
 		try {
 			// get german bank codes from
 			// https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/
+			// and just use entries with checksum routine 00
 			InputStream inStream = getClass().getResourceAsStream("banklist.csv");
 			Reader in = new InputStreamReader(inStream);
 
@@ -75,7 +76,7 @@ public class BankGenerator implements IBankGenerator {
 						bics.put(bankCode, bic);
 					}
 
-					Bank b = new Bank(bankCode, desc, bic);
+					Bank b = new Bank(bankCode, desc, bic, city);
 					if (bankDirectory.containsKey(city.toLowerCase())) {
 						Map<String, Bank> cityMap = bankDirectory.get(city.toLowerCase());
 						cityMap.put(bankCode, b);
@@ -118,6 +119,9 @@ public class BankGenerator implements IBankGenerator {
 		BankAccount result = new BankAccount();
 		result.setBank(bank);
 		result.setIban(iban.toString());
+		if(!result.getBank().getCity().equalsIgnoreCase(city)) {
+			result.setComment("city not found in bank directory, switched to default");
+		}
 		
 		return result;
 	}
