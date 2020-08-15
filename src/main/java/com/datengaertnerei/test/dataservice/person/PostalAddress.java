@@ -28,6 +28,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Postal address entity class for persistence inspired by <a
  * href="https://schema.org/PostalAddress">postal address schema</a>.
@@ -46,6 +48,7 @@ public class PostalAddress implements Comparable<PostalAddress> {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @JsonIgnore
   public int getId() {
     return id;
   }

@@ -61,6 +61,7 @@ public class RestApiController {
 	public String landlineForCity(@PathVariable("city") String city) {
 		return phoneGen.generatePhoneNumber(city);
 	}	
+	
 	@RequestMapping(value = "/account", method = RequestMethod.GET)
 	public String account() {
 		return bankGen.generateAccount("unknown");
@@ -74,5 +75,16 @@ public class RestApiController {
 	@RequestMapping(value = "/person", method = RequestMethod.GET)
 	public Person person() {
 		return personGen.createRandomPerson();
+	}
+	
+	@RequestMapping(value = "/person/city/{city}", method = RequestMethod.GET)
+	public Person personForCity(@PathVariable("city") String city) {
+		return personGen.createRandomPersonInCity(city);
 	}	
+
+	@RequestMapping(value = "/person/postalcode/{postalcode}", method = RequestMethod.GET)
+	public Person personForPostcode(@PathVariable("postalcode") String postalCode) {
+		return personGen.createRandomPersonInArea(postalCode);
+	}	
+	
 }

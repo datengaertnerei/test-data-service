@@ -96,6 +96,63 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return the new person object
 	 */
 	public Person createRandomPerson() {
+		Person randomPerson = createBasicPerson();
+		Optional<PostalAddress> address = repository.findById(random.nextInt(maxAddressId));
+
+		randomPerson.setAddress(address.get());
+
+		return randomPerson;
+	}
+
+	/**
+	 * Creates a single random person object with linked address inside a given city.
+	 *
+	 * @param city the city to fetch random address from
+	 *
+	 * @return the new person object
+	 */
+	public Person createRandomPersonInCity(String city) {
+		Person randomPerson = createBasicPerson();
+		List<PostalAddress> addresses = repository.findByAddressLocalityIgnoreCase(city);
+		PostalAddress address = null;
+		if (null != addresses && 0 < addresses.size()) {
+			address = addresses.get(random.nextInt(addresses.size()));
+		} else {
+			Optional<PostalAddress> addressContainer = repository.findById(random.nextInt(maxAddressId));
+			address = addressContainer.get();
+			randomPerson.setComment("city not found in address base");
+		}
+
+		randomPerson.setAddress(address);
+
+		return randomPerson;
+	}
+
+	/**
+	 * Creates a single random person object with linked address inside a given postal code area.
+	 *
+	 * @param postalCode  the postal code marking the area to fetch random address from
+	 *
+	 * @return the new person object
+	 */
+	public Person createRandomPersonInArea(String postalCode) {
+		Person randomPerson = createBasicPerson();
+		List<PostalAddress> addresses = repository.findByPostalCodeStartsWith(postalCode);
+		PostalAddress address = null;
+		if (null != addresses && 0 < addresses.size()) {
+			address = addresses.get(random.nextInt(addresses.size()));
+		} else {
+			Optional<PostalAddress> addressContainer = repository.findById(random.nextInt(maxAddressId));
+			address = addressContainer.get();
+			randomPerson.setComment("postal code not found in address base");
+		}
+
+		randomPerson.setAddress(address);
+
+		return randomPerson;
+	}
+	
+	private Person createBasicPerson() {
 		String gender = random.nextBoolean() ? MALE : FEMALE; // (add diverse if you like)
 		String firstname;
 		if (MALE.equals(gender)) {
@@ -104,6 +161,7 @@ public class PersonGenerator implements IPersonGenerator {
 			firstname = femaleNames.get(random.nextInt(femaleNames.size())).trim();
 		}
 		String surname = surnames.get(random.nextInt(surnames.size())).trim();
+		
 		String eyecolor = eyecolors.get(random.nextInt(eyecolors.size())).trim();
 
 		LocalDate dateOfBirth = createRandomDateOfBirth();
@@ -111,10 +169,10 @@ public class PersonGenerator implements IPersonGenerator {
 		int height = createRandomHeight(gender);
 
 		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress);
-		Optional<PostalAddress> address = repository.findById(random.nextInt(maxAddressId));
-
-		randomPerson.setAddress(address.get());
-
+		if(1 == random.nextInt(5)) {
+			String birthName = surnames.get(random.nextInt(surnames.size())).trim();
+			randomPerson.setBirthName(birthName);
+		}
 		return randomPerson;
 	}
 

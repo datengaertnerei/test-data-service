@@ -26,4 +26,8 @@ package com.datengaertnerei.test.dataservice.person;
 public interface IPersonGenerator {
 
 	public Person createRandomPerson();
+
+	public Person createRandomPersonInCity(String city);
+	
+	public Person createRandomPersonInArea(String postalCode);
 }

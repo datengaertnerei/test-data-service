@@ -23,6 +23,8 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice.person;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -30,4 +32,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  */
 public interface PostalAddressRepository extends JpaRepository<PostalAddress, Integer> {
+	
+	List<PostalAddress> findByAddressLocalityIgnoreCase(String addressLocality);
+	
+	List<PostalAddress> findByPostalCodeStartsWith(String postalCode);
 }
