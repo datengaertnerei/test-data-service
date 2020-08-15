@@ -23,6 +23,10 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice;
 
+import static springfox.documentation.builders.PathSelectors.regex;
+
+import java.util.function.Predicate;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -31,7 +35,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @SpringBootApplication
+@EnableSwagger2
 public class DataServiceApplication {
 	private static Logger log = LoggerFactory.getLogger(DataServiceApplication.class);
 
@@ -44,8 +56,25 @@ public class DataServiceApplication {
 		return args -> {
 
 			String[] beanNames = ctx.getBeanDefinitionNames();
-			log.info("Started with bean count of "+beanNames.length);
+			log.info("Started with bean count of " + beanNames.length);
 
 		};
+	}
+
+	@Bean
+	public Docket testDataApi() {
+		return new Docket(DocumentationType.SWAGGER_2).groupName("test-data-service-api").apiInfo(apiInfo()).select()
+				.paths(paths()).build();
+	}
+
+	private Predicate<String> paths() {
+		return regex(".*/api/v1.*");
+	}
+
+	private ApiInfo apiInfo() {
+		return new ApiInfoBuilder().title("Datengärtnerei Test Data Service API")
+				.description("We provide ad hoc generated test data for fictitious german persons.")
+				.contact(new Contact("Datengärtnerei", "https://datengaertnerei.com", "")).license("MIT License")
+				.licenseUrl("https://github.com/datengaertnerei/test-data-service/blob/master/LICENSE").build();
 	}
 }
