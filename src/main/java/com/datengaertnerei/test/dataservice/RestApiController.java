@@ -26,6 +26,7 @@ package com.datengaertnerei.test.dataservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.datengaertnerei.test.dataservice.bank.IBankGenerator;
@@ -34,7 +35,7 @@ import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping(value = "/api/v1")
 public class RestApiController {
 
 	@Autowired
@@ -46,31 +47,31 @@ public class RestApiController {
 	@Autowired
 	private IPhoneGenerator phoneGen;
 	
-	@RequestMapping("/mobile")
+	@RequestMapping(value = "/mobile", method = RequestMethod.GET)
 	public String mobile() {
 		return phoneGen.generateMobileNumber();
 	}
 
-	@RequestMapping("/landline")
+	@RequestMapping(value = "/landline", method = RequestMethod.GET)
 	public String landline() {
 		return phoneGen.generatePhoneNumber("unknown");
 	}
 
-	@RequestMapping("/landline/{city}")
+	@RequestMapping(value = "/landline/{city}", method = RequestMethod.GET)
 	public String landlineForCity(@PathVariable("city") String city) {
 		return phoneGen.generatePhoneNumber(city);
 	}	
-	@RequestMapping("/account")
+	@RequestMapping(value = "/account", method = RequestMethod.GET)
 	public String account() {
 		return bankGen.generateAccount("unknown");
 	}
 
-	@RequestMapping("/account/{city}")
+	@RequestMapping(value = "/account/{city}", method = RequestMethod.GET)
 	public String accountForCity(@PathVariable("city") String city) {
 		return bankGen.generateAccount(city);
 	}	
 	
-	@RequestMapping("/person")
+	@RequestMapping(value = "/person", method = RequestMethod.GET)
 	public Person person() {
 		return personGen.createRandomPerson();
 	}	
