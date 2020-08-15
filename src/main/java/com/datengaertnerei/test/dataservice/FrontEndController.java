@@ -23,6 +23,10 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice;
 
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,17 +41,17 @@ public class FrontEndController {
 
 	@Autowired
 	private IPersonGenerator persong;
-	
+
 	@Autowired
-	private IPhoneGenerator phoneg;	
-	
+	private IPhoneGenerator phoneg;
+
 	@RequestMapping("/")
 	public String index(Model model) {
 		Person p = persong.createRandomPerson();
 		model.addAttribute("givenName", p.getGivenName());
 		model.addAttribute("familyName", p.getFamilyName());
-		model.addAttribute("gender", p.getGender());
-		model.addAttribute("birthDate", p.getBirthDate());
+		model.addAttribute("birthDate", p.getBirthDate()
+				.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN)));
 		model.addAttribute("email", p.getEmail());
 		model.addAttribute("addressLocality", p.getAddress().getAddressLocality());
 		model.addAttribute("postalCode", p.getAddress().getPostalCode());
