@@ -56,6 +56,8 @@ public class BankGenerator implements IBankGenerator {
 		bankDirectory = new HashMap<>();
 		Map<String, String> bics = new HashMap<>();
 		try {
+			// get german bank codes from
+			// https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/
 			InputStream inStream = getClass().getResourceAsStream("banklist.csv");
 			Reader in = new InputStreamReader(inStream);
 

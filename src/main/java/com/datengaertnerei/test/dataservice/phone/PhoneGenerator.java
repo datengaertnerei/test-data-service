@@ -37,12 +37,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 
-import com.datengaertnerei.test.dataservice.person.PersonGenerator;
-
 @Service
 public class PhoneGenerator implements IPhoneGenerator {
 	private static Log log = LogFactory.getLog(PhoneGenerator.class);
 
+	// german mobile phone prefixes
 	private static final String[] prefixes = { "1511", "1512", "1514", "1515", "1516", "1517", "1520", "1521", "1522",
 			"1525", "1526", "1570", "1573", "1575", "1577", "1578", "1579", "160", "162", "163", "170", "171", "172",
 			"173", "174", "175", "176", "177", "178", "179" };
@@ -55,6 +54,8 @@ public class PhoneGenerator implements IPhoneGenerator {
 
 		cityPrefixes = new HashMap<>();
 		try {
+			// get german landline prefix list from
+			// https://www.bundesnetzagentur.de/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Nummerierung/Rufnummern/ONRufnr/ON_Einteilung_ONB/ON_ONB_ONKz_ONBGrenzen_node.html
 			InputStream inStream = getClass().getResourceAsStream("prefixlist.csv");
 			Reader in = new InputStreamReader(inStream);
 
