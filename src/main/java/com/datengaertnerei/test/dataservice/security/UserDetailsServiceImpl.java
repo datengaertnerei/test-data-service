@@ -60,7 +60,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		
 		// and save to authorization database
 		TestDataUser newAccount = new TestDataUser();
-		newAccount.setUsername("admin");
+		newAccount.setUsername(newAccountId);
 		newAccount.setPassword(bCryptPasswordEncoder.encode(result.getPassword()));
 		userRepository.saveAndFlush(newAccount);
 
