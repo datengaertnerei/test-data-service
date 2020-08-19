@@ -27,4 +27,6 @@ public interface IBankGenerator {
 
 	public BankAccount generateAccount(String city);
 
+	public CreditCard generateCreditCard();
+
 }

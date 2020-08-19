@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
+import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.bank.IBankGenerator;
 import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
 import com.datengaertnerei.test.dataservice.person.Person;
@@ -63,6 +64,11 @@ public class RestApiController {
 	public PhoneNumber landlineForCity(@PathVariable("city") String city) {
 		return phoneGen.generatePhoneNumber(city);
 	}	
+
+	@RequestMapping(value = "/creditcard", method = RequestMethod.GET)
+	public CreditCard creditcard() {
+		return bankGen.generateCreditCard();
+	}
 	
 	@RequestMapping(value = "/account", method = RequestMethod.GET)
 	public BankAccount account() {

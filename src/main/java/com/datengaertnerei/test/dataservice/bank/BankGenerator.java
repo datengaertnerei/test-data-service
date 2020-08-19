@@ -47,12 +47,39 @@ public class BankGenerator implements IBankGenerator {
 	private static Log log = LogFactory.getLog(BankGenerator.class);
 
 	private Map<String, Map<String, Bank>> bankDirectory;
+	private Map<String, String> binList;
 	private Random rnd;
 
 	public BankGenerator() {
 		rnd = new Random();
 		rnd.setSeed(System.currentTimeMillis());
 
+		initBankDirectory();
+		initBinList();
+	}
+
+	private void initBinList() {
+		binList = new HashMap<>();
+		InputStream inStream = getClass().getResourceAsStream("binlist.csv");
+		Reader in = new InputStreamReader(inStream);
+
+		Iterable<CSVRecord> records;
+		try {
+			records = CSVFormat.DEFAULT.withDelimiter(';').parse(in);
+			for (CSVRecord record : records) {
+				if (record.size() >= 2) {
+					String type = record.get(0);
+					String bin = record.get(1);
+					binList.put(bin, type);
+				}
+			}
+		} catch (IOException e) {
+			log.fatal("could not read BIN list", e);
+		}
+
+	}
+
+	private void initBankDirectory() {
 		bankDirectory = new HashMap<>();
 		Map<String, String> bics = new HashMap<>();
 		try {
@@ -90,7 +117,6 @@ public class BankGenerator implements IBankGenerator {
 		} catch (IOException e) {
 			log.fatal("could not read bank list", e);
 		}
-
 	}
 
 	@Override
@@ -114,15 +140,38 @@ public class BankGenerator implements IBankGenerator {
 		// and build IBAN
 		Iban iban = new Iban.Builder().countryCode(CountryCode.DE).bankCode(bank.getBankCode()).accountNumber(account)
 				.build();
-		
+
 		// combine to result
 		BankAccount result = new BankAccount();
 		result.setBank(bank);
 		result.setIban(iban.toString());
-		if(!result.getBank().getCity().equalsIgnoreCase(city)) {
+		if (!result.getBank().getCity().equalsIgnoreCase(city)) {
 			result.setComment("city not found in bank directory, switched to default");
 		}
+
+		return result;
+	}
+
+	@Override
+	public CreditCard generateCreditCard() {
+		// fetch random bin from list
+		int binIndex = rnd.nextInt(binList.keySet().size());
+		Optional<String> bin = binList.keySet().stream().skip(binIndex).findFirst();
 		
+		// create valid cc number
+		String randomPart = Integer.toString(rnd.nextInt(999999999));
+		String combined = bin.get() + "000000000".substring(randomPart.length()) + randomPart; 
+		int[] toCalc = combined.chars().map(c -> c - '0').toArray();
+		Integer crc = calculateCheckDigit(toCalc);
+
+		// and convert to string
+		String number = combined.toString() + crc.toString();
+		
+		int cvc = rnd.nextInt(899)+100;
+
+		// combine to result
+		CreditCard result = new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc));
+
 		return result;
 	}
 
