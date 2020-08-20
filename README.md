@@ -1,7 +1,6 @@
 # test data service
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/484d467e7e4540c5b8b7fbce78538bfc)](https://www.codacy.com/manual/datengaertnerei/test-data-service?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=datengaertnerei/test-data-service&amp;utm_campaign=Badge_Grade)
-
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/484d467e7e4540c5b8b7fbce78538bfc)](https://www.codacy.com/manual/datengaertnerei/test-data-service?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=datengaertnerei/test-data-service&amp;utm_campaign=Badge_Grade) 
 [![Maven Build](https://github.com/datengaertnerei/test-data-service/workflows/maven-build/badge.svg)](https://github.com/datengaertnerei/test-data-service)
 
 A Spring Boot REST service to generate test data for german persons incl. address, phone, mobile and current account IBAN.
@@ -18,10 +17,18 @@ You should meet a german data protection official. And most of the time this con
 
 It is a Spring Boot application. You can just start it and during the first start you will see the generated admin password in the log:
 
-'''
+```
 using generated password for admin account: 
-'''
+```
 
 You have to keep that in your password vault. It will not show again. Currently you can only reset it by removing it from the embedded H2 database manually.
 
 After startup you can navigate to [https://localhost:8443/](https://localhost:8443/) in your browser. It will ask for Basic Authentication (admin and the generated password) and the show a random generated person. There is a link on that page to the included Swagger UI.
+
+![image](https://user-images.githubusercontent.com/44938643/90776994-242fc300-e2fb-11ea-83c7-0fafdb2a70ed.png)
+
+With Swagger UI as usual you can test API calls and get JSON samples for your own clients.
+
+![image](https://user-images.githubusercontent.com/44938643/90777160-53463480-e2fb-11ea-9c05-d6c38ae576d0.png)
+
+There is a simple Go client available as a [Gist](https://gist.github.com/datengaertnerei/680a1244439d6dfee9a51dd35430cf5d).
