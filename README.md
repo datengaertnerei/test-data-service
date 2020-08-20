@@ -35,7 +35,7 @@ There is a simple Go client available as a [Gist](https://gist.github.com/dateng
 
 ## Your service does not provide <your data type here> ##
 
-There is always [Faker](https://github.com/DiUS/java-faker). I will not reproduce Faker. Maybe I will include it as a retirement task. But there are Faker forks for almost any programming language. Faker is ok as long as you do not need valid(!) data for certain purposes like postal addresses, IBANs for current accounts or credit card numbers. My fellow german software developers tend to validate their input data strictly.
+There is always [Faker](https://github.com/DiUS/java-faker). I will not reproduce Faker. Maybe I will include it as a retirement task. But there are Faker forks for almost any programming language. Faker is ok as long as you do not need valid(!) data for certain purposes like postal addresses, IBANs for current accounts or credit card numbers. My fellow german software developers tend to strictly validate their input data.
 
 ## Disclaimer ##
 
