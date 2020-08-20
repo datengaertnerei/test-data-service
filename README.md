@@ -18,7 +18,7 @@ You should meet a german data protection official. And most of the time this con
 It is a Spring Boot application. You can just start it and during the first start you will see the generated admin password in the log:
 
 ```
-using generated password for admin account: 
+using generated password for admin account: <xxx>
 ```
 
 You have to keep that in your password vault. It will not show again. Currently you can only reset it by removing it from the embedded H2 database manually.
@@ -32,3 +32,11 @@ With Swagger UI as usual you can test API calls and get JSON samples for your ow
 ![image](https://user-images.githubusercontent.com/44938643/90777160-53463480-e2fb-11ea-9c05-d6c38ae576d0.png)
 
 There is a simple Go client available as a [Gist](https://gist.github.com/datengaertnerei/680a1244439d6dfee9a51dd35430cf5d).
+
+## Your service does not provide <your data type here> ##
+
+There is always [Faker](https://github.com/DiUS/java-faker). I will not reproduce Faker. Maybe I will include it as a retirement task. But there are Faker forks for almost any programming language. Faker is ok as long as you do not need valid(!) data for certain purposes like postal addresses, IBANs for current accounts or credit card numbers. My fellow german software developers tend to validate their input data strictly.
+
+## Disclaimer ##
+
+DO NOT USE generated data, especially IBAN or credit card number, anywhere else than in your confined test environment. Someone might prosecute you for fraud.
