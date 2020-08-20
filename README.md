@@ -33,6 +33,19 @@ With Swagger UI as usual you can test API calls and get JSON samples for your ow
 
 There is a simple Go client available as a [Gist](https://gist.github.com/datengaertnerei/680a1244439d6dfee9a51dd35430cf5d).
 
+## Security setup ##
+
+TLS and Basic Authentication are configured as default. TLS uses a self-signed certificate, that you should replace in your environment. It is configured by Spring Boot application properties, that you can provide externally at startup:
+
+```
+server.ssl.key-store-type=PKCS12
+server.ssl.key-store=classpath:keystore/testdata.p12
+server.ssl.key-store-password=O0mph!
+server.ssl.key-alias=testdata
+```
+
+I am using Basic Authentication just to be able to protect the service infrastructure from abuse. There is no default admin password. It will be generated at first start (see above). 
+
 ## Your service does not provide <your data type here> ##
 
 There is always [Faker](https://github.com/DiUS/java-faker). I will not reproduce Faker. Maybe I will include it as a retirement task. But there are Faker forks for almost any programming language. Faker is ok as long as you do not need valid(!) data for certain purposes like postal addresses, IBANs for current accounts or credit card numbers. My fellow german software developers tend to strictly validate their input data.
