@@ -26,7 +26,7 @@ using generated password for admin account: <xxx>
 
 You have to keep that in your password vault. It will not show again. Currently you can only reset it by removing it from the embedded H2 database manually.
 
-After startup you can navigate to [https://localhost:8443/](https://localhost:8443/) in your browser. It will ask for Basic Authentication (admin and the generated password) and the show a random generated person. There is a link on that page to the included Swagger UI.
+After startup you can navigate to [https://localhost:8443/](https://localhost:8443/) in your browser. It will ask for Basic Authentication (admin and the generated password) and then show a random generated person. There is a link on that page to the included Swagger UI.
 
 ![image](https://user-images.githubusercontent.com/44938643/90776994-242fc300-e2fb-11ea-83c7-0fafdb2a70ed.png)
 
@@ -38,7 +38,7 @@ There is a simple Go client available as a [Gist](https://gist.github.com/dateng
 
 ## Security setup ##
 
-TLS and Basic Authentication are configured as default. TLS uses a self-signed certificate, that you should replace in your environment. It is configured by Spring Boot application properties, that you can provide externally at startup:
+TLS and Basic Authentication are configured as default. A self-signed certificate is included, that you should replace in your own environment. It is configured by Spring Boot application properties, that you can provide externally at startup:
 
 ```
 server.ssl.key-store-type=PKCS12
