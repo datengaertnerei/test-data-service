@@ -2,6 +2,9 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/484d467e7e4540c5b8b7fbce78538bfc)](https://www.codacy.com/manual/datengaertnerei/test-data-service?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=datengaertnerei/test-data-service&amp;utm_campaign=Badge_Grade) 
 [![Maven Build](https://github.com/datengaertnerei/test-data-service/workflows/maven-build/badge.svg)](https://github.com/datengaertnerei/test-data-service)
+[![Dependencies](https://img.shields.io/librariesio/github/datengaertnerei/test-data-service.svg)](https://libraries.io/github/datengaertnerei/test-data-service)
+[![DepShield Badge](https://depshield.sonatype.org/badges/datengaertnerei/test-data-service/depshield.svg)](https://depshield.github.io)
+[![License Badge](https://img.shields.io/github/license/datengaertnerei/test-data-service.svg)](https://mit-license.org/)
 
 A Spring Boot REST service to generate test data for german persons incl. address, phone, mobile and current account IBAN.
 
