@@ -26,14 +26,21 @@ package com.datengaertnerei.test.dataservice.person;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 /**
  * @author jensd
  *
  */
-public interface PostalAddressRepository extends JpaRepository<PostalAddress, Integer> {
+public interface PostalAddressRepository extends JpaRepository<PostalAddress, Long> {
 	
 	List<PostalAddress> findByAddressLocalityIgnoreCase(String addressLocality);
 	
 	List<PostalAddress> findByPostalCodeStartsWith(String postalCode);
+	
+	@Query(value = "SELECT min(id) FROM PostalAddress")
+	public Long min();
+
+	@Query(value = "SELECT max(id) FROM PostalAddress")
+	public Long max();	
 }

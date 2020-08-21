@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class PostalAddress implements Comparable<PostalAddress> {
 
-  private int id;
+  private Long id;
   private String addressCountry;
   private String addressLocality;
   private String postalCode;
@@ -49,11 +49,11 @@ public class PostalAddress implements Comparable<PostalAddress> {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @JsonIgnore
-  public int getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
