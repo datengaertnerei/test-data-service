@@ -49,9 +49,15 @@ server.ssl.key-alias=testdata
 
 I am using Basic Authentication just to be able to protect the service infrastructure from abuse. There is no default admin password. It will be generated at first start (see above). 
 
+## Can I use different API keys for different users? ##
+There is another endpoint ```/auth``` that is not included in the Swagger UI. You can get generated user/password combinations.
+
 ## Your service does not provide \<your data type here> ##
 
 There is always [Faker](https://github.com/DiUS/java-faker). I will not reproduce Faker. Maybe I will include it as a retirement task. But there are Faker forks for almost any programming language. Faker is ok as long as you do not need valid(!) data for certain purposes like postal addresses, IBANs for current accounts or credit card numbers. My fellow german software developers tend to strictly validate their input data.
+
+## Has it been tested? ##
+Well, yes, obviously
 
 ## Disclaimer ##
 

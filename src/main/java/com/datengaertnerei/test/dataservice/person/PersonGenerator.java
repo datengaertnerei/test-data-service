@@ -128,7 +128,7 @@ public class PersonGenerator implements IPersonGenerator {
 		if (null != addresses && 0 < addresses.size()) {
 			address = addresses.get(random.nextInt(addresses.size()));
 		} else {
-			Optional<PostalAddress> addressContainer = repository.findById(offset + randomId());
+			Optional<PostalAddress> addressContainer = repository.findById(randomId());
 			address = addressContainer.get();
 			randomPerson.setComment("city not found in address base");
 		}
