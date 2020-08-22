@@ -12,8 +12,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	private static final String AUTH_REALM_NAME = "Test Data Service";
+
 	private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);
-	
+
 	@Autowired
 	private UserDetailsServiceImpl userDetailsService;
 
@@ -26,7 +28,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().anyRequest().authenticated().and().httpBasic().realmName("Test Data Service");
+		http.authorizeRequests().antMatchers("/auth/*").hasRole(UserDetailsServiceImpl.ROLE_ADMIN).anyRequest()
+				.authenticated().and().httpBasic().realmName(AUTH_REALM_NAME);
 	}
 
 	@Autowired

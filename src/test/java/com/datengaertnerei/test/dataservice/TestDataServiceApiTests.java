@@ -33,7 +33,8 @@ class TestDataServiceApiTests {
 	void shouldReturnRandomPerson() {
 
 		Set<String> checkList = new HashSet<>();
-		for (int i = 1; i < 10; i++) {
+		// create a few more persons to hit more date of birth branches
+		for (int i = 1; i < 30; i++) {
 			Person result = restController.person();
 			assertThat(result).isNotNull();
 			String resultString = stringifyPerson(result);

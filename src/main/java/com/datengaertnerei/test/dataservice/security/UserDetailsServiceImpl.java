@@ -1,6 +1,5 @@
 package com.datengaertnerei.test.dataservice.security;
 
-import java.util.Arrays;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -10,8 +9,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,8 +18,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+	private static final String NAME_ADMIN = "admin";
+	public static final String ROLE_ADMIN = "admin";
+	public static final String ROLE_USER = "user";
+
 	private static final Logger log = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
-	private static final GrantedAuthority[] role = { new SimpleGrantedAuthority("user") };
 
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -36,8 +36,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 		if (u.isPresent()) {
 			TestDataUser appUser = u.get();
-			userDetails = (UserDetails) new User(appUser.getUsername(), //
-					appUser.getPassword(), Arrays.asList(role));
+			userDetails = User.withUsername(appUser.getUsername()).password(appUser.getPassword()).roles(appUser.getRole()).build();
 		}
 
 		return userDetails;
@@ -45,23 +44,24 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	protected ApiCredentials generateApiCredentials() {
 		ApiCredentials result = new ApiCredentials();
-
+		
 		// generate new account id that is not in use
 		String newAccountId = RandomStringUtils.randomAlphabetic(10);
 		UserDetails account = loadUserByUsername(newAccountId);
 		while (null != account) {
-			newAccountId = RandomStringUtils.randomAlphabetic(10);			
+			newAccountId = RandomStringUtils.randomAlphabetic(10);
 			account = loadUserByUsername(newAccountId);
 		}
-		
+
 		// fill credentials
 		result.setAccountId(newAccountId);
 		result.setPassword(UUID.randomUUID().toString());
-		
+
 		// and save to authorization database
 		TestDataUser newAccount = new TestDataUser();
 		newAccount.setUsername(newAccountId);
 		newAccount.setPassword(bCryptPasswordEncoder.encode(result.getPassword()));
+		newAccount.setRole(ROLE_USER);
 		userRepository.saveAndFlush(newAccount);
 
 		return result;
@@ -72,13 +72,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		log.info("setting up user details service");
 		bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
-		UserDetails admin = loadUserByUsername("admin");
+		UserDetails admin = loadUserByUsername(NAME_ADMIN);
 		if (null == admin) {
 			String pwd = UUID.randomUUID().toString();
 			log.info("creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n", pwd);
 			TestDataUser newAdmin = new TestDataUser();
-			newAdmin.setUsername("admin");
+			newAdmin.setUsername(NAME_ADMIN);
 			newAdmin.setPassword(bCryptPasswordEncoder.encode(pwd));
+			newAdmin.setRole(ROLE_ADMIN);
 			userRepository.saveAndFlush(newAdmin);
 		}
 	}

@@ -97,7 +97,7 @@ public class BankGenerator implements IBankGenerator {
 					String city = record.get(2);
 					String bic = record.get(4);
 
-					if (null == bic) {
+					if (null == bic || 0 == bic.length()) {
 						bic = bics.get(bankCode);
 					} else {
 						bics.put(bankCode, bic);

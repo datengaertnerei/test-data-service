@@ -50,7 +50,7 @@ server.ssl.key-alias=testdata
 I am using Basic Authentication just to be able to protect the service infrastructure from abuse. There is no default admin password. It will be generated at first start (see above). 
 
 ## Can I use different API keys for different users? ##
-There is another endpoint ```/auth``` that is not included in the Swagger UI. You can get generated user/password combinations.
+There is another endpoint ```/auth/new``` that is not included in the Swagger UI. As admin you can get generated user/password combinations.
 
 ## Your service does not provide \<your data type here> ##
 
