@@ -12,7 +12,7 @@ import org.springframework.ui.Model;
 class TestDataServiceFrontTests {
 	
 	@Autowired
-	FrontEndController controller;
+	private FrontEndController controller;
 	
 	@Test
 	void contextLoads() {

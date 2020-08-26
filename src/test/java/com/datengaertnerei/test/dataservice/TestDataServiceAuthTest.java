@@ -14,7 +14,7 @@ class TestDataServiceAuthTest {
 
 	
 	@Autowired
-	AuthController controller;
+	private AuthController controller;
 	
 	@Test
 	void contextLoads() {
