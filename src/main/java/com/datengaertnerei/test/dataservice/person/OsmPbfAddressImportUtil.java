@@ -48,6 +48,13 @@ public class OsmPbfAddressImportUtil {
 	private static Log log = LogFactory.getLog(OsmPbfAddressImportUtil.class);
 
 	/**
+	 * Utility class should not be instantiated
+	 */
+	private OsmPbfAddressImportUtil() {
+		super();
+	}
+
+	/**
 	 * Starts OSM dump parser and exports all addresses within defined country.
 	 *
 	 * @param args passed to cmd line parser

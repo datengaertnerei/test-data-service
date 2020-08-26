@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -30,13 +29,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	private UserRepository userRepository;
 
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) {
 		UserDetails userDetails = null;
 		Optional<TestDataUser> u = userRepository.findById(username);
 
 		if (u.isPresent()) {
 			TestDataUser appUser = u.get();
-			userDetails = User.withUsername(appUser.getUsername()).password(appUser.getPassword()).roles(appUser.getRole()).build();
+			userDetails = User.withUsername(appUser.getUsername()).password(appUser.getPassword())
+					.roles(appUser.getRole()).build();
 		}
 
 		return userDetails;
@@ -44,7 +44,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	protected ApiCredentials generateApiCredentials() {
 		ApiCredentials result = new ApiCredentials();
-		
+
 		// generate new account id that is not in use
 		String newAccountId = RandomStringUtils.randomAlphabetic(10);
 		UserDetails account = loadUserByUsername(newAccountId);

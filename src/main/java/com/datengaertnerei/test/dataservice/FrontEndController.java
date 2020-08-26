@@ -30,7 +30,7 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
 import com.datengaertnerei.test.dataservice.person.Person;
@@ -45,7 +45,7 @@ public class FrontEndController {
 	@Autowired
 	private IPhoneGenerator phoneg;
 
-	@RequestMapping("/")
+	@GetMapping(path = "/")
 	public String index(Model model) {
 		Person p = persong.createRandomPerson();
 		model.addAttribute("givenName", p.getGivenName());

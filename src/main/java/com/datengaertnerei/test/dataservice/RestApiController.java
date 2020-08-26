@@ -24,9 +24,9 @@ SOFTWARE.
 package com.datengaertnerei.test.dataservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
@@ -50,47 +50,47 @@ public class RestApiController {
 	@Autowired
 	private IPhoneGenerator phoneGen;
 	
-	@RequestMapping(value = "/mobile", method = RequestMethod.GET)
+	@GetMapping(value = "/mobile")
 	public PhoneNumber mobile() {
 		return phoneGen.generateMobileNumber();
 	}
 
-	@RequestMapping(value = "/landline", method = RequestMethod.GET)
+	@GetMapping(value = "/landline")
 	public PhoneNumber landline() {
 		return phoneGen.generatePhoneNumber("unknown");
 	}
 
-	@RequestMapping(value = "/landline/{city}", method = RequestMethod.GET)
+	@GetMapping(value = "/landline/{city}")
 	public PhoneNumber landlineForCity(@PathVariable("city") String city) {
 		return phoneGen.generatePhoneNumber(city);
 	}	
 
-	@RequestMapping(value = "/creditcard", method = RequestMethod.GET)
+	@GetMapping(value = "/creditcard")
 	public CreditCard creditcard() {
 		return bankGen.generateCreditCard();
 	}
 	
-	@RequestMapping(value = "/account", method = RequestMethod.GET)
+	@GetMapping(value = "/account")
 	public BankAccount account() {
 		return bankGen.generateAccount("unknown");
 	}
 
-	@RequestMapping(value = "/account/{city}", method = RequestMethod.GET)
+	@GetMapping(value = "/account/{city}")
 	public BankAccount accountForCity(@PathVariable("city") String city) {
 		return bankGen.generateAccount(city);
 	}	
 	
-	@RequestMapping(value = "/person", method = RequestMethod.GET)
+	@GetMapping(value = "/person")
 	public Person person() {
 		return personGen.createRandomPerson();
 	}
 	
-	@RequestMapping(value = "/person/city/{city}", method = RequestMethod.GET)
+	@GetMapping(value = "/person/city/{city}")
 	public Person personForCity(@PathVariable("city") String city) {
 		return personGen.createRandomPersonInCity(city);
 	}	
 
-	@RequestMapping(value = "/person/postalcode/{postalcode}", method = RequestMethod.GET)
+	@GetMapping(value = "/person/postalcode/{postalcode}")
 	public Person personForPostcode(@PathVariable("postalcode") String postalCode) {
 		return personGen.createRandomPersonInArea(postalCode);
 	}	

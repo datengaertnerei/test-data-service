@@ -10,7 +10,7 @@ import com.datengaertnerei.test.dataservice.security.ApiCredentials;
 import com.datengaertnerei.test.dataservice.security.AuthController;
 
 @SpringBootTest
-public class TestDataServiceAuthTest {
+class TestDataServiceAuthTest {
 
 	
 	@Autowired

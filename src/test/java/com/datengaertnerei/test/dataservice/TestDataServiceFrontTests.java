@@ -9,7 +9,7 @@ import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
 
 @SpringBootTest
-public class TestDataServiceFrontTests {
+class TestDataServiceFrontTests {
 	
 	@Autowired
 	FrontEndController controller;

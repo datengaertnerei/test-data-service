@@ -136,6 +136,11 @@ public class BankGenerator implements IBankGenerator {
 		// fetch random bank from list
 		int bankIndex = rnd.nextInt(cityMap.keySet().size());
 		Optional<Bank> bankContainer = cityMap.values().stream().skip(bankIndex).findFirst();
+		if (bankContainer.isEmpty()) {
+			BankAccount result = new BankAccount();
+			result.setComment("internal error while retrieving bank from list");
+			return result;
+		}
 		Bank bank = bankContainer.get();
 		// and build IBAN
 		Iban iban = new Iban.Builder().countryCode(CountryCode.DE).bankCode(bank.getBankCode()).accountNumber(account)
@@ -157,22 +162,23 @@ public class BankGenerator implements IBankGenerator {
 		// fetch random bin from list
 		int binIndex = rnd.nextInt(binList.keySet().size());
 		Optional<String> bin = binList.keySet().stream().skip(binIndex).findFirst();
-		
+		if (bin.isEmpty()) {
+			return new CreditCard(null, null, null);
+		}
+
 		// create valid cc number
 		String randomPart = Integer.toString(rnd.nextInt(999999999));
-		String combined = bin.get() + "000000000".substring(randomPart.length()) + randomPart; 
+		String combined = bin.get() + "000000000".substring(randomPart.length()) + randomPart;
 		int[] toCalc = combined.chars().map(c -> c - '0').toArray();
 		Integer crc = calculateCheckDigit(toCalc);
 
 		// and convert to string
-		String number = combined.toString() + crc.toString();
-		
-		int cvc = rnd.nextInt(899)+100;
+		String number = combined + crc.toString();
+
+		int cvc = rnd.nextInt(899) + 100;
 
 		// combine to result
-		CreditCard result = new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc));
-
-		return result;
+		return new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc));
 	}
 
 	private int calculateCheckDigit(int[] digits) {

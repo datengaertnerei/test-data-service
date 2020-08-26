@@ -80,7 +80,7 @@ public class PersonGenerator implements IPersonGenerator {
 		random = new Random(System.currentTimeMillis());
 		Long minAddressId = repository.min();
 		Long maxAddressId = repository.max();
-	
+
 		String importFile = System.getenv("OSM_IMPORT_FILE");
 		if (null != importFile) {
 			repository.deleteAll(); // does not reset JPA ID generator
@@ -92,7 +92,7 @@ public class PersonGenerator implements IPersonGenerator {
 		count = repository.count();
 
 		// address record IDs should be without gap to avoid errors
-		if(count < (maxAddressId - minAddressId)) {
+		if (count < (maxAddressId - minAddressId)) {
 			log.info("Postal address database contains gaps. Please reimport OSM data.");
 		}
 		log.info("Address count: " + count);
@@ -107,14 +107,16 @@ public class PersonGenerator implements IPersonGenerator {
 	public Person createRandomPerson() {
 		Person randomPerson = createBasicPerson();
 		Optional<PostalAddress> address = repository.findById(randomId());
-
-		randomPerson.setAddress(address.get());
+		if (address.isPresent()) {
+			randomPerson.setAddress(address.get());
+		}
 
 		return randomPerson;
 	}
 
 	/**
-	 * Creates a single random person object with linked address inside a given city.
+	 * Creates a single random person object with linked address inside a given
+	 * city.
 	 *
 	 * @param city the city to fetch random address from
 	 *
@@ -125,12 +127,16 @@ public class PersonGenerator implements IPersonGenerator {
 		Person randomPerson = createBasicPerson();
 		List<PostalAddress> addresses = repository.findByAddressLocalityIgnoreCase(city);
 		PostalAddress address = null;
-		if (null != addresses && 0 < addresses.size()) {
+		if (null != addresses && !addresses.isEmpty()) {
 			address = addresses.get(random.nextInt(addresses.size()));
 		} else {
 			Optional<PostalAddress> addressContainer = repository.findById(randomId());
-			address = addressContainer.get();
-			randomPerson.setComment("city not found in address base");
+			if (addressContainer.isPresent()) {
+				address = addressContainer.get();
+				randomPerson.setComment("city not found in address base");
+			} else {
+				randomPerson.setComment("internal error while retrieving address");
+			}
 		}
 
 		randomPerson.setAddress(address);
@@ -139,9 +145,11 @@ public class PersonGenerator implements IPersonGenerator {
 	}
 
 	/**
-	 * Creates a single random person object with linked address inside a given postal code area.
+	 * Creates a single random person object with linked address inside a given
+	 * postal code area.
 	 *
-	 * @param postalCode  the postal code marking the area to fetch random address from
+	 * @param postalCode the postal code marking the area to fetch random address
+	 *                   from
 	 *
 	 * @return the new person object
 	 */
@@ -150,19 +158,23 @@ public class PersonGenerator implements IPersonGenerator {
 		Person randomPerson = createBasicPerson();
 		List<PostalAddress> addresses = repository.findByPostalCodeStartsWith(postalCode);
 		PostalAddress address = null;
-		if (null != addresses && 0 < addresses.size()) {
+		if (null != addresses && !addresses.isEmpty()) {
 			address = addresses.get(random.nextInt(addresses.size()));
 		} else {
 			Optional<PostalAddress> addressContainer = repository.findById(randomId());
-			address = addressContainer.get();
-			randomPerson.setComment("postal code not found in address base");
+			if (addressContainer.isPresent()) {
+				address = addressContainer.get();
+				randomPerson.setComment("postal code not found in address base");
+			} else {
+				randomPerson.setComment("internal error while retrieving address");
+			}
 		}
 
 		randomPerson.setAddress(address);
 
 		return randomPerson;
 	}
-	
+
 	/**
 	 * Creates a valid and (most probably) unique email address at a test domain.
 	 * Since the top level domain .test is reserved, these email addresses will
@@ -241,16 +253,16 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return
 	 */
 	private Long randomId() {
-		Long result = 1L;
-		
+		Long result;
+
 		// it is unlikely to have more than 2 billion addresses
-		if(count < Integer.MAX_VALUE) {			
-			result = Integer.valueOf(random.nextInt(count.intValue())).longValue();
-		}else {
+		if (count < Integer.MAX_VALUE) {
+			result = (long) random.nextInt(count.intValue());
+		} else {
 			// but one of 2 billion will suffice for our test data
-			result = Integer.valueOf(random.nextInt(Integer.MAX_VALUE)).longValue();
+			result = (long) random.nextInt(Integer.MAX_VALUE);
 		}
-		
+
 		// add offset for first ID
 		return result + offset;
 	}
@@ -267,7 +279,7 @@ public class PersonGenerator implements IPersonGenerator {
 			firstname = femaleNames.get(random.nextInt(femaleNames.size())).trim();
 		}
 		String surname = surnames.get(random.nextInt(surnames.size())).trim();
-		
+
 		String eyecolor = eyecolors.get(random.nextInt(eyecolors.size())).trim();
 
 		LocalDate dateOfBirth = createRandomDateOfBirth();
@@ -275,13 +287,13 @@ public class PersonGenerator implements IPersonGenerator {
 		int height = createRandomHeight(gender);
 
 		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress);
-		if(1 == random.nextInt(5)) {
+		if (1 == random.nextInt(5)) {
 			String birthName = surnames.get(random.nextInt(surnames.size())).trim();
 			randomPerson.setBirthName(birthName);
 		}
 		return randomPerson;
 	}
-	
+
 	/**
 	 * Loads value list with classloader for human-readable random person
 	 * attributes.

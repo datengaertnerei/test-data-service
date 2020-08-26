@@ -56,7 +56,7 @@ public class DataServiceApplication {
 		return args -> {
 
 			String[] beanNames = ctx.getBeanDefinitionNames();
-			log.info("Started with bean count of " + beanNames.length);
+			log.info("Started with bean count of {}", beanNames.length);
 
 		};
 	}
