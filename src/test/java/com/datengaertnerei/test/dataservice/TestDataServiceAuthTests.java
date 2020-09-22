@@ -10,7 +10,7 @@ import com.datengaertnerei.test.dataservice.security.ApiCredentials;
 import com.datengaertnerei.test.dataservice.security.AuthController;
 
 @SpringBootTest
-class TestDataServiceAuthTest {
+class TestDataServiceAuthTests {
 
 	
 	@Autowired
@@ -22,7 +22,7 @@ class TestDataServiceAuthTest {
 	}
 	
 	@Test
-	void shouldReturnRandomPersonModel(){
+	void shouldReturnNewCredentials(){
 		ApiCredentials credentials = controller.generateNew();
 		assertThat(credentials).isNotNull();
 	}	

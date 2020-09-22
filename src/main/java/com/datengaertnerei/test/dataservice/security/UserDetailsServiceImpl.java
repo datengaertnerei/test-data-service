@@ -72,15 +72,28 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		log.info("setting up user details service");
 		bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
+		String adminPasswd = System.getenv("TD_ADMIN_PASSWD");
 		UserDetails admin = loadUserByUsername(NAME_ADMIN);
 		if (null == admin) {
-			String pwd = UUID.randomUUID().toString();
-			log.info("creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n", pwd);
+			if (null == adminPasswd || adminPasswd.isEmpty()) {
+				adminPasswd = UUID.randomUUID().toString();
+				log.info("creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n",
+						adminPasswd);
+
+			}
 			TestDataUser newAdmin = new TestDataUser();
 			newAdmin.setUsername(NAME_ADMIN);
-			newAdmin.setPassword(bCryptPasswordEncoder.encode(pwd));
+			newAdmin.setPassword(bCryptPasswordEncoder.encode(adminPasswd));
 			newAdmin.setRole(ROLE_ADMIN);
 			userRepository.saveAndFlush(newAdmin);
+		} else if (null != adminPasswd && !adminPasswd.isEmpty()) {
+			Optional<TestDataUser> u = userRepository.findById(NAME_ADMIN);
+
+			if (u.isPresent()) {
+				TestDataUser adminUser = u.get();
+				adminUser.setPassword(bCryptPasswordEncoder.encode(adminPasswd));
+				userRepository.saveAndFlush(adminUser);
+			}
 		}
 	}
 }
