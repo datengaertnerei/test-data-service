@@ -32,6 +32,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.datengaertnerei.test.dataservice.bank.IBankGenerator;
 import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
@@ -44,6 +45,9 @@ public class FrontEndController {
 
 	@Autowired
 	private IPhoneGenerator phoneg;
+	
+	@Autowired
+	private IBankGenerator bankg;
 
 	@GetMapping(path = "/")
 	public String index(Model model) {
@@ -60,6 +64,8 @@ public class FrontEndController {
 
 		model.addAttribute("landline", phoneg.generatePhoneNumber(p.getAddress().getAddressLocality()).getPhoneNumer());
 		model.addAttribute("mobile", phoneg.generateMobileNumber().getPhoneNumer());
+		
+		model.addAttribute("iban", bankg.generateAccount(p.getAddress().getAddressLocality()).getIban());
 
 		return "front";
 	}

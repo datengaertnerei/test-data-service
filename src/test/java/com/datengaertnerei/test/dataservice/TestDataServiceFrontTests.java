@@ -24,6 +24,16 @@ class TestDataServiceFrontTests {
 		Model model = new ExtendedModelMap();
 		String view = controller.index(model);
 		assertThat(model.getAttribute("givenName")).isNotNull();
+		assertThat(model.getAttribute("familyName")).isNotNull();
+		assertThat(model.getAttribute("birthDate")).isNotNull();
+		assertThat(model.getAttribute("email")).isNotNull();
+		assertThat(model.getAttribute("addressLocality")).isNotNull();
+		assertThat(model.getAttribute("postalCode")).isNotNull();
+		assertThat(model.getAttribute("streetAddress")).isNotNull();
+		assertThat(model.getAttribute("houseNumber")).isNotNull();
+		assertThat(model.getAttribute("landline")).isNotNull();
+		assertThat(model.getAttribute("mobile")).isNotNull();
+		assertThat(model.getAttribute("iban")).isNotNull();
 		assertThat(view).isEqualTo("front");
 	}
 
