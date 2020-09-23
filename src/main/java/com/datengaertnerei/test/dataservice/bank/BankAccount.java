@@ -3,7 +3,10 @@ package com.datengaertnerei.test.dataservice.bank;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @JsonInclude(Include.NON_NULL)
+@Schema(description="SEPA area bank account number and bank info")
 public class BankAccount {
 
 	private Bank bank;

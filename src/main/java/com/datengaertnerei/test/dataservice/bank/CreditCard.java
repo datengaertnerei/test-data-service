@@ -1,5 +1,8 @@
 package com.datengaertnerei.test.dataservice.bank;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description="credit card info with type, number and cvc")
 public class CreditCard {
 	
 	private String number;

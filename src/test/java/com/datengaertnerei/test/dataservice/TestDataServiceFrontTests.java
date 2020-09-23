@@ -34,7 +34,7 @@ class TestDataServiceFrontTests {
 		assertThat(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN)
 				.parse(model.getAttribute("birthDate").toString()).isSupported(ChronoField.YEAR)).isTrue();
 		// check email
-		assertThat(model.getAttribute("email").toString().contains("@")).isTrue();
+		assertThat(model.getAttribute("email").toString()).contains("@");
 		assertThat(model.getAttribute("addressLocality")).isNotNull();
 		assertThat(model.getAttribute("postalCode")).isNotNull();
 		assertThat(model.getAttribute("streetAddress")).isNotNull();

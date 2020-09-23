@@ -30,6 +30,8 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 /**
  * Postal address entity class for persistence inspired by
  * <a href="https://schema.org/PostalAddress">postal address schema</a>.
@@ -37,6 +39,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * @author Jens Dibbern
  */
 @Entity
+@Schema(description="postal address (see <a href=\"https://schema.org/PostalAddress\">https://schema.org/PostalAddress</a>)")
 public class PostalAddress implements Comparable<PostalAddress> {
 
 	private Long id;

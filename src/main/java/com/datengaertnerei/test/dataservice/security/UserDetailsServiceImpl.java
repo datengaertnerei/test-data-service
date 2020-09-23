@@ -72,6 +72,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		log.info("setting up user details service");
 		bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
+		// allow admin password sideloading, esp. for container environments
 		String adminPasswd = System.getenv("TD_ADMIN_PASSWD");
 		UserDetails admin = loadUserByUsername(NAME_ADMIN);
 		if (null == admin) {

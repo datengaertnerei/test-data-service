@@ -8,15 +8,15 @@
 
 A Spring Boot REST service to generate test data for german persons incl. address, phone, mobile and current account IBAN.
 
-## Another test data generator? Really? ##
+## Another test data generator? Really?
 
 At first I needed valid postal addresses within Germany. I did not find anything usable to meet that requirement. So I chose Open Street Map as a source of valid postal addresses. And as you usually do not want to include a dozen different generators in your test, I kept adding things I needed in my projects.
 
-## We are just using a copy of our production database ##
+## We are just using a copy of our production database
 
 You should meet a german data protection official. And most of the time this contains either too much data and/or not the data you need for your test.
 
-## How to use it ##
+## How to use it
 
 It is a Spring Boot application. You can just start it and during the first start you will see the generated admin password in the log:
 
@@ -36,7 +36,7 @@ With Swagger UI as usual you can test API calls and get JSON samples for your ow
 
 There is a simple Go client available as a [Gist](https://gist.github.com/datengaertnerei/680a1244439d6dfee9a51dd35430cf5d).
 
-## Security setup ##
+## Security setup
 
 TLS and Basic Authentication are configured as default. A self-signed certificate is included, that you should replace in your own environment. It is configured by Spring Boot application properties, that you can provide externally at startup:
 
@@ -49,16 +49,19 @@ server.ssl.key-alias=testdata
 
 I am using Basic Authentication just to be able to protect the service infrastructure from abuse. There is no default admin password. It will be generated at first start (see above). 
 
-## Can I use different API keys for different users? ##
+## Can I use different API keys for different users?
 There is another endpoint ```/auth/new``` that is not included in the Swagger UI. As admin you can get generated user/password combinations.
 
-## Your service does not provide \<your data type here> ##
+## Your service does not provide \<your data type here>
 
 There is always [Faker](https://github.com/DiUS/java-faker). I will not reproduce Faker. Maybe I will include it as a retirement task. But there are Faker forks for almost any programming language. Faker is ok as long as you do not need valid(!) data for certain purposes like postal addresses, IBANs for current accounts or credit card numbers. My fellow german software developers tend to strictly validate their input data.
 
-## Has it been tested? ##
+## Has it been tested?
 Well, yes, obviously
 
-## Disclaimer ##
+## But I want test data for Mexico
+[Follow me!](ADAPT.md)
+
+## Disclaimer
 
 DO NOT USE generated data, especially IBAN or credit card number, anywhere else than in your confined test environment. Someone might prosecute you for fraud.

@@ -28,6 +28,8 @@ import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 /**
  * Person entity class for persistence inspired by
  * <a href="https://schema.org/Person">person schema</a>.
@@ -35,6 +37,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
  * @author Jens Dibbern
  */
 @JsonInclude(Include.NON_NULL)
+@Schema(description="person (see <a href=\"https://schema.org/Person\">https://schema.org/Person</a>)")
 public class Person {
 
 	private String givenName;

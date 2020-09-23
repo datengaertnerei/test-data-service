@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.iban4j.IbanUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -51,14 +52,14 @@ class TestDataServiceApiTests {
 	void shouldReturnRandomPersonForCity() {
 
 		Set<String> checkList = new HashSet<>();
-		
+
 		// get first record for unknown city
 		Person result = restController.personForCity("xxx");
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
 		assertThat(checkList.contains(resultString)).isFalse();
 		checkList.add(resultString);
-		
+
 		for (int i = 1; i < 5; i++) {
 			result = restController.personForCity("hamburg");
 			assertThat(result).isNotNull();
@@ -76,14 +77,14 @@ class TestDataServiceApiTests {
 	void shouldReturnRandomPersonForArea() {
 
 		Set<String> checkList = new HashSet<>();
-		
+
 		// get first record for unknown area
 		Person result = restController.personForPostcode("xx");
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
 		assertThat(checkList.contains(resultString)).isFalse();
 		checkList.add(resultString);
-		
+
 		for (int i = 1; i < 5; i++) {
 			result = restController.personForPostcode("20");
 			assertThat(result).isNotNull();
@@ -124,13 +125,13 @@ class TestDataServiceApiTests {
 	void shouldReturnRandomPhoneNumberForCity() {
 
 		Set<String> checkList = new HashSet<>();
-		
+
 		// get first record for unknown city
 		PhoneNumber result = restController.landlineForCity("xxx");
 		assertThat(result).isNotNull();
 		assertThat(checkList.contains(result.getPhoneNumer())).isFalse();
 		checkList.add(result.getPhoneNumer());
-		
+
 		for (int i = 1; i < 4; i++) {
 			result = restController.landlineForCity("hamburg");
 			assertThat(result).isNotNull();
@@ -165,9 +166,7 @@ class TestDataServiceApiTests {
 		Set<String> checkList = new HashSet<>();
 		for (int i = 1; i < 5; i++) {
 			BankAccount result = restController.account();
-			assertThat(result).isNotNull();
-			assertThat(checkList.contains(result.getIban())).isFalse();
-			checkList.add(result.getIban());
+			bankAssertions(checkList, result);
 		}
 
 	}
@@ -179,20 +178,27 @@ class TestDataServiceApiTests {
 	void shouldReturnRandomBankAccountForCity() {
 
 		Set<String> checkList = new HashSet<>();
-		
+
 		// get first record for unknown city
 		BankAccount result = restController.accountForCity("xxx");
-		assertThat(result).isNotNull();
-		assertThat(checkList.contains(result.getIban())).isFalse();
-		checkList.add(result.getIban());
-		
+		assertThat(result.getComment()).isNotNull();
+		bankAssertions(checkList, result);
+
 		for (int i = 1; i < 5; i++) {
 			result = restController.accountForCity("hamburg");
-			assertThat(result).isNotNull();
-			assertThat(checkList.contains(result.getIban())).isFalse();
-			checkList.add(result.getIban());
+			bankAssertions(checkList, result);
 		}
 
+	}
+
+	private void bankAssertions(Set<String> checkList, BankAccount result) {
+		assertThat(result).isNotNull();
+		assertThat(result.getBank()).isNotNull();
+		assertThat(result.getBank().getBic().length()).isEqualTo(11);
+		assertThat(result.getBank().getDesc()).isNotNull();
+		assertThat(checkList.contains(result.getIban())).isFalse();
+		IbanUtil.validate(result.getIban());
+		checkList.add(result.getIban());
 	}
 
 	/**

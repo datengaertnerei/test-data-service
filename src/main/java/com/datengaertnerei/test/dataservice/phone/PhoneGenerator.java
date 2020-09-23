@@ -41,20 +41,22 @@ import org.springframework.stereotype.Service;
 public class PhoneGenerator implements IPhoneGenerator {
 	private static Log log = LogFactory.getLog(PhoneGenerator.class);
 
-	// german mobile phone prefixes
-	private static final String[] prefixes = { "1511", "1512", "1514", "1515", "1516", "1517", "1520", "1521", "1522",
+	// german mobile phone area codes
+	private static final String[] MOBILE_AREA_CODES = { "1511", "1512", "1514", "1515", "1516", "1517", "1520", "1521", "1522",
 			"1525", "1526", "1570", "1573", "1575", "1577", "1578", "1579", "160", "162", "163", "170", "171", "172",
 			"173", "174", "175", "176", "177", "178", "179" };
-	private Map<String, String> cityPrefixes;
+	private static final String COUNTRY_CALLING_CODE = "+49 ";
+	private static final String GENERIC_AREA_CODE = "32";
+	private Map<String, String> areaCodeList;
 	private Random rnd;
 
 	public PhoneGenerator() {
 		rnd = new Random();
 		rnd.setSeed(System.currentTimeMillis());
 
-		cityPrefixes = new HashMap<>();
+		areaCodeList = new HashMap<>();
 		try {
-			// get german landline prefix list from
+			// get german landline area code list from
 			// https://www.bundesnetzagentur.de/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Nummerierung/Rufnummern/ONRufnr/ON_Einteilung_ONB/ON_ONB_ONKz_ONBGrenzen_node.html
 			InputStream inStream = getClass().getResourceAsStream("prefixlist.csv");
 			Reader in = new InputStreamReader(inStream);
@@ -62,45 +64,45 @@ public class PhoneGenerator implements IPhoneGenerator {
 			Iterable<CSVRecord> records = CSVFormat.DEFAULT.withDelimiter(';').withSkipHeaderRecord().parse(in);
 			for (CSVRecord record : records) {
 				if (record.size() >= 2) {
-					String prefix = record.get(0);
+					String areaCode = record.get(0);
 					String city = record.get(1);
-					cityPrefixes.put(city.toLowerCase(), prefix);
+					areaCodeList.put(city.toLowerCase(), areaCode);
 				}
 			}
 		} catch (IOException e) {
-			log.fatal("could not load prefix directory", e);
+			log.fatal("could not load area code directory", e);
 		}
 
 	}
 
-	private PhoneNumber generateNumber(String prefix) {
+	private PhoneNumber generateNumber(String areaCode) {
 		String phoneNum = Integer.toString(rnd.nextInt(99999999));
 		phoneNum = "123456789".substring(0, 9 - phoneNum.length()) + phoneNum; // padding
-		phoneNum = phoneNum.substring(prefix.length() - 2);
+		phoneNum = phoneNum.substring(areaCode.length() - 2);
 
-		return new PhoneNumber("+49 " + prefix + " " + phoneNum);
+		return new PhoneNumber(COUNTRY_CALLING_CODE + areaCode + " " + phoneNum);
 	}
 
 	@Override
 	public PhoneNumber generateMobileNumber() {
 
-		int index = rnd.nextInt(prefixes.length);
-		String prefix = prefixes[index];
+		int index = rnd.nextInt(MOBILE_AREA_CODES.length);
+		String areaCode = MOBILE_AREA_CODES[index];
 
-		return generateNumber(prefix);
+		return generateNumber(areaCode);
 	}
 
 	@Override
 	public PhoneNumber generatePhoneNumber(String city) {
-		String prefix = "032";
+		String areaCode = GENERIC_AREA_CODE;
 		String comment = "";
 		String cityLower = city.toLowerCase();
-		if (cityPrefixes.containsKey(cityLower)) {
-			prefix = cityPrefixes.get(cityLower);
+		if (areaCodeList.containsKey(cityLower)) {
+			areaCode = areaCodeList.get(cityLower);
 		}else {
-			comment = "city not found in prefix directory";
+			comment = "city not found in area code directory";
 		}
 
-		return generateNumber(prefix).setComment(comment);
+		return generateNumber(areaCode).setComment(comment);
 	}
 }

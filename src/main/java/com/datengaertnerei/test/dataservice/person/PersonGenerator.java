@@ -126,22 +126,7 @@ public class PersonGenerator implements IPersonGenerator {
 	public Person createRandomPersonInCity(String city) {
 		Person randomPerson = createBasicPerson();
 		List<PostalAddress> addresses = repository.findByAddressLocalityIgnoreCase(city);
-		PostalAddress address = null;
-		if (null != addresses && !addresses.isEmpty()) {
-			address = addresses.get(random.nextInt(addresses.size()));
-		} else {
-			Optional<PostalAddress> addressContainer = repository.findById(randomId());
-			if (addressContainer.isPresent()) {
-				address = addressContainer.get();
-				randomPerson.setComment("city not found in address base");
-			} else {
-				randomPerson.setComment("internal error while retrieving address");
-			}
-		}
-
-		randomPerson.setAddress(address);
-
-		return randomPerson;
+		return compileResult(randomPerson, addresses);
 	}
 
 	/**
@@ -157,6 +142,10 @@ public class PersonGenerator implements IPersonGenerator {
 	public Person createRandomPersonInArea(String postalCode) {
 		Person randomPerson = createBasicPerson();
 		List<PostalAddress> addresses = repository.findByPostalCodeStartsWith(postalCode);
+		return compileResult(randomPerson, addresses);
+	}
+
+	private Person compileResult(Person randomPerson, List<PostalAddress> addresses) {
 		PostalAddress address = null;
 		if (null != addresses && !addresses.isEmpty()) {
 			address = addresses.get(random.nextInt(addresses.size()));

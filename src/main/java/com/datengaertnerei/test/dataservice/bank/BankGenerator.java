@@ -181,6 +181,7 @@ public class BankGenerator implements IBankGenerator {
 		return new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc));
 	}
 
+	// calculate checksum for domestic account number, IBAN checksum is included in IBAN builder 
 	private int calculateCheckDigit(int[] digits) {
 
 		/* double every other starting from right - jumping from 2 in 2 */
