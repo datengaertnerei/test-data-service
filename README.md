@@ -24,15 +24,15 @@ It is a Spring Boot application. You can just start it and during the first star
 using generated password for admin account: <xxx>
 ```
 
-You have to keep that in your password vault. It will not show again. Currently you can only reset it by removing it from the embedded H2 database manually.
+You have to keep that in your password vault. It will not show again. Currently you can only reset it by removing it from the embedded H2 database manually. If you want to specify your own admin password, you can do that with the environment variable ```TD_ADMIN_PASSWD```.
 
 After startup you can navigate to [https://localhost:8443/](https://localhost:8443/) in your browser. It will ask for Basic Authentication (admin and the generated password) and then show a random generated person. There is a link on that page to the included Swagger UI.
 
-![image](https://user-images.githubusercontent.com/44938643/90776994-242fc300-e2fb-11ea-83c7-0fafdb2a70ed.png)
+![User Interface](https://user-images.githubusercontent.com/44938643/94337950-90829e00-ffee-11ea-9669-d7dc19e53b75.png)
 
 With Swagger UI as usual you can test API calls and get JSON samples for your own clients.
 
-![image](https://user-images.githubusercontent.com/44938643/90777160-53463480-e2fb-11ea-9c05-d6c38ae576d0.png)
+![Swagger UI](https://user-images.githubusercontent.com/44938643/94337964-be67e280-ffee-11ea-951b-576f16af2661.png)
 
 There is a simple Go client available as a [Gist](https://gist.github.com/datengaertnerei/680a1244439d6dfee9a51dd35430cf5d).
 
@@ -54,7 +54,7 @@ There is another endpoint ```/auth/new``` that is not included in the Swagger UI
 
 ## Your service does not provide \<your data type here>
 
-There is always [Faker](https://github.com/DiUS/java-faker). I will not reproduce Faker. Maybe I will include it as a retirement task. But there are Faker forks for almost any programming language. Faker is ok as long as you do not need valid(!) data for certain purposes like postal addresses, IBANs for current accounts or credit card numbers. My fellow german software developers tend to strictly validate their input data.
+There are many other [sources of test data](Testdata.md).
 
 ## Has it been tested?
 Well, yes, obviously
