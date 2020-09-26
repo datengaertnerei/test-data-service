@@ -24,7 +24,22 @@ It is a Spring Boot application. You can just start it and during the first star
 using generated password for admin account: <xxx>
 ```
 
-You have to keep that in your password vault. It will not show again. Currently you can only reset it by removing it from the embedded H2 database manually. If you want to specify your own admin password, you can do that with the environment variable ```TD_ADMIN_PASSWD```.
+You have to keep that in your password vault. It will not show again. If you want to specify your own admin password, you can do that with the environment variable ```TD_ADMIN_PASSWD```.
+
+The easy way to setup the test data service is to use Docker. Just run the latest [docker image](https://hub.docker.com/repository/docker/datengaertner/test-data-service)
+
+```
+export TD_ADMIN_PASSWD=<your admin password>
+docker run -e TD_ADMIN_PASSWD -p 443:8443 datengaertner/test-data-service
+```
+
+or if you prefer to use the plain version with transport layer security disabled
+
+```
+export TD_ADMIN_PASSWD=<your admin password>
+docker run -e TD_ADMIN_PASSWD -p 80:5000 datengaertner/test-data-service-notls
+```
+
 
 After startup you can navigate to [https://localhost:8443/](https://localhost:8443/) in your browser. It will ask for Basic Authentication (admin and the generated password) and then show a random generated person. There is a link on that page to the included Swagger UI.
 
