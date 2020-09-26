@@ -60,7 +60,7 @@ There are many other [sources of test data](Testdata.md).
 Well, yes, obviously
 
 ## But I want test data for Mexico
-[Follow me!](ADAPT.md)
+[Follow me!](Adapt.md)
 
 ## Disclaimer
 
