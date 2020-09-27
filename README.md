@@ -16,7 +16,7 @@ At first I needed valid postal addresses within Germany. I did not find anything
 
 You should meet a german data protection official. And most of the time this contains either too much data and/or not the data you need for your test.
 
-## How to use it
+## How to set it up
 
 It is a Spring Boot application. You can just start it and during the first start you will see the generated admin password in the log:
 
@@ -40,6 +40,17 @@ export TD_ADMIN_PASSWD=<your admin password>
 docker run -e TD_ADMIN_PASSWD -p 80:5000 datengaertner/test-data-service-notls
 ```
 
+There are Docker files included to create your own images. You can even run it on a free Heroku Dyno like that:
+
+```
+docker build -t <your Docker tag> .
+heroku container:push web -a <your Heroku app name>
+heroku container:release web -a <your Heroku app name>
+```
+
+I tried that and it runs quite well on a free dyno. It will take some time to wake up for your first request, but after that it is ok.
+
+## How to use it
 
 After startup you can navigate to [https://localhost:8443/](https://localhost:8443/) in your browser. It will ask for Basic Authentication (admin and the generated password) and then show a random generated person. There is a link on that page to the included Swagger UI.
 
