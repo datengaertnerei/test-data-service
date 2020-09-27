@@ -24,7 +24,6 @@ It is available for various different programming languages:
 
 Another simple [test data generator](https://github.com/presidentio/test-data-generator) is designed to insert data into a database directly.
 
-The [FINRA Open Source Data Generator ](http://finraos.github.io/DataGenerator/) uses modeled state charts to generate large and complex datasets.
+The [FINRA Open Source Data Generator](http://finraos.github.io/DataGenerator/) uses modeled state charts to generate large and complex datasets.
 
 Online generators like [Mockaroo](https://www.mockaroo.com/) or [FillDB](http://filldb.info/) let you create random test data without even installing any software.
-
