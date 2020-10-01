@@ -1,14 +1,24 @@
 package com.datengaertnerei.test.dataservice;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.fail;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Stream;
+
+import javax.imageio.ImageIO;
 
 import org.iban4j.IbanUtil;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
 
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.bank.CreditCard;
@@ -17,7 +27,6 @@ import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 
 @SpringBootTest
 class TestDataServiceApiTests {
-
 	@Autowired
 	private RestApiController restController;
 
@@ -216,5 +225,29 @@ class TestDataServiceApiTests {
 		}
 
 	}
+			 
+	// test data for avatar api test
+	static Stream<String> avatarParams() {
+		  return Stream.of("male", "female", "xxx", "", null);
+		}
 
+	/**
+	 * test different parameters and ensure it is a visible image
+	 * check for male or female has to be executed by a human
+	 */
+	@ParameterizedTest
+	@MethodSource("avatarParams")	
+	void shouldReturnRandomAvatarImage(String param) {
+		ResponseEntity<byte[]> avatar = restController.avatar(param);
+		ByteArrayInputStream bais = new ByteArrayInputStream(avatar.getBody());
+		try {
+			BufferedImage avatarImage = ImageIO.read(bais);
+			assertThat(avatar).isNotNull();
+			assertThat(avatarImage.getHeight()).isGreaterThan(0);
+			assertThat(avatarImage.getWidth()).isGreaterThan(0);
+		} catch (IOException e) {
+			fail(e);
+		}
+
+	}
 }
