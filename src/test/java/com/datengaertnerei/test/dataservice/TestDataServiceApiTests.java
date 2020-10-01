@@ -12,7 +12,10 @@ import java.util.stream.Stream;
 
 import javax.imageio.ImageIO;
 
+import org.iban4j.IbanFormatException;
 import org.iban4j.IbanUtil;
+import org.iban4j.InvalidCheckDigitException;
+import org.iban4j.UnsupportedCountryException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -203,10 +206,14 @@ class TestDataServiceApiTests {
 	private void bankAssertions(Set<String> checkList, BankAccount result) {
 		assertThat(result).isNotNull();
 		assertThat(result.getBank()).isNotNull();
-		assertThat(result.getBank().getBic().length()).isEqualTo(11);
+		assertThat(result.getBank().getBic()).hasSize(11);
 		assertThat(result.getBank().getDesc()).isNotNull();
 		assertThat(checkList.contains(result.getIban())).isFalse();
-		IbanUtil.validate(result.getIban());
+		try {
+			IbanUtil.validate(result.getIban());
+		} catch (IbanFormatException | InvalidCheckDigitException | UnsupportedCountryException e) {
+			fail(e);
+		}
 		checkList.add(result.getIban());
 	}
 
@@ -225,26 +232,26 @@ class TestDataServiceApiTests {
 		}
 
 	}
-			 
+
 	// test data for avatar api test
 	private static Stream<String> avatarParams() {
-		  return Stream.of("male", "female", "xxx", "", null);
-		}
+		return Stream.of("male", "female", "xxx", "", null);
+	}
 
 	/**
-	 * test different parameters and ensure it is a visible image
-	 * check for male or female has to be executed by a human
+	 * test different parameters and ensure it is a visible image check for male or
+	 * female has to be executed by a human
 	 */
 	@ParameterizedTest
-	@MethodSource("avatarParams")	
+	@MethodSource("avatarParams")
 	void shouldReturnRandomAvatarImage(String param) {
 		ResponseEntity<byte[]> avatar = restController.avatar(param);
 		ByteArrayInputStream bais = new ByteArrayInputStream(avatar.getBody());
 		try {
 			BufferedImage avatarImage = ImageIO.read(bais);
 			assertThat(avatar).isNotNull();
-			assertThat(avatarImage.getHeight()).isGreaterThan(0);
-			assertThat(avatarImage.getWidth()).isGreaterThan(0);
+			assertThat(avatarImage.getHeight()).isPositive();
+			assertThat(avatarImage.getWidth()).isPositive();
 		} catch (IOException e) {
 			fail(e);
 		}
