@@ -55,6 +55,7 @@ public class FrontEndController {
 		Person p = persong.createRandomPerson();
 		model.addAttribute("givenName", p.getGivenName());
 		model.addAttribute("familyName", p.getFamilyName());
+		model.addAttribute("gender", p.getGender());
 		model.addAttribute("birthDate", p.getBirthDate()
 				.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN)));
 		model.addAttribute("email", p.getEmail());

@@ -22,6 +22,7 @@
     <p th:text="${landline}" />
     <p th:text="${iban}" />
     <p th:text="${cctype} + ' ' + ${ccno}" />
+    <img th:src="@{/api/v1/avatar(gender=${gender})}" />
     <p><a href="/swagger-ui.html">Swagger UI</a> - <a href="https://github.com/datengaertnerei/test-data-service">GitHub Repo</a></p>
     
 </body>

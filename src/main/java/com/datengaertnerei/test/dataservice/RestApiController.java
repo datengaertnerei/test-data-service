@@ -25,11 +25,14 @@ package com.datengaertnerei.test.dataservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.datengaertnerei.test.dataservice.avatar.IAvatarGenerator;
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.bank.IBankGenerator;
@@ -45,6 +48,8 @@ import io.swagger.v3.oas.annotations.Parameter;
 @RequestMapping(value = "/api/v1", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RestApiController {
 
+	private static final String MALE_PARAM_VALUE = "male";
+
 	@Autowired
 	private IPersonGenerator personGen;
 
@@ -53,6 +58,9 @@ public class RestApiController {
 
 	@Autowired
 	private IPhoneGenerator phoneGen;
+
+	@Autowired
+	private IAvatarGenerator avatarGen;
 
 	@GetMapping(value = "/mobile")
 	@Operation(summary = "random german mobile number")
@@ -110,5 +118,13 @@ public class RestApiController {
 	public Person personForPostcode(
 			@Parameter(description = "the postal code to look for random postal address", required = true) @PathVariable("postalcode") String postalCode) {
 		return personGen.createRandomPersonInArea(postalCode);
+	}
+
+	@GetMapping(value = "/avatar", produces = MediaType.IMAGE_PNG_VALUE)
+	@Operation(summary = "random female or male avatar PNG image")
+	public ResponseEntity<byte[]> avatar(
+			@Parameter(description = "male or female, female is default", required = false) @RequestParam(defaultValue = "female", required = false) String gender) {
+		return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG)
+				.body(avatarGen.getAvatar(!MALE_PARAM_VALUE.equalsIgnoreCase(gender)));
 	}
 }
