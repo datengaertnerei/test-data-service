@@ -227,7 +227,7 @@ class TestDataServiceApiTests {
 	}
 			 
 	// test data for avatar api test
-	static Stream<String> avatarParams() {
+	private static Stream<String> avatarParams() {
 		  return Stream.of("male", "female", "xxx", "", null);
 		}
 

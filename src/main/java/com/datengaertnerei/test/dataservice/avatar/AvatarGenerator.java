@@ -33,7 +33,7 @@ import com.talanlabs.avatargenerator.eightbit.EightBitAvatar;
 public class AvatarGenerator implements IAvatarGenerator {
 	private Random rnd;
 
-	private AvatarGenerator() {
+	public AvatarGenerator() {
 		rnd = new Random();
 		rnd.setSeed(System.currentTimeMillis());
 	}
