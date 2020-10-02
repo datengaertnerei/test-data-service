@@ -6,7 +6,7 @@
 [![DepShield Badge](https://depshield.sonatype.org/badges/datengaertnerei/test-data-service/depshield.svg)](https://depshield.github.io)
 [![License Badge](https://img.shields.io/github/license/datengaertnerei/test-data-service.svg)](https://mit-license.org/)
 
-A Spring Boot REST service to generate test data for german persons incl. address, phone, mobile and current account IBAN.
+A Spring Boot REST service to generate test data for german persons incl. address, phone, mobile and current account IBAN to provide GDPR compliant test data. It is [adaptable](Adapt.md) to other countries based on OpenStreetMap and other public data sources.
 
 ## Another test data generator? Really?
 
@@ -60,7 +60,7 @@ With Swagger UI as usual you can test API calls and get JSON samples for your ow
 
 ![Swagger UI](https://user-images.githubusercontent.com/44938643/94337964-be67e280-ffee-11ea-951b-576f16af2661.png)
 
-There is a simple Go client available as a [Gist](https://gist.github.com/datengaertnerei/680a1244439d6dfee9a51dd35430cf5d).
+You can access the [API at SwaggerHub](https://app.swaggerhub.com/apis/datengaertnerei1/datengartnerei-test_data_service_api/) and there is a simple Go client available as a [Gist](https://gist.github.com/datengaertnerei/680a1244439d6dfee9a51dd35430cf5d).
 
 ## Security setup
 
