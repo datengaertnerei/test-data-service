@@ -1,7 +1,10 @@
 package com.datengaertnerei.test.dataservice.security;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,4 +20,14 @@ public class AuthController {
 		return userDetailsService.generateApiCredentials();
 	}
 
+	@GetMapping(path = "/export")
+	public List<TestDataUser> exportUsers() {
+		return userDetailsService.exportUsers();
+	}
+
+	@PutMapping(path = "/import")
+	public String importUsers(List<TestDataUser> users) {
+		return userDetailsService.importUsers(users);
+	}
+	
 }

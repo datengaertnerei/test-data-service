@@ -1,5 +1,6 @@
 package com.datengaertnerei.test.dataservice.security;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -66,6 +67,20 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 		return result;
 	}
+	
+	protected List<TestDataUser> exportUsers() {
+		return userRepository.findAll();
+	}
+	
+	protected String importUsers(List<TestDataUser> users) {
+		try {
+			userRepository.deleteAll();
+			userRepository.saveAll(users);
+		} catch (Exception e) {
+			return e.getMessage();
+		}
+		return "OK";
+	}	
 
 	@PostConstruct
 	private void setup() {
