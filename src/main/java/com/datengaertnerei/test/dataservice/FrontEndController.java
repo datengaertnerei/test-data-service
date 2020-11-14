@@ -63,6 +63,7 @@ public class FrontEndController {
 		model.addAttribute("postalCode", p.getAddress().getPostalCode());
 		model.addAttribute("streetAddress", p.getAddress().getStreetAddress());
 		model.addAttribute("houseNumber", p.getAddress().getHouseNumber());
+		model.addAttribute("taxId", p.getTaxId());
 
 		model.addAttribute("landline", phoneg.generatePhoneNumber(p.getAddress().getAddressLocality()).getPhoneNumer());
 		model.addAttribute("mobile", phoneg.generateMobileNumber().getPhoneNumer());

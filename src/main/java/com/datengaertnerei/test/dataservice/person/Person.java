@@ -48,6 +48,7 @@ public class Person {
 	private int height;
 	private String eyecolor;
 	private String email;
+	private String taxId;
 	private String comment;
 
 	private PostalAddress address;
@@ -96,6 +97,14 @@ public class Person {
 		this.address = address;
 	}
 
+	public String getTaxId() {
+		return taxId;
+	}
+
+	public void setTaxId(String taxId) {
+		this.taxId = taxId;
+	}
+	
 	public String getComment() {
 		return comment;
 	}
@@ -114,9 +123,10 @@ public class Person {
 	 * @param height     height attribute value
 	 * @param eyecolor   eyecolor attribute value
 	 * @param email      email address attribute value
+	 * @param taxId 
 	 */
 	public Person(String givenName, String familyName, String gender, LocalDate birthDate, int height, String eyecolor,
-			String email) {
+			String email, String taxId) {
 		this.givenName = givenName;
 		this.familyName = familyName;
 		this.gender = gender;
@@ -124,5 +134,6 @@ public class Person {
 		this.height = height;
 		this.eyecolor = eyecolor;
 		this.email = email;
+		this.taxId = taxId;
 	}
 }

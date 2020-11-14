@@ -62,6 +62,7 @@ public class PersonGenerator implements IPersonGenerator {
 	private List<String> eyecolors;
 	private Long count;
 	private Long offset;
+	private TaxIdGenerator taxIdGenerator;
 
 	@Autowired
 	private PostalAddressRepository repository;
@@ -96,6 +97,8 @@ public class PersonGenerator implements IPersonGenerator {
 			log.info("Postal address database contains gaps. Please reimport OSM data.");
 		}
 		log.info("Address count: " + count);
+
+		taxIdGenerator = new TaxIdGenerator(random);
 	}
 
 	/**
@@ -274,8 +277,10 @@ public class PersonGenerator implements IPersonGenerator {
 		LocalDate dateOfBirth = createRandomDateOfBirth();
 		String emailAddress = createEmailAddress(firstname, surname, dateOfBirth);
 		int height = createRandomHeight(gender);
+		
+		String taxId = taxIdGenerator.createTaxId();
 
-		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress);
+		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress, taxId);
 		if (1 == random.nextInt(5)) {
 			String birthName = surnames.get(random.nextInt(surnames.size())).trim();
 			randomPerson.setBirthName(birthName);
