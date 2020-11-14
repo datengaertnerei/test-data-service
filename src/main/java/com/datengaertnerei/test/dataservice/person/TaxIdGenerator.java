@@ -6,11 +6,11 @@ import java.util.Random;
 public class TaxIdGenerator {
 	private Random random;
 
-	TaxIdGenerator(Random random) {
+	protected TaxIdGenerator(Random random) {
 		this.random = random;
 	}
 
-	String createTaxId() {
+	protected String createTaxId() {
 		int digits[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 		int result[] = new int[11];
 		int limit = 9;
