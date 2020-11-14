@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class TaxIdGenerator {
+	private static final String DEFAULT_TAX_ID = "12345678911";
 	private Random random;
 
 	protected TaxIdGenerator(Random random) {
@@ -11,8 +12,8 @@ public class TaxIdGenerator {
 	}
 
 	protected String createTaxId() {
-		int digits[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-		int result[] = new int[11];
+		int[] digits = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+		int[] result = new int[11];
 		int limit = 9;
 
 		// fill first 9 digits of result
@@ -28,7 +29,7 @@ public class TaxIdGenerator {
 		result[9] = result[random.nextInt(8)];
 
 		result[10] = calcChecksum(result);
-		return Arrays.stream(result).mapToObj(String::valueOf).reduce((a, b) -> a.concat(b)).get();
+		return Arrays.stream(result).mapToObj(String::valueOf).reduce((a, b) -> a.concat(b)).orElse(DEFAULT_TAX_ID);
 	}
 
 	// checksum algorithm as described in
