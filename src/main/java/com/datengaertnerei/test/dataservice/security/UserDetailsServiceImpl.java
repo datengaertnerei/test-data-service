@@ -21,6 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	private static final String NAME_ADMIN = "admin";
 	public static final String ROLE_ADMIN = "admin";
 	public static final String ROLE_USER = "user";
+	public static final String RESULT_OK = "OK";
 
 	private static final Logger log = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
 
@@ -79,7 +80,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		} catch (Exception e) {
 			return e.getMessage();
 		}
-		return "OK";
+		return RESULT_OK;
 	}	
 
 	@PostConstruct
