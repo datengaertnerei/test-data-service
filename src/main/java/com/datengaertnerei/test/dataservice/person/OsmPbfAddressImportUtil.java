@@ -26,8 +26,6 @@ package com.datengaertnerei.test.dataservice.person;
 import java.io.File;
 import java.util.Collection;
 import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentSkipListSet;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -61,20 +59,13 @@ public class OsmPbfAddressImportUtil {
 	 */
 	public static void importAddresses(String fileName, PostalAddressRepository repository) {
 
-		Set<PostalAddress> uniqueAdresses = new ConcurrentSkipListSet<>();
-
 		File osmFile = new File(fileName);
 		PbfReader reader = new PbfReader(osmFile, 1);
-
-		Sink sinkImplementation = new AddressSink(uniqueAdresses);
-
-
+		Sink sinkImplementation = new AddressSink(repository);
 		reader.setSink(sinkImplementation);
+		
 		try {
 			reader.run();
-			for (PostalAddress address : uniqueAdresses) {
-				repository.saveAndFlush(address);
-			}
 		} catch (Exception e) {
 			log.error("OSM import run failed", e);
 		}
@@ -92,11 +83,11 @@ class AddressSink implements Sink {
 	private static final String ADDR_CITY = "addr:city";
 	private static final String ADDR_COUNTRY = "addr:country";
 
-	private Set<PostalAddress> uniqueAdresses;	
+	PostalAddressRepository repository;
 	
-	public AddressSink(Set<PostalAddress> uniqueAdresses) {
+	public AddressSink(PostalAddressRepository repository) {
 		super();
-		this.uniqueAdresses = uniqueAdresses;
+		this.repository = repository;
 	}
 
 	public void process(EntityContainer entityContainer) {
@@ -104,19 +95,19 @@ class AddressSink implements Sink {
 		try {
 			Entity entity = entityContainer.getEntity();
 			if (entity instanceof Node) {
-				processNode(uniqueAdresses, entity);
+				processNode(entity);
 			}
 		} catch (Exception e) {
 			log.error("OSM import error", e);
 		}
 	}
 
-	private void processNode(Set<PostalAddress> unique, Entity entity) {
+	private void processNode(Entity entity) {
 		Node node = (Node) entity;
-		extractPostalAddress(unique, node);
+		extractPostalAddress(node);
 	}
 
-	private void extractPostalAddress(Set<PostalAddress> unique, Node node) {
+	private void extractPostalAddress(Node node) {
 		Collection<Tag> tags = node.getTags();
 		String country = null;
 		String city = null;
@@ -153,7 +144,7 @@ class AddressSink implements Sink {
 		if (tagCount > 4 && country != null && country.equals(COUNTRY)) {
 
 			PostalAddress pa = new PostalAddress(country, city, postcode, street, housenumber);
-			unique.add(pa);
+			repository.saveAndFlush(pa);
 		}
 	}
 

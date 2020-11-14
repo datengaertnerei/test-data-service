@@ -182,7 +182,7 @@ public class PersonGenerator implements IPersonGenerator {
 		StringBuilder email = new StringBuilder().append(firstname).append(surname).append(dateOfBirth.getYear())
 				.append(EMAIL_TEST);
 
-		return Normalizer.normalize(email.toString(), Form.NFKC).replaceAll("[^\\p{ASCII}]", "");
+		return Normalizer.normalize(email.toString(), Form.NFD).replaceAll("[^\\p{ASCII}]", "");
 	}
 
 	/**
