@@ -30,14 +30,24 @@ The easy way to setup the test data service is to use Docker. Just run the lates
 
 ```
 export TD_ADMIN_PASSWD=<your admin password>
-docker run -e TD_ADMIN_PASSWD -p 443:8443 datengaertner/test-data-service
+export PROFILE=notls
+docker run -e TD_ADMIN_PASSWD -e PROFILE -p 443:8443 datengaertner/test-data-service
 ```
 
 or if you prefer to use the plain version with transport layer security disabled
 
 ```
 export TD_ADMIN_PASSWD=<your admin password>
-docker run -e TD_ADMIN_PASSWD -p 80:5000 datengaertner/test-data-service-notls
+export PROFILE=notls
+docker run -e TD_ADMIN_PASSWD -e PROFILE -p 80:8080 datengaertner/test-data-service
+```
+
+you can disable both basic auth and security as well
+
+```
+export TD_ADMIN_PASSWD=<your admin password>
+export PROFILE=nosec
+docker run -e TD_ADMIN_PASSWD -e PROFILE -p 80:8080 datengaertner/test-data-service
 ```
 
 There are Docker files included to create your own images. You can even run it on a free Heroku Dyno like that:
