@@ -45,7 +45,6 @@ docker run -e TD_ADMIN_PASSWD -e PROFILE -p 80:8080 datengaertner/test-data-serv
 you can disable both basic auth and security as well
 
 ```
-export TD_ADMIN_PASSWD=<your admin password>
 export PROFILE=nosec
 docker run -e TD_ADMIN_PASSWD -e PROFILE -p 80:8080 datengaertner/test-data-service
 ```
