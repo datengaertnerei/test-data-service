@@ -46,7 +46,7 @@ you can disable both basic auth and security as well
 
 ```
 export SPRING_PROFILES_ACTIVE=nosec
-docker run -e TD_ADMIN_PASSWD -e SPRING_PROFILES_ACTIVE -p 80:8080 datengaertner/test-data-service
+docker run -e SPRING_PROFILES_ACTIVE -p 80:8080 datengaertner/test-data-service
 ```
 
 There are Docker files included to create your own images. You can even run it on a free Heroku Dyno like that:
