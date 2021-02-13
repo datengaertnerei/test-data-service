@@ -23,6 +23,11 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.validation.constraints.Max;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -62,6 +67,24 @@ public class RestApiController {
 
 	@Autowired
 	private IAvatarGenerator avatarGen;
+
+	@GetMapping(value = "/bundles")
+	@Operation(summary = "random adult persons inc. phone and payment data")
+	public List<Bundle> bundles(@RequestParam(required = false, defaultValue = "1") @Max(50) int size) {
+		List<Bundle> result = new LinkedList<>();
+
+		for (int i = 0; i < size; i++) {
+			Bundle entry = new Bundle();
+			entry.setPerson(personGen.createRandomPerson(AgeRange.ADULT));
+			entry.setLandline(phoneGen.generatePhoneNumber(entry.getPerson().getAddress().getAddressLocality()));
+			entry.setMobile(phoneGen.generateMobileNumber());
+			entry.setBankAccount(bankGen.generateAccount(entry.getPerson().getAddress().getAddressLocality()));
+			entry.setCreditCard(bankGen.generateCreditCard());
+			result.add(entry);
+		}
+		
+		return result;
+	}
 
 	@GetMapping(value = "/mobile")
 	@Operation(summary = "random german mobile number")
