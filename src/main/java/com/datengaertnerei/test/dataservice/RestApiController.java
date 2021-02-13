@@ -36,6 +36,7 @@ import com.datengaertnerei.test.dataservice.avatar.IAvatarGenerator;
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.bank.IBankGenerator;
+import com.datengaertnerei.test.dataservice.person.AgeRange;
 import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
@@ -102,22 +103,36 @@ public class RestApiController {
 
 	@GetMapping(value = "/person")
 	@Operation(summary = "random person with a valid german postal address")
-	public Person person() {
-		return personGen.createRandomPerson();
+	public Person person(@RequestParam(required = false) AgeRange age) {
+		if (null == age) {
+			return personGen.createRandomPerson(AgeRange.ALL);
+		} else {
+			return personGen.createRandomPerson(age);
+		}
 	}
 
 	@GetMapping(value = "/person/city/{city}")
 	@Operation(summary = "random person with a valid german postal address within the given city")
 	public Person personForCity(
-			@Parameter(description = "the city to look for random postal address", required = true) @PathVariable("city") String city) {
-		return personGen.createRandomPersonInCity(city);
+			@Parameter(description = "the city to look for random postal address", required = true) @PathVariable("city") String city,
+			@RequestParam(required = false) AgeRange age) {
+		if (null == age) {
+			return personGen.createRandomPersonInCity(city, AgeRange.ALL);
+		} else {
+			return personGen.createRandomPersonInCity(city, age);
+		}
 	}
 
 	@GetMapping(value = "/person/postalcode/{postalcode}")
 	@Operation(summary = "random person with a valid german postal address within the given postal code (zip) area (1-5 digits)")
 	public Person personForPostcode(
-			@Parameter(description = "the postal code to look for random postal address", required = true) @PathVariable("postalcode") String postalCode) {
-		return personGen.createRandomPersonInArea(postalCode);
+			@Parameter(description = "the postal code to look for random postal address", required = true) @PathVariable("postalcode") String postalCode,
+			@RequestParam(required = false) AgeRange age) {
+		if (null == age) {
+			return personGen.createRandomPersonInArea(postalCode, AgeRange.ALL);
+		} else {
+			return personGen.createRandomPersonInArea(postalCode, age);
+		}
 	}
 
 	@GetMapping(value = "/avatar", produces = MediaType.IMAGE_PNG_VALUE)

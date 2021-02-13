@@ -107,8 +107,8 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return the new person object
 	 */
 	@Override
-	public Person createRandomPerson() {
-		Person randomPerson = createBasicPerson();
+	public Person createRandomPerson(AgeRange range) {
+		Person randomPerson = createBasicPerson(range);
 		Optional<PostalAddress> address = repository.findById(randomId());
 		if (address.isPresent()) {
 			randomPerson.setAddress(address.get());
@@ -126,8 +126,8 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return the new person object
 	 */
 	@Override
-	public Person createRandomPersonInCity(String city) {
-		Person randomPerson = createBasicPerson();
+	public Person createRandomPersonInCity(String city, AgeRange range) {
+		Person randomPerson = createBasicPerson(range);
 		List<PostalAddress> addresses = repository.findByAddressLocalityIgnoreCase(city);
 		return compileResult(randomPerson, addresses);
 	}
@@ -142,8 +142,8 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return the new person object
 	 */
 	@Override
-	public Person createRandomPersonInArea(String postalCode) {
-		Person randomPerson = createBasicPerson();
+	public Person createRandomPersonInArea(String postalCode, AgeRange range) {
+		Person randomPerson = createBasicPerson(range);
 		List<PostalAddress> addresses = repository.findByPostalCodeStartsWith(postalCode);
 		return compileResult(randomPerson, addresses);
 	}
@@ -207,11 +207,9 @@ public class PersonGenerator implements IPersonGenerator {
 	 *
 	 * @return the date of birth
 	 */
-	private LocalDate createRandomDateOfBirth() {
+	private LocalDate createRandomDateOfBirth(AgeRange range) {
 		double age;
-		do {
-			age = random.nextGaussian() * 22.0 + 45.0;
-		} while (age < 1.0 || age > 100.0);
+		age = createAge(range);
 
 		int month = random.nextInt(11) + 1;
 		int day = 0;
@@ -241,6 +239,43 @@ public class PersonGenerator implements IPersonGenerator {
 		return LocalDate.of(LocalDate.now().getYear() - (int) Math.round(age), month, day);
 	}
 
+	private double createAge(AgeRange range) {
+		double age;
+		double min = 1.0;
+		double max = 100.0;
+
+		switch (range) {
+		case ADULT:
+			min = 18.0;
+			max = 100.0;
+			break;
+
+		case MINOR:
+			min = 1.0;
+			max = 18.0;
+			break;
+
+		case SENIOR:
+			min = 65.0;
+			max = 100.0;
+			break;
+
+		case ALL:
+		default:
+			break;
+		}
+
+		// choose factor smaller than medium to tighten curve 
+		double shiftFactor = (max - min) / 3;
+		double mediumAge = min + (max - min) / 2;
+		age = random.nextGaussian() * shiftFactor + mediumAge;
+		if (age < min || age > max) {
+			// cut off long tails
+			age = mediumAge;
+		}
+		return age;
+	}
+
 	/**
 	 * @return
 	 */
@@ -260,9 +295,10 @@ public class PersonGenerator implements IPersonGenerator {
 	}
 
 	/**
+	 * @param age
 	 * @return
 	 */
-	private Person createBasicPerson() {
+	private Person createBasicPerson(AgeRange range) {
 		String gender = random.nextBoolean() ? MALE : FEMALE; // (add diverse if you like)
 		String firstname;
 		if (MALE.equals(gender)) {
@@ -274,13 +310,14 @@ public class PersonGenerator implements IPersonGenerator {
 
 		String eyecolor = eyecolors.get(random.nextInt(eyecolors.size())).trim();
 
-		LocalDate dateOfBirth = createRandomDateOfBirth();
+		LocalDate dateOfBirth = createRandomDateOfBirth(range);
 		String emailAddress = createEmailAddress(firstname, surname, dateOfBirth);
 		int height = createRandomHeight(gender);
-		
+
 		String taxId = taxIdGenerator.createTaxId();
 
-		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress, taxId);
+		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress,
+				taxId);
 		if (1 == random.nextInt(5)) {
 			String birthName = surnames.get(random.nextInt(surnames.size())).trim();
 			randomPerson.setBirthName(birthName);

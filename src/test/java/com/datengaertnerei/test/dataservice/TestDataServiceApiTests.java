@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -25,11 +27,14 @@ import org.springframework.http.ResponseEntity;
 
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.bank.CreditCard;
+import com.datengaertnerei.test.dataservice.person.AgeRange;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 
 @SpringBootTest
 class TestDataServiceApiTests {
+	private static final double THRESHOLD_SENIOR = 65.0;
+	private static final double THRESHOLD_ADULT = 18.0;
 	@Autowired
 	private RestApiController restController;
 
@@ -47,12 +52,42 @@ class TestDataServiceApiTests {
 
 		Set<String> checkList = new HashSet<>();
 		// create a few more persons to hit more date of birth branches
-		for (int i = 1; i < 30; i++) {
-			Person result = restController.person();
-			assertThat(result).isNotNull();
-			String resultString = stringifyPerson(result);
-			assertThat(checkList.contains(resultString)).isFalse();
-			checkList.add(resultString);
+		for (int i = 1; i < 10; i++) {
+			assertPerson(checkList, null);
+			assertPerson(checkList, AgeRange.ALL);
+			assertPerson(checkList, AgeRange.ADULT);
+			assertPerson(checkList, AgeRange.MINOR);
+			assertPerson(checkList, AgeRange.SENIOR);
+		}
+	}
+
+	private void assertPerson(Set<String> checkList, AgeRange range) {
+		Person result = restController.person(range);
+		assertThat(result).isNotNull();
+		String resultString = stringifyPerson(result);
+		assertThat(checkList.contains(resultString)).isFalse();
+		checkList.add(resultString);
+
+		if (null != range) {
+			long yearsBetween = ChronoUnit.YEARS.between(result.getBirthDate(), LocalDate.now());
+
+			switch (range) {
+			case ADULT:
+				assertThat(yearsBetween >= THRESHOLD_ADULT);
+				break;
+
+			case MINOR:
+				assertThat(yearsBetween <= THRESHOLD_ADULT);
+				break;
+
+			case SENIOR:
+				assertThat(yearsBetween >= THRESHOLD_SENIOR);
+				break;
+
+			case ALL:
+			default:
+				break;
+			}
 		}
 	}
 
@@ -66,14 +101,14 @@ class TestDataServiceApiTests {
 		Set<String> checkList = new HashSet<>();
 
 		// get first record for unknown city
-		Person result = restController.personForCity("xxx");
+		Person result = restController.personForCity("xxx", AgeRange.ALL);
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
 		assertThat(checkList.contains(resultString)).isFalse();
 		checkList.add(resultString);
 
 		for (int i = 1; i < 5; i++) {
-			result = restController.personForCity("hamburg");
+			result = restController.personForCity("hamburg", AgeRange.ALL);
 			assertThat(result).isNotNull();
 			resultString = stringifyPerson(result);
 			assertThat(checkList.contains(resultString)).isFalse();
@@ -91,14 +126,14 @@ class TestDataServiceApiTests {
 		Set<String> checkList = new HashSet<>();
 
 		// get first record for unknown area
-		Person result = restController.personForPostcode("xx");
+		Person result = restController.personForPostcode("xx", AgeRange.ALL);
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
 		assertThat(checkList.contains(resultString)).isFalse();
 		checkList.add(resultString);
 
 		for (int i = 1; i < 5; i++) {
-			result = restController.personForPostcode("20");
+			result = restController.personForPostcode("20", AgeRange.ALL);
 			assertThat(result).isNotNull();
 			resultString = stringifyPerson(result);
 			assertThat(checkList.contains(resultString)).isFalse();

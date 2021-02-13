@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.bank.IBankGenerator;
+import com.datengaertnerei.test.dataservice.person.AgeRange;
 import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
@@ -46,13 +47,13 @@ public class FrontEndController {
 
 	@Autowired
 	private IPhoneGenerator phoneg;
-	
+
 	@Autowired
 	private IBankGenerator bankg;
 
 	@GetMapping(path = "/")
 	public String index(Model model) {
-		Person p = persong.createRandomPerson();
+		Person p = persong.createRandomPerson(AgeRange.ADULT);
 		model.addAttribute("givenName", p.getGivenName());
 		model.addAttribute("familyName", p.getFamilyName());
 		model.addAttribute("gender", p.getGender());
@@ -67,7 +68,7 @@ public class FrontEndController {
 
 		model.addAttribute("landline", phoneg.generatePhoneNumber(p.getAddress().getAddressLocality()).getPhoneNumer());
 		model.addAttribute("mobile", phoneg.generateMobileNumber().getPhoneNumer());
-		
+
 		CreditCard cc = bankg.generateCreditCard();
 		model.addAttribute("cctype", cc.getType());
 		model.addAttribute("ccno", cc.getNumber());
