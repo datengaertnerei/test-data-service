@@ -83,7 +83,7 @@ class AddressSink implements Sink {
 	private static final String ADDR_CITY = "addr:city";
 	private static final String ADDR_COUNTRY = "addr:country";
 
-	PostalAddressRepository repository;
+	private PostalAddressRepository repository;
 	
 	public AddressSink(PostalAddressRepository repository) {
 		super();

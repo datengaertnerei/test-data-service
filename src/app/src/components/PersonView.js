@@ -29,7 +29,7 @@ class PersonView extends React.Component {
                         error
                     });
                 }
-            )
+            );
     }
 
     render() {
