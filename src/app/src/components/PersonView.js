@@ -1,4 +1,6 @@
 import React from "react";
+import PersonPanel from "./PersonPanel";
+import Typography from "@material-ui/core/Typography";
 
 class PersonView extends React.Component {
     constructor(props) {
@@ -41,20 +43,16 @@ class PersonView extends React.Component {
         } else {
             var imgurl = "/api/v1/avatar?gender=" + bundle.person.gender;
             var options = { year: "numeric", month: "2-digit", day: "2-digit", hour24: true };
-            var bdayString = new Intl.DateTimeFormat("de-DE", options).format(new Date(bundle.person.birthDate));
             return (
-                <div>
-                    <p>{bundle.person.givenName} {bundle.person.familyName}</p>
-                    <p>{bundle.person.address.streetAddress} {bundle.person.address.houseNumber}</p>
-                    <p>{bundle.person.address.postalCode}  {bundle.person.address.addressLocality}</p>
-                    <p>{bdayString} - ID: {bundle.person.taxId}</p>
+                <Typography>
+                    <PersonPanel person={bundle.person} />
                     <p>{bundle.landline.phoneNumber}</p>
                     <p>{bundle.mobile.phoneNumber}</p>
                     <p>{bundle.person.email}</p>
                     <p>{bundle.creditCard.type} {bundle.creditCard.number}</p>
                     <p>{bundle.bankAccount.iban}</p>
-                    <div><img src={imgurl} /></div>
-                </div>
+                    <div><img src={imgurl} alt="avatar" /></div>
+                </Typography>
             );
         }
     }
