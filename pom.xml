@@ -144,6 +144,68 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- using the exec plugin instead of the frontend plugin - the later does not work properly with Windows OS -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>yarn-install</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>yarn</executable>
+							<!-- optional -->
+							<workingDirectory>src/app</workingDirectory>
+							<arguments>
+								<argument>install</argument>
+							</arguments>
+							<environmentVariables>
+								<LANG>de_DE</LANG>
+							</environmentVariables>
+						</configuration>
+					</execution>
+					<execution>
+						<id>yarn-build</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>yarn</executable>
+							<!-- optional -->
+							<workingDirectory>src/app</workingDirectory>
+							<arguments>
+								<argument>build</argument>
+							</arguments>
+							<environmentVariables>
+								<LANG>de_DE</LANG>
+							</environmentVariables>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/classes/static</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/app/build</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

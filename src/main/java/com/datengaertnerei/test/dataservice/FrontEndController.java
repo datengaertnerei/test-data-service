@@ -51,7 +51,7 @@ public class FrontEndController {
 	@Autowired
 	private IBankGenerator bankg;
 
-	@GetMapping(path = "/")
+	@GetMapping(path = "/old")
 	public String index(Model model) {
 		Person p = persong.createRandomPerson(AgeRange.ADULT);
 		model.addAttribute("givenName", p.getGivenName());
@@ -66,8 +66,8 @@ public class FrontEndController {
 		model.addAttribute("houseNumber", p.getAddress().getHouseNumber());
 		model.addAttribute("taxId", p.getTaxId());
 
-		model.addAttribute("landline", phoneg.generatePhoneNumber(p.getAddress().getAddressLocality()).getPhoneNumer());
-		model.addAttribute("mobile", phoneg.generateMobileNumber().getPhoneNumer());
+		model.addAttribute("landline", phoneg.generatePhoneNumber(p.getAddress().getAddressLocality()).getPhoneNumber());
+		model.addAttribute("mobile", phoneg.generateMobileNumber().getPhoneNumber());
 
 		CreditCard cc = bankg.generateCreditCard();
 		model.addAttribute("cctype", cc.getType());
