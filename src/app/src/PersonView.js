@@ -86,18 +86,21 @@ class PersonView extends React.Component {
         } else if (!isLoaded) {
             return <div>Loading...</div>;
         } else {
+        	var imgurl = '/api/v1/avatar?gender='+gender;
+        	var options = {year: 'numeric', month: '2-digit', day: '2-digit', hour24: true};
+        	var bdayString = new Intl.DateTimeFormat('de-DE', options).format(new Date(birthDate));
             return (
                 <div>
                     <p>{givenName} {familyName}</p>
                     <p>{streetAddress} {houseNumber}</p>
                     <p>{postalCode}  {addressLocality}</p>
-                    <p>{birthDate} - ID: {taxId}</p>
+                    <p>{bdayString} - ID: {taxId}</p>
                     <p>{landline}</p>
                     <p>{mobile}</p>
                     <p>{email}</p>
                     <p>{ccType} {ccNumber}</p>
                     <p>{bankAccount}</p>
-                    <div><img src="/api/v1/avatar?gender={gender}" /></div>
+                    <div><img src={imgurl} /></div>
                 </div>
             );
         }
