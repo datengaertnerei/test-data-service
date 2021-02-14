@@ -1,7 +1,7 @@
-import './App.css';
-import PersonView from './PersonView';
-import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
+import "./App.css";
+import PersonView from "./components/PersonView";
+import Button from "@material-ui/core/Button";
+import Link from "@material-ui/core/Link";
 
 function App() {
   return (
