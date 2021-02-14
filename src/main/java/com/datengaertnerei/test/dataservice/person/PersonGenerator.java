@@ -45,6 +45,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PersonGenerator implements IPersonGenerator {
+
 	private static Log log = LogFactory.getLog(PersonGenerator.class);
 
 	private static final String RES_EYECOLORS = "eyecolors.txt";
@@ -84,6 +85,7 @@ public class PersonGenerator implements IPersonGenerator {
 
 		String importFile = System.getenv("OSM_IMPORT_FILE");
 		if (null != importFile) {
+			log.info("Importing OSM dump");
 			repository.deleteAll(); // does not reset JPA ID generator
 			OsmPbfAddressImportUtil.importAddresses(importFile, repository);
 			minAddressId = repository.min();
@@ -97,7 +99,7 @@ public class PersonGenerator implements IPersonGenerator {
 			log.info("Postal address database contains gaps. Please reimport OSM data.");
 		}
 		log.info("Address count: " + count);
-
+		
 		taxIdGenerator = new TaxIdGenerator(random);
 	}
 

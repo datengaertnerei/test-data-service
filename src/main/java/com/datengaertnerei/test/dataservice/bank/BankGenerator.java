@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -163,7 +164,7 @@ public class BankGenerator implements IBankGenerator {
 		int binIndex = rnd.nextInt(binList.keySet().size());
 		Optional<String> bin = binList.keySet().stream().skip(binIndex).findFirst();
 		if (bin.isEmpty()) {
-			return new CreditCard(null, null, null);
+			return new CreditCard(null, null, null, LocalDate.now());
 		}
 
 		// create valid cc number
@@ -175,13 +176,18 @@ public class BankGenerator implements IBankGenerator {
 		// and convert to string
 		String number = combined + crc.toString();
 
+		// CVC must be 3 digits
 		int cvc = rnd.nextInt(899) + 100;
+		
+		// create expiry date in the future, min. 6 months, max. 4 years
+		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250)+210);
 
 		// combine to result
-		return new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc));
+		return new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc), expiry);
 	}
 
-	// calculate checksum for domestic account number, IBAN checksum is included in IBAN builder 
+	// calculate checksum for domestic account number, IBAN checksum is included in
+	// IBAN builder
 	private int calculateCheckDigit(int[] digits) {
 
 		/* double every other starting from right - jumping from 2 in 2 */

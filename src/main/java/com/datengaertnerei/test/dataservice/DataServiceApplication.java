@@ -29,6 +29,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
@@ -38,6 +39,7 @@ import io.swagger.v3.oas.models.info.License;
 
 @SpringBootApplication
 public class DataServiceApplication {
+	private static final String IMPORT_ONLY_YES = "YES";
 	private static Logger log = LoggerFactory.getLogger(DataServiceApplication.class);
 
 	public static void main(String[] args) {
@@ -51,6 +53,12 @@ public class DataServiceApplication {
 			String[] beanNames = ctx.getBeanDefinitionNames();
 			log.info("Started with bean count of {}", beanNames.length);
 
+			String importOnly = System.getenv("OSM_IMPORT_ONLY");
+			if (null != importOnly && IMPORT_ONLY_YES.equalsIgnoreCase(importOnly)) {
+				log.info("Import only mode - exiting");
+				((ConfigurableApplicationContext) ctx).close();
+			}
+			
 		};
 	}
 
