@@ -9,15 +9,15 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @Schema(description="phone number as a single string")
 public class PhoneNumber {
 
-	private String phoneNumber;
+	private String number;
 	private String comment;
 
-	public PhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public PhoneNumber(String number) {
+		this.number = number;
 	}
 
 	public String getPhoneNumber() {
-		return phoneNumber;
+		return number;
 	}
 
 	public String getComment() {

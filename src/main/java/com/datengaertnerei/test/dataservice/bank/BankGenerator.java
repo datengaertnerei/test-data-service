@@ -180,7 +180,7 @@ public class BankGenerator implements IBankGenerator {
 		int cvc = rnd.nextInt(899) + 100;
 		
 		// create expiry date in the future, min. 6 months, max. 4 years
-		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250)+210);
+		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250)+210L);
 
 		// combine to result
 		return new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc), expiry);

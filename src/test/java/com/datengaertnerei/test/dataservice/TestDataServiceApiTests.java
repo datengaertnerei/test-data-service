@@ -1,6 +1,7 @@
 package com.datengaertnerei.test.dataservice;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.awt.image.BufferedImage;
@@ -73,15 +74,15 @@ class TestDataServiceApiTests {
 
 			switch (range) {
 			case ADULT:
-				assertThat(yearsBetween >= THRESHOLD_ADULT);
+				assertTrue(yearsBetween >= THRESHOLD_ADULT);
 				break;
 
 			case MINOR:
-				assertThat(yearsBetween <= THRESHOLD_ADULT);
+				assertTrue(yearsBetween <= THRESHOLD_ADULT);
 				break;
 
 			case SENIOR:
-				assertThat(yearsBetween >= THRESHOLD_SENIOR);
+				assertTrue(yearsBetween >= THRESHOLD_SENIOR);
 				break;
 
 			case ALL:
