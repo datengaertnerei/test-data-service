@@ -49,6 +49,7 @@ public class Person {
 	private String eyecolor;
 	private String email;
 	private String taxId;
+	private String profession;
 	private String comment;
 
 	private PostalAddress address;
@@ -112,7 +113,21 @@ public class Person {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	
+	public int getWeight() {
+		// we just assume a BMI of 25 and return the weight
+		double meters = height/100.0;
+		return (int) (meters * meters * 25.0);
+	}
 
+	public String getProfession() {
+		return profession;
+	}
+
+	public void setProfession(String profession) {
+		this.profession = profession;
+	}
+	
 	/**
 	 * Ctor with values.
 	 *

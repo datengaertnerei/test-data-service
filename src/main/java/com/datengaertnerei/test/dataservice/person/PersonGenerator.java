@@ -52,15 +52,18 @@ public class PersonGenerator implements IPersonGenerator {
 	private static final String RES_MALE = "male.txt";
 	private static final String RES_FEMALE = "female.txt";
 	private static final String RES_SURNAMES = "surnames.txt";
+	private static final String RES_PROFESSIONS = "profession.txt";
 	private static final String FEMALE = "female";
 	private static final String MALE = "male";
 	private static final Object EMAIL_TEST = "@email.test";
+
 
 	private Random random;
 	private List<String> surnames;
 	private List<String> femaleNames;
 	private List<String> maleNames;
 	private List<String> eyecolors;
+	private List<String> professions;
 	private Long count;
 	private Long offset;
 	private TaxIdGenerator taxIdGenerator;
@@ -75,6 +78,7 @@ public class PersonGenerator implements IPersonGenerator {
 			femaleNames = loadValues(RES_FEMALE);
 			maleNames = loadValues(RES_MALE);
 			eyecolors = loadValues(RES_EYECOLORS);
+			professions = loadValues(RES_PROFESSIONS);
 		} catch (IOException e) {
 			log.error("Could not init value list:", e);
 		}
@@ -320,6 +324,8 @@ public class PersonGenerator implements IPersonGenerator {
 
 		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress,
 				taxId);
+		randomPerson.setProfession(professions.get(random.nextInt(professions.size())).trim());
+		
 		if (1 == random.nextInt(5)) {
 			String birthName = surnames.get(random.nextInt(surnames.size())).trim();
 			randomPerson.setBirthName(birthName);
