@@ -1,0 +1,39 @@
+{
+	"provider": {
+		"name": "test-data-provider"
+	},
+	"interactions": [
+		{
+			"description": "A successful api GET call for a bundle",
+			"request": {
+				"method": "GET",
+				"path": "/api/v1/bundles"
+			},
+			"response": {
+				"status": 200,
+				"matchingRules": {
+					"body": {
+						"$[0].person": {
+							"height": {
+								"matchers": [
+									{
+										"match": "integer",
+										"combine":"AND"
+									}
+								]
+							},
+							"givenName": {
+								"matchers": [
+									{
+										"match": "string",
+										"combine":"AND"
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		}
+	]
+}

@@ -98,6 +98,12 @@
 			<artifactId>avatar-generator-8bit</artifactId>
 			<version>1.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>au.com.dius.pact.provider</groupId>
+			<artifactId>junit5spring</artifactId>
+			<version>4.2.2</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -144,7 +150,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- using the exec plugin instead of the frontend plugin - the later does not work properly with Windows OS -->
+			<!-- using the exec plugin instead of the frontend plugin - the later 
+				does not work properly with Windows OS -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
