@@ -11,7 +11,7 @@ import au.com.dius.pact.provider.junitsupport.loader.PactFolder;
 import au.com.dius.pact.provider.spring.junit5.PactVerificationSpringProvider;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = DataServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, properties = "server.port=8080")
+@SpringBootTest(classes = DataServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @Provider("test-data-provider")
 @PactFolder("src/test/resources/pacts")
 public class ContractTests {
