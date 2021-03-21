@@ -25,4 +25,5 @@ jobs:
     - name: Publish package
       run: mvn -B deploy
       env:
+        SPRING_PROFILES_ACTIVE: nosec
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
