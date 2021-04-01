@@ -84,8 +84,8 @@ public class PersonGenerator implements IPersonGenerator {
 		}
 
 		random = new Random(System.currentTimeMillis());
-		Long minAddressId = repository.min();
-		Long maxAddressId = repository.max();
+		Long minAddressId = null == repository.min() ? 0L : repository.min();
+		Long maxAddressId = null == repository.max() ? 0L : repository.max();
 
 		String importFile = System.getenv("OSM_IMPORT_FILE");
 		if (null != importFile) {
@@ -247,22 +247,22 @@ public class PersonGenerator implements IPersonGenerator {
 
 	private double createAge(AgeRange range) {
 		double age;
-		double min = 1.0;
-		double max = 100.0;
+		double min = 1.0; // you have to be born
+		double max = 100.0; // a reasonable limit
 
 		switch (range) {
 		case ADULT:
-			min = 18.0;
+			min = 19.0; // tolerance due to random day and month
 			max = 100.0;
 			break;
 
 		case MINOR:
 			min = 1.0;
-			max = 18.0;
+			max = 17.0; // tolerance due to random day and month
 			break;
 
 		case SENIOR:
-			min = 65.0;
+			min = 66.0; // tolerance due to random day and month
 			max = 100.0;
 			break;
 
