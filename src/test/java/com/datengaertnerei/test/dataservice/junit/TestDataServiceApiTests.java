@@ -1,4 +1,4 @@
-package com.datengaertnerei.test.dataservice;
+package com.datengaertnerei.test.dataservice.junit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -26,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 
+import com.datengaertnerei.test.dataservice.RestApiController;
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.person.AgeRange;

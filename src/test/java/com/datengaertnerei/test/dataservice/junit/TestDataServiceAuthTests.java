@@ -1,4 +1,4 @@
-package com.datengaertnerei.test.dataservice;
+package com.datengaertnerei.test.dataservice.junit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

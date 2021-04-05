@@ -25,6 +25,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<cucumber.version>6.10.2</cucumber.version>
 		<sonar.projectKey>datengaertnerei_test-data-service</sonar.projectKey>
 		<sonar.organization>datengaertnerei</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -102,6 +103,24 @@
 			<groupId>au.com.dius.pact.provider</groupId>
 			<artifactId>junit5spring</artifactId>
 			<version>4.2.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-spring</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit-platform-engine</artifactId>
+			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
