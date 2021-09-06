@@ -26,6 +26,13 @@ using generated password for admin account: <xxx>
 
 You have to keep that in your password vault. It will not show again. If you want to specify your own admin password, you can do that with the environment variable ```TD_ADMIN_PASSWD```.
 
+The service will import [Open Streetmap PBF dumps](https://download.geofabrik.de/europe/germany.html) by using
+```
+export OSM_IMPORT_FILE=germany-latest.osm.pbf
+export OSM_IMPORT_ONLY=YES
+java -jar data-service.jar
+```
+
 The easy way to setup the test data service is to use Docker. Just run the latest [docker image](https://hub.docker.com/repository/docker/datengaertner/test-data-service)
 
 ```
