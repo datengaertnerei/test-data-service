@@ -2,12 +2,11 @@ FROM openjdk:17-alpine
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
 
-RUN apk update
-RUN apk upgrade --no-self-upgrade --available
+# Ensure packages are up to date and install curl
+RUN apk update && apk upgrade --no-self-upgrade --available && apk --no-cache add curl
 
-RUN apk --no-cache add curl
-RUN curl http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/germany-latest.osm.pbf -o germany-latest.osm.pbf
-RUN sh -c 'export OSM_IMPORT_FILE=germany-latest.osm.pbf && export OSM_IMPORT_ONLY=YES && java -jar app.jar' 
-RUN rm -f germany-latest.osm.pbf
+# Import OSM dump without blowing up image size
+RUN sh -c 'curl http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/germany-latest.osm.pbf -o germany-latest.osm.pbf && export OSM_IMPORT_FILE=germany-latest.osm.pbf && export OSM_IMPORT_ONLY=YES && java -jar app.jar && rm -f germany-latest.osm.pbf' 
 
-ENTRYPOINT java -jar app.jar
+# Use Port environment variable to control listener
+ENTRYPOINT export LISTEN="${PORT:=8080}" && java -jar app.jar --server.port=$LISTEN -XX:+UseSerialGC -XXfullCompaction -XX:+UseCompressedOops -XX:MaxRAM=100m
