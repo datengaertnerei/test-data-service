@@ -18,15 +18,7 @@ You should meet a german data protection official. And most of the time this con
 
 ## How to set it up
 
-It is a Spring Boot application. You can just start it and during the first start you will see the generated admin password in the log:
-
-```
-using generated password for admin account: <xxx>
-```
-
-You have to keep that in your password vault. It will not show again. If you want to specify your own admin password, you can do that with the environment variable ```TD_ADMIN_PASSWD```.
-
-The service will import [Open Streetmap PBF dumps](https://download.geofabrik.de/europe/germany.html) by using
+It is a Spring Boot application. The service will import [Open Streetmap PBF dumps](https://download.geofabrik.de/europe/germany.html) by using
 ```
 export OSM_IMPORT_FILE=germany-latest.osm.pbf
 export OSM_IMPORT_ONLY=YES
@@ -36,35 +28,10 @@ java -jar data-service.jar
 The easy way to setup the test data service is to use Docker. Just run the latest [docker image](https://hub.docker.com/repository/docker/datengaertner/test-data-service)
 
 ```
-export TD_ADMIN_PASSWD=<your admin password>
-export SPRING_PROFILES_ACTIVE=default
-docker run -e TD_ADMIN_PASSWD -e SPRING_PROFILES_ACTIVE -p 443:8443 datengaertner/test-data-service
+docker run --name test-data -p 80:8080 datengaertner/test-data-service
 ```
 
-or if you prefer to use the plain version with transport layer security disabled
-
-```
-export TD_ADMIN_PASSWD=<your admin password>
-export SPRING_PROFILES_ACTIVE=notls
-docker run -e TD_ADMIN_PASSWD -e SPRING_PROFILES_ACTIVE -p 80:8080 datengaertner/test-data-service
-```
-
-you can disable both basic auth and security as well
-
-```
-export SPRING_PROFILES_ACTIVE=nosec
-docker run -e SPRING_PROFILES_ACTIVE -p 80:8080 datengaertner/test-data-service
-```
-
-There are Docker files included to create your own images. You can even run it on a free Heroku Dyno like that:
-
-```
-docker build -t <your Docker tag> .
-heroku container:push web -a <your Heroku app name>
-heroku container:release web -a <your Heroku app name>
-```
-
-I tried that and it runs quite well on a free dyno. It will take some time to wake up for your first request, but after that it is ok.
+There are Docker files included to create your own images. 
 
 ## How to use it
 
@@ -77,23 +44,6 @@ With Swagger UI as usual you can test API calls and get JSON samples for your ow
 ![Swagger UI](https://user-images.githubusercontent.com/44938643/94337964-be67e280-ffee-11ea-951b-576f16af2661.png)
 
 You can access the [API at SwaggerHub](https://app.swaggerhub.com/apis/datengaertnerei1/datengartnerei-test_data_service_api/) and there is a simple Go client available as a [Gist](https://gist.github.com/datengaertnerei/680a1244439d6dfee9a51dd35430cf5d).
-
-## Security setup
-
-TLS and Basic Authentication are configured as default. A self-signed certificate is included, that you should replace in your own environment. It is configured by Spring Boot application properties, that you can provide externally at startup:
-
-```
-server.ssl.key-store-type=PKCS12
-server.ssl.key-store=classpath:keystore/testdata.p12
-server.ssl.key-store-password=O0mph!
-server.ssl.key-alias=testdata
-```
-
-I am using Basic Authentication just to be able to protect the service infrastructure from abuse. There is no default admin password. It will be generated at first start (see above). 
-
-## Can I use different API keys for different users?
-
-There is another endpoint ```/auth/new``` that is not included in the Swagger UI. As admin you can get generated user/password combinations. But then you have to think about persistence and the embedded H2 database.
 
 ## Your service does not provide \<your data type here>
 
