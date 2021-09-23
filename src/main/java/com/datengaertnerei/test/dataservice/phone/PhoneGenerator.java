@@ -42,9 +42,9 @@ public class PhoneGenerator implements IPhoneGenerator {
 	private static Log log = LogFactory.getLog(PhoneGenerator.class);
 
 	// german mobile phone area codes
-	private static final String[] MOBILE_AREA_CODES = { "1511", "1512", "1514", "1515", "1516", "1517", "1520", "1521", "1522",
-			"1525", "1526", "1570", "1573", "1575", "1577", "1578", "1579", "160", "162", "163", "170", "171", "172",
-			"173", "174", "175", "176", "177", "178", "179" };
+	private static final String[] MOBILE_AREA_CODES = { "1511", "1512", "1514", "1515", "1516", "1517", "1520", "1521",
+			"1522", "1525", "1526", "1570", "1573", "1575", "1577", "1578", "1579", "160", "162", "163", "170", "171",
+			"172", "173", "174", "175", "176", "177", "178", "179" };
 	private static final String COUNTRY_CALLING_CODE = "+49 ";
 	private static final String GENERIC_AREA_CODE = "32";
 	private Map<String, String> areaCodeList;
@@ -61,11 +61,12 @@ public class PhoneGenerator implements IPhoneGenerator {
 			InputStream inStream = getClass().getResourceAsStream("prefixlist.csv");
 			Reader in = new InputStreamReader(inStream);
 
-			Iterable<CSVRecord> records = CSVFormat.DEFAULT.withDelimiter(';').withSkipHeaderRecord().parse(in);
-			for (CSVRecord record : records) {
-				if (record.size() >= 2) {
-					String areaCode = record.get(0);
-					String city = record.get(1);
+			Iterable<CSVRecord> records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).build()
+					.parse(in);
+			for (CSVRecord r : records) {
+				if (r.size() >= 2) {
+					String areaCode = r.get(0);
+					String city = r.get(1);
 					areaCodeList.put(city.toLowerCase(), areaCode);
 				}
 			}
@@ -99,7 +100,7 @@ public class PhoneGenerator implements IPhoneGenerator {
 		String cityLower = city.toLowerCase();
 		if (areaCodeList.containsKey(cityLower)) {
 			areaCode = areaCodeList.get(cityLower);
-		}else {
+		} else {
 			comment = "city not found in area code directory";
 		}
 

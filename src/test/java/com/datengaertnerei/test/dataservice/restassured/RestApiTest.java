@@ -19,10 +19,10 @@ import io.restassured.response.ValidatableResponse;
  *
  */
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
-public class RestApiTest {
+class RestApiTest {
 
 	@Test
-	public void shouldReturnCreditCard() {
+	void shouldReturnCreditCard() {
 		ValidatableResponse response = get("/api/v1/creditcard").then().assertThat().statusCode(200).
 		        and().contentType(ContentType.JSON).and().body("number", notNullValue()).body("type", notNullValue())
 				.body("cvc", notNullValue());

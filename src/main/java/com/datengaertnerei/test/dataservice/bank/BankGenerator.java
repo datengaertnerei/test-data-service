@@ -66,11 +66,11 @@ public class BankGenerator implements IBankGenerator {
 
 		Iterable<CSVRecord> records;
 		try {
-			records = CSVFormat.DEFAULT.withDelimiter(';').parse(in);
-			for (CSVRecord record : records) {
-				if (record.size() >= 2) {
-					String type = record.get(0);
-					String bin = record.get(1);
+			records = CSVFormat.Builder.create().setDelimiter(';').build().parse(in);
+			for (CSVRecord r : records) {
+				if (r.size() >= 2) {
+					String type = r.get(0);
+					String bin = r.get(1);
 					binList.put(bin, type);
 				}
 			}
@@ -90,13 +90,14 @@ public class BankGenerator implements IBankGenerator {
 			InputStream inStream = getClass().getResourceAsStream("banklist.csv");
 			Reader in = new InputStreamReader(inStream);
 
-			Iterable<CSVRecord> records = CSVFormat.DEFAULT.withDelimiter(';').withSkipHeaderRecord().parse(in);
-			for (CSVRecord record : records) {
-				if (record.size() >= 5) {
-					String bankCode = record.get(0);
-					String desc = record.get(3);
-					String city = record.get(2);
-					String bic = record.get(4);
+			Iterable<CSVRecord> records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).build()
+					.parse(in);
+			for (CSVRecord r : records) {
+				if (r.size() >= 5) {
+					String bankCode = r.get(0);
+					String desc = r.get(3);
+					String city = r.get(2);
+					String bic = r.get(4);
 
 					if (null == bic || 0 == bic.length()) {
 						bic = bics.get(bankCode);
@@ -178,9 +179,9 @@ public class BankGenerator implements IBankGenerator {
 
 		// CVC must be 3 digits
 		int cvc = rnd.nextInt(899) + 100;
-		
+
 		// create expiry date in the future, min. 6 months, max. 4 years
-		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250)+210L);
+		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250) + 210L);
 
 		// combine to result
 		return new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc), expiry);
