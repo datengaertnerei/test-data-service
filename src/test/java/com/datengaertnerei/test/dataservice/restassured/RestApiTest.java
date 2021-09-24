@@ -7,10 +7,13 @@ import static org.hamcrest.Matchers.notNullValue;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.web.server.LocalServerPort;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 
@@ -18,9 +21,17 @@ import io.restassured.response.ValidatableResponse;
  * REST assured based test
  *
  */
-@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class RestApiTest {
 
+    @LocalServerPort
+    private int port;
+    
+    @BeforeEach // BeforeAll runs ahead of local port injection 
+    void setup() {
+		RestAssured.port = port;
+    }
+    
 	@Test
 	void shouldReturnCreditCard() {
 		ValidatableResponse response = get("/api/v1/creditcard").then().assertThat().statusCode(200).

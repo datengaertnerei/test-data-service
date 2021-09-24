@@ -22,7 +22,7 @@ import io.cucumber.spring.CucumberContextConfiguration;
  *
  */
 @CucumberContextConfiguration
-@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class CucumberSpringContextConfiguration {
 	private ResponseEntity<BankAccount> response;
 	private String city;

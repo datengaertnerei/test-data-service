@@ -7,10 +7,10 @@ class PersonPanel extends React.Component {
         var bdayString = new Intl.DateTimeFormat("de-DE", options).format(new Date(this.props.person.birthDate));
         return (
             <div>
-                <p>{this.props.person.givenName} {this.props.person.familyName}</p>
-                <p>{this.props.person.address.streetAddress} {this.props.person.address.houseNumber}</p>
-                <p>{this.props.person.address.postalCode}  {this.props.person.address.addressLocality}</p>
-                <p>{bdayString} - ID: {this.props.person.taxId}</p>
+                <p id="name">{this.props.person.givenName} {this.props.person.familyName}</p>
+                <p id="street">{this.props.person.address.streetAddress} {this.props.person.address.houseNumber}</p>
+                <p id="city">{this.props.person.address.postalCode}  {this.props.person.address.addressLocality}</p>
+                <p id="identifier">{bdayString} - ID: {this.props.person.taxId}</p>
             </div>
         );
     }
