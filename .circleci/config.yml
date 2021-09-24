@@ -18,6 +18,10 @@ jobs:
       - run:
           name: YarnSetup
           command: curl -o- -L https://yarnpkg.com/install.sh | bash
+      # install playwright browser dependencies
+      - run:
+          name: PlaywrightSetup
+          command: npx playwright install-deps
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
