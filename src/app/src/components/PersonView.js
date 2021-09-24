@@ -42,7 +42,7 @@ class PersonView extends React.Component {
             return <div>Loading...</div>;
         } else {
             var imgurl = "/api/v1/avatar?gender=" + bundle.person.gender;
-            var options = { year: "numeric", month: "2-digit", day: "2-digit", hour24: true };
+
             return (
                 <Typography>
                     <PersonPanel person={bundle.person} />
