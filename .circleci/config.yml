@@ -11,9 +11,16 @@ jobs:
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/openjdk
     docker:
       - image: cimg/openjdk:11.0-node
+        auth:
+          username: $DOCKER_USER
+          password: $DOCKERHUB_PASSWORD
     steps:
       # Checkout the code as the first step.
       - checkout
+      # setup docker env
+      - setup_remote_docker:
+          version: 19.03.13
+          docker_layer_caching: true      
       # install yarn
       - run:
           name: YarnSetup
@@ -30,12 +37,24 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      # login to docker hub
+      - run:
+          name: DockerLogin
+          command: echo $DOCKERHUB_PASSWORD | docker login -u $DOCKER_USER --password-stdin
+      # build docker image    
+      - run:
+          name: DockerBuild
+          command: docker build -t datengaertner/test-data-service:latest .
+      # push docker image    
+      - run:
+          name: DockerPush          
+          command: docker push datengaertner/test-data-service:latest
 
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
   # CircleCI will run this workflow on every commit.
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
-  sample: 
+  default: 
     jobs:
       - build-and-test
