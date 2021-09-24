@@ -21,7 +21,7 @@ jobs:
       with:
         java-version: 11
     - name: Build with Maven
-      run: mvn -DSPRING_PROFILES_ACTIVE=nosec -B package --file pom.xml
+      run: mvn -B package --file pom.xml
     - name: Publish package
       run: mvn -B deploy
       env:        
