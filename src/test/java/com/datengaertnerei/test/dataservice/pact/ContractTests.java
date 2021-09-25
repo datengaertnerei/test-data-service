@@ -1,6 +1,7 @@
 package com.datengaertnerei.test.dataservice.pact;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +20,7 @@ import au.com.dius.pact.provider.spring.junit5.PactVerificationSpringProvider;
 @SpringBootTest(classes = DataServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Provider("test-data-provider")
 @PactFolder("src/test/resources/pacts")
+@Tag("contract")
 class ContractTests {
 
     @LocalServerPort

@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -22,6 +23,7 @@ import io.restassured.response.ValidatableResponse;
  *
  */
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@Tag("rest")
 class RestApiTest {
 
     @LocalServerPort

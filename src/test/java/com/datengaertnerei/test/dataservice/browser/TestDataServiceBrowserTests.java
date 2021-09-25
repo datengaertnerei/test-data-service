@@ -3,6 +3,7 @@ package com.datengaertnerei.test.dataservice.browser;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -13,6 +14,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@Tag("browser")
 class TestDataServiceBrowserTests {
 
 	@LocalServerPort

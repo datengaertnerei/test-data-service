@@ -19,6 +19,7 @@ import org.iban4j.IbanFormatException;
 import org.iban4j.IbanUtil;
 import org.iban4j.InvalidCheckDigitException;
 import org.iban4j.UnsupportedCountryException;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -34,6 +35,7 @@ import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 
 @SpringBootTest
+@Tag("unit")
 class TestDataServiceApiTests {
 	private static final double THRESHOLD_SENIOR = 65.0;
 	private static final double THRESHOLD_ADULT = 18.0;
