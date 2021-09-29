@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.datengaertnerei.test.dataservice"},{"l":"com.datengaertnerei.test.dataservice.avatar"},{"l":"com.datengaertnerei.test.dataservice.bank"},{"l":"com.datengaertnerei.test.dataservice.person"},{"l":"com.datengaertnerei.test.dataservice.phone"},{"l":"com.datengaertnerei.test.dataservice.security"}]
