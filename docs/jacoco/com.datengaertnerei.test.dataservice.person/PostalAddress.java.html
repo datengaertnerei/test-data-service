@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PostalAddress.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">data-service</a> &gt; <a href="index.source.html" class="el_package">com.datengaertnerei.test.dataservice.person</a> &gt; <span class="el_source">PostalAddress.java</span></div><h1>PostalAddress.java</h1><pre class="source lang-java linenums">/*MIT License
+
+Copyright (c) 2020 Jens Dibbern
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+package com.datengaertnerei.test.dataservice.person;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+
+/**
+ * Postal address entity class for persistence inspired by
+ * &lt;a href=&quot;https://schema.org/PostalAddress&quot;&gt;postal address schema&lt;/a&gt;.
+ *
+ * @author Jens Dibbern
+ */
+@Entity
+@Schema(description=&quot;postal address (see &lt;a href=\&quot;https://schema.org/PostalAddress\&quot;&gt;https://schema.org/PostalAddress&lt;/a&gt;)&quot;)
+public class PostalAddress implements Comparable&lt;PostalAddress&gt; {
+
+	private Long id;
+	private String addressCountry;
+	private String addressLocality;
+	private String postalCode;
+	private String streetAddress;
+	private String houseNumber;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonIgnore
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+<span class="fc" id="L60">		this.id = id;</span>
+<span class="fc" id="L61">	}</span>
+
+	public String getAddressCountry() {
+<span class="fc" id="L64">		return addressCountry;</span>
+	}
+
+	public void setAddressCountry(String addressCountry) {
+<span class="fc" id="L68">		this.addressCountry = addressCountry;</span>
+<span class="fc" id="L69">	}</span>
+
+	public String getAddressLocality() {
+<span class="fc" id="L72">		return addressLocality;</span>
+	}
+
+	public void setAddressLocality(String addressLocality) {
+<span class="fc" id="L76">		this.addressLocality = addressLocality;</span>
+<span class="fc" id="L77">	}</span>
+
+	public String getPostalCode() {
+<span class="fc" id="L80">		return postalCode;</span>
+	}
+
+	public void setPostalCode(String postalCode) {
+<span class="fc" id="L84">		this.postalCode = postalCode;</span>
+<span class="fc" id="L85">	}</span>
+
+	public String getStreetAddress() {
+<span class="fc" id="L88">		return streetAddress;</span>
+	}
+
+	public void setStreetAddress(String streetAddress) {
+<span class="fc" id="L92">		this.streetAddress = streetAddress;</span>
+<span class="fc" id="L93">	}</span>
+
+	public String getHouseNumber() {
+<span class="fc" id="L96">		return houseNumber;</span>
+	}
+
+	public void setHouseNumber(String houseNumber) {
+<span class="fc" id="L100">		this.houseNumber = houseNumber;</span>
+<span class="fc" id="L101">	}</span>
+
+<span class="fc" id="L103">	public PostalAddress() {</span>
+<span class="fc" id="L104">	}</span>
+
+	/**
+	 * Ctor with values.
+	 *
+	 * @param addressCountry  country attribute value
+	 * @param addressLocality city attribute value
+	 * @param postalCode      postal code attribute value
+	 * @param streetAddress   street address attribute value
+	 * @param houseNumber     house number attribute value (if applicable)
+	 */
+	public PostalAddress(String addressCountry, String addressLocality, String postalCode, String streetAddress,
+<span class="nc" id="L116">			String houseNumber) {</span>
+<span class="nc" id="L117">		this.addressCountry = addressCountry;</span>
+<span class="nc" id="L118">		this.addressLocality = addressLocality;</span>
+<span class="nc" id="L119">		this.postalCode = postalCode;</span>
+<span class="nc" id="L120">		this.streetAddress = streetAddress;</span>
+<span class="nc" id="L121">		this.houseNumber = houseNumber;</span>
+<span class="nc" id="L122">	}</span>
+
+	@Override
+	public int compareTo(PostalAddress target) {
+<span class="nc" id="L126">		String match = this.toString();</span>
+<span class="nc" id="L127">		String other = target.toString();</span>
+
+<span class="nc" id="L129">		return match.compareTo(other);</span>
+	}
+
+
+	@Override
+	public boolean equals(Object target) {
+<span class="nc bnc" id="L135" title="All 2 branches missed.">		if (target instanceof PostalAddress) {</span>
+<span class="nc bnc" id="L136" title="All 2 branches missed.">			return compareTo((PostalAddress) target) == 0;</span>
+		} else {
+<span class="nc" id="L138">			return false;</span>
+		}
+	}
+
+	@Override
+	public int hashCode() {
+<span class="nc" id="L144">		return toString().hashCode();</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="nc" id="L149">		StringBuilder result = new StringBuilder().append(this.getAddressCountry()).append(this.getAddressLocality())</span>
+<span class="nc" id="L150">				.append(this.getPostalCode()).append(this.getStreetAddress()).append(this.getHouseNumber());</span>
+<span class="nc" id="L151">		return result.toString();</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

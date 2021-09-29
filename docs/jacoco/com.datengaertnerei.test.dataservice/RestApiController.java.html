@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RestApiController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">data-service</a> &gt; <a href="index.source.html" class="el_package">com.datengaertnerei.test.dataservice</a> &gt; <span class="el_source">RestApiController.java</span></div><h1>RestApiController.java</h1><pre class="source lang-java linenums">/*MIT License
+
+Copyright (c) 2020 Jens Dibbern
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+package com.datengaertnerei.test.dataservice;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.validation.constraints.Max;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.datengaertnerei.test.dataservice.avatar.IAvatarGenerator;
+import com.datengaertnerei.test.dataservice.bank.BankAccount;
+import com.datengaertnerei.test.dataservice.bank.CreditCard;
+import com.datengaertnerei.test.dataservice.bank.IBankGenerator;
+import com.datengaertnerei.test.dataservice.person.AgeRange;
+import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
+import com.datengaertnerei.test.dataservice.person.Person;
+import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
+import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+
+@RestController
+@RequestMapping(value = &quot;/api/v1&quot;, produces = MediaType.APPLICATION_JSON_VALUE)
+<span class="fc" id="L55">public class RestApiController {</span>
+
+	private static final String MALE_PARAM_VALUE = &quot;male&quot;;
+
+	@Autowired
+	private IPersonGenerator personGen;
+
+	@Autowired
+	private IBankGenerator bankGen;
+
+	@Autowired
+	private IPhoneGenerator phoneGen;
+
+	@Autowired
+	private IAvatarGenerator avatarGen;
+
+	@GetMapping(value = &quot;/bundles&quot;)
+	@Operation(summary = &quot;random adult persons inc. phone and payment data&quot;)
+	public List&lt;Bundle&gt; bundles(@RequestParam(required = false, defaultValue = &quot;1&quot;) @Max(50) int size) {
+<span class="fc" id="L74">		List&lt;Bundle&gt; result = new LinkedList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L76" title="All 2 branches covered.">		for (int i = 0; i &lt; size; i++) {</span>
+<span class="fc" id="L77">			Bundle entry = new Bundle();</span>
+<span class="fc" id="L78">			entry.setPerson(personGen.createRandomPerson(AgeRange.ADULT));</span>
+<span class="fc" id="L79">			entry.setLandline(phoneGen.generatePhoneNumber(entry.getPerson().getAddress().getAddressLocality()));</span>
+<span class="fc" id="L80">			entry.setMobile(phoneGen.generateMobileNumber());</span>
+<span class="fc" id="L81">			entry.setBankAccount(bankGen.generateAccount(entry.getPerson().getAddress().getAddressLocality()));</span>
+<span class="fc" id="L82">			entry.setCreditCard(bankGen.generateCreditCard());</span>
+<span class="fc" id="L83">			result.add(entry);</span>
+		}
+		
+<span class="fc" id="L86">		return result;</span>
+	}
+
+	@GetMapping(value = &quot;/mobile&quot;)
+	@Operation(summary = &quot;random german mobile number&quot;)
+	public PhoneNumber mobile() {
+<span class="fc" id="L92">		return phoneGen.generateMobileNumber();</span>
+	}
+
+	@GetMapping(value = &quot;/landline&quot;)
+	@Operation(summary = &quot;random german landline number with generic area code&quot;)
+	public PhoneNumber landline() {
+<span class="fc" id="L98">		return phoneGen.generatePhoneNumber(&quot;unknown&quot;);</span>
+	}
+
+	@GetMapping(value = &quot;/landline/{city}&quot;)
+	@Operation(summary = &quot;random german landline number with area code for the given city (fallback to generic area code if city not found)&quot;)
+	public PhoneNumber landlineForCity(
+			@Parameter(description = &quot;the city to look for an area code&quot;, required = true) @PathVariable(&quot;city&quot;) String city) {
+<span class="fc" id="L105">		return phoneGen.generatePhoneNumber(city);</span>
+	}
+
+	@GetMapping(value = &quot;/creditcard&quot;)
+	@Operation(summary = &quot;random credit card (major types, german issuers)&quot;)
+	public CreditCard creditcard() {
+<span class="fc" id="L111">		return bankGen.generateCreditCard();</span>
+	}
+
+	@GetMapping(value = &quot;/account&quot;)
+	@Operation(summary = &quot;random german bank account (uses Frankfurt am Main as default location)&quot;)
+	public BankAccount account() {
+<span class="fc" id="L117">		return bankGen.generateAccount(&quot;unknown&quot;);</span>
+	}
+
+	@GetMapping(value = &quot;/account/{city}&quot;)
+	@Operation(summary = &quot;random german bank account for given city (fallback to Frankfurt am Main if no bank found for given city)&quot;)
+	public BankAccount accountForCity(
+			@Parameter(description = &quot;the city to look for a random bank&quot;, required = true) @PathVariable(&quot;city&quot;) String city) {
+<span class="fc" id="L124">		return bankGen.generateAccount(city);</span>
+	}
+
+	@GetMapping(value = &quot;/person&quot;)
+	@Operation(summary = &quot;random person with a valid german postal address&quot;)
+	public Person person(@RequestParam(required = false) AgeRange age) {
+<span class="fc bfc" id="L130" title="All 2 branches covered.">		if (null == age) {</span>
+<span class="fc" id="L131">			return personGen.createRandomPerson(AgeRange.ALL);</span>
+		} else {
+<span class="fc" id="L133">			return personGen.createRandomPerson(age);</span>
+		}
+	}
+
+	@GetMapping(value = &quot;/person/city/{city}&quot;)
+	@Operation(summary = &quot;random person with a valid german postal address within the given city&quot;)
+	public Person personForCity(
+			@Parameter(description = &quot;the city to look for random postal address&quot;, required = true) @PathVariable(&quot;city&quot;) String city,
+			@RequestParam(required = false) AgeRange age) {
+<span class="pc bpc" id="L142" title="1 of 2 branches missed.">		if (null == age) {</span>
+<span class="nc" id="L143">			return personGen.createRandomPersonInCity(city, AgeRange.ALL);</span>
+		} else {
+<span class="fc" id="L145">			return personGen.createRandomPersonInCity(city, age);</span>
+		}
+	}
+
+	@GetMapping(value = &quot;/person/postalcode/{postalcode}&quot;)
+	@Operation(summary = &quot;random person with a valid german postal address within the given postal code (zip) area (1-5 digits)&quot;)
+	public Person personForPostcode(
+			@Parameter(description = &quot;the postal code to look for random postal address&quot;, required = true) @PathVariable(&quot;postalcode&quot;) String postalCode,
+			@RequestParam(required = false) AgeRange age) {
+<span class="pc bpc" id="L154" title="1 of 2 branches missed.">		if (null == age) {</span>
+<span class="nc" id="L155">			return personGen.createRandomPersonInArea(postalCode, AgeRange.ALL);</span>
+		} else {
+<span class="fc" id="L157">			return personGen.createRandomPersonInArea(postalCode, age);</span>
+		}
+	}
+
+	@GetMapping(value = &quot;/avatar&quot;, produces = MediaType.IMAGE_PNG_VALUE)
+	@Operation(summary = &quot;random female or male avatar PNG image&quot;)
+	public ResponseEntity&lt;byte[]&gt; avatar(
+			@Parameter(description = &quot;male or female, female is default&quot;, required = false) @RequestParam(defaultValue = &quot;female&quot;, required = false) String gender) {
+<span class="fc" id="L165">		return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG)</span>
+<span class="fc bfc" id="L166" title="All 2 branches covered.">				.body(avatarGen.getAvatar(!MALE_PARAM_VALUE.equalsIgnoreCase(gender)));</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

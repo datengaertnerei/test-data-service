@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Person.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">data-service</a> &gt; <a href="index.source.html" class="el_package">com.datengaertnerei.test.dataservice.person</a> &gt; <span class="el_source">Person.java</span></div><h1>Person.java</h1><pre class="source lang-java linenums">/*MIT License
+
+Copyright (c) 2020 Jens Dibbern
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+package com.datengaertnerei.test.dataservice.person;
+
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+
+/**
+ * Person entity class for persistence inspired by
+ * &lt;a href=&quot;https://schema.org/Person&quot;&gt;person schema&lt;/a&gt;.
+ *
+ * @author Jens Dibbern
+ */
+@JsonInclude(Include.NON_NULL)
+@Schema(description=&quot;person (see &lt;a href=\&quot;https://schema.org/Person\&quot;&gt;https://schema.org/Person&lt;/a&gt;)&quot;)
+public class Person {
+
+	private String givenName;
+	private String familyName;
+	private String birthName;
+	private String gender;
+	private LocalDate birthDate;
+	private int height;
+	private String eyecolor;
+	private String email;
+	private String taxId;
+	private String profession;
+	private String comment;
+
+	private PostalAddress address;
+
+	public String getGivenName() {
+<span class="fc" id="L58">		return givenName;</span>
+	}
+
+	public String getFamilyName() {
+<span class="fc" id="L62">		return familyName;</span>
+	}
+
+	public String getBirthName() {
+<span class="fc" id="L66">		return birthName;</span>
+	}
+
+	public void setBirthName(String birthName) {
+<span class="fc" id="L70">		this.birthName = birthName;</span>
+<span class="fc" id="L71">	}</span>
+
+	public String getGender() {
+<span class="fc" id="L74">		return gender;</span>
+	}
+
+	public LocalDate getBirthDate() {
+<span class="fc" id="L78">		return birthDate;</span>
+	}
+
+	public int getHeight() {
+<span class="fc" id="L82">		return height;</span>
+	}
+
+	public String getEyecolor() {
+<span class="fc" id="L86">		return eyecolor;</span>
+	}
+
+	public String getEmail() {
+<span class="fc" id="L90">		return email;</span>
+	}
+
+	public PostalAddress getAddress() {
+<span class="fc" id="L94">		return address;</span>
+	}
+
+	public void setAddress(PostalAddress address) {
+<span class="fc" id="L98">		this.address = address;</span>
+<span class="fc" id="L99">	}</span>
+
+	public String getTaxId() {
+<span class="fc" id="L102">		return taxId;</span>
+	}
+
+	public void setTaxId(String taxId) {
+<span class="nc" id="L106">		this.taxId = taxId;</span>
+<span class="nc" id="L107">	}</span>
+	
+	public String getComment() {
+<span class="fc" id="L110">		return comment;</span>
+	}
+
+	public void setComment(String comment) {
+<span class="fc" id="L114">		this.comment = comment;</span>
+<span class="fc" id="L115">	}</span>
+	
+	public int getWeight() {
+		// we just assume a BMI of 25 and return the weight
+<span class="fc" id="L119">		double meters = height/100.0;</span>
+<span class="fc" id="L120">		return (int) (meters * meters * 25.0);</span>
+	}
+
+	public String getProfession() {
+<span class="fc" id="L124">		return profession;</span>
+	}
+
+	public void setProfession(String profession) {
+<span class="fc" id="L128">		this.profession = profession;</span>
+<span class="fc" id="L129">	}</span>
+	
+	/**
+	 * Ctor with values.
+	 *
+	 * @param givenName  given name attribute value
+	 * @param familyName family name attribute value
+	 * @param gender     gender attribute value
+	 * @param birthDate  date of birth attribute value
+	 * @param height     height attribute value
+	 * @param eyecolor   eyecolor attribute value
+	 * @param email      email address attribute value
+	 * @param taxId 
+	 */
+	public Person(String givenName, String familyName, String gender, LocalDate birthDate, int height, String eyecolor,
+<span class="fc" id="L144">			String email, String taxId) {</span>
+<span class="fc" id="L145">		this.givenName = givenName;</span>
+<span class="fc" id="L146">		this.familyName = familyName;</span>
+<span class="fc" id="L147">		this.gender = gender;</span>
+<span class="fc" id="L148">		this.birthDate = birthDate;</span>
+<span class="fc" id="L149">		this.height = height;</span>
+<span class="fc" id="L150">		this.eyecolor = eyecolor;</span>
+<span class="fc" id="L151">		this.email = email;</span>
+<span class="fc" id="L152">		this.taxId = taxId;</span>
+<span class="fc" id="L153">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

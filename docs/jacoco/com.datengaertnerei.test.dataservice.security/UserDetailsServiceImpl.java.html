@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserDetailsServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">data-service</a> &gt; <a href="index.source.html" class="el_package">com.datengaertnerei.test.dataservice.security</a> &gt; <span class="el_source">UserDetailsServiceImpl.java</span></div><h1>UserDetailsServiceImpl.java</h1><pre class="source lang-java linenums">package com.datengaertnerei.test.dataservice.security;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import javax.annotation.PostConstruct;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+@Service
+<span class="fc" id="L20">public class UserDetailsServiceImpl implements UserDetailsService {</span>
+	private static final String NAME_ADMIN = &quot;admin&quot;;
+	public static final String ROLE_ADMIN = &quot;admin&quot;;
+	public static final String ROLE_USER = &quot;user&quot;;
+	public static final String RESULT_OK = &quot;OK&quot;;
+
+<span class="fc" id="L26">	private static final Logger log = LoggerFactory.getLogger(UserDetailsServiceImpl.class);</span>
+
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Override
+	public UserDetails loadUserByUsername(String username) {
+<span class="fc" id="L35">		UserDetails userDetails = null;</span>
+<span class="fc" id="L36">		Optional&lt;TestDataUser&gt; u = userRepository.findById(username);</span>
+
+<span class="fc bfc" id="L38" title="All 2 branches covered.">		if (u.isPresent()) {</span>
+<span class="fc" id="L39">			TestDataUser appUser = u.get();</span>
+<span class="fc" id="L40">			userDetails = User.withUsername(appUser.getUsername()).password(appUser.getPassword())</span>
+<span class="fc" id="L41">					.roles(appUser.getRole()).build();</span>
+		}
+
+<span class="fc" id="L44">		return userDetails;</span>
+	}
+
+	protected ApiCredentials generateApiCredentials() {
+<span class="fc" id="L48">		ApiCredentials result = new ApiCredentials();</span>
+
+		// generate new account id that is not in use
+<span class="fc" id="L51">		String newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
+<span class="fc" id="L52">		UserDetails account = loadUserByUsername(newAccountId);</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">		while (null != account) {</span>
+<span class="nc" id="L54">			newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
+<span class="nc" id="L55">			account = loadUserByUsername(newAccountId);</span>
+		}
+
+		// fill credentials
+<span class="fc" id="L59">		result.setAccountId(newAccountId);</span>
+<span class="fc" id="L60">		result.setPassword(UUID.randomUUID().toString());</span>
+
+		// and save to authorization database
+<span class="fc" id="L63">		TestDataUser newAccount = new TestDataUser();</span>
+<span class="fc" id="L64">		newAccount.setUsername(newAccountId);</span>
+<span class="fc" id="L65">		newAccount.setPassword(bCryptPasswordEncoder.encode(result.getPassword()));</span>
+<span class="fc" id="L66">		newAccount.setRole(ROLE_USER);</span>
+<span class="fc" id="L67">		userRepository.saveAndFlush(newAccount);</span>
+
+<span class="fc" id="L69">		return result;</span>
+	}
+	
+	protected List&lt;TestDataUser&gt; exportUsers() {
+<span class="fc" id="L73">		return userRepository.findAll();</span>
+	}
+	
+	protected String importUsers(List&lt;TestDataUser&gt; users) {
+		try {
+<span class="fc" id="L78">			userRepository.deleteAll();</span>
+<span class="fc" id="L79">			userRepository.saveAll(users);</span>
+<span class="nc" id="L80">		} catch (Exception e) {</span>
+<span class="nc" id="L81">			return e.getMessage();</span>
+<span class="fc" id="L82">		}</span>
+<span class="fc" id="L83">		return RESULT_OK;</span>
+	}	
+
+	@PostConstruct
+	private void setup() {
+<span class="fc" id="L88">		log.info(&quot;setting up user details service&quot;);</span>
+<span class="fc" id="L89">		bCryptPasswordEncoder = new BCryptPasswordEncoder();</span>
+
+		// allow admin password sideloading, esp. for container environments
+<span class="fc" id="L92">		String adminPasswd = System.getenv(&quot;TD_ADMIN_PASSWD&quot;);</span>
+<span class="fc" id="L93">		UserDetails admin = loadUserByUsername(NAME_ADMIN);</span>
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">		if (null == admin) {</span>
+<span class="nc bnc" id="L95" title="All 4 branches missed.">			if (null == adminPasswd || adminPasswd.isEmpty()) {</span>
+<span class="nc" id="L96">				adminPasswd = UUID.randomUUID().toString();</span>
+<span class="nc" id="L97">				log.info(&quot;creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n&quot;,</span>
+						adminPasswd);
+
+			}
+<span class="nc" id="L101">			TestDataUser newAdmin = new TestDataUser();</span>
+<span class="nc" id="L102">			newAdmin.setUsername(NAME_ADMIN);</span>
+<span class="nc" id="L103">			newAdmin.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
+<span class="nc" id="L104">			newAdmin.setRole(ROLE_ADMIN);</span>
+<span class="nc" id="L105">			userRepository.saveAndFlush(newAdmin);</span>
+<span class="pc bpc" id="L106" title="3 of 4 branches missed.">		} else if (null != adminPasswd &amp;&amp; !adminPasswd.isEmpty()) {</span>
+<span class="nc" id="L107">			Optional&lt;TestDataUser&gt; u = userRepository.findById(NAME_ADMIN);</span>
+
+<span class="nc bnc" id="L109" title="All 2 branches missed.">			if (u.isPresent()) {</span>
+<span class="nc" id="L110">				TestDataUser adminUser = u.get();</span>
+<span class="nc" id="L111">				adminUser.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
+<span class="nc" id="L112">				userRepository.saveAndFlush(adminUser);</span>
+			}
+		}
+<span class="fc" id="L115">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

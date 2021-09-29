@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonGenerator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">data-service</a> &gt; <a href="index.source.html" class="el_package">com.datengaertnerei.test.dataservice.person</a> &gt; <span class="el_source">PersonGenerator.java</span></div><h1>PersonGenerator.java</h1><pre class="source lang-java linenums">/*MIT License
+
+Copyright (c) 2020 Jens Dibbern
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+package com.datengaertnerei.test.dataservice.person;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
+
+import javax.annotation.PostConstruct;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+<span class="fc" id="L47">public class PersonGenerator implements IPersonGenerator {</span>
+
+<span class="fc" id="L49">	private static Log log = LogFactory.getLog(PersonGenerator.class);</span>
+
+	private static final String RES_EYECOLORS = &quot;eyecolors.txt&quot;;
+	private static final String RES_MALE = &quot;male.txt&quot;;
+	private static final String RES_FEMALE = &quot;female.txt&quot;;
+	private static final String RES_SURNAMES = &quot;surnames.txt&quot;;
+	private static final String RES_PROFESSIONS = &quot;profession.txt&quot;;
+	private static final String FEMALE = &quot;female&quot;;
+	private static final String MALE = &quot;male&quot;;
+<span class="fc" id="L58">	private static final Object EMAIL_TEST = &quot;@email.test&quot;;</span>
+
+
+	private Random random;
+	private List&lt;String&gt; surnames;
+	private List&lt;String&gt; femaleNames;
+	private List&lt;String&gt; maleNames;
+	private List&lt;String&gt; eyecolors;
+	private List&lt;String&gt; professions;
+	private Long count;
+	private Long offset;
+	private TaxIdGenerator taxIdGenerator;
+
+	@Autowired
+	private PostalAddressRepository repository;
+
+	@PostConstruct
+	public void init() {
+		try {
+<span class="fc" id="L77">			surnames = loadValues(RES_SURNAMES);</span>
+<span class="fc" id="L78">			femaleNames = loadValues(RES_FEMALE);</span>
+<span class="fc" id="L79">			maleNames = loadValues(RES_MALE);</span>
+<span class="fc" id="L80">			eyecolors = loadValues(RES_EYECOLORS);</span>
+<span class="fc" id="L81">			professions = loadValues(RES_PROFESSIONS);</span>
+<span class="nc" id="L82">		} catch (IOException e) {</span>
+<span class="nc" id="L83">			log.error(&quot;Could not init value list:&quot;, e);</span>
+<span class="fc" id="L84">		}</span>
+
+<span class="fc" id="L86">		random = new Random(System.currentTimeMillis());</span>
+<span class="pc bpc" id="L87" title="1 of 2 branches missed.">		Long minAddressId = null == repository.min() ? 0L : repository.min();</span>
+<span class="pc bpc" id="L88" title="1 of 2 branches missed.">		Long maxAddressId = null == repository.max() ? 0L : repository.max();</span>
+
+<span class="fc" id="L90">		String importFile = System.getenv(&quot;OSM_IMPORT_FILE&quot;);</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">		if (null != importFile) {</span>
+<span class="nc" id="L92">			log.info(&quot;Importing OSM dump&quot;);</span>
+<span class="nc" id="L93">			repository.deleteAll(); // does not reset JPA ID generator</span>
+<span class="nc" id="L94">			OsmPbfAddressImportUtil.importAddresses(importFile, repository);</span>
+<span class="nc" id="L95">			minAddressId = repository.min();</span>
+<span class="nc" id="L96">			maxAddressId = repository.max();</span>
+		}
+<span class="fc" id="L98">		offset = minAddressId - 1L; // needed for random access by ID</span>
+<span class="fc" id="L99">		count = repository.count();</span>
+
+		// address record IDs should be without gap to avoid errors
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">		if (count &lt; (maxAddressId - minAddressId)) {</span>
+<span class="nc" id="L103">			log.info(&quot;Postal address database contains gaps. Please reimport OSM data.&quot;);</span>
+		}
+<span class="fc" id="L105">		log.info(&quot;Address count: &quot; + count);</span>
+		
+<span class="fc" id="L107">		taxIdGenerator = new TaxIdGenerator(random);</span>
+<span class="fc" id="L108">	}</span>
+
+	/**
+	 * Creates a single random person object with linked address.
+	 *
+	 * @return the new person object
+	 */
+	@Override
+	public Person createRandomPerson(AgeRange range) {
+<span class="fc" id="L117">		Person randomPerson = createBasicPerson(range);</span>
+<span class="fc" id="L118">		Optional&lt;PostalAddress&gt; address = repository.findById(randomId());</span>
+<span class="pc bpc" id="L119" title="1 of 2 branches missed.">		if (address.isPresent()) {</span>
+<span class="fc" id="L120">			randomPerson.setAddress(address.get());</span>
+		}
+
+<span class="fc" id="L123">		return randomPerson;</span>
+	}
+
+	/**
+	 * Creates a single random person object with linked address inside a given
+	 * city.
+	 *
+	 * @param city the city to fetch random address from
+	 *
+	 * @return the new person object
+	 */
+	@Override
+	public Person createRandomPersonInCity(String city, AgeRange range) {
+<span class="fc" id="L136">		Person randomPerson = createBasicPerson(range);</span>
+<span class="fc" id="L137">		List&lt;PostalAddress&gt; addresses = repository.findByAddressLocalityIgnoreCase(city);</span>
+<span class="fc" id="L138">		return compileResult(randomPerson, addresses);</span>
+	}
+
+	/**
+	 * Creates a single random person object with linked address inside a given
+	 * postal code area.
+	 *
+	 * @param postalCode the postal code marking the area to fetch random address
+	 *                   from
+	 *
+	 * @return the new person object
+	 */
+	@Override
+	public Person createRandomPersonInArea(String postalCode, AgeRange range) {
+<span class="fc" id="L152">		Person randomPerson = createBasicPerson(range);</span>
+<span class="fc" id="L153">		List&lt;PostalAddress&gt; addresses = repository.findByPostalCodeStartsWith(postalCode);</span>
+<span class="fc" id="L154">		return compileResult(randomPerson, addresses);</span>
+	}
+
+	private Person compileResult(Person randomPerson, List&lt;PostalAddress&gt; addresses) {
+<span class="fc" id="L158">		PostalAddress address = null;</span>
+<span class="pc bpc" id="L159" title="1 of 4 branches missed.">		if (null != addresses &amp;&amp; !addresses.isEmpty()) {</span>
+<span class="fc" id="L160">			address = addresses.get(random.nextInt(addresses.size()));</span>
+		} else {
+<span class="fc" id="L162">			Optional&lt;PostalAddress&gt; addressContainer = repository.findById(randomId());</span>
+<span class="pc bpc" id="L163" title="1 of 2 branches missed.">			if (addressContainer.isPresent()) {</span>
+<span class="fc" id="L164">				address = addressContainer.get();</span>
+<span class="fc" id="L165">				randomPerson.setComment(&quot;postal code not found in address base&quot;);</span>
+			} else {
+<span class="nc" id="L167">				randomPerson.setComment(&quot;internal error while retrieving address&quot;);</span>
+			}
+		}
+
+<span class="fc" id="L171">		randomPerson.setAddress(address);</span>
+
+<span class="fc" id="L173">		return randomPerson;</span>
+	}
+
+	/**
+	 * Creates a valid and (most probably) unique email address at a test domain.
+	 * Since the top level domain .test is reserved, these email addresses will
+	 * never be routed to any real world email server. You have to configure your
+	 * test email server for this.
+	 *
+	 * @param firstname   the given name of the person
+	 * @param surname     the family name of the person
+	 * @param dateOfBirth the date of birth of the person (to avoid duplicates)
+	 * @return the new email address as string
+	 */
+	private String createEmailAddress(String firstname, String surname, LocalDate dateOfBirth) {
+<span class="fc" id="L188">		StringBuilder email = new StringBuilder().append(firstname).append(surname).append(dateOfBirth.getYear())</span>
+<span class="fc" id="L189">				.append(EMAIL_TEST);</span>
+
+<span class="fc" id="L191">		return Normalizer.normalize(email.toString(), Form.NFD).replaceAll(&quot;[^\\p{ASCII}]&quot;, &quot;&quot;);</span>
+	}
+
+	/**
+	 * Creates a reasonable human height.
+	 *
+	 * @param gender male or female (add diverse if you like)
+	 * @return the new height as int
+	 */
+	private int createRandomHeight(String gender) {
+		double height;
+		do {
+<span class="fc" id="L203">			height = random.nextGaussian() * 10.0 + 165.0;</span>
+<span class="pc bpc" id="L204" title="1 of 4 branches missed.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
+<span class="fc bfc" id="L205" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
+<span class="fc" id="L206">			height += 10.0;</span>
+		}
+<span class="fc" id="L208">		return (int) Math.round(height);</span>
+	}
+
+	/**
+	 * Creates a valid and reasonable human date of birth.
+	 *
+	 * @return the date of birth
+	 */
+	private LocalDate createRandomDateOfBirth(AgeRange range) {
+		double age;
+<span class="fc" id="L218">		age = createAge(range);</span>
+
+<span class="fc" id="L220">		int month = random.nextInt(11) + 1;</span>
+<span class="fc" id="L221">		int day = 0;</span>
+<span class="pc bpc" id="L222" title="1 of 4 branches missed.">		switch (month) {</span>
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+<span class="fc" id="L230">			day = random.nextInt(30) + 1;</span>
+<span class="fc" id="L231">			break;</span>
+		case 2:
+<span class="fc" id="L233">			day = random.nextInt(27) + 1;</span>
+<span class="fc" id="L234">			break;</span>
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+<span class="fc" id="L239">			day = random.nextInt(29) + 1;</span>
+<span class="fc" id="L240">			break;</span>
+		default: // there is no other month
+			break;
+		}
+
+<span class="fc" id="L245">		return LocalDate.of(LocalDate.now().getYear() - (int) Math.round(age), month, day);</span>
+	}
+
+	private double createAge(AgeRange range) {
+		double age;
+<span class="fc" id="L250">		double min = 1.0; // you have to be born</span>
+<span class="fc" id="L251">		double max = 100.0; // a reasonable limit</span>
+
+<span class="fc bfc" id="L253" title="All 4 branches covered.">		switch (range) {</span>
+		case ADULT:
+<span class="fc" id="L255">			min = 19.0; // tolerance due to random day and month</span>
+<span class="fc" id="L256">			max = 100.0;</span>
+<span class="fc" id="L257">			break;</span>
+
+		case MINOR:
+<span class="fc" id="L260">			min = 1.0;</span>
+<span class="fc" id="L261">			max = 17.0; // tolerance due to random day and month</span>
+<span class="fc" id="L262">			break;</span>
+
+		case SENIOR:
+<span class="fc" id="L265">			min = 66.0; // tolerance due to random day and month</span>
+<span class="fc" id="L266">			max = 100.0;</span>
+<span class="fc" id="L267">			break;</span>
+
+		case ALL:
+		default:
+			break;
+		}
+
+		// choose factor smaller than medium to tighten curve 
+<span class="fc" id="L275">		double shiftFactor = (max - min) / 3;</span>
+<span class="fc" id="L276">		double mediumAge = min + (max - min) / 2;</span>
+<span class="fc" id="L277">		age = random.nextGaussian() * shiftFactor + mediumAge;</span>
+<span class="fc bfc" id="L278" title="All 4 branches covered.">		if (age &lt; min || age &gt; max) {</span>
+			// cut off long tails
+<span class="fc" id="L280">			age = mediumAge;</span>
+		}
+<span class="fc" id="L282">		return age;</span>
+	}
+
+	/**
+	 * @return
+	 */
+	private Long randomId() {
+		Long result;
+
+		// it is unlikely to have more than 2 billion addresses
+<span class="pc bpc" id="L292" title="1 of 2 branches missed.">		if (count &lt; Integer.MAX_VALUE) {</span>
+<span class="fc" id="L293">			result = (long) random.nextInt(count.intValue());</span>
+		} else {
+			// but one of 2 billion will suffice for our test data
+<span class="nc" id="L296">			result = (long) random.nextInt(Integer.MAX_VALUE);</span>
+		}
+
+		// add offset for first ID
+<span class="fc" id="L300">		return result + offset;</span>
+	}
+
+	/**
+	 * @param age
+	 * @return
+	 */
+	private Person createBasicPerson(AgeRange range) {
+<span class="fc bfc" id="L308" title="All 2 branches covered.">		String gender = random.nextBoolean() ? MALE : FEMALE; // (add diverse if you like)</span>
+		String firstname;
+<span class="fc bfc" id="L310" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
+<span class="fc" id="L311">			firstname = maleNames.get(random.nextInt(maleNames.size())).trim();</span>
+		} else {
+<span class="fc" id="L313">			firstname = femaleNames.get(random.nextInt(femaleNames.size())).trim();</span>
+		}
+<span class="fc" id="L315">		String surname = surnames.get(random.nextInt(surnames.size())).trim();</span>
+
+<span class="fc" id="L317">		String eyecolor = eyecolors.get(random.nextInt(eyecolors.size())).trim();</span>
+
+<span class="fc" id="L319">		LocalDate dateOfBirth = createRandomDateOfBirth(range);</span>
+<span class="fc" id="L320">		String emailAddress = createEmailAddress(firstname, surname, dateOfBirth);</span>
+<span class="fc" id="L321">		int height = createRandomHeight(gender);</span>
+
+<span class="fc" id="L323">		String taxId = taxIdGenerator.createTaxId();</span>
+
+<span class="fc" id="L325">		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress,</span>
+				taxId);
+<span class="fc" id="L327">		randomPerson.setProfession(professions.get(random.nextInt(professions.size())).trim());</span>
+		
+<span class="fc bfc" id="L329" title="All 2 branches covered.">		if (1 == random.nextInt(5)) {</span>
+<span class="fc" id="L330">			String birthName = surnames.get(random.nextInt(surnames.size())).trim();</span>
+<span class="fc" id="L331">			randomPerson.setBirthName(birthName);</span>
+		}
+<span class="fc" id="L333">		return randomPerson;</span>
+	}
+
+	/**
+	 * Loads value list with classloader for human-readable random person
+	 * attributes.
+	 *
+	 * @param fileName name of the files
+	 * @return list of values
+	 * @throws IOException values could not be loaded
+	 */
+	private List&lt;String&gt; loadValues(String fileName) throws IOException {
+<span class="fc" id="L345">		InputStream input = getClass().getResourceAsStream(fileName);</span>
+<span class="fc" id="L346">		BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));</span>
+<span class="fc" id="L347">		ArrayList&lt;String&gt; values = new ArrayList&lt;&gt;();</span>
+		String line;
+<span class="fc bfc" id="L349" title="All 2 branches covered.">		while ((line = reader.readLine()) != null) {</span>
+<span class="fc" id="L350">			values.add(line);</span>
+		}
+<span class="fc" id="L352">		reader.close();</span>
+
+<span class="fc" id="L354">		return values;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
