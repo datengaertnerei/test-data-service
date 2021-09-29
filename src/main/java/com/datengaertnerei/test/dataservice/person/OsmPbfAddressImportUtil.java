@@ -55,7 +55,8 @@ public class OsmPbfAddressImportUtil {
 	/**
 	 * Starts OSM dump parser and exports all addresses within defined country.
 	 *
-	 * @param args passed to cmd line parser
+	 * @param fileName the file to import
+	 * @param repository reference to the JPA repository
 	 */
 	public static void importAddresses(String fileName, PostalAddressRepository repository) {
 

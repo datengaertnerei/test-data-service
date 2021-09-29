@@ -138,7 +138,7 @@ public class Person {
 	 * @param height     height attribute value
 	 * @param eyecolor   eyecolor attribute value
 	 * @param email      email address attribute value
-	 * @param taxId 
+	 * @param taxId 	 taxId attribute value
 	 */
 	public Person(String givenName, String familyName, String gender, LocalDate birthDate, int height, String eyecolor,
 			String email, String taxId) {

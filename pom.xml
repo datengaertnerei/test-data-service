@@ -12,8 +12,31 @@
 	<groupId>com.datengaertnerei.test</groupId>
 	<artifactId>data-service</artifactId>
 	<version>0.8.0-SNAPSHOT</version>
-	<name>data-service</name>
-	<description>Test data service</description>
+	<name>Test data service</name>
+	<description>Web Service to provide valid test data for german fictitious persons.</description>
+	<url>https://github.com/datengaertnerei/test-data-service</url>
+	<inceptionYear>2018</inceptionYear>
+
+	<organization>
+		<name>Datengärtnerei</name>
+		<url>http://www.datengaertnerei.com/</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>jd</id>
+			<name>Jens Dibbern</name>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+			<distribution>manual</distribution>
+			<comments></comments>
+		</license>
+	</licenses>
 
 	<distributionManagement>
 		<repository>
@@ -301,21 +324,26 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <!-- select non-aggregate reports -->
-              <report>report</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-    </plugins>
-  </reporting>	
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<!-- select non-aggregate reports -->
+							<report>report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.3.1</version>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>
