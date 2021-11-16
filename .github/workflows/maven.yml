@@ -27,6 +27,8 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Publish package
       run: mvn -B deploy -DskipTests
+      env:        
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Commit POM
       run: |
         git config --global user.name 'Jens Dibbern'
