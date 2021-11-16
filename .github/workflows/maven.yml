@@ -27,5 +27,11 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Publish package
       run: mvn -B deploy
+    - name: Commit report
+      run: |
+        git config --global user.name 'Jens Dibbern'
+        git config --global user.email 'datengaertnerei@users.noreply.github.com'
+        git commit -am "Action commit" pom.xml
+        git push      
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
