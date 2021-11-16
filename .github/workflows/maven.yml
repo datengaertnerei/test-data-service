@@ -37,4 +37,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Cleanup
       uses: actions/delete-package-versions@v1
+      with:
         num-old-versions-to-delete: 1
