@@ -27,7 +27,7 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Publish package
       run: mvn -B deploy
-    - name: Commit report
+    - name: Commit POM
       run: |
         git config --global user.name 'Jens Dibbern'
         git config --global user.email 'datengaertnerei@users.noreply.github.com'
