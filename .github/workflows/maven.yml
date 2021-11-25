@@ -33,7 +33,7 @@ jobs:
         git push      
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/delete-package-versions@v1
+    - uses: actions/delete-package-versions@v2
       with:
         package-name: 'com.datengaertnerei.test.data-service'
         num-old-versions-to-delete: 1
