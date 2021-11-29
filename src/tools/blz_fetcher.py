@@ -18,21 +18,21 @@ if __name__ == '__main__':
     page.close()
     page = requests.get(host + path)
     table = page.text
-    csvfile = open('banklist.csv', 'w', newline='', encoding="utf-8")
-    csvwriter = csv.writer(csvfile, delimiter=';', quoting=csv.QUOTE_NONE)
-    csvwriter.writerow(['Bankleitzahl', 'PLZ', 'Ort', 'Kurzbezeichnung', 'BIC', 'Prüfzifferberechnungsmethode'])
-    lastbic = ''
+    csv_file = open('banklist.csv', 'w', newline='', encoding="utf-8")
+    csv_writer = csv.writer(csv_file, delimiter=';', quoting=csv.QUOTE_NONE)
+    csv_writer.writerow(['Bankleitzahl', 'PLZ', 'Ort', 'Kurzbezeichnung', 'BIC', 'Prüfzifferberechnungsmethode'])
+    last_bic = ''
     for line in table.splitlines():
         blz = line[:8]
         name = line[9:67].strip()
-        zip = line[67:72]
+        city_zip = line[67:72]
         city = line[72:107].strip()
         desc = line[107:134].strip()
         bic = line[139:150].strip()
         if bic == '':
-            bic = lastbic
+            bic = last_bic
         else:
-            lastbic = bic
+            last_bic = bic
         check_method = line[150:152]
         if check_method == '00':
-            csvwriter.writerow([blz, zip, city, desc, bic, check_method])
+            csv_writer.writerow([blz, city_zip, city, desc, bic, check_method])
