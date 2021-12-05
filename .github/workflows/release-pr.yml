@@ -1,12 +1,14 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: maven-build
+name: maven-release-pr
+
+concurrency: [release-pr, dev-build]
 
 on:
-  push:
-    branches: [ master ]
-
+  schedule:
+    - cron: "0 8 15 * *"
+    
 jobs:
   build:
 
@@ -19,21 +21,30 @@ jobs:
       with:
         java-version: 17
         distribution: 'temurin'
-    - name: Build with Maven
-      run: mvn -B deploy --file pom.xml
-      env:        
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
     - name: Increment patch number
       run: mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} versions:commit 
+      
     - name: Commit POM
       run: |
-        git config --global user.name 'Jens Dibbern'
-        git config --global user.email 'datengaertnerei@users.noreply.github.com'
-        git commit -m "Action commit" pom.xml
+        git config --local user.email "$(git log --format='%ae' HEAD^!)"
+        git config --local user.name "$(git log --format='%an' HEAD^!)"
+        git commit -m "Action commit: increase SemVer" pom.xml
         git push      
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/delete-package-versions@v2
+        
+    - name: Build with Maven
+      run: mvn -B clean test --file pom.xml
+      env:        
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create PR
+      uses: devops-infra/action-pull-request@v0.4.2
       with:
-        package-name: 'com.datengaertnerei.test.data-service'
-        num-old-versions-to-delete: 1
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        source_branch: development
+        target_branch: master
+        title: "Monthly release"
+        draft: true
+        get_diff: true
