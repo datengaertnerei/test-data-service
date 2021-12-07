@@ -1,13 +1,13 @@
 # This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: maven-dev-build
+name: maven-build
 
-concurrency: dev-build
+concurrency: build
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ develop, master ]
 
 jobs:
   build:
@@ -16,12 +16,32 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Set up JDK 17
       uses: actions/setup-java@v2
       with:
         java-version: 17
         distribution: 'temurin'
-    - name: Build with Maven
-      run: mvn -B clean package site --file pom.xml
-      env:        
+        
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+    
+    - name: Cache SonarCloud packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
+    
+    - name: Build and analyze
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      env:
+        # Needed to get some information about the pull request, if any
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # SonarCloud access token should be generated from https://sonarcloud.io/account/security/
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
+        
