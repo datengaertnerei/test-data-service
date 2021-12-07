@@ -11,6 +11,8 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.stream.Stream;
 
 import javax.imageio.ImageIO;
@@ -32,6 +34,7 @@ import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.person.AgeRange;
 import com.datengaertnerei.test.dataservice.person.Person;
+import com.datengaertnerei.test.dataservice.person.PostalAddress;
 import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 
 @SpringBootTest
@@ -54,26 +57,29 @@ class TestDataServiceApiTests {
 	@Test
 	void shouldReturnRandomPerson() {
 
-		Set<String> checkList = new HashSet<>();
+		Set<String> persons = new HashSet<>();
+		SortedSet<PostalAddress> addresses = new TreeSet<>();
 		// create a few more persons to hit more date of birth branches
 		for (int i = 1; i < 10; i++) {
-			assertPerson(checkList, null);
-			assertPerson(checkList, AgeRange.ALL);
-			assertPerson(checkList, AgeRange.ADULT);
-			assertPerson(checkList, AgeRange.MINOR);
-			assertPerson(checkList, AgeRange.SENIOR);
+			assertPerson(persons, addresses, null);
+			assertPerson(persons, addresses, AgeRange.ALL);
+			assertPerson(persons, addresses, AgeRange.ADULT);
+			assertPerson(persons, addresses, AgeRange.MINOR);
+			assertPerson(persons, addresses, AgeRange.SENIOR);
 		}
 	}
 
-	private void assertPerson(Set<String> checkList, AgeRange range) {
-		Person result = restController.person(range);
-		assertThat(result).isNotNull();
-		String resultString = stringifyPerson(result);
-		assertThat(checkList.contains(resultString)).isFalse();
-		checkList.add(resultString);
+	private void assertPerson(Set<String> persons, SortedSet<PostalAddress> addresses, AgeRange range) {
+		Person person = restController.person(range);
+		assertThat(person).isNotNull();
+		String personString = stringifyPerson(person);
+		assertThat(addresses.contains(person.getAddress())).isFalse();
+		assertThat(persons.contains(personString)).isFalse();
+		addresses.add(person.getAddress());
+		persons.add(personString);
 
 		if (null != range) {
-			long yearsBetween = ChronoUnit.YEARS.between(result.getBirthDate(), LocalDate.now());
+			long yearsBetween = ChronoUnit.YEARS.between(person.getBirthDate(), LocalDate.now());
 
 			switch (range) {
 			case ADULT:
@@ -148,8 +154,8 @@ class TestDataServiceApiTests {
 	private String stringifyPerson(Person person) {
 		String resultString = new StringBuilder().append(person.getFamilyName()).append(person.getGivenName())
 				.append(person.getGender()).append(person.getHeight()).append(person.getBirthDate())
-				.append(person.getEyecolor()).append(person.getEmail()).append(person.getAddress().getAddressLocality())
-				.append(person.getAddress().getPostalCode()).toString();
+				.append(person.getEyecolor()).append(person.getEmail()).append(person.getAddress().hashCode())
+				.toString();
 		return resultString;
 	}
 
