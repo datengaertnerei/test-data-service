@@ -57,8 +57,9 @@ public class OsmPbfAddressImportUtil {
 	 *
 	 * @param fileName the file to import
 	 * @param repository reference to the JPA repository
+	 * @return 
 	 */
-	public static void importAddresses(String fileName, PostalAddressRepository repository) {
+	public static boolean importAddresses(String fileName, PostalAddressRepository repository) {
 
 		File osmFile = new File(fileName);
 		PbfReader reader = new PbfReader(osmFile, 1);
@@ -69,7 +70,9 @@ public class OsmPbfAddressImportUtil {
 			reader.run();
 		} catch (Exception e) {
 			log.error("OSM import run failed", e);
+			return false;
 		}
+		return true;
 
 	}
 }
