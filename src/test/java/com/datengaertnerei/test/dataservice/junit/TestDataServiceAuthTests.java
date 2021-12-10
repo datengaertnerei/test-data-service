@@ -13,29 +13,28 @@ import com.datengaertnerei.test.dataservice.security.AuthController;
 import com.datengaertnerei.test.dataservice.security.TestDataUser;
 import com.datengaertnerei.test.dataservice.security.UserDetailsServiceImpl;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class TestDataServiceAuthTests {
 
-	
 	@Autowired
 	private AuthController controller;
-	
+
 	@Test
 	void contextLoads() {
 		assertThat(controller).isNotNull();
 	}
-	
+
 	@Test
-	void shouldReturnNewCredentials(){
+	void shouldReturnNewCredentials() {
 		ApiCredentials credentials = controller.generateNew();
 		assertThat(credentials).isNotNull();
 	}
-	
+
 	@Test
 	void shouldExportAndImportUserList() {
 		List<TestDataUser> users = controller.exportUsers();
 		assertThat(users).isNotNull();
 		assertThat(controller.importUsers(users)).isEqualTo(UserDetailsServiceImpl.RESULT_OK);
 	}
-	
+
 }
