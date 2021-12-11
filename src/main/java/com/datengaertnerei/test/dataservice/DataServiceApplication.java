@@ -63,11 +63,15 @@ public class DataServiceApplication {
 	}
 
 	@Bean
-	public OpenAPI springShopOpenAPI() {
+	public OpenAPI springOpenAPI() {
+		// get POM Version from Manifest
+		String implementationVersion = this.getClass().getPackage().getImplementationVersion();
+		// fallback to ensure OpenAPI compliance
+		String apiVersion =  implementationVersion == null ? "local-build" : implementationVersion;
 		return new OpenAPI()
 				.info(new Info().title("Datengärtnerei Test Data Service API")
 						.description("We provide ad hoc generated test data for fictitious german persons.")
-						.version(this.getClass().getPackage().getImplementationVersion())
+						.version(apiVersion)
 						.license(new License().name("MIT License")
 								.url("https://github.com/datengaertnerei/test-data-service/blob/master/LICENSE")))
 				.externalDocs(
