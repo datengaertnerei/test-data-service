@@ -3,11 +3,11 @@
 
 name: maven-release-pr
 
-concurrency: [release-pr, dev-build]
+concurrency: dev-build
 
 on:
   schedule:
-    - cron: "0 8 15 * *"
+    - cron: "0 10 15 * *"
     
 jobs:
   build:
