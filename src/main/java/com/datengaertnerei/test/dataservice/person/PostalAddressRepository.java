@@ -33,14 +33,14 @@ import org.springframework.data.jpa.repository.Query;
  *
  */
 public interface PostalAddressRepository extends JpaRepository<PostalAddress, Long> {
-	
+
 	List<PostalAddress> findByAddressLocalityIgnoreCase(String addressLocality);
-	
+
 	List<PostalAddress> findByPostalCodeStartsWith(String postalCode);
-	
+
 	@Query(value = "SELECT min(id) FROM PostalAddress")
 	public Long min();
 
 	@Query(value = "SELECT max(id) FROM PostalAddress")
-	public Long max();	
+	public Long max();
 }

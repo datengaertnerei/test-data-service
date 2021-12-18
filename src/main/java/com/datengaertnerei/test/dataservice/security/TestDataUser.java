@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class TestDataUser {
-	
+
 	private String name;
 	private String passwordCrypt;
 	private String role;
@@ -17,7 +17,7 @@ public class TestDataUser {
 	public void setPassword(String passwordCrypt) {
 		this.passwordCrypt = passwordCrypt;
 	}
-	
+
 	@Id
 	public String getUsername() {
 		return name;
@@ -34,5 +34,5 @@ public class TestDataUser {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+
 }
