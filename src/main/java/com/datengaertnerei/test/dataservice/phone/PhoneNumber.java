@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 @JsonInclude(Include.NON_NULL)
-@Schema(description="phone number as a single string")
+@Schema(description = "phone number as a single string")
 public class PhoneNumber {
 
 	private String number;

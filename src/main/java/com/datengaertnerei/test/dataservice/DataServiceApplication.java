@@ -58,7 +58,7 @@ public class DataServiceApplication {
 				log.info("Import only mode - exiting");
 				((ConfigurableApplicationContext) ctx).close();
 			}
-			
+
 		};
 	}
 
@@ -67,7 +67,7 @@ public class DataServiceApplication {
 		// get POM Version from Manifest
 		String implementationVersion = this.getClass().getPackage().getImplementationVersion();
 		// fallback to ensure OpenAPI compliance
-		String apiVersion =  implementationVersion == null ? "local-build" : implementationVersion;
+		String apiVersion = implementationVersion == null ? "local-build" : implementationVersion;
 		return new OpenAPI()
 				.info(new Info().title("Datengärtnerei Test Data Service API")
 						.description("We provide ad hoc generated test data for fictitious german persons.")

@@ -68,11 +68,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 		return result;
 	}
-	
+
 	protected List<TestDataUser> exportUsers() {
 		return userRepository.findAll();
 	}
-	
+
 	protected String importUsers(List<TestDataUser> users) {
 		try {
 			userRepository.deleteAll();
@@ -81,7 +81,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			return e.getMessage();
 		}
 		return RESULT_OK;
-	}	
+	}
 
 	@PostConstruct
 	private void setup() {

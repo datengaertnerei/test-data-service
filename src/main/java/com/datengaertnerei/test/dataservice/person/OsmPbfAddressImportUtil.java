@@ -55,9 +55,9 @@ public class OsmPbfAddressImportUtil {
 	/**
 	 * Starts OSM dump parser and exports all addresses within defined country.
 	 *
-	 * @param fileName the file to import
+	 * @param fileName   the file to import
 	 * @param repository reference to the JPA repository
-	 * @return 
+	 * @return
 	 */
 	public static boolean importAddresses(String fileName, PostalAddressRepository repository) {
 
@@ -65,7 +65,7 @@ public class OsmPbfAddressImportUtil {
 		PbfReader reader = new PbfReader(osmFile, 1);
 		Sink sinkImplementation = new AddressSink(repository);
 		reader.setSink(sinkImplementation);
-		
+
 		try {
 			reader.run();
 		} catch (Exception e) {
@@ -88,7 +88,8 @@ class AddressSink implements Sink {
 	private static final String ADDR_COUNTRY = "addr:country";
 
 	private PostalAddressRepository repository;
-	
+	private int importCounter = 0;
+
 	public AddressSink(PostalAddressRepository repository) {
 		super();
 		this.repository = repository;
@@ -109,6 +110,10 @@ class AddressSink implements Sink {
 	private void processNode(Entity entity) {
 		Node node = (Node) entity;
 		extractPostalAddress(node);
+		// log progress
+		if (importCounter++ % 1000 == 0) {
+			log.info("processing " + importCounter);
+		}
 	}
 
 	private void extractPostalAddress(Node node) {
@@ -165,5 +170,5 @@ class AddressSink implements Sink {
 	@Override
 	public void close() {
 		// just to comply with the interface
-	}	
+	}
 }

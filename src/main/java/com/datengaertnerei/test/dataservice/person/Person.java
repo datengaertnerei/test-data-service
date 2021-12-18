@@ -37,7 +37,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author Jens Dibbern
  */
 @JsonInclude(Include.NON_NULL)
-@Schema(description="person (see <a href=\"https://schema.org/Person\">https://schema.org/Person</a>)")
+@Schema(description = "person (see <a href=\"https://schema.org/Person\">https://schema.org/Person</a>)")
 public class Person {
 
 	private String givenName;
@@ -105,7 +105,7 @@ public class Person {
 	public void setTaxId(String taxId) {
 		this.taxId = taxId;
 	}
-	
+
 	public String getComment() {
 		return comment;
 	}
@@ -113,10 +113,10 @@ public class Person {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	
+
 	public int getWeight() {
 		// we just assume a BMI of 25 and return the weight
-		double meters = height/100.0;
+		double meters = height / 100.0;
 		return (int) (meters * meters * 25.0);
 	}
 
@@ -127,7 +127,7 @@ public class Person {
 	public void setProfession(String profession) {
 		this.profession = profession;
 	}
-	
+
 	/**
 	 * Ctor with values.
 	 *
@@ -138,7 +138,7 @@ public class Person {
 	 * @param height     height attribute value
 	 * @param eyecolor   eyecolor attribute value
 	 * @param email      email address attribute value
-	 * @param taxId 	 taxId attribute value
+	 * @param taxId      taxId attribute value
 	 */
 	public Person(String givenName, String familyName, String gender, LocalDate birthDate, int height, String eyecolor,
 			String email, String taxId) {

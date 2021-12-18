@@ -86,7 +86,7 @@ public class RestApiController {
 			entry.setCreditCard(bankGen.generateCreditCard());
 			result.add(entry);
 		}
-		
+
 		return result;
 	}
 

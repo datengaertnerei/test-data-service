@@ -39,7 +39,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author Jens Dibbern
  */
 @Entity
-@Schema(description="postal address (see <a href=\"https://schema.org/PostalAddress\">https://schema.org/PostalAddress</a>)")
+@Schema(description = "postal address (see <a href=\"https://schema.org/PostalAddress\">https://schema.org/PostalAddress</a>)")
 public class PostalAddress implements Comparable<PostalAddress> {
 
 	private Long id;
@@ -128,7 +128,6 @@ public class PostalAddress implements Comparable<PostalAddress> {
 
 		return match.compareTo(other);
 	}
-
 
 	@Override
 	public boolean equals(Object target) {
