@@ -27,6 +27,7 @@ import org.iban4j.IbanFormatException;
 import org.iban4j.IbanUtil;
 import org.iban4j.InvalidCheckDigitException;
 import org.iban4j.UnsupportedCountryException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -40,8 +41,10 @@ import com.datengaertnerei.test.dataservice.RestApiController;
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.person.AgeRange;
+import com.datengaertnerei.test.dataservice.person.DataImportTest;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.person.PostalAddress;
+import com.datengaertnerei.test.dataservice.person.PostalAddressRepository;
 import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
@@ -52,11 +55,19 @@ class TestDataServiceApiTests {
 	private static final double THRESHOLD_SENIOR = 65.0;
 	private static final double THRESHOLD_ADULT = 18.0;
 
+	@LocalServerPort
+	private int port;
+
 	@Autowired
 	private RestApiController restController;
 
-	@LocalServerPort
-	private int port;
+	@Autowired
+	private PostalAddressRepository repository;
+
+	@BeforeEach
+	public void before() {
+		DataImportTest.ensureDataAvailability(repository);
+	}
 
 	@Test
 	void contextLoads() {
@@ -323,7 +334,7 @@ class TestDataServiceApiTests {
 	void shouldReturnOpenApi() {
 
 		try {
-			// 
+			//
 			URL url = new URL("http://localhost:" + port + "/v3/api-docs");
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			int status = con.getResponseCode();

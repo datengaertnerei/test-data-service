@@ -57,14 +57,12 @@ public class PersonGenerator implements IPersonGenerator {
 	private static final String MALE = "male";
 	private static final Object EMAIL_TEST = "@email.test";
 
-
 	private Random random;
 	private List<String> surnames;
 	private List<String> femaleNames;
 	private List<String> maleNames;
 	private List<String> eyecolors;
 	private List<String> professions;
-	private Long count;
 	private Long offset;
 	private TaxIdGenerator taxIdGenerator;
 
@@ -96,15 +94,18 @@ public class PersonGenerator implements IPersonGenerator {
 			maxAddressId = repository.max();
 		}
 		offset = minAddressId - 1L; // needed for random access by ID
-		count = repository.count();
 
 		// address record IDs should be without gap to avoid errors
-		if (count < (maxAddressId - minAddressId)) {
+		if (getCount() < (maxAddressId - minAddressId)) {
 			log.info("Postal address database contains gaps. Please reimport OSM data.");
 		}
-		log.info("Address count: " + count);
-		
+		log.info("Address count: " + getCount());
+
 		taxIdGenerator = new TaxIdGenerator(random);
+	}
+
+	private Long getCount() {
+		return repository.count() < Integer.MAX_VALUE ? repository.count() : Integer.MAX_VALUE;
 	}
 
 	/**
@@ -271,7 +272,7 @@ public class PersonGenerator implements IPersonGenerator {
 			break;
 		}
 
-		// choose factor smaller than medium to tighten curve 
+		// choose factor smaller than medium to tighten curve
 		double shiftFactor = (max - min) / 3;
 		double mediumAge = min + (max - min) / 2;
 		age = random.nextGaussian() * shiftFactor + mediumAge;
@@ -286,15 +287,7 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return
 	 */
 	private Long randomId() {
-		Long result;
-
-		// it is unlikely to have more than 2 billion addresses
-		if (count < Integer.MAX_VALUE) {
-			result = (long) random.nextInt(count.intValue());
-		} else {
-			// but one of 2 billion will suffice for our test data
-			result = (long) random.nextInt(Integer.MAX_VALUE);
-		}
+		Long result = (long) random.nextInt(getCount().intValue());
 
 		// add offset for first ID
 		return result + offset;
@@ -325,7 +318,7 @@ public class PersonGenerator implements IPersonGenerator {
 		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress,
 				taxId);
 		randomPerson.setProfession(professions.get(random.nextInt(professions.size())).trim());
-		
+
 		if (1 == random.nextInt(5)) {
 			String birthName = surnames.get(random.nextInt(surnames.size())).trim();
 			randomPerson.setBirthName(birthName);

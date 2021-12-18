@@ -7,11 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.datengaertnerei.test.dataservice.DataServiceApplication;
-
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Tag("import")
-class TestDataServiceApiTests {
+public class DataImportTest {
 
 	@Autowired
 	private PostalAddressRepository repository;
@@ -28,6 +26,12 @@ class TestDataServiceApiTests {
 	@Test
 	void shouldImport() {
 		assertThat(OsmPbfAddressImportUtil.importAddresses("data/osm-small.pbf", repository)).isTrue();
+	}
+
+	public static synchronized void ensureDataAvailability(PostalAddressRepository repository) {
+		if (repository.count() == 0) {
+			OsmPbfAddressImportUtil.importAddresses("data/osm-small.pbf", repository);
+		}
 	}
 
 }
