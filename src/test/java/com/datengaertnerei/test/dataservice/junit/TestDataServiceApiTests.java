@@ -96,8 +96,8 @@ class TestDataServiceApiTests {
 	private void assertPerson(Set<String> persons, SortedSet<PostalAddress> addresses, AgeRange range) {
 		Person person = restController.person(range);
 		assertThat(person).isNotNull();
+		assertThat(person.getAddress()).isNotNull();
 		String personString = stringifyPerson(person);
-		assertThat(addresses.contains(person.getAddress())).isFalse();
 		assertThat(persons.contains(personString)).isFalse();
 		addresses.add(person.getAddress());
 		persons.add(personString);
