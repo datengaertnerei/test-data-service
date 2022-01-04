@@ -1,6 +1,7 @@
 # test data service
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/484d467e7e4540c5b8b7fbce78538bfc)](https://www.codacy.com/manual/datengaertnerei/test-data-service?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=datengaertnerei/test-data-service&amp;utm_campaign=Badge_Grade) 
+[![codecov](https://codecov.io/gh/datengaertnerei/test-data-service/branch/develop/graph/badge.svg?token=3V6AFYMMQA)](https://codecov.io/gh/datengaertnerei/test-data-service)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=datengaertnerei_test-data-service&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=datengaertnerei_test-data-service)
 [![Maven Build](https://github.com/datengaertnerei/test-data-service/workflows/maven-build/badge.svg)](https://github.com/datengaertnerei/test-data-service)
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/datengaertner/test-data-service/latest)](https://hub.docker.com/repository/docker/datengaertner/test-data-service)
