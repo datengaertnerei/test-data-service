@@ -111,7 +111,7 @@ class AddressSink implements Sink {
 		Node node = (Node) entity;
 		extractPostalAddress(node);
 		// log progress
-		if (importCounter++ % 1000 == 0) {
+		if (importCounter++ % 1000000 == 0) {
 			log.info("processing " + importCounter);
 		}
 	}
