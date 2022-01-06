@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Tag("import")
 public class DataImportTest {
 
+	private static final String DATA_OSM_SMALL_PBF = "data/osm-small.pbf";
 	@Autowired
 	private PostalAddressRepository repository;
 
@@ -19,18 +20,19 @@ public class DataImportTest {
 		assertThat(repository).isNotNull();
 	}
 
-	/**
-	 * Consecutive calls should create different (random) results for
-	 * Person/PostalAddress
-	 */
 	@Test
 	void shouldImport() {
-		assertThat(OsmPbfAddressImportUtil.importAddresses("data/osm-small.pbf", repository)).isTrue();
+		assertThat(OsmPbfAddressImportUtil.importAddresses(DATA_OSM_SMALL_PBF, repository)).isTrue();
+	}
+
+	@Test
+	void shouldFailOnMissingFile() {
+		assertThat(OsmPbfAddressImportUtil.importAddresses("will-not-exist", repository)).isFalse();
 	}
 
 	public static synchronized void ensureDataAvailability(PostalAddressRepository repository) {
 		if (repository.count() == 0) {
-			OsmPbfAddressImportUtil.importAddresses("data/osm-small.pbf", repository);
+			OsmPbfAddressImportUtil.importAddresses(DATA_OSM_SMALL_PBF, repository);
 		}
 	}
 
