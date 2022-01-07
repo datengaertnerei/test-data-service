@@ -5,9 +5,7 @@ name: maven-release-pr
 
 concurrency: dev-build
 
-on:
-  schedule:
-    - cron: "0 10 15 * *"
+on: workflow_dispatch
     
 jobs:
   build:
@@ -23,7 +21,7 @@ jobs:
         distribution: 'temurin'
                 
     - name: Build with Maven
-      run: mvn -B clean test --file pom.xml
+      run: mvn -B release:perform --file pom.xml
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -33,12 +31,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         source_branch: development
         target_branch: master
-        title: "Monthly release"
+        title: "Release"
         draft: true
         get_diff: true
 
     - name: Increment patch number for next release
-      run: mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} versions:commit 
+      run: mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit 
       
     - name: Commit POM
       run: |
