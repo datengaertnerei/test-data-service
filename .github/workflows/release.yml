@@ -22,5 +22,3 @@ jobs:
                 
     - name: Create PR
       run: mvn release:clean release:perform
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
