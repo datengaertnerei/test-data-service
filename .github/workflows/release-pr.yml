@@ -24,8 +24,8 @@ jobs:
       uses: devops-infra/action-pull-request@v0.4.2
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        source_branch: develop
-        target_branch: master
+        source_branch: master
+        target_branch: develop
         title: "Release"
         draft: true
         get_diff: true

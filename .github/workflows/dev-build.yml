@@ -37,8 +37,18 @@ jobs:
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
     
-    - name: Build and analyze
+    - name: Build and analyze dev
+      if: ${{ github.ref == 'refs/heads/develop' }}
       run: mvn -B deploy org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      env:
+        # Needed to get some information about the pull request, if any
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # SonarCloud access token should be generated from https://sonarcloud.io/account/security/
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
+
+    - name: Build and analyze main
+      if: ${{ github.ref == 'refs/heads/master' }}
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       env:
         # Needed to get some information about the pull request, if any
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
