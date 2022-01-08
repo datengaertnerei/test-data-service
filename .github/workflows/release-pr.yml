@@ -5,9 +5,7 @@ name: maven-release-pr
 
 concurrency: dev-build
 
-on:
-  schedule:
-    - cron: "0 10 15 * *"
+on: workflow_dispatch
     
 jobs:
   build:
@@ -22,23 +20,18 @@ jobs:
         java-version: 17
         distribution: 'temurin'
                 
-    - name: Build with Maven
-      run: mvn -B clean test --file pom.xml
-      env:        
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Create PR
       uses: devops-infra/action-pull-request@v0.4.2
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        source_branch: development
+        source_branch: develop
         target_branch: master
-        title: "Monthly release"
+        title: "Release"
         draft: true
         get_diff: true
 
     - name: Increment patch number for next release
-      run: mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} versions:commit 
+      run: mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit 
       
     - name: Commit POM
       run: |
