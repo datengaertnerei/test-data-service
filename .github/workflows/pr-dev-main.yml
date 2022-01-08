@@ -21,15 +21,15 @@ jobs:
         distribution: 'temurin'
                 
     - name: Create PR
-      uses: devops-infra/action-pull-request@v0.4.2
+      uses: repo-sync/pull-request@v2
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        source_branch: master
-        target_branch: develop
-        title: "Release"
-        draft: true
-        get_diff: true
-
+        destination_branch: "master"
+        pr_title: "Pulling ${{ github.ref }} into main"
+        pr_body: "automated PR"
+        pr_reviewer: "gh action"
+        pr_draft: true
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        
     - name: Increment patch number for next release
       run: mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit 
       
