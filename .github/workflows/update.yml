@@ -19,10 +19,13 @@ jobs:
         with:
           python-version: 3.x
           
-      - name: Install dependencies
+      - name: Fetch data
         run: |
           cd src/tools
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           python blz_fetcher.py
           wc -l banklist.csv
+          cp banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
+          git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank
+          git push      
