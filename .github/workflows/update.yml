@@ -8,7 +8,7 @@ concurrency: dev-build
 on: 
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 4 10 * *'
+    - cron:  '0 4 10 3,6,9,12 *'
     
 jobs:
   build:
@@ -29,8 +29,10 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           python blz_fetcher.py
           wc -l banklist.csv
-          cp banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
-          git config --local user.email "$(git log --format='%ae' HEAD^!)"
-          git config --local user.name "$(git log --format='%an' HEAD^!)"
-          git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank
-          git push      
+          if [[ $(wc -l < banklist.csv) -ge 100 ]];then  
+            cp banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
+            git config --local user.email "$(git log --format='%ae' HEAD^!)"
+            git config --local user.name "$(git log --format='%an' HEAD^!)"
+            git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank
+            git push      
+          fi
