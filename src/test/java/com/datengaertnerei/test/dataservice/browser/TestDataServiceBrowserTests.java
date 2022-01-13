@@ -3,6 +3,8 @@ package com.datengaertnerei.test.dataservice.browser;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.util.function.Consumer;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -37,6 +39,13 @@ class TestDataServiceBrowserTests {
 		try (Playwright playwright = Playwright.create()) {
 			Browser browser = playwright.chromium().launch();
 			Page page = browser.newPage();
+			Consumer<String> c = new Consumer<>() {
+				@Override
+				public void accept(String t) {
+					fail(t);					
+				}
+			};
+			page.onPageError(c );
 			page.navigate("http://localhost:" + randomServerPort);
 			assertNotEquals("", page.textContent("#name"));
 			assertNotEquals("", page.textContent("#street"));
