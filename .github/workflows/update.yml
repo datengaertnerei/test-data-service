@@ -36,3 +36,5 @@ jobs:
             git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank
             git push      
           fi
+        env:        
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
