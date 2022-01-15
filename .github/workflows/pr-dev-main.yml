@@ -5,7 +5,10 @@ name: create-pr-dev-main
 
 concurrency: dev-build
 
-on: workflow_dispatch
+on: 
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 4 15 * *'
     
 jobs:
   build:
@@ -27,7 +30,7 @@ jobs:
         pr_title: "Pulling ${{ github.ref }} into main"
         pr_body: "automated PR"
         pr_reviewer: "gh action"
-        pr_draft: true
+        pr_draft: false
         github_token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Increment patch number for next release
