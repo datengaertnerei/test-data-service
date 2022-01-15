@@ -21,4 +21,4 @@ jobs:
         distribution: 'temurin'
                 
     - name: Create PR
-      run: mvn release:clean release:perform
+      run: mvn release:clean release:prepare release:perform
