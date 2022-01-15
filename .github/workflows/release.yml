@@ -21,4 +21,7 @@ jobs:
         distribution: 'temurin'
                 
     - name: Create PR
-      run: mvn release:clean release:prepare release:perform
+      run: |
+        git config --local user.email "$(git log --format='%ae' HEAD^!)"
+        git config --local user.name "$(git log --format='%an' HEAD^!)"
+        mvn release:clean release:prepare release:perform
