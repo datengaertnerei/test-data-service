@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     
     - name: Set up JDK 17
       uses: actions/setup-java@v2
@@ -42,7 +44,7 @@ jobs:
       run: |
         mvn -B deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         mkdir ~/site-tmp
-        cp target/site ~/site-tmp
+        cp -r target/site ~/site-tmp
         git checkout gh_pages
         mv ~/site-tmp docs
         git commit docs
