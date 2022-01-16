@@ -47,6 +47,7 @@ jobs:
         mvn -B deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         mkdir ~/site-tmp
         cp -r target/site/* ~/site-tmp
+        cp -r target/test-data-service-oas.json ~/site-tmp        
         git checkout gh_pages
         cp -r ~/site-tmp/* docs
         git add -A docs
