@@ -5,6 +5,10 @@ import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 
+/**
+ * Container class to combine all elements of a fictitious person
+ *
+ */
 public class Bundle {
 
 	private Person person;

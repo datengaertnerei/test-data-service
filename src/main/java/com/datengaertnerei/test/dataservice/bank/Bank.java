@@ -25,6 +25,10 @@ package com.datengaertnerei.test.dataservice.bank;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
+/**
+ * Bank entity
+ *
+ */
 @Schema(description = "bank info including domestic bank code and BIC")
 public class Bank {
 	private String city;

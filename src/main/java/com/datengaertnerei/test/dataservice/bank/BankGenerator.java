@@ -41,6 +41,10 @@ import org.iban4j.CountryCode;
 import org.iban4j.Iban;
 import org.springframework.stereotype.Service;
 
+/**
+ * Spring Boot service to generate valid bank accounts
+ *
+ */
 @Service
 public class BankGenerator implements IBankGenerator {
 	private static final String DEFAULT_CITY = "frankfurt am main";

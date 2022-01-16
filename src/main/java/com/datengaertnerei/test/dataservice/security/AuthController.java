@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Spring Boot controller to handle user account management
+ *
+ */
 @RestController
 @RequestMapping(value = "/auth")
 public class AuthController {
