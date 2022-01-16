@@ -1,10 +1,14 @@
 import "./App.css";
 import PersonView from "./components/PersonView";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+
+const theme = createTheme();
 
 function App() {
-  return (
+
+  return <ThemeProvider theme={theme}>
     <div className="App">
       <header className="App-header">
         <PersonView />
@@ -14,7 +18,8 @@ function App() {
         </Typography>
       </header>
     </div>
-  );
+    </ThemeProvider>;
+
 }
 
 export default App;

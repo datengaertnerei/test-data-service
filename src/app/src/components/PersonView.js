@@ -1,6 +1,6 @@
 import React from "react";
 import PersonPanel from "./PersonPanel";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material/Typography";
 
 class PersonView extends React.Component {
     constructor(props) {
