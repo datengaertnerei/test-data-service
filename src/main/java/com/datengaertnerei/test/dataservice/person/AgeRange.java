@@ -15,11 +15,11 @@ public enum AgeRange {
 	 */
 	ADULT, 
 	/**
-	 * > 60 y/o
+	 * &gt; 60 y/o
 	 */
 	SENIOR, 
 	/**
-	 * < 18 y/o
+	 * &lt; 18 y/o
 	 */
 	MINOR
 }

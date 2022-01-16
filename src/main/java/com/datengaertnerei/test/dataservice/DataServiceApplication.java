@@ -37,15 +37,26 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 
+/**
+ * Spring Boot main application for test data service
+ *
+ */
 @SpringBootApplication
 public class DataServiceApplication {
 	private static final String IMPORT_ONLY_YES = "YES";
 	private static Logger log = LoggerFactory.getLogger(DataServiceApplication.class);
 
+	/**
+	 * @param args cli arguments
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(DataServiceApplication.class, args);
 	}
 
+	/**
+	 * @param ctx Spring Boot app contect
+	 * @return Spring Boot runner object
+	 */
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
@@ -62,6 +73,9 @@ public class DataServiceApplication {
 		};
 	}
 
+	/**
+	 * @return OpenAPI doc bean
+	 */
 	@Bean
 	public OpenAPI springOpenAPI() {
 		// get POM Version from Manifest
