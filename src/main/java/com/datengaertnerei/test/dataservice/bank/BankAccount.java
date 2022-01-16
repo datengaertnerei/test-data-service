@@ -18,42 +18,42 @@ public class BankAccount {
 	private String comment;
 
 	/**
-	 * @return
+	 * @return getter
 	 */
 	public Bank getBank() {
 		return bank;
 	}
 
 	/**
-	 * @param bank
+	 * @param bank setter
 	 */
 	public void setBank(Bank bank) {
 		this.bank = bank;
 	}
 
 	/**
-	 * @return
+	 * @return getter
 	 */
 	public String getIban() {
 		return iban;
 	}
 
 	/**
-	 * @param iban
+	 * @param iban setter
 	 */
 	public void setIban(String iban) {
 		this.iban = iban;
 	}
 
 	/**
-	 * @return
+	 * @return getter
 	 */
 	public String getComment() {
 		return comment;
 	}
 
 	/**
-	 * @param comment
+	 * @param comment setter
 	 */
 	public void setComment(String comment) {
 		this.comment = comment;

@@ -37,34 +37,36 @@ public class Bank {
 	private String bic;
 
 	/**
-	 * @return
+	 * @return getter
 	 */
 	public String getBankCode() {
 		return bankCode;
 	}
 
 	/**
-	 * @return
+	 * @return getter
 	 */
 	public String getDesc() {
 		return desc;
 	}
 
 	/**
-	 * @return
+	 * @return getter
 	 */
 	public String getBic() {
 		return bic;
 	}
 
 	/**
-	 * @return
+	 * @return getter
 	 */
 	public String getCity() {
 		return city;
 	}
 
 	/**
+	 * ctor
+	 * 
 	 * @param bankCode
 	 * @param desc
 	 * @param bic

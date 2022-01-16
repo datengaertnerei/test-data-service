@@ -53,6 +53,7 @@ jobs:
         git add -A docs
         git commit docs -m "Maven Site generated"
         git push
+        rm -rf ~/site-tmp
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
