@@ -4,6 +4,10 @@ import java.time.LocalDate;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
+/**
+ * Credit card entity
+ *
+ */
 @Schema(description = &quot;credit card info with type, number and cvc&quot;)
 public class CreditCard {
 
@@ -12,32 +16,55 @@ public class CreditCard {
 	private String cvc;
 	private LocalDate expiry;
 
-<span class="fc" id="L15">	public CreditCard(String number, String type, String cvc, LocalDate expiry) {</span>
-<span class="fc" id="L16">		this.number = number;</span>
-<span class="fc" id="L17">		this.type = type;</span>
-<span class="fc" id="L18">		this.cvc = cvc;</span>
-<span class="fc" id="L19">		this.setExpiry(expiry);</span>
-<span class="fc" id="L20">	}</span>
+	/**
+	 * ctor
+	 * 
+	 * @param number
+	 * @param type
+	 * @param cvc
+	 * @param expiry
+	 */
+<span class="fc" id="L27">	public CreditCard(String number, String type, String cvc, LocalDate expiry) {</span>
+<span class="fc" id="L28">		this.number = number;</span>
+<span class="fc" id="L29">		this.type = type;</span>
+<span class="fc" id="L30">		this.cvc = cvc;</span>
+<span class="fc" id="L31">		this.setExpiry(expiry);</span>
+<span class="fc" id="L32">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getNumber() {
-<span class="fc" id="L23">		return number;</span>
+<span class="fc" id="L38">		return number;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getType() {
-<span class="fc" id="L27">		return type;</span>
+<span class="fc" id="L45">		return type;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getCvc() {
-<span class="fc" id="L31">		return cvc;</span>
+<span class="fc" id="L52">		return cvc;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public LocalDate getExpiry() {
-<span class="fc" id="L35">		return expiry;</span>
+<span class="fc" id="L59">		return expiry;</span>
 	}
 
+	/**
+	 * @param expiry setter
+	 */
 	public void setExpiry(LocalDate expiry) {
-<span class="fc" id="L39">		this.expiry = expiry;</span>
-<span class="fc" id="L40">	}</span>
+<span class="fc" id="L66">		this.expiry = expiry;</span>
+<span class="fc" id="L67">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

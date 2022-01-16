@@ -3,51 +3,55 @@
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * Generator for german tax id
+ *
+ */
 public class TaxIdGenerator {
 	private static final String DEFAULT_TAX_ID = &quot;12345678911&quot;;
 	private Random random;
 
-<span class="fc" id="L10">	protected TaxIdGenerator(Random random) {</span>
-<span class="fc" id="L11">		this.random = random;</span>
-<span class="fc" id="L12">	}</span>
+<span class="fc" id="L14">	protected TaxIdGenerator(Random random) {</span>
+<span class="fc" id="L15">		this.random = random;</span>
+<span class="fc" id="L16">	}</span>
 
 	protected String createTaxId() {
-<span class="fc" id="L15">		int[] digits = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };</span>
-<span class="fc" id="L16">		int[] result = new int[11];</span>
-<span class="fc" id="L17">		int limit = 9;</span>
+<span class="fc" id="L19">		int[] digits = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };</span>
+<span class="fc" id="L20">		int[] result = new int[11];</span>
+<span class="fc" id="L21">		int limit = 9;</span>
 
 		// fill first 9 digits of result
-<span class="fc bfc" id="L20" title="All 2 branches covered.">		for (int i = 0; i &lt; 9; i++) {</span>
-<span class="fc" id="L21">			int idx = random.nextInt(limit);</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">		for (int i = 0; i &lt; 9; i++) {</span>
+<span class="fc" id="L25">			int idx = random.nextInt(limit);</span>
 			// pick random digit
-<span class="fc" id="L23">			result[i] = digits[idx];</span>
+<span class="fc" id="L27">			result[i] = digits[idx];</span>
 			// and replace it as it has to be unique in the result
-<span class="fc" id="L25">			digits[idx] = digits[limit];</span>
-<span class="fc" id="L26">			limit--;</span>
+<span class="fc" id="L29">			digits[idx] = digits[limit];</span>
+<span class="fc" id="L30">			limit--;</span>
 		}
 		// one digit has to be part of the result twice
-<span class="fc" id="L29">		result[9] = result[random.nextInt(8)];</span>
+<span class="fc" id="L33">		result[9] = result[random.nextInt(8)];</span>
 
-<span class="fc" id="L31">		result[10] = calcChecksum(result);</span>
-<span class="fc" id="L32">		return Arrays.stream(result).mapToObj(String::valueOf).reduce((a, b) -&gt; a.concat(b)).orElse(DEFAULT_TAX_ID);</span>
+<span class="fc" id="L35">		result[10] = calcChecksum(result);</span>
+<span class="fc" id="L36">		return Arrays.stream(result).mapToObj(String::valueOf).reduce((a, b) -&gt; a.concat(b)).orElse(DEFAULT_TAX_ID);</span>
 	}
 
 	// checksum algorithm as described in
 	// https://de.wikipedia.org/wiki/Steuerliche_Identifikationsnummer#Aufbau_der_Identifikationsnummer
 	private int calcChecksum(final int[] tin) {
-<span class="fc" id="L38">		int sum = 0;</span>
-<span class="fc" id="L39">		int product = 10;</span>
-<span class="fc bfc" id="L40" title="All 2 branches covered.">		for (int i = 0; i &lt; 10; i++) {</span>
-<span class="fc" id="L41">			int c = tin[i];</span>
-<span class="fc" id="L42">			sum = (c + product) % 10;</span>
-<span class="fc bfc" id="L43" title="All 2 branches covered.">			if (sum == 0)</span>
-<span class="fc" id="L44">				sum = 10;</span>
-<span class="fc" id="L45">			product = (sum * 2) % 11;</span>
+<span class="fc" id="L42">		int sum = 0;</span>
+<span class="fc" id="L43">		int product = 10;</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">		for (int i = 0; i &lt; 10; i++) {</span>
+<span class="fc" id="L45">			int c = tin[i];</span>
+<span class="fc" id="L46">			sum = (c + product) % 10;</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">			if (sum == 0)</span>
+<span class="fc" id="L48">				sum = 10;</span>
+<span class="fc" id="L49">			product = (sum * 2) % 11;</span>
 		}
-<span class="fc" id="L47">		int check = 11 - product;</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">		if (check == 10)</span>
-<span class="fc" id="L49">			check = 0;</span>
-<span class="fc" id="L50">		return check;</span>
+<span class="fc" id="L51">		int check = 11 - product;</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">		if (check == 10)</span>
+<span class="fc" id="L53">			check = 0;</span>
+<span class="fc" id="L54">		return check;</span>
 	}
 
 }
