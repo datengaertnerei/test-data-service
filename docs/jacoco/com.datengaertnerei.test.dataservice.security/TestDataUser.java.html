@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 <span class="fc" id="L7">public class TestDataUser {</span>
-	
+
 	private String name;
 	private String passwordCrypt;
 	private String role;
@@ -17,7 +17,7 @@ import javax.persistence.Id;
 	public void setPassword(String passwordCrypt) {
 <span class="fc" id="L18">		this.passwordCrypt = passwordCrypt;</span>
 <span class="fc" id="L19">	}</span>
-	
+
 	@Id
 	public String getUsername() {
 <span class="fc" id="L23">		return name;</span>
@@ -34,6 +34,6 @@ import javax.persistence.Id;
 	public void setRole(String role) {
 <span class="fc" id="L35">		this.role = role;</span>
 <span class="fc" id="L36">	}</span>
-	
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

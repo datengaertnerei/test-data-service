@@ -5,36 +5,40 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
+/**
+ * Bank account entity
+ *
+ */
 @JsonInclude(Include.NON_NULL)
-@Schema(description=&quot;SEPA area bank account number and bank info&quot;)
-<span class="fc" id="L10">public class BankAccount {</span>
+@Schema(description = &quot;SEPA area bank account number and bank info&quot;)
+<span class="fc" id="L14">public class BankAccount {</span>
 
 	private Bank bank;
 	private String iban;
 	private String comment;
 
 	public Bank getBank() {
-<span class="fc" id="L17">		return bank;</span>
+<span class="fc" id="L21">		return bank;</span>
 	}
 
 	public void setBank(Bank bank) {
-<span class="fc" id="L21">		this.bank = bank;</span>
-<span class="fc" id="L22">	}</span>
+<span class="fc" id="L25">		this.bank = bank;</span>
+<span class="fc" id="L26">	}</span>
 
 	public String getIban() {
-<span class="fc" id="L25">		return iban;</span>
+<span class="fc" id="L29">		return iban;</span>
 	}
 
 	public void setIban(String iban) {
-<span class="fc" id="L29">		this.iban = iban;</span>
-<span class="fc" id="L30">	}</span>
+<span class="fc" id="L33">		this.iban = iban;</span>
+<span class="fc" id="L34">	}</span>
 
 	public String getComment() {
-<span class="fc" id="L33">		return comment;</span>
+<span class="fc" id="L37">		return comment;</span>
 	}
 
 	public void setComment(String comment) {
-<span class="fc" id="L37">		this.comment = comment;</span>
-<span class="fc" id="L38">	}</span>
+<span class="fc" id="L41">		this.comment = comment;</span>
+<span class="fc" id="L42">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

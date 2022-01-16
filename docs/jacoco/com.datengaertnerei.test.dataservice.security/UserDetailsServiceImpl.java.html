@@ -68,11 +68,11 @@ import org.springframework.stereotype.Service;
 
 <span class="fc" id="L69">		return result;</span>
 	}
-	
+
 	protected List&lt;TestDataUser&gt; exportUsers() {
 <span class="fc" id="L73">		return userRepository.findAll();</span>
 	}
-	
+
 	protected String importUsers(List&lt;TestDataUser&gt; users) {
 		try {
 <span class="fc" id="L78">			userRepository.deleteAll();</span>
@@ -81,7 +81,7 @@ import org.springframework.stereotype.Service;
 <span class="nc" id="L81">			return e.getMessage();</span>
 <span class="fc" id="L82">		}</span>
 <span class="fc" id="L83">		return RESULT_OK;</span>
-	}	
+	}
 
 	@PostConstruct
 	private void setup() {
@@ -92,18 +92,18 @@ import org.springframework.stereotype.Service;
 <span class="fc" id="L92">		String adminPasswd = System.getenv(&quot;TD_ADMIN_PASSWD&quot;);</span>
 <span class="fc" id="L93">		UserDetails admin = loadUserByUsername(NAME_ADMIN);</span>
 <span class="pc bpc" id="L94" title="1 of 2 branches missed.">		if (null == admin) {</span>
-<span class="nc bnc" id="L95" title="All 4 branches missed.">			if (null == adminPasswd || adminPasswd.isEmpty()) {</span>
-<span class="nc" id="L96">				adminPasswd = UUID.randomUUID().toString();</span>
-<span class="nc" id="L97">				log.info(&quot;creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n&quot;,</span>
+<span class="pc bpc" id="L95" title="3 of 4 branches missed.">			if (null == adminPasswd || adminPasswd.isEmpty()) {</span>
+<span class="fc" id="L96">				adminPasswd = UUID.randomUUID().toString();</span>
+<span class="fc" id="L97">				log.info(&quot;creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n&quot;,</span>
 						adminPasswd);
 
 			}
-<span class="nc" id="L101">			TestDataUser newAdmin = new TestDataUser();</span>
-<span class="nc" id="L102">			newAdmin.setUsername(NAME_ADMIN);</span>
-<span class="nc" id="L103">			newAdmin.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
-<span class="nc" id="L104">			newAdmin.setRole(ROLE_ADMIN);</span>
-<span class="nc" id="L105">			userRepository.saveAndFlush(newAdmin);</span>
-<span class="pc bpc" id="L106" title="3 of 4 branches missed.">		} else if (null != adminPasswd &amp;&amp; !adminPasswd.isEmpty()) {</span>
+<span class="fc" id="L101">			TestDataUser newAdmin = new TestDataUser();</span>
+<span class="fc" id="L102">			newAdmin.setUsername(NAME_ADMIN);</span>
+<span class="fc" id="L103">			newAdmin.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
+<span class="fc" id="L104">			newAdmin.setRole(ROLE_ADMIN);</span>
+<span class="fc" id="L105">			userRepository.saveAndFlush(newAdmin);</span>
+<span class="pc bnc" id="L106" title="All 4 branches missed.">		} else if (null != adminPasswd &amp;&amp; !adminPasswd.isEmpty()) {</span>
 <span class="nc" id="L107">			Optional&lt;TestDataUser&gt; u = userRepository.findById(NAME_ADMIN);</span>
 
 <span class="nc bnc" id="L109" title="All 2 branches missed.">			if (u.isPresent()) {</span>

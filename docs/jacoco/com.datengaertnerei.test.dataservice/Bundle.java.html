@@ -5,7 +5,11 @@ import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 
-<span class="fc" id="L8">public class Bundle {</span>
+/**
+ * Container class to combine all elements of a fictitious person
+ *
+ */
+<span class="fc" id="L12">public class Bundle {</span>
 
 	private Person person;
 	private PhoneNumber mobile;
@@ -13,45 +17,75 @@ import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 	private CreditCard creditCard;
 	private BankAccount bankAccount;
 
+	/**
+	 * @return
+	 */
 	public Person getPerson() {
-<span class="fc" id="L17">		return person;</span>
+<span class="fc" id="L24">		return person;</span>
 	}
 
+	/**
+	 * @param person setter
+	 */
 	public void setPerson(Person person) {
-<span class="fc" id="L21">		this.person = person;</span>
-<span class="fc" id="L22">	}</span>
+<span class="fc" id="L31">		this.person = person;</span>
+<span class="fc" id="L32">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public PhoneNumber getMobile() {
-<span class="fc" id="L25">		return mobile;</span>
+<span class="fc" id="L38">		return mobile;</span>
 	}
 
+	/**
+	 * @param mobile setter
+	 */
 	public void setMobile(PhoneNumber mobile) {
-<span class="fc" id="L29">		this.mobile = mobile;</span>
-<span class="fc" id="L30">	}</span>
-
-	public PhoneNumber getLandline() {
-<span class="fc" id="L33">		return landline;</span>
-	}
-
-	public void setLandline(PhoneNumber landline) {
-<span class="fc" id="L37">		this.landline = landline;</span>
-<span class="fc" id="L38">	}</span>
-
-	public CreditCard getCreditCard() {
-<span class="fc" id="L41">		return creditCard;</span>
-	}
-
-	public void setCreditCard(CreditCard creditCard) {
-<span class="fc" id="L45">		this.creditCard = creditCard;</span>
+<span class="fc" id="L45">		this.mobile = mobile;</span>
 <span class="fc" id="L46">	}</span>
 
-	public BankAccount getBankAccount() {
-<span class="fc" id="L49">		return bankAccount;</span>
+	/**
+	 * @return getter
+	 */
+	public PhoneNumber getLandline() {
+<span class="fc" id="L52">		return landline;</span>
 	}
 
+	/**
+	 * @param landline setter
+	 */
+	public void setLandline(PhoneNumber landline) {
+<span class="fc" id="L59">		this.landline = landline;</span>
+<span class="fc" id="L60">	}</span>
+
+	/**
+	 * @return getter
+	 */
+	public CreditCard getCreditCard() {
+<span class="fc" id="L66">		return creditCard;</span>
+	}
+
+	/**
+	 * @param creditCard setter
+	 */
+	public void setCreditCard(CreditCard creditCard) {
+<span class="fc" id="L73">		this.creditCard = creditCard;</span>
+<span class="fc" id="L74">	}</span>
+
+	/**
+	 * @return getter
+	 */
+	public BankAccount getBankAccount() {
+<span class="fc" id="L80">		return bankAccount;</span>
+	}
+
+	/**
+	 * @param bankAccount setter
+	 */
 	public void setBankAccount(BankAccount bankAccount) {
-<span class="fc" id="L53">		this.bankAccount = bankAccount;</span>
-<span class="fc" id="L54">	}</span>
+<span class="fc" id="L87">		this.bankAccount = bankAccount;</span>
+<span class="fc" id="L88">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

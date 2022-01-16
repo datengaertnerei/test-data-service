@@ -43,7 +43,7 @@ import org.openstreetmap.osmosis.pbf2.v0_6.PbfReader;
  */
 public class OsmPbfAddressImportUtil {
 
-<span class="nc" id="L46">	private static Log log = LogFactory.getLog(OsmPbfAddressImportUtil.class);</span>
+<span class="fc" id="L46">	private static Log log = LogFactory.getLog(OsmPbfAddressImportUtil.class);</span>
 
 	/**
 	 * Utility class should not be instantiated
@@ -55,27 +55,30 @@ public class OsmPbfAddressImportUtil {
 	/**
 	 * Starts OSM dump parser and exports all addresses within defined country.
 	 *
-	 * @param fileName the file to import
+	 * @param fileName   the file to import
 	 * @param repository reference to the JPA repository
+	 * @return
 	 */
-	public static void importAddresses(String fileName, PostalAddressRepository repository) {
+	public static boolean importAddresses(String fileName, PostalAddressRepository repository) {
 
-<span class="nc" id="L63">		File osmFile = new File(fileName);</span>
-<span class="nc" id="L64">		PbfReader reader = new PbfReader(osmFile, 1);</span>
-<span class="nc" id="L65">		Sink sinkImplementation = new AddressSink(repository);</span>
-<span class="nc" id="L66">		reader.setSink(sinkImplementation);</span>
-		
+<span class="fc" id="L64">		File osmFile = new File(fileName);</span>
+<span class="fc" id="L65">		PbfReader reader = new PbfReader(osmFile, 1);</span>
+<span class="fc" id="L66">		Sink sinkImplementation = new AddressSink(repository);</span>
+<span class="fc" id="L67">		reader.setSink(sinkImplementation);</span>
+
 		try {
-<span class="nc" id="L69">			reader.run();</span>
-<span class="nc" id="L70">		} catch (Exception e) {</span>
-<span class="nc" id="L71">			log.error(&quot;OSM import run failed&quot;, e);</span>
-<span class="nc" id="L72">		}</span>
+<span class="fc" id="L70">			reader.run();</span>
+<span class="fc" id="L71">		} catch (Exception e) {</span>
+<span class="fc" id="L72">			log.error(&quot;OSM import run failed&quot;, e);</span>
+<span class="fc" id="L73">			return false;</span>
+<span class="fc" id="L74">		}</span>
+<span class="fc" id="L75">		return true;</span>
 
-<span class="nc" id="L74">	}</span>
+	}
 }
 
 class AddressSink implements Sink {
-<span class="nc" id="L78">	private static Log log = LogFactory.getLog(AddressSink.class);</span>
+<span class="fc" id="L81">	private static Log log = LogFactory.getLog(AddressSink.class);</span>
 
 	private static final String COUNTRY = &quot;DE&quot;;
 	private static final String ADDR_POSTCODE = &quot;addr:postcode&quot;;
@@ -85,83 +88,88 @@ class AddressSink implements Sink {
 	private static final String ADDR_COUNTRY = &quot;addr:country&quot;;
 
 	private PostalAddressRepository repository;
-	
+<span class="fc" id="L91">	private int importCounter = 0;</span>
+
 	public AddressSink(PostalAddressRepository repository) {
-<span class="nc" id="L90">		super();</span>
-<span class="nc" id="L91">		this.repository = repository;</span>
-<span class="nc" id="L92">	}</span>
+<span class="fc" id="L94">		super();</span>
+<span class="fc" id="L95">		this.repository = repository;</span>
+<span class="fc" id="L96">	}</span>
 
 	public void process(EntityContainer entityContainer) {
 
 		try {
-<span class="nc" id="L97">			Entity entity = entityContainer.getEntity();</span>
-<span class="nc bnc" id="L98" title="All 2 branches missed.">			if (entity instanceof Node) {</span>
-<span class="nc" id="L99">				processNode(entity);</span>
+<span class="fc" id="L101">			Entity entity = entityContainer.getEntity();</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">			if (entity instanceof Node) {</span>
+<span class="fc" id="L103">				processNode(entity);</span>
 			}
-<span class="nc" id="L101">		} catch (Exception e) {</span>
-<span class="nc" id="L102">			log.error(&quot;OSM import error&quot;, e);</span>
-<span class="nc" id="L103">		}</span>
-<span class="nc" id="L104">	}</span>
+<span class="nc" id="L105">		} catch (Exception e) {</span>
+<span class="nc" id="L106">			log.error(&quot;OSM import error&quot;, e);</span>
+<span class="fc" id="L107">		}</span>
+<span class="fc" id="L108">	}</span>
 
 	private void processNode(Entity entity) {
-<span class="nc" id="L107">		Node node = (Node) entity;</span>
-<span class="nc" id="L108">		extractPostalAddress(node);</span>
-<span class="nc" id="L109">	}</span>
+<span class="fc" id="L111">		Node node = (Node) entity;</span>
+<span class="fc" id="L112">		extractPostalAddress(node);</span>
+		// log progress
+<span class="fc bfc" id="L114" title="All 2 branches covered.">		if (importCounter++ % 1000000 == 0) {</span>
+<span class="fc" id="L115">			log.info(&quot;processing &quot; + importCounter);</span>
+		}
+<span class="fc" id="L117">	}</span>
 
 	private void extractPostalAddress(Node node) {
-<span class="nc" id="L112">		Collection&lt;Tag&gt; tags = node.getTags();</span>
-<span class="nc" id="L113">		String country = null;</span>
-<span class="nc" id="L114">		String city = null;</span>
-<span class="nc" id="L115">		String street = null;</span>
-<span class="nc" id="L116">		String housenumber = null;</span>
-<span class="nc" id="L117">		String postcode = null;</span>
-<span class="nc" id="L118">		int tagCount = 0;</span>
-<span class="nc bnc" id="L119" title="All 2 branches missed.">		for (Tag tag : tags) {</span>
-<span class="nc bnc" id="L120" title="All 6 branches missed.">			switch (tag.getKey()) {</span>
+<span class="fc" id="L120">		Collection&lt;Tag&gt; tags = node.getTags();</span>
+<span class="fc" id="L121">		String country = null;</span>
+<span class="fc" id="L122">		String city = null;</span>
+<span class="fc" id="L123">		String street = null;</span>
+<span class="fc" id="L124">		String housenumber = null;</span>
+<span class="fc" id="L125">		String postcode = null;</span>
+<span class="fc" id="L126">		int tagCount = 0;</span>
+<span class="fc bfc" id="L127" title="All 2 branches covered.">		for (Tag tag : tags) {</span>
+<span class="fc bfc" id="L128" title="All 6 branches covered.">			switch (tag.getKey()) {</span>
 			case ADDR_COUNTRY:
-<span class="nc" id="L122">				country = tag.getValue();</span>
-<span class="nc" id="L123">				tagCount++;</span>
-<span class="nc" id="L124">				break;</span>
+<span class="fc" id="L130">				country = tag.getValue();</span>
+<span class="fc" id="L131">				tagCount++;</span>
+<span class="fc" id="L132">				break;</span>
 			case ADDR_CITY:
-<span class="nc" id="L126">				city = tag.getValue();</span>
-<span class="nc" id="L127">				tagCount++;</span>
-<span class="nc" id="L128">				break;</span>
+<span class="fc" id="L134">				city = tag.getValue();</span>
+<span class="fc" id="L135">				tagCount++;</span>
+<span class="fc" id="L136">				break;</span>
 			case ADDR_STREET:
-<span class="nc" id="L130">				street = tag.getValue();</span>
-<span class="nc" id="L131">				tagCount++;</span>
-<span class="nc" id="L132">				break;</span>
+<span class="fc" id="L138">				street = tag.getValue();</span>
+<span class="fc" id="L139">				tagCount++;</span>
+<span class="fc" id="L140">				break;</span>
 			case ADDR_HOUSENUMBER:
-<span class="nc" id="L134">				housenumber = tag.getValue();</span>
-<span class="nc" id="L135">				tagCount++;</span>
-<span class="nc" id="L136">				break;</span>
+<span class="fc" id="L142">				housenumber = tag.getValue();</span>
+<span class="fc" id="L143">				tagCount++;</span>
+<span class="fc" id="L144">				break;</span>
 			case ADDR_POSTCODE:
-<span class="nc" id="L138">				postcode = tag.getValue();</span>
-<span class="nc" id="L139">				tagCount++;</span>
-<span class="nc" id="L140">				break;</span>
+<span class="fc" id="L146">				postcode = tag.getValue();</span>
+<span class="fc" id="L147">				tagCount++;</span>
+<span class="fc" id="L148">				break;</span>
 
 			default: // just skip to the next tag
 			}
-<span class="nc" id="L144">		}</span>
-<span class="nc bnc" id="L145" title="All 6 branches missed.">		if (tagCount &gt; 4 &amp;&amp; country != null &amp;&amp; country.equals(COUNTRY)) {</span>
+<span class="fc" id="L152">		}</span>
+<span class="pc bpc" id="L153" title="2 of 6 branches missed.">		if (tagCount &gt; 4 &amp;&amp; country != null &amp;&amp; country.equals(COUNTRY)) {</span>
 
-<span class="nc" id="L147">			PostalAddress pa = new PostalAddress(country, city, postcode, street, housenumber);</span>
-<span class="nc" id="L148">			repository.saveAndFlush(pa);</span>
+<span class="fc" id="L155">			PostalAddress pa = new PostalAddress(country, city, postcode, street, housenumber);</span>
+<span class="fc" id="L156">			repository.saveAndFlush(pa);</span>
 		}
-<span class="nc" id="L150">	}</span>
+<span class="fc" id="L158">	}</span>
 
 	@Override
 	public void initialize(Map&lt;String, Object&gt; metaData) {
 		// just to comply with the interface
-<span class="nc" id="L155">	}</span>
+<span class="fc" id="L163">	}</span>
 
 	@Override
 	public void complete() {
 		// just to comply with the interface
-<span class="nc" id="L160">	}</span>
+<span class="fc" id="L168">	}</span>
 
 	@Override
 	public void close() {
 		// just to comply with the interface
-<span class="nc" id="L165">	}	</span>
+<span class="fc" id="L173">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
