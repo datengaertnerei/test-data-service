@@ -202,7 +202,7 @@ import org.springframework.stereotype.Service;
 		double height;
 		do {
 <span class="fc" id="L204">			height = random.nextGaussian() * 10.0 + 165.0;</span>
-<span class="pc bpc" id="L205" title="1 of 4 branches missed.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
+<span class="fc bfc" id="L205" title="All 4 branches covered.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
 <span class="fc bfc" id="L206" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
 <span class="fc" id="L207">			height += 10.0;</span>
 		}
@@ -276,7 +276,7 @@ import org.springframework.stereotype.Service;
 <span class="fc" id="L276">		double shiftFactor = (max - min) / 3;</span>
 <span class="fc" id="L277">		double mediumAge = min + (max - min) / 2;</span>
 <span class="fc" id="L278">		age = random.nextGaussian() * shiftFactor + mediumAge;</span>
-<span class="pc bpc" id="L279" title="1 of 4 branches missed.">		if (age &lt; min || age &gt; max) {</span>
+<span class="fc bfc" id="L279" title="All 4 branches covered.">		if (age &lt; min || age &gt; max) {</span>
 			// cut off long tails
 <span class="fc" id="L281">			age = mediumAge;</span>
 		}
