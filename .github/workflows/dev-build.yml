@@ -46,10 +46,11 @@ jobs:
         git config --global user.name "datengaertnerei"
         mvn -B deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         mkdir ~/site-tmp
-        cp -r target/site ~/site-tmp
+        cp -r target/site/* ~/site-tmp
         git checkout gh_pages
-        mv ~/site-tmp docs
-        git commit docs
+        cp -r ~/site-tmp/* docs
+        git add -A docs
+        git commit docs -m"Maven Site generated"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        

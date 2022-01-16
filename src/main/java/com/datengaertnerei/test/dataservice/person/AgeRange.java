@@ -5,5 +5,21 @@ package com.datengaertnerei.test.dataservice.person;
  *
  */
 public enum AgeRange {
-	ALL, ADULT, SENIOR, MINOR
+	
+	/**
+	 * all ages
+	 */
+	ALL, 
+	/**
+	 * 18 - 60 y/o
+	 */
+	ADULT, 
+	/**
+	 * > 60 y/o
+	 */
+	SENIOR, 
+	/**
+	 * < 18 y/o
+	 */
+	MINOR
 }
