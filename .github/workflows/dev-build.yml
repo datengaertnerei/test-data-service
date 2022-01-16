@@ -48,9 +48,16 @@ jobs:
         mkdir ~/site-tmp
         cp -r target/site/* ~/site-tmp
         git checkout gh_pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
+
+    - name: Upload pages
+      if: ${{ github.ref == 'refs/heads/gh_pages' }}
+      run: |
         cp -r ~/site-tmp/* docs
         git add -A docs
-        git commit docs -m"Maven Site generated"
+        git commit docs -m "Maven Site generated"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
