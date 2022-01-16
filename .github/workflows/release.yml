@@ -20,10 +20,16 @@ jobs:
         java-version: 17
         distribution: 'temurin'
                 
-    - name: Create PR
+    - name: Create Maven release
       run: |
         git config --local user.email "$(git log --format='%ae' HEAD^!)"
         git config --local user.name "$(git log --format='%an' HEAD^!)"
         mvn release:clean release:prepare release:perform
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create GitHub release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "target/*.jar"
+        token: ${{ secrets.GITHUB_TOKEN }}
