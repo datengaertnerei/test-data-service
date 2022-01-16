@@ -3,6 +3,10 @@ package com.datengaertnerei.test.dataservice.person;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * Generator for german tax id
+ *
+ */
 public class TaxIdGenerator {
 	private static final String DEFAULT_TAX_ID = "12345678911";
 	private Random random;

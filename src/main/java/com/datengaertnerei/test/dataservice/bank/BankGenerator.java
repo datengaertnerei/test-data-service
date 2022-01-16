@@ -55,6 +55,9 @@ public class BankGenerator implements IBankGenerator {
 	private Map<String, String> binList;
 	private Random rnd;
 
+	/**
+	 * ctor
+	 */
 	public BankGenerator() {
 		rnd = new Random();
 		rnd.setSeed(System.currentTimeMillis());
@@ -125,6 +128,9 @@ public class BankGenerator implements IBankGenerator {
 		}
 	}
 
+	/**
+	 * acct generation
+	 */
 	@Override
 	public BankAccount generateAccount(String city) {
 		// create valid internal account number
@@ -163,6 +169,9 @@ public class BankGenerator implements IBankGenerator {
 		return result;
 	}
 
+	/**
+	 * cc generation
+	 */
 	@Override
 	public CreditCard generateCreditCard() {
 		// fetch random bin from list
