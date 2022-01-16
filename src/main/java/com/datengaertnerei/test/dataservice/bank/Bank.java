@@ -36,22 +36,40 @@ public class Bank {
 	private String desc;
 	private String bic;
 
+	/**
+	 * @return
+	 */
 	public String getBankCode() {
 		return bankCode;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getDesc() {
 		return desc;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getBic() {
 		return bic;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getCity() {
 		return city;
 	}
 
+	/**
+	 * @param bankCode
+	 * @param desc
+	 * @param bic
+	 * @param city
+	 */
 	public Bank(String bankCode, String desc, String bic, String city) {
 		this.bankCode = bankCode;
 		this.desc = desc;
