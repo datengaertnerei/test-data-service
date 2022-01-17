@@ -3,37 +3,59 @@
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * User entity
+ *
+ */
 @Entity
-<span class="fc" id="L7">public class TestDataUser {</span>
+<span class="fc" id="L11">public class TestDataUser {</span>
 
 	private String name;
 	private String passwordCrypt;
 	private String role;
 
+	/**
+	 * @return getter
+	 */
 	public String getPassword() {
-<span class="fc" id="L14">		return passwordCrypt;</span>
+<span class="fc" id="L21">		return passwordCrypt;</span>
 	}
 
+	/**
+	 * @param passwordCrypt setter
+	 */
 	public void setPassword(String passwordCrypt) {
-<span class="fc" id="L18">		this.passwordCrypt = passwordCrypt;</span>
-<span class="fc" id="L19">	}</span>
+<span class="fc" id="L28">		this.passwordCrypt = passwordCrypt;</span>
+<span class="fc" id="L29">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	@Id
 	public String getUsername() {
-<span class="fc" id="L23">		return name;</span>
+<span class="fc" id="L36">		return name;</span>
 	}
 
+	/**
+	 * @param name setter
+	 */
 	public void setUsername(String name) {
-<span class="fc" id="L27">		this.name = name;</span>
-<span class="fc" id="L28">	}</span>
+<span class="fc" id="L43">		this.name = name;</span>
+<span class="fc" id="L44">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getRole() {
-<span class="fc" id="L31">		return role;</span>
+<span class="fc" id="L50">		return role;</span>
 	}
 
+	/**
+	 * @param role setter
+	 */
 	public void setRole(String role) {
-<span class="fc" id="L35">		this.role = role;</span>
-<span class="fc" id="L36">	}</span>
+<span class="fc" id="L57">		this.role = role;</span>
+<span class="fc" id="L58">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

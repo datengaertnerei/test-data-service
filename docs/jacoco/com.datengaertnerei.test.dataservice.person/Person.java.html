@@ -54,79 +54,133 @@ public class Person {
 
 	private PostalAddress address;
 
+	/**
+	 * @return getter
+	 */
 	public String getGivenName() {
-<span class="fc" id="L58">		return givenName;</span>
+<span class="fc" id="L61">		return givenName;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getFamilyName() {
-<span class="fc" id="L62">		return familyName;</span>
+<span class="fc" id="L68">		return familyName;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getBirthName() {
-<span class="fc" id="L66">		return birthName;</span>
+<span class="fc" id="L75">		return birthName;</span>
 	}
 
+	/**
+	 * @param birthName setter
+	 */
 	public void setBirthName(String birthName) {
-<span class="fc" id="L70">		this.birthName = birthName;</span>
-<span class="fc" id="L71">	}</span>
+<span class="fc" id="L82">		this.birthName = birthName;</span>
+<span class="fc" id="L83">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getGender() {
-<span class="fc" id="L74">		return gender;</span>
+<span class="fc" id="L89">		return gender;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public LocalDate getBirthDate() {
-<span class="fc" id="L78">		return birthDate;</span>
+<span class="fc" id="L96">		return birthDate;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public int getHeight() {
-<span class="fc" id="L82">		return height;</span>
+<span class="fc" id="L103">		return height;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getEyecolor() {
-<span class="fc" id="L86">		return eyecolor;</span>
+<span class="fc" id="L110">		return eyecolor;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getEmail() {
-<span class="fc" id="L90">		return email;</span>
+<span class="fc" id="L117">		return email;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public PostalAddress getAddress() {
-<span class="fc" id="L94">		return address;</span>
+<span class="fc" id="L124">		return address;</span>
 	}
 
+	/**
+	 * @param address setter
+	 */
 	public void setAddress(PostalAddress address) {
-<span class="fc" id="L98">		this.address = address;</span>
-<span class="fc" id="L99">	}</span>
+<span class="fc" id="L131">		this.address = address;</span>
+<span class="fc" id="L132">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getTaxId() {
-<span class="fc" id="L102">		return taxId;</span>
+<span class="fc" id="L138">		return taxId;</span>
 	}
 
+	/**
+	 * @param taxId setter
+	 */
 	public void setTaxId(String taxId) {
-<span class="nc" id="L106">		this.taxId = taxId;</span>
-<span class="nc" id="L107">	}</span>
+<span class="nc" id="L145">		this.taxId = taxId;</span>
+<span class="nc" id="L146">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getComment() {
-<span class="fc" id="L110">		return comment;</span>
+<span class="fc" id="L152">		return comment;</span>
 	}
 
+	/**
+	 * @param comment setter
+	 */
 	public void setComment(String comment) {
-<span class="fc" id="L114">		this.comment = comment;</span>
-<span class="fc" id="L115">	}</span>
+<span class="fc" id="L159">		this.comment = comment;</span>
+<span class="fc" id="L160">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public int getWeight() {
 		// we just assume a BMI of 25 and return the weight
-<span class="fc" id="L119">		double meters = height / 100.0;</span>
-<span class="fc" id="L120">		return (int) (meters * meters * 25.0);</span>
+<span class="fc" id="L167">		double meters = height / 100.0;</span>
+<span class="fc" id="L168">		return (int) (meters * meters * 25.0);</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getProfession() {
-<span class="fc" id="L124">		return profession;</span>
+<span class="fc" id="L175">		return profession;</span>
 	}
 
+	/**
+	 * @param profession setter
+	 */
 	public void setProfession(String profession) {
-<span class="fc" id="L128">		this.profession = profession;</span>
-<span class="fc" id="L129">	}</span>
+<span class="fc" id="L182">		this.profession = profession;</span>
+<span class="fc" id="L183">	}</span>
 
 	/**
 	 * Ctor with values.
@@ -141,15 +195,15 @@ public class Person {
 	 * @param taxId      taxId attribute value
 	 */
 	public Person(String givenName, String familyName, String gender, LocalDate birthDate, int height, String eyecolor,
-<span class="fc" id="L144">			String email, String taxId) {</span>
-<span class="fc" id="L145">		this.givenName = givenName;</span>
-<span class="fc" id="L146">		this.familyName = familyName;</span>
-<span class="fc" id="L147">		this.gender = gender;</span>
-<span class="fc" id="L148">		this.birthDate = birthDate;</span>
-<span class="fc" id="L149">		this.height = height;</span>
-<span class="fc" id="L150">		this.eyecolor = eyecolor;</span>
-<span class="fc" id="L151">		this.email = email;</span>
-<span class="fc" id="L152">		this.taxId = taxId;</span>
-<span class="fc" id="L153">	}</span>
+<span class="fc" id="L198">			String email, String taxId) {</span>
+<span class="fc" id="L199">		this.givenName = givenName;</span>
+<span class="fc" id="L200">		this.familyName = familyName;</span>
+<span class="fc" id="L201">		this.gender = gender;</span>
+<span class="fc" id="L202">		this.birthDate = birthDate;</span>
+<span class="fc" id="L203">		this.height = height;</span>
+<span class="fc" id="L204">		this.eyecolor = eyecolor;</span>
+<span class="fc" id="L205">		this.email = email;</span>
+<span class="fc" id="L206">		this.taxId = taxId;</span>
+<span class="fc" id="L207">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

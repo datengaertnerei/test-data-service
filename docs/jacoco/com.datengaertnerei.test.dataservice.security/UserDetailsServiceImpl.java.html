@@ -16,14 +16,18 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+/**
+ * User admin service
+ *
+ */
 @Service
-<span class="fc" id="L20">public class UserDetailsServiceImpl implements UserDetailsService {</span>
+<span class="fc" id="L24">public class UserDetailsServiceImpl implements UserDetailsService {</span>
 	private static final String NAME_ADMIN = &quot;admin&quot;;
 	public static final String ROLE_ADMIN = &quot;admin&quot;;
 	public static final String ROLE_USER = &quot;user&quot;;
 	public static final String RESULT_OK = &quot;OK&quot;;
 
-<span class="fc" id="L26">	private static final Logger log = LoggerFactory.getLogger(UserDetailsServiceImpl.class);</span>
+<span class="fc" id="L30">	private static final Logger log = LoggerFactory.getLogger(UserDetailsServiceImpl.class);</span>
 
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -32,86 +36,86 @@ import org.springframework.stereotype.Service;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) {
-<span class="fc" id="L35">		UserDetails userDetails = null;</span>
-<span class="fc" id="L36">		Optional&lt;TestDataUser&gt; u = userRepository.findById(username);</span>
+<span class="fc" id="L39">		UserDetails userDetails = null;</span>
+<span class="fc" id="L40">		Optional&lt;TestDataUser&gt; u = userRepository.findById(username);</span>
 
-<span class="fc bfc" id="L38" title="All 2 branches covered.">		if (u.isPresent()) {</span>
-<span class="fc" id="L39">			TestDataUser appUser = u.get();</span>
-<span class="fc" id="L40">			userDetails = User.withUsername(appUser.getUsername()).password(appUser.getPassword())</span>
-<span class="fc" id="L41">					.roles(appUser.getRole()).build();</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">		if (u.isPresent()) {</span>
+<span class="fc" id="L43">			TestDataUser appUser = u.get();</span>
+<span class="fc" id="L44">			userDetails = User.withUsername(appUser.getUsername()).password(appUser.getPassword())</span>
+<span class="fc" id="L45">					.roles(appUser.getRole()).build();</span>
 		}
 
-<span class="fc" id="L44">		return userDetails;</span>
+<span class="fc" id="L48">		return userDetails;</span>
 	}
 
 	protected ApiCredentials generateApiCredentials() {
-<span class="fc" id="L48">		ApiCredentials result = new ApiCredentials();</span>
+<span class="fc" id="L52">		ApiCredentials result = new ApiCredentials();</span>
 
 		// generate new account id that is not in use
-<span class="fc" id="L51">		String newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
-<span class="fc" id="L52">		UserDetails account = loadUserByUsername(newAccountId);</span>
-<span class="pc bpc" id="L53" title="1 of 2 branches missed.">		while (null != account) {</span>
-<span class="nc" id="L54">			newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
-<span class="nc" id="L55">			account = loadUserByUsername(newAccountId);</span>
+<span class="fc" id="L55">		String newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
+<span class="fc" id="L56">		UserDetails account = loadUserByUsername(newAccountId);</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">		while (null != account) {</span>
+<span class="nc" id="L58">			newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
+<span class="nc" id="L59">			account = loadUserByUsername(newAccountId);</span>
 		}
 
 		// fill credentials
-<span class="fc" id="L59">		result.setAccountId(newAccountId);</span>
-<span class="fc" id="L60">		result.setPassword(UUID.randomUUID().toString());</span>
+<span class="fc" id="L63">		result.setAccountId(newAccountId);</span>
+<span class="fc" id="L64">		result.setPassword(UUID.randomUUID().toString());</span>
 
 		// and save to authorization database
-<span class="fc" id="L63">		TestDataUser newAccount = new TestDataUser();</span>
-<span class="fc" id="L64">		newAccount.setUsername(newAccountId);</span>
-<span class="fc" id="L65">		newAccount.setPassword(bCryptPasswordEncoder.encode(result.getPassword()));</span>
-<span class="fc" id="L66">		newAccount.setRole(ROLE_USER);</span>
-<span class="fc" id="L67">		userRepository.saveAndFlush(newAccount);</span>
+<span class="fc" id="L67">		TestDataUser newAccount = new TestDataUser();</span>
+<span class="fc" id="L68">		newAccount.setUsername(newAccountId);</span>
+<span class="fc" id="L69">		newAccount.setPassword(bCryptPasswordEncoder.encode(result.getPassword()));</span>
+<span class="fc" id="L70">		newAccount.setRole(ROLE_USER);</span>
+<span class="fc" id="L71">		userRepository.saveAndFlush(newAccount);</span>
 
-<span class="fc" id="L69">		return result;</span>
+<span class="fc" id="L73">		return result;</span>
 	}
 
 	protected List&lt;TestDataUser&gt; exportUsers() {
-<span class="fc" id="L73">		return userRepository.findAll();</span>
+<span class="fc" id="L77">		return userRepository.findAll();</span>
 	}
 
 	protected String importUsers(List&lt;TestDataUser&gt; users) {
 		try {
-<span class="fc" id="L78">			userRepository.deleteAll();</span>
-<span class="fc" id="L79">			userRepository.saveAll(users);</span>
-<span class="nc" id="L80">		} catch (Exception e) {</span>
-<span class="nc" id="L81">			return e.getMessage();</span>
-<span class="fc" id="L82">		}</span>
-<span class="fc" id="L83">		return RESULT_OK;</span>
+<span class="fc" id="L82">			userRepository.deleteAll();</span>
+<span class="fc" id="L83">			userRepository.saveAll(users);</span>
+<span class="nc" id="L84">		} catch (Exception e) {</span>
+<span class="nc" id="L85">			return e.getMessage();</span>
+<span class="fc" id="L86">		}</span>
+<span class="fc" id="L87">		return RESULT_OK;</span>
 	}
 
 	@PostConstruct
 	private void setup() {
-<span class="fc" id="L88">		log.info(&quot;setting up user details service&quot;);</span>
-<span class="fc" id="L89">		bCryptPasswordEncoder = new BCryptPasswordEncoder();</span>
+<span class="fc" id="L92">		log.info(&quot;setting up user details service&quot;);</span>
+<span class="fc" id="L93">		bCryptPasswordEncoder = new BCryptPasswordEncoder();</span>
 
 		// allow admin password sideloading, esp. for container environments
-<span class="fc" id="L92">		String adminPasswd = System.getenv(&quot;TD_ADMIN_PASSWD&quot;);</span>
-<span class="fc" id="L93">		UserDetails admin = loadUserByUsername(NAME_ADMIN);</span>
-<span class="pc bpc" id="L94" title="1 of 2 branches missed.">		if (null == admin) {</span>
-<span class="pc bpc" id="L95" title="3 of 4 branches missed.">			if (null == adminPasswd || adminPasswd.isEmpty()) {</span>
-<span class="fc" id="L96">				adminPasswd = UUID.randomUUID().toString();</span>
-<span class="fc" id="L97">				log.info(&quot;creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n&quot;,</span>
+<span class="fc" id="L96">		String adminPasswd = System.getenv(&quot;TD_ADMIN_PASSWD&quot;);</span>
+<span class="fc" id="L97">		UserDetails admin = loadUserByUsername(NAME_ADMIN);</span>
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">		if (null == admin) {</span>
+<span class="pc bpc" id="L99" title="3 of 4 branches missed.">			if (null == adminPasswd || adminPasswd.isEmpty()) {</span>
+<span class="fc" id="L100">				adminPasswd = UUID.randomUUID().toString();</span>
+<span class="fc" id="L101">				log.info(&quot;creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n&quot;,</span>
 						adminPasswd);
 
 			}
-<span class="fc" id="L101">			TestDataUser newAdmin = new TestDataUser();</span>
-<span class="fc" id="L102">			newAdmin.setUsername(NAME_ADMIN);</span>
-<span class="fc" id="L103">			newAdmin.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
-<span class="fc" id="L104">			newAdmin.setRole(ROLE_ADMIN);</span>
-<span class="fc" id="L105">			userRepository.saveAndFlush(newAdmin);</span>
-<span class="pc bnc" id="L106" title="All 4 branches missed.">		} else if (null != adminPasswd &amp;&amp; !adminPasswd.isEmpty()) {</span>
-<span class="nc" id="L107">			Optional&lt;TestDataUser&gt; u = userRepository.findById(NAME_ADMIN);</span>
+<span class="fc" id="L105">			TestDataUser newAdmin = new TestDataUser();</span>
+<span class="fc" id="L106">			newAdmin.setUsername(NAME_ADMIN);</span>
+<span class="fc" id="L107">			newAdmin.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
+<span class="fc" id="L108">			newAdmin.setRole(ROLE_ADMIN);</span>
+<span class="fc" id="L109">			userRepository.saveAndFlush(newAdmin);</span>
+<span class="pc bnc" id="L110" title="All 4 branches missed.">		} else if (null != adminPasswd &amp;&amp; !adminPasswd.isEmpty()) {</span>
+<span class="nc" id="L111">			Optional&lt;TestDataUser&gt; u = userRepository.findById(NAME_ADMIN);</span>
 
-<span class="nc bnc" id="L109" title="All 2 branches missed.">			if (u.isPresent()) {</span>
-<span class="nc" id="L110">				TestDataUser adminUser = u.get();</span>
-<span class="nc" id="L111">				adminUser.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
-<span class="nc" id="L112">				userRepository.saveAndFlush(adminUser);</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">			if (u.isPresent()) {</span>
+<span class="nc" id="L114">				TestDataUser adminUser = u.get();</span>
+<span class="nc" id="L115">				adminUser.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
+<span class="nc" id="L116">				userRepository.saveAndFlush(adminUser);</span>
 			}
 		}
-<span class="fc" id="L115">	}</span>
+<span class="fc" id="L119">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

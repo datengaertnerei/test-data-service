@@ -52,6 +52,9 @@ public class PostalAddress implements Comparable&lt;PostalAddress&gt; {
 	private String streetAddress;
 	private String houseNumber;
 
+	/**
+	 * @return getter
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonIgnore
@@ -59,52 +62,88 @@ public class PostalAddress implements Comparable&lt;PostalAddress&gt; {
 		return id;
 	}
 
+	/**
+	 * @param id setter
+	 */
 	public void setId(Long id) {
-<span class="fc" id="L63">		this.id = id;</span>
-<span class="fc" id="L64">	}</span>
+<span class="fc" id="L69">		this.id = id;</span>
+<span class="fc" id="L70">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getAddressCountry() {
-<span class="fc" id="L67">		return addressCountry;</span>
+<span class="fc" id="L76">		return addressCountry;</span>
 	}
 
+	/**
+	 * @param addressCountry setter
+	 */
 	public void setAddressCountry(String addressCountry) {
-<span class="fc" id="L71">		this.addressCountry = addressCountry;</span>
-<span class="fc" id="L72">	}</span>
+<span class="fc" id="L83">		this.addressCountry = addressCountry;</span>
+<span class="fc" id="L84">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getAddressLocality() {
-<span class="fc" id="L75">		return addressLocality;</span>
+<span class="fc" id="L90">		return addressLocality;</span>
 	}
 
+	/**
+	 * @param addressLocality setter
+	 */
 	public void setAddressLocality(String addressLocality) {
-<span class="fc" id="L79">		this.addressLocality = addressLocality;</span>
-<span class="fc" id="L80">	}</span>
+<span class="fc" id="L97">		this.addressLocality = addressLocality;</span>
+<span class="fc" id="L98">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getPostalCode() {
-<span class="fc" id="L83">		return postalCode;</span>
+<span class="fc" id="L104">		return postalCode;</span>
 	}
 
+	/**
+	 * @param postalCode setter
+	 */
 	public void setPostalCode(String postalCode) {
-<span class="fc" id="L87">		this.postalCode = postalCode;</span>
-<span class="fc" id="L88">	}</span>
+<span class="fc" id="L111">		this.postalCode = postalCode;</span>
+<span class="fc" id="L112">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getStreetAddress() {
-<span class="fc" id="L91">		return streetAddress;</span>
+<span class="fc" id="L118">		return streetAddress;</span>
 	}
 
+	/**
+	 * @param streetAddress setter
+	 */
 	public void setStreetAddress(String streetAddress) {
-<span class="fc" id="L95">		this.streetAddress = streetAddress;</span>
-<span class="fc" id="L96">	}</span>
+<span class="fc" id="L125">		this.streetAddress = streetAddress;</span>
+<span class="fc" id="L126">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getHouseNumber() {
-<span class="fc" id="L99">		return houseNumber;</span>
+<span class="fc" id="L132">		return houseNumber;</span>
 	}
 
+	/**
+	 * @param houseNumber setter
+	 */
 	public void setHouseNumber(String houseNumber) {
-<span class="fc" id="L103">		this.houseNumber = houseNumber;</span>
-<span class="fc" id="L104">	}</span>
+<span class="fc" id="L139">		this.houseNumber = houseNumber;</span>
+<span class="fc" id="L140">	}</span>
 
-<span class="fc" id="L106">	public PostalAddress() {</span>
-<span class="fc" id="L107">	}</span>
+	/**
+	 * ctor
+	 */
+<span class="fc" id="L145">	public PostalAddress() {</span>
+<span class="fc" id="L146">	}</span>
 
 	/**
 	 * Ctor with values.
@@ -116,41 +155,41 @@ public class PostalAddress implements Comparable&lt;PostalAddress&gt; {
 	 * @param houseNumber     house number attribute value (if applicable)
 	 */
 	public PostalAddress(String addressCountry, String addressLocality, String postalCode, String streetAddress,
-<span class="fc" id="L119">			String houseNumber) {</span>
-<span class="fc" id="L120">		this.addressCountry = addressCountry;</span>
-<span class="fc" id="L121">		this.addressLocality = addressLocality;</span>
-<span class="fc" id="L122">		this.postalCode = postalCode;</span>
-<span class="fc" id="L123">		this.streetAddress = streetAddress;</span>
-<span class="fc" id="L124">		this.houseNumber = houseNumber;</span>
-<span class="fc" id="L125">	}</span>
+<span class="fc" id="L158">			String houseNumber) {</span>
+<span class="fc" id="L159">		this.addressCountry = addressCountry;</span>
+<span class="fc" id="L160">		this.addressLocality = addressLocality;</span>
+<span class="fc" id="L161">		this.postalCode = postalCode;</span>
+<span class="fc" id="L162">		this.streetAddress = streetAddress;</span>
+<span class="fc" id="L163">		this.houseNumber = houseNumber;</span>
+<span class="fc" id="L164">	}</span>
 
 	@Override
 	public int compareTo(PostalAddress target) {
-<span class="fc" id="L129">		String match = this.toString();</span>
-<span class="fc" id="L130">		String other = target.toString();</span>
+<span class="fc" id="L168">		String match = this.toString();</span>
+<span class="fc" id="L169">		String other = target.toString();</span>
 
-<span class="fc" id="L132">		return match.compareTo(other);</span>
+<span class="fc" id="L171">		return match.compareTo(other);</span>
 	}
 
 	@Override
 	public boolean equals(Object target) {
-<span class="nc bnc" id="L137" title="All 2 branches missed.">		if (target instanceof PostalAddress) {</span>
-<span class="nc bnc" id="L138" title="All 2 branches missed.">			return compareTo((PostalAddress) target) == 0;</span>
+<span class="nc bnc" id="L176" title="All 2 branches missed.">		if (target instanceof PostalAddress) {</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">			return compareTo((PostalAddress) target) == 0;</span>
 		} else {
-<span class="nc" id="L140">			return false;</span>
+<span class="nc" id="L179">			return false;</span>
 		}
 	}
 
 	@Override
 	public int hashCode() {
-<span class="fc" id="L146">		return toString().hashCode();</span>
+<span class="fc" id="L185">		return toString().hashCode();</span>
 	}
 
 	@Override
 	public String toString() {
-<span class="fc" id="L151">		StringBuilder result = new StringBuilder().append(this.getAddressCountry()).append(this.getAddressLocality())</span>
-<span class="fc" id="L152">				.append(this.getPostalCode()).append(this.getStreetAddress()).append(this.getHouseNumber());</span>
-<span class="fc" id="L153">		return result.toString();</span>
+<span class="fc" id="L190">		StringBuilder result = new StringBuilder().append(this.getAddressCountry()).append(this.getAddressLocality())</span>
+<span class="fc" id="L191">				.append(this.getPostalCode()).append(this.getStreetAddress()).append(this.getHouseNumber());</span>
+<span class="fc" id="L192">		return result.toString();</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

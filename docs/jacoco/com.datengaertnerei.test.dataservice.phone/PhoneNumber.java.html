@@ -5,6 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
+/**
+ * Phone number entity
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 @Schema(description = &quot;phone number as a single string&quot;)
 public class PhoneNumber {
@@ -12,21 +16,34 @@ public class PhoneNumber {
 	private String number;
 	private String comment;
 
-<span class="fc" id="L15">	public PhoneNumber(String number) {</span>
-<span class="fc" id="L16">		this.number = number;</span>
-<span class="fc" id="L17">	}</span>
+	/**
+	 * @param number setter
+	 */
+<span class="fc" id="L22">	public PhoneNumber(String number) {</span>
+<span class="fc" id="L23">		this.number = number;</span>
+<span class="fc" id="L24">	}</span>
 
+	/**
+	 * @return getter
+	 */
 	public String getPhoneNumber() {
-<span class="fc" id="L20">		return number;</span>
+<span class="fc" id="L30">		return number;</span>
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getComment() {
-<span class="fc" id="L24">		return comment;</span>
+<span class="fc" id="L37">		return comment;</span>
 	}
 
+	/**
+	 * @param comment comment
+	 * @return this
+	 */
 	public PhoneNumber setComment(String comment) {
-<span class="fc" id="L28">		this.comment = comment;</span>
-<span class="fc" id="L29">		return this;</span>
+<span class="fc" id="L45">		this.comment = comment;</span>
+<span class="fc" id="L46">		return this;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

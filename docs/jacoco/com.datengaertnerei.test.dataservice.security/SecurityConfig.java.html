@@ -11,10 +11,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+/**
+ * Spring Boot security config
+ *
+ */
 @Configuration
-<span class="fc" id="L15">public class SecurityConfig extends WebSecurityConfigurerAdapter {</span>
+<span class="fc" id="L19">public class SecurityConfig extends WebSecurityConfigurerAdapter {</span>
 	private static final String AUTH_REALM_NAME = &quot;Test Data Service&quot;;
-<span class="fc" id="L17">	private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);</span>
+<span class="fc" id="L21">	private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);</span>
 
 	@Value(&quot;${security.auth.enableBasicAuth}&quot;)
 	private boolean enableBasicAuth;
@@ -24,21 +28,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-<span class="pc bpc" id="L27" title="1 of 2 branches missed.">		if (enableBasicAuth) {</span>
-<span class="nc" id="L28">			log.info(&quot;enabling basic auth&quot;);</span>
-<span class="nc" id="L29">			http.authorizeRequests().antMatchers(&quot;/auth/*&quot;).hasRole(UserDetailsServiceImpl.ROLE_ADMIN).anyRequest()</span>
-<span class="nc" id="L30">					.authenticated().and().httpBasic().realmName(AUTH_REALM_NAME);</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">		if (enableBasicAuth) {</span>
+<span class="nc" id="L32">			log.info(&quot;enabling basic auth&quot;);</span>
+<span class="nc" id="L33">			http.authorizeRequests().antMatchers(&quot;/auth/*&quot;).hasRole(UserDetailsServiceImpl.ROLE_ADMIN).anyRequest()</span>
+<span class="nc" id="L34">					.authenticated().and().httpBasic().realmName(AUTH_REALM_NAME);</span>
 		} else {
-<span class="fc" id="L32">			log.warn(&quot;basic auth disabled&quot;);</span>
+<span class="fc" id="L36">			log.warn(&quot;basic auth disabled&quot;);</span>
 		}
-<span class="fc" id="L34">	}</span>
+<span class="fc" id="L38">	}</span>
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-<span class="fc" id="L38">		log.info(&quot;setting up user auth details&quot;);</span>
-<span class="fc" id="L39">		auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());</span>
+<span class="fc" id="L42">		log.info(&quot;setting up user auth details&quot;);</span>
+<span class="fc" id="L43">		auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());</span>
 
-<span class="fc" id="L41">	}</span>
+<span class="fc" id="L45">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

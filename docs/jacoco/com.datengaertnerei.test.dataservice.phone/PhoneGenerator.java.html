@@ -37,12 +37,16 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 
+/**
+ * Generates random phone number, valid for Germany
+ *
+ */
 @Service
 public class PhoneGenerator implements IPhoneGenerator {
-<span class="fc" id="L42">	private static Log log = LogFactory.getLog(PhoneGenerator.class);</span>
+<span class="fc" id="L46">	private static Log log = LogFactory.getLog(PhoneGenerator.class);</span>
 
 	// german mobile phone area codes
-<span class="fc" id="L45">	private static final String[] MOBILE_AREA_CODES = { &quot;1511&quot;, &quot;1512&quot;, &quot;1514&quot;, &quot;1515&quot;, &quot;1516&quot;, &quot;1517&quot;, &quot;1520&quot;, &quot;1521&quot;,</span>
+<span class="fc" id="L49">	private static final String[] MOBILE_AREA_CODES = { &quot;1511&quot;, &quot;1512&quot;, &quot;1514&quot;, &quot;1515&quot;, &quot;1516&quot;, &quot;1517&quot;, &quot;1520&quot;, &quot;1521&quot;,</span>
 			&quot;1522&quot;, &quot;1525&quot;, &quot;1526&quot;, &quot;1570&quot;, &quot;1573&quot;, &quot;1575&quot;, &quot;1577&quot;, &quot;1578&quot;, &quot;1579&quot;, &quot;160&quot;, &quot;162&quot;, &quot;163&quot;, &quot;170&quot;, &quot;171&quot;,
 			&quot;172&quot;, &quot;173&quot;, &quot;174&quot;, &quot;175&quot;, &quot;176&quot;, &quot;177&quot;, &quot;178&quot;, &quot;179&quot; };
 	private static final String COUNTRY_CALLING_CODE = &quot;+49 &quot;;
@@ -50,61 +54,64 @@ public class PhoneGenerator implements IPhoneGenerator {
 	private Map&lt;String, String&gt; areaCodeList;
 	private Random rnd;
 
-<span class="fc" id="L53">	public PhoneGenerator() {</span>
-<span class="fc" id="L54">		rnd = new Random();</span>
-<span class="fc" id="L55">		rnd.setSeed(System.currentTimeMillis());</span>
+	/**
+	 * 
+	 */
+<span class="fc" id="L60">	public PhoneGenerator() {</span>
+<span class="fc" id="L61">		rnd = new Random();</span>
+<span class="fc" id="L62">		rnd.setSeed(System.currentTimeMillis());</span>
 
-<span class="fc" id="L57">		areaCodeList = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L64">		areaCodeList = new HashMap&lt;&gt;();</span>
 		try {
 			// get german landline area code list from
 			// https://www.bundesnetzagentur.de/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Nummerierung/Rufnummern/ONRufnr/ON_Einteilung_ONB/ON_ONB_ONKz_ONBGrenzen_node.html
-<span class="fc" id="L61">			InputStream inStream = getClass().getResourceAsStream(&quot;prefixlist.csv&quot;);</span>
-<span class="fc" id="L62">			Reader in = new InputStreamReader(inStream);</span>
+<span class="fc" id="L68">			InputStream inStream = getClass().getResourceAsStream(&quot;prefixlist.csv&quot;);</span>
+<span class="fc" id="L69">			Reader in = new InputStreamReader(inStream);</span>
 
-<span class="fc" id="L64">			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).build()</span>
-<span class="fc" id="L65">					.parse(in);</span>
-<span class="fc bfc" id="L66" title="All 2 branches covered.">			for (CSVRecord r : records) {</span>
-<span class="fc bfc" id="L67" title="All 2 branches covered.">				if (r.size() &gt;= 2) {</span>
-<span class="fc" id="L68">					String areaCode = r.get(0);</span>
-<span class="fc" id="L69">					String city = r.get(1);</span>
-<span class="fc" id="L70">					areaCodeList.put(city.toLowerCase(), areaCode);</span>
+<span class="fc" id="L71">			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).build()</span>
+<span class="fc" id="L72">					.parse(in);</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">			for (CSVRecord r : records) {</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">				if (r.size() &gt;= 2) {</span>
+<span class="fc" id="L75">					String areaCode = r.get(0);</span>
+<span class="fc" id="L76">					String city = r.get(1);</span>
+<span class="fc" id="L77">					areaCodeList.put(city.toLowerCase(), areaCode);</span>
 				}
-<span class="fc" id="L72">			}</span>
-<span class="nc" id="L73">		} catch (IOException e) {</span>
-<span class="nc" id="L74">			log.fatal(&quot;could not load area code directory&quot;, e);</span>
-<span class="fc" id="L75">		}</span>
+<span class="fc" id="L79">			}</span>
+<span class="nc" id="L80">		} catch (IOException e) {</span>
+<span class="nc" id="L81">			log.fatal(&quot;could not load area code directory&quot;, e);</span>
+<span class="fc" id="L82">		}</span>
 
-<span class="fc" id="L77">	}</span>
+<span class="fc" id="L84">	}</span>
 
 	private PhoneNumber generateNumber(String areaCode) {
-<span class="fc" id="L80">		String phoneNum = Integer.toString(rnd.nextInt(99999999));</span>
-<span class="fc" id="L81">		phoneNum = &quot;123456789&quot;.substring(0, 9 - phoneNum.length()) + phoneNum; // padding</span>
-<span class="fc" id="L82">		phoneNum = phoneNum.substring(areaCode.length() - 2);</span>
+<span class="fc" id="L87">		String phoneNum = Integer.toString(rnd.nextInt(99999999));</span>
+<span class="fc" id="L88">		phoneNum = &quot;123456789&quot;.substring(0, 9 - phoneNum.length()) + phoneNum; // padding</span>
+<span class="fc" id="L89">		phoneNum = phoneNum.substring(areaCode.length() - 2);</span>
 
-<span class="fc" id="L84">		return new PhoneNumber(COUNTRY_CALLING_CODE + areaCode + &quot; &quot; + phoneNum);</span>
+<span class="fc" id="L91">		return new PhoneNumber(COUNTRY_CALLING_CODE + areaCode + &quot; &quot; + phoneNum);</span>
 	}
 
 	@Override
 	public PhoneNumber generateMobileNumber() {
 
-<span class="fc" id="L90">		int index = rnd.nextInt(MOBILE_AREA_CODES.length);</span>
-<span class="fc" id="L91">		String areaCode = MOBILE_AREA_CODES[index];</span>
+<span class="fc" id="L97">		int index = rnd.nextInt(MOBILE_AREA_CODES.length);</span>
+<span class="fc" id="L98">		String areaCode = MOBILE_AREA_CODES[index];</span>
 
-<span class="fc" id="L93">		return generateNumber(areaCode);</span>
+<span class="fc" id="L100">		return generateNumber(areaCode);</span>
 	}
 
 	@Override
 	public PhoneNumber generatePhoneNumber(String city) {
-<span class="fc" id="L98">		String areaCode = GENERIC_AREA_CODE;</span>
-<span class="fc" id="L99">		String comment = &quot;&quot;;</span>
-<span class="fc" id="L100">		String cityLower = city.toLowerCase();</span>
-<span class="fc bfc" id="L101" title="All 2 branches covered.">		if (areaCodeList.containsKey(cityLower)) {</span>
-<span class="fc" id="L102">			areaCode = areaCodeList.get(cityLower);</span>
+<span class="fc" id="L105">		String areaCode = GENERIC_AREA_CODE;</span>
+<span class="fc" id="L106">		String comment = &quot;&quot;;</span>
+<span class="fc" id="L107">		String cityLower = city.toLowerCase();</span>
+<span class="fc bfc" id="L108" title="All 2 branches covered.">		if (areaCodeList.containsKey(cityLower)) {</span>
+<span class="fc" id="L109">			areaCode = areaCodeList.get(cityLower);</span>
 		} else {
-<span class="fc" id="L104">			comment = &quot;city not found in area code directory&quot;;</span>
+<span class="fc" id="L111">			comment = &quot;city not found in area code directory&quot;;</span>
 		}
 
-<span class="fc" id="L107">		return generateNumber(areaCode).setComment(comment);</span>
+<span class="fc" id="L114">		return generateNumber(areaCode).setComment(comment);</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
