@@ -169,7 +169,7 @@ public class RestApiController {
 	}
 
 	/**
-	 * @param age
+	 * @param age age
 	 * @return random person with a valid german postal address
 	 */
 	@GetMapping(value = "/person")
@@ -185,8 +185,8 @@ public class RestApiController {
 	}
 
 	/**
-	 * @param city
-	 * @param age
+	 * @param city city
+	 * @param age age
 	 * @return random person with a valid german postal address within the given city
 	 */
 	@GetMapping(value = "/person/city/{city}")
@@ -204,8 +204,8 @@ public class RestApiController {
 	}
 
 	/**
-	 * @param postalCode
-	 * @param age
+	 * @param postalCode postalCode
+	 * @param age age
 	 * @return random person with a valid german postal address within the given postal code (zip) area (1-5 digits)
 	 */
 	@GetMapping(value = "/person/postalcode/{postalcode}")
@@ -223,7 +223,7 @@ public class RestApiController {
 	}
 
 	/**
-	 * @param gender
+	 * @param gender gender
 	 * @return random female or male avatar PNG image
 	 */
 	@GetMapping(value = "/avatar", produces = MediaType.IMAGE_PNG_VALUE)

@@ -19,10 +19,10 @@ public class CreditCard {
 	/**
 	 * ctor
 	 * 
-	 * @param number
-	 * @param type
-	 * @param cvc
-	 * @param expiry
+	 * @param number number
+	 * @param type type
+	 * @param cvc cvc
+	 * @param expiry expiry
 	 */
 	public CreditCard(String number, String type, String cvc, LocalDate expiry) {
 		this.number = number;

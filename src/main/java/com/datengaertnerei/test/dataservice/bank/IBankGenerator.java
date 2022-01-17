@@ -30,13 +30,13 @@ package com.datengaertnerei.test.dataservice.bank;
 public interface IBankGenerator {
 
 	/**
-	 * @param city
-	 * @return
+	 * @param city city
+	 * @return random bank account
 	 */
 	public BankAccount generateAccount(String city);
 
 	/**
-	 * @return
+	 * @return random credit card object
 	 */
 	public CreditCard generateCreditCard();
 

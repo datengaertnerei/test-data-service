@@ -18,7 +18,7 @@ public class Bundle {
 	private BankAccount bankAccount;
 
 	/**
-	 * @return
+	 * @return getter
 	 */
 	public Person getPerson() {
 		return person;

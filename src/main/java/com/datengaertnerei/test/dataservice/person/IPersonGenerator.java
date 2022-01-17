@@ -23,11 +23,29 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice.person;
 
+/**
+ * Interface for random person generator
+ *
+ */
 public interface IPersonGenerator {
 
+	/**
+	 * @param age age
+	 * @return random person
+	 */
 	public Person createRandomPerson(AgeRange age);
 
+	/**
+	 * @param city city
+	 * @param age age
+	 * @return random person
+	 */
 	public Person createRandomPersonInCity(String city, AgeRange age);
 
+	/**
+	 * @param postalCode postalCode
+	 * @param age age
+	 * @return random person
+	 */
 	public Person createRandomPersonInArea(String postalCode, AgeRange age);
 }

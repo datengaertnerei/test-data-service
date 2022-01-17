@@ -67,10 +67,10 @@ public class Bank {
 	/**
 	 * ctor
 	 * 
-	 * @param bankCode
-	 * @param desc
-	 * @param bic
-	 * @param city
+	 * @param bankCode bankCode
+	 * @param desc Description
+	 * @param bic BIC
+	 * @param city city
 	 */
 	public Bank(String bankCode, String desc, String bic, String city) {
 		this.bankCode = bankCode;

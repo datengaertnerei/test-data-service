@@ -57,7 +57,7 @@ public class OsmPbfAddressImportUtil {
 	 *
 	 * @param fileName   the file to import
 	 * @param repository reference to the JPA repository
-	 * @return
+	 * @return success
 	 */
 	public static boolean importAddresses(String fileName, PostalAddressRepository repository) {
 
@@ -90,11 +90,17 @@ class AddressSink implements Sink {
 	private PostalAddressRepository repository;
 	private int importCounter = 0;
 
+	/**
+	 * @param repository
+	 */
 	public AddressSink(PostalAddressRepository repository) {
 		super();
 		this.repository = repository;
 	}
 
+	/**
+	 *
+	 */
 	public void process(EntityContainer entityContainer) {
 
 		try {
