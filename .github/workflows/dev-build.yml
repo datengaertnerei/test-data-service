@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     
     - name: Set up JDK 17
       uses: actions/setup-java@v2
@@ -39,20 +41,29 @@ jobs:
     
     - name: Build and analyze dev
       if: ${{ github.ref == 'refs/heads/develop' }}
-      run: mvn -B deploy org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      run: |
+        git config --global user.email "jens.dibbern@gmail.com"
+        git config --global user.name "datengaertnerei"
+        mvn -B deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        mkdir ~/site-tmp
+        cp -r target/site/* ~/site-tmp
+        cp -r target/test-data-service-oas.json ~/site-tmp
+        git stash
+        git checkout gh_pages
+        cp -r ~/site-tmp/* docs
+        git add -A docs
+        git commit docs -m "Maven Site generated"
+        git push
+        rm -rf ~/site-tmp
       env:
-        # Needed to get some information about the pull request, if any
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # SonarCloud access token should be generated from https://sonarcloud.io/account/security/
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
 
     - name: Build and analyze main
       if: ${{ github.ref == 'refs/heads/master' }}
       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       env:
-        # Needed to get some information about the pull request, if any
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # SonarCloud access token should be generated from https://sonarcloud.io/account/security/
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         
     - uses: codecov/codecov-action@v2

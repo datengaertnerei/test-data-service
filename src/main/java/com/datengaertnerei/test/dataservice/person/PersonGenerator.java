@@ -43,6 +43,10 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Generates random persons
+ *
+ */
 @Service
 public class PersonGenerator implements IPersonGenerator {
 
@@ -69,6 +73,9 @@ public class PersonGenerator implements IPersonGenerator {
 	@Autowired
 	private PostalAddressRepository repository;
 
+	/**
+	 * 
+	 */
 	@PostConstruct
 	public void init() {
 		try {

@@ -1,7 +1,7 @@
 import "./App.css";
 import PersonView from "./components/PersonView";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
 
 function App() {
   return (

@@ -23,10 +23,21 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice.phone;
 
+/**
+ * Interface for random phone number generator
+ *
+ */
 public interface IPhoneGenerator {
 
+	/**
+	 * @return random phone number
+	 */
 	public PhoneNumber generateMobileNumber();
 
+	/**
+	 * @param city city
+	 * @return random phone number
+	 */
 	public PhoneNumber generatePhoneNumber(String city);
 
 }

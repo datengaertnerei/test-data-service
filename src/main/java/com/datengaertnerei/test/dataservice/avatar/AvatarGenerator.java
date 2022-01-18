@@ -29,6 +29,10 @@ import org.springframework.stereotype.Service;
 import com.talanlabs.avatargenerator.Avatar;
 import com.talanlabs.avatargenerator.eightbit.EightBitAvatar;
 
+/**
+ * Generates random avatar images
+ *
+ */
 @Service
 public class AvatarGenerator implements IAvatarGenerator {
 	private Random rnd;

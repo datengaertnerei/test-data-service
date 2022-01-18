@@ -41,6 +41,10 @@ import org.iban4j.CountryCode;
 import org.iban4j.Iban;
 import org.springframework.stereotype.Service;
 
+/**
+ * Spring Boot service to generate valid bank accounts
+ *
+ */
 @Service
 public class BankGenerator implements IBankGenerator {
 	private static final String DEFAULT_CITY = "frankfurt am main";
@@ -51,6 +55,9 @@ public class BankGenerator implements IBankGenerator {
 	private Map<String, String> binList;
 	private Random rnd;
 
+	/**
+	 * ctor
+	 */
 	public BankGenerator() {
 		rnd = new Random();
 		rnd.setSeed(System.currentTimeMillis());
@@ -121,6 +128,9 @@ public class BankGenerator implements IBankGenerator {
 		}
 	}
 
+	/**
+	 * acct generation
+	 */
 	@Override
 	public BankAccount generateAccount(String city) {
 		// create valid internal account number
@@ -159,6 +169,9 @@ public class BankGenerator implements IBankGenerator {
 		return result;
 	}
 
+	/**
+	 * cc generation
+	 */
 	@Override
 	public CreditCard generateCreditCard() {
 		// fetch random bin from list

@@ -16,6 +16,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+/**
+ * User admin service
+ *
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 	private static final String NAME_ADMIN = "admin";

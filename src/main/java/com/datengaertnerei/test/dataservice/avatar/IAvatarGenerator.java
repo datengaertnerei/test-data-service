@@ -22,8 +22,16 @@ SOFTWARE.
 */
 package com.datengaertnerei.test.dataservice.avatar;
 
+/**
+ * Avatar generator interface
+ *
+ */
 public interface IAvatarGenerator {
 
+	/**
+	 * @param female female or not (male)
+	 * @return PNG image as byte array
+	 */
 	public byte[] getAvatar(boolean female);
 
 }

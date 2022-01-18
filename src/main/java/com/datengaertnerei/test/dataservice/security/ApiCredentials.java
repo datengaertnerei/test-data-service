@@ -1,5 +1,9 @@
 package com.datengaertnerei.test.dataservice.security;
 
+/**
+ * API credentials for authentication
+ *
+ */
 public class ApiCredentials {
 
 	private String accountId;

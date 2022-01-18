@@ -52,6 +52,9 @@ public class PostalAddress implements Comparable<PostalAddress> {
 	private String streetAddress;
 	private String houseNumber;
 
+	/**
+	 * @return getter
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonIgnore
@@ -59,50 +62,86 @@ public class PostalAddress implements Comparable<PostalAddress> {
 		return id;
 	}
 
+	/**
+	 * @param id setter
+	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getAddressCountry() {
 		return addressCountry;
 	}
 
+	/**
+	 * @param addressCountry setter
+	 */
 	public void setAddressCountry(String addressCountry) {
 		this.addressCountry = addressCountry;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getAddressLocality() {
 		return addressLocality;
 	}
 
+	/**
+	 * @param addressLocality setter
+	 */
 	public void setAddressLocality(String addressLocality) {
 		this.addressLocality = addressLocality;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getPostalCode() {
 		return postalCode;
 	}
 
+	/**
+	 * @param postalCode setter
+	 */
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getStreetAddress() {
 		return streetAddress;
 	}
 
+	/**
+	 * @param streetAddress setter
+	 */
 	public void setStreetAddress(String streetAddress) {
 		this.streetAddress = streetAddress;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getHouseNumber() {
 		return houseNumber;
 	}
 
+	/**
+	 * @param houseNumber setter
+	 */
 	public void setHouseNumber(String houseNumber) {
 		this.houseNumber = houseNumber;
 	}
 
+	/**
+	 * ctor
+	 */
 	public PostalAddress() {
 	}
 

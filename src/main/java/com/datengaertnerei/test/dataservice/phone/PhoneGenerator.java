@@ -37,6 +37,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
 
+/**
+ * Generates random phone number, valid for Germany
+ *
+ */
 @Service
 public class PhoneGenerator implements IPhoneGenerator {
 	private static Log log = LogFactory.getLog(PhoneGenerator.class);
@@ -50,6 +54,9 @@ public class PhoneGenerator implements IPhoneGenerator {
 	private Map<String, String> areaCodeList;
 	private Random rnd;
 
+	/**
+	 * 
+	 */
 	public PhoneGenerator() {
 		rnd = new Random();
 		rnd.setSeed(System.currentTimeMillis());

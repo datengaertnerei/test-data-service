@@ -52,6 +52,10 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
+/**
+ * Spring Boot main REST API controller
+ *
+ */
 @RestController
 @RequestMapping(value = "/api/v1", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RestApiController {
@@ -70,6 +74,10 @@ public class RestApiController {
 	@Autowired
 	private IAvatarGenerator avatarGen;
 
+	/**
+	 * @param size the size of the result set
+	 * @return random adult persons inc. phone and payment data
+	 */
 	@GetMapping(value = "/bundles")
 	@Operation(summary = "random adult persons inc. phone and payment data")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -90,6 +98,9 @@ public class RestApiController {
 		return result;
 	}
 
+	/**
+	 * @return random german mobile number
+	 */
 	@GetMapping(value = "/mobile")
 	@Operation(summary = "random german mobile number")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -98,6 +109,9 @@ public class RestApiController {
 		return phoneGen.generateMobileNumber();
 	}
 
+	/**
+	 * @return random german landline number with generic area code
+	 */
 	@GetMapping(value = "/landline")
 	@Operation(summary = "random german landline number with generic area code")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -106,6 +120,10 @@ public class RestApiController {
 		return phoneGen.generatePhoneNumber("unknown");
 	}
 
+	/**
+	 * @param city city name to generate landline number for
+	 * @return random german landline number with area code for the given city (fallback to generic area code if city not found)
+	 */
 	@GetMapping(value = "/landline/{city}")
 	@Operation(summary = "random german landline number with area code for the given city (fallback to generic area code if city not found)")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -115,6 +133,9 @@ public class RestApiController {
 		return phoneGen.generatePhoneNumber(city);
 	}
 
+	/**
+	 * @return random credit card (major types, german issuers)
+	 */
 	@GetMapping(value = "/creditcard")
 	@Operation(summary = "random credit card (major types, german issuers)")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -123,6 +144,9 @@ public class RestApiController {
 		return bankGen.generateCreditCard();
 	}
 
+	/**
+	 * @return random german bank account (uses Frankfurt am Main as default location)
+	 */
 	@GetMapping(value = "/account")
 	@Operation(summary = "random german bank account (uses Frankfurt am Main as default location)")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -131,6 +155,10 @@ public class RestApiController {
 		return bankGen.generateAccount("unknown");
 	}
 
+	/**
+	 * @param city city name to generate bank account for
+	 * @return random german bank account for given city (fallback to Frankfurt am Main if no bank found for given city)
+	 */
 	@GetMapping(value = "/account/{city}")
 	@Operation(summary = "random german bank account for given city (fallback to Frankfurt am Main if no bank found for given city)")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -140,6 +168,10 @@ public class RestApiController {
 		return bankGen.generateAccount(city);
 	}
 
+	/**
+	 * @param age age
+	 * @return random person with a valid german postal address
+	 */
 	@GetMapping(value = "/person")
 	@Operation(summary = "random person with a valid german postal address")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -152,6 +184,11 @@ public class RestApiController {
 		}
 	}
 
+	/**
+	 * @param city city
+	 * @param age age
+	 * @return random person with a valid german postal address within the given city
+	 */
 	@GetMapping(value = "/person/city/{city}")
 	@Operation(summary = "random person with a valid german postal address within the given city")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -166,6 +203,11 @@ public class RestApiController {
 		}
 	}
 
+	/**
+	 * @param postalCode postalCode
+	 * @param age age
+	 * @return random person with a valid german postal address within the given postal code (zip) area (1-5 digits)
+	 */
 	@GetMapping(value = "/person/postalcode/{postalcode}")
 	@Operation(summary = "random person with a valid german postal address within the given postal code (zip) area (1-5 digits)")
 	@ApiResponse(responseCode = "200", description = "OK")
@@ -180,6 +222,10 @@ public class RestApiController {
 		}
 	}
 
+	/**
+	 * @param gender gender
+	 * @return random female or male avatar PNG image
+	 */
 	@GetMapping(value = "/avatar", produces = MediaType.IMAGE_PNG_VALUE)
 	@Operation(summary = "random female or male avatar PNG image")
 	@ApiResponse(responseCode = "200", description = "OK")

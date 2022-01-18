@@ -31,8 +31,8 @@ jobs:
           wc -l banklist.csv
           if [[ $(wc -l < banklist.csv) -ge 100 ]];then  
             cp banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
-            git config --local user.email "$(git log --format='%ae' HEAD^!)"
-            git config --local user.name "$(git log --format='%an' HEAD^!)"
+            git config --global user.email "jens.dibbern@gmail.com"
+            git config --global user.name "datengaertnerei"
             git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank
             git push      
           fi
