@@ -23,10 +23,15 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice.person;
 
-import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Collection;
 import java.util.Map;
+import java.util.function.Supplier;
 
+import org.apache.commons.io.input.BrokenInputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openstreetmap.osmosis.core.container.v0_6.EntityContainer;
@@ -55,14 +60,24 @@ public class OsmPbfAddressImportUtil {
 	/**
 	 * Starts OSM dump parser and exports all addresses within defined country.
 	 *
-	 * @param fileName   the file to import
+	 * @param inputUrl   the file to import
 	 * @param repository reference to the JPA repository
 	 * @return success
+	 * @throws MalformedURLException import URL not valid
 	 */
-	public static boolean importAddresses(String fileName, PostalAddressRepository repository) {
+	public static boolean importAddresses(String inputUrl, PostalAddressRepository repository) throws MalformedURLException {
 
-		File osmFile = new File(fileName);
-		PbfReader reader = new PbfReader(osmFile, 1);
+		URL url = new URL(inputUrl);
+		
+		Supplier<InputStream> supplier = () -> {
+			try {
+				return url.openStream();
+			} catch (IOException e) {
+				log.error("could not open OSM stream", e);
+				return new BrokenInputStream();
+			}
+		};
+		PbfReader reader = new PbfReader(supplier, 1);
 		Sink sinkImplementation = new AddressSink(repository);
 		reader.setSink(sinkImplementation);
 

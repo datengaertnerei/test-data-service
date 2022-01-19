@@ -27,6 +27,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
@@ -41,6 +42,7 @@ import javax.annotation.PostConstruct;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -69,6 +71,9 @@ public class PersonGenerator implements IPersonGenerator {
 	private List<String> professions;
 	private Long offset;
 	private TaxIdGenerator taxIdGenerator;
+	
+	@Value("${application.defaultfile}")
+	private String defaultFile;
 
 	@Autowired
 	private PostalAddressRepository repository;
@@ -93,14 +98,22 @@ public class PersonGenerator implements IPersonGenerator {
 		Long maxAddressId = null == repository.max() ? 0L : repository.max();
 
 		String importFile = System.getenv("OSM_IMPORT_FILE");
-		if (null != importFile) {
-			log.info("Importing OSM dump");
-			repository.deleteAll(); // does not reset JPA ID generator
-			OsmPbfAddressImportUtil.importAddresses(importFile, repository);
-			minAddressId = repository.min();
-			maxAddressId = repository.max();
+		if(0L == maxAddressId && null == importFile) {
+			importFile = defaultFile;
 		}
-		offset = minAddressId - 1L; // needed for random access by ID
+		
+		try {
+			if (null != importFile) {
+				log.info("Importing OSM dump");
+				repository.deleteAll(); // does not reset JPA ID generator
+				OsmPbfAddressImportUtil.importAddresses(importFile, repository);
+				minAddressId = repository.min();
+				maxAddressId = repository.max();
+			}
+			offset = minAddressId - 1L; // needed for random access by ID
+		} catch (MalformedURLException e) {
+			log.error("Could not import OSM data:", e);
+		}
 
 		// address record IDs should be without gap to avoid errors
 		if (getCount() < (maxAddressId - minAddressId)) {
