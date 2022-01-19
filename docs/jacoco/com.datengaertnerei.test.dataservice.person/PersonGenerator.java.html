@@ -27,6 +27,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
@@ -41,6 +42,7 @@ import javax.annotation.PostConstruct;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -48,9 +50,9 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-<span class="fc" id="L51">public class PersonGenerator implements IPersonGenerator {</span>
+<span class="fc" id="L53">public class PersonGenerator implements IPersonGenerator {</span>
 
-<span class="fc" id="L53">	private static Log log = LogFactory.getLog(PersonGenerator.class);</span>
+<span class="fc" id="L55">	private static Log log = LogFactory.getLog(PersonGenerator.class);</span>
 
 	private static final String RES_EYECOLORS = &quot;eyecolors.txt&quot;;
 	private static final String RES_MALE = &quot;male.txt&quot;;
@@ -59,7 +61,7 @@ import org.springframework.stereotype.Service;
 	private static final String RES_PROFESSIONS = &quot;profession.txt&quot;;
 	private static final String FEMALE = &quot;female&quot;;
 	private static final String MALE = &quot;male&quot;;
-<span class="fc" id="L62">	private static final Object EMAIL_TEST = &quot;@email.test&quot;;</span>
+<span class="fc" id="L64">	private static final Object EMAIL_TEST = &quot;@email.test&quot;;</span>
 
 	private Random random;
 	private List&lt;String&gt; surnames;
@@ -69,6 +71,9 @@ import org.springframework.stereotype.Service;
 	private List&lt;String&gt; professions;
 	private Long offset;
 	private TaxIdGenerator taxIdGenerator;
+	
+	@Value(&quot;${application.defaultfile}&quot;)
+	private String defaultFile;
 
 	@Autowired
 	private PostalAddressRepository repository;
@@ -79,40 +84,48 @@ import org.springframework.stereotype.Service;
 	@PostConstruct
 	public void init() {
 		try {
-<span class="fc" id="L82">			surnames = loadValues(RES_SURNAMES);</span>
-<span class="fc" id="L83">			femaleNames = loadValues(RES_FEMALE);</span>
-<span class="fc" id="L84">			maleNames = loadValues(RES_MALE);</span>
-<span class="fc" id="L85">			eyecolors = loadValues(RES_EYECOLORS);</span>
-<span class="fc" id="L86">			professions = loadValues(RES_PROFESSIONS);</span>
-<span class="nc" id="L87">		} catch (IOException e) {</span>
-<span class="nc" id="L88">			log.error(&quot;Could not init value list:&quot;, e);</span>
-<span class="fc" id="L89">		}</span>
+<span class="fc" id="L87">			surnames = loadValues(RES_SURNAMES);</span>
+<span class="fc" id="L88">			femaleNames = loadValues(RES_FEMALE);</span>
+<span class="fc" id="L89">			maleNames = loadValues(RES_MALE);</span>
+<span class="fc" id="L90">			eyecolors = loadValues(RES_EYECOLORS);</span>
+<span class="fc" id="L91">			professions = loadValues(RES_PROFESSIONS);</span>
+<span class="nc" id="L92">		} catch (IOException e) {</span>
+<span class="nc" id="L93">			log.error(&quot;Could not init value list:&quot;, e);</span>
+<span class="fc" id="L94">		}</span>
 
-<span class="fc" id="L91">		random = new Random(System.currentTimeMillis());</span>
-<span class="pc bpc" id="L92" title="1 of 2 branches missed.">		Long minAddressId = null == repository.min() ? 0L : repository.min();</span>
-<span class="pc bpc" id="L93" title="1 of 2 branches missed.">		Long maxAddressId = null == repository.max() ? 0L : repository.max();</span>
+<span class="fc" id="L96">		random = new Random(System.currentTimeMillis());</span>
+<span class="pc bpc" id="L97" title="1 of 2 branches missed.">		Long minAddressId = null == repository.min() ? 0L : repository.min();</span>
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">		Long maxAddressId = null == repository.max() ? 0L : repository.max();</span>
 
-<span class="fc" id="L95">		String importFile = System.getenv(&quot;OSM_IMPORT_FILE&quot;);</span>
-<span class="pc bpc" id="L96" title="1 of 2 branches missed.">		if (null != importFile) {</span>
-<span class="nc" id="L97">			log.info(&quot;Importing OSM dump&quot;);</span>
-<span class="nc" id="L98">			repository.deleteAll(); // does not reset JPA ID generator</span>
-<span class="nc" id="L99">			OsmPbfAddressImportUtil.importAddresses(importFile, repository);</span>
-<span class="nc" id="L100">			minAddressId = repository.min();</span>
-<span class="nc" id="L101">			maxAddressId = repository.max();</span>
+<span class="fc" id="L100">		String importFile = System.getenv(&quot;OSM_IMPORT_FILE&quot;);</span>
+<span class="pc bpc" id="L101" title="2 of 4 branches missed.">		if(0L == maxAddressId &amp;&amp; null == importFile) {</span>
+<span class="fc" id="L102">			importFile = defaultFile;</span>
 		}
-<span class="fc" id="L103">		offset = minAddressId - 1L; // needed for random access by ID</span>
+		
+		try {
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">			if (null != importFile) {</span>
+<span class="fc" id="L107">				log.info(&quot;Importing OSM dump&quot;);</span>
+<span class="fc" id="L108">				repository.deleteAll(); // does not reset JPA ID generator</span>
+<span class="fc" id="L109">				OsmPbfAddressImportUtil.importAddresses(importFile, repository);</span>
+<span class="fc" id="L110">				minAddressId = repository.min();</span>
+<span class="fc" id="L111">				maxAddressId = repository.max();</span>
+			}
+<span class="fc" id="L113">			offset = minAddressId - 1L; // needed for random access by ID</span>
+<span class="nc" id="L114">		} catch (MalformedURLException e) {</span>
+<span class="nc" id="L115">			log.error(&quot;Could not import OSM data:&quot;, e);</span>
+<span class="fc" id="L116">		}</span>
 
 		// address record IDs should be without gap to avoid errors
-<span class="pc bpc" id="L106" title="1 of 2 branches missed.">		if (getCount() &lt; (maxAddressId - minAddressId)) {</span>
-<span class="nc" id="L107">			log.info(&quot;Postal address database contains gaps. Please reimport OSM data.&quot;);</span>
+<span class="pc bpc" id="L119" title="1 of 2 branches missed.">		if (getCount() &lt; (maxAddressId - minAddressId)) {</span>
+<span class="nc" id="L120">			log.info(&quot;Postal address database contains gaps. Please reimport OSM data.&quot;);</span>
 		}
-<span class="fc" id="L109">		log.info(&quot;Address count: &quot; + getCount());</span>
+<span class="fc" id="L122">		log.info(&quot;Address count: &quot; + getCount());</span>
 
-<span class="fc" id="L111">		taxIdGenerator = new TaxIdGenerator(random);</span>
-<span class="fc" id="L112">	}</span>
+<span class="fc" id="L124">		taxIdGenerator = new TaxIdGenerator(random);</span>
+<span class="fc" id="L125">	}</span>
 
 	private Long getCount() {
-<span class="pc bpc" id="L115" title="1 of 2 branches missed.">		return repository.count() &lt; Integer.MAX_VALUE ? repository.count() : Integer.MAX_VALUE;</span>
+<span class="pc bpc" id="L128" title="1 of 2 branches missed.">		return repository.count() &lt; Integer.MAX_VALUE ? repository.count() : Integer.MAX_VALUE;</span>
 	}
 
 	/**
@@ -122,13 +135,13 @@ import org.springframework.stereotype.Service;
 	 */
 	@Override
 	public Person createRandomPerson(AgeRange range) {
-<span class="fc" id="L125">		Person randomPerson = createBasicPerson(range);</span>
-<span class="fc" id="L126">		Optional&lt;PostalAddress&gt; address = repository.findById(randomId());</span>
-<span class="pc bpc" id="L127" title="1 of 2 branches missed.">		if (address.isPresent()) {</span>
-<span class="fc" id="L128">			randomPerson.setAddress(address.get());</span>
+<span class="fc" id="L138">		Person randomPerson = createBasicPerson(range);</span>
+<span class="fc" id="L139">		Optional&lt;PostalAddress&gt; address = repository.findById(randomId());</span>
+<span class="pc bpc" id="L140" title="1 of 2 branches missed.">		if (address.isPresent()) {</span>
+<span class="fc" id="L141">			randomPerson.setAddress(address.get());</span>
 		}
 
-<span class="fc" id="L131">		return randomPerson;</span>
+<span class="fc" id="L144">		return randomPerson;</span>
 	}
 
 	/**
@@ -141,9 +154,9 @@ import org.springframework.stereotype.Service;
 	 */
 	@Override
 	public Person createRandomPersonInCity(String city, AgeRange range) {
-<span class="fc" id="L144">		Person randomPerson = createBasicPerson(range);</span>
-<span class="fc" id="L145">		List&lt;PostalAddress&gt; addresses = repository.findByAddressLocalityIgnoreCase(city);</span>
-<span class="fc" id="L146">		return compileResult(randomPerson, addresses);</span>
+<span class="fc" id="L157">		Person randomPerson = createBasicPerson(range);</span>
+<span class="fc" id="L158">		List&lt;PostalAddress&gt; addresses = repository.findByAddressLocalityIgnoreCase(city);</span>
+<span class="fc" id="L159">		return compileResult(randomPerson, addresses);</span>
 	}
 
 	/**
@@ -157,28 +170,28 @@ import org.springframework.stereotype.Service;
 	 */
 	@Override
 	public Person createRandomPersonInArea(String postalCode, AgeRange range) {
-<span class="fc" id="L160">		Person randomPerson = createBasicPerson(range);</span>
-<span class="fc" id="L161">		List&lt;PostalAddress&gt; addresses = repository.findByPostalCodeStartsWith(postalCode);</span>
-<span class="fc" id="L162">		return compileResult(randomPerson, addresses);</span>
+<span class="fc" id="L173">		Person randomPerson = createBasicPerson(range);</span>
+<span class="fc" id="L174">		List&lt;PostalAddress&gt; addresses = repository.findByPostalCodeStartsWith(postalCode);</span>
+<span class="fc" id="L175">		return compileResult(randomPerson, addresses);</span>
 	}
 
 	private Person compileResult(Person randomPerson, List&lt;PostalAddress&gt; addresses) {
-<span class="fc" id="L166">		PostalAddress address = null;</span>
-<span class="pc bpc" id="L167" title="1 of 4 branches missed.">		if (null != addresses &amp;&amp; !addresses.isEmpty()) {</span>
-<span class="fc" id="L168">			address = addresses.get(random.nextInt(addresses.size()));</span>
+<span class="fc" id="L179">		PostalAddress address = null;</span>
+<span class="pc bpc" id="L180" title="1 of 4 branches missed.">		if (null != addresses &amp;&amp; !addresses.isEmpty()) {</span>
+<span class="fc" id="L181">			address = addresses.get(random.nextInt(addresses.size()));</span>
 		} else {
-<span class="fc" id="L170">			Optional&lt;PostalAddress&gt; addressContainer = repository.findById(randomId());</span>
-<span class="pc bpc" id="L171" title="1 of 2 branches missed.">			if (addressContainer.isPresent()) {</span>
-<span class="fc" id="L172">				address = addressContainer.get();</span>
-<span class="fc" id="L173">				randomPerson.setComment(&quot;postal code not found in address base&quot;);</span>
+<span class="fc" id="L183">			Optional&lt;PostalAddress&gt; addressContainer = repository.findById(randomId());</span>
+<span class="pc bpc" id="L184" title="1 of 2 branches missed.">			if (addressContainer.isPresent()) {</span>
+<span class="fc" id="L185">				address = addressContainer.get();</span>
+<span class="fc" id="L186">				randomPerson.setComment(&quot;postal code not found in address base&quot;);</span>
 			} else {
-<span class="nc" id="L175">				randomPerson.setComment(&quot;internal error while retrieving address&quot;);</span>
+<span class="nc" id="L188">				randomPerson.setComment(&quot;internal error while retrieving address&quot;);</span>
 			}
 		}
 
-<span class="fc" id="L179">		randomPerson.setAddress(address);</span>
+<span class="fc" id="L192">		randomPerson.setAddress(address);</span>
 
-<span class="fc" id="L181">		return randomPerson;</span>
+<span class="fc" id="L194">		return randomPerson;</span>
 	}
 
 	/**
@@ -193,10 +206,10 @@ import org.springframework.stereotype.Service;
 	 * @return the new email address as string
 	 */
 	private String createEmailAddress(String firstname, String surname, LocalDate dateOfBirth) {
-<span class="fc" id="L196">		StringBuilder email = new StringBuilder().append(firstname).append(surname).append(dateOfBirth.getYear())</span>
-<span class="fc" id="L197">				.append(EMAIL_TEST);</span>
+<span class="fc" id="L209">		StringBuilder email = new StringBuilder().append(firstname).append(surname).append(dateOfBirth.getYear())</span>
+<span class="fc" id="L210">				.append(EMAIL_TEST);</span>
 
-<span class="fc" id="L199">		return Normalizer.normalize(email.toString(), Form.NFD).replaceAll(&quot;[^\\p{ASCII}]&quot;, &quot;&quot;);</span>
+<span class="fc" id="L212">		return Normalizer.normalize(email.toString(), Form.NFD).replaceAll(&quot;[^\\p{ASCII}]&quot;, &quot;&quot;);</span>
 	}
 
 	/**
@@ -208,12 +221,12 @@ import org.springframework.stereotype.Service;
 	private int createRandomHeight(String gender) {
 		double height;
 		do {
-<span class="fc" id="L211">			height = random.nextGaussian() * 10.0 + 165.0;</span>
-<span class="pc bpc" id="L212" title="2 of 4 branches missed.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
-<span class="fc bfc" id="L213" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
-<span class="fc" id="L214">			height += 10.0;</span>
+<span class="fc" id="L224">			height = random.nextGaussian() * 10.0 + 165.0;</span>
+<span class="fc bfc" id="L225" title="All 4 branches covered.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
+<span class="fc bfc" id="L226" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
+<span class="fc" id="L227">			height += 10.0;</span>
 		}
-<span class="fc" id="L216">		return (int) Math.round(height);</span>
+<span class="fc" id="L229">		return (int) Math.round(height);</span>
 	}
 
 	/**
@@ -223,11 +236,11 @@ import org.springframework.stereotype.Service;
 	 */
 	private LocalDate createRandomDateOfBirth(AgeRange range) {
 		double age;
-<span class="fc" id="L226">		age = createAge(range);</span>
+<span class="fc" id="L239">		age = createAge(range);</span>
 
-<span class="fc" id="L228">		int month = random.nextInt(11) + 1;</span>
-<span class="fc" id="L229">		int day = 0;</span>
-<span class="pc bpc" id="L230" title="1 of 4 branches missed.">		switch (month) {</span>
+<span class="fc" id="L241">		int month = random.nextInt(11) + 1;</span>
+<span class="fc" id="L242">		int day = 0;</span>
+<span class="pc bpc" id="L243" title="1 of 4 branches missed.">		switch (month) {</span>
 		case 1:
 		case 3:
 		case 5:
@@ -235,44 +248,44 @@ import org.springframework.stereotype.Service;
 		case 8:
 		case 10:
 		case 12:
-<span class="fc" id="L238">			day = random.nextInt(30) + 1;</span>
-<span class="fc" id="L239">			break;</span>
+<span class="fc" id="L251">			day = random.nextInt(30) + 1;</span>
+<span class="fc" id="L252">			break;</span>
 		case 2:
-<span class="fc" id="L241">			day = random.nextInt(27) + 1;</span>
-<span class="fc" id="L242">			break;</span>
+<span class="fc" id="L254">			day = random.nextInt(27) + 1;</span>
+<span class="fc" id="L255">			break;</span>
 		case 4:
 		case 6:
 		case 9:
 		case 11:
-<span class="fc" id="L247">			day = random.nextInt(29) + 1;</span>
-<span class="fc" id="L248">			break;</span>
+<span class="fc" id="L260">			day = random.nextInt(29) + 1;</span>
+<span class="fc" id="L261">			break;</span>
 		default: // there is no other month
 			break;
 		}
 
-<span class="fc" id="L253">		return LocalDate.of(LocalDate.now().getYear() - (int) Math.round(age), month, day);</span>
+<span class="fc" id="L266">		return LocalDate.of(LocalDate.now().getYear() - (int) Math.round(age), month, day);</span>
 	}
 
 	private double createAge(AgeRange range) {
 		double age;
-<span class="fc" id="L258">		double min = 1.0; // you have to be born</span>
-<span class="fc" id="L259">		double max = 100.0; // a reasonable limit</span>
+<span class="fc" id="L271">		double min = 1.0; // you have to be born</span>
+<span class="fc" id="L272">		double max = 100.0; // a reasonable limit</span>
 
-<span class="fc bfc" id="L261" title="All 4 branches covered.">		switch (range) {</span>
+<span class="fc bfc" id="L274" title="All 4 branches covered.">		switch (range) {</span>
 		case ADULT:
-<span class="fc" id="L263">			min = 19.0; // tolerance due to random day and month</span>
-<span class="fc" id="L264">			max = 100.0;</span>
-<span class="fc" id="L265">			break;</span>
+<span class="fc" id="L276">			min = 19.0; // tolerance due to random day and month</span>
+<span class="fc" id="L277">			max = 100.0;</span>
+<span class="fc" id="L278">			break;</span>
 
 		case MINOR:
-<span class="fc" id="L268">			min = 1.0;</span>
-<span class="fc" id="L269">			max = 17.0; // tolerance due to random day and month</span>
-<span class="fc" id="L270">			break;</span>
+<span class="fc" id="L281">			min = 1.0;</span>
+<span class="fc" id="L282">			max = 17.0; // tolerance due to random day and month</span>
+<span class="fc" id="L283">			break;</span>
 
 		case SENIOR:
-<span class="fc" id="L273">			min = 66.0; // tolerance due to random day and month</span>
-<span class="fc" id="L274">			max = 100.0;</span>
-<span class="fc" id="L275">			break;</span>
+<span class="fc" id="L286">			min = 66.0; // tolerance due to random day and month</span>
+<span class="fc" id="L287">			max = 100.0;</span>
+<span class="fc" id="L288">			break;</span>
 
 		case ALL:
 		default:
@@ -280,24 +293,24 @@ import org.springframework.stereotype.Service;
 		}
 
 		// choose factor smaller than medium to tighten curve
-<span class="fc" id="L283">		double shiftFactor = (max - min) / 3;</span>
-<span class="fc" id="L284">		double mediumAge = min + (max - min) / 2;</span>
-<span class="fc" id="L285">		age = random.nextGaussian() * shiftFactor + mediumAge;</span>
-<span class="fc bfc" id="L286" title="All 4 branches covered.">		if (age &lt; min || age &gt; max) {</span>
+<span class="fc" id="L296">		double shiftFactor = (max - min) / 3;</span>
+<span class="fc" id="L297">		double mediumAge = min + (max - min) / 2;</span>
+<span class="fc" id="L298">		age = random.nextGaussian() * shiftFactor + mediumAge;</span>
+<span class="fc bfc" id="L299" title="All 4 branches covered.">		if (age &lt; min || age &gt; max) {</span>
 			// cut off long tails
-<span class="fc" id="L288">			age = mediumAge;</span>
+<span class="fc" id="L301">			age = mediumAge;</span>
 		}
-<span class="fc" id="L290">		return age;</span>
+<span class="fc" id="L303">		return age;</span>
 	}
 
 	/**
 	 * @return
 	 */
 	private Long randomId() {
-<span class="fc" id="L297">		Long result = (long) random.nextInt(getCount().intValue());</span>
+<span class="fc" id="L310">		Long result = (long) random.nextInt(getCount().intValue());</span>
 
 		// add offset for first ID
-<span class="fc" id="L300">		return result + offset;</span>
+<span class="fc" id="L313">		return result + offset;</span>
 	}
 
 	/**
@@ -305,32 +318,32 @@ import org.springframework.stereotype.Service;
 	 * @return
 	 */
 	private Person createBasicPerson(AgeRange range) {
-<span class="fc bfc" id="L308" title="All 2 branches covered.">		String gender = random.nextBoolean() ? MALE : FEMALE; // (add diverse if you like)</span>
+<span class="fc bfc" id="L321" title="All 2 branches covered.">		String gender = random.nextBoolean() ? MALE : FEMALE; // (add diverse if you like)</span>
 		String firstname;
-<span class="fc bfc" id="L310" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
-<span class="fc" id="L311">			firstname = maleNames.get(random.nextInt(maleNames.size())).trim();</span>
+<span class="fc bfc" id="L323" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
+<span class="fc" id="L324">			firstname = maleNames.get(random.nextInt(maleNames.size())).trim();</span>
 		} else {
-<span class="fc" id="L313">			firstname = femaleNames.get(random.nextInt(femaleNames.size())).trim();</span>
+<span class="fc" id="L326">			firstname = femaleNames.get(random.nextInt(femaleNames.size())).trim();</span>
 		}
-<span class="fc" id="L315">		String surname = surnames.get(random.nextInt(surnames.size())).trim();</span>
+<span class="fc" id="L328">		String surname = surnames.get(random.nextInt(surnames.size())).trim();</span>
 
-<span class="fc" id="L317">		String eyecolor = eyecolors.get(random.nextInt(eyecolors.size())).trim();</span>
+<span class="fc" id="L330">		String eyecolor = eyecolors.get(random.nextInt(eyecolors.size())).trim();</span>
 
-<span class="fc" id="L319">		LocalDate dateOfBirth = createRandomDateOfBirth(range);</span>
-<span class="fc" id="L320">		String emailAddress = createEmailAddress(firstname, surname, dateOfBirth);</span>
-<span class="fc" id="L321">		int height = createRandomHeight(gender);</span>
+<span class="fc" id="L332">		LocalDate dateOfBirth = createRandomDateOfBirth(range);</span>
+<span class="fc" id="L333">		String emailAddress = createEmailAddress(firstname, surname, dateOfBirth);</span>
+<span class="fc" id="L334">		int height = createRandomHeight(gender);</span>
 
-<span class="fc" id="L323">		String taxId = taxIdGenerator.createTaxId();</span>
+<span class="fc" id="L336">		String taxId = taxIdGenerator.createTaxId();</span>
 
-<span class="fc" id="L325">		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress,</span>
+<span class="fc" id="L338">		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress,</span>
 				taxId);
-<span class="fc" id="L327">		randomPerson.setProfession(professions.get(random.nextInt(professions.size())).trim());</span>
+<span class="fc" id="L340">		randomPerson.setProfession(professions.get(random.nextInt(professions.size())).trim());</span>
 
-<span class="fc bfc" id="L329" title="All 2 branches covered.">		if (1 == random.nextInt(5)) {</span>
-<span class="fc" id="L330">			String birthName = surnames.get(random.nextInt(surnames.size())).trim();</span>
-<span class="fc" id="L331">			randomPerson.setBirthName(birthName);</span>
+<span class="fc bfc" id="L342" title="All 2 branches covered.">		if (1 == random.nextInt(5)) {</span>
+<span class="fc" id="L343">			String birthName = surnames.get(random.nextInt(surnames.size())).trim();</span>
+<span class="fc" id="L344">			randomPerson.setBirthName(birthName);</span>
 		}
-<span class="fc" id="L333">		return randomPerson;</span>
+<span class="fc" id="L346">		return randomPerson;</span>
 	}
 
 	/**
@@ -342,16 +355,16 @@ import org.springframework.stereotype.Service;
 	 * @throws IOException values could not be loaded
 	 */
 	private List&lt;String&gt; loadValues(String fileName) throws IOException {
-<span class="fc" id="L345">		InputStream input = getClass().getResourceAsStream(fileName);</span>
-<span class="fc" id="L346">		BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));</span>
-<span class="fc" id="L347">		ArrayList&lt;String&gt; values = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L358">		InputStream input = getClass().getResourceAsStream(fileName);</span>
+<span class="fc" id="L359">		BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));</span>
+<span class="fc" id="L360">		ArrayList&lt;String&gt; values = new ArrayList&lt;&gt;();</span>
 		String line;
-<span class="fc bfc" id="L349" title="All 2 branches covered.">		while ((line = reader.readLine()) != null) {</span>
-<span class="fc" id="L350">			values.add(line);</span>
+<span class="fc bfc" id="L362" title="All 2 branches covered.">		while ((line = reader.readLine()) != null) {</span>
+<span class="fc" id="L363">			values.add(line);</span>
 		}
-<span class="fc" id="L352">		reader.close();</span>
+<span class="fc" id="L365">		reader.close();</span>
 
-<span class="fc" id="L354">		return values;</span>
+<span class="fc" id="L367">		return values;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
