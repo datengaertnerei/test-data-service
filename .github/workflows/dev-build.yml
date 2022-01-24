@@ -44,6 +44,7 @@ jobs:
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
+        export OSM_IMPORT_FILE=https://download.geofabrik.de/europe/germany/hamburg-latest.osm.pbf
         mvn -B deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         mkdir ~/site-tmp
         cp -r target/site/* ~/site-tmp
