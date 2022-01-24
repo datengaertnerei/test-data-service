@@ -171,7 +171,7 @@ class AddressSink implements Sink {
 			default: // just skip to the next tag
 			}
 <span class="fc" id="L173">		}</span>
-<span class="pc bpc" id="L174" title="1 of 6 branches missed.">		if (tagCount &gt; 4 &amp;&amp; country != null &amp;&amp; country.equals(COUNTRY)) {</span>
+<span class="pc bpc" id="L174" title="2 of 6 branches missed.">		if (tagCount &gt; 4 &amp;&amp; country != null &amp;&amp; country.equals(COUNTRY)) {</span>
 
 <span class="fc" id="L176">			PostalAddress pa = new PostalAddress(country, city, postcode, street, housenumber);</span>
 <span class="fc" id="L177">			repository.saveAndFlush(pa);</span>
