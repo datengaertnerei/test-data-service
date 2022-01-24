@@ -196,8 +196,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 	public Person personForCity(
 			@Parameter(description = &quot;the city to look for random postal address&quot;, required = true) @PathVariable(&quot;city&quot;) String city,
 			@RequestParam(required = false) AgeRange age) {
-<span class="pc bpc" id="L199" title="1 of 2 branches missed.">		if (null == age) {</span>
-<span class="nc" id="L200">			return personGen.createRandomPersonInCity(city, AgeRange.ALL);</span>
+<span class="fc bfc" id="L199" title="All 2 branches covered.">		if (null == age) {</span>
+<span class="fc" id="L200">			return personGen.createRandomPersonInCity(city, AgeRange.ALL);</span>
 		} else {
 <span class="fc" id="L202">			return personGen.createRandomPersonInCity(city, age);</span>
 		}
@@ -215,8 +215,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 	public Person personForPostcode(
 			@Parameter(description = &quot;the postal code to look for random postal address&quot;, required = true) @PathVariable(&quot;postalcode&quot;) String postalCode,
 			@RequestParam(required = false) AgeRange age) {
-<span class="pc bpc" id="L218" title="1 of 2 branches missed.">		if (null == age) {</span>
-<span class="nc" id="L219">			return personGen.createRandomPersonInArea(postalCode, AgeRange.ALL);</span>
+<span class="fc bfc" id="L218" title="All 2 branches covered.">		if (null == age) {</span>
+<span class="fc" id="L219">			return personGen.createRandomPersonInArea(postalCode, AgeRange.ALL);</span>
 		} else {
 <span class="fc" id="L221">			return personGen.createRandomPersonInArea(postalCode, age);</span>
 		}
