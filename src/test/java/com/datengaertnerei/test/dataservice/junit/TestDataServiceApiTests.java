@@ -135,7 +135,7 @@ class TestDataServiceApiTests {
 		Set<String> checkList = new HashSet<>();
 
 		// get first record for unknown city
-		Person result = restController.personForCity("xxx", AgeRange.ALL);
+		Person result = restController.personForCity("xxx", null);
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
 		assertThat(checkList.contains(resultString)).isFalse();
@@ -160,7 +160,7 @@ class TestDataServiceApiTests {
 		Set<String> checkList = new HashSet<>();
 
 		// get first record for unknown area
-		Person result = restController.personForPostcode("xx", AgeRange.ALL);
+		Person result = restController.personForPostcode("xx", null);
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
 		assertThat(checkList.contains(resultString)).isFalse();
