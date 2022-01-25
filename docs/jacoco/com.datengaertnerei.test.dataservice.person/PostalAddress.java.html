@@ -41,7 +41,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author Jens Dibbern
  */
 @Entity
-@Table(indexes = { @Index(columnList = &quot;addressLocality&quot;), @Index(columnList = &quot;postalCode&quot;) })
+@Table(indexes = { @Index(columnList = &quot;addressLocality&quot;, name = &quot;idx_pa_al&quot;), @Index(columnList = &quot;postalCode&quot;, name = &quot;idx_pa_pc&quot;) })
 @Schema(description = &quot;postal address (see &lt;a href=\&quot;https://schema.org/PostalAddress\&quot;&gt;https://schema.org/PostalAddress&lt;/a&gt;)&quot;)
 public class PostalAddress implements Comparable&lt;PostalAddress&gt; {
 

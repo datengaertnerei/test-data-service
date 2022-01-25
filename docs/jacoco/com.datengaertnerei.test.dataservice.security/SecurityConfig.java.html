@@ -37,12 +37,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 		}
 <span class="fc" id="L38">	}</span>
 
+	/**
+	 * @param auth @see WebSecurityConfigurerAdapter
+	 * @throws Exception failure to initialize
+	 */
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-<span class="fc" id="L42">		log.info(&quot;setting up user auth details&quot;);</span>
-<span class="fc" id="L43">		auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());</span>
+<span class="fc" id="L46">		log.info(&quot;setting up user auth details&quot;);</span>
+<span class="fc" id="L47">		auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());</span>
 
-<span class="fc" id="L45">	}</span>
+<span class="fc" id="L49">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

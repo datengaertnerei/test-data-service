@@ -37,22 +37,25 @@ import com.talanlabs.avatargenerator.eightbit.EightBitAvatar;
 public class AvatarGenerator implements IAvatarGenerator {
 	private Random rnd;
 
-<span class="fc" id="L40">	public AvatarGenerator() {</span>
-<span class="fc" id="L41">		rnd = new Random();</span>
-<span class="fc" id="L42">		rnd.setSeed(System.currentTimeMillis());</span>
-<span class="fc" id="L43">	}</span>
+	/**
+	 * ctor
+	 */
+<span class="fc" id="L43">	public AvatarGenerator() {</span>
+<span class="fc" id="L44">		rnd = new Random();</span>
+<span class="fc" id="L45">		rnd.setSeed(System.currentTimeMillis());</span>
+<span class="fc" id="L46">	}</span>
 
 	@Override
 	public byte[] getAvatar(boolean female) {
-<span class="fc" id="L47">		Avatar avatar = null;</span>
+<span class="fc" id="L50">		Avatar avatar = null;</span>
 
-<span class="fc bfc" id="L49" title="All 2 branches covered.">		if (female) {</span>
-<span class="fc" id="L50">			avatar = EightBitAvatar.newFemaleAvatarBuilder().build();</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">		if (female) {</span>
+<span class="fc" id="L53">			avatar = EightBitAvatar.newFemaleAvatarBuilder().build();</span>
 		} else {
-<span class="fc" id="L52">			avatar = EightBitAvatar.newMaleAvatarBuilder().build();</span>
+<span class="fc" id="L55">			avatar = EightBitAvatar.newMaleAvatarBuilder().build();</span>
 		}
 
-<span class="fc" id="L55">		return avatar.createAsPngBytes(rnd.nextLong());</span>
+<span class="fc" id="L58">		return avatar.createAsPngBytes(rnd.nextLong());</span>
 	}
 
 }

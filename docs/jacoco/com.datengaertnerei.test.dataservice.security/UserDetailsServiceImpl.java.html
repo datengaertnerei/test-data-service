@@ -34,88 +34,101 @@ import org.springframework.stereotype.Service;
 	@Autowired
 	private UserRepository userRepository;
 
+	/**
+	 * get user details for name
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) {
-<span class="fc" id="L39">		UserDetails userDetails = null;</span>
-<span class="fc" id="L40">		Optional&lt;TestDataUser&gt; u = userRepository.findById(username);</span>
+<span class="fc" id="L42">		UserDetails userDetails = null;</span>
+<span class="fc" id="L43">		Optional&lt;TestDataUser&gt; u = userRepository.findById(username);</span>
 
-<span class="fc bfc" id="L42" title="All 2 branches covered.">		if (u.isPresent()) {</span>
-<span class="fc" id="L43">			TestDataUser appUser = u.get();</span>
-<span class="fc" id="L44">			userDetails = User.withUsername(appUser.getUsername()).password(appUser.getPassword())</span>
-<span class="fc" id="L45">					.roles(appUser.getRole()).build();</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">		if (u.isPresent()) {</span>
+<span class="fc" id="L46">			TestDataUser appUser = u.get();</span>
+<span class="fc" id="L47">			userDetails = User.withUsername(appUser.getUsername()).password(appUser.getPassword())</span>
+<span class="fc" id="L48">					.roles(appUser.getRole()).build();</span>
 		}
 
-<span class="fc" id="L48">		return userDetails;</span>
+<span class="fc" id="L51">		return userDetails;</span>
 	}
 
+	/**
+	 * @return new credentials
+	 */
 	protected ApiCredentials generateApiCredentials() {
-<span class="fc" id="L52">		ApiCredentials result = new ApiCredentials();</span>
+<span class="fc" id="L58">		ApiCredentials result = new ApiCredentials();</span>
 
 		// generate new account id that is not in use
-<span class="fc" id="L55">		String newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
-<span class="fc" id="L56">		UserDetails account = loadUserByUsername(newAccountId);</span>
-<span class="pc bpc" id="L57" title="1 of 2 branches missed.">		while (null != account) {</span>
-<span class="nc" id="L58">			newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
-<span class="nc" id="L59">			account = loadUserByUsername(newAccountId);</span>
+<span class="fc" id="L61">		String newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
+<span class="fc" id="L62">		UserDetails account = loadUserByUsername(newAccountId);</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">		while (null != account) {</span>
+<span class="nc" id="L64">			newAccountId = RandomStringUtils.randomAlphabetic(10);</span>
+<span class="nc" id="L65">			account = loadUserByUsername(newAccountId);</span>
 		}
 
 		// fill credentials
-<span class="fc" id="L63">		result.setAccountId(newAccountId);</span>
-<span class="fc" id="L64">		result.setPassword(UUID.randomUUID().toString());</span>
+<span class="fc" id="L69">		result.setAccountId(newAccountId);</span>
+<span class="fc" id="L70">		result.setPassword(UUID.randomUUID().toString());</span>
 
 		// and save to authorization database
-<span class="fc" id="L67">		TestDataUser newAccount = new TestDataUser();</span>
-<span class="fc" id="L68">		newAccount.setUsername(newAccountId);</span>
-<span class="fc" id="L69">		newAccount.setPassword(bCryptPasswordEncoder.encode(result.getPassword()));</span>
-<span class="fc" id="L70">		newAccount.setRole(ROLE_USER);</span>
-<span class="fc" id="L71">		userRepository.saveAndFlush(newAccount);</span>
+<span class="fc" id="L73">		TestDataUser newAccount = new TestDataUser();</span>
+<span class="fc" id="L74">		newAccount.setUsername(newAccountId);</span>
+<span class="fc" id="L75">		newAccount.setPassword(bCryptPasswordEncoder.encode(result.getPassword()));</span>
+<span class="fc" id="L76">		newAccount.setRole(ROLE_USER);</span>
+<span class="fc" id="L77">		userRepository.saveAndFlush(newAccount);</span>
 
-<span class="fc" id="L73">		return result;</span>
+<span class="fc" id="L79">		return result;</span>
 	}
 
+	/**
+	 * @return export all users
+	 */
 	protected List&lt;TestDataUser&gt; exportUsers() {
-<span class="fc" id="L77">		return userRepository.findAll();</span>
+<span class="fc" id="L86">		return userRepository.findAll();</span>
 	}
 
+	/**
+	 * @param users list of user objects to import
+	 * @return OK if successful
+	 */
 	protected String importUsers(List&lt;TestDataUser&gt; users) {
 		try {
-<span class="fc" id="L82">			userRepository.deleteAll();</span>
-<span class="fc" id="L83">			userRepository.saveAll(users);</span>
-<span class="nc" id="L84">		} catch (Exception e) {</span>
-<span class="nc" id="L85">			return e.getMessage();</span>
-<span class="fc" id="L86">		}</span>
-<span class="fc" id="L87">		return RESULT_OK;</span>
+<span class="fc" id="L95">			userRepository.deleteAll();</span>
+<span class="fc" id="L96">			userRepository.saveAll(users);</span>
+<span class="nc" id="L97">		} catch (Exception e) {</span>
+<span class="nc" id="L98">			return e.getMessage();</span>
+<span class="fc" id="L99">		}</span>
+<span class="fc" id="L100">		return RESULT_OK;</span>
 	}
 
 	@PostConstruct
 	private void setup() {
-<span class="fc" id="L92">		log.info(&quot;setting up user details service&quot;);</span>
-<span class="fc" id="L93">		bCryptPasswordEncoder = new BCryptPasswordEncoder();</span>
+<span class="fc" id="L105">		log.info(&quot;setting up user details service&quot;);</span>
+<span class="fc" id="L106">		bCryptPasswordEncoder = new BCryptPasswordEncoder();</span>
 
 		// allow admin password sideloading, esp. for container environments
-<span class="fc" id="L96">		String adminPasswd = System.getenv(&quot;TD_ADMIN_PASSWD&quot;);</span>
-<span class="fc" id="L97">		UserDetails admin = loadUserByUsername(NAME_ADMIN);</span>
-<span class="pc bpc" id="L98" title="1 of 2 branches missed.">		if (null == admin) {</span>
-<span class="pc bpc" id="L99" title="3 of 4 branches missed.">			if (null == adminPasswd || adminPasswd.isEmpty()) {</span>
-<span class="fc" id="L100">				adminPasswd = UUID.randomUUID().toString();</span>
-<span class="fc" id="L101">				log.info(&quot;creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n&quot;,</span>
+<span class="fc" id="L109">		String adminPasswd = System.getenv(&quot;TD_ADMIN_PASSWD&quot;);</span>
+<span class="fc" id="L110">		UserDetails admin = loadUserByUsername(NAME_ADMIN);</span>
+<span class="pc bpc" id="L111" title="1 of 2 branches missed.">		if (null == admin) {</span>
+<span class="pc bpc" id="L112" title="3 of 4 branches missed.">			if (null == adminPasswd || adminPasswd.isEmpty()) {</span>
+<span class="fc" id="L113">				adminPasswd = UUID.randomUUID().toString();</span>
+<span class="fc" id="L114">				log.info(&quot;creating default admin account\r\n\r\nusing generated password for admin account: {}\r\n&quot;,</span>
 						adminPasswd);
 
 			}
-<span class="fc" id="L105">			TestDataUser newAdmin = new TestDataUser();</span>
-<span class="fc" id="L106">			newAdmin.setUsername(NAME_ADMIN);</span>
-<span class="fc" id="L107">			newAdmin.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
-<span class="fc" id="L108">			newAdmin.setRole(ROLE_ADMIN);</span>
-<span class="fc" id="L109">			userRepository.saveAndFlush(newAdmin);</span>
-<span class="pc bnc" id="L110" title="All 4 branches missed.">		} else if (null != adminPasswd &amp;&amp; !adminPasswd.isEmpty()) {</span>
-<span class="nc" id="L111">			Optional&lt;TestDataUser&gt; u = userRepository.findById(NAME_ADMIN);</span>
+<span class="fc" id="L118">			TestDataUser newAdmin = new TestDataUser();</span>
+<span class="fc" id="L119">			newAdmin.setUsername(NAME_ADMIN);</span>
+<span class="fc" id="L120">			newAdmin.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
+<span class="fc" id="L121">			newAdmin.setRole(ROLE_ADMIN);</span>
+<span class="fc" id="L122">			userRepository.saveAndFlush(newAdmin);</span>
+<span class="pc bnc" id="L123" title="All 4 branches missed.">		} else if (null != adminPasswd &amp;&amp; !adminPasswd.isEmpty()) {</span>
+<span class="nc" id="L124">			Optional&lt;TestDataUser&gt; u = userRepository.findById(NAME_ADMIN);</span>
 
-<span class="nc bnc" id="L113" title="All 2 branches missed.">			if (u.isPresent()) {</span>
-<span class="nc" id="L114">				TestDataUser adminUser = u.get();</span>
-<span class="nc" id="L115">				adminUser.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
-<span class="nc" id="L116">				userRepository.saveAndFlush(adminUser);</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">			if (u.isPresent()) {</span>
+<span class="nc" id="L127">				TestDataUser adminUser = u.get();</span>
+<span class="nc" id="L128">				adminUser.setPassword(bCryptPasswordEncoder.encode(adminPasswd));</span>
+<span class="nc" id="L129">				userRepository.saveAndFlush(adminUser);</span>
 			}
 		}
-<span class="fc" id="L119">	}</span>
+<span class="fc" id="L132">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
