@@ -19,16 +19,26 @@ public class AuthController {
 	@Autowired
 	private UserDetailsServiceImpl userDetailsService;
 
+	/**
+	 * @return new API credentials
+	 */
 	@GetMapping(path = "/new")
 	public ApiCredentials generateNew() {
 		return userDetailsService.generateApiCredentials();
 	}
 
+	/**
+	 * @return list of all users with stored hashes
+	 */
 	@GetMapping(path = "/export")
 	public List<TestDataUser> exportUsers() {
 		return userDetailsService.exportUsers();
 	}
 
+	/**
+	 * @param users list of user objects to import
+	 * @return OK if successful
+	 */
 	@PutMapping(path = "/import")
 	public String importUsers(List<TestDataUser> users) {
 		return userDetailsService.importUsers(users);
