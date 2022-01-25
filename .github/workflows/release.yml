@@ -24,12 +24,6 @@ jobs:
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
-        mvn release:clean release:prepare release:perform
+        mvn -B gitflow:release-start gitflow:release-finish
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Create GitHub release
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: "target/*.jar"
-        token: ${{ secrets.GITHUB_TOKEN }}
