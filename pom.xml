@@ -352,41 +352,6 @@
 					<outputName>test-data-service-bom</outputName>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>com.amashchenko.maven.plugin</groupId>
-				<artifactId>gitflow-maven-plugin</artifactId>
-				<version>1.17.0</version>
-				<configuration>
-					<installProject>false</installProject>
-					<verbose>true</verbose>
-
-					<gitFlowConfig>
-						<productionBranch>master</productionBranch>
-						<developmentBranch>develop</developmentBranch>
-						<featureBranchPrefix>feature/</featureBranchPrefix>
-						<releaseBranchPrefix>release/</releaseBranchPrefix>
-						<hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
-						<supportBranchPrefix>support/</supportBranchPrefix>
-						<versionTagPrefix></versionTagPrefix>
-						<origin>origin</origin>
-					</gitFlowConfig>
-
-					<commitMessages>
-						<featureStartMessage>Update versions for feature branch</featureStartMessage>
-						<featureFinishMessage>Update versions for development branch</featureFinishMessage>
-
-						<hotfixStartMessage>Update versions for hotfix</hotfixStartMessage>
-						<hotfixFinishMessage>Update for next development version</hotfixFinishMessage>
-
-						<hotfixVersionUpdateMessage>Update to hotfix version</hotfixVersionUpdateMessage>
-
-						<releaseStartMessage>Update versions for release</releaseStartMessage>
-						<releaseFinishMessage>Update for next development version</releaseFinishMessage>
-
-						<releaseVersionUpdateMessage>Update for next development version</releaseVersionUpdateMessage>
-					</commitMessages>
-				</configuration>
-			</plugin>
 		</plugins>
 		<resources>
 			<resource>
