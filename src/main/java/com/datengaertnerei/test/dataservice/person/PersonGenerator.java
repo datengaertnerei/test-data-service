@@ -78,11 +78,14 @@ public class PersonGenerator implements IPersonGenerator {
 	@Autowired
 	private PostalAddressRepository repository;
 
+	private Long repoCount;
+
 	/**
 	 * 
 	 */
 	@PostConstruct
 	public void init() {
+		repoCount = 0L;
 		try {
 			surnames = loadValues(RES_SURNAMES);
 			femaleNames = loadValues(RES_FEMALE);
@@ -125,7 +128,11 @@ public class PersonGenerator implements IPersonGenerator {
 	}
 
 	private Long getCount() {
-		return repository.count() < Integer.MAX_VALUE ? repository.count() : Integer.MAX_VALUE;
+		// cache address repo count, this method is called for every random address to return
+		if(repoCount == 0) {
+			repoCount = repository.count() < Integer.MAX_VALUE ? repository.count() : Integer.MAX_VALUE;
+		}
+		return repoCount;
 	}
 
 	/**

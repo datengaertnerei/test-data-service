@@ -9,4 +9,4 @@ RUN apk update && apk upgrade --no-self-upgrade --available
 RUN export OSM_IMPORT_FILE=http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/germany-latest.osm.pbf && export OSM_IMPORT_ONLY=YES && java -jar app.jar  
 
 # Use Port environment variable to control listener
-ENTRYPOINT export LISTEN="${PORT:=8080}" && java -XX:MaxRAM=100m -jar app.jar --server.port=$LISTEN 
+ENTRYPOINT export LISTEN="${PORT:=8080}" && java -Xms48M -Xmx48M -XX:+UseCompressedOops -jar app.jar --server.port=$LISTEN 
