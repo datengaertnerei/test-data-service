@@ -25,6 +25,7 @@ package com.datengaertnerei.test.dataservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -46,6 +47,9 @@ public class DataServiceApplication {
 	private static final String IMPORT_ONLY_YES = "YES";
 	private static Logger log = LoggerFactory.getLogger(DataServiceApplication.class);
 
+	@Value("${application.version}")
+	private String apiVersion;
+	
 	/**
 	 * @param args cli arguments
 	 */
@@ -78,10 +82,6 @@ public class DataServiceApplication {
 	 */
 	@Bean
 	public OpenAPI springOpenAPI() {
-		// get POM Version from Manifest
-		String implementationVersion = this.getClass().getPackage().getImplementationVersion();
-		// fallback to ensure OpenAPI compliance
-		String apiVersion = implementationVersion == null ? "local-build" : implementationVersion;
 		return new OpenAPI()
 				.info(new Info().title("Datengärtnerei Test Data Service API")
 						.description("We provide ad hoc generated test data for fictitious german persons.")

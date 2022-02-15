@@ -1,5 +1,6 @@
 # test data service
 
+[![Website Monitor](https://img.shields.io/website?up_message=up&url=https%3A%2F%2Fdatengaertnerei.github.io%2Ftest-data-service%2F)](https://datengaertnerei.github.io/test-data-service/) 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/484d467e7e4540c5b8b7fbce78538bfc)](https://www.codacy.com/manual/datengaertnerei/test-data-service?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=datengaertnerei/test-data-service&amp;utm_campaign=Badge_Grade) 
 [![codecov](https://codecov.io/gh/datengaertnerei/test-data-service/branch/develop/graph/badge.svg?token=3V6AFYMMQA)](https://codecov.io/gh/datengaertnerei/test-data-service)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=datengaertnerei_test-data-service&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=datengaertnerei_test-data-service)
@@ -21,7 +22,7 @@ You should meet a german data protection official. And most of the time this con
 
 It is a Spring Boot application. The service will import [Open Streetmap PBF dumps](https://download.geofabrik.de/europe/germany.html) by using
 ```
-export OSM_IMPORT_FILE=germany-latest.osm.pbf
+export OSM_IMPORT_FILE=http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/germany-latest.osm.pbf
 export OSM_IMPORT_ONLY=YES
 java -jar data-service.jar
 ```

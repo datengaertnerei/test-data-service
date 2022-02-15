@@ -37,6 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		}
 	}
 
+	/**
+	 * @param auth @see WebSecurityConfigurerAdapter
+	 * @throws Exception failure to initialize
+	 */
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		log.info("setting up user auth details");

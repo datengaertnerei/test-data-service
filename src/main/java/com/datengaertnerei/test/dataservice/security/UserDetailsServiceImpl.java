@@ -34,6 +34,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
 	private UserRepository userRepository;
 
+	/**
+	 * get user details for name
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) {
 		UserDetails userDetails = null;
@@ -48,6 +51,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return userDetails;
 	}
 
+	/**
+	 * @return new credentials
+	 */
 	protected ApiCredentials generateApiCredentials() {
 		ApiCredentials result = new ApiCredentials();
 
@@ -73,10 +79,17 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return result;
 	}
 
+	/**
+	 * @return export all users
+	 */
 	protected List<TestDataUser> exportUsers() {
 		return userRepository.findAll();
 	}
 
+	/**
+	 * @param users list of user objects to import
+	 * @return OK if successful
+	 */
 	protected String importUsers(List<TestDataUser> users) {
 		try {
 			userRepository.deleteAll();

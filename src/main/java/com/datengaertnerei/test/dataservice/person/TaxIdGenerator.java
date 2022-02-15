@@ -11,10 +11,18 @@ public class TaxIdGenerator {
 	private static final String DEFAULT_TAX_ID = "12345678911";
 	private Random random;
 
+	/**
+	 * ctor
+	 * 
+	 * @param random random number generator
+	 */
 	protected TaxIdGenerator(Random random) {
 		this.random = random;
 	}
 
+	/**
+	 * @return fictituous but valid german tax id
+	 */
 	protected String createTaxId() {
 		int[] digits = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 		int[] result = new int[11];

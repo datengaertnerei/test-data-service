@@ -1,6 +1,11 @@
 package com.datengaertnerei.test.dataservice.person;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import java.net.MalformedURLException;
+import java.nio.file.Path;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -22,17 +27,29 @@ public class DataImportTest {
 
 	@Test
 	void shouldImport() {
-		assertThat(OsmPbfAddressImportUtil.importAddresses(DATA_OSM_SMALL_PBF, repository)).isTrue();
+		try {
+			assertThat(OsmPbfAddressImportUtil.importAddresses(Path.of(DATA_OSM_SMALL_PBF).toUri().toURL().toString(),
+					repository)).isTrue();
+		} catch (MalformedURLException e) {
+			fail(e);
+		}
 	}
 
 	@Test
 	void shouldFailOnMissingFile() {
-		assertThat(OsmPbfAddressImportUtil.importAddresses("will-not-exist", repository)).isFalse();
+		assertThrows(MalformedURLException.class, () -> {
+			OsmPbfAddressImportUtil.importAddresses("will-not-exist", repository);
+		});
 	}
 
 	public static synchronized void ensureDataAvailability(PostalAddressRepository repository) {
 		if (repository.count() == 0) {
-			OsmPbfAddressImportUtil.importAddresses(DATA_OSM_SMALL_PBF, repository);
+			try {
+				OsmPbfAddressImportUtil.importAddresses(Path.of(DATA_OSM_SMALL_PBF).toUri().toURL().toString(),
+						repository);
+			} catch (MalformedURLException e) {
+				fail(e);
+			}
 		}
 	}
 
