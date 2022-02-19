@@ -25,9 +25,10 @@ jobs:
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-        echo $MVNVER
-        git branch "release-$(MVNVER)"
-        git checkout "release-$(MVNVER)"
+        export RELTAG="RB-%{$MVNVER}"
+        echo $RELTAG
+        git branch $RELTAG
+        git checkout $RELTAG
         mvn clean release:prepare
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
