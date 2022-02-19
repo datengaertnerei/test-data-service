@@ -24,6 +24,7 @@ jobs:
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
+        export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
         export RELTAG="RB-${MVNVER}"
         echo $RELTAG
@@ -31,7 +32,16 @@ jobs:
         git checkout $RELTAG
         mvn clean release:prepare
         mvn release:perform 
-        git checkout master
+      env:        
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Merge Maven release
+      run: |
+        git config --global user.email "jens.dibbern@gmail.com"
+        git config --global user.name "datengaertnerei"
+        git checkout origin/master
         git merge --squash $RELTAG
+        git commit -m "Merge ${MVNVER}"
+        git push
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
