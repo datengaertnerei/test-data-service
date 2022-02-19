@@ -39,10 +39,8 @@ jobs:
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
-        git remote update
-        git fetch
-        git switch master
-        git merge --squash $RELTAG
+        
+        git merge --squash master
         git commit -m "Merge ${MVNVER}"
         git push
       env:        
