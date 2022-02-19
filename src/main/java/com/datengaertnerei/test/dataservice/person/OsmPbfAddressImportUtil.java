@@ -23,10 +23,15 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice.person;
 
-import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Collection;
 import java.util.Map;
+import java.util.function.Supplier;
 
+import org.apache.commons.io.input.BrokenInputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openstreetmap.osmosis.core.container.v0_6.EntityContainer;
@@ -55,21 +60,34 @@ public class OsmPbfAddressImportUtil {
 	/**
 	 * Starts OSM dump parser and exports all addresses within defined country.
 	 *
-	 * @param fileName the file to import
+	 * @param inputUrl   the file to import
 	 * @param repository reference to the JPA repository
+	 * @return success
+	 * @throws MalformedURLException import URL not valid
 	 */
-	public static void importAddresses(String fileName, PostalAddressRepository repository) {
+	public static boolean importAddresses(String inputUrl, PostalAddressRepository repository) throws MalformedURLException {
 
-		File osmFile = new File(fileName);
-		PbfReader reader = new PbfReader(osmFile, 1);
+		URL url = new URL(inputUrl);
+		
+		Supplier<InputStream> supplier = () -> {
+			try {
+				return url.openStream();
+			} catch (IOException e) {
+				log.error("could not open OSM stream", e);
+				return new BrokenInputStream();
+			}
+		};
+		PbfReader reader = new PbfReader(supplier, 1);
 		Sink sinkImplementation = new AddressSink(repository);
 		reader.setSink(sinkImplementation);
-		
+
 		try {
 			reader.run();
 		} catch (Exception e) {
 			log.error("OSM import run failed", e);
+			return false;
 		}
+		return true;
 
 	}
 }
@@ -85,12 +103,19 @@ class AddressSink implements Sink {
 	private static final String ADDR_COUNTRY = "addr:country";
 
 	private PostalAddressRepository repository;
-	
+	private int importCounter = 0;
+
+	/**
+	 * @param repository
+	 */
 	public AddressSink(PostalAddressRepository repository) {
 		super();
 		this.repository = repository;
 	}
 
+	/**
+	 *
+	 */
 	public void process(EntityContainer entityContainer) {
 
 		try {
@@ -106,6 +131,10 @@ class AddressSink implements Sink {
 	private void processNode(Entity entity) {
 		Node node = (Node) entity;
 		extractPostalAddress(node);
+		// log progress
+		if (importCounter++ % 1000000 == 0) {
+			log.info("processing " + importCounter);
+		}
 	}
 
 	private void extractPostalAddress(Node node) {
@@ -162,5 +191,5 @@ class AddressSink implements Sink {
 	@Override
 	public void close() {
 		// just to comply with the interface
-	}	
+	}
 }

@@ -29,18 +29,32 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 /**
- * @author jensd
+ * JPA Repo for postal address entities
  *
  */
 public interface PostalAddressRepository extends JpaRepository<PostalAddress, Long> {
-	
+
+	/**
+	 * @param addressLocality addressLocality
+	 * @return list of postalAddress objects
+	 */
 	List<PostalAddress> findByAddressLocalityIgnoreCase(String addressLocality);
-	
+
+	/**
+	 * @param postalCode postalCode
+	 * @return list of postalAddress objects
+	 */
 	List<PostalAddress> findByPostalCodeStartsWith(String postalCode);
-	
+
+	/**
+	 * @return first id
+	 */
 	@Query(value = "SELECT min(id) FROM PostalAddress")
 	public Long min();
 
+	/**
+	 * @return last id
+	 */
 	@Query(value = "SELECT max(id) FROM PostalAddress")
-	public Long max();	
+	public Long max();
 }

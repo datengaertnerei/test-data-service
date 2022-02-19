@@ -27,6 +27,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
@@ -41,8 +42,13 @@ import javax.annotation.PostConstruct;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+/**
+ * Generates random persons
+ *
+ */
 @Service
 public class PersonGenerator implements IPersonGenerator {
 
@@ -57,22 +63,29 @@ public class PersonGenerator implements IPersonGenerator {
 	private static final String MALE = "male";
 	private static final Object EMAIL_TEST = "@email.test";
 
-
 	private Random random;
 	private List<String> surnames;
 	private List<String> femaleNames;
 	private List<String> maleNames;
 	private List<String> eyecolors;
 	private List<String> professions;
-	private Long count;
 	private Long offset;
 	private TaxIdGenerator taxIdGenerator;
+	
+	@Value("${application.defaultfile}")
+	private String defaultFile;
 
 	@Autowired
 	private PostalAddressRepository repository;
 
+	private Long repoCount;
+
+	/**
+	 * 
+	 */
 	@PostConstruct
 	public void init() {
+		repoCount = 0L;
 		try {
 			surnames = loadValues(RES_SURNAMES);
 			femaleNames = loadValues(RES_FEMALE);
@@ -88,23 +101,38 @@ public class PersonGenerator implements IPersonGenerator {
 		Long maxAddressId = null == repository.max() ? 0L : repository.max();
 
 		String importFile = System.getenv("OSM_IMPORT_FILE");
-		if (null != importFile) {
-			log.info("Importing OSM dump");
-			repository.deleteAll(); // does not reset JPA ID generator
-			OsmPbfAddressImportUtil.importAddresses(importFile, repository);
-			minAddressId = repository.min();
-			maxAddressId = repository.max();
+		if(0L == maxAddressId && null == importFile) {
+			importFile = defaultFile;
 		}
-		offset = minAddressId - 1L; // needed for random access by ID
-		count = repository.count();
+		
+		try {
+			if (null != importFile) {
+				log.info("Importing OSM dump");
+				repository.deleteAll(); // does not reset JPA ID generator
+				OsmPbfAddressImportUtil.importAddresses(importFile, repository);
+				minAddressId = repository.min();
+				maxAddressId = repository.max();
+			}
+			offset = minAddressId - 1L; // needed for random access by ID
+		} catch (MalformedURLException e) {
+			log.error("Could not import OSM data:", e);
+		}
 
 		// address record IDs should be without gap to avoid errors
-		if (count < (maxAddressId - minAddressId)) {
+		if (getCount() < (maxAddressId - minAddressId)) {
 			log.info("Postal address database contains gaps. Please reimport OSM data.");
 		}
-		log.info("Address count: " + count);
-		
+		log.info("Address count: " + getCount());
+
 		taxIdGenerator = new TaxIdGenerator(random);
+	}
+
+	private Long getCount() {
+		// cache address repo count, this method is called for every random address to return
+		if(repoCount == 0) {
+			repoCount = repository.count() < Integer.MAX_VALUE ? repository.count() : Integer.MAX_VALUE;
+		}
+		return repoCount;
 	}
 
 	/**
@@ -271,7 +299,7 @@ public class PersonGenerator implements IPersonGenerator {
 			break;
 		}
 
-		// choose factor smaller than medium to tighten curve 
+		// choose factor smaller than medium to tighten curve
 		double shiftFactor = (max - min) / 3;
 		double mediumAge = min + (max - min) / 2;
 		age = random.nextGaussian() * shiftFactor + mediumAge;
@@ -286,15 +314,7 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return
 	 */
 	private Long randomId() {
-		Long result;
-
-		// it is unlikely to have more than 2 billion addresses
-		if (count < Integer.MAX_VALUE) {
-			result = (long) random.nextInt(count.intValue());
-		} else {
-			// but one of 2 billion will suffice for our test data
-			result = (long) random.nextInt(Integer.MAX_VALUE);
-		}
+		Long result = (long) random.nextInt(getCount().intValue());
 
 		// add offset for first ID
 		return result + offset;
@@ -325,7 +345,7 @@ public class PersonGenerator implements IPersonGenerator {
 		Person randomPerson = new Person(firstname, surname, gender, dateOfBirth, height, eyecolor, emailAddress,
 				taxId);
 		randomPerson.setProfession(professions.get(random.nextInt(professions.size())).trim());
-		
+
 		if (1 == random.nextInt(5)) {
 			String birthName = surnames.get(random.nextInt(surnames.size())).trim();
 			randomPerson.setBirthName(birthName);

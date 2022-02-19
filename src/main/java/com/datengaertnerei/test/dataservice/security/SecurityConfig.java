@@ -11,6 +11,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+/**
+ * Spring Boot security config
+ *
+ */
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private static final String AUTH_REALM_NAME = "Test Data Service";
@@ -33,6 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		}
 	}
 
+	/**
+	 * @param auth @see WebSecurityConfigurerAdapter
+	 * @throws Exception failure to initialize
+	 */
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		log.info("setting up user auth details");

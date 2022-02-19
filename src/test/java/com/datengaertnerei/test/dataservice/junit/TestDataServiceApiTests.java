@@ -5,12 +5,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.stream.Stream;
 
 import javax.imageio.ImageIO;
@@ -19,28 +27,47 @@ import org.iban4j.IbanFormatException;
 import org.iban4j.IbanUtil;
 import org.iban4j.InvalidCheckDigitException;
 import org.iban4j.UnsupportedCountryException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 
 import com.datengaertnerei.test.dataservice.RestApiController;
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.bank.CreditCard;
 import com.datengaertnerei.test.dataservice.person.AgeRange;
+import com.datengaertnerei.test.dataservice.person.DataImportTest;
 import com.datengaertnerei.test.dataservice.person.Person;
+import com.datengaertnerei.test.dataservice.person.PostalAddress;
+import com.datengaertnerei.test.dataservice.person.PostalAddressRepository;
 import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Tag("unit")
 class TestDataServiceApiTests {
 	private static final double THRESHOLD_SENIOR = 65.0;
 	private static final double THRESHOLD_ADULT = 18.0;
+
+	@LocalServerPort
+	private int port;
+
 	@Autowired
 	private RestApiController restController;
+
+	@Autowired
+	private PostalAddressRepository repository;
+
+	@BeforeEach
+	public void before() {
+		DataImportTest.ensureDataAvailability(repository);
+	}
 
 	@Test
 	void contextLoads() {
@@ -54,26 +81,29 @@ class TestDataServiceApiTests {
 	@Test
 	void shouldReturnRandomPerson() {
 
-		Set<String> checkList = new HashSet<>();
+		Set<String> persons = new HashSet<>();
+		SortedSet<PostalAddress> addresses = new TreeSet<>();
 		// create a few more persons to hit more date of birth branches
 		for (int i = 1; i < 10; i++) {
-			assertPerson(checkList, null);
-			assertPerson(checkList, AgeRange.ALL);
-			assertPerson(checkList, AgeRange.ADULT);
-			assertPerson(checkList, AgeRange.MINOR);
-			assertPerson(checkList, AgeRange.SENIOR);
+			assertPerson(persons, addresses, null);
+			assertPerson(persons, addresses, AgeRange.ALL);
+			assertPerson(persons, addresses, AgeRange.ADULT);
+			assertPerson(persons, addresses, AgeRange.MINOR);
+			assertPerson(persons, addresses, AgeRange.SENIOR);
 		}
 	}
 
-	private void assertPerson(Set<String> checkList, AgeRange range) {
-		Person result = restController.person(range);
-		assertThat(result).isNotNull();
-		String resultString = stringifyPerson(result);
-		assertThat(checkList.contains(resultString)).isFalse();
-		checkList.add(resultString);
+	private void assertPerson(Set<String> persons, SortedSet<PostalAddress> addresses, AgeRange range) {
+		Person person = restController.person(range);
+		assertThat(person).isNotNull();
+		assertThat(person.getAddress()).isNotNull();
+		String personString = stringifyPerson(person);
+		assertThat(persons.contains(personString)).isFalse();
+		addresses.add(person.getAddress());
+		persons.add(personString);
 
 		if (null != range) {
-			long yearsBetween = ChronoUnit.YEARS.between(result.getBirthDate(), LocalDate.now());
+			long yearsBetween = ChronoUnit.YEARS.between(person.getBirthDate(), LocalDate.now());
 
 			switch (range) {
 			case ADULT:
@@ -105,7 +135,7 @@ class TestDataServiceApiTests {
 		Set<String> checkList = new HashSet<>();
 
 		// get first record for unknown city
-		Person result = restController.personForCity("xxx", AgeRange.ALL);
+		Person result = restController.personForCity("xxx", null);
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
 		assertThat(checkList.contains(resultString)).isFalse();
@@ -130,7 +160,7 @@ class TestDataServiceApiTests {
 		Set<String> checkList = new HashSet<>();
 
 		// get first record for unknown area
-		Person result = restController.personForPostcode("xx", AgeRange.ALL);
+		Person result = restController.personForPostcode("xx", null);
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
 		assertThat(checkList.contains(resultString)).isFalse();
@@ -148,8 +178,8 @@ class TestDataServiceApiTests {
 	private String stringifyPerson(Person person) {
 		String resultString = new StringBuilder().append(person.getFamilyName()).append(person.getGivenName())
 				.append(person.getGender()).append(person.getHeight()).append(person.getBirthDate())
-				.append(person.getEyecolor()).append(person.getEmail()).append(person.getAddress().getAddressLocality())
-				.append(person.getAddress().getPostalCode()).toString();
+				.append(person.getEyecolor()).append(person.getEmail()).append(person.getAddress().hashCode())
+				.toString();
 		return resultString;
 	}
 
@@ -296,4 +326,45 @@ class TestDataServiceApiTests {
 		}
 
 	}
+
+	/**
+	 * Consecutive calls should create different (random) results for CreditCard
+	 */
+	@Test
+	void shouldReturnOpenApi() {
+
+		try {
+			//
+			URL url = new URL("http://localhost:" + port + "/v3/api-docs");
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			int status = con.getResponseCode();
+			if (HttpURLConnection.HTTP_OK != status) {
+				fail("OpenAPI download failed with status " + status);
+				con.disconnect();
+			}
+
+			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			String inputLine;
+			StringBuffer content = new StringBuffer();
+			while ((inputLine = in.readLine()) != null) {
+				content.append(inputLine);
+			}
+			in.close();
+			con.disconnect();
+
+			JsonFactory factory = new JsonFactory();
+			JsonParser parser = factory.createParser(content.toString());
+			while (parser.nextToken() != null) {
+			}
+			parser.close();
+
+			BufferedWriter writer = new BufferedWriter(new FileWriter("target/test-data-service-oas.json"));
+			writer.write(content.toString());
+			writer.close();
+
+		} catch (IOException e) {
+			fail(e);
+		}
+	}
+
 }

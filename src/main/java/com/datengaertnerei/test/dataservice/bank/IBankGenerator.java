@@ -23,10 +23,21 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice.bank;
 
+/**
+ * Bank acct and credit card generator interface
+ *
+ */
 public interface IBankGenerator {
 
+	/**
+	 * @param city city
+	 * @return random bank account
+	 */
 	public BankAccount generateAccount(String city);
 
+	/**
+	 * @return random credit card object
+	 */
 	public CreditCard generateCreditCard();
 
 }

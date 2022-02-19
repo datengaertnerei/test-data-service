@@ -2,6 +2,7 @@ package com.datengaertnerei.test.dataservice.cucumber;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -11,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
+import com.datengaertnerei.test.dataservice.person.DataImportTest;
+import com.datengaertnerei.test.dataservice.person.PostalAddressRepository;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -33,6 +36,14 @@ public class CucumberSpringContextConfiguration {
 	@LocalServerPort
 	protected int serverPort;
 
+	@Autowired
+	private PostalAddressRepository repository;
+
+	@BeforeEach
+	public void before() {
+		DataImportTest.ensureDataAvailability(repository);
+	}
+	
 	@When("the client asks for bank account in {word}")
 	public void getBankAccount(String city) {
 		this.city = city;

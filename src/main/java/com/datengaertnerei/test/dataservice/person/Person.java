@@ -37,7 +37,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author Jens Dibbern
  */
 @JsonInclude(Include.NON_NULL)
-@Schema(description="person (see <a href=\"https://schema.org/Person\">https://schema.org/Person</a>)")
+@Schema(description = "person (see <a href=\"https://schema.org/Person\">https://schema.org/Person</a>)")
 public class Person {
 
 	private String givenName;
@@ -54,80 +54,134 @@ public class Person {
 
 	private PostalAddress address;
 
+	/**
+	 * @return getter
+	 */
 	public String getGivenName() {
 		return givenName;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getFamilyName() {
 		return familyName;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getBirthName() {
 		return birthName;
 	}
 
+	/**
+	 * @param birthName setter
+	 */
 	public void setBirthName(String birthName) {
 		this.birthName = birthName;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getGender() {
 		return gender;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public LocalDate getBirthDate() {
 		return birthDate;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public int getHeight() {
 		return height;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getEyecolor() {
 		return eyecolor;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getEmail() {
 		return email;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public PostalAddress getAddress() {
 		return address;
 	}
 
+	/**
+	 * @param address setter
+	 */
 	public void setAddress(PostalAddress address) {
 		this.address = address;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getTaxId() {
 		return taxId;
 	}
 
+	/**
+	 * @param taxId setter
+	 */
 	public void setTaxId(String taxId) {
 		this.taxId = taxId;
 	}
-	
+
+	/**
+	 * @return getter
+	 */
 	public String getComment() {
 		return comment;
 	}
 
+	/**
+	 * @param comment setter
+	 */
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	
+
+	/**
+	 * @return getter
+	 */
 	public int getWeight() {
 		// we just assume a BMI of 25 and return the weight
-		double meters = height/100.0;
+		double meters = height / 100.0;
 		return (int) (meters * meters * 25.0);
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getProfession() {
 		return profession;
 	}
 
+	/**
+	 * @param profession setter
+	 */
 	public void setProfession(String profession) {
 		this.profession = profession;
 	}
-	
+
 	/**
 	 * Ctor with values.
 	 *
@@ -138,7 +192,7 @@ public class Person {
 	 * @param height     height attribute value
 	 * @param eyecolor   eyecolor attribute value
 	 * @param email      email address attribute value
-	 * @param taxId 	 taxId attribute value
+	 * @param taxId      taxId attribute value
 	 */
 	public Person(String givenName, String familyName, String gender, LocalDate birthDate, int height, String eyecolor,
 			String email, String taxId) {

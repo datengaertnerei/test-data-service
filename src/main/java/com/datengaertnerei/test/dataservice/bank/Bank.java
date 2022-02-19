@@ -25,29 +25,53 @@ package com.datengaertnerei.test.dataservice.bank;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-@Schema(description="bank info including domestic bank code and BIC")
+/**
+ * Bank entity
+ *
+ */
+@Schema(description = "bank info including domestic bank code and BIC")
 public class Bank {
 	private String city;
 	private String bankCode;
 	private String desc;
 	private String bic;
 
+	/**
+	 * @return getter
+	 */
 	public String getBankCode() {
 		return bankCode;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getDesc() {
 		return desc;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getBic() {
 		return bic;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getCity() {
 		return city;
 	}
 
+	/**
+	 * ctor
+	 * 
+	 * @param bankCode bankCode
+	 * @param desc Description
+	 * @param bic BIC
+	 * @param city city
+	 */
 	public Bank(String bankCode, String desc, String bic, String city) {
 		this.bankCode = bankCode;
 		this.desc = desc;

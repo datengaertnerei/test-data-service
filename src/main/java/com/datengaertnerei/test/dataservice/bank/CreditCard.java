@@ -4,6 +4,10 @@ import java.time.LocalDate;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
+/**
+ * Credit card entity
+ *
+ */
 @Schema(description = "credit card info with type, number and cvc")
 public class CreditCard {
 
@@ -12,6 +16,14 @@ public class CreditCard {
 	private String cvc;
 	private LocalDate expiry;
 
+	/**
+	 * ctor
+	 * 
+	 * @param number number
+	 * @param type type
+	 * @param cvc cvc
+	 * @param expiry expiry
+	 */
 	public CreditCard(String number, String type, String cvc, LocalDate expiry) {
 		this.number = number;
 		this.type = type;
@@ -19,22 +31,37 @@ public class CreditCard {
 		this.setExpiry(expiry);
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getNumber() {
 		return number;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getType() {
 		return type;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public String getCvc() {
 		return cvc;
 	}
 
+	/**
+	 * @return getter
+	 */
 	public LocalDate getExpiry() {
 		return expiry;
 	}
 
+	/**
+	 * @param expiry setter
+	 */
 	public void setExpiry(LocalDate expiry) {
 		this.expiry = expiry;
 	}

@@ -25,6 +25,7 @@ package com.datengaertnerei.test.dataservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,15 +38,29 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 
+/**
+ * Spring Boot main application for test data service
+ *
+ */
 @SpringBootApplication
 public class DataServiceApplication {
 	private static final String IMPORT_ONLY_YES = "YES";
 	private static Logger log = LoggerFactory.getLogger(DataServiceApplication.class);
 
+	@Value("${application.version}")
+	private String apiVersion;
+	
+	/**
+	 * @param args cli arguments
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(DataServiceApplication.class, args);
 	}
 
+	/**
+	 * @param ctx Spring Boot app contect
+	 * @return Spring Boot runner object
+	 */
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
@@ -58,16 +73,19 @@ public class DataServiceApplication {
 				log.info("Import only mode - exiting");
 				((ConfigurableApplicationContext) ctx).close();
 			}
-			
+
 		};
 	}
 
+	/**
+	 * @return OpenAPI doc bean
+	 */
 	@Bean
-	public OpenAPI springShopOpenAPI() {
+	public OpenAPI springOpenAPI() {
 		return new OpenAPI()
 				.info(new Info().title("Datengärtnerei Test Data Service API")
 						.description("We provide ad hoc generated test data for fictitious german persons.")
-						.version(this.getClass().getPackage().getImplementationVersion())
+						.version(apiVersion)
 						.license(new License().name("MIT License")
 								.url("https://github.com/datengaertnerei/test-data-service/blob/master/LICENSE")))
 				.externalDocs(

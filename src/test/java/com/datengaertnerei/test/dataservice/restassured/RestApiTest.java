@@ -10,9 +10,13 @@ import java.time.format.DateTimeFormatter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
+
+import com.datengaertnerei.test.dataservice.person.DataImportTest;
+import com.datengaertnerei.test.dataservice.person.PostalAddressRepository;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -28,6 +32,14 @@ class RestApiTest {
 
     @LocalServerPort
     private int port;
+
+	@Autowired
+	private PostalAddressRepository repository;
+
+	@BeforeEach
+	public void before() {
+		DataImportTest.ensureDataAvailability(repository);
+	}
     
     @BeforeEach // BeforeAll runs ahead of local port injection 
     void setup() {
