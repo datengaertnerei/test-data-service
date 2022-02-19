@@ -40,7 +40,9 @@ jobs:
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
         
-        git merge --squash master
+        git fetch origin
+        git switch master
+        git merge --squash --no-commit --no-edit $RELTAG
         git commit -m "Merge ${MVNVER}"
         git push
       env:        
