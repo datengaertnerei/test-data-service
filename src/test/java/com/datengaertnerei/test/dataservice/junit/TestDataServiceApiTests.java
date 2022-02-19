@@ -98,7 +98,7 @@ class TestDataServiceApiTests {
 		assertThat(person).isNotNull();
 		assertThat(person.getAddress()).isNotNull();
 		String personString = stringifyPerson(person);
-		assertThat(persons.contains(personString)).isFalse();
+		assertThat(persons).doesNotContain(personString);
 		addresses.add(person.getAddress());
 		persons.add(personString);
 
@@ -138,14 +138,14 @@ class TestDataServiceApiTests {
 		Person result = restController.personForCity("xxx", null);
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
-		assertThat(checkList.contains(resultString)).isFalse();
+		assertThat(checkList).doesNotContain(resultString);
 		checkList.add(resultString);
 
 		for (int i = 1; i < 5; i++) {
 			result = restController.personForCity("hamburg", AgeRange.ALL);
 			assertThat(result).isNotNull();
 			resultString = stringifyPerson(result);
-			assertThat(checkList.contains(resultString)).isFalse();
+			assertThat(checkList).doesNotContain(resultString);
 			checkList.add(resultString);
 		}
 	}
@@ -163,14 +163,14 @@ class TestDataServiceApiTests {
 		Person result = restController.personForPostcode("xx", null);
 		assertThat(result).isNotNull();
 		String resultString = stringifyPerson(result);
-		assertThat(checkList.contains(resultString)).isFalse();
+		assertThat(checkList).doesNotContain(resultString);
 		checkList.add(resultString);
 
 		for (int i = 1; i < 5; i++) {
 			result = restController.personForPostcode("20", AgeRange.ALL);
 			assertThat(result).isNotNull();
 			resultString = stringifyPerson(result);
-			assertThat(checkList.contains(resultString)).isFalse();
+			assertThat(checkList).doesNotContain(resultString);
 			checkList.add(resultString);
 		}
 	}
@@ -193,7 +193,7 @@ class TestDataServiceApiTests {
 		for (int i = 1; i < 5; i++) {
 			PhoneNumber result = restController.landline();
 			assertThat(result).isNotNull();
-			assertThat(checkList.contains(result.getPhoneNumber())).isFalse();
+			assertThat(checkList).doesNotContain(result.getPhoneNumber());
 			checkList.add(result.getPhoneNumber());
 		}
 
@@ -210,13 +210,13 @@ class TestDataServiceApiTests {
 		// get first record for unknown city
 		PhoneNumber result = restController.landlineForCity("xxx");
 		assertThat(result).isNotNull();
-		assertThat(checkList.contains(result.getPhoneNumber())).isFalse();
+		assertThat(checkList).doesNotContain(result.getPhoneNumber());
 		checkList.add(result.getPhoneNumber());
 
 		for (int i = 1; i < 4; i++) {
 			result = restController.landlineForCity("hamburg");
 			assertThat(result).isNotNull();
-			assertThat(checkList.contains(result.getPhoneNumber())).isFalse();
+			assertThat(checkList).doesNotContain(result.getPhoneNumber());
 			checkList.add(result.getPhoneNumber());
 		}
 
@@ -232,7 +232,7 @@ class TestDataServiceApiTests {
 		for (int i = 1; i < 5; i++) {
 			PhoneNumber result = restController.mobile();
 			assertThat(result).isNotNull();
-			assertThat(checkList.contains(result.getPhoneNumber())).isFalse();
+			assertThat(checkList).doesNotContain(result.getPhoneNumber());
 			checkList.add(result.getPhoneNumber());
 		}
 
