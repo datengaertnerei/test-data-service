@@ -24,6 +24,9 @@ jobs:
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
-        mvn -B gitflow:release-start gitflow:release-finish
+        version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        git branch "release-$(version)"
+        git checkout "release-$(version)"
+        mvn clean release:prepare
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
