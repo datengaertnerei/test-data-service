@@ -25,7 +25,7 @@ jobs:
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-        export RELTAG="RB-%{$MVNVER}"
+        export RELTAG="RB-${$MVNVER}"
         echo $RELTAG
         git branch $RELTAG
         git checkout $RELTAG
