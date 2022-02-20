@@ -32,18 +32,26 @@ jobs:
         git checkout $RELTAG
         mvn clean release:prepare
         mvn release:perform 
-        cp src/app/yarn.lock ~
-        git fetch origin
-        git switch master
-        echo "Fixing yarn.lock"
-        rm -f src/app/yarn.lock
-        cp ~/yarn.lock src/app/yarn.lock
-        echo "commit yarn.lock locally"
-        git commit -a -m "fix yarn.lock"
-        echo "Merging ${RELTAG}"
-        git merge --squash --no-commit --no-edit --allow-unrelated-histories $RELTAG
-        git commit -m "Merge ${MVNVER}"
-        git push
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Create PR
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "master"
+        pr_title: "Pulling ${{ github.ref }} into main"
+        pr_body: "automated PR"
+        pr_reviewer: "gh action"
+        pr_draft: false
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Increment patch number for next release
+      run: |
+        git config --global user.email "jens.dibbern@gmail.com"
+        git config --global user.name "datengaertnerei"
+        git switch develop
+        mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit 
+        git commit -m "Action commit: increase SemVer" pom.xml
+        git push      
+      env:        
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
