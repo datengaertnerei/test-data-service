@@ -32,16 +32,6 @@ jobs:
         git checkout $RELTAG
         mvn clean release:prepare
         mvn release:perform 
-      env:        
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Merge Maven release
-      run: |
-        git config --global user.email "jens.dibbern@gmail.com"
-        git config --global user.name "datengaertnerei"
-        export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-        export RELTAG="RB-${MVNVER}"
-         
         git fetch origin
         git switch master
         echo "Merging ${RELTAG}"
@@ -50,3 +40,4 @@ jobs:
         git push
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
