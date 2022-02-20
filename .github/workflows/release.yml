@@ -35,9 +35,11 @@ jobs:
         cp src/app/yarn.lock ~
         git fetch origin
         git switch master
+        echo "Fixing yarn.lock"
         rm -f src/app/yarn.lock
         cp ~/yarn.lock src/app/yarn.lock
-        git commit -m "fix yarn.lock"
+        echo "commit yarn.lock locally"
+        git commit -a -m "fix yarn.lock"
         echo "Merging ${RELTAG}"
         git merge --squash --no-commit --no-edit --allow-unrelated-histories $RELTAG
         git commit -m "Merge ${MVNVER}"
