@@ -1,0 +1,1 @@
+This is an automated release process. You can see the [change log](https://datengaertnerei.github.io/test-data-service/changelog.html) at the documentation site.
