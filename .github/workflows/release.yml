@@ -42,7 +42,8 @@ jobs:
         
         git fetch origin
         git switch master
-        git merge --squash --no-commit --no-edit $RELTAG
+        echo "Merging ${RELTAG}"
+        git merge --squash --no-commit --no-edit origin/${RELTAG}
         git commit -m "Merge ${MVNVER}"
         git push
       env:        
