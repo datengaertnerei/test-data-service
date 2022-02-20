@@ -35,13 +35,23 @@ jobs:
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Merge Maven release
+    - name: Create PR
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "master"
+        pr_title: "Pulling ${{ github.ref }} into main"
+        pr_body: "automated PR"
+        pr_reviewer: "gh action"
+        pr_draft: false
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Increment patch number for next release
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
-        
-        git merge --squash master
-        git commit -m "Merge ${MVNVER}"
-        git push
+        git switch develop
+        mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit 
+        git commit -m "Action commit: increase SemVer" pom.xml
+        git push      
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
