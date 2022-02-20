@@ -32,10 +32,13 @@ jobs:
         git checkout $RELTAG
         mvn clean release:prepare
         mvn release:perform 
+        cp src/app/yarn.lock ~
         git fetch origin
         git switch master
+        rm -f src/app/yarn.lock
+        cp ~/yarn.lock src/app/yarn.lock
         echo "Merging ${RELTAG}"
-        git merge --squash --no-commit --no-edit --allow-unrelated-histories -s theirs $RELTAG
+        git merge --squash --no-commit --no-edit --allow-unrelated-histories $RELTAG
         git commit -m "Merge ${MVNVER}"
         git push
       env:        
