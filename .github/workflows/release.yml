@@ -39,11 +39,13 @@ jobs:
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
-        
+        export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        export RELTAG="RB-${MVNVER}"
+         
         git fetch origin
         git switch master
         echo "Merging ${RELTAG}"
-        git merge --squash --no-commit --no-edit origin/${RELTAG}
+        git merge --squash --no-commit --no-edit $RELTAG
         git commit -m "Merge ${MVNVER}"
         git push
       env:        
