@@ -106,7 +106,7 @@ public class PersonGenerator implements IPersonGenerator {
 		}
 		
 		try {
-			if (null != importFile) {
+			if (null != importFile && importFile.length() != 0) {
 				log.info("Importing OSM dump");
 				repository.deleteAll(); // does not reset JPA ID generator
 				OsmPbfAddressImportUtil.importAddresses(importFile, repository);
