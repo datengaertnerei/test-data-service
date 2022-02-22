@@ -106,7 +106,7 @@ import org.springframework.stereotype.Service;
 		}
 		
 		try {
-<span class="pc bpc" id="L109" title="1 of 2 branches missed.">			if (null != importFile) {</span>
+<span class="pc bpc" id="L109" title="2 of 4 branches missed.">			if (null != importFile &amp;&amp; importFile.length() != 0) {</span>
 <span class="fc" id="L110">				log.info(&quot;Importing OSM dump&quot;);</span>
 <span class="fc" id="L111">				repository.deleteAll(); // does not reset JPA ID generator</span>
 <span class="fc" id="L112">				OsmPbfAddressImportUtil.importAddresses(importFile, repository);</span>
