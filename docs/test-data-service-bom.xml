@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:062afc91-b1de-4823-a9ab-088253939816" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
+<bom serialNumber="urn:uuid:ed07ced1-8479-4d0b-925a-dbcfbe29f13c" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2022-02-25T16:15:30Z</timestamp>
+    <timestamp>2022-02-27T17:50:09Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -37,29 +37,29 @@
     </component>
   </metadata>
   <components>
-    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.17.1?type=jar">
+    <component type="library" bom-ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar">
       <publisher>The Apache Software Foundation</publisher>
       <group>org.apache.logging.log4j</group>
       <name>log4j-api</name>
-      <version>2.17.1</version>
+      <version>2.17.2</version>
       <description>The Apache Log4j API</description>
       <scope>optional</scope>
       <hashes>
-        <hash alg="MD5">dfd5f2d81aba31583ee87fe16c7b78f8</hash>
-        <hash alg="SHA-1">d771af8e336e372fb5399c99edabe0919aeaf5b2</hash>
-        <hash alg="SHA-256">b0d8a4c8ab4fb8b1888d0095822703b0e6d4793c419550203da9e69196161de4</hash>
-        <hash alg="SHA-384">3686abf7edebe4bd29bdae0495a6b881d38cfe7a870350d1f1b43056f51c25cd39a5fccb74a28abf62069862dd25e416</hash>
-        <hash alg="SHA-512">48a58c2f317d451ac1622bdfbfa5d3cd9de45d40d5d5df98f39fe6d53c74da56e200f8e3d19a309d4e1ea364369379c0ef9d79b928fc20ea743857f347259c03</hash>
-        <hash alg="SHA3-256">5b1dce647c9dfb24ced20d78c87c213d96d697ed17c1db97e538071c0c06702d</hash>
-        <hash alg="SHA3-384">34ded426dd53323c7588f09cb17afc37798d090914608c4a8e88ff3cdcf872a6dccf042423a6bf2d92e9ab35252de92b</hash>
-        <hash alg="SHA3-512">2e9070e21fd4b9b9aaa7794dea2da75144dd116fbc9f24935d57b32306c1901f815dbaa1fd9c76712990481ac399ccb51bb27e9ee3a3a27b42bcfbc2d68f371d</hash>
+        <hash alg="MD5">0c39d90e7819c92c111e447bdf786a90</hash>
+        <hash alg="SHA-1">f42d6afa111b4dec5d2aea0fe2197240749a4ea6</hash>
+        <hash alg="SHA-256">09351b5a03828f369cdcff76f4ed39e6a6fc20f24f046935d0b28ef5152f8ce4</hash>
+        <hash alg="SHA-384">e4ba0afbfd91ef295e6c1c1edfa7854e216a29705b5c4b520f803697ae6badf3630c5d55e56394954988fa88e62176b4</hash>
+        <hash alg="SHA-512">8f986171ee6ca94ba8eacfc83b5b45bb87221c176076eb152715fcb4e1f351c4e9f88d56420fc02ee166ebe0b896fb52eda21355dec49302ab3e83a56b245d04</hash>
+        <hash alg="SHA3-256">bdcccb79127c28c0f42374eeac65891e7c0d02f18e1469c705e946f74cfc89db</hash>
+        <hash alg="SHA3-384">ef8ecf2f848bcb18790d79b1d4e0fac0582e94f226eb8c7039d7316bd9f4c472556a4052b4a93958eb1248c7a3756433</hash>
+        <hash alg="SHA3-512">14a4d4f38dc5392f378e006994780d686095e1190d476fd18efcd4211bd4dcd64b699d79c5f4351c51f2d26a3ab98b4a49745df6dbd404e3bc981797a5b8c075</hash>
       </hashes>
       <licenses>
         <license>
           <id>Apache-2.0</id>
         </license>
       </licenses>
-      <purl>pkg:maven/org.apache.logging.log4j/log4j-api@2.17.1?type=jar</purl>
+      <purl>pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar</purl>
       <externalReferences><reference type="build-system"><url>https://ci-builds.apache.org/job/Logging/job/log4j/</url></reference><reference type="distribution"><url>https://logging.apache.org/log4j/2.x/download.html</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/LOG4J2</url></reference><reference type="mailing-list"><url>https://lists.apache.org/list.html?log4j-user@logging.apache.org</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=logging-log4j2.git</url></reference><reference type="website"><url>https://www.apache.org/</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar">
@@ -2633,7 +2633,7 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
   </components>
   <dependencies>
     <dependency ref="pkg:maven/com.datengaertnerei.test/data-service@0.9.41-SNAPSHOT?type=jar">
-      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.17.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar"/>
       <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar"/>
       <dependency ref="pkg:maven/commons-io/commons-io@2.11.0?type=jar"/>
       <dependency ref="pkg:maven/com.google.guava/guava@31.0.1-jre?type=jar"/>
@@ -2647,7 +2647,7 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
       <dependency ref="pkg:maven/org.springdoc/springdoc-openapi-ui@1.6.6?type=jar"/>
       <dependency ref="pkg:maven/com.talanlabs/avatar-generator-8bit@1.1.0?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.17.1?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar"/>
     <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar"/>
     <dependency ref="pkg:maven/commons-io/commons-io@2.11.0?type=jar"/>
     <dependency ref="pkg:maven/com.google.guava/guava@31.0.1-jre?type=jar">
