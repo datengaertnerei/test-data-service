@@ -1,10 +1,10 @@
 {
   "bomFormat" : "CycloneDX",
   "specVersion" : "1.3",
-  "serialNumber" : "urn:uuid:2e48f667-8c88-46cd-a777-07ad372a0431",
+  "serialNumber" : "urn:uuid:89f8ff27-6744-4c1e-b817-965ac7ac282d",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2022-03-01T23:01:47Z",
+    "timestamp" : "2022-03-03T16:40:12Z",
     "tools" : [
       {
         "vendor" : "CycloneDX",
@@ -85,82 +85,66 @@
   },
   "components" : [
     {
-      "publisher" : "The Apache Software Foundation",
-      "group" : "org.apache.logging.log4j",
-      "name" : "log4j-api",
-      "version" : "2.17.2",
-      "description" : "The Apache Log4j API",
+      "group" : "com.google.protobuf",
+      "name" : "protobuf-java",
+      "version" : "3.19.4",
+      "description" : "Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an efficient yet extensible format.",
       "scope" : "optional",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "0c39d90e7819c92c111e447bdf786a90"
+          "content" : "1697b144988cbe6529fd3c4ad56fe882"
         },
         {
           "alg" : "SHA-1",
-          "content" : "f42d6afa111b4dec5d2aea0fe2197240749a4ea6"
+          "content" : "748e4e0b9e4fa6b9b1fe65690aa04a9db56cfc4d"
         },
         {
           "alg" : "SHA-256",
-          "content" : "09351b5a03828f369cdcff76f4ed39e6a6fc20f24f046935d0b28ef5152f8ce4"
+          "content" : "e8f524c2ad5965aae31b0527bf9d4e3bc19b0dfba8c05aef114fccc7f057c94d"
         },
         {
           "alg" : "SHA-384",
-          "content" : "e4ba0afbfd91ef295e6c1c1edfa7854e216a29705b5c4b520f803697ae6badf3630c5d55e56394954988fa88e62176b4"
+          "content" : "59eb6c13e0d917af760b01024c798ced893e88800ce01fc780c974cc91318e30ceb6a8cd5a4c25bd340b40e425f73f9a"
         },
         {
           "alg" : "SHA-512",
-          "content" : "8f986171ee6ca94ba8eacfc83b5b45bb87221c176076eb152715fcb4e1f351c4e9f88d56420fc02ee166ebe0b896fb52eda21355dec49302ab3e83a56b245d04"
+          "content" : "6be2ff0ec2aa2a9d81d0a7e6c9ad9a54d806a85b06114a0b8c41d7182f118c9306e766bd8bd3f156e53c404142981d82ecc09d91c278fda1793dbf72408aadc3"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "bdcccb79127c28c0f42374eeac65891e7c0d02f18e1469c705e946f74cfc89db"
+          "content" : "856303ef72d921692dbc27b1338716578c1b7357285195ede7805dd061a61262"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "ef8ecf2f848bcb18790d79b1d4e0fac0582e94f226eb8c7039d7316bd9f4c472556a4052b4a93958eb1248c7a3756433"
+          "content" : "925c3a9fe26ea33950ec845938a2ed1f37c90b4ccce0ce592e71219d920b27961c272c9a97005613e534d2543402e23c"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "14a4d4f38dc5392f378e006994780d686095e1190d476fd18efcd4211bd4dcd64b699d79c5f4351c51f2d26a3ab98b4a49745df6dbd404e3bc981797a5b8c075"
+          "content" : "245712cea9e0233f7608013384b282a87decafc3a7a0589a021fcb0751894a1bcdca051c9b138a6f662364fd5ee8b7c7b29a13da086d955da61bfb5c6df67372"
         }
       ],
       "licenses" : [
         {
           "license" : {
-            "id" : "Apache-2.0"
+            "id" : "BSD-3-Clause",
+            "url" : "https://opensource.org/licenses/BSD-3-Clause"
           }
         }
       ],
-      "purl" : "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar",
+      "purl" : "pkg:maven/com.google.protobuf/protobuf-java@3.19.4?type=jar",
       "externalReferences" : [
         {
-          "type" : "build-system",
-          "url" : "https://ci-builds.apache.org/job/Logging/job/log4j/"
-        },
-        {
           "type" : "distribution",
-          "url" : "https://logging.apache.org/log4j/2.x/download.html"
-        },
-        {
-          "type" : "issue-tracker",
-          "url" : "https://issues.apache.org/jira/browse/LOG4J2"
-        },
-        {
-          "type" : "mailing-list",
-          "url" : "https://lists.apache.org/list.html?log4j-user@logging.apache.org"
+          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
         },
         {
           "type" : "vcs",
-          "url" : "https://gitbox.apache.org/repos/asf?p=logging-log4j2.git"
-        },
-        {
-          "type" : "website",
-          "url" : "https://www.apache.org/"
+          "url" : "https://github.com/protocolbuffers/protobuf"
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar"
+      "bom-ref" : "pkg:maven/com.google.protobuf/protobuf-java@3.19.4?type=jar"
     },
     {
       "publisher" : "The Apache Software Foundation",
@@ -1368,6 +1352,83 @@
       ],
       "type" : "library",
       "bom-ref" : "pkg:maven/org.apache.logging.log4j/log4j-to-slf4j@2.17.1?type=jar"
+    },
+    {
+      "publisher" : "The Apache Software Foundation",
+      "group" : "org.apache.logging.log4j",
+      "name" : "log4j-api",
+      "version" : "2.17.1",
+      "description" : "The Apache Log4j API",
+      "hashes" : [
+        {
+          "alg" : "MD5",
+          "content" : "dfd5f2d81aba31583ee87fe16c7b78f8"
+        },
+        {
+          "alg" : "SHA-1",
+          "content" : "d771af8e336e372fb5399c99edabe0919aeaf5b2"
+        },
+        {
+          "alg" : "SHA-256",
+          "content" : "b0d8a4c8ab4fb8b1888d0095822703b0e6d4793c419550203da9e69196161de4"
+        },
+        {
+          "alg" : "SHA-384",
+          "content" : "3686abf7edebe4bd29bdae0495a6b881d38cfe7a870350d1f1b43056f51c25cd39a5fccb74a28abf62069862dd25e416"
+        },
+        {
+          "alg" : "SHA-512",
+          "content" : "48a58c2f317d451ac1622bdfbfa5d3cd9de45d40d5d5df98f39fe6d53c74da56e200f8e3d19a309d4e1ea364369379c0ef9d79b928fc20ea743857f347259c03"
+        },
+        {
+          "alg" : "SHA3-256",
+          "content" : "5b1dce647c9dfb24ced20d78c87c213d96d697ed17c1db97e538071c0c06702d"
+        },
+        {
+          "alg" : "SHA3-384",
+          "content" : "34ded426dd53323c7588f09cb17afc37798d090914608c4a8e88ff3cdcf872a6dccf042423a6bf2d92e9ab35252de92b"
+        },
+        {
+          "alg" : "SHA3-512",
+          "content" : "2e9070e21fd4b9b9aaa7794dea2da75144dd116fbc9f24935d57b32306c1901f815dbaa1fd9c76712990481ac399ccb51bb27e9ee3a3a27b42bcfbc2d68f371d"
+        }
+      ],
+      "licenses" : [
+        {
+          "license" : {
+            "id" : "Apache-2.0"
+          }
+        }
+      ],
+      "purl" : "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.1?type=jar",
+      "externalReferences" : [
+        {
+          "type" : "build-system",
+          "url" : "https://ci-builds.apache.org/job/Logging/job/log4j/"
+        },
+        {
+          "type" : "distribution",
+          "url" : "https://logging.apache.org/log4j/2.x/download.html"
+        },
+        {
+          "type" : "issue-tracker",
+          "url" : "https://issues.apache.org/jira/browse/LOG4J2"
+        },
+        {
+          "type" : "mailing-list",
+          "url" : "https://lists.apache.org/list.html?log4j-user@logging.apache.org"
+        },
+        {
+          "type" : "vcs",
+          "url" : "https://gitbox.apache.org/repos/asf?p=logging-log4j2.git"
+        },
+        {
+          "type" : "website",
+          "url" : "https://www.apache.org/"
+        }
+      ],
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.1?type=jar"
     },
     {
       "publisher" : "QOS.ch",
@@ -5479,67 +5540,6 @@
       "bom-ref" : "pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar"
     },
     {
-      "group" : "com.google.protobuf",
-      "name" : "protobuf-java",
-      "version" : "3.12.2",
-      "description" : "Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an efficient yet extensible format.",
-      "hashes" : [
-        {
-          "alg" : "MD5",
-          "content" : "1530875e29496ce76ca7c9a84f618e58"
-        },
-        {
-          "alg" : "SHA-1",
-          "content" : "f0029524002295154c6b546d4e6bd1cfc5081874"
-        },
-        {
-          "alg" : "SHA-256",
-          "content" : "b385bef93bad20c5e7a6cf3b1c73edde29bdec4bb3bb75688d233b561f0dcaa0"
-        },
-        {
-          "alg" : "SHA-384",
-          "content" : "6019363cf64b814759252596b87fcadbee36abb547c6c154f125e1943c5731ac77b776f656142555c5ac90f73516d251"
-        },
-        {
-          "alg" : "SHA-512",
-          "content" : "4a1cde91cf525113d3b7522732f05f344696e011eb8dc337f900f01ba22c6ae5cce2f4532754f4e6164099d514f40d3693dfe4fac0a6261f086114765709fdd3"
-        },
-        {
-          "alg" : "SHA3-256",
-          "content" : "5b419714dfa85d9a637d005dccdc4ae49d35d4d7e76f362c0cf2e106700ad065"
-        },
-        {
-          "alg" : "SHA3-384",
-          "content" : "a2be3a55bf15e04a611cdb3ea053a0fb64e62ecc3ed7758fc3341888b97a811674d1d8740f5f7ed1f3b1a9d6e3e26e96"
-        },
-        {
-          "alg" : "SHA3-512",
-          "content" : "ba724fb1f54ab7cc378e6a0728d60b4d40229018b9f47a2cbff52533d89206cdf81a1a2e973c423650adaa5434ecb93d5d258809c795883bbbe2485e4d7b6d4b"
-        }
-      ],
-      "licenses" : [
-        {
-          "license" : {
-            "id" : "BSD-3-Clause",
-            "url" : "https://opensource.org/licenses/BSD-3-Clause"
-          }
-        }
-      ],
-      "purl" : "pkg:maven/com.google.protobuf/protobuf-java@3.12.2?type=jar",
-      "externalReferences" : [
-        {
-          "type" : "distribution",
-          "url" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-        },
-        {
-          "type" : "vcs",
-          "url" : "https://github.com/protocolbuffers/protobuf"
-        }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.google.protobuf/protobuf-java@3.12.2?type=jar"
-    },
-    {
       "group" : "org.springdoc",
       "name" : "springdoc-openapi-ui",
       "version" : "1.6.6",
@@ -6876,7 +6876,7 @@
     {
       "ref" : "pkg:maven/com.datengaertnerei.test/data-service@0.9.41-SNAPSHOT?type=jar",
       "dependsOn" : [
-        "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar",
+        "pkg:maven/com.google.protobuf/protobuf-java@3.19.4?type=jar",
         "pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar",
         "pkg:maven/commons-io/commons-io@2.11.0?type=jar",
         "pkg:maven/com.google.guava/guava@31.1-jre?type=jar",
@@ -6892,7 +6892,7 @@
       ]
     },
     {
-      "ref" : "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar",
+      "ref" : "pkg:maven/com.google.protobuf/protobuf-java@3.19.4?type=jar",
       "dependsOn" : [ ]
     },
     {
@@ -6990,6 +6990,12 @@
     },
     {
       "ref" : "pkg:maven/org.apache.logging.log4j/log4j-to-slf4j@2.17.1?type=jar",
+      "dependsOn" : [
+        "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.1?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.1?type=jar",
       "dependsOn" : [ ]
     },
     {
@@ -7237,8 +7243,7 @@
       "ref" : "pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar",
       "dependsOn" : [
         "pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar",
-        "pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar",
-        "pkg:maven/com.google.protobuf/protobuf-java@3.12.2?type=jar"
+        "pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar"
       ]
     },
     {
@@ -7280,10 +7285,6 @@
     },
     {
       "ref" : "pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar",
-      "dependsOn" : [ ]
-    },
-    {
-      "ref" : "pkg:maven/com.google.protobuf/protobuf-java@3.12.2?type=jar",
       "dependsOn" : [ ]
     },
     {
