@@ -61,4 +61,6 @@ workflows:
       - build-and-test:
           filters:
             branches:
-              only: master
+              ignore: /.*/
+            tags:
+              only: /^data-service-*/
