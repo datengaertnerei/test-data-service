@@ -178,7 +178,7 @@ import org.springframework.stereotype.Service;
 	@Override
 	public Person createRandomPersonInArea(String postalCode, AgeRange range) {
 <span class="fc" id="L180">		Person randomPerson = createBasicPerson(range);</span>
-<span class="fc" id="L181">		List&lt;PostalAddress&gt; addresses = repository.findByPostalCodeStartsWith(postalCode);</span>
+<span class="fc" id="L181">		List&lt;PostalAddress&gt; addresses = repository.findByPostalCodeLike(postalCode);</span>
 <span class="fc" id="L182">		return compileResult(randomPerson, addresses);</span>
 	}
 

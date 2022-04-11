@@ -186,7 +186,7 @@
 <a class="jxr_linenumber" name="L178" href="#L178">178</a> 	@Override
 <a class="jxr_linenumber" name="L179" href="#L179">179</a> 	<strong class="jxr_keyword">public</strong> <a name="Person" href="../../../../../com/datengaertnerei/test/dataservice/person/Person.html#Person">Person</a> createRandomPersonInArea(String postalCode, <a name="AgeRange" href="../../../../../com/datengaertnerei/test/dataservice/person/AgeRange.html#AgeRange">AgeRange</a> range) {
 <a class="jxr_linenumber" name="L180" href="#L180">180</a> 		Person randomPerson = createBasicPerson(range);
-<a class="jxr_linenumber" name="L181" href="#L181">181</a> 		List&lt;PostalAddress&gt; addresses = repository.findByPostalCodeStartsWith(postalCode);
+<a class="jxr_linenumber" name="L181" href="#L181">181</a> 		List&lt;PostalAddress&gt; addresses = repository.findByPostalCodeLike(postalCode);
 <a class="jxr_linenumber" name="L182" href="#L182">182</a> 		<strong class="jxr_keyword">return</strong> compileResult(randomPerson, addresses);
 <a class="jxr_linenumber" name="L183" href="#L183">183</a> 	}
 <a class="jxr_linenumber" name="L184" href="#L184">184</a> 
