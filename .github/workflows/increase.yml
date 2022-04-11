@@ -1,0 +1,35 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: maven-increase-semver
+
+concurrency: dev-build
+
+on: 
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 6 12 * *'
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: 17
+        distribution: 'temurin'
+                
+    - name: Increment patch number for next release
+      run: |
+        git config --global user.email "jens.dibbern@gmail.com"
+        git config --global user.name "datengaertnerei"
+        git switch develop
+        mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit 
+        git commit -m "Action commit: increase SemVer" pom.xml
+        git push      
+      env:        
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

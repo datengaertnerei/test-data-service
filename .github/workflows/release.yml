@@ -8,7 +8,7 @@ concurrency: dev-build
 on: 
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 4 15 * *'
+    - cron:  '0 4 12 * *'
     
 jobs:
   build:
@@ -61,14 +61,3 @@ jobs:
         pr_reviewer: "gh action"
         pr_draft: false
         github_token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Increment patch number for next release
-      run: |
-        git config --global user.email "jens.dibbern@gmail.com"
-        git config --global user.name "datengaertnerei"
-        git switch develop
-        mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit 
-        git commit -m "Action commit: increase SemVer" pom.xml
-        git push      
-      env:        
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
