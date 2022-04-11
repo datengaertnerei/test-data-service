@@ -35,7 +35,7 @@ jobs:
         git checkout $RELTAG
         mvn clean release:prepare
         mvn release:perform 
-        echo "::set-output name=version::$(git tag --sort=taggerdate | tail -1)"
+        echo "::set-env name=RELTAG::$RELTAG"
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -46,7 +46,7 @@ jobs:
         draft: false
         prerelease: false
         bodyFile: "changelog.md"
-        release_name: ${{ steps.version.outputs.version }}
+        release_name: ${{ RELTAG }}
         tag_name: ${{ github.ref }}
         artifacts: "target/*.jar"
       env:
