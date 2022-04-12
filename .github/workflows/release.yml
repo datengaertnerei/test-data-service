@@ -8,7 +8,7 @@ concurrency: dev-build
 on: 
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 4 12 * *'
+    - cron:  '0 4 13 * *'
     
 jobs:
   build:
@@ -35,7 +35,7 @@ jobs:
         git checkout $RELTAG
         mvn clean release:prepare
         mvn release:perform 
-        echo "::set-env name=RELTAG::$RELTAG"
+        echo ::set-output name=release_tag::$(echo ${RELTAG})
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -46,7 +46,7 @@ jobs:
         draft: false
         prerelease: false
         bodyFile: "changelog.md"
-        release_name: ${{ RELTAG }}
+        release_name: ${{ steps.vars.outputs.release_tag }}
         tag_name: ${{ github.ref }}
         artifacts: "target/*.jar"
       env:
