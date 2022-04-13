@@ -33,7 +33,6 @@ jobs:
         echo $RELTAG
         git branch $RELTAG
         git checkout $RELTAG
-        git pull
         mvn clean release:prepare
         mvn release:perform 
         echo ::set-output name=release_tag::$(echo ${RELTAG})
