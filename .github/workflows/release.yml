@@ -5,10 +5,10 @@ name: maven-release
 
 concurrency: dev-build
 
-on: 
-  schedule:
+on: [workflow_dispatch]
+#  schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 4 13 * *'
+#    - cron:  '0 4 13 * *'
     
 jobs:
   build:
@@ -33,6 +33,7 @@ jobs:
         echo $RELTAG
         git branch $RELTAG
         git checkout $RELTAG
+        git pull
         mvn clean release:prepare
         mvn release:perform 
         echo ::set-output name=release_tag::$(echo ${RELTAG})
