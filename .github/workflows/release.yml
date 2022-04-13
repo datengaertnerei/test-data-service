@@ -34,7 +34,8 @@ jobs:
         git branch $RELTAG
         git checkout $RELTAG
         echo "Maven Release Prepare"
-        mvn clean release:prepare
+        mvn clean release:prepare -DpushChanges=false
+        git pull
         echo "Maven Release Perform"
         mvn release:perform 
         git commit -m 'Create new release'
