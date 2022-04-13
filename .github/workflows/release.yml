@@ -33,14 +33,12 @@ jobs:
         echo $RELTAG
         git branch $RELTAG
         git checkout $RELTAG
-        git branch --set-upstream-to=origin/$RELTAG $RELTAG
         echo "Maven Release Prepare"
         mvn clean release:prepare -DpushChanges=false
-        git pull
+        git commit -m 'Create new release'
+        git push origin/$RELTAG $RELTAG
         echo "Maven Release Perform"
         mvn release:perform 
-        git commit -m 'Create new release'
-        git push
         echo ::set-output name=release_tag::$(echo ${RELTAG})
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
