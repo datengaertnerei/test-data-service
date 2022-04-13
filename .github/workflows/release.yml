@@ -33,6 +33,7 @@ jobs:
         echo $RELTAG
         git branch $RELTAG
         git checkout $RELTAG
+        git branch --set-upstream-to=origin/$RELTAG $RELTAG
         echo "Maven Release Prepare"
         mvn clean release:prepare -DpushChanges=false
         git pull
