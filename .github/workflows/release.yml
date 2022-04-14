@@ -37,7 +37,8 @@ jobs:
         mvn clean release:prepare
         echo "Maven Release Perform"
         mvn release:perform 
-        echo ::set-output name=release_tag::$(echo ${RELTAG})
+        echo ::set-output name=releasetag::$RELTAG
+        echo ${{ steps.vars.outputs.releasetag }}
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -47,10 +48,9 @@ jobs:
       with:
         draft: false
         prerelease: false
-        bodyFile: "changelog.md"
-        release_name: ${{ steps.vars.outputs.release_tag }}
-        tag_name: ${{ steps.vars.outputs.release_tag }}
-        artifacts: "target/*.jar"
+        body_path: "changelog.md"
+        release_name: ${{ steps.vars.outputs.releasetag }}
+        tag_name: ${{ steps.vars.outputs.releasetag }}
       env:
         GITHUB_TOKEN: ${{ github.token }}        
 
