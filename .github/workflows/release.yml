@@ -5,10 +5,10 @@ name: maven-release
 
 concurrency: dev-build
 
-on: 
-  schedule:
+on: [workflow_dispatch]
+#  schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 4 15 * *'
+#    - cron:  '0 4 13 * *'
     
 jobs:
   build:
@@ -28,14 +28,17 @@ jobs:
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
-        export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
         export RELTAG="RB-${MVNVER}"
         echo $RELTAG
         git branch $RELTAG
         git checkout $RELTAG
+        echo "Maven Release Prepare"
         mvn clean release:prepare
+        echo "Maven Release Perform"
         mvn release:perform 
-        echo "::set-output name=version::$(git tag --sort=taggerdate | tail -1)"
+        echo ::set-output name=releasetag::$RELTAG
+        echo ${{ steps.vars.outputs.releasetag }}
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -45,10 +48,9 @@ jobs:
       with:
         draft: false
         prerelease: false
-        bodyFile: "changelog.md"
-        release_name: ${{ steps.version.outputs.version }}
-        tag_name: ${{ github.ref }}
-        artifacts: "target/*.jar"
+        body_path: "changelog.md"
+        release_name: ${{ steps.vars.outputs.releasetag }}
+        tag_name: ${{ steps.vars.outputs.releasetag }}
       env:
         GITHUB_TOKEN: ${{ github.token }}        
 
@@ -61,14 +63,3 @@ jobs:
         pr_reviewer: "gh action"
         pr_draft: false
         github_token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Increment patch number for next release
-      run: |
-        git config --global user.email "jens.dibbern@gmail.com"
-        git config --global user.name "datengaertnerei"
-        git switch develop
-        mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT versions:commit 
-        git commit -m "Action commit: increase SemVer" pom.xml
-        git push      
-      env:        
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

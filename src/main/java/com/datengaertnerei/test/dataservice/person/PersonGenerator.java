@@ -178,7 +178,7 @@ public class PersonGenerator implements IPersonGenerator {
 	@Override
 	public Person createRandomPersonInArea(String postalCode, AgeRange range) {
 		Person randomPerson = createBasicPerson(range);
-		List<PostalAddress> addresses = repository.findByPostalCodeStartsWith(postalCode);
+		List<PostalAddress> addresses = repository.findByPostalCodeLike(postalCode);
 		return compileResult(randomPerson, addresses);
 	}
 
