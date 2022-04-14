@@ -36,7 +36,7 @@ jobs:
         echo "Maven Release Prepare"
         mvn clean release:prepare -DpushChanges=false
         git commit -a -m 'Create new release'
-        git push origin/$RELTAG $RELTAG
+        git push -u origin $RELTAG
         echo "Maven Release Perform"
         mvn release:perform 
         echo ::set-output name=release_tag::$(echo ${RELTAG})
