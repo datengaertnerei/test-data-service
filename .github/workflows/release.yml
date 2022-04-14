@@ -28,7 +28,7 @@ jobs:
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
-        export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
         export RELTAG="RB-${MVNVER}"
         echo $RELTAG
         git branch $RELTAG
