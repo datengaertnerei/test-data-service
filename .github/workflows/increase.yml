@@ -5,10 +5,10 @@ name: maven-increase-semver
 
 concurrency: dev-build
 
-on: [workflow_dispatch]
-  #schedule:
+on: 
+  schedule:
     # * is a special character in YAML so you have to quote this string
-   # - cron:  '0 6 13 * *'
+    - cron:  '0 6 13 * *'
     
 jobs:
   build:
