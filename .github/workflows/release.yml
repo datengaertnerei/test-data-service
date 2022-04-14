@@ -24,6 +24,7 @@ jobs:
         distribution: 'temurin'
                 
     - name: Create Maven release
+      id: mvnrel
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
@@ -38,7 +39,7 @@ jobs:
         echo "Maven Release Perform"
         mvn release:perform 
         echo ::set-output name=releasetag::$RELTAG
-        echo ${{ steps.vars.outputs.releasetag }}
+        echo ${{ steps.mvnrel.outputs.releasetag }}
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -49,8 +50,8 @@ jobs:
         draft: false
         prerelease: false
         body_path: "changelog.md"
-        release_name: ${{ steps.vars.outputs.releasetag }}
-        tag_name: ${{ steps.vars.outputs.releasetag }}
+        release_name: ${{ steps.mvnrel.outputs.releasetag }}
+        tag_name: ${{ steps.mvnrel.outputs.releasetag }}
       env:
         GITHUB_TOKEN: ${{ github.token }}        
 
