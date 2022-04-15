@@ -5,10 +5,10 @@ name: maven-release
 
 concurrency: dev-build
 
-on: [workflow_dispatch]
-#  schedule:
+on: 
+  schedule:
     # * is a special character in YAML so you have to quote this string
-#    - cron:  '0 4 13 * *'
+    - cron:  '0 4 15 * *'
     
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
         git config --global user.name "datengaertnerei"
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
-        export RELTAG="RB-${MVNVER}"
+        export RELTAG="REL-${MVNVER}"
         echo $RELTAG
         git branch $RELTAG
         git checkout $RELTAG
