@@ -30,7 +30,7 @@ jobs:
         git config --global user.name "datengaertnerei"
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
-        export PRSOURCE="Merge-${MVNVER}"
+        export PRSOURCE="PR-${MVNVER}"
         export RELBRANCH="RB-${MVNVER}"
         echo $RELTAG
         git branch $RELBRANCH
@@ -41,9 +41,12 @@ jobs:
         mvn release:perform 
         # omit maven release leftovers
         git stash
+        # merge tag to main
         git checkout "V${MVNVER}"
         git switch -c $PRSOURCE
         git push origin $PRSOURCE
+        # preserve branch and tag info
+        echo ::set-output name=release_branch::$RELBRANCH
         echo ::set-output name=releasetag::V${MVNVER}
         echo ::set-output name=prsource::$PRSOURCE
       env:        
@@ -58,16 +61,29 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
         
-    - name: Create Pull Request
-      id: cpr
+    - name: Create pull request to main
+      id: cpr_main
       uses: repo-sync/pull-request@v2
       with:
         source_branch: ${{ steps.mvnrel.outputs.prsource }}
         destination_branch: "master"                      
         pr_title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main'
-        pr_body: ":crown: *An automated PR*"              # Full markdown support, requires pr_title to be set
-        pr_label: "auto-pr"                               # Comma-separated list (no spaces)
-        pr_draft: false                                    # Creates pull request as draft
-        pr_allow_empty: true                              # Creates pull request even if there are no changes
+        pr_body: ":crown: *An automated PR*"              
+        pr_label: "auto-pr"                               
+        pr_draft: false                                   
+        pr_allow_empty: true                              
         github_token: ${{ secrets.GITHUB_TOKEN }}
     
+    - name: Create pull request to dev
+      id: cpr_dev
+      uses: repo-sync/pull-request@v2
+      with:
+        source_branch: ${{ steps.mvnrel.outputs.release_branch }}
+        destination_branch: "develop"                      
+        pr_title: 'Merge ${{ steps.mvnrel.outputs.release_branch }} to main'
+        pr_body: ":crown: *An automated PR*"              
+        pr_label: "auto-pr"                               
+        pr_draft: false                                   
+        pr_allow_empty: true                              
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        
