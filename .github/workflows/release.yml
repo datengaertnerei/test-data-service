@@ -30,7 +30,7 @@ jobs:
         git config --global user.name "datengaertnerei"
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
-        export RELTAG="REL-${MVNVER}"
+        export PRSOURCE="Merge-${MVNVER}"
         export RELBRANCH="RB-${MVNVER}"
         echo $RELTAG
         git branch $RELBRANCH
@@ -42,9 +42,10 @@ jobs:
         # omit maven release leftovers
         git stash
         git checkout "V${MVNVER}"
-        git switch -c "Merge-${MVNVER}"
-        echo ::set-output name=releasetag::$RELTAG
-        echo ::set-output name=prsource::Merge-$MVNVER
+        git switch -c $PRSOURCE
+        git push origin $PRSOURCE
+        echo ::set-output name=releasetag::V${MVNVER}
+        echo ::set-output name=prsource::$PRSOURCE
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
