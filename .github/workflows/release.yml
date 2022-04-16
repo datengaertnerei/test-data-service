@@ -49,14 +49,25 @@ jobs:
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
+    - name: Create release
+      id: rel
+      uses: Roang-zero1/github-create-release-action@master
+      with:
+        release_title: "Release ${{ steps.mvnrel.outputs.releasetag }}"
+        created_tag: ${{ steps.mvnrel.outputs.releasetag }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
+        
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v4
+      uses: repo-sync/pull-request@v2
       with:
-        base: master
-        branch: ${{ steps.mvnrel.outputs.prsource }}
-        delete-branch: true
-        title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main'
-      env:        
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        source_branch: ${{ steps.mvnrel.outputs.prsource }}
+        destination_branch: "master"                      
+        pr_title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main'
+        pr_body: ":crown: *An automated PR*"              # Full markdown support, requires pr_title to be set
+        pr_label: "auto-pr"                               # Comma-separated list (no spaces)
+        pr_draft: false                                    # Creates pull request as draft
+        pr_allow_empty: true                              # Creates pull request even if there are no changes
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     
