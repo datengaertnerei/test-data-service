@@ -5,10 +5,10 @@ name: maven-release
 
 concurrency: dev-build
 
-on: 
-  schedule:
+on: [workflow_dispatch] 
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 4 15 * *'
+    #- cron:  '0 4 15 * *'
     
 jobs:
   build:
@@ -30,37 +30,44 @@ jobs:
         git config --global user.name "datengaertnerei"
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
-        export RELTAG="REL-${MVNVER}"
+        export PRSOURCE="Merge-${MVNVER}"
+        export RELBRANCH="RB-${MVNVER}"
         echo $RELTAG
-        git branch $RELTAG
-        git checkout $RELTAG
+        git branch $RELBRANCH
+        git checkout $RELBRANCH
         echo "Maven Release Prepare"
         mvn clean release:prepare
         echo "Maven Release Perform"
         mvn release:perform 
-        echo ::set-output name=releasetag::$RELTAG
-        echo ${{ steps.mvnrel.outputs.releasetag }}
+        # omit maven release leftovers
+        git stash
+        git checkout "V${MVNVER}"
+        git switch -c $PRSOURCE
+        git push origin $PRSOURCE
+        echo ::set-output name=releasetag::V${MVNVER}
+        echo ::set-output name=prsource::$PRSOURCE
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
-    - name: release
-      uses: actions/create-release@v1
-      id: create_release
+    - name: Create release
+      id: rel
+      uses: Roang-zero1/github-create-release-action@master
       with:
-        draft: false
-        prerelease: false
-        body_path: "changelog.md"
-        release_name: ${{ steps.mvnrel.outputs.releasetag }}
-        tag_name: ${{ steps.mvnrel.outputs.releasetag }}
+        release_title: "Release ${{ steps.mvnrel.outputs.releasetag }}"
+        created_tag: ${{ steps.mvnrel.outputs.releasetag }}
       env:
-        GITHUB_TOKEN: ${{ github.token }}        
-
-    - name: Create PR
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
+        
+    - name: Create Pull Request
+      id: cpr
       uses: repo-sync/pull-request@v2
       with:
-        destination_branch: "master"
-        pr_title: "Pulling ${{ github.ref }} into main"
-        pr_body: "automated PR"
-        pr_reviewer: "gh action"
-        pr_draft: false
+        source_branch: ${{ steps.mvnrel.outputs.prsource }}
+        destination_branch: "master"                      
+        pr_title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main'
+        pr_body: ":crown: *An automated PR*"              # Full markdown support, requires pr_title to be set
+        pr_label: "auto-pr"                               # Comma-separated list (no spaces)
+        pr_draft: false                                    # Creates pull request as draft
+        pr_allow_empty: true                              # Creates pull request even if there are no changes
         github_token: ${{ secrets.GITHUB_TOKEN }}
+    

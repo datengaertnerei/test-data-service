@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.datengaertnerei.test</groupId>
 	<artifactId>data-service</artifactId>
-	<version>0.9.47-SNAPSHOT</version>
+	<version>0.9.56</version>
 	<name>Test data service</name>
 	<description>Web Service to provide valid test data for german
 		fictitious persons.
@@ -46,7 +46,7 @@
 		<connection>scm:git:https://github.com/datengaertnerei/test-data-service.git</connection>
 		<developerConnection>scm:git:https://github.com/datengaertnerei/test-data-service.git</developerConnection>
 		<url>https://github.com/datengaertnerei/test-data-service</url>
-		<tag>data-service-0.9.11</tag>
+		<tag>V0.9.56</tag>
 	</scm>
 
 	<distributionManagement>
@@ -208,6 +208,14 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<useSystemClassLoader>false</useSystemClassLoader>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<tagNameFormat>V@{project.version}</tagNameFormat>
 				</configuration>
 			</plugin>
 			<plugin>
