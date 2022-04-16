@@ -42,8 +42,9 @@ jobs:
         # omit maven release leftovers
         git stash
         git checkout "V${MVNVER}"
+        git switch -c "Merge-${MVNVER}"
         echo ::set-output name=releasetag::$RELTAG
-        echo ::set-output name=prsource::V${MVNVER}
+        echo ::set-output name=prsource::Merge-$MVNVER
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
