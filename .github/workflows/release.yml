@@ -49,7 +49,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Create Pull Request
-    - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v4
       with:
@@ -60,8 +59,3 @@ jobs:
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
-    - name: Check outputs
-      if: ${{ steps.cpr.outputs.pull-request-number }}
-      run: |
-        echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-        echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
