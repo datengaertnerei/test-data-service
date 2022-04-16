@@ -5,10 +5,10 @@ name: maven-release
 
 concurrency: dev-build
 
-on: [workflow_dispatch] 
-  #schedule:
+on: 
+  schedule:
     # * is a special character in YAML so you have to quote this string
-    #- cron:  '0 4 15 * *'
+    - cron:  '0 4 15 * *'
     
 jobs:
   build:
@@ -80,7 +80,7 @@ jobs:
       with:
         source_branch: ${{ steps.mvnrel.outputs.release_branch }}
         destination_branch: "develop"                      
-        pr_title: 'Merge ${{ steps.mvnrel.outputs.release_branch }} to main'
+        pr_title: 'Merge ${{ steps.mvnrel.outputs.release_branch }} to dev'
         pr_body: ":crown: *An automated PR*"              
         pr_label: "auto-pr"                               
         pr_draft: false                                   
