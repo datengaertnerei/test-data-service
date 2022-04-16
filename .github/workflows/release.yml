@@ -49,12 +49,9 @@ jobs:
         
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v4
+      uses: thomaseizinger/create-pull-request@master
       with:
-        signoff: false
-        branch: ${{ steps.mvnrel.outputs.prsource }}
-        delete-branch: true
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        head: ${{ steps.mvnrel.outputs.prsource }}
+        base: master
         title: "Pulling ${{ steps.mvnrel.outputs.prsource }} into main"
-        body: "automated PR"
-        draft: false
-        token: ${{ secrets.GITHUB_TOKEN }}
