@@ -49,10 +49,19 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Create Pull Request
+    - name: Create Pull Request
       id: cpr
-      uses: thomaseizinger/create-pull-request@master
+      uses: peter-evans/create-pull-request@v4
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        head: ${{ steps.mvnrel.outputs.prsource }}
         base: master
-        title: "Pulling ${{ steps.mvnrel.outputs.prsource }} into main"
+        branch: ${{ steps.mvnrel.outputs.prsource }}
+        delete-branch: true
+        title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main'
+      env:        
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Check outputs
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      run: |
+        echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+        echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
