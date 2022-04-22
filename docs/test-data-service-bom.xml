@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:3d36fc70-7a56-4700-b270-47fb50c31570" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
+<bom serialNumber="urn:uuid:86697779-b943-48c6-a3d6-f36098750c62" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2022-04-21T18:15:40Z</timestamp>
+    <timestamp>2022-04-22T03:12:52Z</timestamp>
     <tools>
       <tool>
         <vendor>CycloneDX</vendor>
@@ -37,22 +37,22 @@
     </component>
   </metadata>
   <components>
-    <component type="library" bom-ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.0?type=jar">
+    <component type="library" bom-ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar">
       <group>com.google.protobuf</group>
       <name>protobuf-java</name>
-      <version>3.20.0</version>
+      <version>3.20.1</version>
       <description>Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an
     efficient yet extensible format.</description>
       <scope>optional</scope>
       <hashes>
-        <hash alg="MD5">96cf84fb3397a500609de4821c5a0599</hash>
-        <hash alg="SHA-1">3c72ddaaab7ffafe789e4f732c1fd614eb798bf4</hash>
-        <hash alg="SHA-256">cb9256793672c937a09e38b84dcf36f9a8bed7995e49f01898a9eda72649113f</hash>
-        <hash alg="SHA-384">3008b0f9ede18a6ad01469722e61d9d89823932c02b70fe12a907f6a1c6320eab54e9320b7631f7d0ac034c807a79f99</hash>
-        <hash alg="SHA-512">dc86cc0f12d4a14d6c221b8747b3747d25da2f8827f4d4861672b05252e7ed0d9b665ea3db84f77fecff71ffc51478cd237c64fccce1a863413e44fb5ac6f7d1</hash>
-        <hash alg="SHA3-256">9155aed82bc50dbca9d713d3a79761e9bf0d70ed6fb588dbc936e1703775bd9d</hash>
-        <hash alg="SHA3-384">8483d6656534246a22af1969fc879ef256991f1102bba93f631d6874449ed0a5474a378617e8c0f3c92833c9c9ae4cb7</hash>
-        <hash alg="SHA3-512">1e6b752ff91ca8b0625bd10832414b4504e779ab312cc9b65c9417b0f7571cd889b0fbabbe9839eb2c630c1471ed45982783337ca60bd9d43ec1aaaacd0526db</hash>
+        <hash alg="MD5">0329cd63a7ddc5bddc2b180787a2881d</hash>
+        <hash alg="SHA-1">5472700cd39a46060efbd35e29cb36b3fb89517b</hash>
+        <hash alg="SHA-256">dcbc32c81c8689c39e6672896258f76e660d781bb2526c6c069d5c91055ef153</hash>
+        <hash alg="SHA-384">de6f9407c3eb2daffef57702d73bf8156608902b9bbd07514333f20ed34937e3afa3bd322a5d542dc83cdc6c95a7d353</hash>
+        <hash alg="SHA-512">db0094c145e7e3a9900ed07ccc5d6161836fe29ac378d47ea3934ae207c9507f2f52da40568548849a28801a0b885fbf3d8d44f246e298b8741f625b3e7a0327</hash>
+        <hash alg="SHA3-256">021fab974182e52ea6b66932ed733c235b3fbfdb08b33cb434fbf9b651cec408</hash>
+        <hash alg="SHA3-384">534174774aa78503276f11fcd84026c1f3f9f87c8242fa48d6f07f7782fd1315c5b5036e90ba6156f7085b09a3a8b36c</hash>
+        <hash alg="SHA3-512">20815376fd6539aa2b247fdb1df23306def58f0da61c36ea88eb7cc4aba64fbf48f7923c2942781473d4a1636610a58a42a4562f7d334e8eb5a6df19a5852bfd</hash>
       </hashes>
       <licenses>
         <license>
@@ -60,7 +60,7 @@
           <url>https://opensource.org/licenses/BSD-3-Clause</url>
         </license>
       </licenses>
-      <purl>pkg:maven/com.google.protobuf/protobuf-java@3.20.0?type=jar</purl>
+      <purl>pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar</purl>
       <externalReferences><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://github.com/protocolbuffers/protobuf</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar">
@@ -2634,7 +2634,7 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
   </components>
   <dependencies>
     <dependency ref="pkg:maven/com.datengaertnerei.test/data-service@0.9.62-SNAPSHOT?type=jar">
-      <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.0?type=jar"/>
+      <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar"/>
       <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar"/>
       <dependency ref="pkg:maven/commons-io/commons-io@2.11.0?type=jar"/>
       <dependency ref="pkg:maven/com.google.guava/guava@31.1-jre?type=jar"/>
@@ -2648,7 +2648,7 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
       <dependency ref="pkg:maven/org.springdoc/springdoc-openapi-ui@1.6.7?type=jar"/>
       <dependency ref="pkg:maven/com.talanlabs/avatar-generator-8bit@1.1.0?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.0?type=jar"/>
+    <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar"/>
     <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar"/>
     <dependency ref="pkg:maven/commons-io/commons-io@2.11.0?type=jar"/>
     <dependency ref="pkg:maven/com.google.guava/guava@31.1-jre?type=jar">
