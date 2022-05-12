@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:009a1f0d-7cdf-4dfe-9f01-a933e2c1da7b" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
+<bom serialNumber="urn:uuid:55db75b2-3293-4df8-aae5-bbabac6d4c8f" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2022-05-10T19:18:20Z</timestamp>
+    <timestamp>2022-05-12T11:27:52Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -37,32 +37,6 @@
     </component>
   </metadata>
   <components>
-    <component type="library" bom-ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar">
-      <group>com.google.protobuf</group>
-      <name>protobuf-java</name>
-      <version>3.20.1</version>
-      <description>Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an
-    efficient yet extensible format.</description>
-      <scope>optional</scope>
-      <hashes>
-        <hash alg="MD5">0329cd63a7ddc5bddc2b180787a2881d</hash>
-        <hash alg="SHA-1">5472700cd39a46060efbd35e29cb36b3fb89517b</hash>
-        <hash alg="SHA-256">dcbc32c81c8689c39e6672896258f76e660d781bb2526c6c069d5c91055ef153</hash>
-        <hash alg="SHA-384">de6f9407c3eb2daffef57702d73bf8156608902b9bbd07514333f20ed34937e3afa3bd322a5d542dc83cdc6c95a7d353</hash>
-        <hash alg="SHA-512">db0094c145e7e3a9900ed07ccc5d6161836fe29ac378d47ea3934ae207c9507f2f52da40568548849a28801a0b885fbf3d8d44f246e298b8741f625b3e7a0327</hash>
-        <hash alg="SHA3-256">021fab974182e52ea6b66932ed733c235b3fbfdb08b33cb434fbf9b651cec408</hash>
-        <hash alg="SHA3-384">534174774aa78503276f11fcd84026c1f3f9f87c8242fa48d6f07f7782fd1315c5b5036e90ba6156f7085b09a3a8b36c</hash>
-        <hash alg="SHA3-512">20815376fd6539aa2b247fdb1df23306def58f0da61c36ea88eb7cc4aba64fbf48f7923c2942781473d4a1636610a58a42a4562f7d334e8eb5a6df19a5852bfd</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>BSD-3-Clause</id>
-          <url>https://opensource.org/licenses/BSD-3-Clause</url>
-        </license>
-      </licenses>
-      <purl>pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar</purl>
-      <externalReferences><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://github.com/protocolbuffers/protobuf</url></reference></externalReferences>
-    </component>
     <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar">
       <publisher>The Apache Software Foundation</publisher>
       <group>org.apache.commons</group>
@@ -113,195 +87,6 @@ file comparators, endian transformation classes, and much more.</description>
       </licenses>
       <purl>pkg:maven/commons-io/commons-io@2.11.0?type=jar</purl>
       <externalReferences><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/IO</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-io.git</url></reference><reference type="build-system"><url>https://builds.apache.org/</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="website"><url>https://www.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/com.google.guava/guava@31.1-jre?type=jar">
-      <group>com.google.guava</group>
-      <name>guava</name>
-      <version>31.1-jre</version>
-      <description>Guava is a suite of core and expanded libraries that include
-    utility classes, Google's collections, I/O classes, and
-    much more.</description>
-      <scope>optional</scope>
-      <hashes>
-        <hash alg="MD5">e37782d974104aa3b0a7bee9927c8042</hash>
-        <hash alg="SHA-1">60458f877d055d0c9114d9e1a2efb737b4bc282c</hash>
-        <hash alg="SHA-256">a42edc9cab792e39fe39bb94f3fca655ed157ff87a8af78e1d6ba5b07c4a00ab</hash>
-        <hash alg="SHA-384">829ba1c473782158d43a0e56c932b45139f121a504613b27eacf6b0774354e52c5eccaab5c2da3753b5686b93f0169b4</hash>
-        <hash alg="SHA-512">532664e3dd33699bdfb296e355bc58fde77edc019c10f464ae49fe2494a68fd25d1623a9c86bc72830ca9f1354226366ac6f3c09d77be952641e971386a4ebbb</hash>
-        <hash alg="SHA3-256">dd534fb7df6b380d8701290b0b0c4e388cf42f8179a436c509c0899afde91e5c</hash>
-        <hash alg="SHA3-384">55f70ee4afad92540faa9d260109c00190e6d1bbacf10b22e52f599103284c1a8b2a2043d8fafbe1309245290b5fe614</hash>
-        <hash alg="SHA3-512">617288cc45858588e0626edd21382d38b87cd0e6c78221e3a1626f579d5b4acd4adff37b72e3e51c73e91132f43951d12369624dd515f87bcc0c54213db43ede</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/com.google.guava/guava@31.1-jre?type=jar</purl>
-      <externalReferences><reference type="build-system"><url>https://github.com/google/guava/actions</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/google/guava/issues</url></reference><reference type="vcs"><url>https://github.com/google/guava</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar">
-      <group>com.google.guava</group>
-      <name>failureaccess</name>
-      <version>1.0.1</version>
-      <description>Contains
-    com.google.common.util.concurrent.internal.InternalFutureFailureAccess and
-    InternalFutures. Most users will never need to use this artifact. Its
-    classes is conceptually a part of Guava, but they're in this separate
-    artifact so that Android libraries can use them without pulling in all of
-    Guava (just as they can use ListenableFuture by depending on the
-    listenablefuture artifact).</description>
-      <hashes>
-        <hash alg="MD5">091883993ef5bfa91da01dcc8fc52236</hash>
-        <hash alg="SHA-1">1dcf1de382a0bf95a3d8b0849546c88bac1292c9</hash>
-        <hash alg="SHA-256">a171ee4c734dd2da837e4b16be9df4661afab72a41adaf31eb84dfdaf936ca26</hash>
-        <hash alg="SHA-384">67659dbd9647ec303d7f15128dc9dba19b98fd8d74758ee3b602451e32c855e236ccaafe08edf4bbfa245f981268440f</hash>
-        <hash alg="SHA-512">f8d59b808d6ba617252305b66d5590937da9b2b843d492d06b8d0b1b1f397e39f360d5817707797b979a5bf20bf21987b35333e7a15c44ed7401fea2d2119cae</hash>
-        <hash alg="SHA3-256">ea86406e75fcd93eafe3cde1b3135ba485f1bb9b75fed98894a0bf1f0aee04f0</hash>
-        <hash alg="SHA3-384">1460875f0331c5fa3791772a6a322a7db180261bc2adacf7271df1fbf3b088a587a755a604c039982cb593c5cfc1f101</hash>
-        <hash alg="SHA3-512">52ac0f487ab5dd27c9f2e54fd1d84c7a620cae9d49be4072aa2b11501787bf4391ddaa13d02eccdf19e8eea46aecbea5f6064b26777c1b836108a280652e04ac</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar</purl>
-      <externalReferences><reference type="build-system"><url>https://travis-ci.org/google/guava</url></reference><reference type="issue-tracker"><url>https://github.com/google/guava/issues</url></reference><reference type="vcs"><url>https://github.com/google/guava</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar">
-      <group>com.google.guava</group>
-      <name>listenablefuture</name>
-      <version>9999.0-empty-to-avoid-conflict-with-guava</version>
-      <description>An empty artifact that Guava depends on to signal that it is providing
-    ListenableFuture -- but is also available in a second "version" that
-    contains com.google.common.util.concurrent.ListenableFuture class, without
-    any other Guava classes. The idea is:
-
-    - If users want only ListenableFuture, they depend on listenablefuture-1.0.
-
-    - If users want all of Guava, they depend on guava, which, as of Guava
-    27.0, depends on
-    listenablefuture-9999.0-empty-to-avoid-conflict-with-guava. The 9999.0-...
-    version number is enough for some build systems (notably, Gradle) to select
-    that empty artifact over the "real" listenablefuture-1.0 -- avoiding a
-    conflict with the copy of ListenableFuture in guava itself. If users are
-    using an older version of Guava or a build system other than Gradle, they
-    may see class conflicts. If so, they can solve them by manually excluding
-    the listenablefuture artifact or manually forcing their build systems to
-    use 9999.0-....</description>
-      <hashes>
-        <hash alg="MD5">d094c22570d65e132c19cea5d352e381</hash>
-        <hash alg="SHA-1">b421526c5f297295adef1c886e5246c39d4ac629</hash>
-        <hash alg="SHA-256">b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99</hash>
-        <hash alg="SHA-384">caff9b74079f95832ca7f6029346b34b606051cc8c5a4389fac263511d277ada0c55f28b0d43011055b268c6eb7184d5</hash>
-        <hash alg="SHA-512">c5987a979174cbacae2e78b319f080420cc71bcdbcf7893745731eeb93c23ed13bff8d4599441f373f3a246023d33df03e882de3015ee932a74a774afdd0782f</hash>
-        <hash alg="SHA3-256">1f0a8b1177773b3a8ace839df5eed63cbf56b24a38714898a6e4ed065c42559f</hash>
-        <hash alg="SHA3-384">e939f08df0545847ea0d3e4b04a114b08499ad069ba8ec9461d1779f87a56e0c37273630a0f4c14e78c348d3ac7eb97f</hash>
-        <hash alg="SHA3-512">6b495ecc2a18b17365cb08d124a0da47f04bcdde81927b5245edf3edd8e498c3c3fb92ce6a4127f660bac851bb1d3e4510e5c20d03be47ce99dc296d360db285</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar</purl>
-      <externalReferences><reference type="build-system"><url>https://travis-ci.org/google/guava</url></reference><reference type="issue-tracker"><url>https://github.com/google/guava/issues</url></reference><reference type="vcs"><url>https://github.com/google/guava</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar">
-      <group>com.google.code.findbugs</group>
-      <name>jsr305</name>
-      <version>3.0.2</version>
-      <description>JSR305 Annotations for Findbugs</description>
-      <hashes>
-        <hash alg="MD5">dd83accb899363c32b07d7a1b2e4ce40</hash>
-        <hash alg="SHA-1">25ea2e8b0c338a877313bd4672d3fe056ea78f0d</hash>
-        <hash alg="SHA-256">766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7</hash>
-        <hash alg="SHA-384">ca0b169d3eb2d0922dc031133a021f861a043bb3e405a88728215fd6ff00fa52fdc7347842dcc2031472e3726164bdc4</hash>
-        <hash alg="SHA-512">bb09db62919a50fa5b55906013be6ca4fc7acb2e87455fac5eaf9ede2e41ce8bbafc0e5a385a561264ea4cd71bbbd3ef5a45e02d63277a201d06a0ae1636f804</hash>
-        <hash alg="SHA3-256">223fda9a89a461afaae73b177a2dc20ed4a90f2f8757f5c65f3241b0510f00ff</hash>
-        <hash alg="SHA3-384">9903fd7505218999f8262efedb3d935d64bcef84aae781064ab5e1b24755466b269517cada562fa140cd1d417ede57a1</hash>
-        <hash alg="SHA3-512">3996b5af57a5d5c6a0cd62b11773360fb051dd86a2ba968476806a2a5d32049b82d69a24a3c694e8fe4d735be6a28e41000cc500cc2a9fb577e058045855d2d6</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar</purl>
-      <externalReferences><reference type="vcs"><url>https://code.google.com/p/jsr-305/</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/org.checkerframework/checker-qual@3.12.0?type=jar">
-      <group>org.checkerframework</group>
-      <name>checker-qual</name>
-      <version>3.12.0</version>
-      <description>checker-qual contains annotations (type qualifiers) that a programmer
-writes to specify Java code for type-checking by the Checker Framework.</description>
-      <hashes>
-        <hash alg="MD5">ab1ae0e2f2f63601597a5a96fca8a54f</hash>
-        <hash alg="SHA-1">d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5</hash>
-        <hash alg="SHA-256">ff10785ac2a357ec5de9c293cb982a2cbb605c0309ea4cc1cb9b9bc6dbe7f3cb</hash>
-        <hash alg="SHA-384">60641d5967c60154359437cf49d8b0c14e7c1d876ab1fff4932590b19edcad0e65975299004ac896fb190f45b69ef1a1</hash>
-        <hash alg="SHA-512">ff20c424e130c31c30b4f4f5b4374f8f98f94ddae2b123f3c213f147be6b3de57854ee5651b02dd97d352c1c1df2a8bfeef73d5307a71372f46a6002eab24d78</hash>
-        <hash alg="SHA3-256">85ce7342830164963b1cff7257c1e07aec3eb134ba4ff7102e77de8c33191c87</hash>
-        <hash alg="SHA3-384">aa56f81cc52d6fa2bf40be155584ea7bed253b29fa9d7aa9b56d898ea01909b217efd676ceb8c7c913c4d800bfee7529</hash>
-        <hash alg="SHA3-512">29ff1fc98ce64a52fc15796f127b5b100522ef88e15c5e129941c4954a3ef1b51a3059c131cb36ba4838c5ab76b2e0f2ab2dd4e9f6edba0ec8154c450c0a2130</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>MIT</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.checkerframework/checker-qual@3.12.0?type=jar</purl>
-      <externalReferences><reference type="vcs"><url>https://github.com/typetools/checker-framework.git</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0?type=jar">
-      <publisher>Google LLC</publisher>
-      <group>com.google.errorprone</group>
-      <name>error_prone_annotations</name>
-      <version>2.11.0</version>
-      <description>Error Prone is a static analysis tool for Java that catches common programming mistakes at compile-time.</description>
-      <hashes>
-        <hash alg="MD5">656ad66261b7e7ea472ed0ffeea773ea</hash>
-        <hash alg="SHA-1">c5a0ace696d3f8b1c1d8cc036d8c03cc0cbe6b69</hash>
-        <hash alg="SHA-256">721cb91842b46fa056847d104d5225c8b8e1e8b62263b993051e1e5a0137b7ec</hash>
-        <hash alg="SHA-384">92221cb62c44dc982a8e9c54b99a1c75e0e4c48cd2f03b3272badcd03ab1b8bfc8bcbbe426a8d08074edba69b09a2b79</hash>
-        <hash alg="SHA-512">defcaf30b7def5071243f3982d0d81c47c05b1a95c4d6143b3af86451e97c212c8d620d7220784e541fe8ee95f7fc59452fa6392fa37dac2d5705bfaf06105ba</hash>
-        <hash alg="SHA3-256">dd2ca92808ddd03f50e3776b6e9aa86d92bdbf170ebe06d47e7c45940b435739</hash>
-        <hash alg="SHA3-384">545c6c45a970b5ac7eb236b0d5d4b98e48e9a36336d8052bac36b409a7489a3d6d68f5a7bb58cfb21189bdab477d4b92</hash>
-        <hash alg="SHA3-512">2cdc44a85ce2fb11e54bdd6487978f181f8daca32c40895b252f4be352f9a631e35bc0fabc026216365a05980f4548b2d59dc737b0d465e0005c0a1f325e281e</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0?type=jar</purl>
-      <externalReferences><reference type="website"><url>http://www.google.com</url></reference><reference type="vcs"><url>https://github.com/google/error-prone</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/com.google.j2objc/j2objc-annotations@1.3?type=jar">
-      <group>com.google.j2objc</group>
-      <name>j2objc-annotations</name>
-      <version>1.3</version>
-      <description>A set of annotations that provide additional information to the J2ObjC
-    translator to modify the result of translation.</description>
-      <hashes>
-        <hash alg="MD5">5fa4ec4ec0c5aa70af8a7d4922df1931</hash>
-        <hash alg="SHA-1">ba035118bc8bac37d7eff77700720999acd9986d</hash>
-        <hash alg="SHA-256">21af30c92267bd6122c0e0b4d20cccb6641a37eaf956c6540ec471d584e64a7b</hash>
-        <hash alg="SHA-384">d2a54e4bb17793a98f85fb8f91138cd3b3d311385b7fb2c09d05c3112d42218a6da29154ba184f00031919548022aa71</hash>
-        <hash alg="SHA-512">51ea975179f809cb260751d11a513881b643bf016d15949bcb63b57d3c8868a2197e0620ccbaa5739e032797ec6faa3aa6d64606e999fce32930314780ca4115</hash>
-        <hash alg="SHA3-256">e97bbe4e1ac9f9785ad0b81fd29fc9c6b0d9e37acc6da6d0b31ce9e6da072664</hash>
-        <hash alg="SHA3-384">8ba512ee47d36d5712335849e8f0fae21498c983c48fc2b4749ac7dfb4eeddf75dd51d21366667f90d6414db032a7b5b</hash>
-        <hash alg="SHA3-512">864bc6181c8ad8372e0a05ec3b0bdebc876571692331d3519e19df54a21ef333e992fe5c4e84759f010cf0657f9ea1c435bea8f103735ec3dc9dd31493e7d4a6</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/com.google.j2objc/j2objc-annotations@1.3?type=jar</purl>
-      <externalReferences><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>http://svn.sonatype.org/spice/tags/oss-parent-7</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.iban4j/iban4j@3.2.3-RELEASE?type=jar">
       <group>org.iban4j</group>
@@ -1866,34 +1651,6 @@ introspection of method/constructor parameter names, without having to add expli
       <purl>pkg:maven/jakarta.activation/jakarta.activation-api@1.2.2?type=jar</purl>
       <externalReferences><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaf/issues/</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaf</url></reference><reference type="website"><url>https://www.eclipse.org</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-compress@1.21?type=jar">
-      <publisher>The Apache Software Foundation</publisher>
-      <group>org.apache.commons</group>
-      <name>commons-compress</name>
-      <version>1.21</version>
-      <description>Apache Commons Compress software defines an API for working with
-compression and archive formats.  These include: bzip2, gzip, pack200,
-lzma, xz, Snappy, traditional Unix Compress, DEFLATE, DEFLATE64, LZ4,
-Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
-      <scope>optional</scope>
-      <hashes>
-        <hash alg="MD5">2a713d10331bc4e13459a3dc0463f16f</hash>
-        <hash alg="SHA-1">4ec95b60d4e86b5c95a0e919cb172a0af98011ef</hash>
-        <hash alg="SHA-256">6aecfd5459728a595601cfa07258d131972ffc39b492eb48bdd596577a2f244a</hash>
-        <hash alg="SHA-384">da56f95d420cd7278cee646f4cd0e7a5ee12b6a2894efaec12f0ff7b56c3d43e5db736fe1ed66ff91118b16f2d64ebef</hash>
-        <hash alg="SHA-512">c92d9a12547aab475e057955ad815fdfe92ff44c78383fa5af54b089f1bff5525126ef6aef93334f3bfc22e2fef4ad0d969f69384e978a83a55f011a53e7e471</hash>
-        <hash alg="SHA3-256">37d4a014b50393793d35c70431bd8a1842c197d854c6f174dfa946b9edc2b841</hash>
-        <hash alg="SHA3-384">6d3dc0198dd523a49fa94e054841aece853577b5c3ea1029fc288ad9ff580ab1b65ea99ddbe58c42125054e8c43be461</hash>
-        <hash alg="SHA3-512">61609f60746406a7cb1ef3f979488beca6674fde208c9025d3fdee115de4767e8a4a1ee38f5bf79ac0104505ddb3558f1feeba5e318d6545647120ac60db6b89</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.apache.commons/commons-compress@1.21?type=jar</purl>
-      <externalReferences><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/COMPRESS</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-compress.git</url></reference><reference type="build-system"><url>https://builds.apache.org/</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="website"><url>https://www.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
-    </component>
     <component type="library" bom-ref="pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar">
       <group>org.openstreetmap.osmosis</group>
       <name>osmosis-pbf2</name>
@@ -2041,6 +1798,33 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
       <purl>pkg:maven/org.codehaus.woodstox/stax2-api@4.1?type=jar</purl>
       <externalReferences><reference type="website"><url>http://fasterxml.com</url></reference><reference type="vcs"><url>http://github.com/FasterXML/stax2-api</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference></externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-compress@1.21?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>org.apache.commons</group>
+      <name>commons-compress</name>
+      <version>1.21</version>
+      <description>Apache Commons Compress software defines an API for working with
+compression and archive formats.  These include: bzip2, gzip, pack200,
+lzma, xz, Snappy, traditional Unix Compress, DEFLATE, DEFLATE64, LZ4,
+Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
+      <hashes>
+        <hash alg="MD5">2a713d10331bc4e13459a3dc0463f16f</hash>
+        <hash alg="SHA-1">4ec95b60d4e86b5c95a0e919cb172a0af98011ef</hash>
+        <hash alg="SHA-256">6aecfd5459728a595601cfa07258d131972ffc39b492eb48bdd596577a2f244a</hash>
+        <hash alg="SHA-384">da56f95d420cd7278cee646f4cd0e7a5ee12b6a2894efaec12f0ff7b56c3d43e5db736fe1ed66ff91118b16f2d64ebef</hash>
+        <hash alg="SHA-512">c92d9a12547aab475e057955ad815fdfe92ff44c78383fa5af54b089f1bff5525126ef6aef93334f3bfc22e2fef4ad0d969f69384e978a83a55f011a53e7e471</hash>
+        <hash alg="SHA3-256">37d4a014b50393793d35c70431bd8a1842c197d854c6f174dfa946b9edc2b841</hash>
+        <hash alg="SHA3-384">6d3dc0198dd523a49fa94e054841aece853577b5c3ea1029fc288ad9ff580ab1b65ea99ddbe58c42125054e8c43be461</hash>
+        <hash alg="SHA3-512">61609f60746406a7cb1ef3f979488beca6674fde208c9025d3fdee115de4767e8a4a1ee38f5bf79ac0104505ddb3558f1feeba5e318d6545647120ac60db6b89</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.apache.commons/commons-compress@1.21?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/COMPRESS</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-compress.git</url></reference><reference type="build-system"><url>https://builds.apache.org/</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="website"><url>https://www.apache.org/</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference></externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:maven/xerces/xercesImpl@2.12.0?type=jar">
       <group>xerces</group>
       <name>xercesImpl</name>
@@ -2133,6 +1917,219 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
       </licenses>
       <purl>pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar</purl>
       <externalReferences><reference type="vcs"><url>https://github.com/openstreetmap/osmosis</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.guava/guava@31.1-jre?type=jar">
+      <group>com.google.guava</group>
+      <name>guava</name>
+      <version>31.1-jre</version>
+      <description>Guava is a suite of core and expanded libraries that include
+    utility classes, Google's collections, I/O classes, and
+    much more.</description>
+      <hashes>
+        <hash alg="MD5">e37782d974104aa3b0a7bee9927c8042</hash>
+        <hash alg="SHA-1">60458f877d055d0c9114d9e1a2efb737b4bc282c</hash>
+        <hash alg="SHA-256">a42edc9cab792e39fe39bb94f3fca655ed157ff87a8af78e1d6ba5b07c4a00ab</hash>
+        <hash alg="SHA-384">829ba1c473782158d43a0e56c932b45139f121a504613b27eacf6b0774354e52c5eccaab5c2da3753b5686b93f0169b4</hash>
+        <hash alg="SHA-512">532664e3dd33699bdfb296e355bc58fde77edc019c10f464ae49fe2494a68fd25d1623a9c86bc72830ca9f1354226366ac6f3c09d77be952641e971386a4ebbb</hash>
+        <hash alg="SHA3-256">dd534fb7df6b380d8701290b0b0c4e388cf42f8179a436c509c0899afde91e5c</hash>
+        <hash alg="SHA3-384">55f70ee4afad92540faa9d260109c00190e6d1bbacf10b22e52f599103284c1a8b2a2043d8fafbe1309245290b5fe614</hash>
+        <hash alg="SHA3-512">617288cc45858588e0626edd21382d38b87cd0e6c78221e3a1626f579d5b4acd4adff37b72e3e51c73e91132f43951d12369624dd515f87bcc0c54213db43ede</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.guava/guava@31.1-jre?type=jar</purl>
+      <externalReferences><reference type="build-system"><url>https://github.com/google/guava/actions</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/google/guava/issues</url></reference><reference type="vcs"><url>https://github.com/google/guava</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar">
+      <group>com.google.guava</group>
+      <name>failureaccess</name>
+      <version>1.0.1</version>
+      <description>Contains
+    com.google.common.util.concurrent.internal.InternalFutureFailureAccess and
+    InternalFutures. Most users will never need to use this artifact. Its
+    classes is conceptually a part of Guava, but they're in this separate
+    artifact so that Android libraries can use them without pulling in all of
+    Guava (just as they can use ListenableFuture by depending on the
+    listenablefuture artifact).</description>
+      <hashes>
+        <hash alg="MD5">091883993ef5bfa91da01dcc8fc52236</hash>
+        <hash alg="SHA-1">1dcf1de382a0bf95a3d8b0849546c88bac1292c9</hash>
+        <hash alg="SHA-256">a171ee4c734dd2da837e4b16be9df4661afab72a41adaf31eb84dfdaf936ca26</hash>
+        <hash alg="SHA-384">67659dbd9647ec303d7f15128dc9dba19b98fd8d74758ee3b602451e32c855e236ccaafe08edf4bbfa245f981268440f</hash>
+        <hash alg="SHA-512">f8d59b808d6ba617252305b66d5590937da9b2b843d492d06b8d0b1b1f397e39f360d5817707797b979a5bf20bf21987b35333e7a15c44ed7401fea2d2119cae</hash>
+        <hash alg="SHA3-256">ea86406e75fcd93eafe3cde1b3135ba485f1bb9b75fed98894a0bf1f0aee04f0</hash>
+        <hash alg="SHA3-384">1460875f0331c5fa3791772a6a322a7db180261bc2adacf7271df1fbf3b088a587a755a604c039982cb593c5cfc1f101</hash>
+        <hash alg="SHA3-512">52ac0f487ab5dd27c9f2e54fd1d84c7a620cae9d49be4072aa2b11501787bf4391ddaa13d02eccdf19e8eea46aecbea5f6064b26777c1b836108a280652e04ac</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar</purl>
+      <externalReferences><reference type="build-system"><url>https://travis-ci.org/google/guava</url></reference><reference type="issue-tracker"><url>https://github.com/google/guava/issues</url></reference><reference type="vcs"><url>https://github.com/google/guava</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar">
+      <group>com.google.guava</group>
+      <name>listenablefuture</name>
+      <version>9999.0-empty-to-avoid-conflict-with-guava</version>
+      <description>An empty artifact that Guava depends on to signal that it is providing
+    ListenableFuture -- but is also available in a second "version" that
+    contains com.google.common.util.concurrent.ListenableFuture class, without
+    any other Guava classes. The idea is:
+
+    - If users want only ListenableFuture, they depend on listenablefuture-1.0.
+
+    - If users want all of Guava, they depend on guava, which, as of Guava
+    27.0, depends on
+    listenablefuture-9999.0-empty-to-avoid-conflict-with-guava. The 9999.0-...
+    version number is enough for some build systems (notably, Gradle) to select
+    that empty artifact over the "real" listenablefuture-1.0 -- avoiding a
+    conflict with the copy of ListenableFuture in guava itself. If users are
+    using an older version of Guava or a build system other than Gradle, they
+    may see class conflicts. If so, they can solve them by manually excluding
+    the listenablefuture artifact or manually forcing their build systems to
+    use 9999.0-....</description>
+      <hashes>
+        <hash alg="MD5">d094c22570d65e132c19cea5d352e381</hash>
+        <hash alg="SHA-1">b421526c5f297295adef1c886e5246c39d4ac629</hash>
+        <hash alg="SHA-256">b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99</hash>
+        <hash alg="SHA-384">caff9b74079f95832ca7f6029346b34b606051cc8c5a4389fac263511d277ada0c55f28b0d43011055b268c6eb7184d5</hash>
+        <hash alg="SHA-512">c5987a979174cbacae2e78b319f080420cc71bcdbcf7893745731eeb93c23ed13bff8d4599441f373f3a246023d33df03e882de3015ee932a74a774afdd0782f</hash>
+        <hash alg="SHA3-256">1f0a8b1177773b3a8ace839df5eed63cbf56b24a38714898a6e4ed065c42559f</hash>
+        <hash alg="SHA3-384">e939f08df0545847ea0d3e4b04a114b08499ad069ba8ec9461d1779f87a56e0c37273630a0f4c14e78c348d3ac7eb97f</hash>
+        <hash alg="SHA3-512">6b495ecc2a18b17365cb08d124a0da47f04bcdde81927b5245edf3edd8e498c3c3fb92ce6a4127f660bac851bb1d3e4510e5c20d03be47ce99dc296d360db285</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar</purl>
+      <externalReferences><reference type="build-system"><url>https://travis-ci.org/google/guava</url></reference><reference type="issue-tracker"><url>https://github.com/google/guava/issues</url></reference><reference type="vcs"><url>https://github.com/google/guava</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar">
+      <group>com.google.code.findbugs</group>
+      <name>jsr305</name>
+      <version>3.0.2</version>
+      <description>JSR305 Annotations for Findbugs</description>
+      <hashes>
+        <hash alg="MD5">dd83accb899363c32b07d7a1b2e4ce40</hash>
+        <hash alg="SHA-1">25ea2e8b0c338a877313bd4672d3fe056ea78f0d</hash>
+        <hash alg="SHA-256">766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7</hash>
+        <hash alg="SHA-384">ca0b169d3eb2d0922dc031133a021f861a043bb3e405a88728215fd6ff00fa52fdc7347842dcc2031472e3726164bdc4</hash>
+        <hash alg="SHA-512">bb09db62919a50fa5b55906013be6ca4fc7acb2e87455fac5eaf9ede2e41ce8bbafc0e5a385a561264ea4cd71bbbd3ef5a45e02d63277a201d06a0ae1636f804</hash>
+        <hash alg="SHA3-256">223fda9a89a461afaae73b177a2dc20ed4a90f2f8757f5c65f3241b0510f00ff</hash>
+        <hash alg="SHA3-384">9903fd7505218999f8262efedb3d935d64bcef84aae781064ab5e1b24755466b269517cada562fa140cd1d417ede57a1</hash>
+        <hash alg="SHA3-512">3996b5af57a5d5c6a0cd62b11773360fb051dd86a2ba968476806a2a5d32049b82d69a24a3c694e8fe4d735be6a28e41000cc500cc2a9fb577e058045855d2d6</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar</purl>
+      <externalReferences><reference type="vcs"><url>https://code.google.com/p/jsr-305/</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/org.checkerframework/checker-qual@3.12.0?type=jar">
+      <group>org.checkerframework</group>
+      <name>checker-qual</name>
+      <version>3.12.0</version>
+      <description>checker-qual contains annotations (type qualifiers) that a programmer
+writes to specify Java code for type-checking by the Checker Framework.</description>
+      <hashes>
+        <hash alg="MD5">ab1ae0e2f2f63601597a5a96fca8a54f</hash>
+        <hash alg="SHA-1">d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5</hash>
+        <hash alg="SHA-256">ff10785ac2a357ec5de9c293cb982a2cbb605c0309ea4cc1cb9b9bc6dbe7f3cb</hash>
+        <hash alg="SHA-384">60641d5967c60154359437cf49d8b0c14e7c1d876ab1fff4932590b19edcad0e65975299004ac896fb190f45b69ef1a1</hash>
+        <hash alg="SHA-512">ff20c424e130c31c30b4f4f5b4374f8f98f94ddae2b123f3c213f147be6b3de57854ee5651b02dd97d352c1c1df2a8bfeef73d5307a71372f46a6002eab24d78</hash>
+        <hash alg="SHA3-256">85ce7342830164963b1cff7257c1e07aec3eb134ba4ff7102e77de8c33191c87</hash>
+        <hash alg="SHA3-384">aa56f81cc52d6fa2bf40be155584ea7bed253b29fa9d7aa9b56d898ea01909b217efd676ceb8c7c913c4d800bfee7529</hash>
+        <hash alg="SHA3-512">29ff1fc98ce64a52fc15796f127b5b100522ef88e15c5e129941c4954a3ef1b51a3059c131cb36ba4838c5ab76b2e0f2ab2dd4e9f6edba0ec8154c450c0a2130</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>MIT</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.checkerframework/checker-qual@3.12.0?type=jar</purl>
+      <externalReferences><reference type="vcs"><url>https://github.com/typetools/checker-framework.git</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0?type=jar">
+      <publisher>Google LLC</publisher>
+      <group>com.google.errorprone</group>
+      <name>error_prone_annotations</name>
+      <version>2.11.0</version>
+      <description>Error Prone is a static analysis tool for Java that catches common programming mistakes at compile-time.</description>
+      <hashes>
+        <hash alg="MD5">656ad66261b7e7ea472ed0ffeea773ea</hash>
+        <hash alg="SHA-1">c5a0ace696d3f8b1c1d8cc036d8c03cc0cbe6b69</hash>
+        <hash alg="SHA-256">721cb91842b46fa056847d104d5225c8b8e1e8b62263b993051e1e5a0137b7ec</hash>
+        <hash alg="SHA-384">92221cb62c44dc982a8e9c54b99a1c75e0e4c48cd2f03b3272badcd03ab1b8bfc8bcbbe426a8d08074edba69b09a2b79</hash>
+        <hash alg="SHA-512">defcaf30b7def5071243f3982d0d81c47c05b1a95c4d6143b3af86451e97c212c8d620d7220784e541fe8ee95f7fc59452fa6392fa37dac2d5705bfaf06105ba</hash>
+        <hash alg="SHA3-256">dd2ca92808ddd03f50e3776b6e9aa86d92bdbf170ebe06d47e7c45940b435739</hash>
+        <hash alg="SHA3-384">545c6c45a970b5ac7eb236b0d5d4b98e48e9a36336d8052bac36b409a7489a3d6d68f5a7bb58cfb21189bdab477d4b92</hash>
+        <hash alg="SHA3-512">2cdc44a85ce2fb11e54bdd6487978f181f8daca32c40895b252f4be352f9a631e35bc0fabc026216365a05980f4548b2d59dc737b0d465e0005c0a1f325e281e</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0?type=jar</purl>
+      <externalReferences><reference type="website"><url>http://www.google.com</url></reference><reference type="vcs"><url>https://github.com/google/error-prone</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.j2objc/j2objc-annotations@1.3?type=jar">
+      <group>com.google.j2objc</group>
+      <name>j2objc-annotations</name>
+      <version>1.3</version>
+      <description>A set of annotations that provide additional information to the J2ObjC
+    translator to modify the result of translation.</description>
+      <hashes>
+        <hash alg="MD5">5fa4ec4ec0c5aa70af8a7d4922df1931</hash>
+        <hash alg="SHA-1">ba035118bc8bac37d7eff77700720999acd9986d</hash>
+        <hash alg="SHA-256">21af30c92267bd6122c0e0b4d20cccb6641a37eaf956c6540ec471d584e64a7b</hash>
+        <hash alg="SHA-384">d2a54e4bb17793a98f85fb8f91138cd3b3d311385b7fb2c09d05c3112d42218a6da29154ba184f00031919548022aa71</hash>
+        <hash alg="SHA-512">51ea975179f809cb260751d11a513881b643bf016d15949bcb63b57d3c8868a2197e0620ccbaa5739e032797ec6faa3aa6d64606e999fce32930314780ca4115</hash>
+        <hash alg="SHA3-256">e97bbe4e1ac9f9785ad0b81fd29fc9c6b0d9e37acc6da6d0b31ce9e6da072664</hash>
+        <hash alg="SHA3-384">8ba512ee47d36d5712335849e8f0fae21498c983c48fc2b4749ac7dfb4eeddf75dd51d21366667f90d6414db032a7b5b</hash>
+        <hash alg="SHA3-512">864bc6181c8ad8372e0a05ec3b0bdebc876571692331d3519e19df54a21ef333e992fe5c4e84759f010cf0657f9ea1c435bea8f103735ec3dc9dd31493e7d4a6</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.j2objc/j2objc-annotations@1.3?type=jar</purl>
+      <externalReferences><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>http://svn.sonatype.org/spice/tags/oss-parent-7</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar">
+      <group>com.google.protobuf</group>
+      <name>protobuf-java</name>
+      <version>3.20.1</version>
+      <description>Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an
+    efficient yet extensible format.</description>
+      <hashes>
+        <hash alg="MD5">0329cd63a7ddc5bddc2b180787a2881d</hash>
+        <hash alg="SHA-1">5472700cd39a46060efbd35e29cb36b3fb89517b</hash>
+        <hash alg="SHA-256">dcbc32c81c8689c39e6672896258f76e660d781bb2526c6c069d5c91055ef153</hash>
+        <hash alg="SHA-384">de6f9407c3eb2daffef57702d73bf8156608902b9bbd07514333f20ed34937e3afa3bd322a5d542dc83cdc6c95a7d353</hash>
+        <hash alg="SHA-512">db0094c145e7e3a9900ed07ccc5d6161836fe29ac378d47ea3934ae207c9507f2f52da40568548849a28801a0b885fbf3d8d44f246e298b8741f625b3e7a0327</hash>
+        <hash alg="SHA3-256">021fab974182e52ea6b66932ed733c235b3fbfdb08b33cb434fbf9b651cec408</hash>
+        <hash alg="SHA3-384">534174774aa78503276f11fcd84026c1f3f9f87c8242fa48d6f07f7782fd1315c5b5036e90ba6156f7085b09a3a8b36c</hash>
+        <hash alg="SHA3-512">20815376fd6539aa2b247fdb1df23306def58f0da61c36ea88eb7cc4aba64fbf48f7923c2942781473d4a1636610a58a42a4562f7d334e8eb5a6df19a5852bfd</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>BSD-3-Clause</id>
+          <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar</purl>
+      <externalReferences><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://github.com/protocolbuffers/protobuf</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.springdoc/springdoc-openapi-ui@1.6.8?type=jar">
       <group>org.springdoc</group>
@@ -2634,37 +2631,19 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
   </components>
   <dependencies>
     <dependency ref="pkg:maven/com.datengaertnerei.test/data-service@0.9.63-SNAPSHOT?type=jar">
-      <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar"/>
       <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar"/>
       <dependency ref="pkg:maven/commons-io/commons-io@2.11.0?type=jar"/>
-      <dependency ref="pkg:maven/com.google.guava/guava@31.1-jre?type=jar"/>
       <dependency ref="pkg:maven/org.iban4j/iban4j@3.2.3-RELEASE?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-web@2.6.7?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-data-jpa@2.6.7?type=jar"/>
       <dependency ref="pkg:maven/com.h2database/h2@2.1.212?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-security@2.6.7?type=jar"/>
-      <dependency ref="pkg:maven/org.apache.commons/commons-compress@1.21?type=jar"/>
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar"/>
       <dependency ref="pkg:maven/org.springdoc/springdoc-openapi-ui@1.6.8?type=jar"/>
       <dependency ref="pkg:maven/com.talanlabs/avatar-generator-8bit@1.1.0?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar"/>
     <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar"/>
     <dependency ref="pkg:maven/commons-io/commons-io@2.11.0?type=jar"/>
-    <dependency ref="pkg:maven/com.google.guava/guava@31.1-jre?type=jar">
-      <dependency ref="pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar"/>
-      <dependency ref="pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar"/>
-      <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
-      <dependency ref="pkg:maven/org.checkerframework/checker-qual@3.12.0?type=jar"/>
-      <dependency ref="pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0?type=jar"/>
-      <dependency ref="pkg:maven/com.google.j2objc/j2objc-annotations@1.3?type=jar"/>
-    </dependency>
-    <dependency ref="pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar"/>
-    <dependency ref="pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar"/>
-    <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
-    <dependency ref="pkg:maven/org.checkerframework/checker-qual@3.12.0?type=jar"/>
-    <dependency ref="pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0?type=jar"/>
-    <dependency ref="pkg:maven/com.google.j2objc/j2objc-annotations@1.3?type=jar"/>
     <dependency ref="pkg:maven/org.iban4j/iban4j@3.2.3-RELEASE?type=jar"/>
     <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-web@2.6.7?type=jar">
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter@2.6.7?type=jar"/>
@@ -2791,15 +2770,17 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
     <dependency ref="pkg:maven/org.springframework/spring-aop@5.3.19?type=jar"/>
     <dependency ref="pkg:maven/org.springframework.security/spring-security-config@5.6.3?type=jar"/>
     <dependency ref="pkg:maven/org.springframework.security/spring-security-web@5.6.3?type=jar"/>
-    <dependency ref="pkg:maven/org.apache.commons/commons-compress@1.21?type=jar"/>
     <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar">
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar"/>
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar"/>
+      <dependency ref="pkg:maven/com.google.guava/guava@31.1-jre?type=jar"/>
+      <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar">
       <dependency ref="pkg:maven/net.sf.jpf/jpf@1.5?type=jar"/>
       <dependency ref="pkg:maven/com.fasterxml.woodstox/woodstox-core@5.1.0?type=jar"/>
       <dependency ref="pkg:maven/org.codehaus.woodstox/stax2-api@4.1?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.commons/commons-compress@1.21?type=jar"/>
       <dependency ref="pkg:maven/xerces/xercesImpl@2.12.0?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/net.sf.jpf/jpf@1.5?type=jar">
@@ -2808,11 +2789,27 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
     <dependency ref="pkg:maven/commons-logging/commons-logging@1.0.4?type=jar"/>
     <dependency ref="pkg:maven/com.fasterxml.woodstox/woodstox-core@5.1.0?type=jar"/>
     <dependency ref="pkg:maven/org.codehaus.woodstox/stax2-api@4.1?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.commons/commons-compress@1.21?type=jar"/>
     <dependency ref="pkg:maven/xerces/xercesImpl@2.12.0?type=jar">
       <dependency ref="pkg:maven/xml-apis/xml-apis@1.4.01?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/xml-apis/xml-apis@1.4.01?type=jar"/>
     <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar"/>
+    <dependency ref="pkg:maven/com.google.guava/guava@31.1-jre?type=jar">
+      <dependency ref="pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar"/>
+      <dependency ref="pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar"/>
+      <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+      <dependency ref="pkg:maven/org.checkerframework/checker-qual@3.12.0?type=jar"/>
+      <dependency ref="pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0?type=jar"/>
+      <dependency ref="pkg:maven/com.google.j2objc/j2objc-annotations@1.3?type=jar"/>
+    </dependency>
+    <dependency ref="pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar"/>
+    <dependency ref="pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar"/>
+    <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
+    <dependency ref="pkg:maven/org.checkerframework/checker-qual@3.12.0?type=jar"/>
+    <dependency ref="pkg:maven/com.google.errorprone/error_prone_annotations@2.11.0?type=jar"/>
+    <dependency ref="pkg:maven/com.google.j2objc/j2objc-annotations@1.3?type=jar"/>
+    <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.20.1?type=jar"/>
     <dependency ref="pkg:maven/org.springdoc/springdoc-openapi-ui@1.6.8?type=jar">
       <dependency ref="pkg:maven/org.springdoc/springdoc-openapi-webmvc-core@1.6.8?type=jar"/>
       <dependency ref="pkg:maven/org.webjars/swagger-ui@4.10.3?type=jar"/>
