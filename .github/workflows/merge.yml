@@ -9,6 +9,8 @@ on:
   pull_request:
     branches: [ develop, master ]
 
+permissions: read-all
+
 jobs:
   build:
 
@@ -17,10 +19,6 @@ jobs:
     permissions:
       # required for all workflows
       security-events: write
-
-      # only required for workflows in private repositories
-      actions: read
-      contents: read
             
     steps:
     - name: Harden Runner

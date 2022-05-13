@@ -9,6 +9,11 @@ on:
   push:
     branches: [ develop, master ]
 
+permissions:
+  contents: read
+  id-token: read
+  pages: write
+
 jobs:
   build:
 
