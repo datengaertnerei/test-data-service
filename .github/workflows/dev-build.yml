@@ -18,6 +18,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions: deployments: write
+
     steps:
     - name: Harden Runner
       uses: step-security/harden-runner@248ae51c2e8cc9622ecf50685c8bf7150c6e8813
@@ -69,7 +71,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      permissions: deployments: write
 
     - name: Build and analyze main
       if: ${{ github.ref == 'refs/heads/master' }}
