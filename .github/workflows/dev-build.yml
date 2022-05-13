@@ -68,7 +68,8 @@ jobs:
         rm -rf ~/site-tmp
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      permissions: deployments: write
 
     - name: Build and analyze main
       if: ${{ github.ref == 'refs/heads/master' }}
