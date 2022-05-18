@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/datengaertnerei/test-data-service/branch/develop/graph/badge.svg?token=3V6AFYMMQA)](https://codecov.io/gh/datengaertnerei/test-data-service)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=datengaertnerei_test-data-service&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=datengaertnerei_test-data-service)
 [![Maven Build](https://github.com/datengaertnerei/test-data-service/workflows/maven-build/badge.svg)](https://github.com/datengaertnerei/test-data-service)
-[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/datengaertner/test-data-service/latest)](https://hub.docker.com/repository/docker/datengaertner/test-data-service)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/6044/badge)](https://bestpractices.coreinfrastructure.org/projects/6044)
 [![License Badge](https://img.shields.io/github/license/datengaertnerei/test-data-service.svg)](https://mit-license.org/)
 
 A Spring Boot REST service to generate test data for german persons incl. address, phone, mobile and current account IBAN to provide GDPR compliant test data. It is [adaptable](Adapt.md) to other countries based on OpenStreetMap and other public data sources.
@@ -28,7 +28,7 @@ docker run --name test-data -p 80:8080 datengaertner/test-data-service
 
 After startup you can navigate to [https://localhost/](https://localhost/) in your browser. It will show a random generated person. There is a link on that page to the included Swagger UI.
 
-For more details please proceed to the [docs](docs/Docs.md).
+For more details please proceed to the [docs](docs/Docs.md) or the [project pages with CI/CD info](https://datengaertnerei.github.io/test-data-service/). If you encounter any problems or identify an error please submit an issue in GitHub.
 
 ## Disclaimer
 
