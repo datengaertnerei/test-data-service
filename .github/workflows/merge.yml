@@ -13,20 +13,15 @@ permissions: read-all
 
 jobs:
   build:
-
+    name: merge-check
     runs-on: ubuntu-latest
 
     permissions:
       # required for all workflows
       security-events: write
             
-    steps:
-    - name: Harden Runner
-      uses: step-security/harden-runner@ce396f501c5992abfa972a7afeb784989f3fcf73
-      with:
-        egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
-
     - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+    
     - name: Set up JDK 17
       uses: actions/setup-java@05b9e395e10fae1bcd6ed34706c63035036fa3a4
       with:
