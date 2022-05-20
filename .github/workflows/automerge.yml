@@ -1,32 +1,24 @@
 name: automerge
-on:
-  pull_request:
-    types:
-      - labeled
-  check_suite:
-    types:
-      - completed
-  status: {}
-jobs:
-  automerge:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@ce396f501c5992abfa972a7afeb784989f3fcf73
-        with:
-          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+on: workflow_dispatch 
 
-      - id: automerge
-        name: automerge
-        uses: "pascalgn/automerge-action@2e9644b0b86a2c052525921f181f905dc8102da5"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "auto-pr"
-          MERGE_REMOVE_LABELS: "auto-pr"
-          MERGE_METHOD: "squash"
-          MERGE_DELETE_BRANCH: "true"
-          MERGE_COMMIT_MESSAGE: "auto merge by gh action"
-          MERGE_FORKS: "false"
-          MERGE_RETRIES: "3"
-          MERGE_RETRY_SLEEP: "10000"
-          MERGE_REQUIRED_APPROVALS: "0"
+jobs:
+  merge:
+    name: "Merge"
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "check PRs"
+        uses: "actions/github-script@v6"
+        with:
+          github-token: " ${{ secrets.GITHUB_TOKEN }}"
+          script: |
+            const repo = context.repo
+            const owner = context.owner
+            const pullRequests = github.rest.pulls.list({
+                owner,
+                repo,
+                'open'
+            });
+            
+            console.log(pullRequests)
