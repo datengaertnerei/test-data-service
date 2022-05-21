@@ -5,10 +5,10 @@ name: maven-release
 
 concurrency: dev-build
 
-on: 
-  schedule:
+on: workflow_dispatch
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 12 21 * *'
+    #- cron:  '0 12 21 * *'
     
 jobs:
   build:
