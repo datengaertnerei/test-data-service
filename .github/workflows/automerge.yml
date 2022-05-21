@@ -13,12 +13,30 @@ jobs:
         with:
           github-token: " ${{ secrets.GITHUB_TOKEN }}"
           script: |
-            const repo = context.repo
-            const owner = context.owner
-            const pullRequests = github.rest.pulls.list({
+            function handlePull(pull) {
+              const number = pull.number
+              const user = pull.user.login
+              const labels = pull.labels
+              const draft = pull.draft
+          
+              const full = octokit.rest.pulls.get({
                 owner,
                 repo,
-                'open'
+                number,
+              }).then(console.log(full));
+          
+            }
+          
+            const repo = context.repo
+            const owner = context.owner
+            const pulls = github.rest.pulls.list({
+              owner: owner,
+              repo: repo,
+              state: "open",
             });
-            
-            console.log(pullRequests)
+
+            if(pulls.length > 0){
+              pulls.data.forEach(handlePull);
+            } else {
+              console.log("no open pull requests");
+            }            
