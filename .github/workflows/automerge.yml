@@ -1,27 +1,42 @@
 name: automerge
-on:
-  pull_request:
-    types:
-      - labeled
-  check_suite:
-    types:
-      - completed
-  status: {}
+on: workflow_dispatch 
+
 jobs:
-  automerge:
-    runs-on: ubuntu-latest
+  merge:
+    name: "Merge"
+
+    runs-on: "ubuntu-latest"
+
     steps:
-      - id: automerge
-        name: automerge
-        uses: "pascalgn/automerge-action@v0.15.2"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "auto-pr"
-          MERGE_REMOVE_LABELS: "auto-pr"
-          MERGE_METHOD: "squash"
-          MERGE_DELETE_BRANCH: "true"
-          MERGE_COMMIT_MESSAGE: "auto merge by gh action"
-          MERGE_FORKS: "false"
-          MERGE_RETRIES: "3"
-          MERGE_RETRY_SLEEP: "10000"
-          MERGE_REQUIRED_APPROVALS: "0"
+      - name: "check PRs"
+        uses: "actions/github-script@v6"
+        with:
+          github-token: " ${{ secrets.GITHUB_TOKEN }}"
+          script: |
+            function handlePull(pull) {
+              const number = pull.number
+              const user = pull.user.login
+              const labels = pull.labels
+              const draft = pull.draft
+          
+              const full = octokit.rest.pulls.get({
+                owner,
+                repo,
+                number,
+              }).then(console.log(full));
+          
+            }
+          
+            const repo = context.repo
+            const owner = context.owner
+            const pulls = github.rest.pulls.list({
+              owner: owner,
+              repo: repo,
+              state: "open",
+            });
+
+            if(pulls.length > 0){
+              pulls.data.forEach(handlePull);
+            } else {
+              console.log("no open pull requests");
+            }            
