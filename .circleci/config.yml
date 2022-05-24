@@ -61,6 +61,5 @@ workflows:
       - build-and-test:
           filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^V*/
+              only:
+                - master
