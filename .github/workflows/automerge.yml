@@ -13,30 +13,64 @@ jobs:
         with:
           github-token: " ${{ secrets.GITHUB_TOKEN }}"
           script: |
-            function handlePull(pull) {
-              const number = pull.number
-              const user = pull.user.login
-              const labels = pull.labels
-              const draft = pull.draft
-          
-              const full = octokit.rest.pulls.get({
-                owner,
-                repo,
-                number,
-              }).then(console.log(full));
-          
-            }
-          
             const repo = context.repo
             const owner = context.owner
-            const pulls = github.rest.pulls.list({
-              owner: owner,
-              repo: repo,
-              state: "open",
-            });
+            const state = "open";
 
-            if(pulls.length > 0){
-              pulls.data.forEach(handlePull);
-            } else {
-              console.log("no open pull requests");
-            }            
+            function deleteBranch(branch){
+              octokit.request("DELETE /repos/{owner}/{repo}/git/refs/heads/{branch}", {
+                owner: owner,
+                repo: repo,
+                branch: branch,	
+              }).then(console.log("Branch deleted: "+branch));
+            }
+
+            function handleChecked(branch, number, checks){
+              const checks_list = checks.check_runs;
+              
+              if(checks_list.length == 2 && checks_list[0].conclusion == "success" && checks_list[1].conclusion == "success" ){
+                console.log("Merge PR "+number);
+                octokit.request("PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge", {
+                  owner: owner,
+                  repo: repo,
+                  pull_number: number,	
+                }).then(deleteBranch(branch));
+              }
+                
+            }
+
+            function handlePull(pull) {
+              const number = pull.number;
+              const user = pull.user.login;
+              const labels = pull.labels;
+              const draft = pull.draft;
+              const commit = pull.head.sha;
+              const branch = pull.head.ref;
+
+              if(user == "github-actions[bot]" && labels.length == 1 && labels[0].name == 'auto-pr' && draft == false){
+                console.log("Check PR "+number);
+                octokit.request("GET /repos/{owner}/{repo}/commits/{sha}/check-runs", {
+                  owner: owner,
+                  repo: repo,
+                  sha: commit,	
+                }).then(detail => handleChecked(branch, number, detail.data));
+              } 
+            }
+
+            async function processPulls() {
+                
+              const pulls = await octokit.rest.pulls.list({
+                owner,
+                repo,
+                state,
+              });
+              
+              if(pulls.data.length > 0){
+                pulls.data.forEach(handlePull);
+              } else {
+                console.log("no open pull requests");
+              }
+
+            }
+
+            processPulls().then(console.log("processing pull requests finished"));
