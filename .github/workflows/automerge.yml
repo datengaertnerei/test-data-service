@@ -18,7 +18,7 @@ jobs:
             const state = "open";
 
             function deleteBranch(branch){
-              octokit.request("DELETE /repos/{owner}/{repo}/git/refs/heads/{branch}", {
+              github.request("DELETE /repos/{owner}/{repo}/git/refs/heads/{branch}", {
                 owner: owner,
                 repo: repo,
                 branch: branch,	
@@ -30,7 +30,7 @@ jobs:
               
               if(checks_list.length == 2 && checks_list[0].conclusion == "success" && checks_list[1].conclusion == "success" ){
                 console.log("Merge PR "+number);
-                octokit.request("PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge", {
+                github.request("PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge", {
                   owner: owner,
                   repo: repo,
                   pull_number: number,	
@@ -49,7 +49,7 @@ jobs:
 
               if(user == "github-actions[bot]" && labels.length == 1 && labels[0].name == 'auto-pr' && draft == false){
                 console.log("Check PR "+number);
-                octokit.request("GET /repos/{owner}/{repo}/commits/{sha}/check-runs", {
+                github.request("GET /repos/{owner}/{repo}/commits/{sha}/check-runs", {
                   owner: owner,
                   repo: repo,
                   sha: commit,	
@@ -59,7 +59,7 @@ jobs:
 
             async function processPulls() {
                 
-              const pulls = await octokit.rest.pulls.list({
+              const pulls = await github.rest.pulls.list({
                 owner,
                 repo,
                 state,
