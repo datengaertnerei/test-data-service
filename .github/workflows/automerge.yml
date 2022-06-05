@@ -13,8 +13,8 @@ jobs:
         with:
           github-token: " ${{ secrets.GITHUB_TOKEN }}"
           script: |
-            const repo = context.repo
-            const owner = context.owner
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
             const state = "open";
 
             function deleteBranch(branch){
