@@ -47,11 +47,7 @@ jobs:
 
             async function processPulls() {
                 
-              const pulls = await github.rest.pulls.list({
-                owner,
-                repo,
-                state,
-              });
+              const pulls = await github.request("GET /repos/{owner}/{repo}/pulls?state=${state}");
               
               if(pulls.data.length > 0){
                 pulls.data.forEach(handlePull);
