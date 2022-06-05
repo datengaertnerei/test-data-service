@@ -18,11 +18,7 @@ jobs:
             const state = "open";
 
             function deleteBranch(branch){
-              github.request("DELETE /repos/{owner}/{repo}/git/refs/heads/{branch}", {
-                owner: owner,
-                repo: repo,
-                branch: branch,	
-              }).then(console.log("Branch deleted: "+branch));
+              github.request("DELETE /repos/${owner}/${repo}/git/refs/heads/${branch}").then(console.log("Branch deleted: "+branch));
             }
 
             function handleChecked(branch, number, checks){
@@ -30,11 +26,7 @@ jobs:
               
               if(checks_list.length == 2 && checks_list[0].conclusion == "success" && checks_list[1].conclusion == "success" ){
                 console.log("Merge PR "+number);
-                github.request("PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge", {
-                  owner: owner,
-                  repo: repo,
-                  pull_number: number,	
-                }).then(deleteBranch(branch));
+                github.request("PUT /repos/${owner}/${repo}/pulls/${number}/merge").then(deleteBranch(branch));
               }
                 
             }
@@ -49,11 +41,7 @@ jobs:
 
               if(user == "github-actions[bot]" && labels.length == 1 && labels[0].name == 'auto-pr' && draft == false){
                 console.log("Check PR "+number);
-                github.request("GET /repos/{owner}/{repo}/commits/{sha}/check-runs", {
-                  owner: owner,
-                  repo: repo,
-                  sha: commit,	
-                }).then(detail => handleChecked(branch, number, detail.data));
+                github.request("GET /repos/${owner}/${repo}/commits/${commit}/check-runs").then(detail => handleChecked(branch, number, detail.data));
               } 
             }
 
