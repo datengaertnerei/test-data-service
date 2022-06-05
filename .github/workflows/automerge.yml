@@ -13,24 +13,32 @@ jobs:
         with:
           github-token: " ${{ secrets.GITHUB_TOKEN }}"
           script: |
-            const repo = context.repo
-            const owner = context.owner
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
             const state = "open";
 
             function deleteBranch(branch){
-              github.request("DELETE /repos/${owner}/${repo}/git/refs/heads/${branch}").then(console.log("Branch deleted: "+branch));
+              github.request("DELETE /repos/{owner}/{repo}/git/refs/heads/{branch}", {
+                owner: owner,
+                repo: repo,
+                branch: branch,	
+              }).then(console.log("Branch deleted: "+branch));
             }
-
+            
             function handleChecked(branch, number, checks){
               const checks_list = checks.check_runs;
               
               if(checks_list.length == 2 && checks_list[0].conclusion == "success" && checks_list[1].conclusion == "success" ){
                 console.log("Merge PR "+number);
-                github.request("PUT /repos/${owner}/${repo}/pulls/${number}/merge").then(deleteBranch(branch));
+                github.request("PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge", {
+                  owner: owner,
+                  repo: repo,
+                  pull_number: number,	
+                }).then(deleteBranch(branch));
               }
                 
             }
-
+            
             function handlePull(pull) {
               const number = pull.number;
               const user = pull.user.login;
@@ -38,20 +46,23 @@ jobs:
               const draft = pull.draft;
               const commit = pull.head.sha;
               const branch = pull.head.ref;
-
               if(user == "github-actions[bot]" && labels.length == 1 && labels[0].name == 'auto-pr' && draft == false){
                 console.log("Check PR "+number);
-                github.request("GET /repos/${owner}/${repo}/commits/${commit}/check-runs").then(detail => handleChecked(branch, number, detail.data));
+                github.request("GET /repos/{owner}/{repo}/commits/{sha}/check-runs", {
+                  owner: owner,
+                  repo: repo,
+                  sha: commit,	
+                }).then(detail => handleChecked(branch, number, detail.data));
               } 
             }
-
+            
             async function processPulls() {
-                
-              const pulls = await github.rest.pulls.list({
-                owner,
-                repo,
-                state,
-              });
+                            
+              const pulls = await github.request("GET /repos/{owner}/{repo}/pulls?state={state}",{
+                  owner: owner,
+                  repo: repo,
+                  state: state,	
+                });
               
               if(pulls.data.length > 0){
                 pulls.data.forEach(handlePull);
