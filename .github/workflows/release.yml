@@ -22,6 +22,7 @@ jobs:
         egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
     - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+    
     - name: Set up JDK 17
       uses: actions/setup-java@62808131e114cfcd8936127824d1a3f08fb871ab
       with:
@@ -65,30 +66,39 @@ jobs:
         created_tag: ${{ steps.mvnrel.outputs.releasetag }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
-        
+                
     - name: Create pull request to main
       id: cpr_main
-      uses: repo-sync/pull-request@65785d95a5a466e46a9d0708933a3bd51bbf9dde
+      uses: "actions/github-script@v6"
       with:
-        source_branch: ${{ steps.mvnrel.outputs.prsource }}
-        destination_branch: "master"                      
-        pr_title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main'
-        pr_body: ":crown: *An automated PR*"              
-        pr_label: "auto-pr"                               
-        pr_draft: false                                   
-        pr_allow_empty: true                              
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: " ${{ secrets.GITHUB_TOKEN }}"
+        script: |
+          const repo = context.repo.repo;
+          const owner = context.repo.owner;
+
+          github.request('POST /repos/{owner}/{repo}/pulls', {
+            owner: owner,
+            repo: repo,
+            title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main',
+            body: ':crown: *An automated PR*',
+            head: ${{ steps.mvnrel.outputs.prsource }},
+            base: 'master'
+          })
     
     - name: Create pull request to dev
       id: cpr_dev
-      uses: repo-sync/pull-request@65785d95a5a466e46a9d0708933a3bd51bbf9dde
+      uses: "actions/github-script@v6"
       with:
-        source_branch: ${{ steps.mvnrel.outputs.release_branch }}
-        destination_branch: "develop"                      
-        pr_title: 'Merge ${{ steps.mvnrel.outputs.release_branch }} to dev'
-        pr_body: ":crown: *An automated PR*"              
-        pr_label: "auto-pr"                               
-        pr_draft: false                                   
-        pr_allow_empty: true                              
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        
+        github-token: " ${{ secrets.GITHUB_TOKEN }}"
+        script: |
+          const repo = context.repo.repo;
+          const owner = context.repo.owner;
+
+          github.request('POST /repos/{owner}/{repo}/pulls', {
+            owner: owner,
+            repo: repo,
+            title: 'Merge ${{ steps.mvnrel.outputs.release_branch }} to dev',
+            body: ':crown: *An automated PR*',
+            head: ${{ steps.mvnrel.outputs.release_branch }},
+            base: 'develop'
+          })
