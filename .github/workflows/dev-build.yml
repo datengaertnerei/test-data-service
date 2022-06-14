@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@dd5681a7d0c66fb362664d618ef4a90d656f6516
+      uses: step-security/harden-runner@cdea734fa57747b9831aa9d6fcb274c5f9669557
       with:
         egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
@@ -25,7 +25,7 @@ jobs:
         fetch-depth: '0'
     
     - name: Set up JDK 17
-      uses: actions/setup-java@05b9e395e10fae1bcd6ed34706c63035036fa3a4
+      uses: actions/setup-java@62808131e114cfcd8936127824d1a3f08fb871ab
       with:
         java-version: 17
         distribution: 'temurin'
@@ -75,4 +75,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         
-    - uses: codecov/codecov-action@dd819f8a8a48579b02d4312c4ed4f507dc8e8dd9
+    - uses: codecov/codecov-action@3b97abb4e5be3115b6f0c061f02ca0cbe9a6fef3
