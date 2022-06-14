@@ -31,14 +31,14 @@ jobs:
         distribution: 'temurin'
         
     - name: Cache Maven packages
-      uses: actions/cache@30f413bfed0a2bc738fdfd409e5a9e96b24545fd
+      uses: actions/cache@c3f1317a9e7b1ef106c153ac8c0f00fed3ddbc0d
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
     
     - name: Cache SonarCloud packages
-      uses: actions/cache@30f413bfed0a2bc738fdfd409e5a9e96b24545fd
+      uses: actions/cache@c3f1317a9e7b1ef106c153ac8c0f00fed3ddbc0d
       with:
         path: ~/.sonar/cache
         key: ${{ runner.os }}-sonar
@@ -75,4 +75,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         
-    - uses: codecov/codecov-action@95faa5a02616a3c3f7d74318f8de748d27ff1683
+    - uses: codecov/codecov-action@dd819f8a8a48579b02d4312c4ed4f507dc8e8dd9
