@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:fc0f24bb-6e62-45f7-883b-b98c78e95aa1" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
+<bom serialNumber="urn:uuid:b04f1acf-3633-44f7-a3d7-0728127471d5" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2022-06-14T17:13:57Z</timestamp>
+    <timestamp>2022-06-15T01:23:58Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -1368,21 +1368,21 @@ introspection of method/constructor parameter names, without having to add expli
       <purl>pkg:maven/org.springframework/spring-aspects@5.3.20?type=jar</purl>
       <externalReferences><reference type="website"><url>https://spring.io/projects/spring-framework</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-framework/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-framework</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/com.h2database/h2@2.1.212?type=jar">
+    <component type="library" bom-ref="pkg:maven/com.h2database/h2@2.1.214?type=jar">
       <group>com.h2database</group>
       <name>h2</name>
-      <version>2.1.212</version>
+      <version>2.1.214</version>
       <description>H2 Database Engine</description>
       <scope>optional</scope>
       <hashes>
-        <hash alg="MD5">7c75f03eead676ec375981653b380d5d</hash>
-        <hash alg="SHA-1">f3187885395bd0c0e0e83f96641bb630f368ee2f</hash>
-        <hash alg="SHA-256">db9284c6ff9bf3bc0087851edbd34563f1180df3ae87c67c5fe2203c0e67a536</hash>
-        <hash alg="SHA-384">6f8e44cf9785c0785c41ef083775d628b864cc14d37189a8fa12384f629e8262d0e6e9543e700f9e4165ca7b1c24450d</hash>
-        <hash alg="SHA-512">698d3f5bf528e3c9ea55bd6ec6b98b95718a646eb2cf4811e598b3897abb6bcbe802eddf8e1d38c8ceafd19974e0e0c9905e9dc321fea62f4d173e86b070ef9d</hash>
-        <hash alg="SHA3-256">d463d89b9f446eee089242a4969040b4ccf0530902221a20dfe36ec9ac2c94ae</hash>
-        <hash alg="SHA3-384">49a3ae1ae2d7951172936ae4d2cbbe5e597a08276e817b8ba75b82a3b2a3dec126ccfa9c751ae534cd039a70fc28c16b</hash>
-        <hash alg="SHA3-512">98150d102d8ed7d829d6e49d39c39d540a5f661769d969a835a092a35863e1bad2c295cf53fabc040e6d7d2824d957058af8bfbb55c0ee1ff3631053240c6ead</hash>
+        <hash alg="MD5">93628fb706e682dd989f697394039025</hash>
+        <hash alg="SHA-1">d5c2005c9e3279201e12d4776c948578b16bf8b2</hash>
+        <hash alg="SHA-256">d623cdc0f61d218cf549a8d09f1c391ff91096116b22e2475475fce4fbe72bd0</hash>
+        <hash alg="SHA-384">a53154e9f52e73228c27602b05f3cc24939dad90cd769f3ba9d3c498b21d53dde054f85f56286a043a941b68ea3ca7fe</hash>
+        <hash alg="SHA-512">fedc464dee11077ea3e95149b3c1a1420d6e432c940ccb8c368633821b29c0e401b711d45f819d1cc3755a54ad05fdd0e8bb6b17853dd15539613f5e2765f359</hash>
+        <hash alg="SHA3-256">58e3dd539432b47c8555edf19ef12d78537b9c2f2d775594297ae7a57c97557f</hash>
+        <hash alg="SHA3-384">ac9b13665daa9b745ac1f2584f97623f8323b9966d272c515e51e502f063f0ef2103b2d98bf37e8c35c728a0a597c6c2</hash>
+        <hash alg="SHA3-512">30cb7b5fd7bebebfb258a96a6ad5e5d59f68fe16ecf6e5e985dc5b3e7a7319bd5d675e03f7d69a548be07351ba3b25946facbdc3955b8f0bc30edc5c7cc5fd84</hash>
       </hashes>
       <licenses>
         <license>
@@ -1393,7 +1393,7 @@ introspection of method/constructor parameter names, without having to add expli
           <url>https://opensource.org/licenses/eclipse-1.0.php</url>
         </license>
       </licenses>
-      <purl>pkg:maven/com.h2database/h2@2.1.212?type=jar</purl>
+      <purl>pkg:maven/com.h2database/h2@2.1.214?type=jar</purl>
       <externalReferences><reference type="vcs"><url>https://github.com/h2database/h2database</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.springframework.boot/spring-boot-starter-security@2.7.0?type=jar">
@@ -2625,7 +2625,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <dependency ref="pkg:maven/org.iban4j/iban4j@3.2.3-RELEASE?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-web@2.7.0?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-data-jpa@2.7.0?type=jar"/>
-      <dependency ref="pkg:maven/com.h2database/h2@2.1.212?type=jar"/>
+      <dependency ref="pkg:maven/com.h2database/h2@2.1.214?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-security@2.7.0?type=jar"/>
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar"/>
       <dependency ref="pkg:maven/org.springdoc/springdoc-openapi-ui@1.6.9?type=jar"/>
@@ -2831,7 +2831,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
     <dependency ref="pkg:maven/org.springframework/spring-aspects@5.3.20?type=jar">
       <dependency ref="pkg:maven/org.aspectj/aspectjweaver@1.9.7?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/com.h2database/h2@2.1.212?type=jar"/>
+    <dependency ref="pkg:maven/com.h2database/h2@2.1.214?type=jar"/>
     <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-security@2.7.0?type=jar">
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter@2.7.0?type=jar"/>
       <dependency ref="pkg:maven/org.springframework/spring-aop@5.3.20?type=jar"/>
