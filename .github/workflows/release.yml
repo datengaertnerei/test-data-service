@@ -75,15 +75,21 @@ jobs:
         script: |
           const repo = context.repo.repo;
           const owner = context.repo.owner;
+          
+          async function createPull() {
+                            
+            const pulls = await github.request('POST /repos/{owner}/{repo}/pulls', {
+              owner: owner,
+              repo: repo,
+              title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main',
+              body: ':crown: *An automated PR*',
+              head: ${{ steps.mvnrel.outputs.prsource }},
+              base: 'master'
+            })
 
-          github.request('POST /repos/{owner}/{repo}/pulls', {
-            owner: owner,
-            repo: repo,
-            title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main',
-            body: ':crown: *An automated PR*',
-            head: ${{ steps.mvnrel.outputs.prsource }},
-            base: 'master'
-          })
+              
+          createPull().then(console.log("pull request created"));
+          
     
     - name: Create pull request to dev
       id: cpr_dev
@@ -94,11 +100,15 @@ jobs:
           const repo = context.repo.repo;
           const owner = context.repo.owner;
 
-          github.request('POST /repos/{owner}/{repo}/pulls', {
-            owner: owner,
-            repo: repo,
-            title: 'Merge ${{ steps.mvnrel.outputs.release_branch }} to dev',
-            body: ':crown: *An automated PR*',
-            head: ${{ steps.mvnrel.outputs.release_branch }},
-            base: 'develop'
-          })
+          async function createPull() {
+                            
+            const pulls = await github.request('POST /repos/{owner}/{repo}/pulls', {
+              owner: owner,
+              repo: repo,
+              title: 'Merge ${{ steps.mvnrel.outputs.release_branch }} to dev',
+              body: ':crown: *An automated PR*',
+              head: ${{ steps.mvnrel.outputs.release_branch }},
+              base: 'develop'
+            })
+
+          createPull().then(console.log("pull request created"));
