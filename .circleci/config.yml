@@ -11,7 +11,7 @@ jobs:
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/openjdk
     working_directory: /home/circleci/tds
     docker:
-      - image: cimg/openjdk:17.0-node
+      - image: cimg/openjdk:18.0-node
         auth:
           username: $DOCKER_USER
           password: $DOCKERHUB_PASSWORD
