@@ -50,7 +50,7 @@ jobs:
               const draft = pull.draft;
               const commit = pull.head.sha;
               const branch = pull.head.ref;
-              if(user == "github-actions[bot]" && labels.length == 1 && labels[0].name == 'auto-pr' && draft == false){
+              if(user == "github-actions[bot]" && draft == false){
                 console.log("Check PR "+number);
                 github.request("GET /repos/{owner}/{repo}/commits/{sha}/check-runs", {
                   owner: owner,
