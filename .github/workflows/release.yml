@@ -24,7 +24,7 @@ jobs:
     - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
     
     - name: Set up JDK 17
-      uses: actions/setup-java@62808131e114cfcd8936127824d1a3f08fb871ab
+      uses: actions/setup-java@2506d21b7426d2b544f65d027f277ead4c5f6a9f
       with:
         java-version: 17
         distribution: 'temurin'
@@ -75,15 +75,21 @@ jobs:
         script: |
           const repo = context.repo.repo;
           const owner = context.repo.owner;
+          
+          async function createPull() {
+                            
+            const pulls = await github.request('POST /repos/{owner}/{repo}/pulls', {
+              owner: owner,
+              repo: repo,
+              title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main',
+              body: ':crown: *An automated PR*',
+              head: ${{ steps.mvnrel.outputs.prsource }},
+              base: 'master'
+            })
 
-          github.request('POST /repos/{owner}/{repo}/pulls', {
-            owner: owner,
-            repo: repo,
-            title: 'Merge ${{ steps.mvnrel.outputs.prsource }} to main',
-            body: ':crown: *An automated PR*',
-            head: ${{ steps.mvnrel.outputs.prsource }},
-            base: 'master'
-          })
+              
+          createPull().then(console.log("pull request created"));
+          
     
     - name: Create pull request to dev
       id: cpr_dev
@@ -94,11 +100,15 @@ jobs:
           const repo = context.repo.repo;
           const owner = context.repo.owner;
 
-          github.request('POST /repos/{owner}/{repo}/pulls', {
-            owner: owner,
-            repo: repo,
-            title: 'Merge ${{ steps.mvnrel.outputs.release_branch }} to dev',
-            body: ':crown: *An automated PR*',
-            head: ${{ steps.mvnrel.outputs.release_branch }},
-            base: 'develop'
-          })
+          async function createPull() {
+                            
+            const pulls = await github.request('POST /repos/{owner}/{repo}/pulls', {
+              owner: owner,
+              repo: repo,
+              title: 'Merge ${{ steps.mvnrel.outputs.release_branch }} to dev',
+              body: ':crown: *An automated PR*',
+              head: ${{ steps.mvnrel.outputs.release_branch }},
+              base: 'develop'
+            })
+
+          createPull().then(console.log("pull request created"));

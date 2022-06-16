@@ -25,7 +25,7 @@ jobs:
         fetch-depth: '0'
     
     - name: Set up JDK 17
-      uses: actions/setup-java@62808131e114cfcd8936127824d1a3f08fb871ab
+      uses: actions/setup-java@2506d21b7426d2b544f65d027f277ead4c5f6a9f
       with:
         java-version: 17
         distribution: 'temurin'
@@ -75,4 +75,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         
-    - uses: codecov/codecov-action@76f0319234da50151559d35fb6a9c3de49b3f5f9
+    - uses: codecov/codecov-action@39e222921fd6f8ff1aae5c56948ff1599a2b57d1
