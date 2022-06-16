@@ -69,21 +69,21 @@ jobs:
                 
     - name: Create pull request to main
       id: cpr_main
-      - run: gh pr create --base $BASE --head §HEAD --title $TITLE --body $BODY
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HEAD: ${{ steps.mvnrel.outputs.prsource }}
-          BASE: master
-          TITLE: "Merge ${{ steps.mvnrel.outputs.prsource }} to main"
-          BODY: ":crown: *An automated PR*"
+      run: gh pr create --base $BASE --head §HEAD --title $TITLE --body $BODY
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        HEAD: ${{ steps.mvnrel.outputs.prsource }}
+        BASE: master
+        TITLE: "Merge ${{ steps.mvnrel.outputs.prsource }} to main"
+        BODY: ":crown: *An automated PR*"
           
     
     - name: Create pull request to dev
       id: cpr_dev
-      - run: gh pr create --base $BASE --head §HEAD --title $TITLE --body $BODY
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HEAD: ${{ steps.mvnrel.outputs.release_branch }}
-          BASE: develop
-          TITLE: "Merge ${{ steps.mvnrel.outputs.release_branch }} to dev"
-          BODY: ":crown: *An automated PR*"
+      run: gh pr create --base $BASE --head §HEAD --title $TITLE --body $BODY
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        HEAD: ${{ steps.mvnrel.outputs.release_branch }}
+        BASE: develop
+        TITLE: "Merge ${{ steps.mvnrel.outputs.release_branch }} to dev"
+        BODY: ":crown: *An automated PR*"
