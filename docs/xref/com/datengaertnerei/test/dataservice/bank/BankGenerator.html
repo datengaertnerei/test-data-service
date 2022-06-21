@@ -97,140 +97,125 @@
 <a class="jxr_linenumber" name="L89" href="#L89">89</a>  
 <a class="jxr_linenumber" name="L90" href="#L90">90</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> initBankDirectory() {
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>  		bankDirectory = <strong class="jxr_keyword">new</strong> HashMap&lt;&gt;();
-<a class="jxr_linenumber" name="L92" href="#L92">92</a>  		Map&lt;String, String&gt; bics = <strong class="jxr_keyword">new</strong> HashMap&lt;&gt;();
-<a class="jxr_linenumber" name="L93" href="#L93">93</a>  		<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L94" href="#L94">94</a>  			<em class="jxr_comment">// get german bank codes from</em>
-<a class="jxr_linenumber" name="L95" href="#L95">95</a>  			<em class="jxr_comment">// https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/</em>
-<a class="jxr_linenumber" name="L96" href="#L96">96</a>  			<em class="jxr_comment">// and just use entries with checksum routine 00</em>
-<a class="jxr_linenumber" name="L97" href="#L97">97</a>  			InputStream inStream = getClass().getResourceAsStream(<span class="jxr_string">"banklist.csv"</span>);
-<a class="jxr_linenumber" name="L98" href="#L98">98</a>  			Reader in = <strong class="jxr_keyword">new</strong> InputStreamReader(inStream);
-<a class="jxr_linenumber" name="L99" href="#L99">99</a>  
-<a class="jxr_linenumber" name="L100" href="#L100">100</a> 			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(<strong class="jxr_keyword">true</strong>).build()
-<a class="jxr_linenumber" name="L101" href="#L101">101</a> 					.parse(in);
-<a class="jxr_linenumber" name="L102" href="#L102">102</a> 			<strong class="jxr_keyword">for</strong> (CSVRecord r : records) {
-<a class="jxr_linenumber" name="L103" href="#L103">103</a> 				<strong class="jxr_keyword">if</strong> (r.size() &gt;= 5) {
-<a class="jxr_linenumber" name="L104" href="#L104">104</a> 					String bankCode = r.get(0);
-<a class="jxr_linenumber" name="L105" href="#L105">105</a> 					String desc = r.get(3);
-<a class="jxr_linenumber" name="L106" href="#L106">106</a> 					String city = r.get(2);
-<a class="jxr_linenumber" name="L107" href="#L107">107</a> 					String bic = r.get(4);
-<a class="jxr_linenumber" name="L108" href="#L108">108</a> 
-<a class="jxr_linenumber" name="L109" href="#L109">109</a> 					<strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">null</strong> == bic || 0 == bic.length()) {
-<a class="jxr_linenumber" name="L110" href="#L110">110</a> 						bic = bics.get(bankCode);
-<a class="jxr_linenumber" name="L111" href="#L111">111</a> 					} <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="L112" href="#L112">112</a> 						bics.put(bankCode, bic);
-<a class="jxr_linenumber" name="L113" href="#L113">113</a> 					}
-<a class="jxr_linenumber" name="L114" href="#L114">114</a> 
-<a class="jxr_linenumber" name="L115" href="#L115">115</a> 					Bank b = <strong class="jxr_keyword">new</strong> <a name="Bank" href="../../../../../com/datengaertnerei/test/dataservice/bank/Bank.html#Bank">Bank</a>(bankCode, desc, bic, city);
-<a class="jxr_linenumber" name="L116" href="#L116">116</a> 					<strong class="jxr_keyword">if</strong> (bankDirectory.containsKey(city.toLowerCase())) {
-<a class="jxr_linenumber" name="L117" href="#L117">117</a> 						Map&lt;String, Bank&gt; cityMap = bankDirectory.get(city.toLowerCase());
-<a class="jxr_linenumber" name="L118" href="#L118">118</a> 						cityMap.put(bankCode, b);
-<a class="jxr_linenumber" name="L119" href="#L119">119</a> 					} <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="L120" href="#L120">120</a> 						Map&lt;String, Bank&gt; cityMap = <strong class="jxr_keyword">new</strong> HashMap&lt;&gt;();
-<a class="jxr_linenumber" name="L121" href="#L121">121</a> 						cityMap.put(bankCode, b);
-<a class="jxr_linenumber" name="L122" href="#L122">122</a> 						bankDirectory.put(city.toLowerCase(), cityMap);
-<a class="jxr_linenumber" name="L123" href="#L123">123</a> 					}
-<a class="jxr_linenumber" name="L124" href="#L124">124</a> 				}
-<a class="jxr_linenumber" name="L125" href="#L125">125</a> 			}
-<a class="jxr_linenumber" name="L126" href="#L126">126</a> 		} <strong class="jxr_keyword">catch</strong> (IOException e) {
-<a class="jxr_linenumber" name="L127" href="#L127">127</a> 			log.fatal(<span class="jxr_string">"could not read bank list"</span>, e);
-<a class="jxr_linenumber" name="L128" href="#L128">128</a> 		}
-<a class="jxr_linenumber" name="L129" href="#L129">129</a> 	}
-<a class="jxr_linenumber" name="L130" href="#L130">130</a> 
-<a class="jxr_linenumber" name="L131" href="#L131">131</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L132" href="#L132">132</a> <em class="jxr_javadoccomment">	 * acct generation</em>
-<a class="jxr_linenumber" name="L133" href="#L133">133</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L134" href="#L134">134</a> 	@Override
-<a class="jxr_linenumber" name="L135" href="#L135">135</a> 	<strong class="jxr_keyword">public</strong> <a name="BankAccount" href="../../../../../com/datengaertnerei/test/dataservice/bank/BankAccount.html#BankAccount">BankAccount</a> generateAccount(String city) {
-<a class="jxr_linenumber" name="L136" href="#L136">136</a> 		<em class="jxr_comment">// create valid internal account number</em>
-<a class="jxr_linenumber" name="L137" href="#L137">137</a> 		Integer num = rnd.nextInt(999999999);
-<a class="jxr_linenumber" name="L138" href="#L138">138</a> 		<strong class="jxr_keyword">int</strong>[] toCalc = Integer.toString(num).chars().map(c -&gt; c - '0').toArray();
-<a class="jxr_linenumber" name="L139" href="#L139">139</a> 		Integer crc = calculateCheckDigit(toCalc);
+<a class="jxr_linenumber" name="L92" href="#L92">92</a>  		<strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="L93" href="#L93">93</a>  			<em class="jxr_comment">// get german bank codes from</em>
+<a class="jxr_linenumber" name="L94" href="#L94">94</a>  			<em class="jxr_comment">// https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/</em>
+<a class="jxr_linenumber" name="L95" href="#L95">95</a>  			<em class="jxr_comment">// and just use entries with checksum routine 00</em>
+<a class="jxr_linenumber" name="L96" href="#L96">96</a>  			InputStream inStream = getClass().getResourceAsStream(<span class="jxr_string">"banklist.csv"</span>);
+<a class="jxr_linenumber" name="L97" href="#L97">97</a>  			Reader in = <strong class="jxr_keyword">new</strong> InputStreamReader(inStream);
+<a class="jxr_linenumber" name="L98" href="#L98">98</a>  
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>  			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(<strong class="jxr_keyword">true</strong>).build()
+<a class="jxr_linenumber" name="L100" href="#L100">100</a> 					.parse(in);
+<a class="jxr_linenumber" name="L101" href="#L101">101</a> 			<strong class="jxr_keyword">for</strong> (CSVRecord r : records) {
+<a class="jxr_linenumber" name="L102" href="#L102">102</a> 				<strong class="jxr_keyword">if</strong> (r.size() &gt;= 5) {
+<a class="jxr_linenumber" name="L103" href="#L103">103</a> 					String bankCode = r.get(0);
+<a class="jxr_linenumber" name="L104" href="#L104">104</a> 					String desc = r.get(3);
+<a class="jxr_linenumber" name="L105" href="#L105">105</a> 					String city = r.get(2);
+<a class="jxr_linenumber" name="L106" href="#L106">106</a> 					String bic = r.get(4);
+<a class="jxr_linenumber" name="L107" href="#L107">107</a> 
+<a class="jxr_linenumber" name="L108" href="#L108">108</a> 					Bank b = <strong class="jxr_keyword">new</strong> <a name="Bank" href="../../../../../com/datengaertnerei/test/dataservice/bank/Bank.html#Bank">Bank</a>(bankCode, desc, bic, city);
+<a class="jxr_linenumber" name="L109" href="#L109">109</a> 					<strong class="jxr_keyword">if</strong> (bankDirectory.containsKey(city.toLowerCase())) {
+<a class="jxr_linenumber" name="L110" href="#L110">110</a> 						Map&lt;String, Bank&gt; cityMap = bankDirectory.get(city.toLowerCase());
+<a class="jxr_linenumber" name="L111" href="#L111">111</a> 						cityMap.put(bankCode, b);
+<a class="jxr_linenumber" name="L112" href="#L112">112</a> 					} <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="L113" href="#L113">113</a> 						Map&lt;String, Bank&gt; cityMap = <strong class="jxr_keyword">new</strong> HashMap&lt;&gt;();
+<a class="jxr_linenumber" name="L114" href="#L114">114</a> 						cityMap.put(bankCode, b);
+<a class="jxr_linenumber" name="L115" href="#L115">115</a> 						bankDirectory.put(city.toLowerCase(), cityMap);
+<a class="jxr_linenumber" name="L116" href="#L116">116</a> 					}
+<a class="jxr_linenumber" name="L117" href="#L117">117</a> 				}
+<a class="jxr_linenumber" name="L118" href="#L118">118</a> 			}
+<a class="jxr_linenumber" name="L119" href="#L119">119</a> 		} <strong class="jxr_keyword">catch</strong> (IOException e) {
+<a class="jxr_linenumber" name="L120" href="#L120">120</a> 			log.fatal(<span class="jxr_string">"could not read bank list"</span>, e);
+<a class="jxr_linenumber" name="L121" href="#L121">121</a> 		}
+<a class="jxr_linenumber" name="L122" href="#L122">122</a> 	}
+<a class="jxr_linenumber" name="L123" href="#L123">123</a> 
+<a class="jxr_linenumber" name="L124" href="#L124">124</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L125" href="#L125">125</a> <em class="jxr_javadoccomment">	 * acct generation</em>
+<a class="jxr_linenumber" name="L126" href="#L126">126</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L127" href="#L127">127</a> 	@Override
+<a class="jxr_linenumber" name="L128" href="#L128">128</a> 	<strong class="jxr_keyword">public</strong> <a name="BankAccount" href="../../../../../com/datengaertnerei/test/dataservice/bank/BankAccount.html#BankAccount">BankAccount</a> generateAccount(String city) {
+<a class="jxr_linenumber" name="L129" href="#L129">129</a> 		<em class="jxr_comment">// create valid internal account number</em>
+<a class="jxr_linenumber" name="L130" href="#L130">130</a> 		Integer num = rnd.nextInt(999999999);
+<a class="jxr_linenumber" name="L131" href="#L131">131</a> 		<strong class="jxr_keyword">int</strong>[] toCalc = Integer.toString(num).chars().map(c -&gt; c - '0').toArray();
+<a class="jxr_linenumber" name="L132" href="#L132">132</a> 		Integer crc = calculateCheckDigit(toCalc);
+<a class="jxr_linenumber" name="L133" href="#L133">133</a> 
+<a class="jxr_linenumber" name="L134" href="#L134">134</a> 		<em class="jxr_comment">// and convert to string</em>
+<a class="jxr_linenumber" name="L135" href="#L135">135</a> 		String rawAccount = num.toString() + crc.toString();
+<a class="jxr_linenumber" name="L136" href="#L136">136</a> 		String account = <span class="jxr_string">"0000000000"</span>.substring(rawAccount.length()) + rawAccount;
+<a class="jxr_linenumber" name="L137" href="#L137">137</a> 
+<a class="jxr_linenumber" name="L138" href="#L138">138</a> 		<em class="jxr_comment">// get banks for city or default</em>
+<a class="jxr_linenumber" name="L139" href="#L139">139</a> 		Map&lt;String, Bank&gt; cityMap = bankDirectory.getOrDefault(city.toLowerCase(), bankDirectory.get(DEFAULT_CITY));
 <a class="jxr_linenumber" name="L140" href="#L140">140</a> 
-<a class="jxr_linenumber" name="L141" href="#L141">141</a> 		<em class="jxr_comment">// and convert to string</em>
-<a class="jxr_linenumber" name="L142" href="#L142">142</a> 		String rawAccount = num.toString() + crc.toString();
-<a class="jxr_linenumber" name="L143" href="#L143">143</a> 		String account = <span class="jxr_string">"0000000000"</span>.substring(rawAccount.length()) + rawAccount;
-<a class="jxr_linenumber" name="L144" href="#L144">144</a> 
-<a class="jxr_linenumber" name="L145" href="#L145">145</a> 		<em class="jxr_comment">// get banks for city or default</em>
-<a class="jxr_linenumber" name="L146" href="#L146">146</a> 		Map&lt;String, Bank&gt; cityMap = bankDirectory.getOrDefault(city.toLowerCase(), bankDirectory.get(DEFAULT_CITY));
-<a class="jxr_linenumber" name="L147" href="#L147">147</a> 
-<a class="jxr_linenumber" name="L148" href="#L148">148</a> 		<em class="jxr_comment">// fetch random bank from list</em>
-<a class="jxr_linenumber" name="L149" href="#L149">149</a> 		<strong class="jxr_keyword">int</strong> bankIndex = rnd.nextInt(cityMap.keySet().size());
-<a class="jxr_linenumber" name="L150" href="#L150">150</a> 		Optional&lt;Bank&gt; bankContainer = cityMap.values().stream().skip(bankIndex).findFirst();
-<a class="jxr_linenumber" name="L151" href="#L151">151</a> 		<strong class="jxr_keyword">if</strong> (bankContainer.isEmpty()) {
-<a class="jxr_linenumber" name="L152" href="#L152">152</a> 			BankAccount result = <strong class="jxr_keyword">new</strong> <a name="BankAccount" href="../../../../../com/datengaertnerei/test/dataservice/bank/BankAccount.html#BankAccount">BankAccount</a>();
-<a class="jxr_linenumber" name="L153" href="#L153">153</a> 			result.setComment(<span class="jxr_string">"internal error while retrieving bank from list"</span>);
-<a class="jxr_linenumber" name="L154" href="#L154">154</a> 			<strong class="jxr_keyword">return</strong> result;
+<a class="jxr_linenumber" name="L141" href="#L141">141</a> 		<em class="jxr_comment">// fetch random bank from list</em>
+<a class="jxr_linenumber" name="L142" href="#L142">142</a> 		<strong class="jxr_keyword">int</strong> bankIndex = rnd.nextInt(cityMap.keySet().size());
+<a class="jxr_linenumber" name="L143" href="#L143">143</a> 		Optional&lt;Bank&gt; bankContainer = cityMap.values().stream().skip(bankIndex).findFirst();
+<a class="jxr_linenumber" name="L144" href="#L144">144</a> 		Bank bank = bankContainer.get();
+<a class="jxr_linenumber" name="L145" href="#L145">145</a> 		<em class="jxr_comment">// and build IBAN</em>
+<a class="jxr_linenumber" name="L146" href="#L146">146</a> 		Iban iban = <strong class="jxr_keyword">new</strong> Iban.Builder().countryCode(CountryCode.DE).bankCode(bank.getBankCode()).accountNumber(account)
+<a class="jxr_linenumber" name="L147" href="#L147">147</a> 				.build();
+<a class="jxr_linenumber" name="L148" href="#L148">148</a> 
+<a class="jxr_linenumber" name="L149" href="#L149">149</a> 		<em class="jxr_comment">// combine to result</em>
+<a class="jxr_linenumber" name="L150" href="#L150">150</a> 		BankAccount result = <strong class="jxr_keyword">new</strong> <a name="BankAccount" href="../../../../../com/datengaertnerei/test/dataservice/bank/BankAccount.html#BankAccount">BankAccount</a>();
+<a class="jxr_linenumber" name="L151" href="#L151">151</a> 		result.setBank(bank);
+<a class="jxr_linenumber" name="L152" href="#L152">152</a> 		result.setIban(iban.toString());
+<a class="jxr_linenumber" name="L153" href="#L153">153</a> 		<strong class="jxr_keyword">if</strong> (!result.getBank().getCity().equalsIgnoreCase(city)) {
+<a class="jxr_linenumber" name="L154" href="#L154">154</a> 			result.setComment(<span class="jxr_string">"city not found in bank directory, switched to default"</span>);
 <a class="jxr_linenumber" name="L155" href="#L155">155</a> 		}
-<a class="jxr_linenumber" name="L156" href="#L156">156</a> 		Bank bank = bankContainer.get();
-<a class="jxr_linenumber" name="L157" href="#L157">157</a> 		<em class="jxr_comment">// and build IBAN</em>
-<a class="jxr_linenumber" name="L158" href="#L158">158</a> 		Iban iban = <strong class="jxr_keyword">new</strong> Iban.Builder().countryCode(CountryCode.DE).bankCode(bank.getBankCode()).accountNumber(account)
-<a class="jxr_linenumber" name="L159" href="#L159">159</a> 				.build();
-<a class="jxr_linenumber" name="L160" href="#L160">160</a> 
-<a class="jxr_linenumber" name="L161" href="#L161">161</a> 		<em class="jxr_comment">// combine to result</em>
-<a class="jxr_linenumber" name="L162" href="#L162">162</a> 		BankAccount result = <strong class="jxr_keyword">new</strong> <a name="BankAccount" href="../../../../../com/datengaertnerei/test/dataservice/bank/BankAccount.html#BankAccount">BankAccount</a>();
-<a class="jxr_linenumber" name="L163" href="#L163">163</a> 		result.setBank(bank);
-<a class="jxr_linenumber" name="L164" href="#L164">164</a> 		result.setIban(iban.toString());
-<a class="jxr_linenumber" name="L165" href="#L165">165</a> 		<strong class="jxr_keyword">if</strong> (!result.getBank().getCity().equalsIgnoreCase(city)) {
-<a class="jxr_linenumber" name="L166" href="#L166">166</a> 			result.setComment(<span class="jxr_string">"city not found in bank directory, switched to default"</span>);
-<a class="jxr_linenumber" name="L167" href="#L167">167</a> 		}
+<a class="jxr_linenumber" name="L156" href="#L156">156</a> 
+<a class="jxr_linenumber" name="L157" href="#L157">157</a> 		<strong class="jxr_keyword">return</strong> result;
+<a class="jxr_linenumber" name="L158" href="#L158">158</a> 	}
+<a class="jxr_linenumber" name="L159" href="#L159">159</a> 
+<a class="jxr_linenumber" name="L160" href="#L160">160</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L161" href="#L161">161</a> <em class="jxr_javadoccomment">	 * cc generation</em>
+<a class="jxr_linenumber" name="L162" href="#L162">162</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="L163" href="#L163">163</a> 	@Override
+<a class="jxr_linenumber" name="L164" href="#L164">164</a> 	<strong class="jxr_keyword">public</strong> <a name="CreditCard" href="../../../../../com/datengaertnerei/test/dataservice/bank/CreditCard.html#CreditCard">CreditCard</a> generateCreditCard() {
+<a class="jxr_linenumber" name="L165" href="#L165">165</a> 		<em class="jxr_comment">// fetch random bin from list</em>
+<a class="jxr_linenumber" name="L166" href="#L166">166</a> 		<strong class="jxr_keyword">int</strong> binIndex = rnd.nextInt(binList.keySet().size());
+<a class="jxr_linenumber" name="L167" href="#L167">167</a> 		Optional&lt;String&gt; bin = binList.keySet().stream().skip(binIndex).findFirst();
 <a class="jxr_linenumber" name="L168" href="#L168">168</a> 
-<a class="jxr_linenumber" name="L169" href="#L169">169</a> 		<strong class="jxr_keyword">return</strong> result;
-<a class="jxr_linenumber" name="L170" href="#L170">170</a> 	}
-<a class="jxr_linenumber" name="L171" href="#L171">171</a> 
-<a class="jxr_linenumber" name="L172" href="#L172">172</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L173" href="#L173">173</a> <em class="jxr_javadoccomment">	 * cc generation</em>
-<a class="jxr_linenumber" name="L174" href="#L174">174</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="L175" href="#L175">175</a> 	@Override
-<a class="jxr_linenumber" name="L176" href="#L176">176</a> 	<strong class="jxr_keyword">public</strong> <a name="CreditCard" href="../../../../../com/datengaertnerei/test/dataservice/bank/CreditCard.html#CreditCard">CreditCard</a> generateCreditCard() {
-<a class="jxr_linenumber" name="L177" href="#L177">177</a> 		<em class="jxr_comment">// fetch random bin from list</em>
-<a class="jxr_linenumber" name="L178" href="#L178">178</a> 		<strong class="jxr_keyword">int</strong> binIndex = rnd.nextInt(binList.keySet().size());
-<a class="jxr_linenumber" name="L179" href="#L179">179</a> 		Optional&lt;String&gt; bin = binList.keySet().stream().skip(binIndex).findFirst();
-<a class="jxr_linenumber" name="L180" href="#L180">180</a> 		<strong class="jxr_keyword">if</strong> (bin.isEmpty()) {
-<a class="jxr_linenumber" name="L181" href="#L181">181</a> 			<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a name="CreditCard" href="../../../../../com/datengaertnerei/test/dataservice/bank/CreditCard.html#CreditCard">CreditCard</a>(<strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">null</strong>, LocalDate.now());
-<a class="jxr_linenumber" name="L182" href="#L182">182</a> 		}
+<a class="jxr_linenumber" name="L169" href="#L169">169</a> 		<em class="jxr_comment">// create valid cc number</em>
+<a class="jxr_linenumber" name="L170" href="#L170">170</a> 		String randomPart = Integer.toString(rnd.nextInt(999999999));
+<a class="jxr_linenumber" name="L171" href="#L171">171</a> 		String combined = bin.get() + <span class="jxr_string">"000000000"</span>.substring(randomPart.length()) + randomPart;
+<a class="jxr_linenumber" name="L172" href="#L172">172</a> 		<strong class="jxr_keyword">int</strong>[] toCalc = combined.chars().map(c -&gt; c - '0').toArray();
+<a class="jxr_linenumber" name="L173" href="#L173">173</a> 		Integer crc = calculateCheckDigit(toCalc);
+<a class="jxr_linenumber" name="L174" href="#L174">174</a> 
+<a class="jxr_linenumber" name="L175" href="#L175">175</a> 		<em class="jxr_comment">// and convert to string</em>
+<a class="jxr_linenumber" name="L176" href="#L176">176</a> 		String number = combined + crc.toString();
+<a class="jxr_linenumber" name="L177" href="#L177">177</a> 
+<a class="jxr_linenumber" name="L178" href="#L178">178</a> 		<em class="jxr_comment">// CVC must be 3 digits</em>
+<a class="jxr_linenumber" name="L179" href="#L179">179</a> 		<strong class="jxr_keyword">int</strong> cvc = rnd.nextInt(899) + 100;
+<a class="jxr_linenumber" name="L180" href="#L180">180</a> 
+<a class="jxr_linenumber" name="L181" href="#L181">181</a> 		<em class="jxr_comment">// create expiry date in the future, min. 6 months, max. 4 years</em>
+<a class="jxr_linenumber" name="L182" href="#L182">182</a> 		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250) + 210L);
 <a class="jxr_linenumber" name="L183" href="#L183">183</a> 
-<a class="jxr_linenumber" name="L184" href="#L184">184</a> 		<em class="jxr_comment">// create valid cc number</em>
-<a class="jxr_linenumber" name="L185" href="#L185">185</a> 		String randomPart = Integer.toString(rnd.nextInt(999999999));
-<a class="jxr_linenumber" name="L186" href="#L186">186</a> 		String combined = bin.get() + <span class="jxr_string">"000000000"</span>.substring(randomPart.length()) + randomPart;
-<a class="jxr_linenumber" name="L187" href="#L187">187</a> 		<strong class="jxr_keyword">int</strong>[] toCalc = combined.chars().map(c -&gt; c - '0').toArray();
-<a class="jxr_linenumber" name="L188" href="#L188">188</a> 		Integer crc = calculateCheckDigit(toCalc);
-<a class="jxr_linenumber" name="L189" href="#L189">189</a> 
-<a class="jxr_linenumber" name="L190" href="#L190">190</a> 		<em class="jxr_comment">// and convert to string</em>
-<a class="jxr_linenumber" name="L191" href="#L191">191</a> 		String number = combined + crc.toString();
-<a class="jxr_linenumber" name="L192" href="#L192">192</a> 
-<a class="jxr_linenumber" name="L193" href="#L193">193</a> 		<em class="jxr_comment">// CVC must be 3 digits</em>
-<a class="jxr_linenumber" name="L194" href="#L194">194</a> 		<strong class="jxr_keyword">int</strong> cvc = rnd.nextInt(899) + 100;
+<a class="jxr_linenumber" name="L184" href="#L184">184</a> 		<em class="jxr_comment">// combine to result</em>
+<a class="jxr_linenumber" name="L185" href="#L185">185</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a name="CreditCard" href="../../../../../com/datengaertnerei/test/dataservice/bank/CreditCard.html#CreditCard">CreditCard</a>(number, binList.get(bin.get()), Integer.toString(cvc), expiry);
+<a class="jxr_linenumber" name="L186" href="#L186">186</a> 	}
+<a class="jxr_linenumber" name="L187" href="#L187">187</a> 
+<a class="jxr_linenumber" name="L188" href="#L188">188</a> 	<em class="jxr_comment">// calculate checksum for domestic account number, IBAN checksum is included in</em>
+<a class="jxr_linenumber" name="L189" href="#L189">189</a> 	<em class="jxr_comment">// IBAN builder</em>
+<a class="jxr_linenumber" name="L190" href="#L190">190</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> calculateCheckDigit(<strong class="jxr_keyword">int</strong>[] digits) {
+<a class="jxr_linenumber" name="L191" href="#L191">191</a> 
+<a class="jxr_linenumber" name="L192" href="#L192">192</a> 		<em class="jxr_comment">/* double every other starting from right - jumping from 2 in 2 */</em>
+<a class="jxr_linenumber" name="L193" href="#L193">193</a> 		<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = digits.length - 1; i &gt;= 0; i -= 2) {
+<a class="jxr_linenumber" name="L194" href="#L194">194</a> 			digits[i] += digits[i];
 <a class="jxr_linenumber" name="L195" href="#L195">195</a> 
-<a class="jxr_linenumber" name="L196" href="#L196">196</a> 		<em class="jxr_comment">// create expiry date in the future, min. 6 months, max. 4 years</em>
-<a class="jxr_linenumber" name="L197" href="#L197">197</a> 		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250) + 210L);
-<a class="jxr_linenumber" name="L198" href="#L198">198</a> 
-<a class="jxr_linenumber" name="L199" href="#L199">199</a> 		<em class="jxr_comment">// combine to result</em>
-<a class="jxr_linenumber" name="L200" href="#L200">200</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a name="CreditCard" href="../../../../../com/datengaertnerei/test/dataservice/bank/CreditCard.html#CreditCard">CreditCard</a>(number, binList.get(bin.get()), Integer.toString(cvc), expiry);
-<a class="jxr_linenumber" name="L201" href="#L201">201</a> 	}
-<a class="jxr_linenumber" name="L202" href="#L202">202</a> 
-<a class="jxr_linenumber" name="L203" href="#L203">203</a> 	<em class="jxr_comment">// calculate checksum for domestic account number, IBAN checksum is included in</em>
-<a class="jxr_linenumber" name="L204" href="#L204">204</a> 	<em class="jxr_comment">// IBAN builder</em>
-<a class="jxr_linenumber" name="L205" href="#L205">205</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> calculateCheckDigit(<strong class="jxr_keyword">int</strong>[] digits) {
-<a class="jxr_linenumber" name="L206" href="#L206">206</a> 
-<a class="jxr_linenumber" name="L207" href="#L207">207</a> 		<em class="jxr_comment">/* double every other starting from right - jumping from 2 in 2 */</em>
-<a class="jxr_linenumber" name="L208" href="#L208">208</a> 		<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = digits.length - 1; i &gt;= 0; i -= 2) {
-<a class="jxr_linenumber" name="L209" href="#L209">209</a> 			digits[i] += digits[i];
-<a class="jxr_linenumber" name="L210" href="#L210">210</a> 
-<a class="jxr_linenumber" name="L211" href="#L211">211</a> 			<em class="jxr_comment">/* taking the sum of digits grater than 10 - simple trick by substract 9 */</em>
-<a class="jxr_linenumber" name="L212" href="#L212">212</a> 			<strong class="jxr_keyword">if</strong> (digits[i] &gt;= 10) {
-<a class="jxr_linenumber" name="L213" href="#L213">213</a> 				digits[i] = digits[i] - 9;
-<a class="jxr_linenumber" name="L214" href="#L214">214</a> 			}
-<a class="jxr_linenumber" name="L215" href="#L215">215</a> 		}
-<a class="jxr_linenumber" name="L216" href="#L216">216</a> 		<strong class="jxr_keyword">int</strong> sum = 0;
-<a class="jxr_linenumber" name="L217" href="#L217">217</a> 		<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; digits.length; i++) {
-<a class="jxr_linenumber" name="L218" href="#L218">218</a> 			sum += digits[i];
-<a class="jxr_linenumber" name="L219" href="#L219">219</a> 		}
-<a class="jxr_linenumber" name="L220" href="#L220">220</a> 		<em class="jxr_comment">/* multiply by 9 step */</em>
-<a class="jxr_linenumber" name="L221" href="#L221">221</a> 		sum = sum * 9;
-<a class="jxr_linenumber" name="L222" href="#L222">222</a> 
-<a class="jxr_linenumber" name="L223" href="#L223">223</a> 		<strong class="jxr_keyword">return</strong> sum % 10;
-<a class="jxr_linenumber" name="L224" href="#L224">224</a> 	}
-<a class="jxr_linenumber" name="L225" href="#L225">225</a> }
+<a class="jxr_linenumber" name="L196" href="#L196">196</a> 			<em class="jxr_comment">/* taking the sum of digits grater than 10 - simple trick by substract 9 */</em>
+<a class="jxr_linenumber" name="L197" href="#L197">197</a> 			<strong class="jxr_keyword">if</strong> (digits[i] &gt;= 10) {
+<a class="jxr_linenumber" name="L198" href="#L198">198</a> 				digits[i] = digits[i] - 9;
+<a class="jxr_linenumber" name="L199" href="#L199">199</a> 			}
+<a class="jxr_linenumber" name="L200" href="#L200">200</a> 		}
+<a class="jxr_linenumber" name="L201" href="#L201">201</a> 		<strong class="jxr_keyword">int</strong> sum = 0;
+<a class="jxr_linenumber" name="L202" href="#L202">202</a> 		<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; digits.length; i++) {
+<a class="jxr_linenumber" name="L203" href="#L203">203</a> 			sum += digits[i];
+<a class="jxr_linenumber" name="L204" href="#L204">204</a> 		}
+<a class="jxr_linenumber" name="L205" href="#L205">205</a> 		<em class="jxr_comment">/* multiply by 9 step */</em>
+<a class="jxr_linenumber" name="L206" href="#L206">206</a> 		sum = sum * 9;
+<a class="jxr_linenumber" name="L207" href="#L207">207</a> 
+<a class="jxr_linenumber" name="L208" href="#L208">208</a> 		<strong class="jxr_keyword">return</strong> sum % 10;
+<a class="jxr_linenumber" name="L209" href="#L209">209</a> 	}
+<a class="jxr_linenumber" name="L210" href="#L210">210</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2018&#x2013;2022 <a href="http://www.datengaertnerei.com/">Datengärtnerei</a>. All rights reserved.</div>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:d1beecc3-5e81-4b0d-8976-c4da3880fd2d" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
+<bom serialNumber="urn:uuid:390009f7-9db6-4b90-8f49-778bfa3b0916" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2022-06-21T19:30:49Z</timestamp>
+    <timestamp>2022-06-21T21:10:37Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -19,11 +19,11 @@
         </hashes>
       </tool>
     </tools>
-    <component type="library" bom-ref="pkg:maven/com.datengaertnerei.test/data-service@0.9.72-SNAPSHOT?type=jar">
+    <component type="library" bom-ref="pkg:maven/com.datengaertnerei.test/data-service@1.0.0-SNAPSHOT?type=jar">
       <publisher>Datengärtnerei</publisher>
       <group>com.datengaertnerei.test</group>
       <name>data-service</name>
-      <version>0.9.72-SNAPSHOT</version>
+      <version>1.0.0-SNAPSHOT</version>
       <description>Web Service to provide valid test data for german
 		fictitious persons.</description>
       <licenses>
@@ -32,7 +32,7 @@
           <url>https://opensource.org/licenses/MIT</url>
         </license>
       </licenses>
-      <purl>pkg:maven/com.datengaertnerei.test/data-service@0.9.72-SNAPSHOT?type=jar</purl>
+      <purl>pkg:maven/com.datengaertnerei.test/data-service@1.0.0-SNAPSHOT?type=jar</purl>
       <externalReferences><reference type="website"><url>http://www.datengaertnerei.com/</url></reference><reference type="distribution"><url>https://github.com/datengaertnerei/test-data-service/packages/411378</url></reference><reference type="issue-tracker"><url>https://github.com/datengaertnerei/test-data-service/issues</url></reference><reference type="vcs"><url>https://github.com/datengaertnerei/test-data-service</url></reference></externalReferences>
     </component>
   </metadata>
@@ -1451,7 +1451,6 @@ introspection of method/constructor parameter names, without having to add expli
       <name>spring-security-config</name>
       <version>5.7.1</version>
       <description>Spring Security</description>
-      <scope>required</scope>
       <hashes>
         <hash alg="MD5">dfd4c7b72ee16cb07995375fba89927f</hash>
         <hash alg="SHA-1">19fb622cc15f62b14afe286b5fc37c23b26ea242</hash>
@@ -1500,7 +1499,6 @@ introspection of method/constructor parameter names, without having to add expli
       <name>spring-security-core</name>
       <version>5.7.1</version>
       <description>Spring Security</description>
-      <scope>required</scope>
       <hashes>
         <hash alg="MD5">abaf5ea2346fec74a059148dc82ed469</hash>
         <hash alg="SHA-1">7e98028d3b1afab1fc9e24006d0a95ea08304281</hash>
@@ -1525,7 +1523,6 @@ introspection of method/constructor parameter names, without having to add expli
       <name>spring-security-crypto</name>
       <version>5.7.1</version>
       <description>Spring Security</description>
-      <scope>required</scope>
       <hashes>
         <hash alg="MD5">3dfe1b7599fa5a5f8ecd65961f797862</hash>
         <hash alg="SHA-1">e036d3deb1b1fba2b9881613f0e43f69ccd23ece</hash>
@@ -2598,7 +2595,6 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <description>Apache Commons Lang, a package of Java utility classes for the
   classes that are in java.lang's hierarchy, or are considered to be so
   standard as to justify existence in java.lang.</description>
-      <scope>required</scope>
       <hashes>
         <hash alg="MD5">19fe50567358922bdad277959ea69545</hash>
         <hash alg="SHA-1">c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e</hash>
@@ -2619,7 +2615,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
     </component>
   </components>
   <dependencies>
-    <dependency ref="pkg:maven/com.datengaertnerei.test/data-service@0.9.72-SNAPSHOT?type=jar">
+    <dependency ref="pkg:maven/com.datengaertnerei.test/data-service@1.0.0-SNAPSHOT?type=jar">
       <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar"/>
       <dependency ref="pkg:maven/commons-io/commons-io@2.11.0?type=jar"/>
       <dependency ref="pkg:maven/org.iban4j/iban4j@3.2.3-RELEASE?type=jar"/>

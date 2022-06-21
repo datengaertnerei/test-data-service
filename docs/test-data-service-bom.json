@@ -1,10 +1,10 @@
 {
   "bomFormat" : "CycloneDX",
   "specVersion" : "1.3",
-  "serialNumber" : "urn:uuid:d1beecc3-5e81-4b0d-8976-c4da3880fd2d",
+  "serialNumber" : "urn:uuid:390009f7-9db6-4b90-8f49-778bfa3b0916",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2022-06-21T19:30:49Z",
+    "timestamp" : "2022-06-21T21:10:37Z",
     "tools" : [
       {
         "vendor" : "OWASP Foundation",
@@ -50,7 +50,7 @@
       "publisher" : "Datengärtnerei",
       "group" : "com.datengaertnerei.test",
       "name" : "data-service",
-      "version" : "0.9.72-SNAPSHOT",
+      "version" : "1.0.0-SNAPSHOT",
       "description" : "Web Service to provide valid test data for german fictitious persons.",
       "licenses" : [
         {
@@ -60,7 +60,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/com.datengaertnerei.test/data-service@0.9.72-SNAPSHOT?type=jar",
+      "purl" : "pkg:maven/com.datengaertnerei.test/data-service@1.0.0-SNAPSHOT?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -80,7 +80,7 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/com.datengaertnerei.test/data-service@0.9.72-SNAPSHOT?type=jar"
+      "bom-ref" : "pkg:maven/com.datengaertnerei.test/data-service@1.0.0-SNAPSHOT?type=jar"
     }
   },
   "components" : [
@@ -3853,7 +3853,6 @@
       "name" : "spring-security-config",
       "version" : "5.7.1",
       "description" : "Spring Security",
-      "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
@@ -3984,7 +3983,6 @@
       "name" : "spring-security-core",
       "version" : "5.7.1",
       "description" : "Spring Security",
-      "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
@@ -4050,7 +4048,6 @@
       "name" : "spring-security-crypto",
       "version" : "5.7.1",
       "description" : "Spring Security",
-      "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
@@ -6793,7 +6790,6 @@
       "name" : "commons-lang3",
       "version" : "3.12.0",
       "description" : "Apache Commons Lang, a package of Java utility classes for the classes that are in java.lang's hierarchy, or are considered to be so standard as to justify existence in java.lang.",
-      "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
@@ -6868,7 +6864,7 @@
   ],
   "dependencies" : [
     {
-      "ref" : "pkg:maven/com.datengaertnerei.test/data-service@0.9.72-SNAPSHOT?type=jar",
+      "ref" : "pkg:maven/com.datengaertnerei.test/data-service@1.0.0-SNAPSHOT?type=jar",
       "dependsOn" : [
         "pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar",
         "pkg:maven/commons-io/commons-io@2.11.0?type=jar",

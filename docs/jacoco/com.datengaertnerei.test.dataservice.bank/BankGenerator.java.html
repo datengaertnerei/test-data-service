@@ -89,44 +89,37 @@ public class BankGenerator implements IBankGenerator {
 
 	private void initBankDirectory() {
 <span class="fc" id="L91">		bankDirectory = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L92">		Map&lt;String, String&gt; bics = new HashMap&lt;&gt;();</span>
 		try {
 			// get german bank codes from
 			// https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/
 			// and just use entries with checksum routine 00
-<span class="fc" id="L97">			InputStream inStream = getClass().getResourceAsStream(&quot;banklist.csv&quot;);</span>
-<span class="fc" id="L98">			Reader in = new InputStreamReader(inStream);</span>
+<span class="fc" id="L96">			InputStream inStream = getClass().getResourceAsStream(&quot;banklist.csv&quot;);</span>
+<span class="fc" id="L97">			Reader in = new InputStreamReader(inStream);</span>
 
-<span class="fc" id="L100">			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).build()</span>
-<span class="fc" id="L101">					.parse(in);</span>
-<span class="fc bfc" id="L102" title="All 2 branches covered.">			for (CSVRecord r : records) {</span>
-<span class="pc bpc" id="L103" title="1 of 2 branches missed.">				if (r.size() &gt;= 5) {</span>
-<span class="fc" id="L104">					String bankCode = r.get(0);</span>
-<span class="fc" id="L105">					String desc = r.get(3);</span>
-<span class="fc" id="L106">					String city = r.get(2);</span>
-<span class="fc" id="L107">					String bic = r.get(4);</span>
+<span class="fc" id="L99">			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).build()</span>
+<span class="fc" id="L100">					.parse(in);</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">			for (CSVRecord r : records) {</span>
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">				if (r.size() &gt;= 5) {</span>
+<span class="fc" id="L103">					String bankCode = r.get(0);</span>
+<span class="fc" id="L104">					String desc = r.get(3);</span>
+<span class="fc" id="L105">					String city = r.get(2);</span>
+<span class="fc" id="L106">					String bic = r.get(4);</span>
 
-<span class="pc bpc" id="L109" title="2 of 4 branches missed.">					if (null == bic || 0 == bic.length()) {</span>
-<span class="nc" id="L110">						bic = bics.get(bankCode);</span>
-					} else {
-<span class="fc" id="L112">						bics.put(bankCode, bic);</span>
-					}
-
-<span class="fc" id="L115">					Bank b = new Bank(bankCode, desc, bic, city);</span>
-<span class="fc bfc" id="L116" title="All 2 branches covered.">					if (bankDirectory.containsKey(city.toLowerCase())) {</span>
-<span class="fc" id="L117">						Map&lt;String, Bank&gt; cityMap = bankDirectory.get(city.toLowerCase());</span>
-<span class="fc" id="L118">						cityMap.put(bankCode, b);</span>
-<span class="fc" id="L119">					} else {</span>
-<span class="fc" id="L120">						Map&lt;String, Bank&gt; cityMap = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L121">						cityMap.put(bankCode, b);</span>
-<span class="fc" id="L122">						bankDirectory.put(city.toLowerCase(), cityMap);</span>
+<span class="fc" id="L108">					Bank b = new Bank(bankCode, desc, bic, city);</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">					if (bankDirectory.containsKey(city.toLowerCase())) {</span>
+<span class="fc" id="L110">						Map&lt;String, Bank&gt; cityMap = bankDirectory.get(city.toLowerCase());</span>
+<span class="fc" id="L111">						cityMap.put(bankCode, b);</span>
+<span class="fc" id="L112">					} else {</span>
+<span class="fc" id="L113">						Map&lt;String, Bank&gt; cityMap = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L114">						cityMap.put(bankCode, b);</span>
+<span class="fc" id="L115">						bankDirectory.put(city.toLowerCase(), cityMap);</span>
 					}
 				}
-<span class="fc" id="L125">			}</span>
-<span class="nc" id="L126">		} catch (IOException e) {</span>
-<span class="nc" id="L127">			log.fatal(&quot;could not read bank list&quot;, e);</span>
-<span class="fc" id="L128">		}</span>
-<span class="fc" id="L129">	}</span>
+<span class="fc" id="L118">			}</span>
+<span class="nc" id="L119">		} catch (IOException e) {</span>
+<span class="nc" id="L120">			log.fatal(&quot;could not read bank list&quot;, e);</span>
+<span class="fc" id="L121">		}</span>
+<span class="fc" id="L122">	}</span>
 
 	/**
 	 * acct generation
@@ -134,39 +127,34 @@ public class BankGenerator implements IBankGenerator {
 	@Override
 	public BankAccount generateAccount(String city) {
 		// create valid internal account number
-<span class="fc" id="L137">		Integer num = rnd.nextInt(999999999);</span>
-<span class="fc" id="L138">		int[] toCalc = Integer.toString(num).chars().map(c -&gt; c - '0').toArray();</span>
-<span class="fc" id="L139">		Integer crc = calculateCheckDigit(toCalc);</span>
+<span class="fc" id="L130">		Integer num = rnd.nextInt(999999999);</span>
+<span class="fc" id="L131">		int[] toCalc = Integer.toString(num).chars().map(c -&gt; c - '0').toArray();</span>
+<span class="fc" id="L132">		Integer crc = calculateCheckDigit(toCalc);</span>
 
 		// and convert to string
-<span class="fc" id="L142">		String rawAccount = num.toString() + crc.toString();</span>
-<span class="fc" id="L143">		String account = &quot;0000000000&quot;.substring(rawAccount.length()) + rawAccount;</span>
+<span class="fc" id="L135">		String rawAccount = num.toString() + crc.toString();</span>
+<span class="fc" id="L136">		String account = &quot;0000000000&quot;.substring(rawAccount.length()) + rawAccount;</span>
 
 		// get banks for city or default
-<span class="fc" id="L146">		Map&lt;String, Bank&gt; cityMap = bankDirectory.getOrDefault(city.toLowerCase(), bankDirectory.get(DEFAULT_CITY));</span>
+<span class="fc" id="L139">		Map&lt;String, Bank&gt; cityMap = bankDirectory.getOrDefault(city.toLowerCase(), bankDirectory.get(DEFAULT_CITY));</span>
 
 		// fetch random bank from list
-<span class="fc" id="L149">		int bankIndex = rnd.nextInt(cityMap.keySet().size());</span>
-<span class="fc" id="L150">		Optional&lt;Bank&gt; bankContainer = cityMap.values().stream().skip(bankIndex).findFirst();</span>
-<span class="pc bpc" id="L151" title="1 of 2 branches missed.">		if (bankContainer.isEmpty()) {</span>
-<span class="nc" id="L152">			BankAccount result = new BankAccount();</span>
-<span class="nc" id="L153">			result.setComment(&quot;internal error while retrieving bank from list&quot;);</span>
-<span class="nc" id="L154">			return result;</span>
-		}
-<span class="fc" id="L156">		Bank bank = bankContainer.get();</span>
+<span class="fc" id="L142">		int bankIndex = rnd.nextInt(cityMap.keySet().size());</span>
+<span class="fc" id="L143">		Optional&lt;Bank&gt; bankContainer = cityMap.values().stream().skip(bankIndex).findFirst();</span>
+<span class="fc" id="L144">		Bank bank = bankContainer.get();</span>
 		// and build IBAN
-<span class="fc" id="L158">		Iban iban = new Iban.Builder().countryCode(CountryCode.DE).bankCode(bank.getBankCode()).accountNumber(account)</span>
-<span class="fc" id="L159">				.build();</span>
+<span class="fc" id="L146">		Iban iban = new Iban.Builder().countryCode(CountryCode.DE).bankCode(bank.getBankCode()).accountNumber(account)</span>
+<span class="fc" id="L147">				.build();</span>
 
 		// combine to result
-<span class="fc" id="L162">		BankAccount result = new BankAccount();</span>
-<span class="fc" id="L163">		result.setBank(bank);</span>
-<span class="fc" id="L164">		result.setIban(iban.toString());</span>
-<span class="fc bfc" id="L165" title="All 2 branches covered.">		if (!result.getBank().getCity().equalsIgnoreCase(city)) {</span>
-<span class="fc" id="L166">			result.setComment(&quot;city not found in bank directory, switched to default&quot;);</span>
+<span class="fc" id="L150">		BankAccount result = new BankAccount();</span>
+<span class="fc" id="L151">		result.setBank(bank);</span>
+<span class="fc" id="L152">		result.setIban(iban.toString());</span>
+<span class="fc bfc" id="L153" title="All 2 branches covered.">		if (!result.getBank().getCity().equalsIgnoreCase(city)) {</span>
+<span class="fc" id="L154">			result.setComment(&quot;city not found in bank directory, switched to default&quot;);</span>
 		}
 
-<span class="fc" id="L169">		return result;</span>
+<span class="fc" id="L157">		return result;</span>
 	}
 
 	/**
@@ -175,29 +163,26 @@ public class BankGenerator implements IBankGenerator {
 	@Override
 	public CreditCard generateCreditCard() {
 		// fetch random bin from list
-<span class="fc" id="L178">		int binIndex = rnd.nextInt(binList.keySet().size());</span>
-<span class="fc" id="L179">		Optional&lt;String&gt; bin = binList.keySet().stream().skip(binIndex).findFirst();</span>
-<span class="pc bpc" id="L180" title="1 of 2 branches missed.">		if (bin.isEmpty()) {</span>
-<span class="nc" id="L181">			return new CreditCard(null, null, null, LocalDate.now());</span>
-		}
+<span class="fc" id="L166">		int binIndex = rnd.nextInt(binList.keySet().size());</span>
+<span class="fc" id="L167">		Optional&lt;String&gt; bin = binList.keySet().stream().skip(binIndex).findFirst();</span>
 
 		// create valid cc number
-<span class="fc" id="L185">		String randomPart = Integer.toString(rnd.nextInt(999999999));</span>
-<span class="fc" id="L186">		String combined = bin.get() + &quot;000000000&quot;.substring(randomPart.length()) + randomPart;</span>
-<span class="fc" id="L187">		int[] toCalc = combined.chars().map(c -&gt; c - '0').toArray();</span>
-<span class="fc" id="L188">		Integer crc = calculateCheckDigit(toCalc);</span>
+<span class="fc" id="L170">		String randomPart = Integer.toString(rnd.nextInt(999999999));</span>
+<span class="fc" id="L171">		String combined = bin.get() + &quot;000000000&quot;.substring(randomPart.length()) + randomPart;</span>
+<span class="fc" id="L172">		int[] toCalc = combined.chars().map(c -&gt; c - '0').toArray();</span>
+<span class="fc" id="L173">		Integer crc = calculateCheckDigit(toCalc);</span>
 
 		// and convert to string
-<span class="fc" id="L191">		String number = combined + crc.toString();</span>
+<span class="fc" id="L176">		String number = combined + crc.toString();</span>
 
 		// CVC must be 3 digits
-<span class="fc" id="L194">		int cvc = rnd.nextInt(899) + 100;</span>
+<span class="fc" id="L179">		int cvc = rnd.nextInt(899) + 100;</span>
 
 		// create expiry date in the future, min. 6 months, max. 4 years
-<span class="fc" id="L197">		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250) + 210L);</span>
+<span class="fc" id="L182">		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250) + 210L);</span>
 
 		// combine to result
-<span class="fc" id="L200">		return new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc), expiry);</span>
+<span class="fc" id="L185">		return new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc), expiry);</span>
 	}
 
 	// calculate checksum for domestic account number, IBAN checksum is included in
@@ -205,22 +190,22 @@ public class BankGenerator implements IBankGenerator {
 	private int calculateCheckDigit(int[] digits) {
 
 		/* double every other starting from right - jumping from 2 in 2 */
-<span class="fc bfc" id="L208" title="All 2 branches covered.">		for (int i = digits.length - 1; i &gt;= 0; i -= 2) {</span>
-<span class="fc" id="L209">			digits[i] += digits[i];</span>
+<span class="fc bfc" id="L193" title="All 2 branches covered.">		for (int i = digits.length - 1; i &gt;= 0; i -= 2) {</span>
+<span class="fc" id="L194">			digits[i] += digits[i];</span>
 
 			/* taking the sum of digits grater than 10 - simple trick by substract 9 */
-<span class="fc bfc" id="L212" title="All 2 branches covered.">			if (digits[i] &gt;= 10) {</span>
-<span class="fc" id="L213">				digits[i] = digits[i] - 9;</span>
+<span class="fc bfc" id="L197" title="All 2 branches covered.">			if (digits[i] &gt;= 10) {</span>
+<span class="fc" id="L198">				digits[i] = digits[i] - 9;</span>
 			}
 		}
-<span class="fc" id="L216">		int sum = 0;</span>
-<span class="fc bfc" id="L217" title="All 2 branches covered.">		for (int i = 0; i &lt; digits.length; i++) {</span>
-<span class="fc" id="L218">			sum += digits[i];</span>
+<span class="fc" id="L201">		int sum = 0;</span>
+<span class="fc bfc" id="L202" title="All 2 branches covered.">		for (int i = 0; i &lt; digits.length; i++) {</span>
+<span class="fc" id="L203">			sum += digits[i];</span>
 		}
 		/* multiply by 9 step */
-<span class="fc" id="L221">		sum = sum * 9;</span>
+<span class="fc" id="L206">		sum = sum * 9;</span>
 
-<span class="fc" id="L223">		return sum % 10;</span>
+<span class="fc" id="L208">		return sum % 10;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
