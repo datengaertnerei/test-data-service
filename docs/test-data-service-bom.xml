@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:06b735bd-7838-4ef7-b0fd-75d3f537486a" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
+<bom serialNumber="urn:uuid:b579f9bd-eaa3-4738-9e17-30d13220a972" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2022-06-22T06:59:25Z</timestamp>
+    <timestamp>2022-06-22T11:34:51Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -727,6 +727,30 @@ introspection of method/constructor parameter names, without having to add expli
       <purl>pkg:maven/org.springframework/spring-webmvc@5.3.20?type=jar</purl>
       <externalReferences><reference type="website"><url>https://spring.io/projects/spring-framework</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-framework/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-framework</url></reference></externalReferences>
     </component>
+    <component type="library" bom-ref="pkg:maven/org.springframework/spring-aop@5.3.20?type=jar">
+      <publisher>Spring IO</publisher>
+      <group>org.springframework</group>
+      <name>spring-aop</name>
+      <version>5.3.20</version>
+      <description>Spring AOP</description>
+      <hashes>
+        <hash alg="MD5">588d64fb912ed0c637e55c0878c18c4f</hash>
+        <hash alg="SHA-1">c82f17997ab18ecafa8d08ce34a7c7aa4a04ef9e</hash>
+        <hash alg="SHA-256">00c680bef629e09f0d5fec1fe872452d9e18a14435faaaf284e51b3b1fb77e19</hash>
+        <hash alg="SHA-384">e2262048392913c4f8f99de7f411d2aaad2d93513238ea2ce1df12528ab2316915cd9555440ab777e93ddd54513b5284</hash>
+        <hash alg="SHA-512">3b0339d98ed76d336f1d8abc1d9ee2096de75809efd2fca20958dc7e4c1780126897b881320335f629b2c06c7693d17bbf7da1b13ad8ef7c16c15b8395778225</hash>
+        <hash alg="SHA3-256">edb5d4624daa9ce15fa8b86cb469d059188fcc1f007e1a6791c146d9b25068a8</hash>
+        <hash alg="SHA3-384">c1ce74234dc126f76b77f148b0492655bae664a0d1c9f2166d49e9a88ac0a4d37c52aee52586795f974a545e302429f1</hash>
+        <hash alg="SHA3-512">ac2bca1820350a7554834fe6561120812d23c2a35a176680bb25b7ac3a2fdf10695cf49983141b39e965f04401d0404ff69f47c0f9707cda2add234c0a47d338</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+        </license>
+      </licenses>
+      <purl>pkg:maven/org.springframework/spring-aop@5.3.20?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://spring.io/projects/spring-framework</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-framework/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-framework</url></reference></externalReferences>
+    </component>
     <component type="library" bom-ref="pkg:maven/org.springframework/spring-expression@5.3.20?type=jar">
       <publisher>Spring IO</publisher>
       <group>org.springframework</group>
@@ -1396,150 +1420,54 @@ introspection of method/constructor parameter names, without having to add expli
       <purl>pkg:maven/com.h2database/h2@2.1.214?type=jar</purl>
       <externalReferences><reference type="vcs"><url>https://github.com/h2database/h2database</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/org.springframework.boot/spring-boot-starter-security@2.7.0?type=jar">
-      <publisher>Pivotal Software, Inc.</publisher>
-      <group>org.springframework.boot</group>
-      <name>spring-boot-starter-security</name>
-      <version>2.7.0</version>
-      <description>Starter for using Spring Security</description>
-      <scope>optional</scope>
+    <component type="library" bom-ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@2.3.3?type=jar">
+      <publisher>Eclipse Foundation</publisher>
+      <group>jakarta.xml.bind</group>
+      <name>jakarta.xml.bind-api</name>
+      <version>2.3.3</version>
+      <description>Jakarta XML Binding API</description>
       <hashes>
-        <hash alg="MD5">520a227cdce6152a3668904197aed8ba</hash>
-        <hash alg="SHA-1">c01eccb2ceab6f46ca48c1705495070eefe967f4</hash>
-        <hash alg="SHA-256">eaab604e6c9c9278188b5591d06a37fb8d7bbb3b8cc3a8884e2c5830eeb2ab93</hash>
-        <hash alg="SHA-384">99ba14655f17425ae83ce1b8bc0a21afbaccdca7a0bf3866bea05c43dd4397260bbf1d699504a37f9e0d25d669b1d4e4</hash>
-        <hash alg="SHA-512">d994707af049994c1451d866cc4523923bb4d12e7f6ef9b1de4967a2f8cf9269f64fab04bb94b7c7ee393da66c7a632b19fff9a824657abcecef83367f81778d</hash>
-        <hash alg="SHA3-256">d4b0a4e0703702d51b7f4bbbf47604b839dc9aa47a8a378e47db24dd716f6eb1</hash>
-        <hash alg="SHA3-384">e00962e4612c44d9da1060d5c0328ac0b840868c84d5f475e339e0b567cccc967dede05df2f6693c6b76f54f8a3174d3</hash>
-        <hash alg="SHA3-512">a736704163ffc10eaf81ccf757484eda5e2bb5002dcb1a948fe29d3710a86a724795381eeb8aa4313e95b7e0488e052f3ff4908c83a09cab69c6f554c5934032</hash>
+        <hash alg="MD5">61286918ca0192e9f87d1358aef718dd</hash>
+        <hash alg="SHA-1">48e3b9cfc10752fba3521d6511f4165bea951801</hash>
+        <hash alg="SHA-256">c04539f472e9a6dd0c7685ea82d677282269ab8e7baca2e14500e381e0c6cec5</hash>
+        <hash alg="SHA-384">bad8b9f52bf7a7e1d3974cb305a69c093fb32d2131539c18d34e471e3ec32bdd9dd136bb4b38bb14d84e99c562f208c7</hash>
+        <hash alg="SHA-512">adf6436a7a9dc6f64b97127861d7a89b78e82bea67f72bda800ef285163adcd84dbf006f679108a2a8c2eed013e0b771da2354087e0845479ff2b6318b881442</hash>
+        <hash alg="SHA3-256">a9e4179a6bfa8b363b9fd4f32f8892c4a7954ed1695d3f33ccef73ceffcaa1d4</hash>
+        <hash alg="SHA3-384">8131aaf65f996cfa2c3f7d406caab3acf3e6650bcbbcd5595f8a457a211810ff110c1923876e068831a07388ddc26f33</hash>
+        <hash alg="SHA3-512">9ecbc0f4aa9cff28d519cbf74c8234b5180ae6ff0d6de4efe2de126b3251d466a5ddb878e70b9968095a843c82721c93a4dec53bfe09e3700f4cfe2e38bcac0a</hash>
       </hashes>
       <licenses>
         <license>
-          <id>Apache-2.0</id>
+          <id>BSD-3-Clause</id>
         </license>
       </licenses>
-      <purl>pkg:maven/org.springframework.boot/spring-boot-starter-security@2.7.0?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://spring.io</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-boot/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-boot</url></reference></externalReferences>
+      <purl>pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@2.3.3?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaxb-api/issues</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jaxb-dev</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaxb-api.git</url></reference><reference type="website"><url>https://www.eclipse.org</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/org.springframework/spring-aop@5.3.20?type=jar">
-      <publisher>Spring IO</publisher>
-      <group>org.springframework</group>
-      <name>spring-aop</name>
-      <version>5.3.20</version>
-      <description>Spring AOP</description>
+    <component type="library" bom-ref="pkg:maven/jakarta.activation/jakarta.activation-api@1.2.2?type=jar">
+      <publisher>Eclipse Foundation</publisher>
+      <group>jakarta.activation</group>
+      <name>jakarta.activation-api</name>
+      <version>1.2.2</version>
+      <description>${project.name}</description>
       <hashes>
-        <hash alg="MD5">588d64fb912ed0c637e55c0878c18c4f</hash>
-        <hash alg="SHA-1">c82f17997ab18ecafa8d08ce34a7c7aa4a04ef9e</hash>
-        <hash alg="SHA-256">00c680bef629e09f0d5fec1fe872452d9e18a14435faaaf284e51b3b1fb77e19</hash>
-        <hash alg="SHA-384">e2262048392913c4f8f99de7f411d2aaad2d93513238ea2ce1df12528ab2316915cd9555440ab777e93ddd54513b5284</hash>
-        <hash alg="SHA-512">3b0339d98ed76d336f1d8abc1d9ee2096de75809efd2fca20958dc7e4c1780126897b881320335f629b2c06c7693d17bbf7da1b13ad8ef7c16c15b8395778225</hash>
-        <hash alg="SHA3-256">edb5d4624daa9ce15fa8b86cb469d059188fcc1f007e1a6791c146d9b25068a8</hash>
-        <hash alg="SHA3-384">c1ce74234dc126f76b77f148b0492655bae664a0d1c9f2166d49e9a88ac0a4d37c52aee52586795f974a545e302429f1</hash>
-        <hash alg="SHA3-512">ac2bca1820350a7554834fe6561120812d23c2a35a176680bb25b7ac3a2fdf10695cf49983141b39e965f04401d0404ff69f47c0f9707cda2add234c0a47d338</hash>
+        <hash alg="MD5">1cbb480310fa1987f9db7a3ed7118af7</hash>
+        <hash alg="SHA-1">99f53adba383cb1bf7c3862844488574b559621f</hash>
+        <hash alg="SHA-256">a187a939103aef5849a7af84bd7e27be2d120c410af291437375ffe061f4f09d</hash>
+        <hash alg="SHA-384">3e25702596eca7dd48f904b3985d64b4b394d162d3884a907d8b2ee647542808713a42a02f0eeff2c07518a206cc91cf</hash>
+        <hash alg="SHA-512">e3d846ff5f62ad9fef514f0726846c63d4aa74b2bb8f60c76258dba37701f83ae75872401071bf40da40697d43a8a6e36d08fa4ef39fe70797fb6f2b1712599f</hash>
+        <hash alg="SHA3-256">5010f77dbc8c2a28269c7b5b662732ec4a01806f3af9af0b5a12882670303b6e</hash>
+        <hash alg="SHA3-384">07196bf6c1ba4fe3e14e7690b521d3a156ee136a0b34d93f7a20d485c528c25ed5eeaec013172b08bdc63800fa94fe5d</hash>
+        <hash alg="SHA3-512">6e63931ef5638e4919b210ef3fffc731d3b91a34bd88cf4b4410e583e28d9e8652377b74dbdb63ba4b7b11b68ded509200737527412984c9d5bc6e5b4b938993</hash>
       </hashes>
       <licenses>
         <license>
-          <id>Apache-2.0</id>
+          <name>EDL 1.0</name>
+          <url>http://www.eclipse.org/org/documents/edl-v10.php</url>
         </license>
       </licenses>
-      <purl>pkg:maven/org.springframework/spring-aop@5.3.20?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://spring.io/projects/spring-framework</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-framework/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-framework</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/org.springframework.security/spring-security-config@5.7.1?type=jar">
-      <publisher>Pivotal Software, Inc.</publisher>
-      <group>org.springframework.security</group>
-      <name>spring-security-config</name>
-      <version>5.7.1</version>
-      <description>Spring Security</description>
-      <hashes>
-        <hash alg="MD5">dfd4c7b72ee16cb07995375fba89927f</hash>
-        <hash alg="SHA-1">19fb622cc15f62b14afe286b5fc37c23b26ea242</hash>
-        <hash alg="SHA-256">f65a90ed6692cae4a73fa7e627cadacf8afe2d7e82d9c2c36838f19c457c46ba</hash>
-        <hash alg="SHA-384">993412e1551bddc4ba253ae66ec4cc1e4d790ba0171be7a6b14a2cd2022dec9a907547044af4a1cd7d2fd014ce0731ca</hash>
-        <hash alg="SHA-512">1e252923d200aab406e6ff248bc5d287ecbdc902cc6f8a394fbfa436178904c77f6000f59917ad83ecc9a202719a950a5572cb63b15f083454b684b846b7f7a9</hash>
-        <hash alg="SHA3-256">28f456c2723eab2ee5b0ecf61f876be9812cf1faf37997a0a9d56976635a79cf</hash>
-        <hash alg="SHA3-384">7b09aa206e0562699e5bd54ac41ad8596d92451e079273658a8955c933facfc34430ee1aaa2326ebd75f20af236c643d</hash>
-        <hash alg="SHA3-512">fa81b90426cb0f492be2d118e6f0990010f4da8b11aa243c05fa1afe815df2ca3e51579b30aad4fe7fdf6174b379b8336413c939b476b0d26e9615f20b6c14cc</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.springframework.security/spring-security-config@5.7.1?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://spring.io</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-security/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-security</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/org.springframework.security/spring-security-web@5.7.1?type=jar">
-      <publisher>Pivotal Software, Inc.</publisher>
-      <group>org.springframework.security</group>
-      <name>spring-security-web</name>
-      <version>5.7.1</version>
-      <description>Spring Security</description>
-      <hashes>
-        <hash alg="MD5">616bbb16915cd8f53850ed69ec0582a6</hash>
-        <hash alg="SHA-1">a6f28f69c5def01ec3c3f660db6b0fc076d69846</hash>
-        <hash alg="SHA-256">4cf893ab6b7651ee5ed94e465185ae83c468435a651b0e5c1f9f92c8717e33af</hash>
-        <hash alg="SHA-384">617c5a55ff4a1e87f3531474276fdab2dda1cb227d47fd8b2faaeecd26e9e4d94d4c721eb84b9b9369211c0a030bfa35</hash>
-        <hash alg="SHA-512">88c66bd325cb9aad0bd8b157b07c49f919aa25365fd90f5e2754d4addacbc92d9d2dcbffacd8477890f4ab63e3da34b4f876996764e79433041554317e920315</hash>
-        <hash alg="SHA3-256">f9a6ab53f86711fbf1053a4ee12c682f3bfe389b6eb9b29f8d95464efa949262</hash>
-        <hash alg="SHA3-384">a3cbc0d37b8596c5108bd174c0baed6ff2105afe382c82ac2038159a518bd36d06d90675843cf11043ddcbb7efa93cb1</hash>
-        <hash alg="SHA3-512">ac4f496900ff4394d296b2578768e86a232f657d73305d916f4a278f68ab58777ee2bba9c87ba0a5b4a1449694433a22fefc50438a927c6601ea743f1289d77d</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.springframework.security/spring-security-web@5.7.1?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://spring.io</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-security/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-security</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/org.springframework.security/spring-security-core@5.7.1?type=jar">
-      <publisher>Pivotal Software, Inc.</publisher>
-      <group>org.springframework.security</group>
-      <name>spring-security-core</name>
-      <version>5.7.1</version>
-      <description>Spring Security</description>
-      <hashes>
-        <hash alg="MD5">abaf5ea2346fec74a059148dc82ed469</hash>
-        <hash alg="SHA-1">7e98028d3b1afab1fc9e24006d0a95ea08304281</hash>
-        <hash alg="SHA-256">8b0d9a198a79c1ef0881bc902aa2ef684e3b169bab89b52c9ef83b043f009a92</hash>
-        <hash alg="SHA-384">507d31efffda2d586cbbe4a7e6543ba473f10a5a6c3a6e3d45cd1e881e8780328e6221ecd8d16d2d0622679ab64ae773</hash>
-        <hash alg="SHA-512">82ae7e3b7ac7295767175de99380ab9d55164e13c6e4ce5c24bfc14a37ff807540bbc77bbb7e3e1437f1b557409ac6cac8883444ae8eabb05bd496ab0b72986e</hash>
-        <hash alg="SHA3-256">b061604811c13380ff32582d3ad3185d66c188a1424e3836419778117b115d92</hash>
-        <hash alg="SHA3-384">49110eb53b87f533c55c018f363c9f016026ff9ba36db85717eba2693e0f0e4ff3f14b82d2a20195da582836c8fd4b37</hash>
-        <hash alg="SHA3-512">06226217a12776be95a476275ecae17d0e859aa43c88ca19f5bbd9b3b975b60178d001f6a1fa69ba27869b784b35047c77a80942b3de739497dd70015c30eeea</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.springframework.security/spring-security-core@5.7.1?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://spring.io</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-security/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-security</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/org.springframework.security/spring-security-crypto@5.7.1?type=jar">
-      <publisher>Pivotal Software, Inc.</publisher>
-      <group>org.springframework.security</group>
-      <name>spring-security-crypto</name>
-      <version>5.7.1</version>
-      <description>Spring Security</description>
-      <hashes>
-        <hash alg="MD5">3dfe1b7599fa5a5f8ecd65961f797862</hash>
-        <hash alg="SHA-1">e036d3deb1b1fba2b9881613f0e43f69ccd23ece</hash>
-        <hash alg="SHA-256">50cc7633685f8a97e9aae5390425aa52d35d324cd0ca93ff675b342cdd03b848</hash>
-        <hash alg="SHA-384">f3598560241b65ca629b19965931b881ed61ffd552384f8eda6e8073ea3d696470ea3772082aaa7a40d364086f5f48d2</hash>
-        <hash alg="SHA-512">796acf1086074cccadd5e9d4ee79cef6caed45d003ce5b1dff882663496c5c77a34e40d6ebdaa66dcd850477bdff7d9f75e4598be3e8f5f0ffde1214aa16df08</hash>
-        <hash alg="SHA3-256">7768089b4357f4c859fe80e92372217ebe0b71788bdf013114b09389ae7e7f76</hash>
-        <hash alg="SHA3-384">2978c1caeeb810851b82dec58de615947fa505a761a6bcf214e2836bf45ddfe1128ad040c42eb0be5de565a28f3baa6d</hash>
-        <hash alg="SHA3-512">5800d860e418b4a756e194e2c65b565147dd86018a153ca0c003409db9576b8556d76b4cca2c025f3fab6e253ae58d9bacc446eedd1f012fec29ddee43f7169e</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/org.springframework.security/spring-security-crypto@5.7.1?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://spring.io</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-security/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-security</url></reference></externalReferences>
+      <purl>pkg:maven/jakarta.activation/jakarta.activation-api@1.2.2?type=jar</purl>
+      <externalReferences><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaf/issues/</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaf</url></reference><reference type="website"><url>https://www.eclipse.org</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.springframework/spring-core@5.3.20?type=jar">
       <publisher>Spring IO</publisher>
@@ -1589,55 +1517,6 @@ introspection of method/constructor parameter names, without having to add expli
       </licenses>
       <purl>pkg:maven/org.springframework/spring-jcl@5.3.20?type=jar</purl>
       <externalReferences><reference type="website"><url>https://spring.io/projects/spring-framework</url></reference><reference type="issue-tracker"><url>https://github.com/spring-projects/spring-framework/issues</url></reference><reference type="vcs"><url>https://github.com/spring-projects/spring-framework</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@2.3.3?type=jar">
-      <publisher>Eclipse Foundation</publisher>
-      <group>jakarta.xml.bind</group>
-      <name>jakarta.xml.bind-api</name>
-      <version>2.3.3</version>
-      <description>Jakarta XML Binding API</description>
-      <hashes>
-        <hash alg="MD5">61286918ca0192e9f87d1358aef718dd</hash>
-        <hash alg="SHA-1">48e3b9cfc10752fba3521d6511f4165bea951801</hash>
-        <hash alg="SHA-256">c04539f472e9a6dd0c7685ea82d677282269ab8e7baca2e14500e381e0c6cec5</hash>
-        <hash alg="SHA-384">bad8b9f52bf7a7e1d3974cb305a69c093fb32d2131539c18d34e471e3ec32bdd9dd136bb4b38bb14d84e99c562f208c7</hash>
-        <hash alg="SHA-512">adf6436a7a9dc6f64b97127861d7a89b78e82bea67f72bda800ef285163adcd84dbf006f679108a2a8c2eed013e0b771da2354087e0845479ff2b6318b881442</hash>
-        <hash alg="SHA3-256">a9e4179a6bfa8b363b9fd4f32f8892c4a7954ed1695d3f33ccef73ceffcaa1d4</hash>
-        <hash alg="SHA3-384">8131aaf65f996cfa2c3f7d406caab3acf3e6650bcbbcd5595f8a457a211810ff110c1923876e068831a07388ddc26f33</hash>
-        <hash alg="SHA3-512">9ecbc0f4aa9cff28d519cbf74c8234b5180ae6ff0d6de4efe2de126b3251d466a5ddb878e70b9968095a843c82721c93a4dec53bfe09e3700f4cfe2e38bcac0a</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>BSD-3-Clause</id>
-        </license>
-      </licenses>
-      <purl>pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@2.3.3?type=jar</purl>
-      <externalReferences><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaxb-api/issues</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jaxb-dev</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaxb-api.git</url></reference><reference type="website"><url>https://www.eclipse.org</url></reference></externalReferences>
-    </component>
-    <component type="library" bom-ref="pkg:maven/jakarta.activation/jakarta.activation-api@1.2.2?type=jar">
-      <publisher>Eclipse Foundation</publisher>
-      <group>jakarta.activation</group>
-      <name>jakarta.activation-api</name>
-      <version>1.2.2</version>
-      <description>${project.name}</description>
-      <hashes>
-        <hash alg="MD5">1cbb480310fa1987f9db7a3ed7118af7</hash>
-        <hash alg="SHA-1">99f53adba383cb1bf7c3862844488574b559621f</hash>
-        <hash alg="SHA-256">a187a939103aef5849a7af84bd7e27be2d120c410af291437375ffe061f4f09d</hash>
-        <hash alg="SHA-384">3e25702596eca7dd48f904b3985d64b4b394d162d3884a907d8b2ee647542808713a42a02f0eeff2c07518a206cc91cf</hash>
-        <hash alg="SHA-512">e3d846ff5f62ad9fef514f0726846c63d4aa74b2bb8f60c76258dba37701f83ae75872401071bf40da40697d43a8a6e36d08fa4ef39fe70797fb6f2b1712599f</hash>
-        <hash alg="SHA3-256">5010f77dbc8c2a28269c7b5b662732ec4a01806f3af9af0b5a12882670303b6e</hash>
-        <hash alg="SHA3-384">07196bf6c1ba4fe3e14e7690b521d3a156ee136a0b34d93f7a20d485c528c25ed5eeaec013172b08bdc63800fa94fe5d</hash>
-        <hash alg="SHA3-512">6e63931ef5638e4919b210ef3fffc731d3b91a34bd88cf4b4410e583e28d9e8652377b74dbdb63ba4b7b11b68ded509200737527412984c9d5bc6e5b4b938993</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <name>EDL 1.0</name>
-          <url>http://www.eclipse.org/org/documents/edl-v10.php</url>
-        </license>
-      </licenses>
-      <purl>pkg:maven/jakarta.activation/jakarta.activation-api@1.2.2?type=jar</purl>
-      <externalReferences><reference type="issue-tracker"><url>https://github.com/eclipse-ee4j/jaf/issues/</url></reference><reference type="vcs"><url>https://github.com/eclipse-ee4j/jaf</url></reference><reference type="website"><url>https://www.eclipse.org</url></reference><reference type="mailing-list"><url>https://dev.eclipse.org/mhonarc/lists/jakarta.ee-community/</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar">
       <group>org.openstreetmap.osmosis</group>
@@ -2622,7 +2501,6 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-web@2.7.0?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-data-jpa@2.7.0?type=jar"/>
       <dependency ref="pkg:maven/com.h2database/h2@2.1.214?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-security@2.7.0?type=jar"/>
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar"/>
       <dependency ref="pkg:maven/org.springdoc/springdoc-openapi-ui@1.6.9?type=jar"/>
       <dependency ref="pkg:maven/com.talanlabs/avatar-generator-8bit@1.1.0?type=jar"/>
@@ -2828,29 +2706,6 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <dependency ref="pkg:maven/org.aspectj/aspectjweaver@1.9.7?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/com.h2database/h2@2.1.214?type=jar"/>
-    <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-security@2.7.0?type=jar">
-      <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter@2.7.0?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-aop@5.3.20?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework.security/spring-security-config@5.7.1?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework.security/spring-security-web@5.7.1?type=jar"/>
-    </dependency>
-    <dependency ref="pkg:maven/org.springframework.security/spring-security-config@5.7.1?type=jar">
-      <dependency ref="pkg:maven/org.springframework.security/spring-security-core@5.7.1?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-aop@5.3.20?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-beans@5.3.20?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-context@5.3.20?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-core@5.3.20?type=jar"/>
-    </dependency>
-    <dependency ref="pkg:maven/org.springframework.security/spring-security-core@5.7.1?type=jar"/>
-    <dependency ref="pkg:maven/org.springframework.security/spring-security-web@5.7.1?type=jar">
-      <dependency ref="pkg:maven/org.springframework.security/spring-security-core@5.7.1?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-core@5.3.20?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-aop@5.3.20?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-beans@5.3.20?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-context@5.3.20?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-expression@5.3.20?type=jar"/>
-      <dependency ref="pkg:maven/org.springframework/spring-web@5.3.20?type=jar"/>
-    </dependency>
     <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar">
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar"/>
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar"/>
