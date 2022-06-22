@@ -52,6 +52,7 @@ jobs:
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
         mvn -B deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         mkdir ~/site-tmp
+        cp target/site/jacoco/jacoco.xml ~/jacoco.xml
         cp -r target/site/* ~/site-tmp
         cp -r target/test-data-service-oas.json ~/site-tmp
         cp -r target/test-data-service-bom.* ~/site-tmp
@@ -76,3 +77,5 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         
     - uses: codecov/codecov-action@8e09eaf1b47fbb5da0e32a27bf08cd11929a1b4a
+      with:
+        files: ~/jacoco.xml
