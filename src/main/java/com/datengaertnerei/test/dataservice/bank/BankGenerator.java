@@ -89,7 +89,6 @@ public class BankGenerator implements IBankGenerator {
 
 	private void initBankDirectory() {
 		bankDirectory = new HashMap<>();
-		Map<String, String> bics = new HashMap<>();
 		try {
 			// get german bank codes from
 			// https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/
@@ -105,12 +104,6 @@ public class BankGenerator implements IBankGenerator {
 					String desc = r.get(3);
 					String city = r.get(2);
 					String bic = r.get(4);
-
-					if (null == bic || 0 == bic.length()) {
-						bic = bics.get(bankCode);
-					} else {
-						bics.put(bankCode, bic);
-					}
 
 					Bank b = new Bank(bankCode, desc, bic, city);
 					if (bankDirectory.containsKey(city.toLowerCase())) {
@@ -148,11 +141,6 @@ public class BankGenerator implements IBankGenerator {
 		// fetch random bank from list
 		int bankIndex = rnd.nextInt(cityMap.keySet().size());
 		Optional<Bank> bankContainer = cityMap.values().stream().skip(bankIndex).findFirst();
-		if (bankContainer.isEmpty()) {
-			BankAccount result = new BankAccount();
-			result.setComment("internal error while retrieving bank from list");
-			return result;
-		}
 		Bank bank = bankContainer.get();
 		// and build IBAN
 		Iban iban = new Iban.Builder().countryCode(CountryCode.DE).bankCode(bank.getBankCode()).accountNumber(account)
@@ -177,9 +165,6 @@ public class BankGenerator implements IBankGenerator {
 		// fetch random bin from list
 		int binIndex = rnd.nextInt(binList.keySet().size());
 		Optional<String> bin = binList.keySet().stream().skip(binIndex).findFirst();
-		if (bin.isEmpty()) {
-			return new CreditCard(null, null, null, LocalDate.now());
-		}
 
 		// create valid cc number
 		String randomPart = Integer.toString(rnd.nextInt(999999999));
