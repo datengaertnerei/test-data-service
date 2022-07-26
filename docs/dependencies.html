@@ -142,7 +142,7 @@
 <tr class="b">
 <td align="left">au.com.dius.pact.provider</td>
 <td><a class="externalLink" href="https://github.com/DiUS/pact-jvm">junit5spring</a></td>
-<td>4.3.11</td>
+<td>4.3.12</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></td></tr>
 <tr class="a">
@@ -774,37 +774,37 @@
 <tr class="b">
 <td align="left">au.com.dius.pact</td>
 <td><a class="externalLink" href="https://github.com/DiUS/pact-jvm">provider</a></td>
-<td>4.3.11</td>
+<td>4.3.12</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></td></tr>
 <tr class="a">
 <td align="left">au.com.dius.pact.core</td>
 <td><a class="externalLink" href="https://github.com/DiUS/pact-jvm">matchers</a></td>
-<td>4.3.11</td>
+<td>4.3.12</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></td></tr>
 <tr class="b">
 <td align="left">au.com.dius.pact.core</td>
 <td><a class="externalLink" href="https://github.com/DiUS/pact-jvm">model</a></td>
-<td>4.3.11</td>
+<td>4.3.12</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></td></tr>
 <tr class="a">
 <td align="left">au.com.dius.pact.core</td>
 <td><a class="externalLink" href="https://github.com/DiUS/pact-jvm">pactbroker</a></td>
-<td>4.3.11</td>
+<td>4.3.12</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></td></tr>
 <tr class="b">
 <td align="left">au.com.dius.pact.core</td>
 <td><a class="externalLink" href="https://github.com/DiUS/pact-jvm">support</a></td>
-<td>4.3.11</td>
+<td>4.3.12</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></td></tr>
 <tr class="a">
 <td align="left">au.com.dius.pact.provider</td>
 <td><a class="externalLink" href="https://github.com/DiUS/pact-jvm">junit5</a></td>
-<td>4.3.11</td>
+<td>4.3.12</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></td></tr>
 <tr class="b">
@@ -2781,7 +2781,7 @@ writes to specify Java code for type-checking by the Checker Framework.</p>
 <p><b>Description: </b>Annotation supports the FindBugs tool</p>
 <p><b>URL: </b><a class="externalLink" href="http://findbugs.sourceforge.net/">http://findbugs.sourceforge.net/</a></p>
 <p><b>Project Licenses: </b><a class="externalLink" href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser Public License</a></p></td></tr></table></div></li></ul></li></ul></li>
-<li>au.com.dius.pact.provider:junit5spring:jar:4.3.11 (test) <img id="_img237" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep236', '_img237' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep236" style="display:none">
+<li>au.com.dius.pact.provider:junit5spring:jar:4.3.12 (test) <img id="_img237" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep236', '_img237' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep236" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>junit5spring</th></tr>
@@ -2956,7 +2956,7 @@ variable to &amp;apos;true&amp;apos;.</p>
 <p><b>URL: </b><a class="externalLink" href="https://github.com/DiUS/pact-jvm">https://github.com/DiUS/pact-jvm</a></p>
 <p><b>Project Licenses: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></p></td></tr></table></div>
 <ul>
-<li>au.com.dius.pact.provider:junit5:jar:4.3.11 (test) <img id="_img239" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep238', '_img239' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep238" style="display:none">
+<li>au.com.dius.pact.provider:junit5:jar:4.3.12 (test) <img id="_img239" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep238', '_img239' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep238" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>junit5</th></tr>
@@ -3120,7 +3120,8 @@ The builder has the following methods:
 - `branch(name: String, consumer: String? = null, fallback: String? = null)` - The latest version from a particular branch 
 of each consumer, or for a particular consumer if the second parameter is provided. If fallback is provided, falling 
 back to the fallback branch if none is found from the specified branch.
-- `matchingBranch()` - All the currently deployed and currently released and supported versions of each consumer.
+- `matchingBranch()` - The latest version from any branch of the consumer that has the same name as the current branch
+of the provider. Used for coordinated development between consumer and provider teams using matching feature branch names.
 - `deployedOrReleased()` - All the currently deployed and currently released and supported versions of each consumer. 
 - `matchingBranch()` - The latest version from any branch of the consumer that has the same name as the current branch of the provider.
 Used for coordinated development between consumer and provider teams using matching feature branch names.
@@ -3297,7 +3298,7 @@ variable to &amp;apos;true&amp;apos;.</p>
 <p><b>URL: </b><a class="externalLink" href="https://github.com/DiUS/pact-jvm">https://github.com/DiUS/pact-jvm</a></p>
 <p><b>Project Licenses: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></p></td></tr></table></div>
 <ul>
-<li>au.com.dius.pact.core:support:jar:4.3.11 (test) <img id="_img241" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep240', '_img241' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep240" style="display:none">
+<li>au.com.dius.pact.core:support:jar:4.3.12 (test) <img id="_img241" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep240', '_img241' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep240" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>support</th></tr>
@@ -3442,7 +3443,7 @@ Support module with common utilities</p>
 <p><b>Description: </b>Apache HttpComponents Client Fluent</p>
 <p><b>URL: </b><a class="externalLink" href="https://hc.apache.org/httpcomponents-client-5.0.x/5.1.3/httpclient5-fluent/">https://hc.apache.org/httpcomponents-client-5.0.x/5.1.3/httpclient5-fluent/</a></p>
 <p><b>Project Licenses: </b><a class="externalLink" href="https://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></p></td></tr></table></div></li></ul></li>
-<li>au.com.dius.pact:provider:jar:4.3.11 (test) <img id="_img269" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep268', '_img269' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep268" style="display:none">
+<li>au.com.dius.pact:provider:jar:4.3.12 (test) <img id="_img269" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep268', '_img269' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep268" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>provider</th></tr>
@@ -3611,7 +3612,7 @@ class ReadmeExamplePactJVMProviderSpockSpec extends Specification {
 <p><b>URL: </b><a class="externalLink" href="https://github.com/DiUS/pact-jvm">https://github.com/DiUS/pact-jvm</a></p>
 <p><b>Project Licenses: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></p></td></tr></table></div>
 <ul>
-<li>au.com.dius.pact.core:model:jar:4.3.11 (test) <img id="_img271" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep270', '_img271' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep270" style="display:none">
+<li>au.com.dius.pact.core:model:jar:4.3.12 (test) <img id="_img271" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep270', '_img271' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep270" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>model</th></tr>
@@ -3729,7 +3730,7 @@ You should never need to include this project directly</p>
 <p><b>Description: </b>Types that extend and augment the Java Collections Framework.</p>
 <p><b>URL: </b><a class="externalLink" href="http://commons.apache.org/collections/">http://commons.apache.org/collections/</a></p>
 <p><b>Project Licenses: </b><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></p></td></tr></table></div></li></ul></li></ul></li>
-<li>au.com.dius.pact.core:matchers:jar:4.3.11 (test) <img id="_img293" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep292', '_img293' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep292" style="display:none">
+<li>au.com.dius.pact.core:matchers:jar:4.3.12 (test) <img id="_img293" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep292', '_img293' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep292" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>matchers</th></tr>
@@ -4338,7 +4339,7 @@ WS : [ \t\n\r] + -&amp;gt; skip ;
 <p><b>Description: </b>Java implementation of the SemVer Specification</p>
 <p><b>URL: </b><a class="externalLink" href="https://github.com/zafarkhaja/jsemver">https://github.com/zafarkhaja/jsemver</a></p>
 <p><b>Project Licenses: </b><a class="externalLink" href="http://www.opensource.org/licenses/mit-license.php">The MIT License</a></p></td></tr></table></div></li></ul></li>
-<li>au.com.dius.pact.core:pactbroker:jar:4.3.11 (test) <img id="_img301" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep300', '_img301' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep300" style="display:none">
+<li>au.com.dius.pact.core:pactbroker:jar:4.3.12 (test) <img id="_img301" src="./images/icon_info_sml.gif" alt="[Information]" onclick="toggleDependencyDetails( '_dep300', '_img301' );" style="cursor: pointer; vertical-align: text-bottom;"></img><div id="_dep300" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>pactbroker</th></tr>
@@ -5347,7 +5348,7 @@ This module contains the client classes for interacting with a pact broker.</p>
 <td align="center">1.2</td>
 <td align="center">Yes</td></tr>
 <tr class="a">
-<td align="left">provider-4.3.11.jar</td>
+<td align="left">provider-4.3.12.jar</td>
 <td align="right">358.8 kB</td>
 <td align="right">172</td>
 <td align="right">159</td>
@@ -5355,15 +5356,15 @@ This module contains the client classes for interacting with a pact broker.</p>
 <td align="center">-</td>
 <td align="center">Yes</td></tr>
 <tr class="b">
-<td align="left">matchers-4.3.11.jar</td>
-<td align="right">280.1 kB</td>
+<td align="left">matchers-4.3.12.jar</td>
+<td align="right">280.2 kB</td>
 <td align="right">159</td>
 <td align="right">148</td>
 <td align="right">3</td>
 <td align="center">-</td>
 <td align="center">Yes</td></tr>
 <tr class="a">
-<td align="left">model-4.3.11.jar</td>
+<td align="left">model-4.3.12.jar</td>
 <td align="right">636 kB</td>
 <td align="right">338</td>
 <td align="right">318</td>
@@ -5371,23 +5372,23 @@ This module contains the client classes for interacting with a pact broker.</p>
 <td align="center">-</td>
 <td align="center">Yes</td></tr>
 <tr class="b">
-<td align="left">pactbroker-4.3.11.jar</td>
-<td align="right">163.6 kB</td>
+<td align="left">pactbroker-4.3.12.jar</td>
+<td align="right">163.4 kB</td>
 <td align="right">100</td>
 <td align="right">90</td>
 <td align="right">2</td>
 <td align="center">-</td>
 <td align="center">Yes</td></tr>
 <tr class="a">
-<td align="left">support-4.3.11.jar</td>
-<td align="right">218.5 kB</td>
+<td align="left">support-4.3.12.jar</td>
+<td align="right">218.6 kB</td>
 <td align="right">146</td>
 <td align="right">133</td>
 <td align="right">4</td>
 <td align="center">-</td>
 <td align="center">Yes</td></tr>
 <tr class="b">
-<td align="left">junit5-4.3.11.jar</td>
+<td align="left">junit5-4.3.12.jar</td>
 <td align="right">66.8 kB</td>
 <td align="right">38</td>
 <td align="right">29</td>
@@ -5395,7 +5396,7 @@ This module contains the client classes for interacting with a pact broker.</p>
 <td align="center">-</td>
 <td align="center">Yes</td></tr>
 <tr class="a">
-<td align="left">junit5spring-4.3.11.jar</td>
+<td align="left">junit5spring-4.3.12.jar</td>
 <td align="right">31 kB</td>
 <td align="right">21</td>
 <td align="right">11</td>
