@@ -19,13 +19,13 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@911b1af682b685d05d871fe5572549216219b577
+        uses: step-security/harden-runner@7d3610100de4da85ebb79cf22ad4c19bb1f68e12
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - name: Set up Python 
-        uses: actions/setup-python@c474c82340438924daab9282d07300bfe7e3692d
+        uses: actions/setup-python@f6795b163d3422199fb74e169e9dc477edf891b1
         with:
           python-version: 3.x
           
