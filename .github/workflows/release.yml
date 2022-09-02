@@ -57,7 +57,7 @@ jobs:
         
     - name: Create release
       id: rel
-      uses: Roang-zero1/github-create-release-action@f031face75deacde952a43d57d10b1f7287815ec
+      uses: Roang-zero1/github-create-release-action@8a7dcdd878ff1ccd131f9a9f7099c62248d8cdfc
       with:
         release_title: "Release ${{ steps.mvnrel.outputs.releasetag }}"
         created_tag: ${{ steps.mvnrel.outputs.releasetag }}
