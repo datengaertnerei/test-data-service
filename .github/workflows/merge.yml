@@ -35,7 +35,7 @@ jobs:
 
       # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@70426bb879a3be8361f4db41697ea9fb4e2d57fd
+      uses: github/codeql-action/init@03e34531021824753d768a850f18086934273226
       with:
         languages: javascript, python, java        
         
@@ -47,4 +47,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@70426bb879a3be8361f4db41697ea9fb4e2d57fd
+      uses: github/codeql-action/analyze@03e34531021824753d768a850f18086934273226
