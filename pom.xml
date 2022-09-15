@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.2</version>
+		<version>2.7.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.datengaertnerei.test</groupId>
 	<artifactId>data-service</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>Test data service</name>
 	<description>Web Service to provide valid test data for german
 		fictitious persons.
@@ -46,7 +46,7 @@
 		<connection>scm:git:https://github.com/datengaertnerei/test-data-service.git</connection>
 		<developerConnection>scm:git:https://github.com/datengaertnerei/test-data-service.git</developerConnection>
 		<url>https://github.com/datengaertnerei/test-data-service</url>
-		<tag>V1.0.1</tag>
+		<tag>V1.0.2</tag>
 	</scm>
 
 	<distributionManagement>
@@ -61,7 +61,7 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<cucumber.version>7.6.0</cucumber.version>
+		<cucumber.version>7.7.0</cucumber.version>
 		<sonar.projectKey>datengaertnerei_test-data-service</sonar.projectKey>
 		<sonar.organization>datengaertnerei</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -117,7 +117,7 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.9</version>
+			<version>1.6.11</version>
 		</dependency>
 		<dependency>
 			<groupId>com.talanlabs</groupId>
@@ -166,7 +166,7 @@
 		<dependency>
 			<groupId>com.microsoft.playwright</groupId>
 			<artifactId>playwright</artifactId>
-			<version>1.24.1</version>
+			<version>1.25.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -176,7 +176,7 @@
 			<dependency>
 				<groupId>com.google.protobuf</groupId>
 				<artifactId>protobuf-java</artifactId>
-				<version>3.21.5</version>
+				<version>3.21.6</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.guava</groupId>
@@ -435,7 +435,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
-				<version>2.11.0</version>
+				<version>2.12.0</version>
 				<reportSets>
 					<reportSet>
 						<reports>
@@ -459,7 +459,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jxr-plugin</artifactId>
-				<version>3.2.0</version>
+				<version>3.3.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
