@@ -77,7 +77,7 @@
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td># of properties using the latest version available</td>
-<td>1</td></tr>
+<td>0</td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -85,7 +85,7 @@
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>0</td></tr>
+<td>1</td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -105,11 +105,11 @@
 <th>Latest Minor</th>
 <th>Latest Major</th></tr>
 <tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${cucumber.version}</td>
 <td>7.8.0</td>
 <td></td>
-<td></td>
+<td><b>7.8.1</b></td>
 <td></td>
 <td></td></tr>
 <tr class="b">
@@ -126,7 +126,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="80%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="80%">Property</th>
 <td align="left">${cucumber.version}</td></tr>
@@ -137,18 +137,21 @@
 <th width="80%">Current Version</th>
 <td align="left">7.8.0</td></tr>
 <tr class="a">
+<th width="80%">Newer versions</th>
+<td align="left"><b>7.8.1</b>&#160;<i>Next Incremental</i></td></tr>
+<tr class="b">
 <th width="80%">Allowed version range</th>
 <td align="left">[,)</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="80%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="80%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="80%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="80%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section></section>
         </main>
