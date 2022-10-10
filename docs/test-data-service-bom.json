@@ -1,47 +1,47 @@
 {
   "bomFormat" : "CycloneDX",
   "specVersion" : "1.3",
-  "serialNumber" : "urn:uuid:643bd3c8-654b-4575-9288-840f097dca20",
+  "serialNumber" : "urn:uuid:3e23943f-14f8-40ef-a775-bc300656404f",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2022-10-10T17:42:32Z",
+    "timestamp" : "2022-10-10T20:40:51Z",
     "tools" : [
       {
         "vendor" : "OWASP Foundation",
         "name" : "CycloneDX Maven plugin",
-        "version" : "2.7.1",
+        "version" : "2.7.2",
         "hashes" : [
           {
             "alg" : "MD5",
-            "content" : "538c878ebf89b372876e247d056a3fc5"
+            "content" : "f4f0e5aa6c0d5f709b304511547647a6"
           },
           {
             "alg" : "SHA-1",
-            "content" : "4561e50edb47e12a03712b1afce9b20cba32fd28"
+            "content" : "13a77f9af6a286c9bfc8c00e5d75ff6e9920d4ce"
           },
           {
             "alg" : "SHA-256",
-            "content" : "f0ea7b3bcf5c7ba649b8d9807e805385330501881677d47333aebce8305ef4d4"
+            "content" : "d565f805cfd5e57af6a345e537e78b42ffd56fad094c74443e2a197a4e097538"
           },
           {
             "alg" : "SHA-512",
-            "content" : "a35400ca6411692ae8964fe7030eaba2a83a2fa50e2883def3054191283c3b48e2dcdd68bf80f5a0ede3898cc6b7cb7b998aacd2c1e969320053c43b6ab8d873"
+            "content" : "92ff49fbb954b0341c38daddb30965fd9e8bb909e7e8a66dc65da5d6a958d021c6fe611c0b12314ae02f849de95101efe5b93470050dfb8090a459481ffa736a"
           },
           {
             "alg" : "SHA-384",
-            "content" : "75c0c03a03c69e82ad1f7b942d6d733da8261c4058174355d6b24ebd88cee34180f2e8484d2b0fedaf459078bdf6e927"
+            "content" : "e15a47303e035e6612c37f08ebc105674f84cafd779ab52398ce263e67ce93d9d5e4c7c2ddda2f73584b6071a9f1a9da"
           },
           {
             "alg" : "SHA3-384",
-            "content" : "98cd312d4dfc104a0a66d65023d0aade423f08951f2a9e0215e703f0c81c4f274d8e11a2db1abc30a558b820d65860c4"
+            "content" : "8c54133eb43f71bcdc52986159725cd32efef65047f8635a48d160a2d5f274f71c76e61cecbf3d47e3ca7929c3dbe736"
           },
           {
             "alg" : "SHA3-256",
-            "content" : "0c5fd65013128de457b049a824c4ad11212d668b503613ce19a54d545e5cf82d"
+            "content" : "7be4af15b7a685431c5252752c34b509c0d43a146db6844da9afbed2e4baa908"
           },
           {
             "alg" : "SHA3-512",
-            "content" : "72ea0ed8faa3cc4493db96d0223094842e7153890b091ff364040ad3ad89363157fc9d1bd852262124aec83134f0c19aa4fd0fa482031d38a76d74dfd36b7964"
+            "content" : "0025064deb5d9eb463a142bc4129c41f3387b18bd7aa54e5c923ed2c2f488616d198a65e952f7f2a1dea371387235f135c29643fb00f95366f7f6007d6327a31"
           }
         ]
       }
@@ -6834,18 +6834,10 @@
     },
     {
       "ref" : "pkg:maven/org.jboss.logging/jboss-logging@3.4.3.Final?type=jar",
-      "dependsOn" : [
-        "pkg:maven/org.apache.logging.log4j/log4j-api@2.17.2?type=jar"
-      ]
+      "dependsOn" : [ ]
     },
     {
       "ref" : "pkg:maven/net.bytebuddy/byte-buddy@1.12.17?type=jar",
-      "dependsOn" : [
-        "pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"
-      ]
-    },
-    {
-      "ref" : "pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar",
       "dependsOn" : [ ]
     },
     {
@@ -6870,7 +6862,6 @@
       "ref" : "pkg:maven/org.glassfish.jaxb/jaxb-runtime@2.3.6?type=jar",
       "dependsOn" : [
         "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@2.3.3?type=jar",
-        "pkg:maven/jakarta.activation/jakarta.activation-api@1.2.2?type=jar",
         "pkg:maven/org.glassfish.jaxb/txw2@2.3.6?type=jar",
         "pkg:maven/com.sun.istack/istack-commons-runtime@3.0.12?type=jar",
         "pkg:maven/com.sun.activation/jakarta.activation@1.2.2?type=jar"
@@ -6878,10 +6869,6 @@
     },
     {
       "ref" : "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@2.3.3?type=jar",
-      "dependsOn" : [ ]
-    },
-    {
-      "ref" : "pkg:maven/jakarta.activation/jakarta.activation-api@1.2.2?type=jar",
       "dependsOn" : [ ]
     },
     {
@@ -7020,6 +7007,10 @@
       "dependsOn" : [ ]
     },
     {
+      "ref" : "pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar",
+      "dependsOn" : [ ]
+    },
+    {
       "ref" : "pkg:maven/org.checkerframework/checker-qual@3.12.0?type=jar",
       "dependsOn" : [ ]
     },
@@ -7067,8 +7058,6 @@
         "pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jsr310@2.13.4?type=jar",
         "pkg:maven/io.swagger.core.v3/swagger-annotations@2.2.2?type=jar",
         "pkg:maven/io.swagger.core.v3/swagger-models@2.2.2?type=jar",
-        "pkg:maven/ch.qos.logback/logback-classic@1.2.11?type=jar",
-        "pkg:maven/ch.qos.logback/logback-core@1.2.11?type=jar",
         "pkg:maven/jakarta.validation/jakarta.validation-api@2.0.2?type=jar"
       ]
     },
@@ -7106,8 +7095,7 @@
       "ref" : "pkg:maven/org.webjars/webjars-locator-core@0.50?type=jar",
       "dependsOn" : [
         "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.4?type=jar",
-        "pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"
+        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.4?type=jar"
       ]
     },
     {
