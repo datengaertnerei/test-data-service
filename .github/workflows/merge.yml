@@ -22,20 +22,20 @@ jobs:
             
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@0b61316f5a3fc8b7b29daa3d9b4a37cd052d11ed
+      uses: step-security/harden-runner@28278524d0a2e042c57b6713ad659f1b2c13c0ac
       with:
         egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
-    - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+    - uses: actions/checkout@8230315d06ad95c617244d2f265d237a1682d445
     - name: Set up JDK 17
-      uses: actions/setup-java@a96c2ca6ae7c46a627e7df3989a615ad926b1189
+      uses: actions/setup-java@3617c43588448d532250f5c331dffcca90e398f1
       with:
         java-version: 17
         distribution: 'temurin'
 
       # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@fd4dc5bf31bec2a626bf9a89113359953a1fba43
+      uses: github/codeql-action/init@297ec80a468c234608046f51ee8c65da128a1e94
       with:
         languages: javascript, python, java        
         
@@ -47,4 +47,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@fd4dc5bf31bec2a626bf9a89113359953a1fba43
+      uses: github/codeql-action/analyze@297ec80a468c234608046f51ee8c65da128a1e94
