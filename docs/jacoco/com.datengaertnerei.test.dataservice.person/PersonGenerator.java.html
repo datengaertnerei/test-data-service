@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -229,7 +229,7 @@ import org.springframework.stereotype.Service;
 		double height;
 		do {
 <span class="fc" id="L231">			height = random.nextGaussian() * 10.0 + 165.0;</span>
-<span class="fc bfc" id="L232" title="All 4 branches covered.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
+<span class="pc bpc" id="L232" title="1 of 4 branches missed.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
 <span class="fc bfc" id="L233" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
 <span class="fc" id="L234">			height += 10.0;</span>
 		}
