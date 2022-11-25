@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.6</version>
+		<version>3.0.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.datengaertnerei.test</groupId>
@@ -60,7 +60,7 @@
 	</distributionManagement>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<cucumber.version>7.9.0</cucumber.version>
 		<sonar.projectKey>datengaertnerei_test-data-service</sonar.projectKey>
 		<sonar.organization>datengaertnerei</sonar.organization>
@@ -68,6 +68,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-properties-migrator</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
@@ -93,6 +98,11 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>8.0.0.Final</version>
+		</dependency>
+		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>2.1.214</version>
@@ -116,8 +126,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.13</version>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.talanlabs</groupId>
@@ -127,7 +137,7 @@
 		<dependency>
 			<groupId>au.com.dius.pact.provider</groupId>
 			<artifactId>junit5spring</artifactId>
-			<version>4.3.17</version>
+			<version>4.4.2</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

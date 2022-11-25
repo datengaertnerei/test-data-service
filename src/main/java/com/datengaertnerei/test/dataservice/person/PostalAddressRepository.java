@@ -50,7 +50,7 @@ public interface PostalAddressRepository extends JpaRepository<PostalAddress, Lo
 	 * @param likeQuery postalCode like query
 	 * @return list of postalAddress objects
 	 */
-	@Query(value = "SELECT p FROM PostalAddress p WHERE postal_code LIKE ?1")
+	@Query(value = "SELECT p FROM PostalAddress p WHERE postalCode LIKE ?1")
 	List<PostalAddress> findByPostalCodeLike(String likeQuery);
 	
 	/**
