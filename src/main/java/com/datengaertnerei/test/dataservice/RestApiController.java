@@ -26,7 +26,7 @@ package com.datengaertnerei.test.dataservice;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.validation.constraints.Max;
+import jakarta.validation.constraints.Max;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
