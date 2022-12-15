@@ -14,14 +14,14 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@28278524d0a2e042c57b6713ad659f1b2c13c0ac
+      uses: step-security/harden-runner@0a5820a2ec510d2521c1715d24860fc8cd06400a
       with:
         egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
-    - uses: actions/checkout@8230315d06ad95c617244d2f265d237a1682d445
+    - uses: actions/checkout@885641592076c27bfb56c028cd5612cdad63e16d
     
     - name: Set up JDK 17
-      uses: actions/setup-java@3617c43588448d532250f5c331dffcca90e398f1
+      uses: actions/setup-java@1df8dbefe2a8cbc99770194893dd902763bee34b
       with:
         java-version: 17
         distribution: 'temurin'
@@ -57,7 +57,7 @@ jobs:
         
     - name: Create release
       id: rel
-      uses: Roang-zero1/github-create-release-action@8a7dcdd878ff1ccd131f9a9f7099c62248d8cdfc
+      uses: Roang-zero1/github-create-release-action@57eb9bdce7a964e48788b9e78b5ac766cb684803
       with:
         release_title: "Release ${{ steps.mvnrel.outputs.releasetag }}"
         created_tag: ${{ steps.mvnrel.outputs.releasetag }}
