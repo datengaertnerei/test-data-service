@@ -31,14 +31,14 @@ jobs:
         distribution: 'temurin'
         
     - name: Cache Maven packages
-      uses: actions/cache@60c76667099108586fa72b6307da64c5fa03ebd4
+      uses: actions/cache@d1507cccba5975e005ebd1bdaa5a0c51832f159d
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
     
     - name: Cache SonarCloud packages
-      uses: actions/cache@60c76667099108586fa72b6307da64c5fa03ebd4
+      uses: actions/cache@d1507cccba5975e005ebd1bdaa5a0c51832f159d
       with:
         path: ~/.sonar/cache
         key: ${{ runner.os }}-sonar
