@@ -1,14 +1,12 @@
-# This workflow will build a Java project with Maven
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
 name: update-data
 
 concurrency: dev-build
 
 on: 
-  schedule:
+  workflow_dispatch 
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 4 10 3,6,9,12 *'
+    #- cron:  '0 4 10 3,6,9,12 *'
     
 jobs:
   build:
@@ -24,6 +22,7 @@ jobs:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+
       - name: Set up Python 
         uses: actions/setup-python@5ccb29d8773c3f3f653e1705f474dfaa8a06a912
         with:
@@ -31,6 +30,7 @@ jobs:
           
       - name: Fetch data
         run: |
+          git checkout -B update-data
           cd src/tools
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -45,3 +45,13 @@ jobs:
           fi
         env:        
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create pull request to dev
+        id: cpr_dev
+        run: gh pr create --base $BASE --head $HEAD --title "$TITLE" --body "$BODY"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD: update-data
+          BASE: develop
+          TITLE: "Merge updated data to dev"
+          BODY: ":crown: *An automated PR*"
