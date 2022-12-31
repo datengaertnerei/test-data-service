@@ -64,6 +64,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
                 
+      # Create pull request - must run with a different GH token to allow merge check action trigger
     - name: Create pull request to main
       id: cpr_main
       run: gh pr create --base $BASE --head $HEAD --title "$TITLE" --body "$BODY"
@@ -72,9 +73,9 @@ jobs:
         HEAD: ${{ steps.mvnrel.outputs.prsource }}
         BASE: master
         TITLE: "Merge ${{ steps.mvnrel.outputs.prsource }} to main"
-        BODY: ":crown: *An automated PR*"
-          
+        BODY: ":crown: *An automated PR*"          
     
+      # Create pull request - must run with a different GH token to allow merge check action trigger
     - name: Create pull request to dev
       id: cpr_dev
       run: gh pr create --base $BASE --head $HEAD --title "$TITLE" --body "$BODY"
