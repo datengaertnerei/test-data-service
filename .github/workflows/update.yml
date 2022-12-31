@@ -3,10 +3,9 @@ name: update-data
 concurrency: dev-build
 
 on: 
-  workflow_dispatch
-  #schedule:
+  schedule:
     # * is a special character in YAML so you have to quote this string
-    #- cron:  '30 2 10 3,6,9,12 *'
+    - cron:  '30 2 10 3,6,9,12 *'
     
 jobs:
   build:
@@ -43,6 +42,7 @@ jobs:
         env:        
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Create pull request - must run with a different GH token to allow merge check action trigger
       - name: Create pull request to dev
         id: cpr_dev
         run: gh pr create --base $BASE --head $HEAD --title "$TITLE" --body "$BODY"
