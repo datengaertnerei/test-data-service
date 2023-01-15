@@ -7,7 +7,7 @@ concurrency: build
 
 on:
   push:
-    branches: [ develop, master ]
+    branches: [ develop ]
 
 jobs:
   build:
@@ -16,36 +16,35 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@0a5820a2ec510d2521c1715d24860fc8cd06400a
+      uses: step-security/harden-runner@8f144f8401c4e3693085dff03603f617f566ec6b
       with:
         egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
-    - uses: actions/checkout@885641592076c27bfb56c028cd5612cdad63e16d
+    - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
       with:
         fetch-depth: '0'
     
     - name: Set up JDK 17
-      uses: actions/setup-java@1df8dbefe2a8cbc99770194893dd902763bee34b
+      uses: actions/setup-java@e11351903adc86f18bfc6660e4de2911b9fc33b4
       with:
         java-version: 17
         distribution: 'temurin'
         
     - name: Cache Maven packages
-      uses: actions/cache@ac25611caef967612169ab7e95533cf932c32270
+      uses: actions/cache@efacb0248bc628516687ca7c7e66dd076a46db1f
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
     
     - name: Cache SonarCloud packages
-      uses: actions/cache@ac25611caef967612169ab7e95533cf932c32270
+      uses: actions/cache@efacb0248bc628516687ca7c7e66dd076a46db1f
       with:
         path: ~/.sonar/cache
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
     
     - name: Build and analyze dev
-      if: ${{ github.ref == 'refs/heads/develop' }}
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
@@ -62,17 +61,9 @@ jobs:
         git commit docs -m "Maven Site generated"
         git push
         rm -rf ~/site-tmp
+        git checkout develop
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-    - name: Build and analyze main
-      if: ${{ github.ref == 'refs/heads/master' }}
-      run: |
-        export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
-        mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         
     - uses: codecov/codecov-action@e0fbd592d323cb2991fb586fdd260734fcb41fcb

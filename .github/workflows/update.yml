@@ -1,6 +1,3 @@
-# This workflow will build a Java project with Maven
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
 name: update-data
 
 concurrency: dev-build
@@ -8,29 +5,28 @@ concurrency: dev-build
 on: 
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 4 10 3,6,9,12 *'
+    - cron:  '30 2 10 3,6,9,12 *'
     
 jobs:
   build:
-
-    permissions:
-      contents: write  # for Git to git push
     runs-on: ubuntu-latest
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0a5820a2ec510d2521c1715d24860fc8cd06400a
+        uses: step-security/harden-runner@8f144f8401c4e3693085dff03603f617f566ec6b
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
-      - uses: actions/checkout@885641592076c27bfb56c028cd5612cdad63e16d
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+
       - name: Set up Python 
-        uses: actions/setup-python@2c3dd9e7e29afd70cc0950079bde6c979d1f69f9
+        uses: actions/setup-python@f60fe39c45f23b4a7683b4ae8e08239d4a2089bd
         with:
           python-version: 3.x
           
       - name: Fetch data
         run: |
+          git checkout -B update-data
           cd src/tools
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -41,7 +37,18 @@ jobs:
             git config --global user.email "jens.dibbern@gmail.com"
             git config --global user.name "datengaertnerei"
             git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank
-            git push      
+            git push --set-upstream origin update-data    
           fi
         env:        
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Create pull request - must run with a different GH token to allow merge check action trigger
+      - name: Create pull request to dev
+        id: cpr_dev
+        run: gh pr create --base $BASE --head $HEAD --title "$TITLE" --body "$BODY"
+        env:
+          GITHUB_TOKEN: ${{ secrets.REL_SECRET }}
+          HEAD: update-data
+          BASE: develop
+          TITLE: "Merge updated data to dev"
+          BODY: ":crown: *An automated PR*"
