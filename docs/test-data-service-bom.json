@@ -1,10 +1,10 @@
 {
   "bomFormat" : "CycloneDX",
   "specVersion" : "1.3",
-  "serialNumber" : "urn:uuid:8996b4a0-6510-488d-843c-c6790ae9fb99",
+  "serialNumber" : "urn:uuid:b5c74e3c-da71-45ca-b628-7d1667552c27",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2023-02-01T18:54:00Z",
+    "timestamp" : "2023-02-02T03:40:28Z",
     "tools" : [
       {
         "vendor" : "OWASP Foundation",
@@ -350,51 +350,52 @@
       "publisher" : "The Apache Software Foundation",
       "group" : "org.apache.commons",
       "name" : "commons-csv",
-      "version" : "1.9.0",
+      "version" : "1.10.0",
       "description" : "The Apache Commons CSV library provides a simple interface for reading and writing CSV files of various types.",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "75559edcb39c783299289690c5a45816"
+          "content" : "9b3be74e726a151524bf31ec293ff285"
         },
         {
           "alg" : "SHA-1",
-          "content" : "b59d8f64cd0b83ee1c04ff1748de2504457018c1"
+          "content" : "8669bee353424c3223c93723291b5c3753260c1c"
         },
         {
           "alg" : "SHA-256",
-          "content" : "c418d6aab4db4f1f70983d355de8d7c1e755c754820a92294da2e5f5081022cc"
+          "content" : "2d06e6a07a636baf777ad8e659256f2119109dde23551c9b80c5422d424b808c"
         },
         {
           "alg" : "SHA-512",
-          "content" : "c474adc1b3d64d0eec5aaf54ddf8704d605c9e7be37757b441c32fcf55bd044d314a66faa78970c7fe4964c8e1a627debf51994035498e03c1d1b08d8f6d0149"
+          "content" : "4434edc3256ce9a004f9860738fe7fc7b96e964f131aa953b598084bfd60e510796164a27c94b4c0b03041d05261c013e0db664ffd2bdd1cf032011722bc7ac0"
         },
         {
           "alg" : "SHA-384",
-          "content" : "4f5e309ec323e84ffce50581b0bbf77cd1c5ea92e89e6067049cec8ef705efe32a785cdfddbc21361acda43b099c79c7"
+          "content" : "c50578f3e9a7f6bd7e2badef7e0758eba308f77c0eef17a1d2d7d7620f0a7f5bf414f8847b3a401484466a54c8115370"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "d2413a200f5c3b5c06ea6834525ded4e84158d9ef2872e082e3d1eab9a09e41d6abbb7ae2e48874b6bb0d117e67566f2"
+          "content" : "d13077b7b86c9a8ced54228615f86b7785d84634e5cf757792259b4f110aaa6d1980938ba1c1a65377bdf62c24067e96"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "21afd20c413723ea1d779d27c0d0e641db8e47cb02bf0b2e6db55f13635431b5"
+          "content" : "eea22e71edfed1e0245104b27fe54fc903362ddad35594bdb3012dc01a0adc63"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "de76772a8fc3b1a5132b4656739a56f7aacc4551ebc37ca686bd32b2d717e4ead224e7b6632e4214950a11a511cbb290289c8539bb0f15cece9bb8223df0a814"
+          "content" : "db8b13b74e78808ea7819bee82851836ac47abaea7eceb6cda06a5506aba7277f3e93fbee4d0a19ef7d77870e8f13c2970a8cdd517487d4a68cfbd138839908c"
         }
       ],
       "licenses" : [
         {
           "license" : {
-            "id" : "Apache-2.0"
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
           }
         }
       ],
-      "purl" : "pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar",
+      "purl" : "pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -402,7 +403,7 @@
         },
         {
           "type" : "build-system",
-          "url" : "https://builds.apache.org/"
+          "url" : "https://github.com/apache/commons-csv/actions"
         },
         {
           "type" : "distribution",
@@ -422,7 +423,7 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar"
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar"
     },
     {
       "publisher" : "The Apache Software Foundation",
@@ -7295,7 +7296,7 @@
       "ref" : "pkg:maven/com.datengaertnerei.test/data-service@1.0.6-SNAPSHOT?type=jar",
       "dependsOn" : [
         "pkg:maven/org.springframework.boot/spring-boot-properties-migrator@3.0.2?type=jar",
-        "pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar",
         "pkg:maven/commons-io/commons-io@2.11.0?type=jar",
         "pkg:maven/org.iban4j/iban4j@3.2.4-RELEASE?type=jar",
         "pkg:maven/org.springframework.boot/spring-boot-starter-web@3.0.2?type=jar",
@@ -7340,7 +7341,7 @@
       "dependsOn" : [ ]
     },
     {
-      "ref" : "pkg:maven/org.apache.commons/commons-csv@1.9.0?type=jar",
+      "ref" : "pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar",
       "dependsOn" : [ ]
     },
     {
