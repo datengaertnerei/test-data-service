@@ -6,9 +6,7 @@ name: maven-main-build
 concurrency: build
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
     branches: [ master ]
 
 jobs:
