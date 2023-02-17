@@ -50,6 +50,8 @@ jobs:
         git config --global user.name "datengaertnerei"
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
         mvn -B deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        npm install --global @cyclonedx/cyclonedx-npm
+        cyclonedx-npm --output-file target/site/frontend-sbom.json --ignore-npm-errors src/app/package.json
         mkdir ~/site-tmp
         cp -r target/site/* ~/site-tmp
         cp -r target/test-data-service-oas.json ~/site-tmp
