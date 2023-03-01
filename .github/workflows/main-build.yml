@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@8f144f8401c4e3693085dff03603f617f566ec6b
+      uses: step-security/harden-runner@cbe522639944d3247f1f8832639650558051f9b7
       with:
         egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
@@ -31,14 +31,14 @@ jobs:
         distribution: 'temurin'
         
     - name: Cache Maven packages
-      uses: actions/cache@81b728193625a15a55fcce4c6eb6187358533785
+      uses: actions/cache@e0d62270e20d6eeecf2fd6397a1b8871b6269e38
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
     
     - name: Cache SonarCloud packages
-      uses: actions/cache@81b728193625a15a55fcce4c6eb6187358533785
+      uses: actions/cache@e0d62270e20d6eeecf2fd6397a1b8871b6269e38
       with:
         path: ~/.sonar/cache
         key: ${{ runner.os }}-sonar
@@ -52,4 +52,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         
-    - uses: codecov/codecov-action@83bb3d021028f9dc6dbb1d70855155d0cab6e627
+    - uses: codecov/codecov-action@4b062cb89c1fe1fd7da7e013d554a088ea14178a
