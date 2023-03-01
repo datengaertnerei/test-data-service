@@ -1,9 +1,11 @@
-# Maven Site
+# Test Data Generator DevOps Site
 
-Generated Maven Site Reports
+This is the build site of the [Test Data Service](https://github.com/datengaertnerei/test-data-service). It will contain all information about the current build results.
 
-[REST API Documentation](api.html)
+## API Documentation
 
-[REST API OpenAPI Spec](test-data-service-oas.json)
+There is a [REST API Documentation](api.html) based on the [REST API OpenAPI Spec](test-data-service-oas.json).
 
-[CycloneDX SBOM JSON](test-data-service-bom.json) [CycloneDX SBOM XML](test-data-service-bom.xml)
+## Software bill of material
+
+The build process export bill of material files in CycloneDX format for [frontend](frontend-sbom.json) and [backend](test-data-service-bom.json).
