@@ -18,7 +18,7 @@ jobs:
     - name: Harden Runner
       uses: step-security/harden-runner@cbe522639944d3247f1f8832639650558051f9b7
       with:
-        egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+        egress-policy: block
 
     - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
       with:
@@ -44,6 +44,7 @@ jobs:
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
     
+    # Next step will start build & deploy maven site with additional artifacts for the Maven site
     - name: Build and analyze dev
       run: |
         git config --global user.email "jens.dibbern@gmail.com"

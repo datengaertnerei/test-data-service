@@ -60,6 +60,7 @@ public class PersonGenerator implements IPersonGenerator {
 	private static final String RES_SURNAMES = "surnames.txt";
 	private static final String RES_PROFESSIONS = "profession.txt";
 	private static final String FEMALE = "female";
+	private static final String NON_BINARY = "non-binary";
 	private static final String MALE = "male";
 	private static final Object EMAIL_TEST = "@email.test";
 
@@ -325,13 +326,19 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return
 	 */
 	private Person createBasicPerson(AgeRange range) {
-		String gender = random.nextBoolean() ? MALE : FEMALE; // (add diverse if you like)
+		String gender = random.nextBoolean() ? MALE : FEMALE; 
 		String firstname;
 		if (MALE.equals(gender)) {
 			firstname = maleNames.get(random.nextInt(maleNames.size())).trim();
 		} else {
 			firstname = femaleNames.get(random.nextInt(femaleNames.size())).trim();
 		}
+		
+		// turn to non-binary for 5%
+		if(random.nextFloat(1F) > 0.95F) {
+			gender = NON_BINARY;
+		}
+		
 		String surname = surnames.get(random.nextInt(surnames.size())).trim();
 
 		String eyecolor = eyecolors.get(random.nextInt(eyecolors.size())).trim();
