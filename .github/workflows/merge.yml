@@ -27,17 +27,17 @@ jobs:
         disable-sudo: true
         egress-policy: block
         allowed-endpoints: >
-        api.github.com:443
-        files.pythonhosted.org:443
-        github.com:443
-        playwright.azureedge.net:443
-        pypi.org:443
-        raw.githubusercontent.com:443
-        registry.npmjs.org:443
-        registry.yarnpkg.com:443
-        repo.maven.apache.org:443
-        repo.spring.io:443
-        www.google-analytics.com:443
+          api.github.com:443
+          files.pythonhosted.org:443
+          github.com:443
+          playwright.azureedge.net:443
+          pypi.org:443
+          raw.githubusercontent.com:443
+          registry.npmjs.org:443
+          registry.yarnpkg.com:443
+          repo.maven.apache.org:443
+          repo.spring.io:443
+          www.google-analytics.com:443
         
     - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
     - name: Set up JDK 17
