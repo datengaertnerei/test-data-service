@@ -16,8 +16,23 @@ jobs:
     - name: Harden Runner
       uses: step-security/harden-runner@cbe522639944d3247f1f8832639650558051f9b7
       with:
+        disable-sudo: true
         egress-policy: block
-
+        allowed-endpoints: >
+          api.github.com:443
+          github.com:443
+          maven.pkg.github.com:443
+          playwright.azureedge.net:443
+          raw.githubusercontent.com:443
+          registry.npmjs.org:443
+          registry.yarnpkg.com:443
+          repo.maven.apache.org:443
+          repo.spring.io:443
+          repository.apache.org:443
+          repository.jboss.org:443
+          repository.sonatype.org:443
+          www.google-analytics.com:443
+      
     - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
     
     - name: Set up JDK 17

@@ -15,7 +15,14 @@ jobs:
       - name: Harden Runner
         uses: step-security/harden-runner@cbe522639944d3247f1f8832639650558051f9b7
         with:
+          disable-sudo: true
           egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            files.pythonhosted.org:443
+            github.com:443
+            pypi.org:443
+            www.bundesbank.de:443          
 
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
 
