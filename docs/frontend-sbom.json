@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:a14cbe37-ffa0-4a70-b9b4-2bfd7a6c7d97",
+  "serialNumber": "urn:uuid:88851b6c-082d-45b3-a40f-e908630f7be8",
   "metadata": {
-    "timestamp": "2023-03-08T08:34:01.409Z",
+    "timestamp": "2023-03-08T15:54:21.328Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
@@ -5882,8 +5882,8 @@
       "type": "library",
       "name": "dom",
       "group": "@testing-library",
-      "version": "9.0.0",
-      "bom-ref": "@testing-library/dom@9.0.0",
+      "version": "9.0.1",
+      "bom-ref": "@testing-library/dom@9.0.1",
       "author": "Kent C. Dodds",
       "description": "Simple and complete DOM testing utilities that encourage good testing practices.",
       "licenses": [
@@ -5893,7 +5893,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40testing-library/dom@9.0.0",
+      "purl": "pkg:npm/%40testing-library/dom@9.0.1",
       "externalReferences": [
         {
           "url": "git+https://github.com/testing-library/dom-testing-library.git",
@@ -5911,7 +5911,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@testing-library/dom/-/dom-9.0.0.tgz",
+          "url": "https://registry.npmjs.org/@testing-library/dom/-/dom-9.0.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -8013,18 +8013,18 @@
     {
       "type": "library",
       "name": "lz-string",
-      "version": "1.4.4",
-      "bom-ref": "lz-string@1.4.4",
+      "version": "1.5.0",
+      "bom-ref": "lz-string@1.5.0",
       "author": "pieroxy",
       "description": "LZ-based compression algorithm",
       "licenses": [
         {
           "license": {
-            "id": "WTFPL"
+            "id": "MIT"
           }
         }
       ],
-      "purl": "pkg:npm/lz-string@1.4.4",
+      "purl": "pkg:npm/lz-string@1.5.0",
       "externalReferences": [
         {
           "url": "git+https://github.com/pieroxy/lz-string.git",
@@ -8042,7 +8042,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/lz-string/-/lz-string-1.4.4.tgz",
+          "url": "https://registry.npmjs.org/lz-string/-/lz-string-1.5.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -9830,6 +9830,97 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@testing-library/react"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "dom",
+          "group": "@testing-library",
+          "version": "9.0.0",
+          "bom-ref": "@testing-library/react@14.0.0|@testing-library/dom@9.0.0",
+          "author": "Kent C. Dodds",
+          "description": "Simple and complete DOM testing utilities that encourage good testing practices.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40testing-library/dom@9.0.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/testing-library/dom-testing-library.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/testing-library/dom-testing-library#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/testing-library/dom-testing-library/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@testing-library/dom/-/dom-9.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@testing-library/react/node_modules/@testing-library/dom"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "lz-string",
+          "version": "1.4.4",
+          "bom-ref": "@testing-library/react@14.0.0|lz-string@1.4.4",
+          "author": "pieroxy",
+          "description": "LZ-based compression algorithm",
+          "licenses": [
+            {
+              "license": {
+                "id": "WTFPL"
+              }
+            }
+          ],
+          "purl": "pkg:npm/lz-string@1.4.4",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/pieroxy/lz-string.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "http://pieroxy.net/blog/pages/lz-string/index.html",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/pieroxy/lz-string/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/lz-string/-/lz-string-1.4.4.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@testing-library/react/node_modules/lz-string"
+            }
+          ]
         }
       ]
     },
@@ -67363,7 +67454,7 @@
         "@mui/icons-material@5.11.11",
         "@mui/material@5.11.12",
         "@mui/styles@5.11.12",
-        "@testing-library/dom@9.0.0",
+        "@testing-library/dom@9.0.1",
         "@testing-library/jest-dom@5.16.5",
         "@testing-library/react@14.0.0",
         "@testing-library/user-event@14.4.3",
@@ -68262,7 +68353,7 @@
       "ref": "is-in-browser@1.1.3"
     },
     {
-      "ref": "@testing-library/dom@9.0.0",
+      "ref": "@testing-library/dom@9.0.1",
       "dependsOn": [
         "@babel/code-frame@7.18.6",
         "@babel/runtime@7.20.7",
@@ -68270,7 +68361,7 @@
         "aria-query@5.1.3",
         "chalk@4.1.2",
         "dom-accessibility-api@0.5.14",
-        "lz-string@1.4.4",
+        "lz-string@1.5.0",
         "pretty-format@27.5.1"
       ]
     },
@@ -68569,7 +68660,7 @@
       "ref": "dom-accessibility-api@0.5.14"
     },
     {
-      "ref": "lz-string@1.4.4"
+      "ref": "lz-string@1.5.0"
     },
     {
       "ref": "pretty-format@27.5.1",
@@ -68802,11 +68893,27 @@
       "ref": "@testing-library/react@14.0.0",
       "dependsOn": [
         "@babel/runtime@7.20.7",
-        "@testing-library/dom@9.0.0",
+        "@testing-library/react@14.0.0|@testing-library/dom@9.0.0",
         "@types/react-dom@18.0.10",
         "react-dom@18.2.0",
         "react@18.2.0"
       ]
+    },
+    {
+      "ref": "@testing-library/react@14.0.0|@testing-library/dom@9.0.0",
+      "dependsOn": [
+        "@babel/code-frame@7.18.6",
+        "@babel/runtime@7.20.7",
+        "@types/aria-query@5.0.1",
+        "aria-query@5.1.3",
+        "chalk@4.1.2",
+        "dom-accessibility-api@0.5.14",
+        "@testing-library/react@14.0.0|lz-string@1.4.4",
+        "pretty-format@27.5.1"
+      ]
+    },
+    {
+      "ref": "@testing-library/react@14.0.0|lz-string@1.4.4"
     },
     {
       "ref": "@types/react-dom@18.0.10",
@@ -68817,7 +68924,7 @@
     {
       "ref": "@testing-library/user-event@14.4.3",
       "dependsOn": [
-        "@testing-library/dom@9.0.0"
+        "@testing-library/dom@9.0.1"
       ]
     },
     {
