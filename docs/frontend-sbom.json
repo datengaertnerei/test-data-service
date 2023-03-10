@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:e0d20754-da55-40db-8e4e-63c3b324c1b4",
+  "serialNumber": "urn:uuid:b756dd8f-bc43-4a5c-821f-b8f4f3b3d6a2",
   "metadata": {
-    "timestamp": "2023-03-10T07:04:29.606Z",
+    "timestamp": "2023-03-10T10:16:01.542Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
@@ -10016,8 +10016,8 @@
     {
       "type": "library",
       "name": "autoprefixer",
-      "version": "10.4.13",
-      "bom-ref": "autoprefixer@10.4.13",
+      "version": "10.4.14",
+      "bom-ref": "autoprefixer@10.4.14",
       "author": "Andrey Sitnik",
       "description": "Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website",
       "licenses": [
@@ -10027,7 +10027,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/autoprefixer@10.4.13",
+      "purl": "pkg:npm/autoprefixer@10.4.14",
       "externalReferences": [
         {
           "url": "git+https://github.com/postcss/autoprefixer.git",
@@ -10045,7 +10045,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.13.tgz",
+          "url": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.14.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -10054,6 +10054,140 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/autoprefixer"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "browserslist",
+          "version": "4.21.5",
+          "bom-ref": "autoprefixer@10.4.14|browserslist@4.21.5",
+          "author": "Andrey Sitnik",
+          "description": "Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-env-preset",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/browserslist@4.21.5",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/browserslist/browserslist.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/browserslist/browserslist#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/browserslist/browserslist/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/browserslist/-/browserslist-4.21.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/autoprefixer/node_modules/browserslist"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "electron-to-chromium",
+          "version": "1.4.327",
+          "bom-ref": "autoprefixer@10.4.14|electron-to-chromium@1.4.327",
+          "author": "Kilian Valkhof",
+          "description": "Provides a list of electron-to-chromium version mappings",
+          "licenses": [
+            {
+              "license": {
+                "id": "ISC"
+              }
+            }
+          ],
+          "purl": "pkg:npm/electron-to-chromium@1.4.327",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/kilian/electron-to-chromium.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/kilian/electron-to-chromium#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/kilian/electron-to-chromium/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.327.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/autoprefixer/node_modules/electron-to-chromium"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "node-releases",
+          "version": "2.0.10",
+          "bom-ref": "autoprefixer@10.4.14|node-releases@2.0.10",
+          "author": "Sergey Rubanov",
+          "description": "Node.js releases data",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/node-releases@2.0.10",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chicoxyzzy/node-releases.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chicoxyzzy/node-releases#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chicoxyzzy/node-releases/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.10.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/autoprefixer/node_modules/node-releases"
+            }
+          ]
         }
       ]
     },
@@ -10098,94 +10232,6 @@
     },
     {
       "type": "library",
-      "name": "electron-to-chromium",
-      "version": "1.4.284",
-      "bom-ref": "electron-to-chromium@1.4.284",
-      "author": "Kilian Valkhof",
-      "description": "Provides a list of electron-to-chromium version mappings",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:npm/electron-to-chromium@1.4.284",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/kilian/electron-to-chromium.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/kilian/electron-to-chromium#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/kilian/electron-to-chromium/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.284.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/electron-to-chromium"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "node-releases",
-      "version": "2.0.8",
-      "bom-ref": "node-releases@2.0.8",
-      "author": "Sergey Rubanov",
-      "description": "Node.js releases data",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/node-releases@2.0.8",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/chicoxyzzy/node-releases.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/chicoxyzzy/node-releases#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/chicoxyzzy/node-releases/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.8.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/node-releases"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "update-browserslist-db",
       "version": "1.0.10",
       "bom-ref": "update-browserslist-db@1.0.10",
@@ -10225,6 +10271,135 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/update-browserslist-db"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "browserslist",
+          "version": "4.21.5",
+          "bom-ref": "update-browserslist-db@1.0.10|browserslist@4.21.5",
+          "author": "Andrey Sitnik",
+          "description": "Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-env-preset",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/browserslist@4.21.5?vcs_url=git%2Bhttps%3A//github.com/browserslist/browserslist.git",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/browserslist/browserslist.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/browserslist/browserslist#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/browserslist/browserslist/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/update-browserslist-db/node_modules/browserslist"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "electron-to-chromium",
+          "version": "1.4.327",
+          "bom-ref": "update-browserslist-db@1.0.10|electron-to-chromium@1.4.327",
+          "author": "Kilian Valkhof",
+          "description": "Provides a list of electron-to-chromium version mappings",
+          "licenses": [
+            {
+              "license": {
+                "id": "ISC"
+              }
+            }
+          ],
+          "purl": "pkg:npm/electron-to-chromium@1.4.327",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/kilian/electron-to-chromium.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/kilian/electron-to-chromium#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/kilian/electron-to-chromium/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.327.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/update-browserslist-db/node_modules/electron-to-chromium"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "node-releases",
+          "version": "2.0.10",
+          "bom-ref": "update-browserslist-db@1.0.10|node-releases@2.0.10",
+          "author": "Sergey Rubanov",
+          "description": "Node.js releases data",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/node-releases@2.0.10",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chicoxyzzy/node-releases.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chicoxyzzy/node-releases#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chicoxyzzy/node-releases/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.10.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/update-browserslist-db/node_modules/node-releases"
+            }
+          ]
         }
       ]
     },
@@ -16077,6 +16252,50 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/react-scripts/node_modules/@csstools/postcss-unset-value"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "autoprefixer",
+          "version": "10.4.13",
+          "bom-ref": "react-scripts@5.0.1|autoprefixer@10.4.13",
+          "author": "Andrey Sitnik",
+          "description": "Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/autoprefixer@10.4.13",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/postcss/autoprefixer.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/postcss/autoprefixer#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/postcss/autoprefixer/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.13.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/autoprefixer"
             }
           ]
         },
@@ -32990,6 +33209,94 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/tryer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "electron-to-chromium",
+      "version": "1.4.284",
+      "bom-ref": "electron-to-chromium@1.4.284",
+      "author": "Kilian Valkhof",
+      "description": "Provides a list of electron-to-chromium version mappings",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "purl": "pkg:npm/electron-to-chromium@1.4.284",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/kilian/electron-to-chromium.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/kilian/electron-to-chromium#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/kilian/electron-to-chromium/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.284.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/electron-to-chromium"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "node-releases",
+      "version": "2.0.8",
+      "bom-ref": "node-releases@2.0.8",
+      "author": "Sergey Rubanov",
+      "description": "Node.js releases data",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/node-releases@2.0.8",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/chicoxyzzy/node-releases.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/chicoxyzzy/node-releases#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/chicoxyzzy/node-releases/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.8.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/node-releases"
         }
       ]
     },
@@ -68420,7 +68727,7 @@
         "@testing-library/jest-dom@5.16.5",
         "@testing-library/react@14.0.0",
         "@testing-library/user-event@14.4.3",
-        "autoprefixer@10.4.13",
+        "autoprefixer@10.4.14",
         "postcss@8.4.21",
         "react-dom@18.2.0",
         "react-router@6.8.2",
@@ -69890,9 +70197,9 @@
       ]
     },
     {
-      "ref": "autoprefixer@10.4.13",
+      "ref": "autoprefixer@10.4.14",
       "dependsOn": [
-        "browserslist@4.21.4",
+        "autoprefixer@10.4.14|browserslist@4.21.5",
         "caniuse-lite@1.0.30001464",
         "fraction.js@4.2.0",
         "normalize-range@0.1.2",
@@ -69902,21 +70209,45 @@
       ]
     },
     {
+      "ref": "autoprefixer@10.4.14|browserslist@4.21.5",
+      "dependsOn": [
+        "caniuse-lite@1.0.30001464",
+        "autoprefixer@10.4.14|electron-to-chromium@1.4.327",
+        "autoprefixer@10.4.14|node-releases@2.0.10",
+        "update-browserslist-db@1.0.10"
+      ]
+    },
+    {
+      "ref": "autoprefixer@10.4.14|electron-to-chromium@1.4.327"
+    },
+    {
+      "ref": "autoprefixer@10.4.14|node-releases@2.0.10"
+    },
+    {
       "ref": "caniuse-lite@1.0.30001464"
-    },
-    {
-      "ref": "electron-to-chromium@1.4.284"
-    },
-    {
-      "ref": "node-releases@2.0.8"
     },
     {
       "ref": "update-browserslist-db@1.0.10",
       "dependsOn": [
-        "browserslist@4.21.4",
+        "update-browserslist-db@1.0.10|browserslist@4.21.5",
         "escalade@3.1.1",
         "picocolors@1.0.0"
       ]
+    },
+    {
+      "ref": "update-browserslist-db@1.0.10|browserslist@4.21.5",
+      "dependsOn": [
+        "caniuse-lite@1.0.30001464",
+        "update-browserslist-db@1.0.10|electron-to-chromium@1.4.327",
+        "update-browserslist-db@1.0.10|node-releases@2.0.10",
+        "update-browserslist-db@1.0.10"
+      ]
+    },
+    {
+      "ref": "update-browserslist-db@1.0.10|electron-to-chromium@1.4.327"
+    },
+    {
+      "ref": "update-browserslist-db@1.0.10|node-releases@2.0.10"
     },
     {
       "ref": "escalade@3.1.1"
@@ -70960,7 +71291,7 @@
         "react-scripts@5.0.1|@csstools/postcss-text-decoration-shorthand@1.0.0",
         "react-scripts@5.0.1|@csstools/postcss-trigonometric-functions@1.0.2",
         "react-scripts@5.0.1|@csstools/postcss-unset-value@1.0.2",
-        "autoprefixer@10.4.13",
+        "react-scripts@5.0.1|autoprefixer@10.4.13",
         "browserslist@4.21.4",
         "react-scripts@5.0.1|css-blank-pseudo@3.0.3",
         "react-scripts@5.0.1|css-has-pseudo@3.0.4",
@@ -71104,6 +71435,18 @@
     {
       "ref": "react-scripts@5.0.1|@csstools/postcss-unset-value@1.0.2",
       "dependsOn": [
+        "react-scripts@5.0.1|postcss@8.4.20"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|autoprefixer@10.4.13",
+      "dependsOn": [
+        "browserslist@4.21.4",
+        "caniuse-lite@1.0.30001464",
+        "fraction.js@4.2.0",
+        "normalize-range@0.1.2",
+        "picocolors@1.0.0",
+        "postcss-value-parser@4.2.0",
         "react-scripts@5.0.1|postcss@8.4.20"
       ]
     },
@@ -74068,6 +74411,12 @@
     },
     {
       "ref": "tryer@1.0.1"
+    },
+    {
+      "ref": "electron-to-chromium@1.4.284"
+    },
+    {
+      "ref": "node-releases@2.0.8"
     },
     {
       "ref": "case-sensitive-paths-webpack-plugin@2.4.0"
