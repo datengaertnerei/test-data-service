@@ -51,7 +51,8 @@ jobs:
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
-        mvn -B deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        mvn -B --log-file ./mvn-build.log deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dorg.slf4j.simpleLogger.defaultLogLevel=warn
+        cp ./mvn-build.log target/site/mvn-build.log
         npm install --global @cyclonedx/cyclonedx-npm
         cyclonedx-npm --output-file target/site/frontend-sbom.json --ignore-npm-errors src/app/package.json
         mkdir ~/site-tmp
