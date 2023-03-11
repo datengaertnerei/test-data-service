@@ -8,7 +8,7 @@ import java.util.Random;
  *
  */
 public class TaxIdGenerator {
-	private static final String DEFAULT_TAX_ID = &quot;12345678911&quot;;
+	public static final String DEFAULT_TAX_ID = &quot;12345678911&quot;;
 	private Random random;
 
 	/**
@@ -41,7 +41,7 @@ public class TaxIdGenerator {
 <span class="fc" id="L41">		result[9] = result[random.nextInt(8)];</span>
 
 <span class="fc" id="L43">		result[10] = calcChecksum(result);</span>
-<span class="fc" id="L44">		return Arrays.stream(result).mapToObj(String::valueOf).reduce((a, b) -&gt; a.concat(b)).orElse(DEFAULT_TAX_ID);</span>
+<span class="fc" id="L44">		return Arrays.stream(result).mapToObj(String::valueOf).reduce(String::concat).orElse(DEFAULT_TAX_ID);</span>
 	}
 
 	// checksum algorithm as described in

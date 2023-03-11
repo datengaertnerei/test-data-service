@@ -16,7 +16,7 @@
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="TaxIdGenerator" href="../../../../../com/datengaertnerei/test/dataservice/person/TaxIdGenerator.html#TaxIdGenerator">TaxIdGenerator</a> {
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String DEFAULT_TAX_ID = <span class="jxr_string">"12345678911"</span>;
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String DEFAULT_TAX_ID = <span class="jxr_string">"12345678911"</span>;
 <a class="jxr_linenumber" name="L12" href="#L12">12</a>  	<strong class="jxr_keyword">private</strong> Random random;
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  	<em class="jxr_javadoccomment">/**</em>
@@ -49,7 +49,7 @@
 <a class="jxr_linenumber" name="L41" href="#L41">41</a>  		result[9] = result[random.nextInt(8)];
 <a class="jxr_linenumber" name="L42" href="#L42">42</a>  
 <a class="jxr_linenumber" name="L43" href="#L43">43</a>  		result[10] = calcChecksum(result);
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>  		<strong class="jxr_keyword">return</strong> Arrays.stream(result).mapToObj(String::valueOf).reduce((a, b) -&gt; a.concat(b)).orElse(DEFAULT_TAX_ID);
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  		<strong class="jxr_keyword">return</strong> Arrays.stream(result).mapToObj(String::valueOf).reduce(String::concat).orElse(DEFAULT_TAX_ID);
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>  	}
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>  
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>  	<em class="jxr_comment">// checksum algorithm as described in</em>
