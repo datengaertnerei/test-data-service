@@ -19,7 +19,7 @@ jobs:
       uses: step-security/harden-runner@1d9871f0c592ab955b91e5744892890950701a87
       with:
         disable-sudo: true
-        egress-policy: audit #aws generic hostname unfortunately subject to change
+        egress-policy: audit #sonarcloud aws generic hostname unfortunately subject to change
 
     - uses: actions/checkout@27135e314dd1818f797af1db9dae03a9f045786b
       with:
