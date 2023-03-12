@@ -30,20 +30,29 @@ public class CucumberSpringContextConfiguration {
 	private ResponseEntity<BankAccount> response;
 	private String city;
 
+	// autowired test template (see Spring Boot doc)
 	@Autowired
 	protected TestRestTemplate restTemplate;
 
+	// local server port will be dynamic
 	@LocalServerPort
 	protected int serverPort;
 
+	// test object
 	@Autowired
 	private PostalAddressRepository repository;
 
+	// setup test env
 	@BeforeEach
 	public void before() {
 		DataImportTest.ensureDataAvailability(repository);
 	}
 	
+	/**
+	 * feature file matching "When"
+	 * 
+	 * @param city the city to fetch a bank for
+	 */
 	@When("the client asks for bank account in {word}")
 	public void getBankAccount(String city) {
 		this.city = city;
@@ -51,11 +60,17 @@ public class CucumberSpringContextConfiguration {
 				BankAccount.class);
 	}
 
+	/**
+	 * feature file matching "Then"
+	 */
 	@Then("the client receives status code OK")
 	public void theClientReceivesStatus() {
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 	}
 
+	/**
+	 * feature file matching "And"
+	 */
 	@And("the client receives bank account in this city")
 	public void theClientReceivesProduct() {
 		assertThat(response.getBody().getBank().getCity()).isEqualToIgnoringCase(city);
