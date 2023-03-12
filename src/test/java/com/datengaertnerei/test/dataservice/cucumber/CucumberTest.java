@@ -8,6 +8,10 @@ import org.junit.platform.suite.api.IncludeEngines;
 import org.junit.platform.suite.api.SelectClasspathResource;
 import org.junit.platform.suite.api.Suite;
 
+/**
+ * Boiler plate to run cucumber tests
+ *
+ */
 @Suite
 @IncludeEngines("cucumber")
 @SelectClasspathResource("com/datengaertnerei/test/dataservice/cucumber")

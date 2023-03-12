@@ -12,6 +12,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+/**
+ * Test class to test OSM dump import feature
+ *
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Tag("import")
 public class DataImportTest {
@@ -42,6 +46,11 @@ public class DataImportTest {
 		});
 	}
 
+	/**
+	 * Check for available records in repository and import test file if empty
+	 * 
+	 * @param repository the address repository
+	 */
 	public static synchronized void ensureDataAvailability(PostalAddressRepository repository) {
 		if (repository.count() == 0) {
 			try {

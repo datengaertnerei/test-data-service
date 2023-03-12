@@ -8,6 +8,7 @@ import java.util.Random;
  *
  */
 public class TaxIdGenerator {
+	// default tax id to match length
 	public static final String DEFAULT_TAX_ID = "12345678911";
 	private Random random;
 
