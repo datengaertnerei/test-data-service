@@ -2,6 +2,8 @@
 
 This is the build site of the [Test Data Service](https://github.com/datengaertnerei/test-data-service). It will contain all information about the current build results.
 
+The last [build log](mvn-build.log.txt)
+
 ## API Documentation
 
 There is a [REST API Documentation](api.html) based on the [REST API OpenAPI Spec](test-data-service-oas.json).
