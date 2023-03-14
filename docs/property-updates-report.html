@@ -79,7 +79,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td># of properties using the latest version available</td>
-<td>121</td></tr>
+<td>119</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -87,7 +87,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>8</td></tr>
+<td>10</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -1003,19 +1003,19 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${micrometer-tracing.version}</td>
 <td>1.0.2</td>
 <td></td>
-<td></td>
+<td><b>1.0.3</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${micrometer.version}</td>
 <td>1.10.4</td>
 <td></td>
-<td></td>
+<td><b>1.10.5</b></td>
 <td></td>
 <td></td></tr>
 <tr class="b">
@@ -4892,7 +4892,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${micrometer-tracing.version}</td></tr>
@@ -4903,25 +4903,28 @@
 <th width="30%">Current Version</th>
 <td align="left">1.0.2</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>1.0.3</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">1.0.2</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Bmicrometer.version.7D"></a>${micrometer.version}</h3>
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${micrometer.version}</td></tr>
@@ -4932,18 +4935,21 @@
 <th width="30%">Current Version</th>
 <td align="left">1.10.4</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>1.10.5</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">1.10.4</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Bmockito.version.7D"></a>${mockito.version}</h3>
