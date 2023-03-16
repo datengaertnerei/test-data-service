@@ -15,7 +15,6 @@ jobs:
       - name: "check PRs"
         uses: "actions/github-script@v6"
         with:
-          GITHUB_TOKEN: ${{ secrets.REL_SECRET }}
           script: |
             const repo = context.repo.repo;
             const owner = context.repo.owner;
@@ -77,3 +76,5 @@ jobs:
             }
 
             processPulls().then(console.log("processing pull requests finished"));
+        env:
+          GITHUB_TOKEN: ${{ secrets.REL_SECRET }}
