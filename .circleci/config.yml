@@ -41,7 +41,7 @@ jobs:
       # Extract Maven version
       - run:
           name: MavenVersion
-          command: export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//') && echo 'export REL_VERSION="$(MVNVER)"' >> "$BASH_ENV"
+          command: export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//') && echo 'export REL_VERSION="$MVNVER"' >> "$BASH_ENV"
       # Then run your tests!
       - run:
           name: Test
