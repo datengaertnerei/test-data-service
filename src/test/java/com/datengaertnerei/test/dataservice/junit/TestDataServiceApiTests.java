@@ -1,6 +1,8 @@
 package com.datengaertnerei.test.dataservice.junit;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -45,6 +47,7 @@ import com.datengaertnerei.test.dataservice.person.DataImportTest;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.person.PostalAddress;
 import com.datengaertnerei.test.dataservice.person.PostalAddressRepository;
+import com.datengaertnerei.test.dataservice.person.TaxIdGenerator;
 import com.datengaertnerei.test.dataservice.phone.PhoneNumber;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
@@ -97,6 +100,8 @@ class TestDataServiceApiTests {
 		Person person = restController.person(range);
 		assertThat(person).isNotNull();
 		assertThat(person.getAddress()).isNotNull();
+		assertNotEquals(person.getTaxId(),TaxIdGenerator.DEFAULT_TAX_ID);
+		assertEquals(person.getTaxId().length(),TaxIdGenerator.DEFAULT_TAX_ID.length());
 		String personString = stringifyPerson(person);
 		assertThat(persons).doesNotContain(personString);
 		addresses.add(person.getAddress());
@@ -277,7 +282,7 @@ class TestDataServiceApiTests {
 		assertThat(result.getBank()).isNotNull();
 		assertThat(result.getBank().getBic()).hasSize(11);
 		assertThat(result.getBank().getDesc()).isNotNull();
-		assertThat(checkList.contains(result.getIban())).isFalse();
+		assertThat(checkList).doesNotContain(result.getIban());
 		try {
 			IbanUtil.validate(result.getIban());
 		} catch (IbanFormatException | InvalidCheckDigitException | UnsupportedCountryException e) {
@@ -296,7 +301,7 @@ class TestDataServiceApiTests {
 		for (int i = 1; i < 5; i++) {
 			CreditCard result = restController.creditcard();
 			assertThat(result).isNotNull();
-			assertThat(checkList.contains(result.getNumber())).isFalse();
+			assertThat(checkList).doesNotContain(result.getNumber());
 			checkList.add(result.getNumber());
 		}
 

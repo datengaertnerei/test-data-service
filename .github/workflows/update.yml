@@ -13,14 +13,21 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@8f144f8401c4e3693085dff03603f617f566ec6b
+        uses: step-security/harden-runner@40a26682a9fb0236b09d568ab43f35c95881fff6
         with:
-          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            files.pythonhosted.org:443
+            github.com:443
+            pypi.org:443
+            www.bundesbank.de:443          
 
-      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+      - uses: actions/checkout@27135e314dd1818f797af1db9dae03a9f045786b
 
       - name: Set up Python 
-        uses: actions/setup-python@3faddefb4c02470d61266571df739b19e3a006be
+        uses: actions/setup-python@03eb867e3d1d557bdb958602013c4b401deef7a0
         with:
           python-version: 3.x
           
@@ -33,11 +40,12 @@ jobs:
           python blz_fetcher.py
           wc -l banklist.csv
           if [[ $(wc -l < banklist.csv) -ge 100 ]];then  
+            git pull origin update-data
             cp banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
             git config --global user.email "jens.dibbern@gmail.com"
             git config --global user.name "datengaertnerei"
             git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank
-            git push --set-upstream origin update-data    
+            git push --set-upstream origin update-data
           fi
         env:        
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

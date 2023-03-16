@@ -173,7 +173,7 @@ public class PostalAddress implements Comparable<PostalAddress> {
 
 	@Override
 	public boolean equals(Object target) {
-		if (target instanceof PostalAddress) {
+		if (target instanceof PostalAddress postaladdress) {
 			return compareTo((PostalAddress) target) == 0;
 		} else {
 			return false;
