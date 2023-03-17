@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@40a26682a9fb0236b09d568ab43f35c95881fff6
+        uses: step-security/harden-runner@8e0b4153524c217e5dce81df0986478e95a7004a
         with:
           disable-sudo: true
           egress-policy: block
@@ -24,10 +24,10 @@ jobs:
             pypi.org:443
             www.bundesbank.de:443          
 
-      - uses: actions/checkout@27135e314dd1818f797af1db9dae03a9f045786b
+      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f
 
       - name: Set up Python 
-        uses: actions/setup-python@03eb867e3d1d557bdb958602013c4b401deef7a0
+        uses: actions/setup-python@dfa76f8d0df0f92390ab2d42e57c6537748ecc71
         with:
           python-version: 3.x
           
