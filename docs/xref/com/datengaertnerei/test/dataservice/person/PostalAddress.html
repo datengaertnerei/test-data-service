@@ -31,25 +31,25 @@
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>  
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>  <strong class="jxr_keyword">package</strong> com.datengaertnerei.test.dataservice.person;
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>  
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.Entity;
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.GeneratedValue;
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.GenerationType;
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.Id;
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.Index;
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.Table;
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>  
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <strong class="jxr_keyword">import</strong> com.fasterxml.jackson.annotation.JsonIgnore;
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>  
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>  <strong class="jxr_keyword">import</strong> io.swagger.v3.oas.annotations.media.Schema;
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>  
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>  <em class="jxr_javadoccomment"> * Postal address entity class for persistence inspired by</em>
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>  <em class="jxr_javadoccomment"> * &lt;a href="<a href="https://schema.org/PostalAddress" target="alexandria_uri">https://schema.org/PostalAddress</a>"&gt;postal address schema&lt;/a&gt;.</em>
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>  <em class="jxr_javadoccomment"> *</em>
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>  <em class="jxr_javadoccomment"> * @author Jens Dibbern</em>
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>  @Entity
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>  @Table(indexes = { @Index(columnList = <span class="jxr_string">"addressLocality"</span>, name = <span class="jxr_string">"idx_pa_al"</span>), @Index(columnList = <span class="jxr_string">"postalCode"</span>, name = <span class="jxr_string">"idx_pa_pc"</span>) })
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">import</strong> com.fasterxml.jackson.annotation.JsonIgnore;
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  <strong class="jxr_keyword">import</strong> io.swagger.v3.oas.annotations.media.Schema;
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.Entity;
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.GeneratedValue;
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.GenerationType;
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.Id;
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.Index;
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>  <strong class="jxr_keyword">import</strong> jakarta.persistence.Table;
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>  
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>  <em class="jxr_javadoccomment"> * Postal address entity class for persistence inspired by</em>
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>  <em class="jxr_javadoccomment"> * &lt;a href="<a href="https://schema.org/PostalAddress" target="alexandria_uri">https://schema.org/PostalAddress</a>"&gt;postal address schema&lt;/a&gt;.</em>
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>  <em class="jxr_javadoccomment"> * @author Jens Dibbern</em>
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>  @Entity
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>  @Table(indexes = { @Index(columnList = <span class="jxr_string">"addressLocality"</span>, name = <span class="jxr_string">"idx_pa_al"</span>),
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>  		@Index(columnList = <span class="jxr_string">"postalCode"</span>, name = <span class="jxr_string">"idx_pa_pc"</span>) })
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>  @Schema(description = <span class="jxr_string">"postal address (see &lt;a href=\&quot;https://schema.org/PostalAddress\&quot;&gt;https://schema.org/PostalAddress&lt;/a&gt;)"</span>)
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> PostalAddress <strong class="jxr_keyword">implements</strong> Comparable&lt;PostalAddress&gt; {
 <a class="jxr_linenumber" name="L47" href="#L47">47</a>  
@@ -181,25 +181,27 @@
 <a class="jxr_linenumber" name="L173" href="#L173">173</a> 
 <a class="jxr_linenumber" name="L174" href="#L174">174</a> 	@Override
 <a class="jxr_linenumber" name="L175" href="#L175">175</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> equals(Object target) {
-<a class="jxr_linenumber" name="L176" href="#L176">176</a> 		<strong class="jxr_keyword">if</strong> (target instanceof PostalAddress postaladdress) {
-<a class="jxr_linenumber" name="L177" href="#L177">177</a> 			<strong class="jxr_keyword">return</strong> compareTo((PostalAddress) target) == 0;
-<a class="jxr_linenumber" name="L178" href="#L178">178</a> 		} <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="L179" href="#L179">179</a> 			<strong class="jxr_keyword">return</strong> false;
-<a class="jxr_linenumber" name="L180" href="#L180">180</a> 		}
-<a class="jxr_linenumber" name="L181" href="#L181">181</a> 	}
-<a class="jxr_linenumber" name="L182" href="#L182">182</a> 
-<a class="jxr_linenumber" name="L183" href="#L183">183</a> 	@Override
-<a class="jxr_linenumber" name="L184" href="#L184">184</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> hashCode() {
-<a class="jxr_linenumber" name="L185" href="#L185">185</a> 		<strong class="jxr_keyword">return</strong> toString().hashCode();
-<a class="jxr_linenumber" name="L186" href="#L186">186</a> 	}
-<a class="jxr_linenumber" name="L187" href="#L187">187</a> 
-<a class="jxr_linenumber" name="L188" href="#L188">188</a> 	@Override
-<a class="jxr_linenumber" name="L189" href="#L189">189</a> 	<strong class="jxr_keyword">public</strong> String toString() {
-<a class="jxr_linenumber" name="L190" href="#L190">190</a> 		StringBuilder result = <strong class="jxr_keyword">new</strong> StringBuilder().append(<strong class="jxr_keyword">this</strong>.getAddressCountry()).append(<strong class="jxr_keyword">this</strong>.getAddressLocality())
-<a class="jxr_linenumber" name="L191" href="#L191">191</a> 				.append(<strong class="jxr_keyword">this</strong>.getPostalCode()).append(<strong class="jxr_keyword">this</strong>.getStreetAddress()).append(<strong class="jxr_keyword">this</strong>.getHouseNumber());
-<a class="jxr_linenumber" name="L192" href="#L192">192</a> 		<strong class="jxr_keyword">return</strong> result.toString();
-<a class="jxr_linenumber" name="L193" href="#L193">193</a> 	}
-<a class="jxr_linenumber" name="L194" href="#L194">194</a> }
+<a class="jxr_linenumber" name="L176" href="#L176">176</a> 		<strong class="jxr_keyword">if</strong> (target == <strong class="jxr_keyword">null</strong>)
+<a class="jxr_linenumber" name="L177" href="#L177">177</a> 			<strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="L178" href="#L178">178</a> 
+<a class="jxr_linenumber" name="L179" href="#L179">179</a> 		<strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">this</strong>.getClass() != target.getClass())
+<a class="jxr_linenumber" name="L180" href="#L180">180</a> 			<strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="L181" href="#L181">181</a> 
+<a class="jxr_linenumber" name="L182" href="#L182">182</a> 		<strong class="jxr_keyword">return</strong> compareTo((PostalAddress) target) == 0;
+<a class="jxr_linenumber" name="L183" href="#L183">183</a> 	}
+<a class="jxr_linenumber" name="L184" href="#L184">184</a> 
+<a class="jxr_linenumber" name="L185" href="#L185">185</a> 	@Override
+<a class="jxr_linenumber" name="L186" href="#L186">186</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> hashCode() {
+<a class="jxr_linenumber" name="L187" href="#L187">187</a> 		<strong class="jxr_keyword">return</strong> toString().hashCode();
+<a class="jxr_linenumber" name="L188" href="#L188">188</a> 	}
+<a class="jxr_linenumber" name="L189" href="#L189">189</a> 
+<a class="jxr_linenumber" name="L190" href="#L190">190</a> 	@Override
+<a class="jxr_linenumber" name="L191" href="#L191">191</a> 	<strong class="jxr_keyword">public</strong> String toString() {
+<a class="jxr_linenumber" name="L192" href="#L192">192</a> 		StringBuilder result = <strong class="jxr_keyword">new</strong> StringBuilder().append(<strong class="jxr_keyword">this</strong>.getAddressCountry()).append(<strong class="jxr_keyword">this</strong>.getAddressLocality())
+<a class="jxr_linenumber" name="L193" href="#L193">193</a> 				.append(<strong class="jxr_keyword">this</strong>.getPostalCode()).append(<strong class="jxr_keyword">this</strong>.getStreetAddress()).append(<strong class="jxr_keyword">this</strong>.getHouseNumber());
+<a class="jxr_linenumber" name="L194" href="#L194">194</a> 		<strong class="jxr_keyword">return</strong> result.toString();
+<a class="jxr_linenumber" name="L195" href="#L195">195</a> 	}
+<a class="jxr_linenumber" name="L196" href="#L196">196</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2018&#x2013;2023 <a href="http://www.datengaertnerei.com/">Datengärtnerei</a>. All rights reserved.</div>

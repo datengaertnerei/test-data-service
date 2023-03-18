@@ -108,8 +108,8 @@
 <a class="jxr_linenumber" name="L100" href="#L100">100</a> 		Person person = restController.person(range);
 <a class="jxr_linenumber" name="L101" href="#L101">101</a> 		assertThat(person).isNotNull();
 <a class="jxr_linenumber" name="L102" href="#L102">102</a> 		assertThat(person.getAddress()).isNotNull();
-<a class="jxr_linenumber" name="L103" href="#L103">103</a> 		assertNotEquals(person.getTaxId(),TaxIdGenerator.DEFAULT_TAX_ID);
-<a class="jxr_linenumber" name="L104" href="#L104">104</a> 		assertEquals(person.getTaxId().length(),TaxIdGenerator.DEFAULT_TAX_ID.length());
+<a class="jxr_linenumber" name="L103" href="#L103">103</a> 		assertNotEquals(TaxIdGenerator.DEFAULT_TAX_ID, person.getTaxId());
+<a class="jxr_linenumber" name="L104" href="#L104">104</a> 		assertEquals(TaxIdGenerator.DEFAULT_TAX_ID.length(), person.getTaxId().length());
 <a class="jxr_linenumber" name="L105" href="#L105">105</a> 		String personString = stringifyPerson(person);
 <a class="jxr_linenumber" name="L106" href="#L106">106</a> 		assertThat(persons).doesNotContain(personString);
 <a class="jxr_linenumber" name="L107" href="#L107">107</a> 		addresses.add(person.getAddress());

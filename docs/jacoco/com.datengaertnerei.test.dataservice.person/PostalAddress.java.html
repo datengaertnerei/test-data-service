@@ -23,16 +23,15 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice.person;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
  * Postal address entity class for persistence inspired by
@@ -41,7 +40,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author Jens Dibbern
  */
 @Entity
-@Table(indexes = { @Index(columnList = &quot;addressLocality&quot;, name = &quot;idx_pa_al&quot;), @Index(columnList = &quot;postalCode&quot;, name = &quot;idx_pa_pc&quot;) })
+@Table(indexes = { @Index(columnList = &quot;addressLocality&quot;, name = &quot;idx_pa_al&quot;),
+		@Index(columnList = &quot;postalCode&quot;, name = &quot;idx_pa_pc&quot;) })
 @Schema(description = &quot;postal address (see &lt;a href=\&quot;https://schema.org/PostalAddress\&quot;&gt;https://schema.org/PostalAddress&lt;/a&gt;)&quot;)
 public class PostalAddress implements Comparable&lt;PostalAddress&gt; {
 
@@ -173,23 +173,25 @@ public class PostalAddress implements Comparable&lt;PostalAddress&gt; {
 
 	@Override
 	public boolean equals(Object target) {
-<span class="nc bnc" id="L176" title="All 2 branches missed.">		if (target instanceof PostalAddress postaladdress) {</span>
-<span class="nc bnc" id="L177" title="All 2 branches missed.">			return compareTo((PostalAddress) target) == 0;</span>
-		} else {
-<span class="nc" id="L179">			return false;</span>
-		}
+<span class="nc bnc" id="L176" title="All 2 branches missed.">		if (target == null)</span>
+<span class="nc" id="L177">			return false;</span>
+
+<span class="nc bnc" id="L179" title="All 2 branches missed.">		if (this.getClass() != target.getClass())</span>
+<span class="nc" id="L180">			return false;</span>
+
+<span class="nc bnc" id="L182" title="All 2 branches missed.">		return compareTo((PostalAddress) target) == 0;</span>
 	}
 
 	@Override
 	public int hashCode() {
-<span class="fc" id="L185">		return toString().hashCode();</span>
+<span class="fc" id="L187">		return toString().hashCode();</span>
 	}
 
 	@Override
 	public String toString() {
-<span class="fc" id="L190">		StringBuilder result = new StringBuilder().append(this.getAddressCountry()).append(this.getAddressLocality())</span>
-<span class="fc" id="L191">				.append(this.getPostalCode()).append(this.getStreetAddress()).append(this.getHouseNumber());</span>
-<span class="fc" id="L192">		return result.toString();</span>
+<span class="fc" id="L192">		StringBuilder result = new StringBuilder().append(this.getAddressCountry()).append(this.getAddressLocality())</span>
+<span class="fc" id="L193">				.append(this.getPostalCode()).append(this.getStreetAddress()).append(this.getHouseNumber());</span>
+<span class="fc" id="L194">		return result.toString();</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
