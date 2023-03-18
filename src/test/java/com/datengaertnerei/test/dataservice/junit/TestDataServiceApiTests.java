@@ -100,8 +100,8 @@ class TestDataServiceApiTests {
 		Person person = restController.person(range);
 		assertThat(person).isNotNull();
 		assertThat(person.getAddress()).isNotNull();
-		assertNotEquals(person.getTaxId(),TaxIdGenerator.DEFAULT_TAX_ID);
-		assertEquals(person.getTaxId().length(),TaxIdGenerator.DEFAULT_TAX_ID.length());
+		assertNotEquals(TaxIdGenerator.DEFAULT_TAX_ID, person.getTaxId());
+		assertEquals(TaxIdGenerator.DEFAULT_TAX_ID.length(), person.getTaxId().length());
 		String personString = stringifyPerson(person);
 		assertThat(persons).doesNotContain(personString);
 		addresses.add(person.getAddress());
