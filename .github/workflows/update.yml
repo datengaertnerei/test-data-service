@@ -16,13 +16,7 @@ jobs:
         uses: step-security/harden-runner@8e0b4153524c217e5dce81df0986478e95a7004a
         with:
           disable-sudo: true
-          egress-policy: block
-          allowed-endpoints: >
-            api.github.com:443
-            files.pythonhosted.org:443
-            github.com:443
-            pypi.org:443
-            www.bundesbank.de:443          
+          egress-policy: audit #outbound hosts constantly subject to change by action providers
 
       - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f
 

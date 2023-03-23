@@ -23,19 +23,7 @@ jobs:
       uses: step-security/harden-runner@8e0b4153524c217e5dce81df0986478e95a7004a
       with:
         disable-sudo: true
-        egress-policy: block
-        allowed-endpoints: >
-          api.github.com:443
-          files.pythonhosted.org:443
-          github.com:443
-          playwright.azureedge.net:443
-          pypi.org:443
-          raw.githubusercontent.com:443
-          registry.npmjs.org:443
-          registry.yarnpkg.com:443
-          repo.maven.apache.org:443
-          repo.spring.io:443
-          www.google-analytics.com:443
+        egress-policy: audit #outbound hosts constantly subject to change by action providers
         
     - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f
     - name: Set up JDK 17
