@@ -304,7 +304,7 @@ import jakarta.annotation.PostConstruct;
 <span class="fc" id="L304">		double shiftFactor = (max - min) / 3;</span>
 <span class="fc" id="L305">		double mediumAge = min + (max - min) / 2;</span>
 <span class="fc" id="L306">		age = random.nextGaussian() * shiftFactor + mediumAge;</span>
-<span class="fc bfc" id="L307" title="All 4 branches covered.">		if (age &lt; min || age &gt; max) {</span>
+<span class="pc bpc" id="L307" title="1 of 4 branches missed.">		if (age &lt; min || age &gt; max) {</span>
 			// cut off long tails
 <span class="fc" id="L309">			age = mediumAge;</span>
 		}
