@@ -18,7 +18,7 @@ jobs:
     - name: Harden Runner
       uses: step-security/harden-runner@8e0b4153524c217e5dce81df0986478e95a7004a
       with:
-        egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+        egress-policy: audit #outbound hosts constantly subject to change by action providers
 
     - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f
       with:
