@@ -35,7 +35,8 @@ jobs:
         export RELBRANCH="RB-${MVNVER}"
         mvn dependency:copy \
             -Dartifact=com.datengaertnerei.test:data-service:1.0.7 \
-            -DoutputDirectory=. 
+            -DoutputDirectory=. \
+            --global-settings .github/settings.xml
         # preserve branch and tag info
         echo ::set-output name=release_branch::$RELBRANCH
         echo ::set-output name=releasetag::V${MVNVER}
