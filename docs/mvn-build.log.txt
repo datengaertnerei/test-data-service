@@ -4,7 +4,7 @@ yarn install v1.22.19
 [3/4] Linking dependencies...
 warning " > @mui/styles@5.11.13" has incorrect peer dependency "react@^17.0.0".
 [4/4] Building fresh packages...
-Done in 111.70s.
+Done in 82.49s.
 npm WARN exec The following package was not found and will be installed: browserslist@4.21.5
 Latest version:     [1m[32m1.0.30001469[39m[22m
 Installed version:  [1m[31m1.0.30001466[39m[22m
@@ -42,16 +42,16 @@ Find out more about deployment here:
 
   https://cra.link/deployment
 
-Done in 18.37s.
-22:37:21.277 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Neither @ContextConfiguration nor @ContextHierarchy found for test class [DataImportTest]: using SpringBootContextLoader
-22:37:21.285 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader -- Could not detect default resource locations for test class [com.datengaertnerei.test.dataservice.person.DataImportTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-22:37:21.287 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.person.DataImportTest]: DataImportTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-22:37:21.341 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using ContextCustomizers for test class [DataImportTest]: [ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer]
-22:37:21.524 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider -- Identified candidate component class: file [/home/runner/work/test-data-service/test-data-service/target/classes/com/datengaertnerei/test/dataservice/DataServiceApplication.class]
-22:37:21.558 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.person.DataImportTest
-22:37:21.846 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using TestExecutionListeners for test class [DataImportTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, ResetMocksTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener]
-22:37:21.849 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener -- Before test class: class [DataImportTest], class annotated with @DirtiesContext [false] with mode [null]
-22:37:21.871 [main] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener -- Performing dependency injection for test class com.datengaertnerei.test.dataservice.person.DataImportTest
+Done in 14.61s.
+00:25:28.030 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Neither @ContextConfiguration nor @ContextHierarchy found for test class [DataImportTest]: using SpringBootContextLoader
+00:25:28.038 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader -- Could not detect default resource locations for test class [com.datengaertnerei.test.dataservice.person.DataImportTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+00:25:28.040 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.person.DataImportTest]: DataImportTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:25:28.093 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using ContextCustomizers for test class [DataImportTest]: [ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer, DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer]
+00:25:28.285 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider -- Identified candidate component class: file [/home/runner/work/test-data-service/test-data-service/target/classes/com/datengaertnerei/test/dataservice/DataServiceApplication.class]
+00:25:28.331 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.person.DataImportTest
+00:25:28.562 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using TestExecutionListeners for test class [DataImportTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, ResetMocksTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener]
+00:25:28.564 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener -- Before test class: class [DataImportTest], class annotated with @DirtiesContext [false] with mode [null]
+00:25:28.580 [main] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener -- Performing dependency injection for test class com.datengaertnerei.test.dataservice.person.DataImportTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -61,66 +61,66 @@ Done in 18.37s.
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.5)
 
-2023-03-25T22:37:22.732Z  INFO 2359 --- [           main] c.d.t.dataservice.person.DataImportTest  : Starting DataImportTest using Java 17.0.6 with PID 2359 (started by runner in /home/runner/work/test-data-service/test-data-service)
-2023-03-25T22:37:22.734Z  INFO 2359 --- [           main] c.d.t.dataservice.person.DataImportTest  : No active profile set, falling back to 1 default profile: "default"
-2023-03-25T22:37:26.591Z  INFO 2359 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-03-25T22:37:26.869Z  INFO 2359 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 265 ms. Found 1 JPA repository interfaces.
-2023-03-25T22:37:27.925Z  INFO 2359 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2023-03-25T22:37:27.963Z  INFO 2359 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-03-25T22:37:27.965Z  INFO 2359 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
-2023-03-25T22:37:28.161Z  INFO 2359 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-03-25T22:37:28.164Z  INFO 2359 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4199 ms
-2023-03-25T22:37:28.437Z  INFO 2359 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-03-25T22:37:28.537Z  INFO 2359 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
-2023-03-25T22:37:29.027Z  INFO 2359 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-03-25T22:37:29.661Z  INFO 2359 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdata user=SA
-2023-03-25T22:37:29.664Z  INFO 2359 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-03-25T22:37:29.704Z  INFO 2359 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-03-25T22:37:31.294Z  INFO 2359 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-03-25T22:37:31.315Z  INFO 2359 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-03-25T22:37:32.656Z  INFO 2359 --- [           main] c.d.t.d.person.PersonGenerator           : Importing OSM dump
-2023-03-25T22:37:34.025Z  INFO 2359 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
-2023-03-25T22:37:39.694Z  INFO 2359 --- [           main] c.d.t.d.person.PersonGenerator           : Address count: 6480
-2023-03-25T22:37:40.300Z  INFO 2359 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2023-03-25T22:37:42.780Z  INFO 2359 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 35969 (http) with context path ''
-2023-03-25T22:37:42.795Z  INFO 2359 --- [           main] c.d.t.dataservice.person.DataImportTest  : Started DataImportTest in 20.869 seconds (process running for 24.311)
-2023-03-25T22:37:42.799Z  INFO 2359 --- [           main] c.d.t.d.DataServiceApplication           : Started with bean count of 292
-2023-03-25T22:37:43.581Z  INFO 2359 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
+2023-03-26T00:25:29.264Z  INFO 2347 --- [           main] c.d.t.dataservice.person.DataImportTest  : Starting DataImportTest using Java 17.0.6 with PID 2347 (started by runner in /home/runner/work/test-data-service/test-data-service)
+2023-03-26T00:25:29.266Z  INFO 2347 --- [           main] c.d.t.dataservice.person.DataImportTest  : No active profile set, falling back to 1 default profile: "default"
+2023-03-26T00:25:32.777Z  INFO 2347 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-26T00:25:33.033Z  INFO 2347 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 242 ms. Found 1 JPA repository interfaces.
+2023-03-26T00:25:34.089Z  INFO 2347 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-03-26T00:25:34.120Z  INFO 2347 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-26T00:25:34.121Z  INFO 2347 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-03-26T00:25:34.308Z  INFO 2347 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-26T00:25:34.313Z  INFO 2347 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3939 ms
+2023-03-26T00:25:34.587Z  INFO 2347 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-26T00:25:34.682Z  INFO 2347 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-03-26T00:25:35.198Z  INFO 2347 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-26T00:25:35.675Z  INFO 2347 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdata user=SA
+2023-03-26T00:25:35.678Z  INFO 2347 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-26T00:25:35.727Z  INFO 2347 --- [           main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-03-26T00:25:37.223Z  INFO 2347 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-26T00:25:37.238Z  INFO 2347 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-26T00:25:38.404Z  INFO 2347 --- [           main] c.d.t.d.person.PersonGenerator           : Importing OSM dump
+2023-03-26T00:25:39.430Z  INFO 2347 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
+2023-03-26T00:25:44.405Z  INFO 2347 --- [           main] c.d.t.d.person.PersonGenerator           : Address count: 6480
+2023-03-26T00:25:44.967Z  INFO 2347 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-03-26T00:25:47.340Z  INFO 2347 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 43673 (http) with context path ''
+2023-03-26T00:25:47.354Z  INFO 2347 --- [           main] c.d.t.dataservice.person.DataImportTest  : Started DataImportTest in 18.719 seconds (process running for 21.73)
+2023-03-26T00:25:47.357Z  INFO 2347 --- [           main] c.d.t.d.DataServiceApplication           : Started with bean count of 292
+2023-03-26T00:25:47.880Z  INFO 2347 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
 
 Verifying a pact between consumer and test-data-provider
   [Using File src/test/resources/pacts/bundles.json]
   A successful api GET call for a bundle
-2023-03-25T22:37:47.740Z  WARN 2359 --- [       Thread-4] au.com.dius.pact.core.support.Metrics    : 
+2023-03-26T00:25:51.421Z  WARN 2347 --- [       Thread-4] au.com.dius.pact.core.support.Metrics    : 
             Please note: we are tracking events anonymously to gather important usage statistics like JVM version
             and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
             variable to 'true'.
             
-2023-03-25T22:37:47.950Z  INFO 2359 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-03-25T22:37:47.953Z  INFO 2359 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-03-25T22:37:47.955Z  INFO 2359 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-03-26T00:25:51.605Z  INFO 2347 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-26T00:25:51.606Z  INFO 2347 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-26T00:25:51.609Z  INFO 2347 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
     returns a response which
       has status code 200 (OK)
       has a matching body (OK)
-2023-03-25T22:37:48.218Z  WARN 2359 --- [           main] a.c.d.p.p.DefaultTestResultAccumulator   : Skipping publishing of verification results as it has been disabled (pact.verifier.publishResults is not 'true')
-2023-03-25T22:37:48.238Z  INFO 2359 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests]: TestDataServiceApiTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-03-25T22:37:48.259Z  INFO 2359 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests
-2023-03-25T22:37:50.315Z  INFO 2359 --- [o-auto-1-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 966 ms
-2023-03-25T22:37:52.568Z  INFO 2359 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.restassured.RestApiTest]: RestApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-03-25T22:37:52.593Z  INFO 2359 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.restassured.RestApiTest
-2023-03-25T22:37:55.518Z  INFO 2359 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests]: TestDataServiceBrowserTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-03-25T22:37:55.528Z  INFO 2359 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests
-[WARNING] Corrupted STDOUT by directly writing to native stream in forked JVM 1. See FAQ web page and the dump file /home/runner/work/test-data-service/test-data-service/target/surefire-reports/2023-03-25T22-37-18_330-jvmRun1.dumpstream
-2023-03-25T22:38:14.511Z  INFO 2359 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-03-25T22:38:14.527Z  INFO 2359 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
-2023-03-25T22:38:14.693Z  INFO 2359 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-03-25T22:38:14.697Z  INFO 2359 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
-2023-03-25T22:38:15.050Z  INFO 2359 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-03-25T22:38:15.079Z  INFO 2359 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-03-25T22:38:15.088Z  INFO 2359 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-26T00:25:51.850Z  WARN 2347 --- [           main] a.c.d.p.p.DefaultTestResultAccumulator   : Skipping publishing of verification results as it has been disabled (pact.verifier.publishResults is not 'true')
+2023-03-26T00:25:51.876Z  INFO 2347 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests]: TestDataServiceApiTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-03-26T00:25:51.890Z  INFO 2347 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests
+2023-03-26T00:25:53.738Z  INFO 2347 --- [o-auto-1-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 880 ms
+2023-03-26T00:25:54.959Z  INFO 2347 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.restassured.RestApiTest]: RestApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-03-26T00:25:54.967Z  INFO 2347 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.restassured.RestApiTest
+2023-03-26T00:25:57.266Z  INFO 2347 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests]: TestDataServiceBrowserTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-03-26T00:25:57.282Z  INFO 2347 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests
+[WARNING] Corrupted STDOUT by directly writing to native stream in forked JVM 1. See FAQ web page and the dump file /home/runner/work/test-data-service/test-data-service/target/surefire-reports/2023-03-26T00-25-25_466-jvmRun1.dumpstream
+2023-03-26T00:26:14.446Z  INFO 2347 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-03-26T00:26:14.459Z  INFO 2347 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
+2023-03-26T00:26:14.591Z  INFO 2347 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-03-26T00:26:14.593Z  INFO 2347 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
+2023-03-26T00:26:14.917Z  INFO 2347 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-26T00:26:14.921Z  INFO 2347 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-26T00:26:14.923Z  INFO 2347 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 yarn install v1.22.19
 [1/4] Resolving packages...
 success Already up-to-date.
-Done in 1.09s.
+Done in 0.66s.
 Latest version:     [1m[32m1.0.30001469[39m[22m
 Installed version:  [1m[32m1.0.30001469[39m[22m
 [1m[32mcaniuse-lite is up to date[39m[22m
@@ -130,42 +130,7 @@ caniuse-lite has been successfully updated
 yarn install v1.22.19
 [1/4] Resolving packages...
 success Already up-to-date.
-Done in 0.78s.
-Latest version:     [1m[32m1.0.30001469[39m[22m
-Installed version:  [1m[32m1.0.30001469[39m[22m
-[1m[32mcaniuse-lite is up to date[39m[22m
-caniuse-lite has been successfully updated
-
-[32mNo target browser changes[39m
-yarn run v1.22.19
-$ node node_modules/react-scripts/bin/react-scripts.js build
-Creating an optimized production build...
-Compiled successfully.
-
-File sizes after gzip:
-
-  68.84 kB  build/static/js/main.5031a7ed.js
-  2.63 kB   build/static/js/729.31df73d6.chunk.js
-  909 B     build/static/css/main.6c9a8ca8.css
-
-The project was built assuming it is hosted at /.
-You can control this with the homepage field in your package.json.
-
-The build folder is ready to be deployed.
-You may serve it with a static server:
-
-  yarn global add serve
-  serve -s build
-
-Find out more about deployment here:
-
-  https://cra.link/deployment
-
-Done in 11.60s.
-yarn install v1.22.19
-[1/4] Resolving packages...
-success Already up-to-date.
-Done in 0.79s.
+Done in 0.66s.
 Latest version:     [1m[32m1.0.30001469[39m[22m
 Installed version:  [1m[32m1.0.30001469[39m[22m
 [1m[32mcaniuse-lite is up to date[39m[22m
@@ -196,21 +161,11 @@ Find out more about deployment here:
 
   https://cra.link/deployment
 
-Done in 12.01s.
+Done in 9.52s.
 yarn install v1.22.19
 [1/4] Resolving packages...
 success Already up-to-date.
-Done in 0.90s.
-Latest version:     [1m[32m1.0.30001469[39m[22m
-Installed version:  [1m[32m1.0.30001469[39m[22m
-[1m[32mcaniuse-lite is up to date[39m[22m
-caniuse-lite has been successfully updated
-
-[32mNo target browser changes[39m
-yarn install v1.22.19
-[1/4] Resolving packages...
-success Already up-to-date.
-Done in 0.77s.
+Done in 0.58s.
 Latest version:     [1m[32m1.0.30001469[39m[22m
 Installed version:  [1m[32m1.0.30001469[39m[22m
 [1m[32mcaniuse-lite is up to date[39m[22m
@@ -241,7 +196,52 @@ Find out more about deployment here:
 
   https://cra.link/deployment
 
-Done in 11.62s.
+Done in 9.41s.
+yarn install v1.22.19
+[1/4] Resolving packages...
+success Already up-to-date.
+Done in 0.60s.
+Latest version:     [1m[32m1.0.30001469[39m[22m
+Installed version:  [1m[32m1.0.30001469[39m[22m
+[1m[32mcaniuse-lite is up to date[39m[22m
+caniuse-lite has been successfully updated
+
+[32mNo target browser changes[39m
+yarn install v1.22.19
+[1/4] Resolving packages...
+success Already up-to-date.
+Done in 0.56s.
+Latest version:     [1m[32m1.0.30001469[39m[22m
+Installed version:  [1m[32m1.0.30001469[39m[22m
+[1m[32mcaniuse-lite is up to date[39m[22m
+caniuse-lite has been successfully updated
+
+[32mNo target browser changes[39m
+yarn run v1.22.19
+$ node node_modules/react-scripts/bin/react-scripts.js build
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  68.84 kB  build/static/js/main.5031a7ed.js
+  2.63 kB   build/static/js/729.31df73d6.chunk.js
+  909 B     build/static/css/main.6c9a8ca8.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  yarn global add serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+Done in 9.50s.
 [WARNING] Unable to find a URL to the parent project. The parent menu will NOT be added.
 [WARNING] Javadoc Warnings
 [WARNING] /home/runner/work/test-data-service/test-data-service/src/main/java/com/datengaertnerei/test/dataservice/person/TaxIdGenerator.java:12: warning: no comment
