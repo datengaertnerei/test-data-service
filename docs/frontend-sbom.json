@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:78108792-8e91-4f4f-b905-e6bda1b4391a",
+  "serialNumber": "urn:uuid:5484742f-1c20-4c14-a249-0f24472abd27",
   "metadata": {
-    "timestamp": "2023-04-13T08:49:25.926Z",
+    "timestamp": "2023-04-13T13:46:46.280Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
@@ -12933,8 +12933,8 @@
             {
               "type": "library",
               "name": "webpack",
-              "version": "5.78.0",
-              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0",
+              "version": "5.79.0",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0",
               "author": "Tobias Koppers @sokra",
               "description": "Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
               "licenses": [
@@ -12944,7 +12944,7 @@
                   }
                 }
               ],
-              "purl": "pkg:npm/webpack@5.78.0?vcs_url=git%2Bhttps%3A//github.com/webpack/webpack.git",
+              "purl": "pkg:npm/webpack@5.79.0?vcs_url=git%2Bhttps%3A//github.com/webpack/webpack.git",
               "externalReferences": [
                 {
                   "url": "git+https://github.com/webpack/webpack.git",
@@ -12973,7 +12973,7 @@
                   "type": "library",
                   "name": "schema-utils",
                   "version": "3.1.1",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|schema-utils@3.1.1",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|schema-utils@3.1.1",
                   "author": "webpack Contrib",
                   "description": "webpack Validation Utils",
                   "licenses": [
@@ -13017,7 +13017,7 @@
                   "type": "library",
                   "name": "ajv-keywords",
                   "version": "3.5.2",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|ajv-keywords@3.5.2",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|ajv-keywords@3.5.2",
                   "author": "Evgeny Poberezkin",
                   "description": "Custom JSON-Schema keywords for Ajv validator",
                   "licenses": [
@@ -13061,7 +13061,7 @@
                   "type": "library",
                   "name": "ajv",
                   "version": "6.12.6",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|ajv@6.12.6",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|ajv@6.12.6",
                   "author": "Evgeny Poberezkin",
                   "description": "Another JSON Schema Validator",
                   "licenses": [
@@ -13100,7 +13100,7 @@
                   "type": "library",
                   "name": "json-schema-traverse",
                   "version": "0.4.1",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|json-schema-traverse@0.4.1",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|json-schema-traverse@0.4.1",
                   "author": "Evgeny Poberezkin",
                   "description": "Traverse JSON Schema passing each schema object to callback",
                   "licenses": [
@@ -13139,6 +13139,94 @@
                       "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/webpack/node_modules/json-schema-traverse"
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "estree",
+              "group": "@types",
+              "version": "1.0.0",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|@types/estree@1.0.0",
+              "description": "TypeScript definitions for estree",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40types/estree@1.0.0#types/estree",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+                },
+                {
+                  "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@types/estree/-/estree-1.0.0.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/@types/estree"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "es-module-lexer",
+              "version": "1.2.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|es-module-lexer@1.2.1",
+              "author": "Guy Bedford",
+              "description": "Lexes ES modules returning their import/export metadata",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/es-module-lexer@1.2.1",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/guybedford/es-module-lexer.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/guybedford/es-module-lexer#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/guybedford/es-module-lexer/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.2.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/es-module-lexer"
                 }
               ]
             },
@@ -13183,6 +13271,91 @@
                 {
                   "name": "cdx:npm:package:path",
                   "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/webpack-sources"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "terser-webpack-plugin",
+          "version": "5.3.7",
+          "bom-ref": "react-scripts@5.0.1|terser-webpack-plugin@5.3.7",
+          "author": "webpack Contrib Team",
+          "description": "Terser plugin for webpack",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/terser-webpack-plugin@5.3.7?vcs_url=git%2Bhttps%3A//github.com/webpack-contrib/terser-webpack-plugin.git",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/webpack-contrib/terser-webpack-plugin",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/terser-webpack-plugin"
+            }
+          ],
+          "components": [
+            {
+              "type": "library",
+              "name": "schema-utils",
+              "version": "3.1.1",
+              "bom-ref": "react-scripts@5.0.1|terser-webpack-plugin@5.3.7|schema-utils@3.1.1",
+              "author": "webpack Contrib",
+              "description": "webpack Validation Utils",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/schema-utils@3.1.1",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/webpack/schema-utils.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/webpack/schema-utils",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/webpack/schema-utils/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/schema-utils/-/schema-utils-3.1.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/terser-webpack-plugin/node_modules/schema-utils"
                 }
               ]
             }
@@ -13800,6 +13973,94 @@
                   "value": "node_modules/react-scripts/node_modules/webpack-manifest-plugin/node_modules/webpack-sources"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "estree",
+          "group": "@types",
+          "version": "0.0.51",
+          "bom-ref": "react-scripts@5.0.1|@types/estree@0.0.51",
+          "description": "TypeScript definitions for ESTree AST specification",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40types/estree@0.0.51#types/estree",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@types/estree/-/estree-0.0.51.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/@types/estree"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "es-module-lexer",
+          "version": "0.9.3",
+          "bom-ref": "react-scripts@5.0.1|es-module-lexer@0.9.3",
+          "author": "Guy Bedford",
+          "description": "Lexes ES modules returning their import/export metadata",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/es-module-lexer@0.9.3",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/guybedford/es-module-lexer.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/guybedford/es-module-lexer#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/guybedford/es-module-lexer/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-0.9.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/es-module-lexer"
             }
           ]
         },
@@ -35254,51 +35515,44 @@
           "name": "cdx:npm:package:path",
           "value": "node_modules/@types/eslint"
         }
-      ],
-      "components": [
+      ]
+    },
+    {
+      "type": "library",
+      "name": "estree",
+      "group": "@types",
+      "version": "1.0.0",
+      "bom-ref": "@types/estree@1.0.0",
+      "description": "TypeScript definitions for estree",
+      "licenses": [
         {
-          "type": "library",
-          "name": "estree",
-          "group": "@types",
-          "version": "1.0.0",
-          "bom-ref": "@types/eslint@8.21.2|@types/estree@1.0.0",
-          "description": "TypeScript definitions for estree",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/%40types/estree@1.0.0#types/estree",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-            },
-            {
-              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/@types/estree/-/estree-1.0.0.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@types/eslint/node_modules/@types/estree"
-            }
-          ]
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40types/estree@1.0.0?vcs_url=git%2Bhttps%3A//github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@types/estree"
         }
       ]
     },
@@ -47584,91 +47838,6 @@
           "name": "cdx:npm:package:path",
           "value": "node_modules/@types/eslint-scope"
         }
-      ],
-      "components": [
-        {
-          "type": "library",
-          "name": "estree",
-          "group": "@types",
-          "version": "1.0.0",
-          "bom-ref": "@types/eslint-scope@3.7.4|@types/estree@1.0.0",
-          "description": "TypeScript definitions for estree",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/%40types/estree@1.0.0#types/estree",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-            },
-            {
-              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/@types/estree/-/estree-1.0.0.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@types/eslint-scope/node_modules/@types/estree"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "estree",
-      "group": "@types",
-      "version": "0.0.51",
-      "bom-ref": "@types/estree@0.0.51",
-      "description": "TypeScript definitions for ESTree AST specification",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40types/estree@0.0.51?vcs_url=git%2Bhttps%3A//github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@types/estree"
-        }
       ]
     },
     {
@@ -47909,45 +48078,6 @@
     },
     {
       "type": "library",
-      "name": "es-module-lexer",
-      "version": "0.9.3",
-      "bom-ref": "es-module-lexer@0.9.3",
-      "author": "Guy Bedford",
-      "description": "Lexes ES modules returning their import/export metadata",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/es-module-lexer@0.9.3?vcs_url=git%2Bhttps%3A//github.com/guybedford/es-module-lexer.git",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/guybedford/es-module-lexer.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/guybedford/es-module-lexer#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/guybedford/es-module-lexer/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/es-module-lexer"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "events",
       "version": "3.3.0",
       "bom-ref": "events@3.3.0",
@@ -48137,86 +48267,6 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/neo-async"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "terser-webpack-plugin",
-      "version": "5.3.7",
-      "bom-ref": "terser-webpack-plugin@5.3.7",
-      "author": "webpack Contrib Team",
-      "description": "Terser plugin for webpack",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/terser-webpack-plugin@5.3.7?vcs_url=git%2Bhttps%3A//github.com/webpack-contrib/terser-webpack-plugin.git",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/webpack-contrib/terser-webpack-plugin",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/terser-webpack-plugin"
-        }
-      ],
-      "components": [
-        {
-          "type": "library",
-          "name": "webpack",
-          "version": "5.76.2",
-          "bom-ref": "terser-webpack-plugin@5.3.7|webpack@5.76.2",
-          "author": "Tobias Koppers @sokra",
-          "description": "Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/webpack@5.76.2?vcs_url=git%2Bhttps%3A//github.com/webpack/webpack.git",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/webpack/webpack.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/webpack/webpack",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/webpack/webpack/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/terser-webpack-plugin/node_modules/webpack"
-            }
-          ]
         }
       ]
     },
@@ -51989,6 +52039,94 @@
               ]
             }
           ]
+        },
+        {
+          "type": "library",
+          "name": "estree",
+          "group": "@types",
+          "version": "0.0.51",
+          "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|@types/estree@0.0.51",
+          "description": "TypeScript definitions for ESTree AST specification",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40types/estree@0.0.51#types/estree",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@types/estree/-/estree-0.0.51.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/@types/estree"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "es-module-lexer",
+          "version": "0.9.3",
+          "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|es-module-lexer@0.9.3",
+          "author": "Guy Bedford",
+          "description": "Lexes ES modules returning their import/export metadata",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/es-module-lexer@0.9.3",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/guybedford/es-module-lexer.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/guybedford/es-module-lexer#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/guybedford/es-module-lexer/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-0.9.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/es-module-lexer"
+            }
+          ]
         }
       ]
     },
@@ -52460,6 +52598,174 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/fs-monkey"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "terser-webpack-plugin",
+      "version": "5.3.7",
+      "bom-ref": "terser-webpack-plugin@5.3.7",
+      "author": "webpack Contrib Team",
+      "description": "Terser plugin for webpack",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/terser-webpack-plugin@5.3.7?vcs_url=git%2Bhttps%3A//github.com/webpack-contrib/terser-webpack-plugin.git",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/webpack-contrib/terser-webpack-plugin",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/terser-webpack-plugin"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "webpack",
+          "version": "5.76.2",
+          "bom-ref": "terser-webpack-plugin@5.3.7|webpack@5.76.2",
+          "author": "Tobias Koppers @sokra",
+          "description": "Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/webpack@5.76.2?vcs_url=git%2Bhttps%3A//github.com/webpack/webpack.git",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/webpack/webpack.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/webpack/webpack",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/webpack/webpack/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/webpack"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "estree",
+          "group": "@types",
+          "version": "0.0.51",
+          "bom-ref": "terser-webpack-plugin@5.3.7|@types/estree@0.0.51",
+          "description": "TypeScript definitions for ESTree AST specification",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40types/estree@0.0.51#types/estree",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/estree",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@types/estree/-/estree-0.0.51.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/@types/estree"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "es-module-lexer",
+          "version": "0.9.3",
+          "bom-ref": "terser-webpack-plugin@5.3.7|es-module-lexer@0.9.3",
+          "author": "Guy Bedford",
+          "description": "Lexes ES modules returning their import/export metadata",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/es-module-lexer@0.9.3",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/guybedford/es-module-lexer.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/guybedford/es-module-lexer#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/guybedford/es-module-lexer/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-0.9.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/es-module-lexer"
+            }
+          ]
         }
       ]
     },
@@ -55009,45 +55315,6 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/quick-lru"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "schema-utils",
-      "version": "3.1.1",
-      "bom-ref": "schema-utils@3.1.1",
-      "author": "webpack Contrib",
-      "description": "webpack Validation Utils",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/schema-utils@3.1.1?vcs_url=git%2Bhttps%3A//github.com/webpack/schema-utils.git",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/webpack/schema-utils.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/webpack/schema-utils",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/webpack/schema-utils/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/schema-utils"
         }
       ]
     },
@@ -67079,8 +67346,8 @@
     {
       "type": "library",
       "name": "webpack",
-      "version": "5.78.0",
-      "bom-ref": "webpack@5.78.0",
+      "version": "5.79.0",
+      "bom-ref": "webpack@5.79.0",
       "author": "Tobias Koppers @sokra",
       "description": "Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
       "licenses": [
@@ -67090,7 +67357,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/webpack@5.78.0",
+      "purl": "pkg:npm/webpack@5.79.0",
       "externalReferences": [
         {
           "url": "git+https://github.com/webpack/webpack.git",
@@ -67108,7 +67375,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/webpack/-/webpack-5.78.0.tgz",
+          "url": "https://registry.npmjs.org/webpack/-/webpack-5.79.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -67720,6 +67987,94 @@
           "value": "node_modules/@xtuc/ieee754"
         }
       ]
+    },
+    {
+      "type": "library",
+      "name": "es-module-lexer",
+      "version": "1.2.1",
+      "bom-ref": "es-module-lexer@1.2.1",
+      "author": "Guy Bedford",
+      "description": "Lexes ES modules returning their import/export metadata",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/es-module-lexer@1.2.1",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/guybedford/es-module-lexer.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/guybedford/es-module-lexer#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/guybedford/es-module-lexer/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.2.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/es-module-lexer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "schema-utils",
+      "version": "3.1.1",
+      "bom-ref": "schema-utils@3.1.1",
+      "author": "webpack Contrib",
+      "description": "webpack Validation Utils",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/schema-utils@3.1.1",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/webpack/schema-utils.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/webpack/schema-utils",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/webpack/schema-utils/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/schema-utils/-/schema-utils-3.1.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/schema-utils"
+        }
+      ]
     }
   ],
   "dependencies": [
@@ -67747,7 +68102,7 @@
         "react@18.2.0",
         "typescript@5.0.4",
         "web-vitals@3.3.1",
-        "webpack@5.78.0"
+        "webpack@5.79.0"
       ]
     },
     {
@@ -69299,7 +69654,7 @@
         "react-scripts@5.0.1|source-map-loader@3.0.2",
         "react-scripts@5.0.1|style-loader@3.3.2",
         "tailwindcss@3.2.7",
-        "terser-webpack-plugin@5.3.7",
+        "react-scripts@5.0.1|terser-webpack-plugin@5.3.7",
         "typescript@5.0.4",
         "react-scripts@5.0.1|webpack-dev-server@4.12.0",
         "react-scripts@5.0.1|webpack-manifest-plugin@4.1.1",
@@ -69430,7 +69785,7 @@
       "ref": "react-scripts@5.0.1|webpack@5.76.2",
       "dependsOn": [
         "@types/eslint-scope@3.7.4",
-        "@types/estree@0.0.51",
+        "react-scripts@5.0.1|@types/estree@0.0.51",
         "@webassemblyjs/ast@1.11.1",
         "@webassemblyjs/wasm-edit@1.11.1",
         "@webassemblyjs/wasm-parser@1.11.1",
@@ -69439,7 +69794,7 @@
         "browserslist@4.21.5",
         "chrome-trace-event@1.0.3",
         "enhanced-resolve@5.12.0",
-        "es-module-lexer@0.9.3",
+        "react-scripts@5.0.1|es-module-lexer@0.9.3",
         "eslint-scope@5.1.1",
         "events@3.3.0",
         "glob-to-regexp@0.4.1",
@@ -69450,7 +69805,7 @@
         "neo-async@2.6.2",
         "react-scripts@5.0.1|webpack@5.76.2|schema-utils@3.1.1",
         "tapable@2.2.1",
-        "terser-webpack-plugin@5.3.7",
+        "react-scripts@5.0.1|terser-webpack-plugin@5.3.7",
         "watchpack@2.4.0",
         "react-scripts@5.0.1|webpack@5.76.2|webpack-sources@3.2.3"
       ]
@@ -69777,7 +70132,7 @@
       "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5",
       "dependsOn": [
         "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|schema-utils@4.0.0",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0"
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0"
       ]
     },
     {
@@ -69812,10 +70167,10 @@
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0",
       "dependsOn": [
         "@types/eslint-scope@3.7.4",
-        "@types/estree@0.0.51",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|@types/estree@1.0.0",
         "@webassemblyjs/ast@1.11.1",
         "@webassemblyjs/wasm-edit@1.11.1",
         "@webassemblyjs/wasm-parser@1.11.1",
@@ -69824,7 +70179,7 @@
         "browserslist@4.21.5",
         "chrome-trace-event@1.0.3",
         "enhanced-resolve@5.12.0",
-        "es-module-lexer@0.9.3",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|es-module-lexer@1.2.1",
         "eslint-scope@5.1.1",
         "events@3.3.0",
         "glob-to-regexp@0.4.1",
@@ -69833,41 +70188,66 @@
         "loader-runner@4.3.0",
         "mime-types@2.1.35",
         "neo-async@2.6.2",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|schema-utils@3.1.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|schema-utils@3.1.1",
         "tapable@2.2.1",
-        "terser-webpack-plugin@5.3.7",
+        "react-scripts@5.0.1|terser-webpack-plugin@5.3.7",
         "watchpack@2.4.0",
         "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack-sources@3.2.3"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|schema-utils@3.1.1",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|schema-utils@3.1.1",
       "dependsOn": [
         "@types/json-schema@7.0.11",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|ajv-keywords@3.5.2",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|ajv@6.12.6"
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|ajv-keywords@3.5.2",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|ajv@6.12.6"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|ajv-keywords@3.5.2",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|ajv-keywords@3.5.2",
       "dependsOn": [
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|ajv@6.12.6"
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|ajv@6.12.6"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|ajv@6.12.6",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|ajv@6.12.6",
       "dependsOn": [
         "fast-deep-equal@3.1.3",
         "fast-json-stable-stringify@2.1.0",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|json-schema-traverse@0.4.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|json-schema-traverse@0.4.1",
         "uri-js@4.4.1"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.78.0|json-schema-traverse@0.4.1"
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack@5.79.0|json-schema-traverse@0.4.1"
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|@types/estree@1.0.0"
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|es-module-lexer@1.2.1"
     },
     {
       "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.5|webpack-sources@3.2.3"
+    },
+    {
+      "ref": "react-scripts@5.0.1|terser-webpack-plugin@5.3.7",
+      "dependsOn": [
+        "@jridgewell/trace-mapping@0.3.17",
+        "jest-worker@27.5.1",
+        "react-scripts@5.0.1|terser-webpack-plugin@5.3.7|schema-utils@3.1.1",
+        "serialize-javascript@6.0.1",
+        "terser@5.16.6",
+        "react-scripts@5.0.1|webpack@5.76.2"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|terser-webpack-plugin@5.3.7|schema-utils@3.1.1",
+      "dependsOn": [
+        "@types/json-schema@7.0.11",
+        "ajv-keywords@3.5.2",
+        "ajv@6.12.6"
+      ]
     },
     {
       "ref": "react-scripts@5.0.1|postcss-loader@6.2.1",
@@ -69973,6 +70353,12 @@
         "source-list-map@2.0.1",
         "source-map@0.6.1"
       ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|@types/estree@0.0.51"
+    },
+    {
+      "ref": "react-scripts@5.0.1|es-module-lexer@0.9.3"
     },
     {
       "ref": "react-scripts@5.0.1|workbox-webpack-plugin@6.5.4",
@@ -73673,12 +74059,12 @@
     {
       "ref": "@types/eslint@8.21.2",
       "dependsOn": [
-        "@types/eslint@8.21.2|@types/estree@1.0.0",
+        "@types/estree@1.0.0",
         "@types/json-schema@7.0.11"
       ]
     },
     {
-      "ref": "@types/eslint@8.21.2|@types/estree@1.0.0"
+      "ref": "@types/estree@1.0.0"
     },
     {
       "ref": "braces@3.0.2",
@@ -75602,14 +75988,8 @@
       "ref": "@types/eslint-scope@3.7.4",
       "dependsOn": [
         "@types/eslint@8.21.2",
-        "@types/eslint-scope@3.7.4|@types/estree@1.0.0"
+        "@types/estree@1.0.0"
       ]
-    },
-    {
-      "ref": "@types/eslint-scope@3.7.4|@types/estree@1.0.0"
-    },
-    {
-      "ref": "@types/estree@0.0.51"
     },
     {
       "ref": "@webassemblyjs/ast@1.11.1",
@@ -75659,9 +76039,6 @@
       ]
     },
     {
-      "ref": "es-module-lexer@0.9.3"
-    },
-    {
       "ref": "events@3.3.0"
     },
     {
@@ -75675,46 +76052,6 @@
     },
     {
       "ref": "neo-async@2.6.2"
-    },
-    {
-      "ref": "terser-webpack-plugin@5.3.7",
-      "dependsOn": [
-        "@jridgewell/trace-mapping@0.3.17",
-        "jest-worker@27.5.1",
-        "schema-utils@3.1.1",
-        "serialize-javascript@6.0.1",
-        "terser@5.16.6",
-        "terser-webpack-plugin@5.3.7|webpack@5.76.2"
-      ]
-    },
-    {
-      "ref": "terser-webpack-plugin@5.3.7|webpack@5.76.2",
-      "dependsOn": [
-        "@types/eslint-scope@3.7.4",
-        "@types/estree@0.0.51",
-        "@webassemblyjs/ast@1.11.1",
-        "@webassemblyjs/wasm-edit@1.11.1",
-        "@webassemblyjs/wasm-parser@1.11.1",
-        "acorn-import-assertions@1.8.0",
-        "acorn@8.8.2",
-        "browserslist@4.21.5",
-        "chrome-trace-event@1.0.3",
-        "enhanced-resolve@5.12.0",
-        "es-module-lexer@0.9.3",
-        "eslint-scope@5.1.1",
-        "events@3.3.0",
-        "glob-to-regexp@0.4.1",
-        "graceful-fs@4.2.11",
-        "json-parse-even-better-errors@2.3.1",
-        "loader-runner@4.3.0",
-        "mime-types@2.1.35",
-        "neo-async@2.6.2",
-        "schema-utils@3.1.1",
-        "tapable@2.2.1",
-        "terser-webpack-plugin@5.3.7",
-        "watchpack@2.4.0",
-        "webpack-sources@3.2.3"
-      ]
     },
     {
       "ref": "watchpack@2.4.0",
@@ -76307,7 +76644,7 @@
       "ref": "fork-ts-checker-webpack-plugin@6.5.3|webpack@5.76.2",
       "dependsOn": [
         "@types/eslint-scope@3.7.4",
-        "@types/estree@0.0.51",
+        "fork-ts-checker-webpack-plugin@6.5.3|@types/estree@0.0.51",
         "@webassemblyjs/ast@1.11.1",
         "@webassemblyjs/wasm-edit@1.11.1",
         "@webassemblyjs/wasm-parser@1.11.1",
@@ -76316,7 +76653,7 @@
         "browserslist@4.21.5",
         "chrome-trace-event@1.0.3",
         "enhanced-resolve@5.12.0",
-        "es-module-lexer@0.9.3",
+        "fork-ts-checker-webpack-plugin@6.5.3|es-module-lexer@0.9.3",
         "eslint-scope@5.1.1",
         "events@3.3.0",
         "glob-to-regexp@0.4.1",
@@ -76342,6 +76679,12 @@
     },
     {
       "ref": "fork-ts-checker-webpack-plugin@6.5.3|webpack@5.76.2|tapable@2.2.1"
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|@types/estree@0.0.51"
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|es-module-lexer@0.9.3"
     },
     {
       "ref": "chokidar@3.5.3",
@@ -76400,6 +76743,52 @@
     },
     {
       "ref": "fs-monkey@1.0.3"
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.7",
+      "dependsOn": [
+        "@jridgewell/trace-mapping@0.3.17",
+        "jest-worker@27.5.1",
+        "schema-utils@3.1.1",
+        "serialize-javascript@6.0.1",
+        "terser@5.16.6",
+        "terser-webpack-plugin@5.3.7|webpack@5.76.2"
+      ]
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.7|webpack@5.76.2",
+      "dependsOn": [
+        "@types/eslint-scope@3.7.4",
+        "terser-webpack-plugin@5.3.7|@types/estree@0.0.51",
+        "@webassemblyjs/ast@1.11.1",
+        "@webassemblyjs/wasm-edit@1.11.1",
+        "@webassemblyjs/wasm-parser@1.11.1",
+        "acorn-import-assertions@1.8.0",
+        "acorn@8.8.2",
+        "browserslist@4.21.5",
+        "chrome-trace-event@1.0.3",
+        "enhanced-resolve@5.12.0",
+        "terser-webpack-plugin@5.3.7|es-module-lexer@0.9.3",
+        "eslint-scope@5.1.1",
+        "events@3.3.0",
+        "glob-to-regexp@0.4.1",
+        "graceful-fs@4.2.11",
+        "json-parse-even-better-errors@2.3.1",
+        "loader-runner@4.3.0",
+        "mime-types@2.1.35",
+        "neo-async@2.6.2",
+        "schema-utils@3.1.1",
+        "tapable@2.2.1",
+        "terser-webpack-plugin@5.3.7",
+        "watchpack@2.4.0",
+        "webpack-sources@3.2.3"
+      ]
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.7|@types/estree@0.0.51"
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.7|es-module-lexer@0.9.3"
     },
     {
       "ref": "webpack-sources@3.2.3"
@@ -76706,14 +77095,6 @@
     },
     {
       "ref": "quick-lru@5.1.1"
-    },
-    {
-      "ref": "schema-utils@3.1.1",
-      "dependsOn": [
-        "@types/json-schema@7.0.11",
-        "ajv-keywords@3.5.2",
-        "ajv@6.12.6"
-      ]
     },
     {
       "ref": "@jridgewell/source-map@0.3.2",
@@ -78508,10 +78889,10 @@
       "ref": "web-vitals@3.3.1"
     },
     {
-      "ref": "webpack@5.78.0",
+      "ref": "webpack@5.79.0",
       "dependsOn": [
         "@types/eslint-scope@3.7.4",
-        "@types/estree@0.0.51",
+        "@types/estree@1.0.0",
         "@webassemblyjs/ast@1.11.1",
         "@webassemblyjs/wasm-edit@1.11.1",
         "@webassemblyjs/wasm-parser@1.11.1",
@@ -78520,7 +78901,7 @@
         "browserslist@4.21.5",
         "chrome-trace-event@1.0.3",
         "enhanced-resolve@5.12.0",
-        "es-module-lexer@0.9.3",
+        "es-module-lexer@1.2.1",
         "eslint-scope@5.1.1",
         "events@3.3.0",
         "glob-to-regexp@0.4.1",
@@ -78611,6 +78992,17 @@
     },
     {
       "ref": "@xtuc/ieee754@1.2.0"
+    },
+    {
+      "ref": "es-module-lexer@1.2.1"
+    },
+    {
+      "ref": "schema-utils@3.1.1",
+      "dependsOn": [
+        "@types/json-schema@7.0.11",
+        "ajv-keywords@3.5.2",
+        "ajv@6.12.6"
+      ]
     }
   ]
 }
