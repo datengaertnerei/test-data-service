@@ -50,9 +50,9 @@ jobs:
         git switch -c $PRSOURCE
         git push origin $PRSOURCE
         # preserve branch and tag info
-        echo ::set-output name=release_branch::$RELBRANCH
-        echo ::set-output name=releasetag::V${MVNVER}
-        echo ::set-output name=prsource::$PRSOURCE
+        echo "release_branch=$RELBRANCH" >> $GITHUB_OUTPUT
+        echo "releasetag=V${MVNVER}" >> $GITHUB_OUTPUT
+        echo "prsource=$PRSOURCE" >> $GITHUB_OUTPUT
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
