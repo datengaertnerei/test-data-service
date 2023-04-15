@@ -14,29 +14,15 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@8e0b4153524c217e5dce81df0986478e95a7004a
+      uses: step-security/harden-runner@910b3276b25495e4cfd8669cf5d7ea16508b0241
       with:
         disable-sudo: true
-        egress-policy: block
-        allowed-endpoints: >
-          api.github.com:443
-          github.com:443
-          maven.pkg.github.com:443
-          playwright.azureedge.net:443
-          raw.githubusercontent.com:443
-          registry.npmjs.org:443
-          registry.yarnpkg.com:443
-          repo.maven.apache.org:443
-          repo.spring.io:443
-          repository.apache.org:443
-          repository.jboss.org:443
-          repository.sonatype.org:443
-          www.google-analytics.com:443
+        egress-policy: audit #outbound hosts constantly subject to change by action providers
       
-    - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f
+    - uses: actions/checkout@47fbe2df0ad0e27efb67a70beac3555f192b062f
     
     - name: Set up JDK 17
-      uses: actions/setup-java@669e0727d83882f44d621538ec00d2301ba68e0a
+      uses: actions/setup-java@ddb82ce8a6ecf5ac3e80c3184839e6661546e4aa
       with:
         java-version: 17
         distribution: 'temurin'
@@ -64,9 +50,9 @@ jobs:
         git switch -c $PRSOURCE
         git push origin $PRSOURCE
         # preserve branch and tag info
-        echo ::set-output name=release_branch::$RELBRANCH
-        echo ::set-output name=releasetag::V${MVNVER}
-        echo ::set-output name=prsource::$PRSOURCE
+        echo "release_branch=$RELBRANCH" >> $GITHUB_OUTPUT
+        echo "releasetag=V${MVNVER}" >> $GITHUB_OUTPUT
+        echo "prsource=$PRSOURCE" >> $GITHUB_OUTPUT
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         

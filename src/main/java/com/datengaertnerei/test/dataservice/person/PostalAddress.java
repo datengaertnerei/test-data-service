@@ -23,16 +23,15 @@ SOFTWARE.
 
 package com.datengaertnerei.test.dataservice.person;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
 import jakarta.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
  * Postal address entity class for persistence inspired by
@@ -41,7 +40,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * @author Jens Dibbern
  */
 @Entity
-@Table(indexes = { @Index(columnList = "addressLocality", name = "idx_pa_al"), @Index(columnList = "postalCode", name = "idx_pa_pc") })
+@Table(indexes = { @Index(columnList = "addressLocality", name = "idx_pa_al"),
+		@Index(columnList = "postalCode", name = "idx_pa_pc") })
 @Schema(description = "postal address (see <a href=\"https://schema.org/PostalAddress\">https://schema.org/PostalAddress</a>)")
 public class PostalAddress implements Comparable<PostalAddress> {
 
@@ -173,11 +173,13 @@ public class PostalAddress implements Comparable<PostalAddress> {
 
 	@Override
 	public boolean equals(Object target) {
-		if (target instanceof PostalAddress postaladdress) {
-			return compareTo((PostalAddress) target) == 0;
-		} else {
+		if (target == null)
 			return false;
-		}
+
+		if (this.getClass() != target.getClass())
+			return false;
+
+		return compareTo((PostalAddress) target) == 0;
 	}
 
 	@Override

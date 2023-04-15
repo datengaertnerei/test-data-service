@@ -13,21 +13,15 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@8e0b4153524c217e5dce81df0986478e95a7004a
+        uses: step-security/harden-runner@910b3276b25495e4cfd8669cf5d7ea16508b0241
         with:
           disable-sudo: true
-          egress-policy: block
-          allowed-endpoints: >
-            api.github.com:443
-            files.pythonhosted.org:443
-            github.com:443
-            pypi.org:443
-            www.bundesbank.de:443          
+          egress-policy: audit #outbound hosts constantly subject to change by action providers
 
-      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f
+      - uses: actions/checkout@47fbe2df0ad0e27efb67a70beac3555f192b062f
 
       - name: Set up Python 
-        uses: actions/setup-python@dfa76f8d0df0f92390ab2d42e57c6537748ecc71
+        uses: actions/setup-python@7a4f344e33a712c3d16d01bdb95be5ef34e8ab59
         with:
           python-version: 3.x
           
