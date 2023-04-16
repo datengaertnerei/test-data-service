@@ -65,5 +65,6 @@ jobs:
       with:
         context: .      
         push: true
-        tags: datengaertner/test-data-service:latest
-        tags: datengaertner/test-data-service:${MVNVER}
+        tags: |
+          datengaertner/test-data-service:latest
+          datengaertner/test-data-service:${MVNVER}
