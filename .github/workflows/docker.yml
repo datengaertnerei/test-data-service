@@ -1,13 +1,12 @@
 name: docker
 
 on: 
-  workflow_dispatch
-#  schedule:
+  schedule:
     # * is a special character in YAML so you have to quote this string
-#    - cron:  '0 2 15 * *'
+    - cron:  '0 5 15 * *'
     
 jobs:
-  build:
+  docker:
 
     runs-on: ubuntu-latest
 
@@ -34,16 +33,34 @@ jobs:
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
+        mkdir -p target
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
-        export RELBRANCH="RB-${MVNVER}"
         mvn dependency:copy \
             -Dartifact=com.datengaertnerei.test:data-service:${MVNVER} \
-            -DoutputDirectory=. \
+            -DoutputDirectory=target \
             --global-settings .github/settings.xml
         # preserve branch and tag info
-        echo "release_branch=$RELBRANCH" >> $GITHUB_OUTPUT
-        echo "releasetag=V${MVNVER}" >> $GITHUB_OUTPUT
-        echo "prsource=$PRSOURCE" >> $GITHUB_OUTPUT
+        echo "dockertag=${MVNVER}" >> $GITHUB_OUTPUT
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+    - name: Build and push
+      uses: docker/build-push-action@v4
+      with:
+        context: .      
+        push: true
+        tags: |
+          datengaertner/test-data-service:latest
+          datengaertner/test-data-service:${{steps.mvnrel.outputs.dockertag}}
