@@ -36,15 +36,12 @@ jobs:
         git config --global user.name "datengaertnerei"
         mkdir -p target
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
-        export RELBRANCH="RB-${MVNVER}"
         mvn dependency:copy \
             -Dartifact=com.datengaertnerei.test:data-service:${MVNVER} \
             -DoutputDirectory=target \
             --global-settings .github/settings.xml
         # preserve branch and tag info
-        echo "release_branch=$RELBRANCH" >> $GITHUB_OUTPUT
-        echo "releasetag=V${MVNVER}" >> $GITHUB_OUTPUT
-        echo "prsource=$PRSOURCE" >> $GITHUB_OUTPUT
+        echo "dockertag=${MVNVER}" >> $GITHUB_OUTPUT
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -67,4 +64,4 @@ jobs:
         push: true
         tags: |
           datengaertner/test-data-service:latest
-          datengaertner/test-data-service:${MVNVER}
+          datengaertner/test-data-service:${dockertag}
