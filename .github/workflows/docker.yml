@@ -7,7 +7,7 @@ on:
 #    - cron:  '0 2 15 * *'
     
 jobs:
-  build:
+  docker:
 
     runs-on: ubuntu-latest
 
@@ -34,11 +34,12 @@ jobs:
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
+        mkdir -p target
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
         export RELBRANCH="RB-${MVNVER}"
         mvn dependency:copy \
             -Dartifact=com.datengaertnerei.test:data-service:${MVNVER} \
-            -DoutputDirectory=. \
+            -DoutputDirectory=target \
             --global-settings .github/settings.xml
         # preserve branch and tag info
         echo "release_branch=$RELBRANCH" >> $GITHUB_OUTPUT
@@ -47,3 +48,20 @@ jobs:
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+    - name: Build and push
+      uses: docker/build-push-action@v4
+      with:
+        push: true
+        tags: datengaertner/test-data-service:latest
