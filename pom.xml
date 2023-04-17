@@ -69,11 +69,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-properties-migrator</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
 			<version>1.10.0</version>
@@ -415,8 +410,12 @@
 				<reportSets>
 					<reportSet>
 						<reports>
+							<report>index</report>
 							<report>summary</report>
 							<report>dependencies</report>
+							<report>dependency-convergence</report>
+							<report>dependency-info</report>
+							<report>dependency-management</report>
 							<report>ci-management</report>
 							<report>issue-management</report>
 							<report>licenses</report>
