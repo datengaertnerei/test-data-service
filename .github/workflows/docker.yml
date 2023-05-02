@@ -12,12 +12,12 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@910b3276b25495e4cfd8669cf5d7ea16508b0241
+      uses: step-security/harden-runner@6dacdfc16caa5ebd987908a44ab5b425193385f6
       with:
         disable-sudo: true
         egress-policy: audit #outbound hosts constantly subject to change by action providers
       
-    - uses: actions/checkout@47fbe2df0ad0e27efb67a70beac3555f192b062f
+    - uses: actions/checkout@f095bcc56b7c2baf48f3ac70d6d6782f4f553222
       with:
         fetch-depth: '0'
         ref: master
