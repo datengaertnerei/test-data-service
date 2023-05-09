@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@6dacdfc16caa5ebd987908a44ab5b425193385f6
+      uses: step-security/harden-runner@39fa126de8af73ab0d455b56764f8fe42b5e6a91
       with:
         disable-sudo: true
         egress-policy: audit #sonarcloud aws generic hostname unfortunately subject to change
@@ -73,4 +73,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         
-    - uses: codecov/codecov-action@1dd0ce34be62fac4f3b714f860c0b0c520acd35d
+    - uses: codecov/codecov-action@b4dfea724ff5d8e51bb4dffdc668c0d964df6103
