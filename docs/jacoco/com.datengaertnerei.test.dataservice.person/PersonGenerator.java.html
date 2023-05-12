@@ -146,7 +146,7 @@ import jakarta.annotation.PostConstruct;
 <span class="fc" id="L146">		Person randomPerson = createBasicPerson(range);</span>
 <span class="fc" id="L147">		Optional&lt;PostalAddress&gt; address = repository.findById(randomId());</span>
 <span class="pc bpc" id="L148" title="1 of 2 branches missed.">		if (address.isPresent()) {</span>
-<span class="fc" id="L149">			randomPerson.setAddress(address.get());</span>
+<span class="fc" id="L149">			randomPerson.setAddress(address.orElseThrow());</span>
 		}
 
 <span class="fc" id="L152">		return randomPerson;</span>
@@ -190,7 +190,7 @@ import jakarta.annotation.PostConstruct;
 		} else {
 <span class="fc" id="L191">			Optional&lt;PostalAddress&gt; addressContainer = repository.findById(randomId());</span>
 <span class="pc bpc" id="L192" title="1 of 2 branches missed.">			if (addressContainer.isPresent()) {</span>
-<span class="fc" id="L193">				address = addressContainer.get();</span>
+<span class="fc" id="L193">				address = addressContainer.orElseThrow();</span>
 <span class="fc" id="L194">				randomPerson.setComment(&quot;postal code not found in address base&quot;);</span>
 			} else {
 <span class="nc" id="L196">				randomPerson.setComment(&quot;internal error while retrieving address&quot;);</span>
@@ -230,7 +230,7 @@ import jakarta.annotation.PostConstruct;
 		double height;
 		do {
 <span class="fc" id="L232">			height = random.nextGaussian() * 10.0 + 165.0;</span>
-<span class="fc bfc" id="L233" title="All 4 branches covered.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
+<span class="pc bpc" id="L233" title="1 of 4 branches missed.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
 <span class="fc bfc" id="L234" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
 <span class="fc" id="L235">			height += 10.0;</span>
 		}

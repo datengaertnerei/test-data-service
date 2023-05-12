@@ -154,7 +154,7 @@
 <a class="jxr_linenumber" name="L146" href="#L146">146</a> 		Person randomPerson = createBasicPerson(range);
 <a class="jxr_linenumber" name="L147" href="#L147">147</a> 		Optional&lt;PostalAddress&gt; address = repository.findById(randomId());
 <a class="jxr_linenumber" name="L148" href="#L148">148</a> 		<strong class="jxr_keyword">if</strong> (address.isPresent()) {
-<a class="jxr_linenumber" name="L149" href="#L149">149</a> 			randomPerson.setAddress(address.get());
+<a class="jxr_linenumber" name="L149" href="#L149">149</a> 			randomPerson.setAddress(address.orElseThrow());
 <a class="jxr_linenumber" name="L150" href="#L150">150</a> 		}
 <a class="jxr_linenumber" name="L151" href="#L151">151</a> 
 <a class="jxr_linenumber" name="L152" href="#L152">152</a> 		<strong class="jxr_keyword">return</strong> randomPerson;
@@ -198,7 +198,7 @@
 <a class="jxr_linenumber" name="L190" href="#L190">190</a> 		} <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="L191" href="#L191">191</a> 			Optional&lt;PostalAddress&gt; addressContainer = repository.findById(randomId());
 <a class="jxr_linenumber" name="L192" href="#L192">192</a> 			<strong class="jxr_keyword">if</strong> (addressContainer.isPresent()) {
-<a class="jxr_linenumber" name="L193" href="#L193">193</a> 				address = addressContainer.get();
+<a class="jxr_linenumber" name="L193" href="#L193">193</a> 				address = addressContainer.orElseThrow();
 <a class="jxr_linenumber" name="L194" href="#L194">194</a> 				randomPerson.setComment(<span class="jxr_string">"postal code not found in address base"</span>);
 <a class="jxr_linenumber" name="L195" href="#L195">195</a> 			} <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="L196" href="#L196">196</a> 				randomPerson.setComment(<span class="jxr_string">"internal error while retrieving address"</span>);
