@@ -146,7 +146,7 @@ public class PersonGenerator implements IPersonGenerator {
 		Person randomPerson = createBasicPerson(range);
 		Optional<PostalAddress> address = repository.findById(randomId());
 		if (address.isPresent()) {
-			randomPerson.setAddress(address.get());
+			randomPerson.setAddress(address.orElseThrow());
 		}
 
 		return randomPerson;
@@ -190,7 +190,7 @@ public class PersonGenerator implements IPersonGenerator {
 		} else {
 			Optional<PostalAddress> addressContainer = repository.findById(randomId());
 			if (addressContainer.isPresent()) {
-				address = addressContainer.get();
+				address = addressContainer.orElseThrow();
 				randomPerson.setComment("postal code not found in address base");
 			} else {
 				randomPerson.setComment("internal error while retrieving address");

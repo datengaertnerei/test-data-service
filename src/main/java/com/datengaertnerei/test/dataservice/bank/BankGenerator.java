@@ -141,7 +141,7 @@ public class BankGenerator implements IBankGenerator {
 		// fetch random bank from list
 		int bankIndex = rnd.nextInt(cityMap.keySet().size());
 		Optional<Bank> bankContainer = cityMap.values().stream().skip(bankIndex).findFirst();
-		Bank bank = bankContainer.get();
+		Bank bank = bankContainer.orElseThrow();
 		// and build IBAN
 		Iban iban = new Iban.Builder().countryCode(CountryCode.DE).bankCode(bank.getBankCode()).accountNumber(account)
 				.build();
@@ -168,7 +168,7 @@ public class BankGenerator implements IBankGenerator {
 
 		// create valid cc number
 		String randomPart = Integer.toString(rnd.nextInt(999999999));
-		String combined = bin.get() + "000000000".substring(randomPart.length()) + randomPart;
+		String combined = bin.orElseThrow() + "000000000".substring(randomPart.length()) + randomPart;
 		int[] toCalc = combined.chars().map(c -> c - '0').toArray();
 		Integer crc = calculateCheckDigit(toCalc);
 
@@ -182,7 +182,7 @@ public class BankGenerator implements IBankGenerator {
 		LocalDate expiry = LocalDate.now().plusDays(rnd.nextInt(1250) + 210L);
 
 		// combine to result
-		return new CreditCard(number, binList.get(bin.get()), Integer.toString(cvc), expiry);
+		return new CreditCard(number, binList.get(bin.orElseThrow()), Integer.toString(cvc), expiry);
 	}
 
 	// calculate checksum for domestic account number, IBAN checksum is included in
