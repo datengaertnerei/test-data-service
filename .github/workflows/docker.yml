@@ -1,24 +1,26 @@
 name: docker
 
 on: 
-  workflow_dispatch
-#  schedule:
+  schedule:
     # * is a special character in YAML so you have to quote this string
-#    - cron:  '0 2 15 * *'
+    - cron:  '0 5 15 * *'
     
 jobs:
-  build:
+  docker:
 
     runs-on: ubuntu-latest
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@910b3276b25495e4cfd8669cf5d7ea16508b0241
+      uses: step-security/harden-runner@39fa126de8af73ab0d455b56764f8fe42b5e6a91
       with:
         disable-sudo: true
         egress-policy: audit #outbound hosts constantly subject to change by action providers
       
-    - uses: actions/checkout@47fbe2df0ad0e27efb67a70beac3555f192b062f
+    - uses: actions/checkout@f095bcc56b7c2baf48f3ac70d6d6782f4f553222
+      with:
+        fetch-depth: '0'
+        ref: master
     
     - name: Set up JDK 17
       uses: actions/setup-java@ddb82ce8a6ecf5ac3e80c3184839e6661546e4aa
@@ -31,16 +33,34 @@ jobs:
       run: |
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
+        mkdir -p target
         export MVNVER=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT//')
-        export RELBRANCH="RB-${MVNVER}"
         mvn dependency:copy \
-            -Dartifact=com.datengaertnerei.test:data-service:1.0.7 \
-            -DoutputDirectory=. \
+            -Dartifact=com.datengaertnerei.test:data-service:${MVNVER} \
+            -DoutputDirectory=target \
             --global-settings .github/settings.xml
         # preserve branch and tag info
-        echo "release_branch=$RELBRANCH" >> $GITHUB_OUTPUT
-        echo "releasetag=V${MVNVER}" >> $GITHUB_OUTPUT
-        echo "prsource=$PRSOURCE" >> $GITHUB_OUTPUT
+        echo "dockertag=${MVNVER}" >> $GITHUB_OUTPUT
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+    - name: Build and push
+      uses: docker/build-push-action@v4
+      with:
+        context: .      
+        push: true
+        tags: |
+          datengaertner/test-data-service:latest
+          datengaertner/test-data-service:${{steps.mvnrel.outputs.dockertag}}

@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
@@ -350,7 +351,7 @@ class TestDataServiceApiTests {
 
 			BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 			String inputLine;
-			StringBuffer content = new StringBuffer();
+			StringBuilder content = new StringBuilder();
 			while ((inputLine = in.readLine()) != null) {
 				content.append(inputLine);
 			}
@@ -363,7 +364,7 @@ class TestDataServiceApiTests {
 			}
 			parser.close();
 
-			BufferedWriter writer = new BufferedWriter(new FileWriter("target/test-data-service-oas.json"));
+			BufferedWriter writer = new BufferedWriter(new FileWriter("target/test-data-service-oas.json", Charset.forName("UTF-8")));
 			writer.write(content.toString());
 			writer.close();
 

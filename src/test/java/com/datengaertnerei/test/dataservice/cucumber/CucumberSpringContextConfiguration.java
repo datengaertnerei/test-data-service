@@ -30,19 +30,19 @@ public class CucumberSpringContextConfiguration {
 	private ResponseEntity<BankAccount> response;
 	private String city;
 
-	// autowired test template (see Spring Boot doc)
+	/** autowired test template (see Spring Boot doc) */
 	@Autowired
 	protected TestRestTemplate restTemplate;
 
-	// local server port will be dynamic
+	/** local server port will be dynamic */
 	@LocalServerPort
 	protected int serverPort;
 
-	// test object
+	/** test object */
 	@Autowired
 	private PostalAddressRepository repository;
 
-	// setup test env
+	/** setup test env */
 	@BeforeEach
 	public void before() {
 		DataImportTest.ensureDataAvailability(repository);

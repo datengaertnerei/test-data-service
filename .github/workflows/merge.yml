@@ -20,12 +20,12 @@ jobs:
             
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@910b3276b25495e4cfd8669cf5d7ea16508b0241
+      uses: step-security/harden-runner@39fa126de8af73ab0d455b56764f8fe42b5e6a91
       with:
         disable-sudo: true
         egress-policy: audit #outbound hosts constantly subject to change by action providers
         
-    - uses: actions/checkout@47fbe2df0ad0e27efb67a70beac3555f192b062f
+    - uses: actions/checkout@f095bcc56b7c2baf48f3ac70d6d6782f4f553222
     - name: Set up JDK 17
       uses: actions/setup-java@ddb82ce8a6ecf5ac3e80c3184839e6661546e4aa
       with:
@@ -34,7 +34,7 @@ jobs:
 
       # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@dc046388f30eacf938aadd32064285f437bd9c04
+      uses: github/codeql-action/init@130884e4e1961d7e595c85e8e60b206e0f5282e7
       with:
         languages: javascript, python, java        
         
@@ -46,4 +46,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@dc046388f30eacf938aadd32064285f437bd9c04
+      uses: github/codeql-action/analyze@130884e4e1961d7e595c85e8e60b206e0f5282e7

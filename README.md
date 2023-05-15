@@ -25,7 +25,7 @@ The easy way to setup the test data service is to use Docker. Just run the lates
 docker run --name test-data -p 80:8080 datengaertner/test-data-service
 ```
 
-After startup you can navigate to [https://localhost/](https://localhost/) in your browser. It will show a random generated person. There is a link on that page to the included Swagger UI.
+After startup you can navigate to [http://localhost/](http://localhost/) in your browser. It will show a random generated person. There is a link on that page to the included Swagger UI.
 
 For more details please proceed to the [docs](docs/Docs.md) or the [project pages with CI/CD info](https://datengaertnerei.github.io/test-data-service/). If you encounter any problems or identify an error please submit an issue in GitHub.
 
