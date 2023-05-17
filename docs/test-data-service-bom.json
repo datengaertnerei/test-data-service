@@ -1,10 +1,10 @@
 {
   "bomFormat" : "CycloneDX",
   "specVersion" : "1.3",
-  "serialNumber" : "urn:uuid:cb4ca37c-4c1b-461f-b70a-2bcd770e6b66",
+  "serialNumber" : "urn:uuid:4d43e459-826a-4578-86b3-58932b645890",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2023-05-17T03:05:15Z",
+    "timestamp" : "2023-05-17T05:36:29Z",
     "tools" : [
       {
         "vendor" : "OWASP Foundation",
@@ -177,51 +177,52 @@
       "publisher" : "The Apache Software Foundation",
       "group" : "commons-io",
       "name" : "commons-io",
-      "version" : "2.11.0",
+      "version" : "2.12.0",
       "description" : "The Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more.",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "3b4b7ccfaeceeac240b804839ee1a1ca"
+          "content" : "7abdf3e1c7bb44ae120be4b7dc1995f0"
         },
         {
           "alg" : "SHA-1",
-          "content" : "a2503f302b11ebde7ebc3df41daebe0e4eea3689"
+          "content" : "e5e3eb2ff05b494287f51476bc715161412c525f"
         },
         {
           "alg" : "SHA-256",
-          "content" : "961b2f6d87dbacc5d54abf45ab7a6e2495f89b75598962d8c723cea9bc210908"
+          "content" : "74bd60c8eebd3d43f77a66c69c86540c257a3a098172f8b1d7fcdc9ed3e139ea"
         },
         {
           "alg" : "SHA-512",
-          "content" : "5bd78eed456ede30119319c5bed8e3e4c443b6fd7bdb3a7a5686647bd83094d0c3e2832a7575cfb60e4ef25f08106b93476939d3adcfecf5533cc030b3039e10"
+          "content" : "12fa3ea9f841f1ff847d89c31dff5edc2e05939efa7b2395fa8b82949b209fe9cbda613ca9290c19d0ddfa6017a4391156efaf548aeb12fd0918928e285f0623"
         },
         {
           "alg" : "SHA-384",
-          "content" : "114f1e324d90ad887c177876d410f5787a8e8da6c48d4b2862d365802c0efded3a88cb24046976bf6276cadad3712f0f"
+          "content" : "de2993427516b5fd96d44d5269d4b853dfeae5fab2949606873218633a4d0e8492ac985a0590fbd74a1274ff89c7073f"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "80288c03ad4d80d69f91d056ffc5570d49a9c76bf54ad2dff0121ecde26a560df76d05156f281f5c6db2a38ff07a873d"
+          "content" : "bc73c7de65ff28740182bc0b226b42a861137be17761f4abffdf8228b8af0289f34dfb6e6e07fd1cfb9ea6936a78b40e"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "5adfb5ccaf5f21a549422f426118a9542673926fcd18c68390cf813e791dcf6c"
+          "content" : "694e837f8152a70fff1e0c0aa90da00c29f2a501fde74b1cc0d50182107589fa"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "7573f47f0babb53cefdc7c2309a0b982d800139064537b0797da442853d081010ad7c3c74a500598a0f800639a5d540eca21963ea652c68613907059bd4278c2"
+          "content" : "387337bf3605b6714a3006c47c069accddf8ac3c34b8f2681aa1dbdbebc319a3bd60107437edc389eff17fa649347c6650ee8317a39e3ca150fdaceb86f3818b"
         }
       ],
       "licenses" : [
         {
           "license" : {
-            "id" : "Apache-2.0"
+            "id" : "Apache-2.0",
+            "url" : "https://www.apache.org/licenses/LICENSE-2.0"
           }
         }
       ],
-      "purl" : "pkg:maven/commons-io/commons-io@2.11.0?type=jar",
+      "purl" : "pkg:maven/commons-io/commons-io@2.12.0?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -229,7 +230,7 @@
         },
         {
           "type" : "build-system",
-          "url" : "https://builds.apache.org/"
+          "url" : "https://github.com/apache/commons-parent/actions"
         },
         {
           "type" : "distribution",
@@ -249,7 +250,7 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/commons-io/commons-io@2.11.0?type=jar"
+      "bom-ref" : "pkg:maven/commons-io/commons-io@2.12.0?type=jar"
     },
     {
       "group" : "org.iban4j",
@@ -7049,7 +7050,7 @@
       "ref" : "pkg:maven/com.datengaertnerei.test/data-service@1.0.10-SNAPSHOT?type=jar",
       "dependsOn" : [
         "pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar",
-        "pkg:maven/commons-io/commons-io@2.11.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.12.0?type=jar",
         "pkg:maven/org.iban4j/iban4j@3.2.5-RELEASE?type=jar",
         "pkg:maven/org.springframework.boot/spring-boot-starter-web@3.0.6?type=jar",
         "pkg:maven/org.springframework.boot/spring-boot-starter-data-jpa@3.0.6?type=jar",
@@ -7065,7 +7066,7 @@
       "dependsOn" : [ ]
     },
     {
-      "ref" : "pkg:maven/commons-io/commons-io@2.11.0?type=jar",
+      "ref" : "pkg:maven/commons-io/commons-io@2.12.0?type=jar",
       "dependsOn" : [ ]
     },
     {
@@ -7495,7 +7496,7 @@
         "pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar",
         "pkg:maven/com.google.guava/guava@31.1-jre?type=jar",
         "pkg:maven/com.google.protobuf/protobuf-java@3.23.0?type=jar",
-        "pkg:maven/commons-io/commons-io@2.11.0?type=jar"
+        "pkg:maven/commons-io/commons-io@2.12.0?type=jar"
       ]
     },
     {
