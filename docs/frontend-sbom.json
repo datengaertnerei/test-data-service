@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:da9c24a9-912b-4cb2-9dfd-622c80ef9b45",
+  "serialNumber": "urn:uuid:6c4605d3-46fa-469c-86dc-6ca5f58e89e7",
   "metadata": {
-    "timestamp": "2023-05-24T23:28:40.087Z",
+    "timestamp": "2023-05-25T02:39:55.341Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
@@ -15418,8 +15418,8 @@
             {
               "type": "library",
               "name": "webpack",
-              "version": "5.83.1",
-              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1",
+              "version": "5.84.0",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0",
               "author": "Tobias Koppers @sokra",
               "description": "Packs ECMAScript/CommonJs/AMD modules for the browser. Allows you to split your codebase into multiple bundles, which can be loaded on demand. Supports loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
               "licenses": [
@@ -15429,7 +15429,7 @@
                   }
                 }
               ],
-              "purl": "pkg:npm/webpack@5.83.1?vcs_url=git%2Bhttps%3A//github.com/webpack/webpack.git",
+              "purl": "pkg:npm/webpack@5.84.0?vcs_url=git%2Bhttps%3A//github.com/webpack/webpack.git",
               "externalReferences": [
                 {
                   "url": "git+https://github.com/webpack/webpack.git",
@@ -15458,7 +15458,7 @@
                   "type": "library",
                   "name": "schema-utils",
                   "version": "3.1.2",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|schema-utils@3.1.2",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|schema-utils@3.1.2",
                   "author": "webpack Contrib",
                   "description": "webpack Validation Utils",
                   "licenses": [
@@ -15502,7 +15502,7 @@
                   "type": "library",
                   "name": "ajv-keywords",
                   "version": "3.5.2",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|ajv-keywords@3.5.2",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|ajv-keywords@3.5.2",
                   "author": "Evgeny Poberezkin",
                   "description": "Custom JSON-Schema keywords for Ajv validator",
                   "licenses": [
@@ -15546,7 +15546,7 @@
                   "type": "library",
                   "name": "ajv",
                   "version": "6.12.6",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|ajv@6.12.6",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|ajv@6.12.6",
                   "author": "Evgeny Poberezkin",
                   "description": "Another JSON Schema Validator",
                   "licenses": [
@@ -15585,7 +15585,7 @@
                   "type": "library",
                   "name": "json-schema-traverse",
                   "version": "0.4.1",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|json-schema-traverse@0.4.1",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|json-schema-traverse@0.4.1",
                   "author": "Evgeny Poberezkin",
                   "description": "Traverse JSON Schema passing each schema object to callback",
                   "licenses": [
@@ -16065,9 +16065,53 @@
             },
             {
               "type": "library",
+              "name": "acorn-import-assertions",
+              "version": "1.9.0",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|acorn-import-assertions@1.9.0",
+              "author": "Sven Sauleau",
+              "description": "Support for import assertions in acorn",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/acorn-import-assertions@1.9.0",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/xtuc/acorn-import-assertions.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/xtuc/acorn-import-assertions#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/xtuc/acorn-import-assertions/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/acorn-import-assertions/-/acorn-import-assertions-1.9.0.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/acorn-import-assertions"
+                }
+              ]
+            },
+            {
+              "type": "library",
               "name": "enhanced-resolve",
-              "version": "5.14.0",
-              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|enhanced-resolve@5.14.0",
+              "version": "5.14.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|enhanced-resolve@5.14.1",
               "author": "Tobias Koppers @sokra",
               "description": "Offers a async require.resolve function. It's highly configurable.",
               "licenses": [
@@ -16077,7 +16121,7 @@
                   }
                 }
               ],
-              "purl": "pkg:npm/enhanced-resolve@5.14.0",
+              "purl": "pkg:npm/enhanced-resolve@5.14.1",
               "externalReferences": [
                 {
                   "url": "git://github.com/webpack/enhanced-resolve.git",
@@ -16095,7 +16139,7 @@
                   "comment": "as detected from PackageJson property \"bugs.url\""
                 },
                 {
-                  "url": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.14.0.tgz",
+                  "url": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.14.1.tgz",
                   "type": "distribution",
                   "comment": "as detected from npm-ls property \"resolved\""
                 }
@@ -19867,6 +19911,50 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/react-scripts/node_modules/@webassemblyjs/wast-printer"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "acorn-import-assertions",
+          "version": "1.8.0",
+          "bom-ref": "react-scripts@5.0.1|acorn-import-assertions@1.8.0",
+          "author": "Sven Sauleau",
+          "description": "Support for import assertions in acorn",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/acorn-import-assertions@1.8.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/acorn-import-assertions.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/acorn-import-assertions#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/acorn-import-assertions/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/acorn-import-assertions/-/acorn-import-assertions-1.8.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/acorn-import-assertions"
             }
           ]
         },
@@ -52889,45 +52977,6 @@
     },
     {
       "type": "library",
-      "name": "acorn-import-assertions",
-      "version": "1.8.0",
-      "bom-ref": "acorn-import-assertions@1.8.0",
-      "author": "Sven Sauleau",
-      "description": "Support for import assertions in acorn",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/acorn-import-assertions@1.8.0?vcs_url=git%2Bhttps%3A//github.com/xtuc/acorn-import-assertions.git",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/xtuc/acorn-import-assertions.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/xtuc/acorn-import-assertions#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/xtuc/acorn-import-assertions/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/acorn-import-assertions"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "chrome-trace-event",
       "version": "1.0.3",
       "bom-ref": "chrome-trace-event@1.0.3",
@@ -54955,6 +55004,50 @@
         },
         {
           "type": "library",
+          "name": "acorn-import-assertions",
+          "version": "1.8.0",
+          "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|acorn-import-assertions@1.8.0",
+          "author": "Sven Sauleau",
+          "description": "Support for import assertions in acorn",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/acorn-import-assertions@1.8.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/acorn-import-assertions.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/acorn-import-assertions#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/acorn-import-assertions/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/acorn-import-assertions/-/acorn-import-assertions-1.8.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/acorn-import-assertions"
+            }
+          ]
+        },
+        {
+          "type": "library",
           "name": "enhanced-resolve",
           "version": "5.12.0",
           "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|enhanced-resolve@5.12.0",
@@ -56100,6 +56193,50 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/terser-webpack-plugin/node_modules/@webassemblyjs/wast-printer"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "acorn-import-assertions",
+          "version": "1.8.0",
+          "bom-ref": "terser-webpack-plugin@5.3.7|acorn-import-assertions@1.8.0",
+          "author": "Sven Sauleau",
+          "description": "Support for import assertions in acorn",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/acorn-import-assertions@1.8.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/acorn-import-assertions.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/acorn-import-assertions#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/acorn-import-assertions/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/acorn-import-assertions/-/acorn-import-assertions-1.8.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/acorn-import-assertions"
             }
           ]
         },
@@ -70798,8 +70935,8 @@
     {
       "type": "library",
       "name": "webpack",
-      "version": "5.83.1",
-      "bom-ref": "webpack@5.83.1",
+      "version": "5.84.0",
+      "bom-ref": "webpack@5.84.0",
       "author": "Tobias Koppers @sokra",
       "description": "Packs ECMAScript/CommonJs/AMD modules for the browser. Allows you to split your codebase into multiple bundles, which can be loaded on demand. Supports loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
       "licenses": [
@@ -70809,7 +70946,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/webpack@5.83.1",
+      "purl": "pkg:npm/webpack@5.84.0",
       "externalReferences": [
         {
           "url": "git+https://github.com/webpack/webpack.git",
@@ -70827,7 +70964,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/webpack/-/webpack-5.83.1.tgz",
+          "url": "https://registry.npmjs.org/webpack/-/webpack-5.84.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -70844,7 +70981,7 @@
           "name": "ast",
           "group": "@webassemblyjs",
           "version": "1.11.5",
-          "bom-ref": "webpack@5.83.1|@webassemblyjs/ast@1.11.5",
+          "bom-ref": "webpack@5.84.0|@webassemblyjs/ast@1.11.5",
           "author": "Sven Sauleau",
           "description": "AST utils for webassemblyjs",
           "licenses": [
@@ -70889,7 +71026,7 @@
           "name": "helper-numbers",
           "group": "@webassemblyjs",
           "version": "1.11.5",
-          "bom-ref": "webpack@5.83.1|@webassemblyjs/helper-numbers@1.11.5",
+          "bom-ref": "webpack@5.84.0|@webassemblyjs/helper-numbers@1.11.5",
           "author": "Sven Sauleau",
           "description": "Number parsing utility",
           "licenses": [
@@ -70934,7 +71071,7 @@
           "name": "floating-point-hex-parser",
           "group": "@webassemblyjs",
           "version": "1.11.5",
-          "bom-ref": "webpack@5.83.1|@webassemblyjs/floating-point-hex-parser@1.11.5",
+          "bom-ref": "webpack@5.84.0|@webassemblyjs/floating-point-hex-parser@1.11.5",
           "author": "Mauro Bringolf",
           "description": "A function to parse floating point hexadecimal strings as defined by the WebAssembly specification",
           "licenses": [
@@ -70979,7 +71116,7 @@
           "name": "helper-api-error",
           "group": "@webassemblyjs",
           "version": "1.11.5",
-          "bom-ref": "webpack@5.83.1|@webassemblyjs/helper-api-error@1.11.5",
+          "bom-ref": "webpack@5.84.0|@webassemblyjs/helper-api-error@1.11.5",
           "author": "Sven Sauleau",
           "description": "Common API errors",
           "licenses": [
@@ -71019,7 +71156,7 @@
           "name": "helper-wasm-bytecode",
           "group": "@webassemblyjs",
           "version": "1.11.5",
-          "bom-ref": "webpack@5.83.1|@webassemblyjs/helper-wasm-bytecode@1.11.5",
+          "bom-ref": "webpack@5.84.0|@webassemblyjs/helper-wasm-bytecode@1.11.5",
           "author": "Sven Sauleau",
           "description": "WASM's Bytecode constants",
           "licenses": [
@@ -71064,7 +71201,7 @@
           "name": "wasm-parser",
           "group": "@webassemblyjs",
           "version": "1.11.5",
-          "bom-ref": "webpack@5.83.1|@webassemblyjs/wasm-parser@1.11.5",
+          "bom-ref": "webpack@5.84.0|@webassemblyjs/wasm-parser@1.11.5",
           "author": "Sven Sauleau",
           "description": "WebAssembly binary format parser",
           "licenses": [
@@ -71109,7 +71246,7 @@
           "name": "ieee754",
           "group": "@webassemblyjs",
           "version": "1.11.5",
-          "bom-ref": "webpack@5.83.1|@webassemblyjs/ieee754@1.11.5",
+          "bom-ref": "webpack@5.84.0|@webassemblyjs/ieee754@1.11.5",
           "description": "IEEE754 decoder and encoder",
           "licenses": [
             {
@@ -71153,7 +71290,7 @@
           "name": "leb128",
           "group": "@webassemblyjs",
           "version": "1.11.5",
-          "bom-ref": "webpack@5.83.1|@webassemblyjs/leb128@1.11.5",
+          "bom-ref": "webpack@5.84.0|@webassemblyjs/leb128@1.11.5",
           "description": "LEB128 decoder and encoder",
           "licenses": [
             {
@@ -71197,7 +71334,7 @@
           "name": "utf8",
           "group": "@webassemblyjs",
           "version": "1.11.5",
-          "bom-ref": "webpack@5.83.1|@webassemblyjs/utf8@1.11.5",
+          "bom-ref": "webpack@5.84.0|@webassemblyjs/utf8@1.11.5",
           "author": "Sven Sauleau",
           "description": "UTF8 encoder/decoder for WASM",
           "licenses": [
@@ -71241,7 +71378,7 @@
           "type": "library",
           "name": "schema-utils",
           "version": "3.1.2",
-          "bom-ref": "webpack@5.83.1|schema-utils@3.1.2",
+          "bom-ref": "webpack@5.84.0|schema-utils@3.1.2",
           "author": "webpack Contrib",
           "description": "webpack Validation Utils",
           "licenses": [
@@ -73109,9 +73246,53 @@
     },
     {
       "type": "library",
+      "name": "acorn-import-assertions",
+      "version": "1.9.0",
+      "bom-ref": "acorn-import-assertions@1.9.0",
+      "author": "Sven Sauleau",
+      "description": "Support for import assertions in acorn",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/acorn-import-assertions@1.9.0",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/xtuc/acorn-import-assertions.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/xtuc/acorn-import-assertions#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/xtuc/acorn-import-assertions/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/acorn-import-assertions/-/acorn-import-assertions-1.9.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/acorn-import-assertions"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "enhanced-resolve",
-      "version": "5.14.0",
-      "bom-ref": "enhanced-resolve@5.14.0",
+      "version": "5.14.1",
+      "bom-ref": "enhanced-resolve@5.14.1",
       "author": "Tobias Koppers @sokra",
       "description": "Offers a async require.resolve function. It's highly configurable.",
       "licenses": [
@@ -73121,7 +73302,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/enhanced-resolve@5.14.0",
+      "purl": "pkg:npm/enhanced-resolve@5.14.1",
       "externalReferences": [
         {
           "url": "git://github.com/webpack/enhanced-resolve.git",
@@ -73139,7 +73320,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.14.0.tgz",
+          "url": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.14.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -73221,7 +73402,7 @@
         "react@18.2.0",
         "typescript@5.0.4",
         "web-vitals@3.3.1",
-        "webpack@5.83.1"
+        "webpack@5.84.0"
       ]
     },
     {
@@ -74983,7 +75164,7 @@
         "@webassemblyjs/ast@1.11.1",
         "react-scripts@5.0.1|@webassemblyjs/wasm-edit@1.11.1",
         "@webassemblyjs/wasm-parser@1.11.1",
-        "acorn-import-assertions@1.8.0",
+        "react-scripts@5.0.1|acorn-import-assertions@1.8.0",
         "acorn@8.8.2",
         "browserslist@4.21.5",
         "chrome-trace-event@1.0.3",
@@ -75650,7 +75831,7 @@
       "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6",
       "dependsOn": [
         "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|schema-utils@4.0.0",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1"
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0"
       ]
     },
     {
@@ -75685,18 +75866,18 @@
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0",
       "dependsOn": [
         "@types/eslint-scope@3.7.4",
         "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|@types/estree@1.0.0",
         "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|@webassemblyjs/ast@1.11.5",
         "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|@webassemblyjs/wasm-edit@1.11.5",
         "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|@webassemblyjs/wasm-parser@1.11.5",
-        "acorn-import-assertions@1.8.0",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|acorn-import-assertions@1.9.0",
         "acorn@8.8.2",
         "browserslist@4.21.5",
         "chrome-trace-event@1.0.3",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|enhanced-resolve@5.14.0",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|enhanced-resolve@5.14.1",
         "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|es-module-lexer@1.2.1",
         "eslint-scope@5.1.1",
         "events@3.3.0",
@@ -75706,7 +75887,7 @@
         "loader-runner@4.3.0",
         "mime-types@2.1.35",
         "neo-async@2.6.2",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|schema-utils@3.1.2",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|schema-utils@3.1.2",
         "tapable@2.2.1",
         "react-scripts@5.0.1|terser-webpack-plugin@5.3.7",
         "watchpack@2.4.0",
@@ -75714,30 +75895,30 @@
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|schema-utils@3.1.2",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|schema-utils@3.1.2",
       "dependsOn": [
         "@types/json-schema@7.0.11",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|ajv-keywords@3.5.2",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|ajv@6.12.6"
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|ajv-keywords@3.5.2",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|ajv@6.12.6"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|ajv-keywords@3.5.2",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|ajv-keywords@3.5.2",
       "dependsOn": [
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|ajv@6.12.6"
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|ajv@6.12.6"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|ajv@6.12.6",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|ajv@6.12.6",
       "dependsOn": [
         "fast-deep-equal@3.1.3",
         "fast-json-stable-stringify@2.1.0",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|json-schema-traverse@0.4.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|json-schema-traverse@0.4.1",
         "uri-js@4.4.1"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.83.1|json-schema-traverse@0.4.1"
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|webpack@5.84.0|json-schema-traverse@0.4.1"
     },
     {
       "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|@types/estree@1.0.0"
@@ -75815,7 +75996,13 @@
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|enhanced-resolve@5.14.0",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|acorn-import-assertions@1.9.0",
+      "dependsOn": [
+        "acorn@8.8.2"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.7.6|enhanced-resolve@5.14.1",
       "dependsOn": [
         "graceful-fs@4.2.11",
         "tapable@2.2.1"
@@ -76485,6 +76672,12 @@
       "dependsOn": [
         "@webassemblyjs/ast@1.11.1",
         "@xtuc/long@4.2.2"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|acorn-import-assertions@1.8.0",
+      "dependsOn": [
+        "acorn@8.8.2"
       ]
     },
     {
@@ -81973,12 +82166,6 @@
       "ref": "@xtuc/ieee754@1.2.0"
     },
     {
-      "ref": "acorn-import-assertions@1.8.0",
-      "dependsOn": [
-        "acorn@8.8.2"
-      ]
-    },
-    {
       "ref": "chrome-trace-event@1.0.3"
     },
     {
@@ -82193,7 +82380,7 @@
         "@webassemblyjs/ast@1.11.1",
         "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wasm-edit@1.11.1",
         "@webassemblyjs/wasm-parser@1.11.1",
-        "acorn-import-assertions@1.8.0",
+        "fork-ts-checker-webpack-plugin@6.5.3|acorn-import-assertions@1.8.0",
         "acorn@8.8.2",
         "browserslist@4.21.5",
         "chrome-trace-event@1.0.3",
@@ -82264,6 +82451,12 @@
       "dependsOn": [
         "@webassemblyjs/ast@1.11.1",
         "@xtuc/long@4.2.2"
+      ]
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|acorn-import-assertions@1.8.0",
+      "dependsOn": [
+        "acorn@8.8.2"
       ]
     },
     {
@@ -82398,7 +82591,7 @@
         "@webassemblyjs/ast@1.11.1",
         "terser-webpack-plugin@5.3.7|@webassemblyjs/wasm-edit@1.11.1",
         "@webassemblyjs/wasm-parser@1.11.1",
-        "acorn-import-assertions@1.8.0",
+        "terser-webpack-plugin@5.3.7|acorn-import-assertions@1.8.0",
         "acorn@8.8.2",
         "browserslist@4.21.5",
         "chrome-trace-event@1.0.3",
@@ -82458,6 +82651,12 @@
       "dependsOn": [
         "@webassemblyjs/ast@1.11.1",
         "@xtuc/long@4.2.2"
+      ]
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.7|acorn-import-assertions@1.8.0",
+      "dependsOn": [
+        "acorn@8.8.2"
       ]
     },
     {
@@ -84541,18 +84740,18 @@
       "ref": "web-vitals@3.3.1"
     },
     {
-      "ref": "webpack@5.83.1",
+      "ref": "webpack@5.84.0",
       "dependsOn": [
         "@types/eslint-scope@3.7.4",
         "@types/estree@1.0.0",
-        "webpack@5.83.1|@webassemblyjs/ast@1.11.5",
+        "webpack@5.84.0|@webassemblyjs/ast@1.11.5",
         "@webassemblyjs/wasm-edit@1.11.5",
-        "webpack@5.83.1|@webassemblyjs/wasm-parser@1.11.5",
-        "acorn-import-assertions@1.8.0",
+        "webpack@5.84.0|@webassemblyjs/wasm-parser@1.11.5",
+        "acorn-import-assertions@1.9.0",
         "acorn@8.8.2",
         "browserslist@4.21.5",
         "chrome-trace-event@1.0.3",
-        "enhanced-resolve@5.14.0",
+        "enhanced-resolve@5.14.1",
         "es-module-lexer@1.2.1",
         "eslint-scope@5.1.1",
         "events@3.3.0",
@@ -84562,7 +84761,7 @@
         "loader-runner@4.3.0",
         "mime-types@2.1.35",
         "neo-async@2.6.2",
-        "webpack@5.83.1|schema-utils@3.1.2",
+        "webpack@5.84.0|schema-utils@3.1.2",
         "tapable@2.2.1",
         "terser-webpack-plugin@5.3.7",
         "watchpack@2.4.0",
@@ -84570,57 +84769,57 @@
       ]
     },
     {
-      "ref": "webpack@5.83.1|@webassemblyjs/ast@1.11.5",
+      "ref": "webpack@5.84.0|@webassemblyjs/ast@1.11.5",
       "dependsOn": [
-        "webpack@5.83.1|@webassemblyjs/helper-numbers@1.11.5",
-        "webpack@5.83.1|@webassemblyjs/helper-wasm-bytecode@1.11.5"
+        "webpack@5.84.0|@webassemblyjs/helper-numbers@1.11.5",
+        "webpack@5.84.0|@webassemblyjs/helper-wasm-bytecode@1.11.5"
       ]
     },
     {
-      "ref": "webpack@5.83.1|@webassemblyjs/helper-numbers@1.11.5",
+      "ref": "webpack@5.84.0|@webassemblyjs/helper-numbers@1.11.5",
       "dependsOn": [
-        "webpack@5.83.1|@webassemblyjs/floating-point-hex-parser@1.11.5",
-        "webpack@5.83.1|@webassemblyjs/helper-api-error@1.11.5",
+        "webpack@5.84.0|@webassemblyjs/floating-point-hex-parser@1.11.5",
+        "webpack@5.84.0|@webassemblyjs/helper-api-error@1.11.5",
         "@xtuc/long@4.2.2"
       ]
     },
     {
-      "ref": "webpack@5.83.1|@webassemblyjs/floating-point-hex-parser@1.11.5"
+      "ref": "webpack@5.84.0|@webassemblyjs/floating-point-hex-parser@1.11.5"
     },
     {
-      "ref": "webpack@5.83.1|@webassemblyjs/helper-api-error@1.11.5"
+      "ref": "webpack@5.84.0|@webassemblyjs/helper-api-error@1.11.5"
     },
     {
-      "ref": "webpack@5.83.1|@webassemblyjs/helper-wasm-bytecode@1.11.5"
+      "ref": "webpack@5.84.0|@webassemblyjs/helper-wasm-bytecode@1.11.5"
     },
     {
-      "ref": "webpack@5.83.1|@webassemblyjs/wasm-parser@1.11.5",
+      "ref": "webpack@5.84.0|@webassemblyjs/wasm-parser@1.11.5",
       "dependsOn": [
-        "webpack@5.83.1|@webassemblyjs/ast@1.11.5",
-        "webpack@5.83.1|@webassemblyjs/helper-api-error@1.11.5",
-        "webpack@5.83.1|@webassemblyjs/helper-wasm-bytecode@1.11.5",
-        "webpack@5.83.1|@webassemblyjs/ieee754@1.11.5",
-        "webpack@5.83.1|@webassemblyjs/leb128@1.11.5",
-        "webpack@5.83.1|@webassemblyjs/utf8@1.11.5"
+        "webpack@5.84.0|@webassemblyjs/ast@1.11.5",
+        "webpack@5.84.0|@webassemblyjs/helper-api-error@1.11.5",
+        "webpack@5.84.0|@webassemblyjs/helper-wasm-bytecode@1.11.5",
+        "webpack@5.84.0|@webassemblyjs/ieee754@1.11.5",
+        "webpack@5.84.0|@webassemblyjs/leb128@1.11.5",
+        "webpack@5.84.0|@webassemblyjs/utf8@1.11.5"
       ]
     },
     {
-      "ref": "webpack@5.83.1|@webassemblyjs/ieee754@1.11.5",
+      "ref": "webpack@5.84.0|@webassemblyjs/ieee754@1.11.5",
       "dependsOn": [
         "@xtuc/ieee754@1.2.0"
       ]
     },
     {
-      "ref": "webpack@5.83.1|@webassemblyjs/leb128@1.11.5",
+      "ref": "webpack@5.84.0|@webassemblyjs/leb128@1.11.5",
       "dependsOn": [
         "@xtuc/long@4.2.2"
       ]
     },
     {
-      "ref": "webpack@5.83.1|@webassemblyjs/utf8@1.11.5"
+      "ref": "webpack@5.84.0|@webassemblyjs/utf8@1.11.5"
     },
     {
-      "ref": "webpack@5.83.1|schema-utils@3.1.2",
+      "ref": "webpack@5.84.0|schema-utils@3.1.2",
       "dependsOn": [
         "@types/json-schema@7.0.11",
         "ajv-keywords@3.5.2",
@@ -84868,7 +85067,13 @@
       "ref": "@webassemblyjs/wast-printer@1.11.5|@webassemblyjs/helper-wasm-bytecode@1.11.5"
     },
     {
-      "ref": "enhanced-resolve@5.14.0",
+      "ref": "acorn-import-assertions@1.9.0",
+      "dependsOn": [
+        "acorn@8.8.2"
+      ]
+    },
+    {
+      "ref": "enhanced-resolve@5.14.1",
       "dependsOn": [
         "graceful-fs@4.2.11",
         "tapable@2.2.1"
