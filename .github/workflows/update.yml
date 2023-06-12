@@ -35,7 +35,7 @@ jobs:
           python blz_fetcher.py
           wc -l banklist.csv
           if [[ $(wc -l < banklist.csv) -ge 100 ]];then  
-            cp banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
+            mv banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
             git config --global user.email "jens.dibbern@gmail.com"
             git config --global user.name "datengaertnerei"
             git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank
