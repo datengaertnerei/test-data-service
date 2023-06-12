@@ -2,10 +2,11 @@ name: update-data
 
 concurrency: dev-build
 
-on: 
-  schedule:
+on:
+  workflow_dispatch
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '30 2 10 3,6,9,12 *'
+    #- cron:  '30 2 10 3,6,9,12 *'
     
 jobs:
   build:
