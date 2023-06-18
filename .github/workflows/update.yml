@@ -2,10 +2,11 @@ name: update-data
 
 concurrency: dev-build
 
-on: 
-  schedule:
+on:
+  workflow_dispatch
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '30 2 10 3,6,9,12 *'
+    #- cron:  '30 2 10 3,6,9,12 *'
     
 jobs:
   build:
@@ -13,15 +14,15 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@39fa126de8af73ab0d455b56764f8fe42b5e6a91
+        uses: step-security/harden-runner@215c5ca5ec7b0ee8425ee2e531db206868f0b83b
         with:
           disable-sudo: true
           egress-policy: audit #outbound hosts constantly subject to change by action providers
 
-      - uses: actions/checkout@f095bcc56b7c2baf48f3ac70d6d6782f4f553222
+      - uses: actions/checkout@96f53100ba2a5449eb71d2e6604bbcd94b9449b5
 
       - name: Set up Python 
-        uses: actions/setup-python@db9987b4c1f10f0404fa60ee629f675fafbd6763
+        uses: actions/setup-python@bd6b4b6205c4dbad673328db7b31b7fab9e241c0
         with:
           python-version: 3.x
           
@@ -34,8 +35,7 @@ jobs:
           python blz_fetcher.py
           wc -l banklist.csv
           if [[ $(wc -l < banklist.csv) -ge 100 ]];then  
-            git pull origin update-data
-            cp banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
+            mv banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
             git config --global user.email "jens.dibbern@gmail.com"
             git config --global user.name "datengaertnerei"
             git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank

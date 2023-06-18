@@ -17,30 +17,30 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@39fa126de8af73ab0d455b56764f8fe42b5e6a91
+      uses: step-security/harden-runner@215c5ca5ec7b0ee8425ee2e531db206868f0b83b
       with:
         egress-policy: audit #outbound hosts constantly subject to change by action providers
 
-    - uses: actions/checkout@f095bcc56b7c2baf48f3ac70d6d6782f4f553222
+    - uses: actions/checkout@96f53100ba2a5449eb71d2e6604bbcd94b9449b5
       with:
         fetch-depth: '0'
         ref: master
     
     - name: Set up JDK 17
-      uses: actions/setup-java@ddb82ce8a6ecf5ac3e80c3184839e6661546e4aa
+      uses: actions/setup-java@87c1c7064c0055a1c5bf9f2c9187d414e9764478
       with:
         java-version: 17
         distribution: 'temurin'
         
     - name: Cache Maven packages
-      uses: actions/cache@04f198bf0b2a39f7230a4304bf07747a0bddf146
+      uses: actions/cache@67b839edb68371cc5014f6cea11c9aa77238de78
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
     
     - name: Cache SonarCloud packages
-      uses: actions/cache@04f198bf0b2a39f7230a4304bf07747a0bddf146
+      uses: actions/cache@67b839edb68371cc5014f6cea11c9aa77238de78
       with:
         path: ~/.sonar/cache
         key: ${{ runner.os }}-sonar
@@ -54,4 +54,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         
-    - uses: codecov/codecov-action@49c20db375a254995f6d63d5dc03aa04e04a42ea
+    - uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d
