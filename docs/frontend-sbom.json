@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:2eedc334-2458-47ff-9ef1-3dfea7f1fc6b",
+  "serialNumber": "urn:uuid:7333456e-465e-47b9-ba83-bdd568b3407d",
   "metadata": {
-    "timestamp": "2023-06-23T07:07:17.175Z",
+    "timestamp": "2023-06-23T18:15:06.174Z",
     "tools": [
       {
         "vendor": "@cyclonedx",
@@ -4833,8 +4833,8 @@
       "type": "library",
       "name": "material",
       "group": "@mui",
-      "version": "5.13.5",
-      "bom-ref": "@mui/material@5.13.5",
+      "version": "5.13.6",
+      "bom-ref": "@mui/material@5.13.6",
       "author": "MUI Team",
       "description": "React components that implement Google's Material Design.",
       "licenses": [
@@ -4844,7 +4844,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/material@5.13.5?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-material",
+      "purl": "pkg:npm/%40mui/material@5.13.6?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-material",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-material",
@@ -4871,9 +4871,54 @@
       "components": [
         {
           "type": "library",
+          "name": "runtime",
+          "group": "@babel",
+          "version": "7.22.5",
+          "bom-ref": "@mui/material@5.13.6|@babel/runtime@7.22.5",
+          "author": "The Babel Team",
+          "description": "babel's modular runtime helpers",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/runtime@7.22.5#packages/babel-runtime",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-runtime",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-runtime",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.22.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@mui/material/node_modules/@babel/runtime"
+            }
+          ]
+        },
+        {
+          "type": "library",
           "name": "csstype",
           "version": "3.1.2",
-          "bom-ref": "@mui/material@5.13.5|csstype@3.1.2",
+          "bom-ref": "@mui/material@5.13.6|csstype@3.1.2",
           "author": "Fredrik Nicol",
           "description": "Strict TypeScript and Flow types for style based on MDN data",
           "licenses": [
@@ -5051,8 +5096,8 @@
       "type": "library",
       "name": "base",
       "group": "@mui",
-      "version": "5.0.0-beta.4",
-      "bom-ref": "@mui/base@5.0.0-beta.4",
+      "version": "5.0.0-beta.5",
+      "bom-ref": "@mui/base@5.0.0-beta.5",
       "author": "MUI Team",
       "description": "A library of headless ('unstyled') React UI components and low-level hooks.",
       "licenses": [
@@ -5062,7 +5107,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/base@5.0.0-beta.4#packages/mui-base",
+      "purl": "pkg:npm/%40mui/base@5.0.0-beta.5#packages/mui-base",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-base",
@@ -5070,7 +5115,7 @@
           "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
         },
         {
-          "url": "https://mui.com/base/getting-started/overview/",
+          "url": "https://mui.com/base-ui/getting-started/overview/",
           "type": "website",
           "comment": "as detected from PackageJson property \"homepage\""
         },
@@ -5080,7 +5125,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.4.tgz",
+          "url": "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.5.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -5089,6 +5134,53 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@mui/base"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "runtime",
+          "group": "@babel",
+          "version": "7.22.5",
+          "bom-ref": "@mui/base@5.0.0-beta.5|@babel/runtime@7.22.5",
+          "author": "The Babel Team",
+          "description": "babel's modular runtime helpers",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/runtime@7.22.5#packages/babel-runtime",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-runtime",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-runtime",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.22.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@mui/base/node_modules/@babel/runtime"
+            }
+          ]
         }
       ]
     },
@@ -5136,8 +5228,8 @@
       "type": "library",
       "name": "utils",
       "group": "@mui",
-      "version": "5.13.1",
-      "bom-ref": "@mui/utils@5.13.1",
+      "version": "5.13.6",
+      "bom-ref": "@mui/utils@5.13.6",
       "author": "MUI Team",
       "description": "Utility functions for React components.",
       "licenses": [
@@ -5147,7 +5239,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/utils@5.13.1?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-utils",
+      "purl": "pkg:npm/%40mui/utils@5.13.6?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-utils",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-utils",
@@ -5169,6 +5261,53 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@mui/utils"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "runtime",
+          "group": "@babel",
+          "version": "7.22.5",
+          "bom-ref": "@mui/utils@5.13.6|@babel/runtime@7.22.5",
+          "author": "The Babel Team",
+          "description": "babel's modular runtime helpers",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/runtime@7.22.5#packages/babel-runtime",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-runtime",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-runtime",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.22.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@mui/utils/node_modules/@babel/runtime"
+            }
+          ]
         }
       ]
     },
@@ -5464,8 +5603,8 @@
       "type": "library",
       "name": "system",
       "group": "@mui",
-      "version": "5.13.5",
-      "bom-ref": "@mui/system@5.13.5",
+      "version": "5.13.6",
+      "bom-ref": "@mui/system@5.13.6",
       "author": "MUI Team",
       "description": "CSS utilities for rapidly laying out custom designs.",
       "licenses": [
@@ -5475,7 +5614,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/system@5.13.5#packages/mui-system",
+      "purl": "pkg:npm/%40mui/system@5.13.6#packages/mui-system",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-system",
@@ -5493,7 +5632,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@mui/system/-/system-5.13.5.tgz",
+          "url": "https://registry.npmjs.org/@mui/system/-/system-5.13.6.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -5507,9 +5646,54 @@
       "components": [
         {
           "type": "library",
+          "name": "runtime",
+          "group": "@babel",
+          "version": "7.22.5",
+          "bom-ref": "@mui/system@5.13.6|@babel/runtime@7.22.5",
+          "author": "The Babel Team",
+          "description": "babel's modular runtime helpers",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/runtime@7.22.5#packages/babel-runtime",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-runtime",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-runtime",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.22.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@mui/system/node_modules/@babel/runtime"
+            }
+          ]
+        },
+        {
+          "type": "library",
           "name": "csstype",
           "version": "3.1.2",
-          "bom-ref": "@mui/system@5.13.5|csstype@3.1.2",
+          "bom-ref": "@mui/system@5.13.6|csstype@3.1.2",
           "author": "Fredrik Nicol",
           "description": "Strict TypeScript and Flow types for style based on MDN data",
           "licenses": [
@@ -5588,6 +5772,53 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@mui/private-theming"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "utils",
+          "group": "@mui",
+          "version": "5.13.1",
+          "bom-ref": "@mui/private-theming@5.13.1|@mui/utils@5.13.1",
+          "author": "MUI Team",
+          "description": "Utility functions for React components.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40mui/utils@5.13.1#packages/mui-utils",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/mui/material-ui.git#packages/mui-utils",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://github.com/mui/material-ui/tree/master/packages/mui-utils",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/mui/material-ui/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@mui/utils/-/utils-5.13.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@mui/private-theming/node_modules/@mui/utils"
+            }
+          ]
         }
       ]
     },
@@ -5985,6 +6216,51 @@
         }
       ],
       "components": [
+        {
+          "type": "library",
+          "name": "utils",
+          "group": "@mui",
+          "version": "5.13.1",
+          "bom-ref": "@mui/styles@5.13.2|@mui/utils@5.13.1",
+          "author": "MUI Team",
+          "description": "Utility functions for React components.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40mui/utils@5.13.1#packages/mui-utils",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/mui/material-ui.git#packages/mui-utils",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://github.com/mui/material-ui/tree/master/packages/mui-utils",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/mui/material-ui/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@mui/utils/-/utils-5.13.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@mui/styles/node_modules/@mui/utils"
+            }
+          ]
+        },
         {
           "type": "library",
           "name": "csstype",
@@ -74528,7 +74804,7 @@
         "@emotion/styled@11.11.0",
         "@fontsource/roboto@5.0.3",
         "@mui/icons-material@5.11.16",
-        "@mui/material@5.13.5",
+        "@mui/material@5.13.6",
         "@mui/styles@5.13.2",
         "@testing-library/dom@9.3.1",
         "@testing-library/jest-dom@5.16.5",
@@ -75183,26 +75459,26 @@
       "ref": "@mui/icons-material@5.11.16",
       "dependsOn": [
         "@babel/runtime@7.21.0",
-        "@mui/material@5.13.5",
+        "@mui/material@5.13.6",
         "@types/react@18.0.28",
         "react@18.2.0"
       ]
     },
     {
-      "ref": "@mui/material@5.13.5",
+      "ref": "@mui/material@5.13.6",
       "dependsOn": [
-        "@babel/runtime@7.21.0",
+        "@mui/material@5.13.6|@babel/runtime@7.22.5",
         "@emotion/react@11.11.1",
         "@emotion/styled@11.11.0",
-        "@mui/base@5.0.0-beta.4",
+        "@mui/base@5.0.0-beta.5",
         "@mui/core-downloads-tracker@5.13.4",
-        "@mui/system@5.13.5",
+        "@mui/system@5.13.6",
         "@mui/types@7.2.4",
-        "@mui/utils@5.13.1",
+        "@mui/utils@5.13.6",
         "@types/react-transition-group@4.4.6",
         "@types/react@18.0.28",
         "clsx@1.2.1",
-        "@mui/material@5.13.5|csstype@3.1.2",
+        "@mui/material@5.13.6|csstype@3.1.2",
         "prop-types@15.8.1",
         "react-dom@18.2.0",
         "react-is@18.2.0",
@@ -75211,7 +75487,13 @@
       ]
     },
     {
-      "ref": "@mui/material@5.13.5|csstype@3.1.2"
+      "ref": "@mui/material@5.13.6|@babel/runtime@7.22.5",
+      "dependsOn": [
+        "regenerator-runtime@0.13.11"
+      ]
+    },
+    {
+      "ref": "@mui/material@5.13.6|csstype@3.1.2"
     },
     {
       "ref": "@types/react@18.0.28",
@@ -75228,12 +75510,12 @@
       "ref": "@types/scheduler@0.16.2"
     },
     {
-      "ref": "@mui/base@5.0.0-beta.4",
+      "ref": "@mui/base@5.0.0-beta.5",
       "dependsOn": [
-        "@babel/runtime@7.21.0",
+        "@mui/base@5.0.0-beta.5|@babel/runtime@7.22.5",
         "@emotion/is-prop-valid@1.2.1",
         "@mui/types@7.2.4",
-        "@mui/utils@5.13.1",
+        "@mui/utils@5.13.6",
         "@popperjs/core@2.11.8",
         "@types/react@18.0.28",
         "clsx@1.2.1",
@@ -75244,20 +75526,32 @@
       ]
     },
     {
+      "ref": "@mui/base@5.0.0-beta.5|@babel/runtime@7.22.5",
+      "dependsOn": [
+        "regenerator-runtime@0.13.11"
+      ]
+    },
+    {
       "ref": "@mui/types@7.2.4",
       "dependsOn": [
         "@types/react@18.0.28"
       ]
     },
     {
-      "ref": "@mui/utils@5.13.1",
+      "ref": "@mui/utils@5.13.6",
       "dependsOn": [
-        "@babel/runtime@7.21.0",
+        "@mui/utils@5.13.6|@babel/runtime@7.22.5",
         "@types/prop-types@15.7.5",
         "@types/react-is@18.2.0",
         "prop-types@15.8.1",
         "react-is@18.2.0",
         "react@18.2.0"
+      ]
+    },
+    {
+      "ref": "@mui/utils@5.13.6|@babel/runtime@7.22.5",
+      "dependsOn": [
+        "regenerator-runtime@0.13.11"
       ]
     },
     {
@@ -75292,32 +75586,49 @@
       "ref": "@mui/core-downloads-tracker@5.13.4"
     },
     {
-      "ref": "@mui/system@5.13.5",
+      "ref": "@mui/system@5.13.6",
       "dependsOn": [
-        "@babel/runtime@7.21.0",
+        "@mui/system@5.13.6|@babel/runtime@7.22.5",
         "@emotion/react@11.11.1",
         "@emotion/styled@11.11.0",
         "@mui/private-theming@5.13.1",
         "@mui/styled-engine@5.13.2",
         "@mui/types@7.2.4",
-        "@mui/utils@5.13.1",
+        "@mui/utils@5.13.6",
         "@types/react@18.0.28",
         "clsx@1.2.1",
-        "@mui/system@5.13.5|csstype@3.1.2",
+        "@mui/system@5.13.6|csstype@3.1.2",
         "prop-types@15.8.1",
         "react@18.2.0"
       ]
     },
     {
-      "ref": "@mui/system@5.13.5|csstype@3.1.2"
+      "ref": "@mui/system@5.13.6|@babel/runtime@7.22.5",
+      "dependsOn": [
+        "regenerator-runtime@0.13.11"
+      ]
+    },
+    {
+      "ref": "@mui/system@5.13.6|csstype@3.1.2"
     },
     {
       "ref": "@mui/private-theming@5.13.1",
       "dependsOn": [
         "@babel/runtime@7.21.0",
-        "@mui/utils@5.13.1",
+        "@mui/private-theming@5.13.1|@mui/utils@5.13.1",
         "@types/react@18.0.28",
         "prop-types@15.8.1",
+        "react@18.2.0"
+      ]
+    },
+    {
+      "ref": "@mui/private-theming@5.13.1|@mui/utils@5.13.1",
+      "dependsOn": [
+        "@babel/runtime@7.21.0",
+        "@types/prop-types@15.7.5",
+        "@types/react-is@18.2.0",
+        "prop-types@15.8.1",
+        "react-is@18.2.0",
         "react@18.2.0"
       ]
     },
@@ -75382,7 +75693,7 @@
         "@emotion/hash@0.9.1",
         "@mui/private-theming@5.13.1",
         "@mui/types@7.2.4",
-        "@mui/utils@5.13.1",
+        "@mui/styles@5.13.2|@mui/utils@5.13.1",
         "@types/react@18.0.28",
         "clsx@1.2.1",
         "@mui/styles@5.13.2|csstype@3.1.2",
@@ -75396,6 +75707,17 @@
         "jss-plugin-vendor-prefixer@10.10.0",
         "jss@10.10.0",
         "prop-types@15.8.1",
+        "react@18.2.0"
+      ]
+    },
+    {
+      "ref": "@mui/styles@5.13.2|@mui/utils@5.13.1",
+      "dependsOn": [
+        "@babel/runtime@7.21.0",
+        "@types/prop-types@15.7.5",
+        "@types/react-is@18.2.0",
+        "prop-types@15.8.1",
+        "react-is@18.2.0",
         "react@18.2.0"
       ]
     },
