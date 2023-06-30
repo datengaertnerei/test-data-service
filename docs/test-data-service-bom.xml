@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom serialNumber="urn:uuid:611a6f15-c868-42a0-b2eb-37907ea3eae7" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
+<bom serialNumber="urn:uuid:96fc6b1b-ab06-4f9e-bfee-6648b76bf008" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2023-06-30T20:23:36Z</timestamp>
+    <timestamp>2023-06-30T22:05:51Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -1992,30 +1992,30 @@ Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.</description>
       <purl>pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar</purl>
       <externalReferences><reference type="website"><url>http://wiki.openstreetmap.org/wiki/Osmosis</url></reference><reference type="vcs"><url>https://github.com/openstreetmap/osmosis</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/com.google.guava/guava@32.1.0-jre?type=jar">
+    <component type="library" bom-ref="pkg:maven/com.google.guava/guava@32.1.1-jre?type=jar">
       <group>com.google.guava</group>
       <name>guava</name>
-      <version>32.1.0-jre</version>
+      <version>32.1.1-jre</version>
       <description>Guava is a suite of core and expanded libraries that include
     utility classes, Google's collections, I/O classes, and
     much more.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="MD5">0b4020ae7deff32efb74c08f8b9215c5</hash>
-        <hash alg="SHA-1">54a136da267b1f1b840771b7200628daa12e63ea</hash>
-        <hash alg="SHA-256">f2b2fd9e4e88111cc63c4349cc3455e92aad7513708e434dfcc8014a99992301</hash>
-        <hash alg="SHA-512">a2ac17265555afbb4c35d9c69fa50b8ac2f7cfb7d6e85cd1f64c4452a12a21e1abe1663e3caf81c15998dcf262d9d4975b2b474e9000bd2a8afd493e7480a84f</hash>
-        <hash alg="SHA-384">e5434ea64ddbf53c4bf6cf0bda1f46e1334f3c0a310298f8867583f8c3295e4c6f1682bf24b6e388f777abd4a1b56cdd</hash>
-        <hash alg="SHA3-384">267edee1df86f9277acb789af9ab7749c41fd139eadddcac1a89553a6ac9ca407533d469f81dd893dc8a7fed3dc2b6f2</hash>
-        <hash alg="SHA3-256">f463100abb5583cc20fa2f638b815eed0b7529f6a01e2aabcd4986581ceb9dec</hash>
-        <hash alg="SHA3-512">25de85ac460cfaf4ef1ff0404e25236d3cc09d78d571196243756dd8206b4aebf1d6cd9e4eb8ab66d27d3204fb1dc05a25905bc13916d1242d49622cc275c64e</hash>
+        <hash alg="MD5">55870c9a31bf9ba2815f252a93ab0850</hash>
+        <hash alg="SHA-1">ad575652d84153075dd41ec6177ccb15251262b2</hash>
+        <hash alg="SHA-256">91fbba37f1c8b251cf9ea9e7d3a369eb79eb1e6a5df1d4bbf483dd0380740281</hash>
+        <hash alg="SHA-512">553c4c8dd7084bb558ac6b1b4a910df10d4973ea80e624d53e037c38a5aa9b001b990cad77f3e71be93a7a39a2d331cc3099ec842249e152ec0d41ec9a325d69</hash>
+        <hash alg="SHA-384">dad928a5179cfc8bad63855744a134e1f1f9576c873aad5be0bd66be41967f23bd335bd6d45398d7aafa13c1d0e61c48</hash>
+        <hash alg="SHA3-384">4ad0035ed2be1e5525f2f8d558c8a3d4abdbf78f1464e7e8061250e51eb3fecc33072e3bc74705b84080d12b7f229796</hash>
+        <hash alg="SHA3-256">db4b30e06f60f1b86dff8e099f2875b37e7e331123c461926aae77b0417f7a51</hash>
+        <hash alg="SHA3-512">44d906064e97fce4c6f231a58c702fd979c80441fe170a94cd178211cb547a51b8cbd34f133ba19d6930e064ace289bc04037eb7e39e3ed7db8cb469aae06ab1</hash>
       </hashes>
       <licenses>
         <license>
           <id>Apache-2.0</id>
         </license>
       </licenses>
-      <purl>pkg:maven/com.google.guava/guava@32.1.0-jre?type=jar</purl>
+      <purl>pkg:maven/com.google.guava/guava@32.1.1-jre?type=jar</purl>
       <externalReferences><reference type="website"><url>https://github.com/google/guava</url></reference><reference type="build-system"><url>https://github.com/google/guava/actions</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="issue-tracker"><url>https://github.com/google/guava/issues</url></reference><reference type="vcs"><url>https://github.com/google/guava/guava</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar">
@@ -2888,7 +2888,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
     <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar">
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar"/>
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar"/>
-      <dependency ref="pkg:maven/com.google.guava/guava@32.1.0-jre?type=jar"/>
+      <dependency ref="pkg:maven/com.google.guava/guava@32.1.1-jre?type=jar"/>
       <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.23.3?type=jar"/>
       <dependency ref="pkg:maven/commons-io/commons-io@2.13.0?type=jar"/>
     </dependency>
@@ -2917,7 +2917,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.23.3?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.23.3?type=jar"/>
-    <dependency ref="pkg:maven/com.google.guava/guava@32.1.0-jre?type=jar">
+    <dependency ref="pkg:maven/com.google.guava/guava@32.1.1-jre?type=jar">
       <dependency ref="pkg:maven/com.google.guava/failureaccess@1.0.1?type=jar"/>
       <dependency ref="pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar"/>
       <dependency ref="pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"/>
@@ -2976,7 +2976,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
     </dependency>
     <dependency ref="pkg:maven/com.jhlabs/filters@2.0.235-1?type=jar"/>
     <dependency ref="pkg:maven/org.reflections/reflections@0.9.10?type=jar">
-      <dependency ref="pkg:maven/com.google.guava/guava@32.1.0-jre?type=jar"/>
+      <dependency ref="pkg:maven/com.google.guava/guava@32.1.1-jre?type=jar"/>
       <dependency ref="pkg:maven/org.javassist/javassist@3.19.0-GA?type=jar"/>
       <dependency ref="pkg:maven/com.google.code.findbugs/annotations@2.0.1?type=jar"/>
     </dependency>
