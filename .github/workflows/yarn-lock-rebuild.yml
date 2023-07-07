@@ -35,7 +35,7 @@ jobs:
           yarn build
           git config --global user.email "jens.dibbern@gmail.com"
           git config --global user.name "datengaertnerei"
-          git commit -m "Action commit: yarn.lock rebuild" 
+          git commit -a -m "Action commit: yarn.lock rebuild" 
           git push --set-upstream origin update-yarn-lock
         env:        
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
