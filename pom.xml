@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -43,8 +45,10 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:https://github.com/datengaertnerei/test-data-service.git</connection>
-		<developerConnection>scm:git:https://github.com/datengaertnerei/test-data-service.git</developerConnection>
+		<connection>
+			scm:git:https://github.com/datengaertnerei/test-data-service.git</connection>
+		<developerConnection>
+			scm:git:https://github.com/datengaertnerei/test-data-service.git</developerConnection>
 		<url>https://github.com/datengaertnerei/test-data-service</url>
 		<tag>V1.0.7</tag>
 	</scm>
@@ -56,7 +60,8 @@
 			<url>https://maven.pkg.github.com/datengaertnerei/test-data-service
 			</url>
 		</repository>
-		<downloadUrl>https://github.com/datengaertnerei/test-data-service/packages/411378</downloadUrl>
+		<downloadUrl>
+			https://github.com/datengaertnerei/test-data-service/packages/411378</downloadUrl>
 	</distributionManagement>
 
 	<properties>
@@ -95,7 +100,7 @@
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			</dependency>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -218,7 +223,8 @@
 						<arg>-verbose</arg>
 						<arg>-Werror</arg>
 						<arg>-Xlint:all</arg>
-						<arg>-Xlint:-path</arg><!-- due to dependency mess of PBF component -->
+						<arg>-Xlint:-path</arg><!-- due to dependency mess of
+						PBF component -->
 					</compilerArgs>
 				</configuration>
 			</plugin>
@@ -302,7 +308,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- using the exec plugin instead of the frontend plugin - the later 
+			<!-- using the exec plugin instead of the frontend plugin - the
+			later 
 				does not work properly with Windows OS -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -405,6 +412,25 @@
 					<includeLicenseText>false</includeLicenseText>
 					<outputFormat>all</outputFormat>
 					<outputName>test-data-service-bom</outputName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>blog.softwaretester</groupId>
+				<artifactId>sandboy-maven</artifactId>
+				<version>1.1.1</version>
+				<executions>
+					<execution>
+						<id>Generate_Report</id>
+						<phase>none</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<surefireSourcePath>${project.build.directory}/surefire-reports/</surefireSourcePath>
+					<generatedReportPath>
+						${project.build.directory}/sandboy-report/</generatedReportPath>
 				</configuration>
 			</plugin>
 		</plugins>
