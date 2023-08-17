@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.0</version>
+		<version>3.1.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.datengaertnerei.test</groupId>
 	<artifactId>data-service</artifactId>
-	<version>1.0.10</version>
+	<version>1.0.11</version>
 	<name>Test data service</name>
 	<description>Web Service to provide valid test data for german
 		fictitious persons.
@@ -46,7 +46,7 @@
 		<connection>scm:git:https://github.com/datengaertnerei/test-data-service.git</connection>
 		<developerConnection>scm:git:https://github.com/datengaertnerei/test-data-service.git</developerConnection>
 		<url>https://github.com/datengaertnerei/test-data-service</url>
-		<tag>V1.0.10</tag>
+		<tag>V1.0.11</tag>
 	</scm>
 
 	<distributionManagement>
@@ -61,7 +61,7 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<cucumber.version>7.12.1</cucumber.version>
+		<cucumber.version>7.13.0</cucumber.version>
 		<sonar.projectKey>datengaertnerei_test-data-service</sonar.projectKey>
 		<sonar.organization>datengaertnerei</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -81,7 +81,7 @@
 		<dependency>
 			<groupId>org.iban4j</groupId>
 			<artifactId>iban4j</artifactId>
-			<version>3.2.5-RELEASE</version>
+			<version>3.2.6-RELEASE</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -120,7 +120,7 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.1.0</version>
+			<version>2.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.talanlabs</groupId>
@@ -130,7 +130,7 @@
 		<dependency>
 			<groupId>au.com.dius.pact.provider</groupId>
 			<artifactId>junit5spring</artifactId>
-			<version>4.6.0</version>
+			<version>4.6.1</version>
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
@@ -175,7 +175,7 @@
 		<dependency>
 			<groupId>com.microsoft.playwright</groupId>
 			<artifactId>playwright</artifactId>
-			<version>1.35.0</version>
+			<version>1.37.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -185,12 +185,12 @@
 			<dependency>
 				<groupId>com.google.protobuf</groupId>
 				<artifactId>protobuf-java</artifactId>
-				<version>3.23.3</version>
+				<version>3.24.0</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
-				<version>32.0.1-jre</version>
+				<version>32.1.2-jre</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>

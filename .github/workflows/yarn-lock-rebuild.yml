@@ -1,4 +1,4 @@
-name: update-data
+name: rebuild-yarn-lock
 
 concurrency: dev-build
 
@@ -21,26 +21,22 @@ jobs:
 
       - uses: actions/checkout@96f53100ba2a5449eb71d2e6604bbcd94b9449b5
 
-      - name: Set up Python 
-        uses: actions/setup-python@f97b83114c6f41cfaa57698147ad3ce20543a127
+      - name: Set up Node.js 
+        uses: actions/setup-node@v3
         with:
-          python-version: 3.x
+          node-version: latest
           
-      - name: Fetch data
+      - name: Rebuild yarn.lock to update transitive dependencies
         run: |
-          git checkout -B update-data
-          cd src/tools
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          python blz_fetcher.py
-          wc -l banklist.csv
-          if [[ $(wc -l < banklist.csv) -ge 100 ]];then  
-            mv banklist.csv ../main/resources/com/datengaertnerei/test/dataservice/bank
-            git config --global user.email "jens.dibbern@gmail.com"
-            git config --global user.name "datengaertnerei"
-            git commit -m "Action commit: new bank data" ../main/resources/com/datengaertnerei/test/dataservice/bank
-            git push --set-upstream origin update-data
-          fi
+          git checkout -B update-yarn-lock
+          cd src/app
+          rm -f yarn.lock
+          yarn install
+          yarn build
+          git config --global user.email "jens.dibbern@gmail.com"
+          git config --global user.name "datengaertnerei"
+          git commit -a -m "Action commit: yarn.lock rebuild" 
+          git push --set-upstream origin update-yarn-lock
         env:        
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -50,7 +46,7 @@ jobs:
         run: gh pr create --base $BASE --head $HEAD --title "$TITLE" --body "$BODY"
         env:
           GITHUB_TOKEN: ${{ secrets.REL_SECRET }}
-          HEAD: update-data
+          HEAD: update-yarn-lock
           BASE: develop
-          TITLE: "Merge updated data to dev"
+          TITLE: "Merge updated yarn.lock to dev"
           BODY: ":crown: *An automated PR*"
