@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:2a7892f4-24a4-44f3-80d0-5b8750c91f01",
+  "serialNumber": "urn:uuid:2b46ac1b-50ef-4425-8277-99e5f26ccc20",
   "metadata": {
-    "timestamp": "2023-09-20T15:27:37.778Z",
+    "timestamp": "2023-09-21T02:07:12.664Z",
     "tools": [
       {
         "name": "npm",
@@ -20616,8 +20616,8 @@
     {
       "type": "library",
       "name": "autoprefixer",
-      "version": "10.4.15",
-      "bom-ref": "autoprefixer@10.4.15",
+      "version": "10.4.16",
+      "bom-ref": "autoprefixer@10.4.16",
       "author": "Andrey Sitnik",
       "description": "Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website",
       "licenses": [
@@ -20627,7 +20627,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/autoprefixer@10.4.15",
+      "purl": "pkg:npm/autoprefixer@10.4.16",
       "externalReferences": [
         {
           "url": "git+https://github.com/postcss/autoprefixer.git",
@@ -20645,7 +20645,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.15.tgz",
+          "url": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.16.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -20661,7 +20661,7 @@
           "type": "library",
           "name": "browserslist",
           "version": "4.21.10",
-          "bom-ref": "autoprefixer@10.4.15|browserslist@4.21.10",
+          "bom-ref": "autoprefixer@10.4.16|browserslist@4.21.10",
           "author": "Andrey Sitnik",
           "description": "Share target browsers between different front-end tools, like Autoprefixer, Stylelint and babel-env-preset",
           "licenses": [
@@ -20705,7 +20705,7 @@
           "type": "library",
           "name": "electron-to-chromium",
           "version": "1.4.490",
-          "bom-ref": "autoprefixer@10.4.15|electron-to-chromium@1.4.490",
+          "bom-ref": "autoprefixer@10.4.16|electron-to-chromium@1.4.490",
           "author": "Kilian Valkhof",
           "description": "Provides a list of electron-to-chromium version mappings",
           "licenses": [
@@ -21001,8 +21001,8 @@
     {
       "type": "library",
       "name": "fraction.js",
-      "version": "4.2.0",
-      "bom-ref": "fraction.js@4.2.0",
+      "version": "4.3.6",
+      "bom-ref": "fraction.js@4.3.6",
       "author": "Robert Eisele",
       "description": "A rational number library",
       "licenses": [
@@ -21012,10 +21012,10 @@
           }
         }
       ],
-      "purl": "pkg:npm/fraction.js@4.2.0",
+      "purl": "pkg:npm/fraction.js@4.3.6",
       "externalReferences": [
         {
-          "url": "git://github.com/infusion/Fraction.js.git",
+          "url": "git://github.com/rawify/Fraction.js.git",
           "type": "vcs",
           "comment": "as detected from PackageJson property \"repository.url\""
         },
@@ -21025,12 +21025,12 @@
           "comment": "as detected from PackageJson property \"homepage\""
         },
         {
-          "url": "https://github.com/infusion/Fraction.js/issues",
+          "url": "https://github.com/rawify/Fraction.js/issues",
           "type": "issue-tracker",
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/fraction.js/-/fraction.js-4.2.0.tgz",
+          "url": "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.6.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -26810,6 +26810,50 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/react-scripts/node_modules/autoprefixer"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "fraction.js",
+          "version": "4.2.0",
+          "bom-ref": "react-scripts@5.0.1|fraction.js@4.2.0",
+          "author": "Robert Eisele",
+          "description": "A rational number library",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/fraction.js@4.2.0",
+          "externalReferences": [
+            {
+              "url": "git://github.com/infusion/Fraction.js.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://www.xarg.org/2014/03/rational-numbers-in-javascript/",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/infusion/Fraction.js/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/fraction.js/-/fraction.js-4.2.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/fraction.js"
             }
           ]
         },
@@ -71642,7 +71686,7 @@
         "@testing-library/jest-dom@6.1.3",
         "@testing-library/react@14.0.0",
         "@testing-library/user-event@14.5.1",
-        "autoprefixer@10.4.15",
+        "autoprefixer@10.4.16",
         "postcss@8.4.30",
         "react-dom@18.2.0",
         "react-router@6.16.0",
@@ -74891,11 +74935,11 @@
       ]
     },
     {
-      "ref": "autoprefixer@10.4.15",
+      "ref": "autoprefixer@10.4.16",
       "dependsOn": [
-        "autoprefixer@10.4.15|browserslist@4.21.10",
+        "autoprefixer@10.4.16|browserslist@4.21.10",
         "caniuse-lite@1.0.30001538",
-        "fraction.js@4.2.0",
+        "fraction.js@4.3.6",
         "normalize-range@0.1.2",
         "picocolors@1.0.0",
         "postcss-value-parser@4.2.0",
@@ -74903,16 +74947,16 @@
       ]
     },
     {
-      "ref": "autoprefixer@10.4.15|browserslist@4.21.10",
+      "ref": "autoprefixer@10.4.16|browserslist@4.21.10",
       "dependsOn": [
         "caniuse-lite@1.0.30001538",
-        "autoprefixer@10.4.15|electron-to-chromium@1.4.490",
+        "autoprefixer@10.4.16|electron-to-chromium@1.4.490",
         "node-releases@2.0.13",
         "update-browserslist-db@1.0.11"
       ]
     },
     {
-      "ref": "autoprefixer@10.4.15|electron-to-chromium@1.4.490"
+      "ref": "autoprefixer@10.4.16|electron-to-chromium@1.4.490"
     },
     {
       "ref": "caniuse-lite@1.0.30001538"
@@ -74944,7 +74988,7 @@
       "ref": "picocolors@1.0.0"
     },
     {
-      "ref": "fraction.js@4.2.0"
+      "ref": "fraction.js@4.3.6"
     },
     {
       "ref": "normalize-range@0.1.2"
@@ -76144,12 +76188,15 @@
       "dependsOn": [
         "browserslist@4.21.9",
         "caniuse-lite@1.0.30001538",
-        "fraction.js@4.2.0",
+        "react-scripts@5.0.1|fraction.js@4.2.0",
         "normalize-range@0.1.2",
         "picocolors@1.0.0",
         "postcss-value-parser@4.2.0",
         "react-scripts@5.0.1|postcss@8.4.25"
       ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|fraction.js@4.2.0"
     },
     {
       "ref": "react-scripts@5.0.1|css-blank-pseudo@3.0.3",
