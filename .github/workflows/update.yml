@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@d7f96b7d4bd352ead925785ed4c6bad63109b097
+        uses: step-security/harden-runner@02adcd6bfd77320f112a89e3f2692a83928cc1f4
         with:
           disable-sudo: true
           egress-policy: audit #outbound hosts constantly subject to change by action providers
