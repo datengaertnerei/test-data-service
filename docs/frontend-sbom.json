@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:2f32e6ec-0cb1-453c-85ce-52d8fec9e6cd",
+  "serialNumber": "urn:uuid:8ac066d3-3e40-4bde-8c64-0f52055ef889",
   "metadata": {
-    "timestamp": "2023-11-13T22:49:59.785Z",
+    "timestamp": "2023-11-14T14:01:27.567Z",
     "tools": [
       {
         "name": "npm",
@@ -4014,8 +4014,8 @@
       "type": "library",
       "name": "icons-material",
       "group": "@mui",
-      "version": "5.14.16",
-      "bom-ref": "@mui/icons-material@5.14.16",
+      "version": "5.14.18",
+      "bom-ref": "@mui/icons-material@5.14.18",
       "author": "MUI Team",
       "description": "Material Design icons distributed as SVG React components.",
       "licenses": [
@@ -4025,7 +4025,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/icons-material@5.14.16#packages/mui-icons-material",
+      "purl": "pkg:npm/%40mui/icons-material@5.14.18#packages/mui-icons-material",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-icons-material",
@@ -4043,7 +4043,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.14.16.tgz",
+          "url": "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.14.18.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -4059,8 +4059,8 @@
       "type": "library",
       "name": "material",
       "group": "@mui",
-      "version": "5.14.17",
-      "bom-ref": "@mui/material@5.14.17",
+      "version": "5.14.18",
+      "bom-ref": "@mui/material@5.14.18",
       "author": "MUI Team",
       "description": "React components that implement Google's Material Design.",
       "licenses": [
@@ -4070,7 +4070,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/material@5.14.17?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-material",
+      "purl": "pkg:npm/%40mui/material@5.14.18?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-material",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-material",
@@ -4137,49 +4137,51 @@
           "name": "cdx:npm:package:path",
           "value": "node_modules/@types/react"
         }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "prop-types",
-      "group": "@types",
-      "version": "15.7.9",
-      "bom-ref": "@types/prop-types@15.7.9",
-      "description": "TypeScript definitions for prop-types",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
       ],
-      "purl": "pkg:npm/%40types/prop-types@15.7.9#types/prop-types",
-      "externalReferences": [
+      "components": [
         {
-          "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/prop-types",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/prop-types",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.9.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@types/prop-types"
+          "type": "library",
+          "name": "prop-types",
+          "group": "@types",
+          "version": "15.7.9",
+          "bom-ref": "@types/react@18.2.31|@types/prop-types@15.7.9",
+          "description": "TypeScript definitions for prop-types",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40types/prop-types@15.7.9#types/prop-types",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/prop-types",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/prop-types",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.9.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@types/react/node_modules/@types/prop-types"
+            }
+          ]
         }
       ]
     },
@@ -4231,8 +4233,8 @@
       "type": "library",
       "name": "base",
       "group": "@mui",
-      "version": "5.0.0-beta.23",
-      "bom-ref": "@mui/base@5.0.0-beta.23",
+      "version": "5.0.0-beta.24",
+      "bom-ref": "@mui/base@5.0.0-beta.24",
       "author": "MUI Team",
       "description": "A library of headless ('unstyled') React UI components and low-level hooks.",
       "licenses": [
@@ -4242,7 +4244,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/base@5.0.0-beta.23#packages/mui-base",
+      "purl": "pkg:npm/%40mui/base@5.0.0-beta.24#packages/mui-base",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-base",
@@ -4260,7 +4262,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.23.tgz",
+          "url": "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.24.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -4276,8 +4278,8 @@
       "type": "library",
       "name": "react-dom",
       "group": "@floating-ui",
-      "version": "2.0.2",
-      "bom-ref": "@floating-ui/react-dom@2.0.2",
+      "version": "2.0.4",
+      "bom-ref": "@floating-ui/react-dom@2.0.4",
       "author": "atomiks",
       "description": "Floating UI for React DOM",
       "licenses": [
@@ -4287,7 +4289,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40floating-ui/react-dom@2.0.2#packages/react-dom",
+      "purl": "pkg:npm/%40floating-ui/react-dom@2.0.4#packages/react-dom",
       "externalReferences": [
         {
           "url": "git+https://github.com/floating-ui/floating-ui.git#packages/react-dom",
@@ -4305,7 +4307,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.0.2.tgz",
+          "url": "https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.0.4.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -4489,8 +4491,8 @@
       "type": "library",
       "name": "types",
       "group": "@mui",
-      "version": "7.2.8",
-      "bom-ref": "@mui/types@7.2.8",
+      "version": "7.2.9",
+      "bom-ref": "@mui/types@7.2.9",
       "author": "MUI Team",
       "description": "Utility types for MUI.",
       "licenses": [
@@ -4500,7 +4502,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/types@7.2.8?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-types",
+      "purl": "pkg:npm/%40mui/types@7.2.9?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-types",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-types",
@@ -4529,8 +4531,8 @@
       "type": "library",
       "name": "utils",
       "group": "@mui",
-      "version": "5.14.17",
-      "bom-ref": "@mui/utils@5.14.17",
+      "version": "5.14.18",
+      "bom-ref": "@mui/utils@5.14.18",
       "author": "MUI Team",
       "description": "Utility functions for React components.",
       "licenses": [
@@ -4540,7 +4542,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/utils@5.14.17?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-utils",
+      "purl": "pkg:npm/%40mui/utils@5.14.18?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-utils",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-utils",
@@ -4736,8 +4738,8 @@
       "type": "library",
       "name": "core-downloads-tracker",
       "group": "@mui",
-      "version": "5.14.17",
-      "bom-ref": "@mui/core-downloads-tracker@5.14.17",
+      "version": "5.14.18",
+      "bom-ref": "@mui/core-downloads-tracker@5.14.18",
       "author": "MUI Team",
       "description": "Internal package to track number of downloads of our design system libraries",
       "licenses": [
@@ -4747,7 +4749,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/core-downloads-tracker@5.14.17#packages/core-downloads-tracker",
+      "purl": "pkg:npm/%40mui/core-downloads-tracker@5.14.18#packages/core-downloads-tracker",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/core-downloads-tracker",
@@ -4765,7 +4767,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.14.17.tgz",
+          "url": "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.14.18.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -4781,8 +4783,8 @@
       "type": "library",
       "name": "system",
       "group": "@mui",
-      "version": "5.14.17",
-      "bom-ref": "@mui/system@5.14.17",
+      "version": "5.14.18",
+      "bom-ref": "@mui/system@5.14.18",
       "author": "MUI Team",
       "description": "CSS utilities for rapidly laying out custom designs.",
       "licenses": [
@@ -4792,7 +4794,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/system@5.14.17#packages/mui-system",
+      "purl": "pkg:npm/%40mui/system@5.14.18#packages/mui-system",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-system",
@@ -4810,7 +4812,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@mui/system/-/system-5.14.17.tgz",
+          "url": "https://registry.npmjs.org/@mui/system/-/system-5.14.18.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -4826,8 +4828,8 @@
       "type": "library",
       "name": "private-theming",
       "group": "@mui",
-      "version": "5.14.17",
-      "bom-ref": "@mui/private-theming@5.14.17",
+      "version": "5.14.18",
+      "bom-ref": "@mui/private-theming@5.14.18",
       "author": "MUI Team",
       "description": "Private - The React theme context to be shared between `@mui/styles` and `@mui/material`.",
       "licenses": [
@@ -4837,7 +4839,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/private-theming@5.14.17?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-private-theming",
+      "purl": "pkg:npm/%40mui/private-theming@5.14.18?vcs_url=git%2Bhttps%3A//github.com/mui/material-ui.git#packages/mui-private-theming",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-private-theming",
@@ -4866,8 +4868,8 @@
       "type": "library",
       "name": "styled-engine",
       "group": "@mui",
-      "version": "5.14.17",
-      "bom-ref": "@mui/styled-engine@5.14.17",
+      "version": "5.14.18",
+      "bom-ref": "@mui/styled-engine@5.14.18",
       "author": "MUI Team",
       "description": "styled() API wrapper package for emotion.",
       "licenses": [
@@ -4877,7 +4879,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/styled-engine@5.14.17#packages/mui-styled-engine",
+      "purl": "pkg:npm/%40mui/styled-engine@5.14.18#packages/mui-styled-engine",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-styled-engine",
@@ -4895,7 +4897,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@mui/styled-engine/-/styled-engine-5.14.17.tgz",
+          "url": "https://registry.npmjs.org/@mui/styled-engine/-/styled-engine-5.14.18.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -4904,6 +4906,50 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@mui/styled-engine"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prop-types",
+      "group": "@types",
+      "version": "15.7.10",
+      "bom-ref": "@types/prop-types@15.7.10",
+      "description": "TypeScript definitions for prop-types",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40types/prop-types@15.7.10#types/prop-types",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/prop-types",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/prop-types",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.10.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@types/prop-types"
         }
       ]
     },
@@ -5163,8 +5209,8 @@
       "type": "library",
       "name": "styles",
       "group": "@mui",
-      "version": "5.14.17",
-      "bom-ref": "@mui/styles@5.14.17",
+      "version": "5.14.18",
+      "bom-ref": "@mui/styles@5.14.18",
       "author": "MUI Team",
       "description": "MUI Styles - The legacy JSS-based styling solution of Material UI.",
       "licenses": [
@@ -5174,7 +5220,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40mui/styles@5.14.17#packages/mui-styles",
+      "purl": "pkg:npm/%40mui/styles@5.14.18#packages/mui-styles",
       "externalReferences": [
         {
           "url": "git+https://github.com/mui/material-ui.git#packages/mui-styles",
@@ -5192,7 +5238,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@mui/styles/-/styles-5.14.17.tgz",
+          "url": "https://registry.npmjs.org/@mui/styles/-/styles-5.14.18.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -18383,8 +18429,8 @@
     {
       "type": "library",
       "name": "caniuse-lite",
-      "version": "1.0.30001561",
-      "bom-ref": "caniuse-lite@1.0.30001561",
+      "version": "1.0.30001562",
+      "bom-ref": "caniuse-lite@1.0.30001562",
       "author": "Ben Briggs",
       "description": "A smaller version of caniuse-db, with only the essentials!",
       "licenses": [
@@ -18394,7 +18440,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/caniuse-lite@1.0.30001561?vcs_url=git%2Bhttps%3A//github.com/browserslist/caniuse-lite.git",
+      "purl": "pkg:npm/caniuse-lite@1.0.30001562?vcs_url=git%2Bhttps%3A//github.com/browserslist/caniuse-lite.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/browserslist/caniuse-lite.git",
@@ -69626,9 +69672,9 @@
         "@emotion/react@11.11.1",
         "@emotion/styled@11.11.0",
         "@fontsource/roboto@5.0.8",
-        "@mui/icons-material@5.14.16",
-        "@mui/material@5.14.17",
-        "@mui/styles@5.14.17",
+        "@mui/icons-material@5.14.18",
+        "@mui/material@5.14.18",
+        "@mui/styles@5.14.18",
         "@testing-library/dom@9.3.3",
         "@testing-library/jest-dom@6.1.4",
         "@testing-library/react@14.1.0",
@@ -69857,7 +69903,7 @@
     {
       "ref": "browserslist@4.22.1",
       "dependsOn": [
-        "caniuse-lite@1.0.30001561",
+        "caniuse-lite@1.0.30001562",
         "electron-to-chromium@1.4.565",
         "node-releases@2.0.13",
         "update-browserslist-db@1.0.13"
@@ -70183,25 +70229,25 @@
       "ref": "@fontsource/roboto@5.0.8"
     },
     {
-      "ref": "@mui/icons-material@5.14.16",
+      "ref": "@mui/icons-material@5.14.18",
       "dependsOn": [
         "@babel/runtime@7.23.2",
-        "@mui/material@5.14.17",
+        "@mui/material@5.14.18",
         "@types/react@18.2.31",
         "react@18.2.0"
       ]
     },
     {
-      "ref": "@mui/material@5.14.17",
+      "ref": "@mui/material@5.14.18",
       "dependsOn": [
         "@babel/runtime@7.23.2",
         "@emotion/react@11.11.1",
         "@emotion/styled@11.11.0",
-        "@mui/base@5.0.0-beta.23",
-        "@mui/core-downloads-tracker@5.14.17",
-        "@mui/system@5.14.17",
-        "@mui/types@7.2.8",
-        "@mui/utils@5.14.17",
+        "@mui/base@5.0.0-beta.24",
+        "@mui/core-downloads-tracker@5.14.18",
+        "@mui/system@5.14.18",
+        "@mui/types@7.2.9",
+        "@mui/utils@5.14.18",
         "@types/react-transition-group@4.4.8",
         "@types/react@18.2.31",
         "clsx@2.0.0",
@@ -70216,24 +70262,24 @@
     {
       "ref": "@types/react@18.2.31",
       "dependsOn": [
-        "@types/prop-types@15.7.9",
+        "@types/react@18.2.31|@types/prop-types@15.7.9",
         "@types/scheduler@0.16.5",
         "csstype@3.1.2"
       ]
     },
     {
-      "ref": "@types/prop-types@15.7.9"
+      "ref": "@types/react@18.2.31|@types/prop-types@15.7.9"
     },
     {
       "ref": "@types/scheduler@0.16.5"
     },
     {
-      "ref": "@mui/base@5.0.0-beta.23",
+      "ref": "@mui/base@5.0.0-beta.24",
       "dependsOn": [
         "@babel/runtime@7.23.2",
-        "@floating-ui/react-dom@2.0.2",
-        "@mui/types@7.2.8",
-        "@mui/utils@5.14.17",
+        "@floating-ui/react-dom@2.0.4",
+        "@mui/types@7.2.9",
+        "@mui/utils@5.14.18",
         "@popperjs/core@2.11.8",
         "@types/react@18.2.31",
         "clsx@2.0.0",
@@ -70243,7 +70289,7 @@
       ]
     },
     {
-      "ref": "@floating-ui/react-dom@2.0.2",
+      "ref": "@floating-ui/react-dom@2.0.4",
       "dependsOn": [
         "@floating-ui/dom@1.5.3",
         "react-dom@18.2.0",
@@ -70275,16 +70321,16 @@
       ]
     },
     {
-      "ref": "@mui/types@7.2.8",
+      "ref": "@mui/types@7.2.9",
       "dependsOn": [
         "@types/react@18.2.31"
       ]
     },
     {
-      "ref": "@mui/utils@5.14.17",
+      "ref": "@mui/utils@5.14.18",
       "dependsOn": [
         "@babel/runtime@7.23.2",
-        "@types/prop-types@15.7.9",
+        "@types/prop-types@15.7.10",
         "@types/react@18.2.31",
         "prop-types@15.8.1",
         "react-is@18.2.0",
@@ -70309,18 +70355,18 @@
       "ref": "prop-types@15.8.1|react-is@16.13.1"
     },
     {
-      "ref": "@mui/core-downloads-tracker@5.14.17"
+      "ref": "@mui/core-downloads-tracker@5.14.18"
     },
     {
-      "ref": "@mui/system@5.14.17",
+      "ref": "@mui/system@5.14.18",
       "dependsOn": [
         "@babel/runtime@7.23.2",
         "@emotion/react@11.11.1",
         "@emotion/styled@11.11.0",
-        "@mui/private-theming@5.14.17",
-        "@mui/styled-engine@5.14.17",
-        "@mui/types@7.2.8",
-        "@mui/utils@5.14.17",
+        "@mui/private-theming@5.14.18",
+        "@mui/styled-engine@5.14.18",
+        "@mui/types@7.2.9",
+        "@mui/utils@5.14.18",
         "@types/react@18.2.31",
         "clsx@2.0.0",
         "csstype@3.1.2",
@@ -70329,17 +70375,17 @@
       ]
     },
     {
-      "ref": "@mui/private-theming@5.14.17",
+      "ref": "@mui/private-theming@5.14.18",
       "dependsOn": [
         "@babel/runtime@7.23.2",
-        "@mui/utils@5.14.17",
+        "@mui/utils@5.14.18",
         "@types/react@18.2.31",
         "prop-types@15.8.1",
         "react@18.2.0"
       ]
     },
     {
-      "ref": "@mui/styled-engine@5.14.17",
+      "ref": "@mui/styled-engine@5.14.18",
       "dependsOn": [
         "@babel/runtime@7.23.2",
         "@emotion/cache@11.11.0",
@@ -70349,6 +70395,9 @@
         "prop-types@15.8.1",
         "react@18.2.0"
       ]
+    },
+    {
+      "ref": "@types/prop-types@15.7.10"
     },
     {
       "ref": "react-is@18.2.0"
@@ -70387,13 +70436,13 @@
       ]
     },
     {
-      "ref": "@mui/styles@5.14.17",
+      "ref": "@mui/styles@5.14.18",
       "dependsOn": [
         "@babel/runtime@7.23.2",
         "@emotion/hash@0.9.1",
-        "@mui/private-theming@5.14.17",
-        "@mui/types@7.2.8",
-        "@mui/utils@5.14.17",
+        "@mui/private-theming@5.14.18",
+        "@mui/types@7.2.9",
+        "@mui/utils@5.14.18",
         "@types/react@18.2.31",
         "clsx@2.0.0",
         "csstype@3.1.2",
@@ -72571,7 +72620,7 @@
       "ref": "autoprefixer@10.4.16",
       "dependsOn": [
         "browserslist@4.22.1",
-        "caniuse-lite@1.0.30001561",
+        "caniuse-lite@1.0.30001562",
         "fraction.js@4.3.7",
         "normalize-range@0.1.2",
         "picocolors@1.0.0",
@@ -72580,7 +72629,7 @@
       ]
     },
     {
-      "ref": "caniuse-lite@1.0.30001561"
+      "ref": "caniuse-lite@1.0.30001562"
     },
     {
       "ref": "electron-to-chromium@1.4.565"
@@ -75630,7 +75679,7 @@
       "ref": "caniuse-api@3.0.0",
       "dependsOn": [
         "browserslist@4.22.1",
-        "caniuse-lite@1.0.30001561",
+        "caniuse-lite@1.0.30001562",
         "lodash.memoize@4.1.2",
         "lodash.uniq@4.5.0"
       ]
