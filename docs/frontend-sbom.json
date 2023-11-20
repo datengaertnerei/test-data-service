@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:f1352bc4-7a6f-4975-b9c6-5ac41a336241",
+  "serialNumber": "urn:uuid:0185a534-0cb3-4ae5-8873-b6187b41db4d",
   "metadata": {
-    "timestamp": "2023-11-19T20:15:45.506Z",
+    "timestamp": "2023-11-20T18:52:54.731Z",
     "tools": [
       {
         "name": "npm",
@@ -2424,7 +2424,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40babel/helper-string-parser@7.22.5#packages/babel-helper-string-parser",
+      "purl": "pkg:npm/%40babel/helper-string-parser@7.22.5?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-helper-string-parser",
       "externalReferences": [
         {
           "url": "git+https://github.com/babel/babel.git#packages/babel-helper-string-parser",
@@ -2440,11 +2440,6 @@
           "url": "https://github.com/babel/babel/issues",
           "type": "issue-tracker",
           "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.22.5.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
         }
       ],
       "properties": [
@@ -2468,7 +2463,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/to-fast-properties@2.0.0",
+      "purl": "pkg:npm/to-fast-properties@2.0.0?vcs_url=git%2Bhttps%3A//github.com/sindresorhus/to-fast-properties.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/sindresorhus/to-fast-properties.git",
@@ -2484,11 +2479,6 @@
           "url": "https://github.com/sindresorhus/to-fast-properties/issues",
           "type": "issue-tracker",
           "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
         }
       ],
       "properties": [
@@ -2680,8 +2670,8 @@
       "type": "library",
       "name": "plugin-transform-react-jsx",
       "group": "@babel",
-      "version": "7.22.15",
-      "bom-ref": "@babel/plugin-transform-react-jsx@7.22.15",
+      "version": "7.23.4",
+      "bom-ref": "@babel/plugin-transform-react-jsx@7.23.4",
       "author": "The Babel Team",
       "description": "Turn JSX into React function calls",
       "licenses": [
@@ -2691,7 +2681,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40babel/plugin-transform-react-jsx@7.22.15#packages/babel-plugin-transform-react-jsx",
+      "purl": "pkg:npm/%40babel/plugin-transform-react-jsx@7.23.4#packages/babel-plugin-transform-react-jsx",
       "externalReferences": [
         {
           "url": "git+https://github.com/babel/babel.git#packages/babel-plugin-transform-react-jsx",
@@ -2709,7 +2699,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.22.15.tgz",
+          "url": "https://registry.npmjs.org/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.23.4.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -2718,6 +2708,143 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@babel/plugin-transform-react-jsx"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "plugin-syntax-jsx",
+          "group": "@babel",
+          "version": "7.23.3",
+          "bom-ref": "@babel/plugin-transform-react-jsx@7.23.4|@babel/plugin-syntax-jsx@7.23.3",
+          "author": "The Babel Team",
+          "description": "Allow parsing of jsx",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/plugin-syntax-jsx@7.23.3#packages/babel-plugin-syntax-jsx",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-plugin-syntax-jsx",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-plugin-syntax-jsx",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.23.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/plugin-transform-react-jsx/node_modules/@babel/plugin-syntax-jsx"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "types",
+          "group": "@babel",
+          "version": "7.23.4",
+          "bom-ref": "@babel/plugin-transform-react-jsx@7.23.4|@babel/types@7.23.4",
+          "author": "The Babel Team",
+          "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/types@7.23.4#packages/babel-types",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-types",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-types",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20types%22+is%3Aopen",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/types/-/types-7.23.4.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/plugin-transform-react-jsx/node_modules/@babel/types"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "helper-string-parser",
+          "group": "@babel",
+          "version": "7.23.4",
+          "bom-ref": "@babel/plugin-transform-react-jsx@7.23.4|@babel/helper-string-parser@7.23.4",
+          "author": "The Babel Team",
+          "description": "A utility package to parse strings",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/helper-string-parser@7.23.4#packages/babel-helper-string-parser",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-helper-string-parser",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-helper-string-parser",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.23.4.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/plugin-transform-react-jsx/node_modules/@babel/helper-string-parser"
+            }
+          ]
         }
       ]
     },
@@ -2763,51 +2890,6 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@babel/helper-annotate-as-pure"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "plugin-syntax-jsx",
-      "group": "@babel",
-      "version": "7.22.5",
-      "bom-ref": "@babel/plugin-syntax-jsx@7.22.5",
-      "author": "The Babel Team",
-      "description": "Allow parsing of jsx",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40babel/plugin-syntax-jsx@7.22.5#packages/babel-plugin-syntax-jsx",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/babel/babel.git#packages/babel-plugin-syntax-jsx",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://babel.dev/docs/en/next/babel-plugin-syntax-jsx",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/babel/babel/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.22.5.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@babel/plugin-syntax-jsx"
         }
       ]
     },
@@ -25080,6 +25162,46 @@
         },
         {
           "type": "library",
+          "name": "plugin-transform-react-jsx",
+          "group": "@babel",
+          "version": "7.22.15",
+          "bom-ref": "@svgr/webpack@5.5.0|@babel/plugin-transform-react-jsx@7.22.15",
+          "author": "The Babel Team",
+          "description": "Turn JSX into React function calls",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/plugin-transform-react-jsx@7.22.15?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-plugin-transform-react-jsx",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-plugin-transform-react-jsx",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-plugin-transform-react-jsx",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@svgr/webpack/node_modules/@babel/plugin-transform-react-jsx"
+            }
+          ]
+        },
+        {
+          "type": "library",
           "name": "plugin-transform-react-pure-annotations",
           "group": "@babel",
           "version": "7.22.5",
@@ -25897,6 +26019,132 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/core-js-compat"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "plugin-syntax-jsx",
+      "group": "@babel",
+      "version": "7.22.5",
+      "bom-ref": "@babel/plugin-syntax-jsx@7.22.5",
+      "author": "The Babel Team",
+      "description": "Allow parsing of jsx",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40babel/plugin-syntax-jsx@7.22.5?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-plugin-syntax-jsx",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/babel/babel.git#packages/babel-plugin-syntax-jsx",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://babel.dev/docs/en/next/babel-plugin-syntax-jsx",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/babel/babel/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@babel/plugin-syntax-jsx"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "core",
+          "group": "@babel",
+          "version": "7.23.2",
+          "bom-ref": "@babel/plugin-syntax-jsx@7.22.5|@babel/core@7.23.2",
+          "author": "The Babel Team",
+          "description": "Babel compiler core.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/core@7.23.2?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-core",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-core",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-core",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20core%22+is%3Aopen",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/plugin-syntax-jsx/node_modules/@babel/core"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "convert-source-map",
+          "version": "2.0.0",
+          "bom-ref": "@babel/plugin-syntax-jsx@7.22.5|convert-source-map@2.0.0",
+          "author": "Thorsten Lorenz",
+          "description": "Converts a source-map from/to  different formats and allows adding/changing properties.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/convert-source-map@2.0.0",
+          "externalReferences": [
+            {
+              "url": "git://github.com/thlorenz/convert-source-map.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/thlorenz/convert-source-map",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/thlorenz/convert-source-map/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/convert-source-map/-/convert-source-map-2.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/plugin-syntax-jsx/node_modules/convert-source-map"
+            }
+          ]
         }
       ]
     },
@@ -33884,6 +34132,46 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/babel-preset-react-app/node_modules/@babel/plugin-transform-react-jsx-development"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "plugin-transform-react-jsx",
+          "group": "@babel",
+          "version": "7.22.15",
+          "bom-ref": "babel-preset-react-app@10.0.1|@babel/plugin-transform-react-jsx@7.22.15",
+          "author": "The Babel Team",
+          "description": "Turn JSX into React function calls",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/plugin-transform-react-jsx@7.22.15?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-plugin-transform-react-jsx",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-plugin-transform-react-jsx",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-plugin-transform-react-jsx",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/babel-preset-react-app/node_modules/@babel/plugin-transform-react-jsx"
             }
           ]
         },
@@ -69668,7 +69956,7 @@
       "dependsOn": [
         "@babel/core@7.23.3",
         "@babel/plugin-syntax-flow@7.23.3",
-        "@babel/plugin-transform-react-jsx@7.22.15",
+        "@babel/plugin-transform-react-jsx@7.23.4",
         "@emotion/react@11.11.1",
         "@emotion/styled@11.11.0",
         "@fontsource/roboto@5.0.8",
@@ -70041,27 +70329,38 @@
       "ref": "@babel/helper-plugin-utils@7.22.5"
     },
     {
-      "ref": "@babel/plugin-transform-react-jsx@7.22.15",
+      "ref": "@babel/plugin-transform-react-jsx@7.23.4",
       "dependsOn": [
         "@babel/core@7.23.3",
         "@babel/helper-annotate-as-pure@7.22.5",
         "@babel/helper-module-imports@7.22.15",
         "@babel/helper-plugin-utils@7.22.5",
-        "@babel/plugin-syntax-jsx@7.22.5",
-        "@babel/types@7.23.0"
+        "@babel/plugin-transform-react-jsx@7.23.4|@babel/plugin-syntax-jsx@7.23.3",
+        "@babel/plugin-transform-react-jsx@7.23.4|@babel/types@7.23.4"
       ]
+    },
+    {
+      "ref": "@babel/plugin-transform-react-jsx@7.23.4|@babel/plugin-syntax-jsx@7.23.3",
+      "dependsOn": [
+        "@babel/core@7.23.3",
+        "@babel/helper-plugin-utils@7.22.5"
+      ]
+    },
+    {
+      "ref": "@babel/plugin-transform-react-jsx@7.23.4|@babel/types@7.23.4",
+      "dependsOn": [
+        "@babel/plugin-transform-react-jsx@7.23.4|@babel/helper-string-parser@7.23.4",
+        "@babel/helper-validator-identifier@7.22.20",
+        "to-fast-properties@2.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/plugin-transform-react-jsx@7.23.4|@babel/helper-string-parser@7.23.4"
     },
     {
       "ref": "@babel/helper-annotate-as-pure@7.22.5",
       "dependsOn": [
         "@babel/types@7.23.0"
-      ]
-    },
-    {
-      "ref": "@babel/plugin-syntax-jsx@7.22.5",
-      "dependsOn": [
-        "@babel/core@7.23.3",
-        "@babel/helper-plugin-utils@7.22.5"
       ]
     },
     {
@@ -73888,7 +74187,7 @@
         "@babel/helper-validator-option@7.22.15",
         "@svgr/webpack@5.5.0|@babel/plugin-transform-react-display-name@7.22.5",
         "@svgr/webpack@5.5.0|@babel/plugin-transform-react-jsx-development@7.22.5",
-        "@babel/plugin-transform-react-jsx@7.22.15",
+        "@svgr/webpack@5.5.0|@babel/plugin-transform-react-jsx@7.22.15",
         "@svgr/webpack@5.5.0|@babel/plugin-transform-react-pure-annotations@7.22.5"
       ]
     },
@@ -73903,7 +74202,18 @@
       "ref": "@svgr/webpack@5.5.0|@babel/plugin-transform-react-jsx-development@7.22.5",
       "dependsOn": [
         "@svgr/webpack@5.5.0|@babel/core@7.23.2",
-        "@babel/plugin-transform-react-jsx@7.22.15"
+        "@svgr/webpack@5.5.0|@babel/plugin-transform-react-jsx@7.22.15"
+      ]
+    },
+    {
+      "ref": "@svgr/webpack@5.5.0|@babel/plugin-transform-react-jsx@7.22.15",
+      "dependsOn": [
+        "@svgr/webpack@5.5.0|@babel/core@7.23.2",
+        "@babel/helper-annotate-as-pure@7.22.5",
+        "@babel/helper-module-imports@7.22.15",
+        "@babel/helper-plugin-utils@7.22.5",
+        "@babel/plugin-syntax-jsx@7.22.5",
+        "@babel/types@7.23.0"
       ]
     },
     {
@@ -74008,6 +74318,36 @@
       "dependsOn": [
         "browserslist@4.22.1"
       ]
+    },
+    {
+      "ref": "@babel/plugin-syntax-jsx@7.22.5",
+      "dependsOn": [
+        "@babel/plugin-syntax-jsx@7.22.5|@babel/core@7.23.2",
+        "@babel/helper-plugin-utils@7.22.5"
+      ]
+    },
+    {
+      "ref": "@babel/plugin-syntax-jsx@7.22.5|@babel/core@7.23.2",
+      "dependsOn": [
+        "@ampproject/remapping@2.2.1",
+        "@babel/code-frame@7.22.13",
+        "@babel/generator@7.23.0",
+        "@babel/helper-compilation-targets@7.22.15",
+        "@babel/helper-module-transforms@7.23.0",
+        "@babel/helpers@7.23.2",
+        "@babel/parser@7.23.0",
+        "@babel/template@7.22.15",
+        "@babel/traverse@7.23.2",
+        "@babel/types@7.23.0",
+        "@babel/plugin-syntax-jsx@7.22.5|convert-source-map@2.0.0",
+        "debug@4.3.4",
+        "gensync@1.0.0-beta.2",
+        "json5@2.2.3",
+        "semver@6.3.1"
+      ]
+    },
+    {
+      "ref": "@babel/plugin-syntax-jsx@7.22.5|convert-source-map@2.0.0"
     },
     {
       "ref": "@svgr/core@5.5.0",
@@ -75374,7 +75714,7 @@
         "@babel/helper-validator-option@7.22.15",
         "babel-preset-react-app@10.0.1|@babel/plugin-transform-react-display-name@7.22.5",
         "babel-preset-react-app@10.0.1|@babel/plugin-transform-react-jsx-development@7.22.5",
-        "@babel/plugin-transform-react-jsx@7.22.15",
+        "babel-preset-react-app@10.0.1|@babel/plugin-transform-react-jsx@7.22.15",
         "babel-preset-react-app@10.0.1|@babel/plugin-transform-react-pure-annotations@7.22.5"
       ]
     },
@@ -75382,7 +75722,18 @@
       "ref": "babel-preset-react-app@10.0.1|@babel/plugin-transform-react-jsx-development@7.22.5",
       "dependsOn": [
         "babel-preset-react-app@10.0.1|@babel/core@7.23.2",
-        "@babel/plugin-transform-react-jsx@7.22.15"
+        "babel-preset-react-app@10.0.1|@babel/plugin-transform-react-jsx@7.22.15"
+      ]
+    },
+    {
+      "ref": "babel-preset-react-app@10.0.1|@babel/plugin-transform-react-jsx@7.22.15",
+      "dependsOn": [
+        "babel-preset-react-app@10.0.1|@babel/core@7.23.2",
+        "@babel/helper-annotate-as-pure@7.22.5",
+        "@babel/helper-module-imports@7.22.15",
+        "@babel/helper-plugin-utils@7.22.5",
+        "@babel/plugin-syntax-jsx@7.22.5",
+        "@babel/types@7.23.0"
       ]
     },
     {
@@ -76331,7 +76682,7 @@
       "ref": "eslint-plugin-flowtype@8.0.3",
       "dependsOn": [
         "@babel/plugin-syntax-flow@7.23.3",
-        "@babel/plugin-transform-react-jsx@7.22.15",
+        "@babel/plugin-transform-react-jsx@7.23.4",
         "eslint@8.52.0",
         "lodash@4.17.21",
         "string-natural-compare@3.0.1"

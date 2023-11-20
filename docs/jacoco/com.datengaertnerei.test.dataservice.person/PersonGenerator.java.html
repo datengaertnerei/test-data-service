@@ -304,7 +304,7 @@ import jakarta.annotation.PostConstruct;
 <span class="fc" id="L304">		double shiftFactor = (max - min) / 3;</span>
 <span class="fc" id="L305">		double mediumAge = min + (max - min) / 2;</span>
 <span class="fc" id="L306">		age = random.nextGaussian() * shiftFactor + mediumAge;</span>
-<span class="pc bpc" id="L307" title="1 of 4 branches missed.">		if (age &lt; min || age &gt; max) {</span>
+<span class="fc bfc" id="L307" title="All 4 branches covered.">		if (age &lt; min || age &gt; max) {</span>
 			// cut off long tails
 <span class="fc" id="L309">			age = mediumAge;</span>
 		}
@@ -335,8 +335,8 @@ import jakarta.annotation.PostConstruct;
 		}
 		
 		// turn to non-binary for 5%
-<span class="pc bpc" id="L338" title="1 of 2 branches missed.">		if(random.nextFloat(1F) &gt; 0.95F) {</span>
-<span class="nc" id="L339">			gender = NON_BINARY;</span>
+<span class="fc bfc" id="L338" title="All 2 branches covered.">		if(random.nextFloat(1F) &gt; 0.95F) {</span>
+<span class="fc" id="L339">			gender = NON_BINARY;</span>
 		}
 		
 <span class="fc" id="L342">		String surname = surnames.get(random.nextInt(surnames.size())).trim();</span>
