@@ -79,7 +79,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td># of properties using the latest version available</td>
-<td>84</td></tr>
+<td>83</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -91,7 +91,7 @@
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is a minor version update</td>
-<td>62</td></tr>
+<td>63</td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is a major version update</td>
@@ -1123,12 +1123,12 @@
 <td></td>
 <td></td></tr>
 <tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${postgresql.version}</td>
 <td>42.6.0</td>
 <td></td>
 <td></td>
-<td></td>
+<td><b>42.7.0</b></td>
 <td></td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
@@ -5472,7 +5472,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer minor version available. Minor updates are sometimes passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${postgresql.version}</td></tr>
@@ -5483,18 +5483,21 @@
 <th width="30%">Current Version</th>
 <td align="left">42.6.0</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>42.7.0</b>&#160;<i>Latest Minor</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">42.6.0</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Bprometheus-client.version.7D"></a>${prometheus-client.version}</h3>
