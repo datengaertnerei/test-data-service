@@ -79,7 +79,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td># of properties using the latest version available</td>
-<td>123</td></tr>
+<td>120</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -87,11 +87,11 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>24</td></tr>
+<td>26</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is a minor version update</td>
-<td>32</td></tr>
+<td>33</td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is a major version update</td>
@@ -329,7 +329,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td><b>10.2.0</b></td></tr>
+<td><b>10.3.0</b></td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td>${freemarker.version}</td>
@@ -491,12 +491,12 @@
 <td></td>
 <td><b>15.0.0.Dev06</b></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${influxdb-java.version}</td>
 <td>2.23</td>
 <td></td>
 <td></td>
-<td></td>
+<td><b>2.24</b></td>
 <td></td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
@@ -825,7 +825,7 @@
 <td></td>
 <td><b>1.9.21</b></td>
 <td></td>
-<td><b>2.0.0-Beta1</b></td></tr>
+<td><b>2.0.0-Beta2</b></td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td>${lettuce.version}</td>
@@ -1387,11 +1387,11 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${spring-framework.version}</td>
 <td>6.1.1</td>
 <td></td>
-<td></td>
+<td><b>6.1.2</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -1427,11 +1427,11 @@
 <td></td>
 <td></td></tr>
 <tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${spring-ldap.version}</td>
 <td>3.2.0</td>
 <td></td>
-<td></td>
+<td><b>3.2.1</b></td>
 <td></td>
 <td></td></tr>
 <tr class="b">
@@ -2435,7 +2435,7 @@
 <td align="left">9.22.3</td></tr>
 <tr class="a">
 <th width="30%">Newer versions</th>
-<td align="left">10.0.0<br />10.0.1<br />10.1.0<br /><b>10.2.0</b>&#160;<i>Latest Major</i></td></tr>
+<td align="left">10.0.0<br />10.0.1<br />10.1.0<br />10.2.0<br /><b>10.3.0</b>&#160;<i>Latest Major</i></td></tr>
 <tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">9.22.3</td></tr>
@@ -3059,7 +3059,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer minor version available. Minor updates are sometimes passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${influxdb-java.version}</td></tr>
@@ -3070,18 +3070,21 @@
 <th width="30%">Current Version</th>
 <td align="left">2.23</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>2.24</b>&#160;<i>Latest Minor</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">2.23</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Bjackson-bom.version.7D"></a>${jackson-bom.version}</h3>
@@ -4305,7 +4308,7 @@
 <td align="left">1.9.20</td></tr>
 <tr class="a">
 <th width="30%">Newer versions</th>
-<td align="left"><b>1.9.21</b>&#160;<i>Latest Incremental</i><br /><b>2.0.0-Beta1</b>&#160;<i>Latest Major</i></td></tr>
+<td align="left"><b>1.9.21</b>&#160;<i>Latest Incremental</i><br />2.0.0-Beta1<br /><b>2.0.0-Beta2</b>&#160;<i>Latest Major</i></td></tr>
 <tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">1.9.20</td></tr>
@@ -6436,7 +6439,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${spring-framework.version}</td></tr>
@@ -6447,18 +6450,21 @@
 <th width="30%">Current Version</th>
 <td align="left">6.1.1</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>6.1.2</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">6.1.1</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Bspring-graphql.version.7D"></a>${spring-graphql.version}</h3>
@@ -6581,7 +6587,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${spring-ldap.version}</td></tr>
@@ -6592,18 +6598,21 @@
 <th width="30%">Current Version</th>
 <td align="left">3.2.0</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>3.2.1</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">3.2.0</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Bspring-pulsar.version.7D"></a>${spring-pulsar.version}</h3>
