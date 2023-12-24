@@ -27,14 +27,14 @@ jobs:
         
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
     - name: Set up JDK 17
-      uses: actions/setup-java@16ef37f8dd292a31055a9ee0d26fa0a4efab58de
+      uses: actions/setup-java@7a445ee88d4e23b52c33fdc7601e40278616c7f8
       with:
         java-version: 17
         distribution: 'temurin'
 
       # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@511f073971a2ce589ceea100a90831c5ca4310bb
+      uses: github/codeql-action/init@6f5223db54afb6bccb7b88162896588caa1f611b
       with:
         languages: javascript, python, java        
         
@@ -46,4 +46,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@511f073971a2ce589ceea100a90831c5ca4310bb
+      uses: github/codeql-action/analyze@6f5223db54afb6bccb7b88162896588caa1f611b

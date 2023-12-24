@@ -27,7 +27,7 @@ jobs:
         ref: master
     
     - name: Set up JDK 17
-      uses: actions/setup-java@16ef37f8dd292a31055a9ee0d26fa0a4efab58de
+      uses: actions/setup-java@7a445ee88d4e23b52c33fdc7601e40278616c7f8
       with:
         java-version: 17
         distribution: 'temurin'
@@ -54,4 +54,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         
-    - uses: codecov/codecov-action@e9a38394a173dd3b7884f7ec2c91b74c58468ade
+    - uses: codecov/codecov-action@bbeaa140357942e4e8d8e15f1cd2f4e612f64c59
