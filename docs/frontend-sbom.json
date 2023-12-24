@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:657e2d00-ebe6-4e1c-a2b8-faee5a43e5b5",
+  "serialNumber": "urn:uuid:fe2cc146-0910-4360-a0cf-aa3743042b28",
   "metadata": {
-    "timestamp": "2023-12-23T19:46:06.847Z",
+    "timestamp": "2023-12-24T00:19:01.887Z",
     "tools": [
       {
         "name": "npm",
@@ -2902,8 +2902,8 @@
       "type": "library",
       "name": "react",
       "group": "@emotion",
-      "version": "11.11.1",
-      "bom-ref": "@emotion/react@11.11.1",
+      "version": "11.11.3",
+      "bom-ref": "@emotion/react@11.11.3",
       "author": "Emotion Contributors",
       "licenses": [
         {
@@ -2912,7 +2912,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40emotion/react@11.11.1#main",
+      "purl": "pkg:npm/%40emotion/react@11.11.3#main",
       "externalReferences": [
         {
           "url": "git+https://github.com/emotion-js/emotion.git#main",
@@ -2930,7 +2930,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@emotion/react/-/react-11.11.1.tgz",
+          "url": "https://registry.npmjs.org/@emotion/react/-/react-11.11.3.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -2939,6 +2939,52 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@emotion/react"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "serialize",
+          "group": "@emotion",
+          "version": "1.1.3",
+          "bom-ref": "@emotion/react@11.11.3|@emotion/serialize@1.1.3",
+          "description": "serialization utils for emotion",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40emotion/serialize@1.1.3#main",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/emotion-js/emotion.git#main",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/emotion-js/emotion/tree/main#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/emotion-js/emotion/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@emotion/serialize/-/serialize-1.1.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@emotion/react/node_modules/@emotion/serialize"
+            }
+          ]
         }
       ]
     },
@@ -70658,7 +70704,7 @@
         "@babel/core@7.23.6",
         "@babel/plugin-syntax-flow@7.23.3",
         "@babel/plugin-transform-react-jsx@7.23.4",
-        "@emotion/react@11.11.1",
+        "@emotion/react@11.11.3",
         "@emotion/styled@11.11.0",
         "@fontsource/roboto@5.0.8",
         "@mui/icons-material@5.15.1",
@@ -71065,17 +71111,27 @@
       ]
     },
     {
-      "ref": "@emotion/react@11.11.1",
+      "ref": "@emotion/react@11.11.3",
       "dependsOn": [
         "@babel/runtime@7.23.5",
         "@emotion/babel-plugin@11.11.0",
         "@emotion/cache@11.11.0",
-        "@emotion/serialize@1.1.2",
+        "@emotion/react@11.11.3|@emotion/serialize@1.1.3",
         "@emotion/use-insertion-effect-with-fallbacks@1.0.1",
         "@emotion/utils@1.2.1",
         "@emotion/weak-memoize@0.3.1",
         "hoist-non-react-statics@3.3.2",
         "react@18.2.0"
+      ]
+    },
+    {
+      "ref": "@emotion/react@11.11.3|@emotion/serialize@1.1.3",
+      "dependsOn": [
+        "@emotion/hash@0.9.1",
+        "@emotion/memoize@0.8.1",
+        "@emotion/unitless@0.8.1",
+        "@emotion/utils@1.2.1",
+        "csstype@3.1.2"
       ]
     },
     {
@@ -71212,7 +71268,7 @@
         "@babel/runtime@7.23.5",
         "@emotion/babel-plugin@11.11.0",
         "@emotion/is-prop-valid@1.2.1",
-        "@emotion/react@11.11.1",
+        "@emotion/react@11.11.3",
         "@emotion/serialize@1.1.2",
         "@emotion/use-insertion-effect-with-fallbacks@1.0.1",
         "@emotion/utils@1.2.1",
@@ -71247,7 +71303,7 @@
       "ref": "@mui/material@5.15.1",
       "dependsOn": [
         "@mui/material@5.15.1|@babel/runtime@7.23.6",
-        "@emotion/react@11.11.1",
+        "@emotion/react@11.11.3",
         "@emotion/styled@11.11.0",
         "@mui/base@5.0.0-beta.28",
         "@mui/core-downloads-tracker@5.15.1",
@@ -71385,7 +71441,7 @@
       "ref": "@mui/system@5.15.1",
       "dependsOn": [
         "@mui/system@5.15.1|@babel/runtime@7.23.6",
-        "@emotion/react@11.11.1",
+        "@emotion/react@11.11.3",
         "@emotion/styled@11.11.0",
         "@mui/private-theming@5.15.1",
         "@mui/styled-engine@5.15.1",
@@ -71425,7 +71481,7 @@
       "dependsOn": [
         "@mui/styled-engine@5.15.1|@babel/runtime@7.23.6",
         "@emotion/cache@11.11.0",
-        "@emotion/react@11.11.1",
+        "@emotion/react@11.11.3",
         "@emotion/styled@11.11.0",
         "csstype@3.1.2",
         "prop-types@15.8.1",
