@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:6720ea82-bef2-4132-b564-973516a82d87",
+  "serialNumber": "urn:uuid:df396652-5288-42f0-b936-638654150366",
   "metadata": {
-    "timestamp": "2024-01-03T18:15:36.951Z",
+    "timestamp": "2024-01-04T00:48:18.608Z",
     "tools": [
       {
         "name": "npm",
@@ -8953,8 +8953,8 @@
       "type": "library",
       "name": "jest-dom",
       "group": "@testing-library",
-      "version": "6.1.6",
-      "bom-ref": "@testing-library/jest-dom@6.1.6",
+      "version": "6.2.0",
+      "bom-ref": "@testing-library/jest-dom@6.2.0",
       "author": "Ernesto Garcia",
       "description": "Custom jest matchers to test the state of the DOM",
       "licenses": [
@@ -8964,7 +8964,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40testing-library/jest-dom@6.1.6",
+      "purl": "pkg:npm/%40testing-library/jest-dom@6.2.0",
       "externalReferences": [
         {
           "url": "git+https://github.com/testing-library/jest-dom.git",
@@ -8982,7 +8982,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-6.1.6.tgz",
+          "url": "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-6.2.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -8998,7 +8998,7 @@
           "type": "library",
           "name": "chalk",
           "version": "3.0.0",
-          "bom-ref": "@testing-library/jest-dom@6.1.6|chalk@3.0.0",
+          "bom-ref": "@testing-library/jest-dom@6.2.0|chalk@3.0.0",
           "description": "Terminal string styling done right",
           "licenses": [
             {
@@ -9034,6 +9034,49 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/@testing-library/jest-dom/node_modules/chalk"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "dom-accessibility-api",
+          "version": "0.6.3",
+          "bom-ref": "@testing-library/jest-dom@6.2.0|dom-accessibility-api@0.6.3",
+          "description": "Implements https://w3c.github.io/accname/",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/dom-accessibility-api@0.6.3",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/eps1lon/dom-accessibility-api.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/eps1lon/dom-accessibility-api#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/eps1lon/dom-accessibility-api/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/dom-accessibility-api/-/dom-accessibility-api-0.6.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@testing-library/jest-dom/node_modules/dom-accessibility-api"
             }
           ]
         }
@@ -70711,7 +70754,7 @@
         "@mui/material@5.15.3",
         "@mui/styles@5.15.3",
         "@testing-library/dom@9.3.3",
-        "@testing-library/jest-dom@6.1.6",
+        "@testing-library/jest-dom@6.2.0",
         "@testing-library/react@14.1.2",
         "@testing-library/user-event@14.5.2",
         "autoprefixer@10.4.16",
@@ -72031,26 +72074,29 @@
       "ref": "ansi-regex@5.0.1"
     },
     {
-      "ref": "@testing-library/jest-dom@6.1.6",
+      "ref": "@testing-library/jest-dom@6.2.0",
       "dependsOn": [
         "@adobe/css-tools@4.3.2",
         "@babel/runtime@7.23.5",
         "@jest/globals@27.5.1",
         "aria-query@5.3.0",
-        "@testing-library/jest-dom@6.1.6|chalk@3.0.0",
+        "@testing-library/jest-dom@6.2.0|chalk@3.0.0",
         "css.escape@1.5.1",
-        "dom-accessibility-api@0.5.16",
+        "@testing-library/jest-dom@6.2.0|dom-accessibility-api@0.6.3",
         "jest@27.5.1",
         "lodash@4.17.21",
         "redent@3.0.0"
       ]
     },
     {
-      "ref": "@testing-library/jest-dom@6.1.6|chalk@3.0.0",
+      "ref": "@testing-library/jest-dom@6.2.0|chalk@3.0.0",
       "dependsOn": [
         "ansi-styles@4.3.0",
         "supports-color@7.2.0"
       ]
+    },
+    {
+      "ref": "@testing-library/jest-dom@6.2.0|dom-accessibility-api@0.6.3"
     },
     {
       "ref": "@adobe/css-tools@4.3.2"
