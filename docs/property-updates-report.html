@@ -79,7 +79,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td># of properties using the latest version available</td>
-<td>131</td></tr>
+<td>128</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -87,7 +87,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>8</td></tr>
+<td>12</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -95,7 +95,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is a major version update</td>
-<td>8</td></tr></tr></table><section>
+<td>7</td></tr></tr></table><section>
 <h3><a name="Summary_of_properties_associated_with_artifact_versions"></a>Summary of properties associated with artifact versions</h3>
 <table border="0" class="table table-striped">
 <tr class="a">
@@ -936,7 +936,7 @@
 <td>3.1.2</td>
 <td></td>
 <td></td>
-<td><b>3.2.3</b></td>
+<td><b>3.2.5</b></td>
 <td></td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
@@ -1008,7 +1008,7 @@
 <td>3.1.2</td>
 <td></td>
 <td></td>
-<td><b>3.2.3</b></td>
+<td><b>3.2.5</b></td>
 <td></td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
@@ -1019,19 +1019,19 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${micrometer-tracing.version}</td>
 <td>1.2.1</td>
 <td></td>
-<td></td>
+<td><b>1.2.2</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${micrometer.version}</td>
 <td>1.12.1</td>
 <td></td>
-<td></td>
+<td><b>1.12.2</b></td>
 <td></td>
 <td></td></tr>
 <tr class="b">
@@ -1275,11 +1275,11 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${reactor-bom.version}</td>
 <td>2023.0.1</td>
 <td></td>
-<td></td>
+<td><b>2023.0.2</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -1535,9 +1535,9 @@
 <td>${tomcat.version}</td>
 <td>10.1.17</td>
 <td></td>
+<td><b>10.1.18</b></td>
 <td></td>
-<td></td>
-<td><b>11.0.0-M15</b></td></tr>
+<td><b>11.0.0-M16</b></td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td>${unboundid-ldapsdk.version}</td>
@@ -4717,7 +4717,7 @@
 <td align="left">3.1.2</td></tr>
 <tr class="a">
 <th width="30%">Newer versions</th>
-<td align="left">3.2.1<br />3.2.2<br /><b>3.2.3</b>&#160;<i>Latest Minor</i></td></tr>
+<td align="left">3.2.1<br />3.2.2<br />3.2.3<br /><b>3.2.5</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">3.1.2</td></tr>
@@ -4981,7 +4981,7 @@
 <td align="left">3.1.2</td></tr>
 <tr class="a">
 <th width="30%">Newer versions</th>
-<td align="left">3.2.1<br />3.2.2<br /><b>3.2.3</b>&#160;<i>Latest Minor</i></td></tr>
+<td align="left">3.2.1<br />3.2.2<br />3.2.3<br /><b>3.2.5</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">3.1.2</td></tr>
@@ -5030,7 +5030,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${micrometer-tracing.version}</td></tr>
@@ -5041,25 +5041,28 @@
 <th width="30%">Current Version</th>
 <td align="left">1.2.1</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>1.2.2</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">1.2.1</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Bmicrometer.version.7D"></a>${micrometer.version}</h3>
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${micrometer.version}</td></tr>
@@ -5070,18 +5073,21 @@
 <th width="30%">Current Version</th>
 <td align="left">1.12.1</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>1.12.2</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">1.12.1</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Bmockito.version.7D"></a>${mockito.version}</h3>
@@ -5994,7 +6000,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${reactor-bom.version}</td></tr>
@@ -6005,18 +6011,21 @@
 <th width="30%">Current Version</th>
 <td align="left">2023.0.1</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>2023.0.2</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">2023.0.1</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Brest-assured.version.7D"></a>${rest-assured.version}</h3>
@@ -6943,7 +6952,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer major version available. Major updates are rarely passive.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${tomcat.version}</td></tr>
@@ -6955,7 +6964,7 @@
 <td align="left">10.1.17</td></tr>
 <tr class="a">
 <th width="30%">Newer versions</th>
-<td align="left">11.0.0-M1<br />11.0.0-M3<br />11.0.0-M4<br />11.0.0-M5<br />11.0.0-M6<br />11.0.0-M7<br />11.0.0-M9<br />11.0.0-M10<br />11.0.0-M11<br />11.0.0-M12<br />11.0.0-M13<br />11.0.0-M14<br /><b>11.0.0-M15</b>&#160;<i>Latest Major</i></td></tr>
+<td align="left"><b>10.1.18</b>&#160;<i>Latest Incremental</i><br />11.0.0-M1<br />11.0.0-M3<br />11.0.0-M4<br />11.0.0-M5<br />11.0.0-M6<br />11.0.0-M7<br />11.0.0-M9<br />11.0.0-M10<br />11.0.0-M11<br />11.0.0-M12<br />11.0.0-M13<br />11.0.0-M14<br />11.0.0-M15<br /><b>11.0.0-M16</b>&#160;<i>Latest Major</i></td></tr>
 <tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">10.1.17</td></tr>
