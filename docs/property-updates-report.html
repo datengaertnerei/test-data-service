@@ -79,7 +79,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td># of properties using the latest version available</td>
-<td>125</td></tr>
+<td>123</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -87,7 +87,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>14</td></tr>
+<td>16</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -320,7 +320,7 @@
 <td>8.10.4</td>
 <td></td>
 <td></td>
-<td><b>8.11.3</b></td>
+<td><b>8.11.4</b></td>
 <td></td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" /></td>
@@ -329,7 +329,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td><b>10.4.1</b></td></tr>
+<td><b>10.5.0</b></td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td>${freemarker.version}</td>
@@ -1211,11 +1211,11 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${r2dbc-mysql.version}</td>
 <td>1.0.5</td>
 <td></td>
-<td></td>
+<td><b>1.0.6</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -1387,11 +1387,11 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><img src="images/icon_warning_sml.gif" alt="" /></td>
 <td>${spring-framework.version}</td>
 <td>6.1.2</td>
 <td></td>
-<td></td>
+<td><b>6.1.3</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -2409,7 +2409,7 @@
 <td align="left">8.10.4</td></tr>
 <tr class="a">
 <th width="30%">Newer versions</th>
-<td align="left">8.11.0<br />8.11.1<br />8.11.2<br /><b>8.11.3</b>&#160;<i>Latest Minor</i></td></tr>
+<td align="left">8.11.0<br />8.11.1<br />8.11.2<br />8.11.3<br /><b>8.11.4</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">8.10.4</td></tr>
@@ -2441,7 +2441,7 @@
 <td align="left">9.22.3</td></tr>
 <tr class="a">
 <th width="30%">Newer versions</th>
-<td align="left">10.0.0<br />10.0.1<br />10.1.0<br />10.2.0<br />10.3.0<br />10.4.0<br /><b>10.4.1</b>&#160;<i>Latest Major</i></td></tr>
+<td align="left">10.0.0<br />10.0.1<br />10.1.0<br />10.2.0<br />10.3.0<br />10.4.0<br />10.4.1<br /><b>10.5.0</b>&#160;<i>Latest Major</i></td></tr>
 <tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">9.22.3</td></tr>
@@ -5768,7 +5768,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${r2dbc-mysql.version}</td></tr>
@@ -5779,18 +5779,21 @@
 <th width="30%">Current Version</th>
 <td align="left">1.0.5</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>1.0.6</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">1.0.5</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Br2dbc-pool.version.7D"></a>${r2dbc-pool.version}</h3>
@@ -6433,7 +6436,7 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th width="30%">Status</th>
-<td align="left"><img src="images/icon_success_sml.gif" alt="" />&#160;No newer versions available.</td></tr>
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th width="30%">Property</th>
 <td align="left">${spring-framework.version}</td></tr>
@@ -6444,18 +6447,21 @@
 <th width="30%">Current Version</th>
 <td align="left">6.1.2</td></tr>
 <tr class="a">
+<th width="30%">Newer versions</th>
+<td align="left"><b>6.1.3</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th width="30%">Allowed version range</th>
 <td align="left">6.1.2</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Infer associations from project</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Only use release versions</th>
 <td align="left">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th width="30%">Include projects from reactor</th>
 <td align="left">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th width="30%">Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td align="left">Yes</td></tr></table></section><section>
 <h3><a name="a.24.7Bspring-graphql.version.7D"></a>${spring-graphql.version}</h3>
