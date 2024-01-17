@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:7ffcb9f5-c929-47a7-93f8-2b60d001f160",
+  "serialNumber": "urn:uuid:cf38254c-4229-434b-8e55-83d8265e2005",
   "metadata": {
-    "timestamp": "2024-01-17T18:48:24.667Z",
+    "timestamp": "2024-01-17T18:55:45.714Z",
     "tools": [
       {
         "name": "npm",
@@ -16420,8 +16420,8 @@
     {
       "type": "library",
       "name": "autoprefixer",
-      "version": "10.4.16",
-      "bom-ref": "autoprefixer@10.4.16",
+      "version": "10.4.17",
+      "bom-ref": "autoprefixer@10.4.17",
       "author": "Andrey Sitnik",
       "description": "Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website",
       "licenses": [
@@ -16431,7 +16431,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/autoprefixer@10.4.16",
+      "purl": "pkg:npm/autoprefixer@10.4.17",
       "externalReferences": [
         {
           "url": "git+https://github.com/postcss/autoprefixer.git",
@@ -16449,7 +16449,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.16.tgz",
+          "url": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.17.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -42405,6 +42405,52 @@
           "name": "cdx:npm:package:path",
           "value": "node_modules/postcss-preset-env"
         }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "autoprefixer",
+          "version": "10.4.16",
+          "bom-ref": "postcss-preset-env@7.8.3|autoprefixer@10.4.16",
+          "author": "Andrey Sitnik",
+          "description": "Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/autoprefixer@10.4.16",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/postcss/autoprefixer.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/postcss/autoprefixer#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/postcss/autoprefixer/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.16.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/postcss-preset-env/node_modules/autoprefixer"
+            }
+          ]
+        }
       ]
     },
     {
@@ -49260,7 +49306,7 @@
       "type": "library",
       "name": "string-width",
       "version": "4.2.3",
-      "bom-ref": "BomRef.ub5179qm6ig.1kgrg78mui",
+      "bom-ref": "BomRef.lu2gektta2.ij00odk1gc",
       "author": "Sindre Sorhus",
       "description": "Get the visual width of a string - the number of columns required to display it",
       "licenses": [
@@ -49348,7 +49394,7 @@
       "type": "library",
       "name": "strip-ansi",
       "version": "6.0.1",
-      "bom-ref": "BomRef.pib10pnrh18.rke10eanm58",
+      "bom-ref": "BomRef.74gcc16bk7.ifu2cv1pelg",
       "author": "Sindre Sorhus",
       "description": "Strip ANSI escape codes from a string",
       "licenses": [
@@ -49392,7 +49438,7 @@
       "type": "library",
       "name": "wrap-ansi",
       "version": "7.0.0",
-      "bom-ref": "BomRef.n4qbqkbtdfo.upa7297prjg",
+      "bom-ref": "BomRef.6n09efho8g8.gdavoimi7go",
       "author": "Sindre Sorhus",
       "description": "Wordwrap a string with ANSI escape codes",
       "licenses": [
@@ -60203,7 +60249,7 @@
         "@testing-library/jest-dom@6.2.0",
         "@testing-library/react@14.1.2",
         "@testing-library/user-event@14.5.2",
-        "autoprefixer@10.4.16",
+        "autoprefixer@10.4.17",
         "postcss@8.4.33",
         "react-dom@18.2.0",
         "react-router@6.21.2",
@@ -62754,7 +62800,7 @@
       ]
     },
     {
-      "ref": "autoprefixer@10.4.16",
+      "ref": "autoprefixer@10.4.17",
       "dependsOn": [
         "browserslist@4.22.2",
         "caniuse-lite@1.0.30001578",
@@ -66876,7 +66922,7 @@
         "@csstools/postcss-text-decoration-shorthand@1.0.0",
         "@csstools/postcss-trigonometric-functions@1.0.2",
         "@csstools/postcss-unset-value@1.0.2",
-        "autoprefixer@10.4.16",
+        "postcss-preset-env@7.8.3|autoprefixer@10.4.16",
         "browserslist@4.22.2",
         "css-blank-pseudo@3.0.3",
         "css-has-pseudo@3.0.4",
@@ -66910,6 +66956,18 @@
         "postcss-pseudo-class-any-link@7.1.6",
         "postcss-replace-overflow-wrap@4.0.0",
         "postcss-selector-not@6.0.1",
+        "postcss-value-parser@4.2.0",
+        "postcss@8.4.33"
+      ]
+    },
+    {
+      "ref": "postcss-preset-env@7.8.3|autoprefixer@10.4.16",
+      "dependsOn": [
+        "browserslist@4.22.2",
+        "caniuse-lite@1.0.30001578",
+        "fraction.js@4.3.7",
+        "normalize-range@0.1.2",
+        "picocolors@1.0.0",
         "postcss-value-parser@4.2.0",
         "postcss@8.4.33"
       ]
@@ -67818,11 +67876,11 @@
     {
       "ref": "@isaacs/cliui@8.0.2",
       "dependsOn": [
-        "BomRef.ub5179qm6ig.1kgrg78mui",
+        "BomRef.lu2gektta2.ij00odk1gc",
         "@isaacs/cliui@8.0.2|string-width@5.1.2",
-        "BomRef.pib10pnrh18.rke10eanm58",
+        "BomRef.74gcc16bk7.ifu2cv1pelg",
         "@isaacs/cliui@8.0.2|strip-ansi@7.1.0",
-        "BomRef.n4qbqkbtdfo.upa7297prjg",
+        "BomRef.6n09efho8g8.gdavoimi7go",
         "@isaacs/cliui@8.0.2|wrap-ansi@8.1.0"
       ]
     },
@@ -67858,7 +67916,7 @@
       "ref": "@isaacs/cliui@8.0.2|ansi-styles@6.2.1"
     },
     {
-      "ref": "BomRef.ub5179qm6ig.1kgrg78mui",
+      "ref": "BomRef.lu2gektta2.ij00odk1gc",
       "dependsOn": [
         "emoji-regex@8.0.0",
         "is-fullwidth-code-point@3.0.0",
@@ -67869,13 +67927,13 @@
       "ref": "eastasianwidth@0.2.0"
     },
     {
-      "ref": "BomRef.pib10pnrh18.rke10eanm58",
+      "ref": "BomRef.74gcc16bk7.ifu2cv1pelg",
       "dependsOn": [
         "ansi-regex@5.0.1"
       ]
     },
     {
-      "ref": "BomRef.n4qbqkbtdfo.upa7297prjg",
+      "ref": "BomRef.6n09efho8g8.gdavoimi7go",
       "dependsOn": [
         "ansi-styles@4.3.0",
         "string-width@4.2.3",
