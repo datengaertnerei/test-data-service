@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bom serialNumber="urn:uuid:3ac1d45f-a175-3870-9857-47d3406a75e3" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2024-02-15T17:02:48Z</timestamp>
+    <timestamp>2024-02-16T03:33:02Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -2190,22 +2190,22 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <purl>pkg:maven/com.google.j2objc/j2objc-annotations@2.8?type=jar</purl>
       <externalReferences><reference type="website"><url>https://github.com/google/j2objc/</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>http://svn.sonatype.org/spice/trunk/oss/oss-parent-9/j2objc-annotations</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/com.google.protobuf/protobuf-java@3.25.2?type=jar">
+    <component type="library" bom-ref="pkg:maven/com.google.protobuf/protobuf-java@3.25.3?type=jar">
       <group>com.google.protobuf</group>
       <name>protobuf-java</name>
-      <version>3.25.2</version>
+      <version>3.25.3</version>
       <description>Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an
     efficient yet extensible format.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="MD5">25ac420efb83bf38b8c78b0b37097c2e</hash>
-        <hash alg="SHA-1">70d676d0082fa7a6b00c6073ce9b572c0d335e97</hash>
-        <hash alg="SHA-256">cabe49981b86f5913b7fd130b4628e6ee11586e28ca069815d9744f929271902</hash>
-        <hash alg="SHA-512">6cbf9a2c44872ce68670e20bc478910216cb92ca8c9df3e16077befaba1ade4f58599e8c5765483c79cd5a69b6516ba8334f848525c589c777c473f3187dd1b5</hash>
-        <hash alg="SHA-384">f7cd78ef247d7d053bf9c3d9fe153f266f8114373c2bb92c457ea058ab2f6ae6bd7bde8e081ad30c2aef151da28a01ea</hash>
-        <hash alg="SHA3-384">3dde6c25d00aede548c2b7fd347707a269e718f309f0a54ad0fd7923f654437ab926bbe6c6f4e3bd23648a521b2236b3</hash>
-        <hash alg="SHA3-256">81174cb0fa010df06fb0c37f7ecc5da34f5cfa1ed4784877ef1acb6cd53e797b</hash>
-        <hash alg="SHA3-512">84673fbcc9f4cfd835bbb1acebc2e7b1846553040ae96410ad1b6a7cfd852b39540150d9a928b6301ab58cd6f6612b4349fdfc666709c199c99e546a5ed87628</hash>
+        <hash alg="MD5">8f4aa3786a92e0273854038f98423f18</hash>
+        <hash alg="SHA-1">d3200261955f3298e0d85c9892201e70492ce8eb</hash>
+        <hash alg="SHA-256">e90d8ddb963b20a972a6a59b5093ade2b07cbe546cab3279aaf4383260385f58</hash>
+        <hash alg="SHA-512">07784b20afb291ca4a593815b654779504ab19d3337f55655f2c5bac95f4629cc22dde5c916abb78beb3e049165e9960a38c5919585a07dc30702a2e943f0b06</hash>
+        <hash alg="SHA-384">e7a61ceb9055994d46af6cada4c07cd0e04e77e27d33aae0aaf29595c996f74b63d927f1dae7b7c1052948d500d0943e</hash>
+        <hash alg="SHA3-384">5d1b99e346d6da1694ae5edb441f31918f8c067cfaa860742eb0b59b8b8cd356644b4a3927173689e6aa10207edc3b3b</hash>
+        <hash alg="SHA3-256">1514154314dfeaf1ee4f6ed39116f36e506eb7e92f38098d390db85b9e9ff1c9</hash>
+        <hash alg="SHA3-512">1de7181f1402a07070c48eb9a83fb738669dd54738d7b7b0103110d6133806aa7fea5f426ec5bdfa970f9c3fb9dc3a001ec3502aad35d6adf2eb96f9497c64c4</hash>
       </hashes>
       <licenses>
         <license>
@@ -2213,7 +2213,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
           <url>https://opensource.org/licenses/BSD-3-Clause</url>
         </license>
       </licenses>
-      <purl>pkg:maven/com.google.protobuf/protobuf-java@3.25.2?type=jar</purl>
+      <purl>pkg:maven/com.google.protobuf/protobuf-java@3.25.3?type=jar</purl>
       <externalReferences><reference type="website"><url>https://developers.google.com/protocol-buffers/protobuf-java/</url></reference><reference type="distribution"><url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url></reference><reference type="vcs"><url>https://github.com/protocolbuffers/protobuf/protobuf-java</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.springdoc/springdoc-openapi-starter-webmvc-ui@2.3.0?type=jar">
@@ -2895,7 +2895,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar"/>
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar"/>
       <dependency ref="pkg:maven/com.google.guava/guava@33.0.0-jre?type=jar"/>
-      <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.25.2?type=jar"/>
+      <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.25.3?type=jar"/>
       <dependency ref="pkg:maven/commons-io/commons-io@2.15.1?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar">
@@ -2920,9 +2920,9 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
     </dependency>
     <dependency ref="pkg:maven/xml-apis/xml-apis@1.4.01?type=jar"/>
     <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar">
-      <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.25.2?type=jar"/>
+      <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.25.3?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.25.2?type=jar"/>
+    <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.25.3?type=jar"/>
     <dependency ref="pkg:maven/com.google.guava/guava@33.0.0-jre?type=jar">
       <dependency ref="pkg:maven/com.google.guava/failureaccess@1.0.2?type=jar"/>
       <dependency ref="pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar"/>
