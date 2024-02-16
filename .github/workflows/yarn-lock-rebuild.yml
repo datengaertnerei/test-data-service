@@ -14,15 +14,15 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@4a1e83c9ef6b0e39b16f17b2734e08cdfbeea46c
+        uses: step-security/harden-runner@6c3b1c91e8873ae0c705b0709f957c7a6a5eaf10
         with:
           disable-sudo: true
           egress-policy: audit #outbound hosts constantly subject to change by action providers
 
-      - uses: actions/checkout@72f2cec99f417b1a1c5e2e88945068983b7965f9
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - name: Set up Node.js 
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: latest
           
