@@ -4,7 +4,7 @@
   "serialNumber" : "urn:uuid:c0e6692c-ef8d-3618-97e0-422f7ef9f0e7",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2024-02-17T00:12:08Z",
+    "timestamp" : "2024-02-19T04:52:55Z",
     "tools" : [
       {
         "vendor" : "OWASP Foundation",
@@ -5030,41 +5030,41 @@
       "publisher" : "The Apache Software Foundation",
       "group" : "org.apache.commons",
       "name" : "commons-compress",
-      "version" : "1.25.0",
-      "description" : "Apache Commons Compress defines an API for working with compression and archive formats. These include: bzip2, gzip, pack200, LZMA, XZ, Snappy, traditional Unix Compress, DEFLATE, DEFLATE64, LZ4, Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.",
+      "version" : "1.26.0",
+      "description" : "Apache Commons Compress defines an API for working with compression and archive formats. These include bzip2, gzip, pack200, LZMA, XZ, Snappy, traditional Unix Compress, DEFLATE, DEFLATE64, LZ4, Brotli, Zstandard and ar, cpio, jar, tar, zip, dump, 7z, arj.",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "45f94488e95ceeaf2f401c4f5542b35c"
+          "content" : "cbc0bb8eca12b747ca21bf998d736e60"
         },
         {
           "alg" : "SHA-1",
-          "content" : "9d35aec423da6c8a7f93d7e9e1c6b1d9fe14bb5e"
+          "content" : "659feffdd12280201c8aacb8f7be94f9a883c824"
         },
         {
           "alg" : "SHA-256",
-          "content" : "d0ec8014ebbb0749f471803122b21796afddf2e98e194e4374622e5fbaf69f49"
+          "content" : "051aceb8bbcc62d0f5b2b8ac72c53767f9c59bfbd050151e65bef6f51c8ed9c9"
         },
         {
           "alg" : "SHA-512",
-          "content" : "262ba7771cef5b3eee9e8790102cbe022bb52f5e4bd7f69e3ab132563472bbd5ae6de653df467bfbd7e9828d5edf9b81a6c43236b3ae65ac757ba745abb4f764"
+          "content" : "acbeaa2909b809cd561e7156df18340d96abacb179325622d73bdd6b82cb9b387d6fcb1a44d8195aad4e786da299289e17598a1d337b7c7d1c0bc610cc128714"
         },
         {
           "alg" : "SHA-384",
-          "content" : "73124bf7ce8a827d1bb42c4a7fddf2cbf6a89b84f32a7e0cac4a7bbcc99c5a7267a679c8fb0ae3bfb631e7824250da0c"
+          "content" : "052d4d0cd1929c4299dd9d37dd36eaea6ed2be6b04d6d83a94f8608a6d1138aa81f7a34f25113ac267e7ba25ce948c9a"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "81f4e544a5000293b27f35c8b6a78ccb9e04eafaeb6252ddd78724ebd43ced9e790eec488db1ba96b5c130898821d6e2"
+          "content" : "8b0bf441e8ce793fb6513bc07551cc48ab4507696c18e6037b0fcf35bc4e1eb3e44ed962e2d3765c86d4d912770aa53e"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "b75cf4407a6973e1e56710f4f2ec25fbe59c1503101bd23d164d78d5a655b506"
+          "content" : "e441768e06092053f4703844ec0c8f2b437e06e7c190d48fec9d7682beb94c40"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "511656c844b399f004af9591124dbdbaf6f8bb6893a03e55b0f9bcc745fcfb9ab5521e9eff859c2a4b4f2aa2188ae603bc18d38b510bc7c047e7f84238f782ed"
+          "content" : "5984f9f08f83789555677f6800f25fa8e80a9eb2e4d46b5fb117b8efc24753644fa103a2f6b619827661a41677991bc827965172ef25f1313d8a59154e615e8d"
         }
       ],
       "licenses" : [
@@ -5075,7 +5075,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/org.apache.commons/commons-compress@1.25.0?type=jar",
+      "purl" : "pkg:maven/org.apache.commons/commons-compress@1.26.0?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -5103,7 +5103,7 @@
         }
       ],
       "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.commons/commons-compress@1.25.0?type=jar"
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-compress@1.26.0?type=jar"
     },
     {
       "group" : "xerces",
@@ -7508,7 +7508,7 @@
         "pkg:maven/net.sf.jpf/jpf@1.5?type=jar",
         "pkg:maven/com.fasterxml.woodstox/woodstox-core@5.1.0?type=jar",
         "pkg:maven/org.codehaus.woodstox/stax2-api@4.1?type=jar",
-        "pkg:maven/org.apache.commons/commons-compress@1.25.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-compress@1.26.0?type=jar",
         "pkg:maven/xerces/xercesImpl@2.12.0?type=jar",
         "pkg:maven/org.springframework/spring-jdbc@6.1.3?type=jar"
       ]
@@ -7534,7 +7534,14 @@
       "dependsOn" : [ ]
     },
     {
-      "ref" : "pkg:maven/org.apache.commons/commons-compress@1.25.0?type=jar",
+      "ref" : "pkg:maven/org.apache.commons/commons-compress@1.26.0?type=jar",
+      "dependsOn" : [
+        "pkg:maven/commons-io/commons-io@2.15.1?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.13.0?type=jar"
+      ]
+    },
+    {
+      "ref" : "pkg:maven/org.apache.commons/commons-lang3@3.13.0?type=jar",
       "dependsOn" : [ ]
     },
     {
@@ -7628,10 +7635,6 @@
         "pkg:maven/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml@2.15.3?type=jar",
         "pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jsr310@2.15.3?type=jar"
       ]
-    },
-    {
-      "ref" : "pkg:maven/org.apache.commons/commons-lang3@3.13.0?type=jar",
-      "dependsOn" : [ ]
     },
     {
       "ref" : "pkg:maven/io.swagger.core.v3/swagger-annotations-jakarta@2.2.19?type=jar",
