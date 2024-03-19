@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:27c17521-7149-4c46-ba27-f6d88a8e54c8",
+  "serialNumber": "urn:uuid:a032d506-0746-4e1f-bcf4-583022e7810b",
   "metadata": {
-    "timestamp": "2024-03-19T13:33:51.418Z",
+    "timestamp": "2024-03-19T13:44:16.662Z",
     "tools": [
       {
         "name": "npm",
@@ -79,8 +79,8 @@
       "type": "library",
       "name": "core",
       "group": "@babel",
-      "version": "7.24.0",
-      "bom-ref": "@babel/core@7.24.0",
+      "version": "7.24.1",
+      "bom-ref": "@babel/core@7.24.1",
       "author": "The Babel Team",
       "description": "Babel compiler core.",
       "licenses": [
@@ -90,7 +90,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40babel/core@7.24.0#packages/babel-core",
+      "purl": "pkg:npm/%40babel/core@7.24.1#packages/babel-core",
       "externalReferences": [
         {
           "url": "git+https://github.com/babel/babel.git#packages/babel-core",
@@ -108,7 +108,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@babel/core/-/core-7.24.0.tgz",
+          "url": "https://registry.npmjs.org/@babel/core/-/core-7.24.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -122,10 +122,622 @@
       "components": [
         {
           "type": "library",
-          "name": "parser",
+          "name": "code-frame",
+          "group": "@babel",
+          "version": "7.24.1",
+          "bom-ref": "@babel/core@7.24.1|@babel/code-frame@7.24.1",
+          "author": "The Babel Team",
+          "description": "Generate errors that contain a code frame that point to source locations.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/code-frame@7.24.1#packages/babel-code-frame",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-code-frame",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-code-frame",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.24.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/@babel/code-frame"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "highlight",
+          "group": "@babel",
+          "version": "7.24.1",
+          "bom-ref": "@babel/core@7.24.1|@babel/highlight@7.24.1",
+          "author": "The Babel Team",
+          "description": "Syntax highlight JavaScript strings for output in terminals.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/highlight@7.24.1#packages/babel-highlight",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-highlight",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-highlight",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/highlight/-/highlight-7.24.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/@babel/highlight"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "chalk",
+          "version": "2.4.2",
+          "bom-ref": "@babel/core@7.24.1|chalk@2.4.2",
+          "description": "Terminal string styling done right",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/chalk@2.4.2",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/chalk.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/chalk#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/chalk/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/chalk"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "ansi-styles",
+          "version": "3.2.1",
+          "bom-ref": "@babel/core@7.24.1|ansi-styles@3.2.1",
+          "author": "Sindre Sorhus",
+          "description": "ANSI escape codes for styling strings in the terminal",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ansi-styles@3.2.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/ansi-styles.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/ansi-styles"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "color-convert",
+          "version": "1.9.3",
+          "bom-ref": "@babel/core@7.24.1|color-convert@1.9.3",
+          "author": "Heather Arthur",
+          "description": "Plain color conversion functions",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/color-convert@1.9.3",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/Qix-/color-convert.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/Qix-/color-convert#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/Qix-/color-convert/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/color-convert"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "color-name",
+          "version": "1.1.3",
+          "bom-ref": "@babel/core@7.24.1|color-name@1.1.3",
+          "author": "DY",
+          "description": "A list of color names and its values",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/color-name@1.1.3",
+          "externalReferences": [
+            {
+              "url": "git+ssh://git@github.com/dfcreative/color-name.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/dfcreative/color-name",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/dfcreative/color-name/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/color-name"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "escape-string-regexp",
+          "version": "1.0.5",
+          "bom-ref": "@babel/core@7.24.1|escape-string-regexp@1.0.5",
+          "author": "Sindre Sorhus",
+          "description": "Escape RegExp special characters",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/escape-string-regexp@1.0.5",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/sindresorhus/escape-string-regexp.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/escape-string-regexp#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/escape-string-regexp/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/escape-string-regexp"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "supports-color",
+          "version": "5.5.0",
+          "bom-ref": "@babel/core@7.24.1|supports-color@5.5.0",
+          "author": "Sindre Sorhus",
+          "description": "Detect whether a terminal supports color",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/supports-color@5.5.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/supports-color.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/supports-color#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/supports-color/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/supports-color"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "has-flag",
+          "version": "3.0.0",
+          "bom-ref": "@babel/core@7.24.1|has-flag@3.0.0",
+          "author": "Sindre Sorhus",
+          "description": "Check if argv has a specific flag",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/has-flag@3.0.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/sindresorhus/has-flag.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/has-flag#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/has-flag/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/has-flag"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "generator",
+          "group": "@babel",
+          "version": "7.24.1",
+          "bom-ref": "@babel/core@7.24.1|@babel/generator@7.24.1",
+          "author": "The Babel Team",
+          "description": "Turns an AST into code.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/generator@7.24.1#packages/babel-generator",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-generator",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-generator",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20generator%22+is%3Aopen",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/generator/-/generator-7.24.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/@babel/generator"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "types",
           "group": "@babel",
           "version": "7.24.0",
-          "bom-ref": "@babel/core@7.24.0|@babel/parser@7.24.0",
+          "bom-ref": "@babel/core@7.24.1|@babel/types@7.24.0",
+          "author": "The Babel Team",
+          "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/types@7.24.0?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-types",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-types",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-types",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20types%22+is%3Aopen",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/@babel/types"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "gen-mapping",
+          "group": "@jridgewell",
+          "version": "0.3.5",
+          "bom-ref": "@babel/core@7.24.1|@jridgewell/gen-mapping@0.3.5",
+          "author": "Justin Ridgewell",
+          "description": "Generate source maps",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40jridgewell/gen-mapping@0.3.5",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/jridgewell/gen-mapping.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/jridgewell/gen-mapping#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/jridgewell/gen-mapping/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/@jridgewell/gen-mapping"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "set-array",
+          "group": "@jridgewell",
+          "version": "1.2.1",
+          "bom-ref": "@babel/core@7.24.1|@jridgewell/set-array@1.2.1",
+          "author": "Justin Ridgewell",
+          "description": "Like a Set, but provides the index of the `key` in the backing array",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40jridgewell/set-array@1.2.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/jridgewell/set-array.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/jridgewell/set-array#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/jridgewell/set-array/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.2.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/@jridgewell/set-array"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "trace-mapping",
+          "group": "@jridgewell",
+          "version": "0.3.25",
+          "bom-ref": "@babel/core@7.24.1|@jridgewell/trace-mapping@0.3.25",
+          "author": "Justin Ridgewell",
+          "description": "Trace the original position through a source map",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.25?vcs_url=git%2Bhttps%3A//github.com/jridgewell/trace-mapping.git",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/jridgewell/trace-mapping.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/jridgewell/trace-mapping#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/jridgewell/trace-mapping/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/core/node_modules/@jridgewell/trace-mapping"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "parser",
+          "group": "@babel",
+          "version": "7.24.1",
+          "bom-ref": "@babel/core@7.24.1|@babel/parser@7.24.1",
           "author": "The Babel Team",
           "description": "A JavaScript parser",
           "licenses": [
@@ -135,7 +747,7 @@
               }
             }
           ],
-          "purl": "pkg:npm/%40babel/parser@7.24.0#packages/babel-parser",
+          "purl": "pkg:npm/%40babel/parser@7.24.1#packages/babel-parser",
           "externalReferences": [
             {
               "url": "git+https://github.com/babel/babel.git#packages/babel-parser",
@@ -153,7 +765,7 @@
               "comment": "as detected from PackageJson property \"bugs.url\""
             },
             {
-              "url": "https://registry.npmjs.org/@babel/parser/-/parser-7.24.0.tgz",
+              "url": "https://registry.npmjs.org/@babel/parser/-/parser-7.24.1.tgz",
               "type": "distribution",
               "comment": "as detected from npm-ls property \"resolved\""
             }
@@ -170,7 +782,7 @@
           "name": "template",
           "group": "@babel",
           "version": "7.24.0",
-          "bom-ref": "@babel/core@7.24.0|@babel/template@7.24.0",
+          "bom-ref": "@babel/core@7.24.1|@babel/template@7.24.0",
           "author": "The Babel Team",
           "description": "Generate an AST from a string template.",
           "licenses": [
@@ -208,45 +820,142 @@
               "name": "cdx:npm:package:path",
               "value": "node_modules/@babel/core/node_modules/@babel/template"
             }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "types",
-          "group": "@babel",
-          "version": "7.24.0",
-          "bom-ref": "@babel/core@7.24.0|@babel/types@7.24.0",
-          "author": "The Babel Team",
-          "description": "Babel Types is a Lodash-esque utility library for AST nodes",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
           ],
-          "purl": "pkg:npm/%40babel/types@7.24.0?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-types",
-          "externalReferences": [
+          "components": [
             {
-              "url": "git+https://github.com/babel/babel.git#packages/babel-types",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+              "type": "library",
+              "name": "code-frame",
+              "group": "@babel",
+              "version": "7.23.5",
+              "bom-ref": "@babel/core@7.24.1|@babel/template@7.24.0|@babel/code-frame@7.23.5",
+              "author": "The Babel Team",
+              "description": "Generate errors that contain a code frame that point to source locations.",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40babel/code-frame@7.23.5#packages/babel-code-frame",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/babel/babel.git#packages/babel-code-frame",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+                },
+                {
+                  "url": "https://babel.dev/docs/en/next/babel-code-frame",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.23.5.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/@babel/core/node_modules/@babel/template/node_modules/@babel/code-frame"
+                }
+              ]
             },
             {
-              "url": "https://babel.dev/docs/en/next/babel-types",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
+              "type": "library",
+              "name": "highlight",
+              "group": "@babel",
+              "version": "7.23.4",
+              "bom-ref": "@babel/core@7.24.1|@babel/template@7.24.0|@babel/highlight@7.23.4",
+              "author": "The Babel Team",
+              "description": "Syntax highlight JavaScript strings for output in terminals.",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40babel/highlight@7.23.4#packages/babel-highlight",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/babel/babel.git#packages/babel-highlight",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+                },
+                {
+                  "url": "https://babel.dev/docs/en/next/babel-highlight",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/babel/babel/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@babel/highlight/-/highlight-7.23.4.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/@babel/core/node_modules/@babel/template/node_modules/@babel/highlight"
+                }
+              ]
             },
             {
-              "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20types%22+is%3Aopen",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/core/node_modules/@babel/types"
+              "type": "library",
+              "name": "parser",
+              "group": "@babel",
+              "version": "7.24.0",
+              "bom-ref": "@babel/core@7.24.1|@babel/template@7.24.0|@babel/parser@7.24.0",
+              "author": "The Babel Team",
+              "description": "A JavaScript parser",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40babel/parser@7.24.0#packages/babel-parser",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/babel/babel.git#packages/babel-parser",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+                },
+                {
+                  "url": "https://babel.dev/docs/en/next/babel-parser",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A+parser+%28babylon%29%22+is%3Aopen",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@babel/parser/-/parser-7.24.0.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/@babel/core/node_modules/@babel/template/node_modules/@babel/parser"
+                }
+              ]
             }
           ]
         },
@@ -254,8 +963,8 @@
           "type": "library",
           "name": "traverse",
           "group": "@babel",
-          "version": "7.24.0",
-          "bom-ref": "@babel/core@7.24.0|@babel/traverse@7.24.0",
+          "version": "7.24.1",
+          "bom-ref": "@babel/core@7.24.1|@babel/traverse@7.24.1",
           "author": "The Babel Team",
           "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
           "licenses": [
@@ -265,7 +974,7 @@
               }
             }
           ],
-          "purl": "pkg:npm/%40babel/traverse@7.24.0#packages/babel-traverse",
+          "purl": "pkg:npm/%40babel/traverse@7.24.1#packages/babel-traverse",
           "externalReferences": [
             {
               "url": "git+https://github.com/babel/babel.git#packages/babel-traverse",
@@ -283,7 +992,7 @@
               "comment": "as detected from PackageJson property \"bugs.url\""
             },
             {
-              "url": "https://registry.npmjs.org/@babel/traverse/-/traverse-7.24.0.tgz",
+              "url": "https://registry.npmjs.org/@babel/traverse/-/traverse-7.24.1.tgz",
               "type": "distribution",
               "comment": "as detected from npm-ls property \"resolved\""
             }
@@ -299,7 +1008,7 @@
           "type": "library",
           "name": "convert-source-map",
           "version": "2.0.0",
-          "bom-ref": "@babel/core@7.24.0|convert-source-map@2.0.0",
+          "bom-ref": "@babel/core@7.24.1|convert-source-map@2.0.0",
           "author": "Thorsten Lorenz",
           "description": "Converts a source-map from/to  different formats and allows adding/changing properties.",
           "licenses": [
@@ -608,714 +1317,6 @@
     },
     {
       "type": "library",
-      "name": "code-frame",
-      "group": "@babel",
-      "version": "7.23.5",
-      "bom-ref": "@babel/code-frame@7.23.5",
-      "author": "The Babel Team",
-      "description": "Generate errors that contain a code frame that point to source locations.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40babel/code-frame@7.23.5#packages/babel-code-frame",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/babel/babel.git#packages/babel-code-frame",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://babel.dev/docs/en/next/babel-code-frame",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.23.5.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@babel/code-frame"
-        }
-      ],
-      "components": [
-        {
-          "type": "library",
-          "name": "chalk",
-          "version": "2.4.2",
-          "bom-ref": "@babel/code-frame@7.23.5|chalk@2.4.2",
-          "description": "Terminal string styling done right",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/chalk@2.4.2",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/chalk/chalk.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/chalk/chalk#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/chalk/chalk/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/code-frame/node_modules/chalk"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "ansi-styles",
-          "version": "3.2.1",
-          "bom-ref": "@babel/code-frame@7.23.5|ansi-styles@3.2.1",
-          "author": "Sindre Sorhus",
-          "description": "ANSI escape codes for styling strings in the terminal",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/ansi-styles@3.2.1",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/chalk/ansi-styles.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/chalk/ansi-styles#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/chalk/ansi-styles/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/code-frame/node_modules/ansi-styles"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "color-convert",
-          "version": "1.9.3",
-          "bom-ref": "@babel/code-frame@7.23.5|color-convert@1.9.3",
-          "author": "Heather Arthur",
-          "description": "Plain color conversion functions",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/color-convert@1.9.3",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/Qix-/color-convert.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/Qix-/color-convert#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/Qix-/color-convert/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/code-frame/node_modules/color-convert"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "color-name",
-          "version": "1.1.3",
-          "bom-ref": "@babel/code-frame@7.23.5|color-name@1.1.3",
-          "author": "DY",
-          "description": "A list of color names and its values",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/color-name@1.1.3",
-          "externalReferences": [
-            {
-              "url": "git+ssh://git@github.com/dfcreative/color-name.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/dfcreative/color-name",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/dfcreative/color-name/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/code-frame/node_modules/color-name"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "escape-string-regexp",
-          "version": "1.0.5",
-          "bom-ref": "@babel/code-frame@7.23.5|escape-string-regexp@1.0.5",
-          "author": "Sindre Sorhus",
-          "description": "Escape RegExp special characters",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/escape-string-regexp@1.0.5",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/sindresorhus/escape-string-regexp.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/sindresorhus/escape-string-regexp#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/sindresorhus/escape-string-regexp/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/code-frame/node_modules/escape-string-regexp"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "supports-color",
-          "version": "5.5.0",
-          "bom-ref": "@babel/code-frame@7.23.5|supports-color@5.5.0",
-          "author": "Sindre Sorhus",
-          "description": "Detect whether a terminal supports color",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/supports-color@5.5.0",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/chalk/supports-color.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/chalk/supports-color#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/chalk/supports-color/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/code-frame/node_modules/supports-color"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "has-flag",
-          "version": "3.0.0",
-          "bom-ref": "@babel/code-frame@7.23.5|has-flag@3.0.0",
-          "author": "Sindre Sorhus",
-          "description": "Check if argv has a specific flag",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/has-flag@3.0.0",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/sindresorhus/has-flag.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/sindresorhus/has-flag#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/sindresorhus/has-flag/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/code-frame/node_modules/has-flag"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "highlight",
-      "group": "@babel",
-      "version": "7.23.4",
-      "bom-ref": "@babel/highlight@7.23.4",
-      "author": "The Babel Team",
-      "description": "Syntax highlight JavaScript strings for output in terminals.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40babel/highlight@7.23.4#packages/babel-highlight",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/babel/babel.git#packages/babel-highlight",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://babel.dev/docs/en/next/babel-highlight",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/babel/babel/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/@babel/highlight/-/highlight-7.23.4.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@babel/highlight"
-        }
-      ],
-      "components": [
-        {
-          "type": "library",
-          "name": "chalk",
-          "version": "2.4.2",
-          "bom-ref": "@babel/highlight@7.23.4|chalk@2.4.2",
-          "description": "Terminal string styling done right",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/chalk@2.4.2",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/chalk/chalk.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/chalk/chalk#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/chalk/chalk/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/highlight/node_modules/chalk"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "ansi-styles",
-          "version": "3.2.1",
-          "bom-ref": "@babel/highlight@7.23.4|ansi-styles@3.2.1",
-          "author": "Sindre Sorhus",
-          "description": "ANSI escape codes for styling strings in the terminal",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/ansi-styles@3.2.1",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/chalk/ansi-styles.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/chalk/ansi-styles#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/chalk/ansi-styles/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/highlight/node_modules/ansi-styles"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "color-convert",
-          "version": "1.9.3",
-          "bom-ref": "@babel/highlight@7.23.4|color-convert@1.9.3",
-          "author": "Heather Arthur",
-          "description": "Plain color conversion functions",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/color-convert@1.9.3",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/Qix-/color-convert.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/Qix-/color-convert#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/Qix-/color-convert/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/highlight/node_modules/color-convert"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "color-name",
-          "version": "1.1.3",
-          "bom-ref": "@babel/highlight@7.23.4|color-name@1.1.3",
-          "author": "DY",
-          "description": "A list of color names and its values",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/color-name@1.1.3",
-          "externalReferences": [
-            {
-              "url": "git+ssh://git@github.com/dfcreative/color-name.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/dfcreative/color-name",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/dfcreative/color-name/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/highlight/node_modules/color-name"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "escape-string-regexp",
-          "version": "1.0.5",
-          "bom-ref": "@babel/highlight@7.23.4|escape-string-regexp@1.0.5",
-          "author": "Sindre Sorhus",
-          "description": "Escape RegExp special characters",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/escape-string-regexp@1.0.5",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/sindresorhus/escape-string-regexp.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/sindresorhus/escape-string-regexp#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/sindresorhus/escape-string-regexp/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/highlight/node_modules/escape-string-regexp"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "supports-color",
-          "version": "5.5.0",
-          "bom-ref": "@babel/highlight@7.23.4|supports-color@5.5.0",
-          "author": "Sindre Sorhus",
-          "description": "Detect whether a terminal supports color",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/supports-color@5.5.0",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/chalk/supports-color.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/chalk/supports-color#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/chalk/supports-color/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/highlight/node_modules/supports-color"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "name": "has-flag",
-          "version": "3.0.0",
-          "bom-ref": "@babel/highlight@7.23.4|has-flag@3.0.0",
-          "author": "Sindre Sorhus",
-          "description": "Check if argv has a specific flag",
-          "licenses": [
-            {
-              "license": {
-                "id": "MIT"
-              }
-            }
-          ],
-          "purl": "pkg:npm/has-flag@3.0.0",
-          "externalReferences": [
-            {
-              "url": "git+https://github.com/sindresorhus/has-flag.git",
-              "type": "vcs",
-              "comment": "as detected from PackageJson property \"repository.url\""
-            },
-            {
-              "url": "https://github.com/sindresorhus/has-flag#readme",
-              "type": "website",
-              "comment": "as detected from PackageJson property \"homepage\""
-            },
-            {
-              "url": "https://github.com/sindresorhus/has-flag/issues",
-              "type": "issue-tracker",
-              "comment": "as detected from PackageJson property \"bugs.url\""
-            },
-            {
-              "url": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
-              "type": "distribution",
-              "comment": "as detected from npm-ls property \"resolved\""
-            }
-          ],
-          "properties": [
-            {
-              "name": "cdx:npm:package:path",
-              "value": "node_modules/@babel/highlight/node_modules/has-flag"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "helper-validator-identifier",
       "group": "@babel",
       "version": "7.22.20",
@@ -1395,78 +1396,32 @@
     },
     {
       "type": "library",
-      "name": "generator",
-      "group": "@babel",
-      "version": "7.23.6",
-      "bom-ref": "@babel/generator@7.23.6",
-      "author": "The Babel Team",
-      "description": "Turns an AST into code.",
+      "name": "picocolors",
+      "version": "1.0.0",
+      "bom-ref": "picocolors@1.0.0",
+      "author": "Alexey Raspopov",
+      "description": "The tiniest and the fastest library for terminal output formatting with ANSI colors",
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "id": "ISC"
           }
         }
       ],
-      "purl": "pkg:npm/%40babel/generator@7.23.6#packages/babel-generator",
+      "purl": "pkg:npm/picocolors@1.0.0?vcs_url=git%2Bhttps%3A//github.com/alexeyraspopov/picocolors.git",
       "externalReferences": [
         {
-          "url": "git+https://github.com/babel/babel.git#packages/babel-generator",
+          "url": "git+https://github.com/alexeyraspopov/picocolors.git",
           "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+          "comment": "as detected from PackageJson property \"repository.url\""
         },
         {
-          "url": "https://babel.dev/docs/en/next/babel-generator",
+          "url": "https://github.com/alexeyraspopov/picocolors#readme",
           "type": "website",
           "comment": "as detected from PackageJson property \"homepage\""
         },
         {
-          "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20generator%22+is%3Aopen",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/@babel/generator/-/generator-7.23.6.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@babel/generator"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "types",
-      "group": "@babel",
-      "version": "7.23.6",
-      "bom-ref": "@babel/types@7.23.6",
-      "author": "The Babel Team",
-      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40babel/types@7.23.6?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-types",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/babel/babel.git#packages/babel-types",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://babel.dev/docs/en/next/babel-types",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20types%22+is%3Aopen",
+          "url": "https://github.com/alexeyraspopov/picocolors/issues",
           "type": "issue-tracker",
           "comment": "as detected from PackageJson property \"bugs.url\""
         }
@@ -1474,7 +1429,7 @@
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/@babel/types"
+          "value": "node_modules/picocolors"
         }
       ]
     },
@@ -1999,6 +1954,46 @@
     },
     {
       "type": "library",
+      "name": "types",
+      "group": "@babel",
+      "version": "7.23.6",
+      "bom-ref": "@babel/types@7.23.6",
+      "author": "The Babel Team",
+      "description": "Babel Types is a Lodash-esque utility library for AST nodes",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40babel/types@7.23.6?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-types",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/babel/babel.git#packages/babel-types",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://babel.dev/docs/en/next/babel-types",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20types%22+is%3Aopen",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@babel/types"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "helper-split-export-declaration",
       "group": "@babel",
       "version": "7.22.6",
@@ -2045,8 +2040,8 @@
       "type": "library",
       "name": "helpers",
       "group": "@babel",
-      "version": "7.24.0",
-      "bom-ref": "@babel/helpers@7.24.0",
+      "version": "7.24.1",
+      "bom-ref": "@babel/helpers@7.24.1",
       "author": "The Babel Team",
       "description": "Collection of helper functions used by Babel transforms.",
       "licenses": [
@@ -2056,7 +2051,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40babel/helpers@7.24.0#packages/babel-helpers",
+      "purl": "pkg:npm/%40babel/helpers@7.24.1#packages/babel-helpers",
       "externalReferences": [
         {
           "url": "git+https://github.com/babel/babel.git#packages/babel-helpers",
@@ -2074,7 +2069,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@babel/helpers/-/helpers-7.24.0.tgz",
+          "url": "https://registry.npmjs.org/@babel/helpers/-/helpers-7.24.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -2091,7 +2086,7 @@
           "name": "template",
           "group": "@babel",
           "version": "7.24.0",
-          "bom-ref": "@babel/helpers@7.24.0|@babel/template@7.24.0",
+          "bom-ref": "@babel/helpers@7.24.1|@babel/template@7.24.0",
           "author": "The Babel Team",
           "description": "Generate an AST from a string template.",
           "licenses": [
@@ -2136,7 +2131,7 @@
           "name": "parser",
           "group": "@babel",
           "version": "7.24.0",
-          "bom-ref": "@babel/helpers@7.24.0|@babel/parser@7.24.0",
+          "bom-ref": "@babel/helpers@7.24.1|@babel/parser@7.24.0",
           "author": "The Babel Team",
           "description": "A JavaScript parser",
           "licenses": [
@@ -2181,7 +2176,7 @@
           "name": "types",
           "group": "@babel",
           "version": "7.24.0",
-          "bom-ref": "@babel/helpers@7.24.0|@babel/types@7.24.0",
+          "bom-ref": "@babel/helpers@7.24.1|@babel/types@7.24.0",
           "author": "The Babel Team",
           "description": "Babel Types is a Lodash-esque utility library for AST nodes",
           "licenses": [
@@ -2220,8 +2215,8 @@
           "type": "library",
           "name": "traverse",
           "group": "@babel",
-          "version": "7.24.0",
-          "bom-ref": "@babel/helpers@7.24.0|@babel/traverse@7.24.0",
+          "version": "7.24.1",
+          "bom-ref": "@babel/helpers@7.24.1|@babel/traverse@7.24.1",
           "author": "The Babel Team",
           "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
           "licenses": [
@@ -2231,7 +2226,7 @@
               }
             }
           ],
-          "purl": "pkg:npm/%40babel/traverse@7.24.0#packages/babel-traverse",
+          "purl": "pkg:npm/%40babel/traverse@7.24.1#packages/babel-traverse",
           "externalReferences": [
             {
               "url": "git+https://github.com/babel/babel.git#packages/babel-traverse",
@@ -2249,7 +2244,7 @@
               "comment": "as detected from PackageJson property \"bugs.url\""
             },
             {
-              "url": "https://registry.npmjs.org/@babel/traverse/-/traverse-7.24.0.tgz",
+              "url": "https://registry.npmjs.org/@babel/traverse/-/traverse-7.24.1.tgz",
               "type": "distribution",
               "comment": "as detected from npm-ls property \"resolved\""
             }
@@ -2258,6 +2253,974 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/@babel/helpers/node_modules/@babel/traverse"
+            }
+          ],
+          "components": [
+            {
+              "type": "library",
+              "name": "code-frame",
+              "group": "@babel",
+              "version": "7.24.1",
+              "bom-ref": "@babel/helpers@7.24.1|@babel/traverse@7.24.1|@babel/code-frame@7.24.1",
+              "author": "The Babel Team",
+              "description": "Generate errors that contain a code frame that point to source locations.",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40babel/code-frame@7.24.1#packages/babel-code-frame",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/babel/babel.git#packages/babel-code-frame",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+                },
+                {
+                  "url": "https://babel.dev/docs/en/next/babel-code-frame",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.24.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/@babel/helpers/node_modules/@babel/traverse/node_modules/@babel/code-frame"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "parser",
+              "group": "@babel",
+              "version": "7.24.1",
+              "bom-ref": "@babel/helpers@7.24.1|@babel/traverse@7.24.1|@babel/parser@7.24.1",
+              "author": "The Babel Team",
+              "description": "A JavaScript parser",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40babel/parser@7.24.1#packages/babel-parser",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/babel/babel.git#packages/babel-parser",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+                },
+                {
+                  "url": "https://babel.dev/docs/en/next/babel-parser",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A+parser+%28babylon%29%22+is%3Aopen",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@babel/parser/-/parser-7.24.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/@babel/helpers/node_modules/@babel/traverse/node_modules/@babel/parser"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "highlight",
+          "group": "@babel",
+          "version": "7.24.1",
+          "bom-ref": "@babel/helpers@7.24.1|@babel/highlight@7.24.1",
+          "author": "The Babel Team",
+          "description": "Syntax highlight JavaScript strings for output in terminals.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/highlight@7.24.1#packages/babel-highlight",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-highlight",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-highlight",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/highlight/-/highlight-7.24.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/@babel/highlight"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "chalk",
+          "version": "2.4.2",
+          "bom-ref": "@babel/helpers@7.24.1|chalk@2.4.2",
+          "description": "Terminal string styling done right",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/chalk@2.4.2",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/chalk.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/chalk#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/chalk/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/chalk"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "ansi-styles",
+          "version": "3.2.1",
+          "bom-ref": "@babel/helpers@7.24.1|ansi-styles@3.2.1",
+          "author": "Sindre Sorhus",
+          "description": "ANSI escape codes for styling strings in the terminal",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ansi-styles@3.2.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/ansi-styles.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/ansi-styles"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "color-convert",
+          "version": "1.9.3",
+          "bom-ref": "@babel/helpers@7.24.1|color-convert@1.9.3",
+          "author": "Heather Arthur",
+          "description": "Plain color conversion functions",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/color-convert@1.9.3",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/Qix-/color-convert.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/Qix-/color-convert#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/Qix-/color-convert/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/color-convert"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "color-name",
+          "version": "1.1.3",
+          "bom-ref": "@babel/helpers@7.24.1|color-name@1.1.3",
+          "author": "DY",
+          "description": "A list of color names and its values",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/color-name@1.1.3",
+          "externalReferences": [
+            {
+              "url": "git+ssh://git@github.com/dfcreative/color-name.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/dfcreative/color-name",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/dfcreative/color-name/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/color-name"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "escape-string-regexp",
+          "version": "1.0.5",
+          "bom-ref": "@babel/helpers@7.24.1|escape-string-regexp@1.0.5",
+          "author": "Sindre Sorhus",
+          "description": "Escape RegExp special characters",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/escape-string-regexp@1.0.5",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/sindresorhus/escape-string-regexp.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/escape-string-regexp#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/escape-string-regexp/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/escape-string-regexp"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "supports-color",
+          "version": "5.5.0",
+          "bom-ref": "@babel/helpers@7.24.1|supports-color@5.5.0",
+          "author": "Sindre Sorhus",
+          "description": "Detect whether a terminal supports color",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/supports-color@5.5.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/supports-color.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/supports-color#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/supports-color/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/supports-color"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "has-flag",
+          "version": "3.0.0",
+          "bom-ref": "@babel/helpers@7.24.1|has-flag@3.0.0",
+          "author": "Sindre Sorhus",
+          "description": "Check if argv has a specific flag",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/has-flag@3.0.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/sindresorhus/has-flag.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/has-flag#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/has-flag/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/has-flag"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "generator",
+          "group": "@babel",
+          "version": "7.24.1",
+          "bom-ref": "@babel/helpers@7.24.1|@babel/generator@7.24.1",
+          "author": "The Babel Team",
+          "description": "Turns an AST into code.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/generator@7.24.1#packages/babel-generator",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-generator",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-generator",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20generator%22+is%3Aopen",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/generator/-/generator-7.24.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/@babel/generator"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "gen-mapping",
+          "group": "@jridgewell",
+          "version": "0.3.5",
+          "bom-ref": "@babel/helpers@7.24.1|@jridgewell/gen-mapping@0.3.5",
+          "author": "Justin Ridgewell",
+          "description": "Generate source maps",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40jridgewell/gen-mapping@0.3.5",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/jridgewell/gen-mapping.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/jridgewell/gen-mapping#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/jridgewell/gen-mapping/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/@jridgewell/gen-mapping"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "set-array",
+          "group": "@jridgewell",
+          "version": "1.2.1",
+          "bom-ref": "@babel/helpers@7.24.1|@jridgewell/set-array@1.2.1",
+          "author": "Justin Ridgewell",
+          "description": "Like a Set, but provides the index of the `key` in the backing array",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40jridgewell/set-array@1.2.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/jridgewell/set-array.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/jridgewell/set-array#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/jridgewell/set-array/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.2.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/@jridgewell/set-array"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "trace-mapping",
+          "group": "@jridgewell",
+          "version": "0.3.25",
+          "bom-ref": "@babel/helpers@7.24.1|@jridgewell/trace-mapping@0.3.25",
+          "author": "Justin Ridgewell",
+          "description": "Trace the original position through a source map",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.25?vcs_url=git%2Bhttps%3A//github.com/jridgewell/trace-mapping.git",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/jridgewell/trace-mapping.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/jridgewell/trace-mapping#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/jridgewell/trace-mapping/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/helpers/node_modules/@jridgewell/trace-mapping"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "code-frame",
+      "group": "@babel",
+      "version": "7.23.5",
+      "bom-ref": "@babel/code-frame@7.23.5",
+      "author": "The Babel Team",
+      "description": "Generate errors that contain a code frame that point to source locations.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40babel/code-frame@7.23.5?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-code-frame",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/babel/babel.git#packages/babel-code-frame",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://babel.dev/docs/en/next/babel-code-frame",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@babel/code-frame"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "chalk",
+          "version": "2.4.2",
+          "bom-ref": "@babel/code-frame@7.23.5|chalk@2.4.2",
+          "description": "Terminal string styling done right",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/chalk@2.4.2",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/chalk.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/chalk#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/chalk/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/code-frame/node_modules/chalk"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "ansi-styles",
+          "version": "3.2.1",
+          "bom-ref": "@babel/code-frame@7.23.5|ansi-styles@3.2.1",
+          "author": "Sindre Sorhus",
+          "description": "ANSI escape codes for styling strings in the terminal",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ansi-styles@3.2.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/ansi-styles.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/code-frame/node_modules/ansi-styles"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "color-convert",
+          "version": "1.9.3",
+          "bom-ref": "@babel/code-frame@7.23.5|color-convert@1.9.3",
+          "author": "Heather Arthur",
+          "description": "Plain color conversion functions",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/color-convert@1.9.3",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/Qix-/color-convert.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/Qix-/color-convert#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/Qix-/color-convert/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/code-frame/node_modules/color-convert"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "color-name",
+          "version": "1.1.3",
+          "bom-ref": "@babel/code-frame@7.23.5|color-name@1.1.3",
+          "author": "DY",
+          "description": "A list of color names and its values",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/color-name@1.1.3",
+          "externalReferences": [
+            {
+              "url": "git+ssh://git@github.com/dfcreative/color-name.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/dfcreative/color-name",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/dfcreative/color-name/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/code-frame/node_modules/color-name"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "escape-string-regexp",
+          "version": "1.0.5",
+          "bom-ref": "@babel/code-frame@7.23.5|escape-string-regexp@1.0.5",
+          "author": "Sindre Sorhus",
+          "description": "Escape RegExp special characters",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/escape-string-regexp@1.0.5",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/sindresorhus/escape-string-regexp.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/escape-string-regexp#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/escape-string-regexp/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/code-frame/node_modules/escape-string-regexp"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "supports-color",
+          "version": "5.5.0",
+          "bom-ref": "@babel/code-frame@7.23.5|supports-color@5.5.0",
+          "author": "Sindre Sorhus",
+          "description": "Detect whether a terminal supports color",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/supports-color@5.5.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/supports-color.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/supports-color#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/supports-color/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/code-frame/node_modules/supports-color"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "has-flag",
+          "version": "3.0.0",
+          "bom-ref": "@babel/code-frame@7.23.5|has-flag@3.0.0",
+          "author": "Sindre Sorhus",
+          "description": "Check if argv has a specific flag",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/has-flag@3.0.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/sindresorhus/has-flag.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/has-flag#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/has-flag/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/code-frame/node_modules/has-flag"
             }
           ]
         }
@@ -2677,8 +3640,8 @@
       "type": "library",
       "name": "plugin-syntax-flow",
       "group": "@babel",
-      "version": "7.23.3",
-      "bom-ref": "@babel/plugin-syntax-flow@7.23.3",
+      "version": "7.24.1",
+      "bom-ref": "@babel/plugin-syntax-flow@7.24.1",
       "author": "The Babel Team",
       "description": "Allow parsing of the flow syntax",
       "licenses": [
@@ -2688,7 +3651,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40babel/plugin-syntax-flow@7.23.3#packages/babel-plugin-syntax-flow",
+      "purl": "pkg:npm/%40babel/plugin-syntax-flow@7.24.1#packages/babel-plugin-syntax-flow",
       "externalReferences": [
         {
           "url": "git+https://github.com/babel/babel.git#packages/babel-plugin-syntax-flow",
@@ -2706,7 +3669,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@babel/plugin-syntax-flow/-/plugin-syntax-flow-7.23.3.tgz",
+          "url": "https://registry.npmjs.org/@babel/plugin-syntax-flow/-/plugin-syntax-flow-7.24.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -2716,50 +3679,52 @@
           "name": "cdx:npm:package:path",
           "value": "node_modules/@babel/plugin-syntax-flow"
         }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "helper-plugin-utils",
-      "group": "@babel",
-      "version": "7.22.5",
-      "bom-ref": "@babel/helper-plugin-utils@7.22.5",
-      "author": "The Babel Team",
-      "description": "General utilities for plugins to use",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
       ],
-      "purl": "pkg:npm/%40babel/helper-plugin-utils@7.22.5#packages/babel-helper-plugin-utils",
-      "externalReferences": [
+      "components": [
         {
-          "url": "git+https://github.com/babel/babel.git#packages/babel-helper-plugin-utils",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://babel.dev/docs/en/next/babel-helper-plugin-utils",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/babel/babel/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.22.5.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@babel/helper-plugin-utils"
+          "type": "library",
+          "name": "helper-plugin-utils",
+          "group": "@babel",
+          "version": "7.24.0",
+          "bom-ref": "@babel/plugin-syntax-flow@7.24.1|@babel/helper-plugin-utils@7.24.0",
+          "author": "The Babel Team",
+          "description": "General utilities for plugins to use",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/helper-plugin-utils@7.24.0#packages/babel-helper-plugin-utils",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-helper-plugin-utils",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-helper-plugin-utils",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.24.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/plugin-syntax-flow/node_modules/@babel/helper-plugin-utils"
+            }
+          ]
         }
       ]
     },
@@ -2850,6 +3815,51 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@babel/helper-annotate-as-pure"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "helper-plugin-utils",
+      "group": "@babel",
+      "version": "7.22.5",
+      "bom-ref": "@babel/helper-plugin-utils@7.22.5",
+      "author": "The Babel Team",
+      "description": "General utilities for plugins to use",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40babel/helper-plugin-utils@7.22.5#packages/babel-helper-plugin-utils",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/babel/babel.git#packages/babel-helper-plugin-utils",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://babel.dev/docs/en/next/babel-helper-plugin-utils",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/babel/babel/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.22.5.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@babel/helper-plugin-utils"
         }
       ]
     },
@@ -6269,6 +7279,360 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/@testing-library/dom/node_modules/aria-query"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "highlight",
+      "group": "@babel",
+      "version": "7.23.4",
+      "bom-ref": "@babel/highlight@7.23.4",
+      "author": "The Babel Team",
+      "description": "Syntax highlight JavaScript strings for output in terminals.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40babel/highlight@7.23.4#packages/babel-highlight",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/babel/babel.git#packages/babel-highlight",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://babel.dev/docs/en/next/babel-highlight",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/babel/babel/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/@babel/highlight/-/highlight-7.23.4.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@babel/highlight"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "chalk",
+          "version": "2.4.2",
+          "bom-ref": "@babel/highlight@7.23.4|chalk@2.4.2",
+          "description": "Terminal string styling done right",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/chalk@2.4.2",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/chalk.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/chalk#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/chalk/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/highlight/node_modules/chalk"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "ansi-styles",
+          "version": "3.2.1",
+          "bom-ref": "@babel/highlight@7.23.4|ansi-styles@3.2.1",
+          "author": "Sindre Sorhus",
+          "description": "ANSI escape codes for styling strings in the terminal",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ansi-styles@3.2.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/ansi-styles.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/highlight/node_modules/ansi-styles"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "color-convert",
+          "version": "1.9.3",
+          "bom-ref": "@babel/highlight@7.23.4|color-convert@1.9.3",
+          "author": "Heather Arthur",
+          "description": "Plain color conversion functions",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/color-convert@1.9.3",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/Qix-/color-convert.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/Qix-/color-convert#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/Qix-/color-convert/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/highlight/node_modules/color-convert"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "color-name",
+          "version": "1.1.3",
+          "bom-ref": "@babel/highlight@7.23.4|color-name@1.1.3",
+          "author": "DY",
+          "description": "A list of color names and its values",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/color-name@1.1.3",
+          "externalReferences": [
+            {
+              "url": "git+ssh://git@github.com/dfcreative/color-name.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/dfcreative/color-name",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/dfcreative/color-name/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/highlight/node_modules/color-name"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "escape-string-regexp",
+          "version": "1.0.5",
+          "bom-ref": "@babel/highlight@7.23.4|escape-string-regexp@1.0.5",
+          "author": "Sindre Sorhus",
+          "description": "Escape RegExp special characters",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/escape-string-regexp@1.0.5",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/sindresorhus/escape-string-regexp.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/escape-string-regexp#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/escape-string-regexp/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/highlight/node_modules/escape-string-regexp"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "supports-color",
+          "version": "5.5.0",
+          "bom-ref": "@babel/highlight@7.23.4|supports-color@5.5.0",
+          "author": "Sindre Sorhus",
+          "description": "Detect whether a terminal supports color",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/supports-color@5.5.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/chalk/supports-color.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/supports-color#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/chalk/supports-color/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/highlight/node_modules/supports-color"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "has-flag",
+          "version": "3.0.0",
+          "bom-ref": "@babel/highlight@7.23.4|has-flag@3.0.0",
+          "author": "Sindre Sorhus",
+          "description": "Check if argv has a specific flag",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/has-flag@3.0.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/sindresorhus/has-flag.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/has-flag#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/has-flag/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@babel/highlight/node_modules/has-flag"
             }
           ]
         }
@@ -13064,6 +14428,46 @@
     },
     {
       "type": "library",
+      "name": "generator",
+      "group": "@babel",
+      "version": "7.23.6",
+      "bom-ref": "@babel/generator@7.23.6",
+      "author": "The Babel Team",
+      "description": "Turns an AST into code.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40babel/generator@7.23.6?vcs_url=git%2Bhttps%3A//github.com/babel/babel.git#packages/babel-generator",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/babel/babel.git#packages/babel-generator",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://babel.dev/docs/en/next/babel-generator",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20generator%22+is%3Aopen",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@babel/generator"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "traverse",
       "group": "@babel",
       "version": "7.23.7",
@@ -19315,45 +20719,6 @@
               "value": "node_modules/update-browserslist-db/node_modules/electron-to-chromium"
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "picocolors",
-      "version": "1.0.0",
-      "bom-ref": "picocolors@1.0.0",
-      "author": "Alexey Raspopov",
-      "description": "The tiniest and the fastest library for terminal output formatting with ANSI colors",
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:npm/picocolors@1.0.0?vcs_url=git%2Bhttps%3A//github.com/alexeyraspopov/picocolors.git",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/alexeyraspopov/picocolors.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/alexeyraspopov/picocolors#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/alexeyraspopov/picocolors/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/picocolors"
         }
       ]
     },
@@ -37433,6 +38798,51 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/babel-preset-react-app/node_modules/@babel/plugin-transform-flow-strip-types"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "plugin-syntax-flow",
+          "group": "@babel",
+          "version": "7.23.3",
+          "bom-ref": "babel-preset-react-app@10.0.1|@babel/plugin-syntax-flow@7.23.3",
+          "author": "The Babel Team",
+          "description": "Allow parsing of the flow syntax",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40babel/plugin-syntax-flow@7.23.3#packages/babel-plugin-syntax-flow",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/babel/babel.git#packages/babel-plugin-syntax-flow",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+            },
+            {
+              "url": "https://babel.dev/docs/en/next/babel-plugin-syntax-flow",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/babel/babel/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@babel/plugin-syntax-flow/-/plugin-syntax-flow-7.23.3.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/babel-preset-react-app/node_modules/@babel/plugin-syntax-flow"
             }
           ]
         },
@@ -58864,7 +60274,7 @@
       "type": "library",
       "name": "string-width",
       "version": "4.2.3",
-      "bom-ref": "BomRef.3dbdb2h0tu.p9k7e2vda8o",
+      "bom-ref": "BomRef.vn2jdf2jac8.lh05f88t7lg",
       "author": "Sindre Sorhus",
       "description": "Get the visual width of a string - the number of columns required to display it",
       "licenses": [
@@ -58952,7 +60362,7 @@
       "type": "library",
       "name": "strip-ansi",
       "version": "6.0.1",
-      "bom-ref": "BomRef.bsed27246pg.hohqkdlehk8",
+      "bom-ref": "BomRef.q0sci0rr07g.rjksqg92rf8",
       "author": "Sindre Sorhus",
       "description": "Strip ANSI escape codes from a string",
       "licenses": [
@@ -58996,7 +60406,7 @@
       "type": "library",
       "name": "wrap-ansi",
       "version": "7.0.0",
-      "bom-ref": "BomRef.n8pltlgoja.in0jugt3kc",
+      "bom-ref": "BomRef.sglh3kfk4u8.8m72tukprhg",
       "author": "Sindre Sorhus",
       "description": "Wordwrap a string with ANSI escape codes",
       "licenses": [
@@ -72699,8 +74109,8 @@
     {
       "ref": "test-data-gui@0.2.0",
       "dependsOn": [
-        "@babel/core@7.24.0",
-        "@babel/plugin-syntax-flow@7.23.3",
+        "@babel/core@7.24.1",
+        "@babel/plugin-syntax-flow@7.24.1",
         "@babel/plugin-transform-react-jsx@7.23.4",
         "@emotion/react@11.11.4",
         "@emotion/styled@11.11.0",
@@ -72724,19 +74134,19 @@
       ]
     },
     {
-      "ref": "@babel/core@7.24.0",
+      "ref": "@babel/core@7.24.1",
       "dependsOn": [
         "@ampproject/remapping@2.2.1",
-        "@babel/code-frame@7.23.5",
-        "@babel/generator@7.23.6",
+        "@babel/core@7.24.1|@babel/code-frame@7.24.1",
+        "@babel/core@7.24.1|@babel/generator@7.24.1",
         "@babel/helper-compilation-targets@7.23.6",
         "@babel/helper-module-transforms@7.23.3",
-        "@babel/helpers@7.24.0",
-        "@babel/core@7.24.0|@babel/parser@7.24.0",
-        "@babel/core@7.24.0|@babel/template@7.24.0",
-        "@babel/core@7.24.0|@babel/traverse@7.24.0",
-        "@babel/core@7.24.0|@babel/types@7.24.0",
-        "@babel/core@7.24.0|convert-source-map@2.0.0",
+        "@babel/helpers@7.24.1",
+        "@babel/core@7.24.1|@babel/parser@7.24.1",
+        "@babel/core@7.24.1|@babel/template@7.24.0",
+        "@babel/core@7.24.1|@babel/traverse@7.24.1",
+        "@babel/core@7.24.1|@babel/types@7.24.0",
+        "@babel/core@7.24.1|convert-source-map@2.0.0",
         "debug@4.3.4",
         "gensync@1.0.0-beta.2",
         "json5@2.2.3",
@@ -72744,18 +74154,67 @@
       ]
     },
     {
-      "ref": "@babel/core@7.24.0|@babel/parser@7.24.0"
-    },
-    {
-      "ref": "@babel/core@7.24.0|@babel/template@7.24.0",
+      "ref": "@babel/core@7.24.1|@babel/code-frame@7.24.1",
       "dependsOn": [
-        "@babel/code-frame@7.23.5",
-        "@babel/core@7.24.0|@babel/parser@7.24.0",
-        "@babel/core@7.24.0|@babel/types@7.24.0"
+        "@babel/core@7.24.1|@babel/highlight@7.24.1",
+        "picocolors@1.0.0"
       ]
     },
     {
-      "ref": "@babel/core@7.24.0|@babel/types@7.24.0",
+      "ref": "@babel/core@7.24.1|@babel/highlight@7.24.1",
+      "dependsOn": [
+        "@babel/helper-validator-identifier@7.22.20",
+        "@babel/core@7.24.1|chalk@2.4.2",
+        "js-tokens@4.0.0",
+        "picocolors@1.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|chalk@2.4.2",
+      "dependsOn": [
+        "@babel/core@7.24.1|ansi-styles@3.2.1",
+        "@babel/core@7.24.1|escape-string-regexp@1.0.5",
+        "@babel/core@7.24.1|supports-color@5.5.0"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|ansi-styles@3.2.1",
+      "dependsOn": [
+        "@babel/core@7.24.1|color-convert@1.9.3"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|color-convert@1.9.3",
+      "dependsOn": [
+        "@babel/core@7.24.1|color-name@1.1.3"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|color-name@1.1.3"
+    },
+    {
+      "ref": "@babel/core@7.24.1|escape-string-regexp@1.0.5"
+    },
+    {
+      "ref": "@babel/core@7.24.1|supports-color@5.5.0",
+      "dependsOn": [
+        "@babel/core@7.24.1|has-flag@3.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|has-flag@3.0.0"
+    },
+    {
+      "ref": "@babel/core@7.24.1|@babel/generator@7.24.1",
+      "dependsOn": [
+        "@babel/core@7.24.1|@babel/types@7.24.0",
+        "@babel/core@7.24.1|@jridgewell/gen-mapping@0.3.5",
+        "@babel/core@7.24.1|@jridgewell/trace-mapping@0.3.25",
+        "jsesc@2.5.2"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|@babel/types@7.24.0",
       "dependsOn": [
         "@babel/helper-string-parser@7.23.4",
         "@babel/helper-validator-identifier@7.22.20",
@@ -72763,22 +74222,69 @@
       ]
     },
     {
-      "ref": "@babel/core@7.24.0|@babel/traverse@7.24.0",
+      "ref": "@babel/core@7.24.1|@jridgewell/gen-mapping@0.3.5",
       "dependsOn": [
-        "@babel/code-frame@7.23.5",
-        "@babel/generator@7.23.6",
+        "@babel/core@7.24.1|@jridgewell/set-array@1.2.1",
+        "@jridgewell/sourcemap-codec@1.4.15",
+        "@babel/core@7.24.1|@jridgewell/trace-mapping@0.3.25"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|@jridgewell/set-array@1.2.1"
+    },
+    {
+      "ref": "@babel/core@7.24.1|@jridgewell/trace-mapping@0.3.25",
+      "dependsOn": [
+        "@jridgewell/resolve-uri@3.1.1",
+        "@jridgewell/sourcemap-codec@1.4.15"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|@babel/parser@7.24.1"
+    },
+    {
+      "ref": "@babel/core@7.24.1|@babel/template@7.24.0",
+      "dependsOn": [
+        "@babel/core@7.24.1|@babel/template@7.24.0|@babel/code-frame@7.23.5",
+        "@babel/core@7.24.1|@babel/template@7.24.0|@babel/parser@7.24.0",
+        "@babel/core@7.24.1|@babel/types@7.24.0"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|@babel/template@7.24.0|@babel/code-frame@7.23.5",
+      "dependsOn": [
+        "@babel/core@7.24.1|@babel/template@7.24.0|@babel/highlight@7.23.4",
+        "@babel/core@7.24.1|chalk@2.4.2"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|@babel/template@7.24.0|@babel/highlight@7.23.4",
+      "dependsOn": [
+        "@babel/helper-validator-identifier@7.22.20",
+        "@babel/core@7.24.1|chalk@2.4.2",
+        "js-tokens@4.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/core@7.24.1|@babel/template@7.24.0|@babel/parser@7.24.0"
+    },
+    {
+      "ref": "@babel/core@7.24.1|@babel/traverse@7.24.1",
+      "dependsOn": [
+        "@babel/core@7.24.1|@babel/code-frame@7.24.1",
+        "@babel/core@7.24.1|@babel/generator@7.24.1",
         "@babel/helper-environment-visitor@7.22.20",
         "@babel/helper-function-name@7.23.0",
         "@babel/helper-hoist-variables@7.22.5",
         "@babel/helper-split-export-declaration@7.22.6",
-        "@babel/core@7.24.0|@babel/parser@7.24.0",
-        "@babel/core@7.24.0|@babel/types@7.24.0",
+        "@babel/core@7.24.1|@babel/parser@7.24.1",
+        "@babel/core@7.24.1|@babel/types@7.24.0",
         "debug@4.3.4",
         "globals@11.12.0"
       ]
     },
     {
-      "ref": "@babel/core@7.24.0|convert-source-map@2.0.0"
+      "ref": "@babel/core@7.24.1|convert-source-map@2.0.0"
     },
     {
       "ref": "@ampproject/remapping@2.2.1",
@@ -72812,112 +74318,13 @@
       "ref": "@jridgewell/resolve-uri@3.1.1"
     },
     {
-      "ref": "@babel/code-frame@7.23.5",
-      "dependsOn": [
-        "@babel/highlight@7.23.4",
-        "@babel/code-frame@7.23.5|chalk@2.4.2"
-      ]
-    },
-    {
-      "ref": "@babel/code-frame@7.23.5|chalk@2.4.2",
-      "dependsOn": [
-        "@babel/code-frame@7.23.5|ansi-styles@3.2.1",
-        "@babel/code-frame@7.23.5|escape-string-regexp@1.0.5",
-        "@babel/code-frame@7.23.5|supports-color@5.5.0"
-      ]
-    },
-    {
-      "ref": "@babel/code-frame@7.23.5|ansi-styles@3.2.1",
-      "dependsOn": [
-        "@babel/code-frame@7.23.5|color-convert@1.9.3"
-      ]
-    },
-    {
-      "ref": "@babel/code-frame@7.23.5|color-convert@1.9.3",
-      "dependsOn": [
-        "@babel/code-frame@7.23.5|color-name@1.1.3"
-      ]
-    },
-    {
-      "ref": "@babel/code-frame@7.23.5|color-name@1.1.3"
-    },
-    {
-      "ref": "@babel/code-frame@7.23.5|escape-string-regexp@1.0.5"
-    },
-    {
-      "ref": "@babel/code-frame@7.23.5|supports-color@5.5.0",
-      "dependsOn": [
-        "@babel/code-frame@7.23.5|has-flag@3.0.0"
-      ]
-    },
-    {
-      "ref": "@babel/code-frame@7.23.5|has-flag@3.0.0"
-    },
-    {
-      "ref": "@babel/highlight@7.23.4",
-      "dependsOn": [
-        "@babel/helper-validator-identifier@7.22.20",
-        "@babel/highlight@7.23.4|chalk@2.4.2",
-        "js-tokens@4.0.0"
-      ]
-    },
-    {
-      "ref": "@babel/highlight@7.23.4|chalk@2.4.2",
-      "dependsOn": [
-        "@babel/highlight@7.23.4|ansi-styles@3.2.1",
-        "@babel/highlight@7.23.4|escape-string-regexp@1.0.5",
-        "@babel/highlight@7.23.4|supports-color@5.5.0"
-      ]
-    },
-    {
-      "ref": "@babel/highlight@7.23.4|ansi-styles@3.2.1",
-      "dependsOn": [
-        "@babel/highlight@7.23.4|color-convert@1.9.3"
-      ]
-    },
-    {
-      "ref": "@babel/highlight@7.23.4|color-convert@1.9.3",
-      "dependsOn": [
-        "@babel/highlight@7.23.4|color-name@1.1.3"
-      ]
-    },
-    {
-      "ref": "@babel/highlight@7.23.4|color-name@1.1.3"
-    },
-    {
-      "ref": "@babel/highlight@7.23.4|escape-string-regexp@1.0.5"
-    },
-    {
-      "ref": "@babel/highlight@7.23.4|supports-color@5.5.0",
-      "dependsOn": [
-        "@babel/highlight@7.23.4|has-flag@3.0.0"
-      ]
-    },
-    {
-      "ref": "@babel/highlight@7.23.4|has-flag@3.0.0"
-    },
-    {
       "ref": "@babel/helper-validator-identifier@7.22.20"
     },
     {
       "ref": "js-tokens@4.0.0"
     },
     {
-      "ref": "@babel/generator@7.23.6",
-      "dependsOn": [
-        "@babel/types@7.23.6",
-        "@jridgewell/gen-mapping@0.3.3",
-        "@jridgewell/trace-mapping@0.3.20",
-        "jsesc@2.5.2"
-      ]
-    },
-    {
-      "ref": "@babel/types@7.23.6",
-      "dependsOn": [
-        "@babel/helper-string-parser@7.23.4",
-        "@babel/helper-validator-identifier@7.22.20",
-        "to-fast-properties@2.0.0"
-      ]
+      "ref": "picocolors@1.0.0"
     },
     {
       "ref": "jsesc@2.5.2"
@@ -72962,7 +74369,7 @@
     {
       "ref": "@babel/helper-module-transforms@7.23.3",
       "dependsOn": [
-        "@babel/core@7.24.0",
+        "@babel/core@7.24.1",
         "@babel/helper-environment-visitor@7.22.20",
         "@babel/helper-module-imports@7.22.15",
         "@babel/helper-simple-access@7.22.5",
@@ -72986,32 +74393,7 @@
       ]
     },
     {
-      "ref": "@babel/helper-split-export-declaration@7.22.6",
-      "dependsOn": [
-        "@babel/types@7.23.6"
-      ]
-    },
-    {
-      "ref": "@babel/helpers@7.24.0",
-      "dependsOn": [
-        "@babel/helpers@7.24.0|@babel/template@7.24.0",
-        "@babel/helpers@7.24.0|@babel/traverse@7.24.0",
-        "@babel/helpers@7.24.0|@babel/types@7.24.0"
-      ]
-    },
-    {
-      "ref": "@babel/helpers@7.24.0|@babel/template@7.24.0",
-      "dependsOn": [
-        "@babel/code-frame@7.23.5",
-        "@babel/helpers@7.24.0|@babel/parser@7.24.0",
-        "@babel/helpers@7.24.0|@babel/types@7.24.0"
-      ]
-    },
-    {
-      "ref": "@babel/helpers@7.24.0|@babel/parser@7.24.0"
-    },
-    {
-      "ref": "@babel/helpers@7.24.0|@babel/types@7.24.0",
+      "ref": "@babel/types@7.23.6",
       "dependsOn": [
         "@babel/helper-string-parser@7.23.4",
         "@babel/helper-validator-identifier@7.22.20",
@@ -73019,19 +74401,175 @@
       ]
     },
     {
-      "ref": "@babel/helpers@7.24.0|@babel/traverse@7.24.0",
+      "ref": "@babel/helper-split-export-declaration@7.22.6",
+      "dependsOn": [
+        "@babel/types@7.23.6"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1",
+      "dependsOn": [
+        "@babel/helpers@7.24.1|@babel/template@7.24.0",
+        "@babel/helpers@7.24.1|@babel/traverse@7.24.1",
+        "@babel/helpers@7.24.1|@babel/types@7.24.0"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@babel/template@7.24.0",
       "dependsOn": [
         "@babel/code-frame@7.23.5",
-        "@babel/generator@7.23.6",
+        "@babel/helpers@7.24.1|@babel/parser@7.24.0",
+        "@babel/helpers@7.24.1|@babel/types@7.24.0"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@babel/parser@7.24.0"
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@babel/types@7.24.0",
+      "dependsOn": [
+        "@babel/helper-string-parser@7.23.4",
+        "@babel/helper-validator-identifier@7.22.20",
+        "to-fast-properties@2.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@babel/traverse@7.24.1",
+      "dependsOn": [
+        "@babel/helpers@7.24.1|@babel/traverse@7.24.1|@babel/code-frame@7.24.1",
+        "@babel/helpers@7.24.1|@babel/generator@7.24.1",
         "@babel/helper-environment-visitor@7.22.20",
         "@babel/helper-function-name@7.23.0",
         "@babel/helper-hoist-variables@7.22.5",
         "@babel/helper-split-export-declaration@7.22.6",
-        "@babel/helpers@7.24.0|@babel/parser@7.24.0",
-        "@babel/helpers@7.24.0|@babel/types@7.24.0",
+        "@babel/helpers@7.24.1|@babel/traverse@7.24.1|@babel/parser@7.24.1",
+        "@babel/helpers@7.24.1|@babel/types@7.24.0",
         "debug@4.3.4",
         "globals@11.12.0"
       ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@babel/traverse@7.24.1|@babel/code-frame@7.24.1",
+      "dependsOn": [
+        "@babel/helpers@7.24.1|@babel/highlight@7.24.1",
+        "picocolors@1.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@babel/traverse@7.24.1|@babel/parser@7.24.1"
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@babel/highlight@7.24.1",
+      "dependsOn": [
+        "@babel/helper-validator-identifier@7.22.20",
+        "@babel/helpers@7.24.1|chalk@2.4.2",
+        "js-tokens@4.0.0",
+        "picocolors@1.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|chalk@2.4.2",
+      "dependsOn": [
+        "@babel/helpers@7.24.1|ansi-styles@3.2.1",
+        "@babel/helpers@7.24.1|escape-string-regexp@1.0.5",
+        "@babel/helpers@7.24.1|supports-color@5.5.0"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|ansi-styles@3.2.1",
+      "dependsOn": [
+        "@babel/helpers@7.24.1|color-convert@1.9.3"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|color-convert@1.9.3",
+      "dependsOn": [
+        "@babel/helpers@7.24.1|color-name@1.1.3"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|color-name@1.1.3"
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|escape-string-regexp@1.0.5"
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|supports-color@5.5.0",
+      "dependsOn": [
+        "@babel/helpers@7.24.1|has-flag@3.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|has-flag@3.0.0"
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@babel/generator@7.24.1",
+      "dependsOn": [
+        "@babel/helpers@7.24.1|@babel/types@7.24.0",
+        "@babel/helpers@7.24.1|@jridgewell/gen-mapping@0.3.5",
+        "@babel/helpers@7.24.1|@jridgewell/trace-mapping@0.3.25",
+        "jsesc@2.5.2"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@jridgewell/gen-mapping@0.3.5",
+      "dependsOn": [
+        "@babel/helpers@7.24.1|@jridgewell/set-array@1.2.1",
+        "@jridgewell/sourcemap-codec@1.4.15",
+        "@babel/helpers@7.24.1|@jridgewell/trace-mapping@0.3.25"
+      ]
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@jridgewell/set-array@1.2.1"
+    },
+    {
+      "ref": "@babel/helpers@7.24.1|@jridgewell/trace-mapping@0.3.25",
+      "dependsOn": [
+        "@jridgewell/resolve-uri@3.1.1",
+        "@jridgewell/sourcemap-codec@1.4.15"
+      ]
+    },
+    {
+      "ref": "@babel/code-frame@7.23.5",
+      "dependsOn": [
+        "@babel/highlight@7.23.4",
+        "@babel/code-frame@7.23.5|chalk@2.4.2"
+      ]
+    },
+    {
+      "ref": "@babel/code-frame@7.23.5|chalk@2.4.2",
+      "dependsOn": [
+        "@babel/code-frame@7.23.5|ansi-styles@3.2.1",
+        "@babel/code-frame@7.23.5|escape-string-regexp@1.0.5",
+        "@babel/code-frame@7.23.5|supports-color@5.5.0"
+      ]
+    },
+    {
+      "ref": "@babel/code-frame@7.23.5|ansi-styles@3.2.1",
+      "dependsOn": [
+        "@babel/code-frame@7.23.5|color-convert@1.9.3"
+      ]
+    },
+    {
+      "ref": "@babel/code-frame@7.23.5|color-convert@1.9.3",
+      "dependsOn": [
+        "@babel/code-frame@7.23.5|color-name@1.1.3"
+      ]
+    },
+    {
+      "ref": "@babel/code-frame@7.23.5|color-name@1.1.3"
+    },
+    {
+      "ref": "@babel/code-frame@7.23.5|escape-string-regexp@1.0.5"
+    },
+    {
+      "ref": "@babel/code-frame@7.23.5|supports-color@5.5.0",
+      "dependsOn": [
+        "@babel/code-frame@7.23.5|has-flag@3.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/code-frame@7.23.5|has-flag@3.0.0"
     },
     {
       "ref": "@babel/helper-function-name@7.23.0",
@@ -73079,19 +74617,19 @@
       "ref": "json5@2.2.3"
     },
     {
-      "ref": "@babel/plugin-syntax-flow@7.23.3",
+      "ref": "@babel/plugin-syntax-flow@7.24.1",
       "dependsOn": [
-        "@babel/core@7.24.0",
-        "@babel/helper-plugin-utils@7.22.5"
+        "@babel/core@7.24.1",
+        "@babel/plugin-syntax-flow@7.24.1|@babel/helper-plugin-utils@7.24.0"
       ]
     },
     {
-      "ref": "@babel/helper-plugin-utils@7.22.5"
+      "ref": "@babel/plugin-syntax-flow@7.24.1|@babel/helper-plugin-utils@7.24.0"
     },
     {
       "ref": "@babel/plugin-transform-react-jsx@7.23.4",
       "dependsOn": [
-        "@babel/core@7.24.0",
+        "@babel/core@7.24.1",
         "@babel/helper-annotate-as-pure@7.22.5",
         "@babel/helper-module-imports@7.22.15",
         "@babel/helper-plugin-utils@7.22.5",
@@ -73106,9 +74644,12 @@
       ]
     },
     {
+      "ref": "@babel/helper-plugin-utils@7.22.5"
+    },
+    {
       "ref": "@babel/plugin-syntax-jsx@7.23.3",
       "dependsOn": [
-        "@babel/core@7.24.0",
+        "@babel/core@7.24.1",
         "@babel/helper-plugin-utils@7.22.5"
       ]
     },
@@ -73648,6 +75189,49 @@
       "dependsOn": [
         "deep-equal@2.2.3"
       ]
+    },
+    {
+      "ref": "@babel/highlight@7.23.4",
+      "dependsOn": [
+        "@babel/helper-validator-identifier@7.22.20",
+        "@babel/highlight@7.23.4|chalk@2.4.2",
+        "js-tokens@4.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/highlight@7.23.4|chalk@2.4.2",
+      "dependsOn": [
+        "@babel/highlight@7.23.4|ansi-styles@3.2.1",
+        "@babel/highlight@7.23.4|escape-string-regexp@1.0.5",
+        "@babel/highlight@7.23.4|supports-color@5.5.0"
+      ]
+    },
+    {
+      "ref": "@babel/highlight@7.23.4|ansi-styles@3.2.1",
+      "dependsOn": [
+        "@babel/highlight@7.23.4|color-convert@1.9.3"
+      ]
+    },
+    {
+      "ref": "@babel/highlight@7.23.4|color-convert@1.9.3",
+      "dependsOn": [
+        "@babel/highlight@7.23.4|color-name@1.1.3"
+      ]
+    },
+    {
+      "ref": "@babel/highlight@7.23.4|color-name@1.1.3"
+    },
+    {
+      "ref": "@babel/highlight@7.23.4|escape-string-regexp@1.0.5"
+    },
+    {
+      "ref": "@babel/highlight@7.23.4|supports-color@5.5.0",
+      "dependsOn": [
+        "@babel/highlight@7.23.4|has-flag@3.0.0"
+      ]
+    },
+    {
+      "ref": "@babel/highlight@7.23.4|has-flag@3.0.0"
     },
     {
       "ref": "@types/aria-query@5.0.4"
@@ -74806,6 +76390,15 @@
       ]
     },
     {
+      "ref": "@babel/generator@7.23.6",
+      "dependsOn": [
+        "@babel/types@7.23.6",
+        "@jridgewell/gen-mapping@0.3.3",
+        "@jridgewell/trace-mapping@0.3.20",
+        "jsesc@2.5.2"
+      ]
+    },
+    {
       "ref": "@babel/traverse@7.23.7",
       "dependsOn": [
         "@babel/code-frame@7.23.5",
@@ -75777,9 +77370,6 @@
     },
     {
       "ref": "update-browserslist-db@1.0.13|electron-to-chromium@1.4.689"
-    },
-    {
-      "ref": "picocolors@1.0.0"
     },
     {
       "ref": "fraction.js@4.3.7"
@@ -78986,7 +80576,14 @@
       "dependsOn": [
         "babel-preset-react-app@10.0.1|@babel/core@7.23.7",
         "@babel/helper-plugin-utils@7.22.5",
-        "@babel/plugin-syntax-flow@7.23.3"
+        "babel-preset-react-app@10.0.1|@babel/plugin-syntax-flow@7.23.3"
+      ]
+    },
+    {
+      "ref": "babel-preset-react-app@10.0.1|@babel/plugin-syntax-flow@7.23.3",
+      "dependsOn": [
+        "babel-preset-react-app@10.0.1|@babel/core@7.23.7",
+        "@babel/helper-plugin-utils@7.22.5"
       ]
     },
     {
@@ -80264,7 +81861,7 @@
     {
       "ref": "eslint-plugin-flowtype@8.0.3",
       "dependsOn": [
-        "@babel/plugin-syntax-flow@7.23.3",
+        "@babel/plugin-syntax-flow@7.24.1",
         "@babel/plugin-transform-react-jsx@7.23.4",
         "eslint@8.56.0",
         "lodash@4.17.21",
@@ -82219,11 +83816,11 @@
     {
       "ref": "@isaacs/cliui@8.0.2",
       "dependsOn": [
-        "BomRef.3dbdb2h0tu.p9k7e2vda8o",
+        "BomRef.vn2jdf2jac8.lh05f88t7lg",
         "@isaacs/cliui@8.0.2|string-width@5.1.2",
-        "BomRef.bsed27246pg.hohqkdlehk8",
+        "BomRef.q0sci0rr07g.rjksqg92rf8",
         "@isaacs/cliui@8.0.2|strip-ansi@7.1.0",
-        "BomRef.n8pltlgoja.in0jugt3kc",
+        "BomRef.sglh3kfk4u8.8m72tukprhg",
         "@isaacs/cliui@8.0.2|wrap-ansi@8.1.0"
       ]
     },
@@ -82259,7 +83856,7 @@
       "ref": "@isaacs/cliui@8.0.2|ansi-styles@6.2.1"
     },
     {
-      "ref": "BomRef.3dbdb2h0tu.p9k7e2vda8o",
+      "ref": "BomRef.vn2jdf2jac8.lh05f88t7lg",
       "dependsOn": [
         "emoji-regex@8.0.0",
         "is-fullwidth-code-point@3.0.0",
@@ -82270,13 +83867,13 @@
       "ref": "eastasianwidth@0.2.0"
     },
     {
-      "ref": "BomRef.bsed27246pg.hohqkdlehk8",
+      "ref": "BomRef.q0sci0rr07g.rjksqg92rf8",
       "dependsOn": [
         "ansi-regex@5.0.1"
       ]
     },
     {
-      "ref": "BomRef.n8pltlgoja.in0jugt3kc",
+      "ref": "BomRef.sglh3kfk4u8.8m72tukprhg",
       "dependsOn": [
         "ansi-styles@4.3.0",
         "string-width@4.2.3",
