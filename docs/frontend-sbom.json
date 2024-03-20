@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:52942b23-6423-429e-b043-ef5c7234c5e8",
+  "serialNumber": "urn:uuid:cf306396-efb5-4947-b80e-7b4b159bb4f3",
   "metadata": {
-    "timestamp": "2024-03-20T19:17:28.214Z",
+    "timestamp": "2024-03-20T23:31:22.285Z",
     "tools": [
       {
         "name": "npm",
@@ -25492,8 +25492,8 @@
             {
               "type": "library",
               "name": "webpack",
-              "version": "5.90.3",
-              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3",
+              "version": "5.91.0",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0",
               "author": "Tobias Koppers @sokra",
               "description": "Packs ECMAScript/CommonJs/AMD modules for the browser. Allows you to split your codebase into multiple bundles, which can be loaded on demand. Supports loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
               "licenses": [
@@ -25503,7 +25503,7 @@
                   }
                 }
               ],
-              "purl": "pkg:npm/webpack@5.90.3?vcs_url=git%2Bhttps%3A//github.com/webpack/webpack.git",
+              "purl": "pkg:npm/webpack@5.91.0?vcs_url=git%2Bhttps%3A//github.com/webpack/webpack.git",
               "externalReferences": [
                 {
                   "url": "git+https://github.com/webpack/webpack.git",
@@ -25532,7 +25532,7 @@
                   "type": "library",
                   "name": "schema-utils",
                   "version": "3.3.0",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|schema-utils@3.3.0",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|schema-utils@3.3.0",
                   "author": "webpack Contrib",
                   "description": "webpack Validation Utils",
                   "licenses": [
@@ -25576,7 +25576,7 @@
                   "type": "library",
                   "name": "ajv-keywords",
                   "version": "3.5.2",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|ajv-keywords@3.5.2",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|ajv-keywords@3.5.2",
                   "author": "Evgeny Poberezkin",
                   "description": "Custom JSON-Schema keywords for Ajv validator",
                   "licenses": [
@@ -25620,7 +25620,7 @@
                   "type": "library",
                   "name": "ajv",
                   "version": "6.12.6",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|ajv@6.12.6",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|ajv@6.12.6",
                   "author": "Evgeny Poberezkin",
                   "description": "Another JSON Schema Validator",
                   "licenses": [
@@ -25659,7 +25659,7 @@
                   "type": "library",
                   "name": "json-schema-traverse",
                   "version": "0.4.1",
-                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|json-schema-traverse@0.4.1",
+                  "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|json-schema-traverse@0.4.1",
                   "author": "Evgeny Poberezkin",
                   "description": "Traverse JSON Schema passing each schema object to callback",
                   "licenses": [
@@ -25698,6 +25698,440 @@
                       "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/webpack/node_modules/json-schema-traverse"
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "ast",
+              "group": "@webassemblyjs",
+              "version": "1.12.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/ast@1.12.1",
+              "author": "Sven Sauleau",
+              "description": "AST utils for webassemblyjs",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40webassemblyjs/ast@1.12.1",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/xtuc/webassemblyjs.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.12.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/@webassemblyjs/ast"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "wasm-edit",
+              "group": "@webassemblyjs",
+              "version": "1.12.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-edit@1.12.1",
+              "author": "Sven Sauleau",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40webassemblyjs/wasm-edit@1.12.1",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/xtuc/webassemblyjs.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@webassemblyjs/wasm-edit/-/wasm-edit-1.12.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/@webassemblyjs/wasm-edit"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "helper-buffer",
+              "group": "@webassemblyjs",
+              "version": "1.12.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/helper-buffer@1.12.1",
+              "author": "Sven Sauleau",
+              "description": "Buffer manipulation utility",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40webassemblyjs/helper-buffer@1.12.1",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/xtuc/webassemblyjs.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@webassemblyjs/helper-buffer/-/helper-buffer-1.12.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/@webassemblyjs/helper-buffer"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "helper-wasm-section",
+              "group": "@webassemblyjs",
+              "version": "1.12.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/helper-wasm-section@1.12.1",
+              "author": "Sven Sauleau",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40webassemblyjs/helper-wasm-section@1.12.1",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/xtuc/webassemblyjs.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.12.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/@webassemblyjs/helper-wasm-section"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "wasm-gen",
+              "group": "@webassemblyjs",
+              "version": "1.12.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-gen@1.12.1",
+              "author": "Sven Sauleau",
+              "description": "WebAssembly binary format printer",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40webassemblyjs/wasm-gen@1.12.1?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/xtuc/webassemblyjs.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/@webassemblyjs/wasm-gen"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "wasm-opt",
+              "group": "@webassemblyjs",
+              "version": "1.12.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-opt@1.12.1",
+              "author": "Sven Sauleau",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40webassemblyjs/wasm-opt@1.12.1",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/xtuc/webassemblyjs.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@webassemblyjs/wasm-opt/-/wasm-opt-1.12.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/@webassemblyjs/wasm-opt"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "wasm-parser",
+              "group": "@webassemblyjs",
+              "version": "1.12.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-parser@1.12.1",
+              "author": "Sven Sauleau",
+              "description": "WebAssembly binary format parser",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40webassemblyjs/wasm-parser@1.12.1?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/xtuc/webassemblyjs.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/@webassemblyjs/wasm-parser"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "wast-printer",
+              "group": "@webassemblyjs",
+              "version": "1.12.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wast-printer@1.12.1",
+              "author": "Sven Sauleau",
+              "description": "WebAssembly text format printer",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/%40webassemblyjs/wast-printer@1.12.1",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/xtuc/webassemblyjs.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs#readme",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/xtuc/webassemblyjs/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/@webassemblyjs/wast-printer/-/wast-printer-1.12.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/@webassemblyjs/wast-printer"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "enhanced-resolve",
+              "version": "5.16.0",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|enhanced-resolve@5.16.0",
+              "author": "Tobias Koppers @sokra",
+              "description": "Offers a async require.resolve function. It's highly configurable.",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/enhanced-resolve@5.16.0",
+              "externalReferences": [
+                {
+                  "url": "git://github.com/webpack/enhanced-resolve.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "http://github.com/webpack/enhanced-resolve",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/webpack/enhanced-resolve/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.16.0.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/enhanced-resolve"
+                }
+              ]
+            },
+            {
+              "type": "library",
+              "name": "watchpack",
+              "version": "2.4.1",
+              "bom-ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|watchpack@2.4.1",
+              "author": "Tobias Koppers @sokra",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/watchpack@2.4.1",
+              "externalReferences": [
+                {
+                  "url": "git+https://github.com/webpack/watchpack.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/webpack/watchpack",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/webpack/watchpack/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/watchpack/-/watchpack-2.4.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/react-scripts/node_modules/mini-css-extract-plugin/node_modules/watchpack"
                 }
               ]
             },
@@ -28641,6 +29075,270 @@
                   "value": "node_modules/react-scripts/node_modules/webpack-manifest-plugin/node_modules/webpack-sources"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wasm-edit",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "react-scripts@5.0.1|@webassemblyjs/wasm-edit@1.11.6",
+          "author": "Sven Sauleau",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-edit@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-edit/-/wasm-edit-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/@webassemblyjs/wasm-edit"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "helper-wasm-section",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "react-scripts@5.0.1|@webassemblyjs/helper-wasm-section@1.11.6",
+          "author": "Sven Sauleau",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/helper-wasm-section@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/@webassemblyjs/helper-wasm-section"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wasm-opt",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "react-scripts@5.0.1|@webassemblyjs/wasm-opt@1.11.6",
+          "author": "Sven Sauleau",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-opt@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-opt/-/wasm-opt-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/@webassemblyjs/wasm-opt"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wast-printer",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "react-scripts@5.0.1|@webassemblyjs/wast-printer@1.11.6",
+          "author": "Sven Sauleau",
+          "description": "WebAssembly text format printer",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wast-printer@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wast-printer/-/wast-printer-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/@webassemblyjs/wast-printer"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "enhanced-resolve",
+          "version": "5.15.0",
+          "bom-ref": "react-scripts@5.0.1|enhanced-resolve@5.15.0",
+          "author": "Tobias Koppers @sokra",
+          "description": "Offers a async require.resolve function. It's highly configurable.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/enhanced-resolve@5.15.0",
+          "externalReferences": [
+            {
+              "url": "git://github.com/webpack/enhanced-resolve.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "http://github.com/webpack/enhanced-resolve",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/webpack/enhanced-resolve/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.15.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/enhanced-resolve"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "watchpack",
+          "version": "2.4.0",
+          "bom-ref": "react-scripts@5.0.1|watchpack@2.4.0",
+          "author": "Tobias Koppers @sokra",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/watchpack@2.4.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/webpack/watchpack.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/webpack/watchpack",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/webpack/watchpack/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/watchpack/-/watchpack-2.4.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/react-scripts/node_modules/watchpack"
             }
           ]
         },
@@ -54521,12 +55219,12 @@
     },
     {
       "type": "library",
-      "name": "ast",
+      "name": "helper-numbers",
       "group": "@webassemblyjs",
       "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/ast@1.11.6",
+      "bom-ref": "@webassemblyjs/helper-numbers@1.11.6",
       "author": "Sven Sauleau",
-      "description": "AST utils for webassemblyjs",
+      "description": "Number parsing utility",
       "licenses": [
         {
           "license": {
@@ -54534,7 +55232,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/ast@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
+      "purl": "pkg:npm/%40webassemblyjs/helper-numbers@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/xtuc/webassemblyjs.git",
@@ -54555,17 +55253,18 @@
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/ast"
+          "value": "node_modules/@webassemblyjs/helper-numbers"
         }
       ]
     },
     {
       "type": "library",
-      "name": "wasm-edit",
+      "name": "helper-wasm-bytecode",
       "group": "@webassemblyjs",
       "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/wasm-edit@1.11.6",
+      "bom-ref": "@webassemblyjs/helper-wasm-bytecode@1.11.6",
       "author": "Sven Sauleau",
+      "description": "WASM's Bytecode constants",
       "licenses": [
         {
           "license": {
@@ -54573,7 +55272,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/wasm-edit@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
+      "purl": "pkg:npm/%40webassemblyjs/helper-wasm-bytecode@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/xtuc/webassemblyjs.git",
@@ -54594,18 +55293,17 @@
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/wasm-edit"
+          "value": "node_modules/@webassemblyjs/helper-wasm-bytecode"
         }
       ]
     },
     {
       "type": "library",
-      "name": "wasm-parser",
+      "name": "ieee754",
       "group": "@webassemblyjs",
       "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/wasm-parser@1.11.6",
-      "author": "Sven Sauleau",
-      "description": "WebAssembly binary format parser",
+      "bom-ref": "@webassemblyjs/ieee754@1.11.6",
+      "description": "IEEE754 decoder and encoder",
       "licenses": [
         {
           "license": {
@@ -54613,7 +55311,86 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/wasm-parser@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
+      "purl": "pkg:npm/%40webassemblyjs/ieee754@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git#packages/ieee754",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/xtuc/webassemblyjs.git#packages/ieee754",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@webassemblyjs/ieee754"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "leb128",
+      "group": "@webassemblyjs",
+      "version": "1.11.6",
+      "bom-ref": "@webassemblyjs/leb128@1.11.6",
+      "description": "LEB128 decoder and encoder",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40webassemblyjs/leb128@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git#packages/leb128",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/xtuc/webassemblyjs.git#packages/leb128",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@webassemblyjs/leb128"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "utf8",
+      "group": "@webassemblyjs",
+      "version": "1.11.6",
+      "bom-ref": "@webassemblyjs/utf8@1.11.6",
+      "author": "Sven Sauleau",
+      "description": "UTF8 encoder/decoder for WASM",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40webassemblyjs/utf8@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/xtuc/webassemblyjs.git",
@@ -54634,7 +55411,87 @@
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/wasm-parser"
+          "value": "node_modules/@webassemblyjs/utf8"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "long",
+      "group": "@xtuc",
+      "version": "4.2.2",
+      "bom-ref": "@xtuc/long@4.2.2",
+      "author": "Daniel Wirtz",
+      "description": "A Long class for representing a 64-bit two's-complement integer value.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40xtuc/long@4.2.2?vcs_url=git%2Bhttps%3A//github.com/dcodeIO/long.js.git",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/dcodeIO/long.js.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/dcodeIO/long.js#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/dcodeIO/long.js/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@xtuc/long"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "helper-api-error",
+      "group": "@webassemblyjs",
+      "version": "1.11.6",
+      "bom-ref": "@webassemblyjs/helper-api-error@1.11.6",
+      "author": "Sven Sauleau",
+      "description": "Common API errors",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40webassemblyjs/helper-api-error@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git#packages/helper-api-error",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/xtuc/webassemblyjs.git#packages/helper-api-error",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@webassemblyjs/helper-api-error"
         }
       ]
     },
@@ -54713,45 +55570,6 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/chrome-trace-event"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "enhanced-resolve",
-      "version": "5.15.0",
-      "bom-ref": "enhanced-resolve@5.15.0",
-      "author": "Tobias Koppers @sokra",
-      "description": "Offers a async require.resolve function. It's highly configurable.",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/enhanced-resolve@5.15.0?vcs_url=git%3A//github.com/webpack/enhanced-resolve.git",
-      "externalReferences": [
-        {
-          "url": "git://github.com/webpack/enhanced-resolve.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "http://github.com/webpack/enhanced-resolve",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/webpack/enhanced-resolve/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/enhanced-resolve"
         }
       ]
     },
@@ -54985,44 +55803,6 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/neo-async"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "watchpack",
-      "version": "2.4.0",
-      "bom-ref": "watchpack@2.4.0",
-      "author": "Tobias Koppers @sokra",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/watchpack@2.4.0?vcs_url=git%2Bhttps%3A//github.com/webpack/watchpack.git",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/webpack/watchpack.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/webpack/watchpack",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/webpack/watchpack/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/watchpack"
         }
       ]
     },
@@ -56689,6 +57469,316 @@
               ]
             }
           ]
+        },
+        {
+          "type": "library",
+          "name": "wasm-edit",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wasm-edit@1.11.6",
+          "author": "Sven Sauleau",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-edit@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-edit/-/wasm-edit-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/@webassemblyjs/wasm-edit"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "helper-wasm-section",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/helper-wasm-section@1.11.6",
+          "author": "Sven Sauleau",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/helper-wasm-section@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/@webassemblyjs/helper-wasm-section"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wasm-opt",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wasm-opt@1.11.6",
+          "author": "Sven Sauleau",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-opt@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-opt/-/wasm-opt-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/@webassemblyjs/wasm-opt"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wast-printer",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wast-printer@1.11.6",
+          "author": "Sven Sauleau",
+          "description": "WebAssembly text format printer",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wast-printer@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wast-printer/-/wast-printer-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/@webassemblyjs/wast-printer"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "enhanced-resolve",
+          "version": "5.15.0",
+          "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|enhanced-resolve@5.15.0",
+          "author": "Tobias Koppers @sokra",
+          "description": "Offers a async require.resolve function. It's highly configurable.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/enhanced-resolve@5.15.0",
+          "externalReferences": [
+            {
+              "url": "git://github.com/webpack/enhanced-resolve.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "http://github.com/webpack/enhanced-resolve",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/webpack/enhanced-resolve/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.15.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/enhanced-resolve"
+            }
+          ],
+          "components": [
+            {
+              "type": "library",
+              "name": "tapable",
+              "version": "2.2.1",
+              "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|enhanced-resolve@5.15.0|tapable@2.2.1",
+              "author": "Tobias Koppers @sokra",
+              "description": "Just a little module for plugins.",
+              "licenses": [
+                {
+                  "license": {
+                    "id": "MIT"
+                  }
+                }
+              ],
+              "purl": "pkg:npm/tapable@2.2.1",
+              "externalReferences": [
+                {
+                  "url": "git+ssh://git@github.com/webpack/tapable.git",
+                  "type": "vcs",
+                  "comment": "as detected from PackageJson property \"repository.url\""
+                },
+                {
+                  "url": "https://github.com/webpack/tapable",
+                  "type": "website",
+                  "comment": "as detected from PackageJson property \"homepage\""
+                },
+                {
+                  "url": "https://github.com/webpack/tapable/issues",
+                  "type": "issue-tracker",
+                  "comment": "as detected from PackageJson property \"bugs.url\""
+                },
+                {
+                  "url": "https://registry.npmjs.org/tapable/-/tapable-2.2.1.tgz",
+                  "type": "distribution",
+                  "comment": "as detected from npm-ls property \"resolved\""
+                }
+              ],
+              "properties": [
+                {
+                  "name": "cdx:npm:package:path",
+                  "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/enhanced-resolve/node_modules/tapable"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "watchpack",
+          "version": "2.4.0",
+          "bom-ref": "fork-ts-checker-webpack-plugin@6.5.3|watchpack@2.4.0",
+          "author": "Tobias Koppers @sokra",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/watchpack@2.4.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/webpack/watchpack.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/webpack/watchpack",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/webpack/watchpack/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/watchpack/-/watchpack-2.4.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/fork-ts-checker-webpack-plugin/node_modules/watchpack"
+            }
+          ]
         }
       ]
     },
@@ -57165,6 +58255,166 @@
     },
     {
       "type": "library",
+      "name": "ast",
+      "group": "@webassemblyjs",
+      "version": "1.11.6",
+      "bom-ref": "@webassemblyjs/ast@1.11.6",
+      "author": "Sven Sauleau",
+      "description": "AST utils for webassemblyjs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40webassemblyjs/ast@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/xtuc/webassemblyjs.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@webassemblyjs/ast"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "helper-buffer",
+      "group": "@webassemblyjs",
+      "version": "1.11.6",
+      "bom-ref": "@webassemblyjs/helper-buffer@1.11.6",
+      "author": "Sven Sauleau",
+      "description": "Buffer manipulation utility",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40webassemblyjs/helper-buffer@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/xtuc/webassemblyjs.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@webassemblyjs/helper-buffer"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "wasm-gen",
+      "group": "@webassemblyjs",
+      "version": "1.11.6",
+      "bom-ref": "@webassemblyjs/wasm-gen@1.11.6",
+      "author": "Sven Sauleau",
+      "description": "WebAssembly binary format printer",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40webassemblyjs/wasm-gen@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/xtuc/webassemblyjs.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@webassemblyjs/wasm-gen"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "wasm-parser",
+      "group": "@webassemblyjs",
+      "version": "1.11.6",
+      "bom-ref": "@webassemblyjs/wasm-parser@1.11.6",
+      "author": "Sven Sauleau",
+      "description": "WebAssembly binary format parser",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40webassemblyjs/wasm-parser@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/xtuc/webassemblyjs.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/xtuc/webassemblyjs/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@webassemblyjs/wasm-parser"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "terser-webpack-plugin",
       "version": "5.3.10",
       "bom-ref": "terser-webpack-plugin@5.3.10",
@@ -57238,6 +58488,270 @@
             {
               "name": "cdx:npm:package:path",
               "value": "node_modules/terser-webpack-plugin/node_modules/webpack"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wasm-edit",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "terser-webpack-plugin@5.3.10|@webassemblyjs/wasm-edit@1.11.6",
+          "author": "Sven Sauleau",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-edit@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-edit/-/wasm-edit-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/@webassemblyjs/wasm-edit"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "helper-wasm-section",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "terser-webpack-plugin@5.3.10|@webassemblyjs/helper-wasm-section@1.11.6",
+          "author": "Sven Sauleau",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/helper-wasm-section@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/@webassemblyjs/helper-wasm-section"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wasm-opt",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "terser-webpack-plugin@5.3.10|@webassemblyjs/wasm-opt@1.11.6",
+          "author": "Sven Sauleau",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-opt@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-opt/-/wasm-opt-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/@webassemblyjs/wasm-opt"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wast-printer",
+          "group": "@webassemblyjs",
+          "version": "1.11.6",
+          "bom-ref": "terser-webpack-plugin@5.3.10|@webassemblyjs/wast-printer@1.11.6",
+          "author": "Sven Sauleau",
+          "description": "WebAssembly text format printer",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wast-printer@1.11.6",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wast-printer/-/wast-printer-1.11.6.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/@webassemblyjs/wast-printer"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "enhanced-resolve",
+          "version": "5.15.0",
+          "bom-ref": "terser-webpack-plugin@5.3.10|enhanced-resolve@5.15.0",
+          "author": "Tobias Koppers @sokra",
+          "description": "Offers a async require.resolve function. It's highly configurable.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/enhanced-resolve@5.15.0",
+          "externalReferences": [
+            {
+              "url": "git://github.com/webpack/enhanced-resolve.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "http://github.com/webpack/enhanced-resolve",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/webpack/enhanced-resolve/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.15.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/enhanced-resolve"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "watchpack",
+          "version": "2.4.0",
+          "bom-ref": "terser-webpack-plugin@5.3.10|watchpack@2.4.0",
+          "author": "Tobias Koppers @sokra",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/watchpack@2.4.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/webpack/watchpack.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/webpack/watchpack",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/webpack/watchpack/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/watchpack/-/watchpack-2.4.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/terser-webpack-plugin/node_modules/watchpack"
             }
           ]
         }
@@ -60366,7 +61880,7 @@
       "type": "library",
       "name": "string-width",
       "version": "4.2.3",
-      "bom-ref": "BomRef.4oisq8vibng.jebr5s5ll48",
+      "bom-ref": "BomRef.2kaeuq7p0ao.848j7gfdpf8",
       "author": "Sindre Sorhus",
       "description": "Get the visual width of a string - the number of columns required to display it",
       "licenses": [
@@ -60454,7 +61968,7 @@
       "type": "library",
       "name": "strip-ansi",
       "version": "6.0.1",
-      "bom-ref": "BomRef.lqbec9i9ho8.2m6psg8pk1o",
+      "bom-ref": "BomRef.35s5l6nrb1.jkhpr2klm7",
       "author": "Sindre Sorhus",
       "description": "Strip ANSI escape codes from a string",
       "licenses": [
@@ -60498,7 +62012,7 @@
       "type": "library",
       "name": "wrap-ansi",
       "version": "7.0.0",
-      "bom-ref": "BomRef.ovhrlufh7og.u5i1khgklvo",
+      "bom-ref": "BomRef.tg3k9k5pge8.7apup5pe3b",
       "author": "Sindre Sorhus",
       "description": "Wordwrap a string with ANSI escape codes",
       "licenses": [
@@ -73510,8 +75024,8 @@
     {
       "type": "library",
       "name": "webpack",
-      "version": "5.90.3",
-      "bom-ref": "webpack@5.90.3",
+      "version": "5.91.0",
+      "bom-ref": "webpack@5.91.0",
       "author": "Tobias Koppers @sokra",
       "description": "Packs ECMAScript/CommonJs/AMD modules for the browser. Allows you to split your codebase into multiple bundles, which can be loaded on demand. Supports loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
       "licenses": [
@@ -73521,7 +75035,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/webpack@5.90.3",
+      "purl": "pkg:npm/webpack@5.91.0",
       "externalReferences": [
         {
           "url": "git+https://github.com/webpack/webpack.git",
@@ -73539,7 +75053,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/webpack/-/webpack-5.90.3.tgz",
+          "url": "https://registry.npmjs.org/webpack/-/webpack-5.91.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -73549,50 +75063,97 @@
           "name": "cdx:npm:package:path",
           "value": "node_modules/webpack"
         }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "helper-numbers",
-      "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/helper-numbers@1.11.6",
-      "author": "Sven Sauleau",
-      "description": "Number parsing utility",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/helper-numbers@1.11.6",
-      "externalReferences": [
+      "components": [
         {
-          "url": "git+https://github.com/xtuc/webassemblyjs.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
+          "type": "library",
+          "name": "ast",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "webpack@5.91.0|@webassemblyjs/ast@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "AST utils for webassemblyjs",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/ast@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/webpack/node_modules/@webassemblyjs/ast"
+            }
+          ]
         },
         {
-          "url": "https://github.com/xtuc/webassemblyjs#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/xtuc/webassemblyjs/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/@webassemblyjs/helper-numbers/-/helper-numbers-1.11.6.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/helper-numbers"
+          "type": "library",
+          "name": "wasm-parser",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "webpack@5.91.0|@webassemblyjs/wasm-parser@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "WebAssembly binary format parser",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-parser@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-parser/-/wasm-parser-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/webpack/node_modules/@webassemblyjs/wasm-parser"
+            }
+          ]
         }
       ]
     },
@@ -73643,12 +75204,11 @@
     },
     {
       "type": "library",
-      "name": "helper-api-error",
+      "name": "wasm-edit",
       "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/helper-api-error@1.11.6",
+      "version": "1.12.1",
+      "bom-ref": "@webassemblyjs/wasm-edit@1.12.1",
       "author": "Sven Sauleau",
-      "description": "Common API errors",
       "licenses": [
         {
           "license": {
@@ -73656,92 +75216,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/helper-api-error@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git#packages/helper-api-error",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/xtuc/webassemblyjs.git#packages/helper-api-error",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://github.com/xtuc/webassemblyjs#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/xtuc/webassemblyjs/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/helper-api-error"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "long",
-      "group": "@xtuc",
-      "version": "4.2.2",
-      "bom-ref": "@xtuc/long@4.2.2",
-      "author": "Daniel Wirtz",
-      "description": "A Long class for representing a 64-bit two's-complement integer value.",
-      "licenses": [
-        {
-          "license": {
-            "id": "Apache-2.0"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40xtuc/long@4.2.2",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/dcodeIO/long.js.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/dcodeIO/long.js#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/dcodeIO/long.js/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        },
-        {
-          "url": "https://registry.npmjs.org/@xtuc/long/-/long-4.2.2.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@xtuc/long"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "helper-wasm-bytecode",
-      "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/helper-wasm-bytecode@1.11.6",
-      "author": "Sven Sauleau",
-      "description": "WASM's Bytecode constants",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40webassemblyjs/helper-wasm-bytecode@1.11.6",
+      "purl": "pkg:npm/%40webassemblyjs/wasm-edit@1.12.1",
       "externalReferences": [
         {
           "url": "git+https://github.com/xtuc/webassemblyjs.git",
@@ -73759,7 +75234,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.11.6.tgz",
+          "url": "https://registry.npmjs.org/@webassemblyjs/wasm-edit/-/wasm-edit-1.12.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -73767,52 +75242,189 @@
       "properties": [
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/helper-wasm-bytecode"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "helper-buffer",
-      "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/helper-buffer@1.11.6",
-      "author": "Sven Sauleau",
-      "description": "Buffer manipulation utility",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
+          "value": "node_modules/@webassemblyjs/wasm-edit"
         }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/helper-buffer@1.11.6",
-      "externalReferences": [
+      "components": [
         {
-          "url": "git+https://github.com/xtuc/webassemblyjs.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
+          "type": "library",
+          "name": "ast",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/ast@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "AST utils for webassemblyjs",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/ast@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/wasm-edit/node_modules/@webassemblyjs/ast"
+            }
+          ]
         },
         {
-          "url": "https://github.com/xtuc/webassemblyjs#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
+          "type": "library",
+          "name": "helper-buffer",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/helper-buffer@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "Buffer manipulation utility",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/helper-buffer@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/helper-buffer/-/helper-buffer-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/wasm-edit/node_modules/@webassemblyjs/helper-buffer"
+            }
+          ]
         },
         {
-          "url": "https://github.com/xtuc/webassemblyjs/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
+          "type": "library",
+          "name": "wasm-gen",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/wasm-gen@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "WebAssembly binary format printer",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-gen@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-gen/-/wasm-gen-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/wasm-edit/node_modules/@webassemblyjs/wasm-gen"
+            }
+          ]
         },
         {
-          "url": "https://registry.npmjs.org/@webassemblyjs/helper-buffer/-/helper-buffer-1.11.6.tgz",
-          "type": "distribution",
-          "comment": "as detected from npm-ls property \"resolved\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/helper-buffer"
+          "type": "library",
+          "name": "wasm-parser",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/wasm-parser@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "WebAssembly binary format parser",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-parser@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-parser/-/wasm-parser-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/wasm-edit/node_modules/@webassemblyjs/wasm-parser"
+            }
+          ]
         }
       ]
     },
@@ -73820,8 +75432,8 @@
       "type": "library",
       "name": "helper-wasm-section",
       "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/helper-wasm-section@1.11.6",
+      "version": "1.12.1",
+      "bom-ref": "@webassemblyjs/helper-wasm-section@1.12.1",
       "author": "Sven Sauleau",
       "licenses": [
         {
@@ -73830,7 +75442,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/helper-wasm-section@1.11.6",
+      "purl": "pkg:npm/%40webassemblyjs/helper-wasm-section@1.12.1",
       "externalReferences": [
         {
           "url": "git+https://github.com/xtuc/webassemblyjs.git",
@@ -73848,7 +75460,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.11.6.tgz",
+          "url": "https://registry.npmjs.org/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.12.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -73858,163 +75470,142 @@
           "name": "cdx:npm:package:path",
           "value": "node_modules/@webassemblyjs/helper-wasm-section"
         }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "wasm-gen",
-      "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/wasm-gen@1.11.6",
-      "author": "Sven Sauleau",
-      "description": "WebAssembly binary format printer",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/wasm-gen@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
-      "externalReferences": [
+      "components": [
         {
-          "url": "git+https://github.com/xtuc/webassemblyjs.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
+          "type": "library",
+          "name": "ast",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/ast@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "AST utils for webassemblyjs",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/ast@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/helper-wasm-section/node_modules/@webassemblyjs/ast"
+            }
+          ]
         },
         {
-          "url": "https://github.com/xtuc/webassemblyjs#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
+          "type": "library",
+          "name": "helper-buffer",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/helper-buffer@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "Buffer manipulation utility",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/helper-buffer@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/helper-buffer/-/helper-buffer-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/helper-wasm-section/node_modules/@webassemblyjs/helper-buffer"
+            }
+          ]
         },
         {
-          "url": "https://github.com/xtuc/webassemblyjs/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/wasm-gen"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "ieee754",
-      "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/ieee754@1.11.6",
-      "description": "IEEE754 decoder and encoder",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40webassemblyjs/ieee754@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git#packages/ieee754",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/xtuc/webassemblyjs.git#packages/ieee754",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://github.com/xtuc/webassemblyjs#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/xtuc/webassemblyjs/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/ieee754"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "leb128",
-      "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/leb128@1.11.6",
-      "description": "LEB128 decoder and encoder",
-      "licenses": [
-        {
-          "license": {
-            "id": "Apache-2.0"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40webassemblyjs/leb128@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git#packages/leb128",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/xtuc/webassemblyjs.git#packages/leb128",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
-        },
-        {
-          "url": "https://github.com/xtuc/webassemblyjs#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/xtuc/webassemblyjs/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/leb128"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "utf8",
-      "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/utf8@1.11.6",
-      "author": "Sven Sauleau",
-      "description": "UTF8 encoder/decoder for WASM",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "purl": "pkg:npm/%40webassemblyjs/utf8@1.11.6?vcs_url=git%2Bhttps%3A//github.com/xtuc/webassemblyjs.git",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/xtuc/webassemblyjs.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/xtuc/webassemblyjs#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/xtuc/webassemblyjs/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
-      "properties": [
-        {
-          "name": "cdx:npm:package:path",
-          "value": "node_modules/@webassemblyjs/utf8"
+          "type": "library",
+          "name": "wasm-gen",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/wasm-gen@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "WebAssembly binary format printer",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-gen@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-gen/-/wasm-gen-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/helper-wasm-section/node_modules/@webassemblyjs/wasm-gen"
+            }
+          ]
         }
       ]
     },
@@ -74022,8 +75613,8 @@
       "type": "library",
       "name": "wasm-opt",
       "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/wasm-opt@1.11.6",
+      "version": "1.12.1",
+      "bom-ref": "@webassemblyjs/wasm-opt@1.12.1",
       "author": "Sven Sauleau",
       "licenses": [
         {
@@ -74032,7 +75623,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/wasm-opt@1.11.6",
+      "purl": "pkg:npm/%40webassemblyjs/wasm-opt@1.12.1",
       "externalReferences": [
         {
           "url": "git+https://github.com/xtuc/webassemblyjs.git",
@@ -74050,7 +75641,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@webassemblyjs/wasm-opt/-/wasm-opt-1.11.6.tgz",
+          "url": "https://registry.npmjs.org/@webassemblyjs/wasm-opt/-/wasm-opt-1.12.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -74060,14 +75651,196 @@
           "name": "cdx:npm:package:path",
           "value": "node_modules/@webassemblyjs/wasm-opt"
         }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ast",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/ast@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "AST utils for webassemblyjs",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/ast@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/wasm-opt/node_modules/@webassemblyjs/ast"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "helper-buffer",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/helper-buffer@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "Buffer manipulation utility",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/helper-buffer@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/helper-buffer/-/helper-buffer-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/wasm-opt/node_modules/@webassemblyjs/helper-buffer"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wasm-gen",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/wasm-gen@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "WebAssembly binary format printer",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-gen@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-gen/-/wasm-gen-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/wasm-opt/node_modules/@webassemblyjs/wasm-gen"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "wasm-parser",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/wasm-parser@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "WebAssembly binary format parser",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/wasm-parser@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/wasm-parser/-/wasm-parser-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/wasm-opt/node_modules/@webassemblyjs/wasm-parser"
+            }
+          ]
+        }
       ]
     },
     {
       "type": "library",
       "name": "wast-printer",
       "group": "@webassemblyjs",
-      "version": "1.11.6",
-      "bom-ref": "@webassemblyjs/wast-printer@1.11.6",
+      "version": "1.12.1",
+      "bom-ref": "@webassemblyjs/wast-printer@1.12.1",
       "author": "Sven Sauleau",
       "description": "WebAssembly text format printer",
       "licenses": [
@@ -74077,7 +75850,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40webassemblyjs/wast-printer@1.11.6",
+      "purl": "pkg:npm/%40webassemblyjs/wast-printer@1.12.1",
       "externalReferences": [
         {
           "url": "git+https://github.com/xtuc/webassemblyjs.git",
@@ -74095,7 +75868,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@webassemblyjs/wast-printer/-/wast-printer-1.11.6.tgz",
+          "url": "https://registry.npmjs.org/@webassemblyjs/wast-printer/-/wast-printer-1.12.1.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -74104,6 +75877,53 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@webassemblyjs/wast-printer"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ast",
+          "group": "@webassemblyjs",
+          "version": "1.12.1",
+          "bom-ref": "@webassemblyjs/wast-printer@1.12.1|@webassemblyjs/ast@1.12.1",
+          "author": "Sven Sauleau",
+          "description": "AST utils for webassemblyjs",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40webassemblyjs/ast@1.12.1",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/xtuc/webassemblyjs.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/xtuc/webassemblyjs/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.12.1.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@webassemblyjs/wast-printer/node_modules/@webassemblyjs/ast"
+            }
+          ]
         }
       ]
     },
@@ -74154,6 +75974,50 @@
     },
     {
       "type": "library",
+      "name": "enhanced-resolve",
+      "version": "5.16.0",
+      "bom-ref": "enhanced-resolve@5.16.0",
+      "author": "Tobias Koppers @sokra",
+      "description": "Offers a async require.resolve function. It's highly configurable.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/enhanced-resolve@5.16.0",
+      "externalReferences": [
+        {
+          "url": "git://github.com/webpack/enhanced-resolve.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "http://github.com/webpack/enhanced-resolve",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/webpack/enhanced-resolve/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.16.0.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/enhanced-resolve"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "schema-utils",
       "version": "3.3.0",
       "bom-ref": "schema-utils@3.3.0",
@@ -74195,6 +76059,49 @@
           "value": "node_modules/schema-utils"
         }
       ]
+    },
+    {
+      "type": "library",
+      "name": "watchpack",
+      "version": "2.4.1",
+      "bom-ref": "watchpack@2.4.1",
+      "author": "Tobias Koppers @sokra",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:npm/watchpack@2.4.1",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/webpack/watchpack.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/webpack/watchpack",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/webpack/watchpack/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "https://registry.npmjs.org/watchpack/-/watchpack-2.4.1.tgz",
+          "type": "distribution",
+          "comment": "as detected from npm-ls property \"resolved\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/watchpack"
+        }
+      ]
     }
   ],
   "dependencies": [
@@ -74222,7 +76129,7 @@
         "react@18.2.0",
         "typescript@5.4.2",
         "web-vitals@3.5.2",
-        "webpack@5.90.3"
+        "webpack@5.91.0"
       ]
     },
     {
@@ -77708,13 +79615,13 @@
         "@types/eslint-scope@3.7.7",
         "@types/estree@1.0.5",
         "@webassemblyjs/ast@1.11.6",
-        "@webassemblyjs/wasm-edit@1.11.6",
+        "react-scripts@5.0.1|@webassemblyjs/wasm-edit@1.11.6",
         "@webassemblyjs/wasm-parser@1.11.6",
         "acorn-import-assertions@1.9.0",
         "acorn@8.11.3",
         "browserslist@4.22.2",
         "chrome-trace-event@1.0.3",
-        "enhanced-resolve@5.15.0",
+        "react-scripts@5.0.1|enhanced-resolve@5.15.0",
         "es-module-lexer@1.4.1",
         "eslint-scope@5.1.1",
         "events@3.3.0",
@@ -77727,7 +79634,7 @@
         "react-scripts@5.0.1|webpack@5.89.0|schema-utils@3.3.0",
         "tapable@2.2.1",
         "react-scripts@5.0.1|terser-webpack-plugin@5.3.10",
-        "watchpack@2.4.0",
+        "react-scripts@5.0.1|watchpack@2.4.0",
         "react-scripts@5.0.1|webpack@5.89.0|webpack-sources@3.2.3"
       ]
     },
@@ -78378,7 +80285,7 @@
       "dependsOn": [
         "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|schema-utils@4.2.0",
         "tapable@2.2.1",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3"
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0"
       ]
     },
     {
@@ -78413,18 +80320,18 @@
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0",
       "dependsOn": [
         "@types/eslint-scope@3.7.7",
         "@types/estree@1.0.5",
-        "@webassemblyjs/ast@1.11.6",
-        "@webassemblyjs/wasm-edit@1.11.6",
-        "@webassemblyjs/wasm-parser@1.11.6",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/ast@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-edit@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-parser@1.12.1",
         "acorn-import-assertions@1.9.0",
         "acorn@8.11.3",
         "browserslist@4.22.2",
         "chrome-trace-event@1.0.3",
-        "enhanced-resolve@5.15.0",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|enhanced-resolve@5.16.0",
         "es-module-lexer@1.4.1",
         "eslint-scope@5.1.1",
         "events@3.3.0",
@@ -78434,38 +80341,121 @@
         "loader-runner@4.3.0",
         "mime-types@2.1.35",
         "neo-async@2.6.2",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|schema-utils@3.3.0",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|schema-utils@3.3.0",
         "tapable@2.2.1",
         "react-scripts@5.0.1|terser-webpack-plugin@5.3.10",
-        "watchpack@2.4.0",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|watchpack@2.4.1",
         "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack-sources@3.2.3"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|schema-utils@3.3.0",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|schema-utils@3.3.0",
       "dependsOn": [
         "@types/json-schema@7.0.15",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|ajv-keywords@3.5.2",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|ajv@6.12.6"
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|ajv-keywords@3.5.2",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|ajv@6.12.6"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|ajv-keywords@3.5.2",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|ajv-keywords@3.5.2",
       "dependsOn": [
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|ajv@6.12.6"
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|ajv@6.12.6"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|ajv@6.12.6",
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|ajv@6.12.6",
       "dependsOn": [
         "fast-deep-equal@3.1.3",
         "fast-json-stable-stringify@2.1.0",
-        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|json-schema-traverse@0.4.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|json-schema-traverse@0.4.1",
         "uri-js@4.4.1"
       ]
     },
     {
-      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.90.3|json-schema-traverse@0.4.1"
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack@5.91.0|json-schema-traverse@0.4.1"
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/ast@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/helper-numbers@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-edit@1.12.1",
+      "dependsOn": [
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/ast@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/helper-buffer@1.12.1",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/helper-wasm-section@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-gen@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-opt@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-parser@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wast-printer@1.12.1"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/helper-buffer@1.12.1"
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/helper-wasm-section@1.12.1",
+      "dependsOn": [
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/ast@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/helper-buffer@1.12.1",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-gen@1.12.1"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-gen@1.12.1",
+      "dependsOn": [
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/ieee754@1.11.6",
+        "@webassemblyjs/leb128@1.11.6",
+        "@webassemblyjs/utf8@1.11.6"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-opt@1.12.1",
+      "dependsOn": [
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/ast@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/helper-buffer@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-gen@1.12.1",
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-parser@1.12.1"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wasm-parser@1.12.1",
+      "dependsOn": [
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/helper-api-error@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/ieee754@1.11.6",
+        "@webassemblyjs/leb128@1.11.6",
+        "@webassemblyjs/utf8@1.11.6"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/wast-printer@1.12.1",
+      "dependsOn": [
+        "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|@webassemblyjs/ast@1.12.1",
+        "@xtuc/long@4.2.2"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|enhanced-resolve@5.16.0",
+      "dependsOn": [
+        "graceful-fs@4.2.11",
+        "tapable@2.2.1"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|watchpack@2.4.1",
+      "dependsOn": [
+        "glob-to-regexp@0.4.1",
+        "graceful-fs@4.2.11"
+      ]
     },
     {
       "ref": "react-scripts@5.0.1|mini-css-extract-plugin@2.8.1|webpack-sources@3.2.3"
@@ -78995,6 +80985,58 @@
       "dependsOn": [
         "source-list-map@2.0.1",
         "source-map@0.6.1"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|@webassemblyjs/wasm-edit@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-buffer@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "react-scripts@5.0.1|@webassemblyjs/helper-wasm-section@1.11.6",
+        "@webassemblyjs/wasm-gen@1.11.6",
+        "react-scripts@5.0.1|@webassemblyjs/wasm-opt@1.11.6",
+        "@webassemblyjs/wasm-parser@1.11.6",
+        "react-scripts@5.0.1|@webassemblyjs/wast-printer@1.11.6"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|@webassemblyjs/helper-wasm-section@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-buffer@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/wasm-gen@1.11.6"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|@webassemblyjs/wasm-opt@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-buffer@1.11.6",
+        "@webassemblyjs/wasm-gen@1.11.6",
+        "@webassemblyjs/wasm-parser@1.11.6"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|@webassemblyjs/wast-printer@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@xtuc/long@4.2.2"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|enhanced-resolve@5.15.0",
+      "dependsOn": [
+        "graceful-fs@4.2.11",
+        "tapable@2.2.1"
+      ]
+    },
+    {
+      "ref": "react-scripts@5.0.1|watchpack@2.4.0",
+      "dependsOn": [
+        "glob-to-regexp@0.4.1",
+        "graceful-fs@4.2.11"
       ]
     },
     {
@@ -83173,35 +85215,36 @@
       ]
     },
     {
-      "ref": "@webassemblyjs/ast@1.11.6",
+      "ref": "@webassemblyjs/helper-numbers@1.11.6",
       "dependsOn": [
-        "@webassemblyjs/helper-numbers@1.11.6",
-        "@webassemblyjs/helper-wasm-bytecode@1.11.6"
-      ]
-    },
-    {
-      "ref": "@webassemblyjs/wasm-edit@1.11.6",
-      "dependsOn": [
-        "@webassemblyjs/ast@1.11.6",
-        "@webassemblyjs/helper-buffer@1.11.6",
-        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
-        "@webassemblyjs/helper-wasm-section@1.11.6",
-        "@webassemblyjs/wasm-gen@1.11.6",
-        "@webassemblyjs/wasm-opt@1.11.6",
-        "@webassemblyjs/wasm-parser@1.11.6",
-        "@webassemblyjs/wast-printer@1.11.6"
-      ]
-    },
-    {
-      "ref": "@webassemblyjs/wasm-parser@1.11.6",
-      "dependsOn": [
-        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/floating-point-hex-parser@1.11.6",
         "@webassemblyjs/helper-api-error@1.11.6",
-        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
-        "@webassemblyjs/ieee754@1.11.6",
-        "@webassemblyjs/leb128@1.11.6",
-        "@webassemblyjs/utf8@1.11.6"
+        "@xtuc/long@4.2.2"
       ]
+    },
+    {
+      "ref": "@webassemblyjs/helper-wasm-bytecode@1.11.6"
+    },
+    {
+      "ref": "@webassemblyjs/ieee754@1.11.6",
+      "dependsOn": [
+        "@xtuc/ieee754@1.2.0"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/leb128@1.11.6",
+      "dependsOn": [
+        "@xtuc/long@4.2.2"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/utf8@1.11.6"
+    },
+    {
+      "ref": "@xtuc/long@4.2.2"
+    },
+    {
+      "ref": "@webassemblyjs/helper-api-error@1.11.6"
     },
     {
       "ref": "acorn-import-assertions@1.9.0",
@@ -83211,13 +85254,6 @@
     },
     {
       "ref": "chrome-trace-event@1.0.3"
-    },
-    {
-      "ref": "enhanced-resolve@5.15.0",
-      "dependsOn": [
-        "graceful-fs@4.2.11",
-        "tapable@2.2.1"
-      ]
     },
     {
       "ref": "es-module-lexer@1.4.1"
@@ -83236,13 +85272,6 @@
     },
     {
       "ref": "neo-async@2.6.2"
-    },
-    {
-      "ref": "watchpack@2.4.0",
-      "dependsOn": [
-        "glob-to-regexp@0.4.1",
-        "graceful-fs@4.2.11"
-      ]
     },
     {
       "ref": "@types/parse-json@4.0.2"
@@ -83444,13 +85473,13 @@
         "@types/eslint-scope@3.7.7",
         "@types/estree@1.0.5",
         "@webassemblyjs/ast@1.11.6",
-        "@webassemblyjs/wasm-edit@1.11.6",
+        "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wasm-edit@1.11.6",
         "@webassemblyjs/wasm-parser@1.11.6",
         "acorn-import-assertions@1.9.0",
         "acorn@8.11.3",
         "browserslist@4.22.2",
         "chrome-trace-event@1.0.3",
-        "enhanced-resolve@5.15.0",
+        "fork-ts-checker-webpack-plugin@6.5.3|enhanced-resolve@5.15.0",
         "es-module-lexer@1.4.1",
         "eslint-scope@5.1.1",
         "events@3.3.0",
@@ -83463,7 +85492,7 @@
         "fork-ts-checker-webpack-plugin@6.5.3|webpack@5.89.0|schema-utils@3.3.0",
         "fork-ts-checker-webpack-plugin@6.5.3|webpack@5.89.0|tapable@2.2.1",
         "terser-webpack-plugin@5.3.10",
-        "watchpack@2.4.0",
+        "fork-ts-checker-webpack-plugin@6.5.3|watchpack@2.4.0",
         "webpack-sources@3.2.3"
       ]
     },
@@ -83477,6 +85506,61 @@
     },
     {
       "ref": "fork-ts-checker-webpack-plugin@6.5.3|webpack@5.89.0|tapable@2.2.1"
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wasm-edit@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-buffer@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/helper-wasm-section@1.11.6",
+        "@webassemblyjs/wasm-gen@1.11.6",
+        "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wasm-opt@1.11.6",
+        "@webassemblyjs/wasm-parser@1.11.6",
+        "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wast-printer@1.11.6"
+      ]
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/helper-wasm-section@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-buffer@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/wasm-gen@1.11.6"
+      ]
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wasm-opt@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-buffer@1.11.6",
+        "@webassemblyjs/wasm-gen@1.11.6",
+        "@webassemblyjs/wasm-parser@1.11.6"
+      ]
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|@webassemblyjs/wast-printer@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@xtuc/long@4.2.2"
+      ]
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|enhanced-resolve@5.15.0",
+      "dependsOn": [
+        "graceful-fs@4.2.11",
+        "fork-ts-checker-webpack-plugin@6.5.3|enhanced-resolve@5.15.0|tapable@2.2.1"
+      ]
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|enhanced-resolve@5.15.0|tapable@2.2.1"
+    },
+    {
+      "ref": "fork-ts-checker-webpack-plugin@6.5.3|watchpack@2.4.0",
+      "dependsOn": [
+        "glob-to-regexp@0.4.1",
+        "graceful-fs@4.2.11"
+      ]
     },
     {
       "ref": "chokidar@3.5.3",
@@ -83537,6 +85621,37 @@
       "ref": "fs-monkey@1.0.5"
     },
     {
+      "ref": "@webassemblyjs/ast@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/helper-numbers@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/helper-buffer@1.11.6"
+    },
+    {
+      "ref": "@webassemblyjs/wasm-gen@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/ieee754@1.11.6",
+        "@webassemblyjs/leb128@1.11.6",
+        "@webassemblyjs/utf8@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/wasm-parser@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-api-error@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/ieee754@1.11.6",
+        "@webassemblyjs/leb128@1.11.6",
+        "@webassemblyjs/utf8@1.11.6"
+      ]
+    },
+    {
       "ref": "terser-webpack-plugin@5.3.10",
       "dependsOn": [
         "@jridgewell/trace-mapping@0.3.20",
@@ -83553,13 +85668,13 @@
         "@types/eslint-scope@3.7.7",
         "@types/estree@1.0.5",
         "@webassemblyjs/ast@1.11.6",
-        "@webassemblyjs/wasm-edit@1.11.6",
+        "terser-webpack-plugin@5.3.10|@webassemblyjs/wasm-edit@1.11.6",
         "@webassemblyjs/wasm-parser@1.11.6",
         "acorn-import-assertions@1.9.0",
         "acorn@8.11.3",
         "browserslist@4.22.2",
         "chrome-trace-event@1.0.3",
-        "enhanced-resolve@5.15.0",
+        "terser-webpack-plugin@5.3.10|enhanced-resolve@5.15.0",
         "es-module-lexer@1.4.1",
         "eslint-scope@5.1.1",
         "events@3.3.0",
@@ -83572,8 +85687,60 @@
         "schema-utils@3.3.0",
         "tapable@2.2.1",
         "terser-webpack-plugin@5.3.10",
-        "watchpack@2.4.0",
+        "terser-webpack-plugin@5.3.10|watchpack@2.4.0",
         "webpack-sources@3.2.3"
+      ]
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.10|@webassemblyjs/wasm-edit@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-buffer@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "terser-webpack-plugin@5.3.10|@webassemblyjs/helper-wasm-section@1.11.6",
+        "@webassemblyjs/wasm-gen@1.11.6",
+        "terser-webpack-plugin@5.3.10|@webassemblyjs/wasm-opt@1.11.6",
+        "@webassemblyjs/wasm-parser@1.11.6",
+        "terser-webpack-plugin@5.3.10|@webassemblyjs/wast-printer@1.11.6"
+      ]
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.10|@webassemblyjs/helper-wasm-section@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-buffer@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/wasm-gen@1.11.6"
+      ]
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.10|@webassemblyjs/wasm-opt@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@webassemblyjs/helper-buffer@1.11.6",
+        "@webassemblyjs/wasm-gen@1.11.6",
+        "@webassemblyjs/wasm-parser@1.11.6"
+      ]
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.10|@webassemblyjs/wast-printer@1.11.6",
+      "dependsOn": [
+        "@webassemblyjs/ast@1.11.6",
+        "@xtuc/long@4.2.2"
+      ]
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.10|enhanced-resolve@5.15.0",
+      "dependsOn": [
+        "graceful-fs@4.2.11",
+        "tapable@2.2.1"
+      ]
+    },
+    {
+      "ref": "terser-webpack-plugin@5.3.10|watchpack@2.4.0",
+      "dependsOn": [
+        "glob-to-regexp@0.4.1",
+        "graceful-fs@4.2.11"
       ]
     },
     {
@@ -83924,11 +86091,11 @@
     {
       "ref": "@isaacs/cliui@8.0.2",
       "dependsOn": [
-        "BomRef.4oisq8vibng.jebr5s5ll48",
+        "BomRef.2kaeuq7p0ao.848j7gfdpf8",
         "@isaacs/cliui@8.0.2|string-width@5.1.2",
-        "BomRef.lqbec9i9ho8.2m6psg8pk1o",
+        "BomRef.35s5l6nrb1.jkhpr2klm7",
         "@isaacs/cliui@8.0.2|strip-ansi@7.1.0",
-        "BomRef.ovhrlufh7og.u5i1khgklvo",
+        "BomRef.tg3k9k5pge8.7apup5pe3b",
         "@isaacs/cliui@8.0.2|wrap-ansi@8.1.0"
       ]
     },
@@ -83964,7 +86131,7 @@
       "ref": "@isaacs/cliui@8.0.2|ansi-styles@6.2.1"
     },
     {
-      "ref": "BomRef.4oisq8vibng.jebr5s5ll48",
+      "ref": "BomRef.2kaeuq7p0ao.848j7gfdpf8",
       "dependsOn": [
         "emoji-regex@8.0.0",
         "is-fullwidth-code-point@3.0.0",
@@ -83975,13 +86142,13 @@
       "ref": "eastasianwidth@0.2.0"
     },
     {
-      "ref": "BomRef.lqbec9i9ho8.2m6psg8pk1o",
+      "ref": "BomRef.35s5l6nrb1.jkhpr2klm7",
       "dependsOn": [
         "ansi-regex@5.0.1"
       ]
     },
     {
-      "ref": "BomRef.ovhrlufh7og.u5i1khgklvo",
+      "ref": "BomRef.tg3k9k5pge8.7apup5pe3b",
       "dependsOn": [
         "ansi-styles@4.3.0",
         "string-width@4.2.3",
@@ -85904,18 +88071,18 @@
       "ref": "web-vitals@3.5.2"
     },
     {
-      "ref": "webpack@5.90.3",
+      "ref": "webpack@5.91.0",
       "dependsOn": [
         "@types/eslint-scope@3.7.7",
         "@types/estree@1.0.5",
-        "@webassemblyjs/ast@1.11.6",
-        "@webassemblyjs/wasm-edit@1.11.6",
-        "@webassemblyjs/wasm-parser@1.11.6",
+        "webpack@5.91.0|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/wasm-edit@1.12.1",
+        "webpack@5.91.0|@webassemblyjs/wasm-parser@1.12.1",
         "acorn-import-assertions@1.9.0",
         "acorn@8.11.3",
         "browserslist@4.22.2",
         "chrome-trace-event@1.0.3",
-        "enhanced-resolve@5.15.0",
+        "enhanced-resolve@5.16.0",
         "es-module-lexer@1.4.1",
         "eslint-scope@5.1.1",
         "events@3.3.0",
@@ -85928,46 +88095,22 @@
         "schema-utils@3.3.0",
         "tapable@2.2.1",
         "terser-webpack-plugin@5.3.10",
-        "watchpack@2.4.0",
+        "watchpack@2.4.1",
         "webpack-sources@3.2.3"
       ]
     },
     {
-      "ref": "@webassemblyjs/helper-numbers@1.11.6",
+      "ref": "webpack@5.91.0|@webassemblyjs/ast@1.12.1",
       "dependsOn": [
-        "@webassemblyjs/floating-point-hex-parser@1.11.6",
+        "@webassemblyjs/helper-numbers@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6"
+      ]
+    },
+    {
+      "ref": "webpack@5.91.0|@webassemblyjs/wasm-parser@1.12.1",
+      "dependsOn": [
+        "webpack@5.91.0|@webassemblyjs/ast@1.12.1",
         "@webassemblyjs/helper-api-error@1.11.6",
-        "@xtuc/long@4.2.2"
-      ]
-    },
-    {
-      "ref": "@webassemblyjs/floating-point-hex-parser@1.11.6"
-    },
-    {
-      "ref": "@webassemblyjs/helper-api-error@1.11.6"
-    },
-    {
-      "ref": "@xtuc/long@4.2.2"
-    },
-    {
-      "ref": "@webassemblyjs/helper-wasm-bytecode@1.11.6"
-    },
-    {
-      "ref": "@webassemblyjs/helper-buffer@1.11.6"
-    },
-    {
-      "ref": "@webassemblyjs/helper-wasm-section@1.11.6",
-      "dependsOn": [
-        "@webassemblyjs/ast@1.11.6",
-        "@webassemblyjs/helper-buffer@1.11.6",
-        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
-        "@webassemblyjs/wasm-gen@1.11.6"
-      ]
-    },
-    {
-      "ref": "@webassemblyjs/wasm-gen@1.11.6",
-      "dependsOn": [
-        "@webassemblyjs/ast@1.11.6",
         "@webassemblyjs/helper-wasm-bytecode@1.11.6",
         "@webassemblyjs/ieee754@1.11.6",
         "@webassemblyjs/leb128@1.11.6",
@@ -85975,38 +88118,144 @@
       ]
     },
     {
-      "ref": "@webassemblyjs/ieee754@1.11.6",
+      "ref": "@webassemblyjs/floating-point-hex-parser@1.11.6"
+    },
+    {
+      "ref": "@webassemblyjs/wasm-edit@1.12.1",
       "dependsOn": [
-        "@xtuc/ieee754@1.2.0"
+        "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/helper-buffer@1.12.1",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/helper-wasm-section@1.12.1",
+        "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/wasm-gen@1.12.1",
+        "@webassemblyjs/wasm-opt@1.12.1",
+        "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/wasm-parser@1.12.1",
+        "@webassemblyjs/wast-printer@1.12.1"
       ]
     },
     {
-      "ref": "@webassemblyjs/leb128@1.11.6",
+      "ref": "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/ast@1.12.1",
       "dependsOn": [
+        "@webassemblyjs/helper-numbers@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/helper-buffer@1.12.1"
+    },
+    {
+      "ref": "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/wasm-gen@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/ieee754@1.11.6",
+        "@webassemblyjs/leb128@1.11.6",
+        "@webassemblyjs/utf8@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/wasm-parser@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/wasm-edit@1.12.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/helper-api-error@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/ieee754@1.11.6",
+        "@webassemblyjs/leb128@1.11.6",
+        "@webassemblyjs/utf8@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/helper-wasm-section@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/helper-buffer@1.12.1",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/wasm-gen@1.12.1"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/ast@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/helper-numbers@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/helper-buffer@1.12.1"
+    },
+    {
+      "ref": "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/wasm-gen@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/helper-wasm-section@1.12.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/ieee754@1.11.6",
+        "@webassemblyjs/leb128@1.11.6",
+        "@webassemblyjs/utf8@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/wasm-opt@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/helper-buffer@1.12.1",
+        "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/wasm-gen@1.12.1",
+        "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/wasm-parser@1.12.1"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/ast@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/helper-numbers@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/helper-buffer@1.12.1"
+    },
+    {
+      "ref": "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/wasm-gen@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/ieee754@1.11.6",
+        "@webassemblyjs/leb128@1.11.6",
+        "@webassemblyjs/utf8@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/wasm-parser@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/wasm-opt@1.12.1|@webassemblyjs/ast@1.12.1",
+        "@webassemblyjs/helper-api-error@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6",
+        "@webassemblyjs/ieee754@1.11.6",
+        "@webassemblyjs/leb128@1.11.6",
+        "@webassemblyjs/utf8@1.11.6"
+      ]
+    },
+    {
+      "ref": "@webassemblyjs/wast-printer@1.12.1",
+      "dependsOn": [
+        "@webassemblyjs/wast-printer@1.12.1|@webassemblyjs/ast@1.12.1",
         "@xtuc/long@4.2.2"
       ]
     },
     {
-      "ref": "@webassemblyjs/utf8@1.11.6"
-    },
-    {
-      "ref": "@webassemblyjs/wasm-opt@1.11.6",
+      "ref": "@webassemblyjs/wast-printer@1.12.1|@webassemblyjs/ast@1.12.1",
       "dependsOn": [
-        "@webassemblyjs/ast@1.11.6",
-        "@webassemblyjs/helper-buffer@1.11.6",
-        "@webassemblyjs/wasm-gen@1.11.6",
-        "@webassemblyjs/wasm-parser@1.11.6"
-      ]
-    },
-    {
-      "ref": "@webassemblyjs/wast-printer@1.11.6",
-      "dependsOn": [
-        "@webassemblyjs/ast@1.11.6",
-        "@xtuc/long@4.2.2"
+        "@webassemblyjs/helper-numbers@1.11.6",
+        "@webassemblyjs/helper-wasm-bytecode@1.11.6"
       ]
     },
     {
       "ref": "@xtuc/ieee754@1.2.0"
+    },
+    {
+      "ref": "enhanced-resolve@5.16.0",
+      "dependsOn": [
+        "graceful-fs@4.2.11",
+        "tapable@2.2.1"
+      ]
     },
     {
       "ref": "schema-utils@3.3.0",
@@ -86014,6 +88263,13 @@
         "@types/json-schema@7.0.15",
         "ajv-keywords@3.5.2",
         "ajv@6.12.6"
+      ]
+    },
+    {
+      "ref": "watchpack@2.4.1",
+      "dependsOn": [
+        "glob-to-regexp@0.4.1",
+        "graceful-fs@4.2.11"
       ]
     }
   ]
