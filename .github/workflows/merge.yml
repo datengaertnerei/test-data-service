@@ -41,7 +41,8 @@ jobs:
     - name: Build with Maven
       run: |
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
-        mvn -B test --file pom.xml
+        chmod u+x ./mvnw
+        ./mvnw -B test --file pom.xml
       env:        
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

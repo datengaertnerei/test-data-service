@@ -39,10 +39,11 @@ jobs:
         echo $RELTAG
         git branch $RELBRANCH
         git checkout $RELBRANCH
+        chmod u+x ./mvnw
         echo "Maven Release Prepare"
-        mvn clean release:prepare
+        ./mvnw clean release:prepare
         echo "Maven Release Perform"
-        mvn release:perform 
+        ./mvnw release:perform 
         # omit maven release leftovers
         git stash
         # merge tag to main
