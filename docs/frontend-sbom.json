@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:41940098-8c43-496b-ac53-6d8d25b4c94f",
+  "serialNumber": "urn:uuid:ba663e17-0af8-4f65-8b3d-98315e97db0a",
   "metadata": {
-    "timestamp": "2024-03-29T01:52:07.708Z",
+    "timestamp": "2024-03-29T22:28:28.477Z",
     "tools": [
       {
         "name": "npm",
@@ -3456,8 +3456,8 @@
       "type": "library",
       "name": "styled",
       "group": "@emotion",
-      "version": "11.11.0",
-      "bom-ref": "@emotion/styled@11.11.0",
+      "version": "11.11.5",
+      "bom-ref": "@emotion/styled@11.11.5",
       "description": "styled API for emotion",
       "licenses": [
         {
@@ -3466,7 +3466,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40emotion/styled@11.11.0#main",
+      "purl": "pkg:npm/%40emotion/styled@11.11.5#main",
       "externalReferences": [
         {
           "url": "git+https://github.com/emotion-js/emotion.git#main",
@@ -3484,7 +3484,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@emotion/styled/-/styled-11.11.0.tgz",
+          "url": "https://registry.npmjs.org/@emotion/styled/-/styled-11.11.5.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -3493,6 +3493,52 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/@emotion/styled"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "serialize",
+          "group": "@emotion",
+          "version": "1.1.4",
+          "bom-ref": "@emotion/styled@11.11.5|@emotion/serialize@1.1.4",
+          "description": "serialization utils for emotion",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40emotion/serialize@1.1.4#main",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/emotion-js/emotion.git#main",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/emotion-js/emotion/tree/main#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/emotion-js/emotion/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@emotion/serialize/-/serialize-1.1.4.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@emotion/styled/node_modules/@emotion/serialize"
+            }
+          ]
         }
       ]
     },
@@ -49337,7 +49383,7 @@
       "type": "library",
       "name": "string-width",
       "version": "4.2.3",
-      "bom-ref": "BomRef.ahfausbl8e.v4cq1i1evh8",
+      "bom-ref": "BomRef.l7j24m7lga8.i1bo7hbla7o",
       "author": "Sindre Sorhus",
       "description": "Get the visual width of a string - the number of columns required to display it",
       "licenses": [
@@ -49425,7 +49471,7 @@
       "type": "library",
       "name": "strip-ansi",
       "version": "6.0.1",
-      "bom-ref": "BomRef.a717nu8a8mo.rdbktpopgd8",
+      "bom-ref": "BomRef.8rrbpvke0co.pdff8evv82",
       "author": "Sindre Sorhus",
       "description": "Strip ANSI escape codes from a string",
       "licenses": [
@@ -49469,7 +49515,7 @@
       "type": "library",
       "name": "wrap-ansi",
       "version": "7.0.0",
-      "bom-ref": "BomRef.kc3u4kp54hg.bro54ja1gno",
+      "bom-ref": "BomRef.8i8vj4jjttg.42oranntvo",
       "author": "Sindre Sorhus",
       "description": "Wordwrap a string with ANSI escape codes",
       "licenses": [
@@ -60271,7 +60317,7 @@
         "@babel/plugin-syntax-flow@7.24.1",
         "@babel/plugin-transform-react-jsx@7.23.4",
         "@emotion/react@11.11.4",
-        "@emotion/styled@11.11.0",
+        "@emotion/styled@11.11.5",
         "@fontsource/roboto@5.0.12",
         "@mui/icons-material@5.15.14",
         "@mui/material@5.15.14",
@@ -60742,16 +60788,26 @@
       "ref": "hoist-non-react-statics@3.3.2|react-is@16.13.1"
     },
     {
-      "ref": "@emotion/styled@11.11.0",
+      "ref": "@emotion/styled@11.11.5",
       "dependsOn": [
         "@babel/runtime@7.24.1",
         "@emotion/babel-plugin@11.11.0",
         "@emotion/is-prop-valid@1.2.2",
         "@emotion/react@11.11.4",
-        "@emotion/serialize@1.1.3",
+        "@emotion/styled@11.11.5|@emotion/serialize@1.1.4",
         "@emotion/use-insertion-effect-with-fallbacks@1.0.1",
         "@emotion/utils@1.2.1",
         "react@18.2.0"
+      ]
+    },
+    {
+      "ref": "@emotion/styled@11.11.5|@emotion/serialize@1.1.4",
+      "dependsOn": [
+        "@emotion/hash@0.9.1",
+        "@emotion/memoize@0.8.1",
+        "@emotion/unitless@0.8.1",
+        "@emotion/utils@1.2.1",
+        "csstype@3.1.3"
       ]
     },
     {
@@ -60777,7 +60833,7 @@
       "dependsOn": [
         "@babel/runtime@7.24.1",
         "@emotion/react@11.11.4",
-        "@emotion/styled@11.11.0",
+        "@emotion/styled@11.11.5",
         "@mui/base@5.0.0-beta.40",
         "@mui/core-downloads-tracker@5.15.14",
         "@mui/system@5.15.14",
@@ -60897,7 +60953,7 @@
       "dependsOn": [
         "@babel/runtime@7.24.1",
         "@emotion/react@11.11.4",
-        "@emotion/styled@11.11.0",
+        "@emotion/styled@11.11.5",
         "@mui/private-theming@5.15.14",
         "@mui/styled-engine@5.15.14",
         "@mui/types@7.2.14",
@@ -60925,7 +60981,7 @@
         "@babel/runtime@7.24.1",
         "@emotion/cache@11.11.0",
         "@emotion/react@11.11.4",
-        "@emotion/styled@11.11.0",
+        "@emotion/styled@11.11.5",
         "csstype@3.1.3",
         "prop-types@15.8.1",
         "react@18.2.0"
@@ -67961,11 +68017,11 @@
     {
       "ref": "@isaacs/cliui@8.0.2",
       "dependsOn": [
-        "BomRef.ahfausbl8e.v4cq1i1evh8",
+        "BomRef.l7j24m7lga8.i1bo7hbla7o",
         "@isaacs/cliui@8.0.2|string-width@5.1.2",
-        "BomRef.a717nu8a8mo.rdbktpopgd8",
+        "BomRef.8rrbpvke0co.pdff8evv82",
         "@isaacs/cliui@8.0.2|strip-ansi@7.1.0",
-        "BomRef.kc3u4kp54hg.bro54ja1gno",
+        "BomRef.8i8vj4jjttg.42oranntvo",
         "@isaacs/cliui@8.0.2|wrap-ansi@8.1.0"
       ]
     },
@@ -68001,7 +68057,7 @@
       "ref": "@isaacs/cliui@8.0.2|ansi-styles@6.2.1"
     },
     {
-      "ref": "BomRef.ahfausbl8e.v4cq1i1evh8",
+      "ref": "BomRef.l7j24m7lga8.i1bo7hbla7o",
       "dependsOn": [
         "emoji-regex@8.0.0",
         "is-fullwidth-code-point@3.0.0",
@@ -68012,13 +68068,13 @@
       "ref": "eastasianwidth@0.2.0"
     },
     {
-      "ref": "BomRef.a717nu8a8mo.rdbktpopgd8",
+      "ref": "BomRef.8rrbpvke0co.pdff8evv82",
       "dependsOn": [
         "ansi-regex@5.0.1"
       ]
     },
     {
-      "ref": "BomRef.kc3u4kp54hg.bro54ja1gno",
+      "ref": "BomRef.8i8vj4jjttg.42oranntvo",
       "dependsOn": [
         "ansi-styles@4.3.0",
         "string-width@4.2.3",
