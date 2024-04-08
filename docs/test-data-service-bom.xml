@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bom serialNumber="urn:uuid:c0e6692c-ef8d-3618-97e0-422f7ef9f0e7" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2024-04-08T21:21:43Z</timestamp>
+    <timestamp>2024-04-08T21:29:40Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -67,23 +67,23 @@
       <purl>pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar</purl>
       <externalReferences><reference type="website"><url>https://commons.apache.org/proper/commons-csv/</url></reference><reference type="build-system"><url>https://github.com/apache/commons-csv/actions</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/CSV</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-csv.git</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/commons-io/commons-io@2.16.0?type=jar">
+    <component type="library" bom-ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar">
       <publisher>The Apache Software Foundation</publisher>
       <group>commons-io</group>
       <name>commons-io</name>
-      <version>2.16.0</version>
+      <version>2.16.1</version>
       <description>The Apache Commons IO library contains utility classes, stream implementations, file filters,
 file comparators, endian transformation classes, and much more.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="MD5">4e115587dca5dd3c178e7c8f17a371b3</hash>
-        <hash alg="SHA-1">27875a7935f1ddcc13267eb6fae1f719e0409572</hash>
-        <hash alg="SHA-256">d1e417901235fae3aa0cb9736baeaf5b74de7349817d1c72390d82e3d83d3a97</hash>
-        <hash alg="SHA-512">afba6cc8fdef9d347aaccb3bff327ba8e2c17135989cf01179fdb2e3ca8d0afdce37defb08659eb1e99b8730e2baaaec95c7d3599f7ebf526c97c8edc477b852</hash>
-        <hash alg="SHA-384">0413eda39746809f3c7ce44336f6d88d8d72e2781db4b74c98a206f34b94639a39024697fde25f310edda8cf628fd376</hash>
-        <hash alg="SHA3-384">386bee9245d0ef901c3010be3603d4cd083c2745737fdf852f3c7024b295aa74d006f0d1a3e7cbc2b09b6023b42d41b5</hash>
-        <hash alg="SHA3-256">22054f3faf8d31b9bdb010e1341cf74dfcb40860e50eaf238991c784a9a8b4ae</hash>
-        <hash alg="SHA3-512">c7e76ce4a2177ea7898931e180cca6463bf5eab34199c6a9a0146474262f16c30d99a05eb02a86f37870ba83b1b413e78949582add25aa87c5f39462444be6ea</hash>
+        <hash alg="MD5">ed8191a5a217940140001b0acfed18d9</hash>
+        <hash alg="SHA-1">377d592e740dc77124e0901291dbfaa6810a200e</hash>
+        <hash alg="SHA-256">f41f7baacd716896447ace9758621f62c1c6b0a91d89acee488da26fc477c84f</hash>
+        <hash alg="SHA-512">97eab31b073c5c57c8bcfaa2fec7b481a15a9a1f9ed864dfdc63b57f062b230557caa734c3133aca1165facb588c58db0185c07832241d70159e87a4bcf48008</hash>
+        <hash alg="SHA-384">bd78e2eb3d005046d1329557d3a77529e98384d4d87940374eef432d73d5a06ef20fb7b0c44389de64496fe134dcf199</hash>
+        <hash alg="SHA3-384">f9acc2f04f076328d17e2d0615da4367470b45b15f828008d8df57033401ae6b3b83b21cf9bc1745ff3cfe5a102bc48e</hash>
+        <hash alg="SHA3-256">5d4bbe43356c92e3970b69892b44a10cc736ef8cb1bedfc753cc8df050520161</hash>
+        <hash alg="SHA3-512">29440ccf2551b383c7e6cbdf78ef7784a421322e418da1be3fcd3251c8a826ffd5c6d1bea32b9c80e74744c035cc9cd8483e629e407110ff3133a05cb34bef93</hash>
       </hashes>
       <licenses>
         <license>
@@ -91,7 +91,7 @@ file comparators, endian transformation classes, and much more.</description>
           <url>https://www.apache.org/licenses/LICENSE-2.0</url>
         </license>
       </licenses>
-      <purl>pkg:maven/commons-io/commons-io@2.16.0?type=jar</purl>
+      <purl>pkg:maven/commons-io/commons-io@2.16.1?type=jar</purl>
       <externalReferences><reference type="website"><url>https://commons.apache.org/proper/commons-io/</url></reference><reference type="build-system"><url>https://github.com/apache/commons-parent/actions</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/IO</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-io.git</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/org.iban4j/iban4j@3.2.7-RELEASE?type=jar">
@@ -2684,7 +2684,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
   <dependencies>
     <dependency ref="pkg:maven/com.datengaertnerei.test/data-service@1.0.17-SNAPSHOT?type=jar">
       <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar"/>
-      <dependency ref="pkg:maven/commons-io/commons-io@2.16.0?type=jar"/>
+      <dependency ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar"/>
       <dependency ref="pkg:maven/org.iban4j/iban4j@3.2.7-RELEASE?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-web@3.2.4?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-data-jpa@3.2.4?type=jar"/>
@@ -2695,7 +2695,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <dependency ref="pkg:maven/com.talanlabs/avatar-generator-8bit@1.1.0?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar"/>
-    <dependency ref="pkg:maven/commons-io/commons-io@2.16.0?type=jar"/>
+    <dependency ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar"/>
     <dependency ref="pkg:maven/org.iban4j/iban4j@3.2.7-RELEASE?type=jar"/>
     <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-web@3.2.4?type=jar">
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter@3.2.4?type=jar"/>
@@ -2925,7 +2925,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar"/>
       <dependency ref="pkg:maven/com.google.guava/guava@33.1.0-jre?type=jar"/>
       <dependency ref="pkg:maven/com.google.protobuf/protobuf-java@3.25.3?type=jar"/>
-      <dependency ref="pkg:maven/commons-io/commons-io@2.16.0?type=jar"/>
+      <dependency ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar">
       <dependency ref="pkg:maven/net.sf.jpf/jpf@1.5?type=jar"/>
@@ -2945,7 +2945,7 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
     <dependency ref="pkg:maven/org.codehaus.woodstox/stax2-api@4.1?type=jar"/>
     <dependency ref="pkg:maven/org.apache.commons/commons-compress@1.26.1?type=jar">
       <dependency ref="pkg:maven/commons-codec/commons-codec@1.16.1?type=jar"/>
-      <dependency ref="pkg:maven/commons-io/commons-io@2.16.0?type=jar"/>
+      <dependency ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar"/>
       <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.13.0?type=jar"/>
     </dependency>
     <dependency ref="pkg:maven/commons-codec/commons-codec@1.16.1?type=jar"/>
