@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:1c08de48-7926-40ba-acb2-0bdaae25e962",
+  "serialNumber": "urn:uuid:d811eb7b-b3fa-4ccb-b314-f884d42c45d0",
   "metadata": {
-    "timestamp": "2024-04-27T20:04:17.786Z",
+    "timestamp": "2024-04-29T14:50:41.226Z",
     "tools": [
       {
         "name": "npm",
@@ -5437,8 +5437,8 @@
       "type": "library",
       "name": "dom",
       "group": "@testing-library",
-      "version": "10.0.0",
-      "bom-ref": "@testing-library/dom@10.0.0",
+      "version": "10.1.0",
+      "bom-ref": "@testing-library/dom@10.1.0",
       "author": "Kent C. Dodds",
       "description": "Simple and complete DOM testing utilities that encourage good testing practices.",
       "licenses": [
@@ -5448,7 +5448,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40testing-library/dom@10.0.0",
+      "purl": "pkg:npm/%40testing-library/dom@10.1.0",
       "externalReferences": [
         {
           "url": "git+https://github.com/testing-library/dom-testing-library.git",
@@ -5466,7 +5466,7 @@
           "comment": "as detected from PackageJson property \"bugs.url\""
         },
         {
-          "url": "https://registry.npmjs.org/@testing-library/dom/-/dom-10.0.0.tgz",
+          "url": "https://registry.npmjs.org/@testing-library/dom/-/dom-10.1.0.tgz",
           "type": "distribution",
           "comment": "as detected from npm-ls property \"resolved\""
         }
@@ -15947,6 +15947,53 @@
           "name": "cdx:npm:package:path",
           "value": "node_modules/@testing-library/react"
         }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "dom",
+          "group": "@testing-library",
+          "version": "10.0.0",
+          "bom-ref": "@testing-library/react@15.0.5|@testing-library/dom@10.0.0",
+          "author": "Kent C. Dodds",
+          "description": "Simple and complete DOM testing utilities that encourage good testing practices.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT"
+              }
+            }
+          ],
+          "purl": "pkg:npm/%40testing-library/dom@10.0.0",
+          "externalReferences": [
+            {
+              "url": "git+https://github.com/testing-library/dom-testing-library.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/testing-library/dom-testing-library#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            },
+            {
+              "url": "https://github.com/testing-library/dom-testing-library/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "https://registry.npmjs.org/@testing-library/dom/-/dom-10.0.0.tgz",
+              "type": "distribution",
+              "comment": "as detected from npm-ls property \"resolved\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/@testing-library/react/node_modules/@testing-library/dom"
+            }
+          ]
+        }
       ]
     },
     {
@@ -16085,8 +16132,8 @@
     {
       "type": "library",
       "name": "caniuse-lite",
-      "version": "1.0.30001613",
-      "bom-ref": "caniuse-lite@1.0.30001613",
+      "version": "1.0.30001614",
+      "bom-ref": "caniuse-lite@1.0.30001614",
       "author": "Ben Briggs",
       "description": "A smaller version of caniuse-db, with only the essentials!",
       "licenses": [
@@ -16096,7 +16143,7 @@
           }
         }
       ],
-      "purl": "pkg:npm/caniuse-lite@1.0.30001613?vcs_url=git%2Bhttps%3A//github.com/browserslist/caniuse-lite.git",
+      "purl": "pkg:npm/caniuse-lite@1.0.30001614?vcs_url=git%2Bhttps%3A//github.com/browserslist/caniuse-lite.git",
       "externalReferences": [
         {
           "url": "git+https://github.com/browserslist/caniuse-lite.git",
@@ -55968,7 +56015,7 @@
       "type": "library",
       "name": "string-width",
       "version": "4.2.3",
-      "bom-ref": "BomRef.mrvpjorih68.bkntk1b6r4o",
+      "bom-ref": "BomRef.qei9115ipbo.rturt4gjqu8",
       "author": "Sindre Sorhus",
       "description": "Get the visual width of a string - the number of columns required to display it",
       "licenses": [
@@ -56056,7 +56103,7 @@
       "type": "library",
       "name": "strip-ansi",
       "version": "6.0.1",
-      "bom-ref": "BomRef.8teq6m8r5a.d7ri9poak4g",
+      "bom-ref": "BomRef.4sa84lsrago.aimeumcbbt",
       "author": "Sindre Sorhus",
       "description": "Strip ANSI escape codes from a string",
       "licenses": [
@@ -56100,7 +56147,7 @@
       "type": "library",
       "name": "wrap-ansi",
       "version": "7.0.0",
-      "bom-ref": "BomRef.qkmortoe78.1fhpirjirh",
+      "bom-ref": "BomRef.r84vqkr3acg.5pgvegc98h8",
       "author": "Sindre Sorhus",
       "description": "Wordwrap a string with ANSI escape codes",
       "licenses": [
@@ -70606,7 +70653,7 @@
         "@mui/icons-material@5.15.15",
         "@mui/material@5.15.15",
         "@mui/styles@5.15.15",
-        "@testing-library/dom@10.0.0",
+        "@testing-library/dom@10.1.0",
         "@testing-library/jest-dom@6.4.2",
         "@testing-library/react@15.0.5",
         "@testing-library/user-event@14.5.2",
@@ -70777,7 +70824,7 @@
     {
       "ref": "browserslist@4.23.0",
       "dependsOn": [
-        "caniuse-lite@1.0.30001613",
+        "caniuse-lite@1.0.30001614",
         "electron-to-chromium@1.4.717",
         "node-releases@2.0.14",
         "update-browserslist-db@1.0.13"
@@ -71422,7 +71469,7 @@
       "ref": "is-in-browser@1.1.3"
     },
     {
-      "ref": "@testing-library/dom@10.0.0",
+      "ref": "@testing-library/dom@10.1.0",
       "dependsOn": [
         "@babel/code-frame@7.24.2",
         "@babel/runtime@7.24.1",
@@ -73161,10 +73208,23 @@
       "ref": "@testing-library/react@15.0.5",
       "dependsOn": [
         "@babel/runtime@7.24.1",
-        "@testing-library/dom@10.0.0",
+        "@testing-library/react@15.0.5|@testing-library/dom@10.0.0",
         "@types/react-dom@18.2.22",
         "react-dom@18.3.1",
         "react@18.3.1"
+      ]
+    },
+    {
+      "ref": "@testing-library/react@15.0.5|@testing-library/dom@10.0.0",
+      "dependsOn": [
+        "@babel/code-frame@7.24.2",
+        "@babel/runtime@7.24.1",
+        "@types/aria-query@5.0.4",
+        "aria-query@5.3.0",
+        "chalk@4.1.2",
+        "dom-accessibility-api@0.5.16",
+        "lz-string@1.5.0",
+        "pretty-format@27.5.1"
       ]
     },
     {
@@ -73176,14 +73236,14 @@
     {
       "ref": "@testing-library/user-event@14.5.2",
       "dependsOn": [
-        "@testing-library/dom@10.0.0"
+        "@testing-library/dom@10.1.0"
       ]
     },
     {
       "ref": "autoprefixer@10.4.19",
       "dependsOn": [
         "browserslist@4.23.0",
-        "caniuse-lite@1.0.30001613",
+        "caniuse-lite@1.0.30001614",
         "fraction.js@4.3.7",
         "normalize-range@0.1.2",
         "picocolors@1.0.0",
@@ -73192,7 +73252,7 @@
       ]
     },
     {
-      "ref": "caniuse-lite@1.0.30001613"
+      "ref": "caniuse-lite@1.0.30001614"
     },
     {
       "ref": "electron-to-chromium@1.4.717"
@@ -76336,7 +76396,7 @@
       "ref": "caniuse-api@3.0.0",
       "dependsOn": [
         "browserslist@4.23.0",
-        "caniuse-lite@1.0.30001613",
+        "caniuse-lite@1.0.30001614",
         "lodash.memoize@4.1.2",
         "lodash.uniq@4.5.0"
       ]
@@ -79595,11 +79655,11 @@
     {
       "ref": "@isaacs/cliui@8.0.2",
       "dependsOn": [
-        "BomRef.mrvpjorih68.bkntk1b6r4o",
+        "BomRef.qei9115ipbo.rturt4gjqu8",
         "@isaacs/cliui@8.0.2|string-width@5.1.2",
-        "BomRef.8teq6m8r5a.d7ri9poak4g",
+        "BomRef.4sa84lsrago.aimeumcbbt",
         "@isaacs/cliui@8.0.2|strip-ansi@7.1.0",
-        "BomRef.qkmortoe78.1fhpirjirh",
+        "BomRef.r84vqkr3acg.5pgvegc98h8",
         "@isaacs/cliui@8.0.2|wrap-ansi@8.1.0"
       ]
     },
@@ -79635,7 +79695,7 @@
       "ref": "@isaacs/cliui@8.0.2|ansi-styles@6.2.1"
     },
     {
-      "ref": "BomRef.mrvpjorih68.bkntk1b6r4o",
+      "ref": "BomRef.qei9115ipbo.rturt4gjqu8",
       "dependsOn": [
         "emoji-regex@8.0.0",
         "is-fullwidth-code-point@3.0.0",
@@ -79646,13 +79706,13 @@
       "ref": "eastasianwidth@0.2.0"
     },
     {
-      "ref": "BomRef.8teq6m8r5a.d7ri9poak4g",
+      "ref": "BomRef.4sa84lsrago.aimeumcbbt",
       "dependsOn": [
         "ansi-regex@5.0.1"
       ]
     },
     {
-      "ref": "BomRef.qkmortoe78.1fhpirjirh",
+      "ref": "BomRef.r84vqkr3acg.5pgvegc98h8",
       "dependsOn": [
         "ansi-styles@4.3.0",
         "string-width@4.2.3",
