@@ -230,7 +230,7 @@ import jakarta.annotation.PostConstruct;
 		double height;
 		do {
 <span class="fc" id="L232">			height = random.nextGaussian() * 10.0 + 165.0;</span>
-<span class="fc bfc" id="L233" title="All 4 branches covered.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
+<span class="pc bpc" id="L233" title="1 of 4 branches missed.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
 <span class="fc bfc" id="L234" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
 <span class="fc" id="L235">			height += 10.0;</span>
 		}
@@ -248,7 +248,7 @@ import jakarta.annotation.PostConstruct;
 
 <span class="fc" id="L249">		int month = random.nextInt(11) + 1;</span>
 <span class="fc" id="L250">		int day = 0;</span>
-<span class="pc bpc" id="L251" title="2 of 4 branches missed.">		switch (month) {</span>
+<span class="pc bpc" id="L251" title="1 of 4 branches missed.">		switch (month) {</span>
 		case 1:
 		case 3:
 		case 5:
@@ -259,8 +259,8 @@ import jakarta.annotation.PostConstruct;
 <span class="fc" id="L259">			day = random.nextInt(30) + 1;</span>
 <span class="fc" id="L260">			break;</span>
 		case 2:
-<span class="nc" id="L262">			day = random.nextInt(27) + 1;</span>
-<span class="nc" id="L263">			break;</span>
+<span class="fc" id="L262">			day = random.nextInt(27) + 1;</span>
+<span class="fc" id="L263">			break;</span>
 		case 4:
 		case 6:
 		case 9:
