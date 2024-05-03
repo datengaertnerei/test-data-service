@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bom serialNumber="urn:uuid:c0e6692c-ef8d-3618-97e0-422f7ef9f0e7" version="1" xmlns="http://cyclonedx.org/schema/bom/1.3">
   <metadata>
-    <timestamp>2024-05-02T19:19:27Z</timestamp>
+    <timestamp>2024-05-03T04:18:47Z</timestamp>
     <tools>
       <tool>
         <vendor>OWASP Foundation</vendor>
@@ -41,22 +41,22 @@
     </properties>
   </metadata>
   <components>
-    <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar">
+    <component type="library" bom-ref="pkg:maven/org.apache.commons/commons-csv@1.11.0?type=jar">
       <publisher>The Apache Software Foundation</publisher>
       <group>org.apache.commons</group>
       <name>commons-csv</name>
-      <version>1.10.0</version>
+      <version>1.11.0</version>
       <description>The Apache Commons CSV library provides a simple interface for reading and writing CSV files of various types.</description>
       <scope>required</scope>
       <hashes>
-        <hash alg="MD5">9b3be74e726a151524bf31ec293ff285</hash>
-        <hash alg="SHA-1">8669bee353424c3223c93723291b5c3753260c1c</hash>
-        <hash alg="SHA-256">2d06e6a07a636baf777ad8e659256f2119109dde23551c9b80c5422d424b808c</hash>
-        <hash alg="SHA-512">4434edc3256ce9a004f9860738fe7fc7b96e964f131aa953b598084bfd60e510796164a27c94b4c0b03041d05261c013e0db664ffd2bdd1cf032011722bc7ac0</hash>
-        <hash alg="SHA-384">c50578f3e9a7f6bd7e2badef7e0758eba308f77c0eef17a1d2d7d7620f0a7f5bf414f8847b3a401484466a54c8115370</hash>
-        <hash alg="SHA3-384">d13077b7b86c9a8ced54228615f86b7785d84634e5cf757792259b4f110aaa6d1980938ba1c1a65377bdf62c24067e96</hash>
-        <hash alg="SHA3-256">eea22e71edfed1e0245104b27fe54fc903362ddad35594bdb3012dc01a0adc63</hash>
-        <hash alg="SHA3-512">db8b13b74e78808ea7819bee82851836ac47abaea7eceb6cda06a5506aba7277f3e93fbee4d0a19ef7d77870e8f13c2970a8cdd517487d4a68cfbd138839908c</hash>
+        <hash alg="MD5">670327702ca6f22103531d20d140bc9e</hash>
+        <hash alg="SHA-1">8f2dc805097da534612128b7cdf491a5a76752bf</hash>
+        <hash alg="SHA-256">b697fe3f94cfc4f7e2a87bddf78d15cd10d8c86cbe56ae9196a62d6edbf6b76d</hash>
+        <hash alg="SHA-512">a2778e0c92e858e10b10d00c4fcee0ad5e5113208ecdbec91239b5ce27ac8bdd75abc224d2138d555657f27d34e9e6e80f386d9229737a0474582a5fe7419961</hash>
+        <hash alg="SHA-384">7c54e09fdfd7a16a704f94c0a3232e1cffef65ae5a95d58ad6157329bb639afd3adad4da1a96a04c4f2e4d894bad4d57</hash>
+        <hash alg="SHA3-384">82f1c8fddf576befbc07b598c57cf8c08c586e737ddd6437d10e903825eb2fa68d493f063386dd2384636a35e3a783e8</hash>
+        <hash alg="SHA3-256">b7cd34dba41399b1e9e2747189b7f870bdf473169a590c0a17de191a6203a0c2</hash>
+        <hash alg="SHA3-512">9bb4227b127c9022f7e50e2d23d2b2c07db8b1152bbcd7346c3b4378d4df9f880e053f5def0d6ec23611bc631ef452b9e65bd8aba6e239f1e4c2456303638109</hash>
       </hashes>
       <licenses>
         <license>
@@ -64,8 +64,37 @@
           <url>https://www.apache.org/licenses/LICENSE-2.0</url>
         </license>
       </licenses>
-      <purl>pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar</purl>
+      <purl>pkg:maven/org.apache.commons/commons-csv@1.11.0?type=jar</purl>
       <externalReferences><reference type="website"><url>https://commons.apache.org/proper/commons-csv/</url></reference><reference type="build-system"><url>https://github.com/apache/commons-csv/actions</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/CSV</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf?p=commons-csv.git</url></reference></externalReferences>
+    </component>
+    <component type="library" bom-ref="pkg:maven/commons-codec/commons-codec@1.16.1?type=jar">
+      <publisher>The Apache Software Foundation</publisher>
+      <group>commons-codec</group>
+      <name>commons-codec</name>
+      <version>1.16.1</version>
+      <description>The Apache Commons Codec component contains encoder and decoders for
+     various formats such as Base16, Base32, Base64, digest, and Hexadecimal. In addition to these
+     widely used encoders and decoders, the codec package also maintains a
+     collection of phonetic encoding utilities.</description>
+      <scope>required</scope>
+      <hashes>
+        <hash alg="MD5">6c5be822d8d3fa61c3b54c4c8978dfdc</hash>
+        <hash alg="SHA-1">47bd4d333fba53406f6c6c51884ddbca435c8862</hash>
+        <hash alg="SHA-256">ec87bfb55f22cbd1b21e2190eeda28b2b312ed2a431ee49fbdcc01812d04a5e4</hash>
+        <hash alg="SHA-512">bd33fd5340757ea0616a8c2a48760cfc9932f93b8e067701f4a122fd59735083468a016d8c0fd65973dd3fa4fc3537855e71a1fae7d14e1777e31ff1c47708ce</hash>
+        <hash alg="SHA-384">ee7f4c3e5c01cf77f4d82b09c358087738e6e79507ced9f2c82fdce3b32825bb62b2d66b30ef897e2972d3253478c525</hash>
+        <hash alg="SHA3-384">c200875af6359f6a584b108ecae3d83496942e1216dfacbd86e3c22e54b90b9519a9b01a229e71552111b10c8734c327</hash>
+        <hash alg="SHA3-256">81cd8a4c12e0b7ac84222e33b159cbd6f658b3e0f48e5fd8075d50cd03b05837</hash>
+        <hash alg="SHA3-512">c821b99a5b4a3fbf052f562d60479bc252aafa8057fcbe095e09e96cf01594a23455658f9c666866e1937910ff44a1a891760d04c22d5187cb98be9d0d58952b</hash>
+      </hashes>
+      <licenses>
+        <license>
+          <id>Apache-2.0</id>
+          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+      </licenses>
+      <purl>pkg:maven/commons-codec/commons-codec@1.16.1?type=jar</purl>
+      <externalReferences><reference type="website"><url>https://commons.apache.org/proper/commons-codec/</url></reference><reference type="build-system"><url>https://github.com/apache/commons-parent/actions</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/CODEC</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>https://github.com/apache/commons-codec</url></reference></externalReferences>
     </component>
     <component type="library" bom-ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar">
       <publisher>The Apache Software Foundation</publisher>
@@ -2651,39 +2680,10 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <purl>pkg:maven/commons-logging/commons-logging@1.3.1?type=jar</purl>
       <externalReferences><reference type="website"><url>https://commons.apache.org/proper/commons-logging/</url></reference><reference type="build-system"><url>https://github.com/apache/commons-parent/actions</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/LOGGING</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>https://gitbox.apache.org/repos/asf/commons-logging</url></reference></externalReferences>
     </component>
-    <component type="library" bom-ref="pkg:maven/commons-codec/commons-codec@1.16.1?type=jar">
-      <publisher>The Apache Software Foundation</publisher>
-      <group>commons-codec</group>
-      <name>commons-codec</name>
-      <version>1.16.1</version>
-      <description>The Apache Commons Codec component contains encoder and decoders for
-     various formats such as Base16, Base32, Base64, digest, and Hexadecimal. In addition to these
-     widely used encoders and decoders, the codec package also maintains a
-     collection of phonetic encoding utilities.</description>
-      <scope>required</scope>
-      <hashes>
-        <hash alg="MD5">6c5be822d8d3fa61c3b54c4c8978dfdc</hash>
-        <hash alg="SHA-1">47bd4d333fba53406f6c6c51884ddbca435c8862</hash>
-        <hash alg="SHA-256">ec87bfb55f22cbd1b21e2190eeda28b2b312ed2a431ee49fbdcc01812d04a5e4</hash>
-        <hash alg="SHA-512">bd33fd5340757ea0616a8c2a48760cfc9932f93b8e067701f4a122fd59735083468a016d8c0fd65973dd3fa4fc3537855e71a1fae7d14e1777e31ff1c47708ce</hash>
-        <hash alg="SHA-384">ee7f4c3e5c01cf77f4d82b09c358087738e6e79507ced9f2c82fdce3b32825bb62b2d66b30ef897e2972d3253478c525</hash>
-        <hash alg="SHA3-384">c200875af6359f6a584b108ecae3d83496942e1216dfacbd86e3c22e54b90b9519a9b01a229e71552111b10c8734c327</hash>
-        <hash alg="SHA3-256">81cd8a4c12e0b7ac84222e33b159cbd6f658b3e0f48e5fd8075d50cd03b05837</hash>
-        <hash alg="SHA3-512">c821b99a5b4a3fbf052f562d60479bc252aafa8057fcbe095e09e96cf01594a23455658f9c666866e1937910ff44a1a891760d04c22d5187cb98be9d0d58952b</hash>
-      </hashes>
-      <licenses>
-        <license>
-          <id>Apache-2.0</id>
-          <url>https://www.apache.org/licenses/LICENSE-2.0</url>
-        </license>
-      </licenses>
-      <purl>pkg:maven/commons-codec/commons-codec@1.16.1?type=jar</purl>
-      <externalReferences><reference type="website"><url>https://commons.apache.org/proper/commons-codec/</url></reference><reference type="build-system"><url>https://github.com/apache/commons-parent/actions</url></reference><reference type="distribution"><url>https://repository.apache.org/service/local/staging/deploy/maven2</url></reference><reference type="issue-tracker"><url>https://issues.apache.org/jira/browse/CODEC</url></reference><reference type="mailing-list"><url>https://mail-archives.apache.org/mod_mbox/commons-user/</url></reference><reference type="vcs"><url>https://github.com/apache/commons-codec</url></reference></externalReferences>
-    </component>
   </components>
   <dependencies>
     <dependency ref="pkg:maven/com.datengaertnerei.test/data-service@1.0.17-SNAPSHOT?type=jar">
-      <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar"/>
+      <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.11.0?type=jar"/>
       <dependency ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar"/>
       <dependency ref="pkg:maven/org.iban4j/iban4j@3.2.8-RELEASE?type=jar"/>
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-web@3.2.5?type=jar"/>
@@ -2694,8 +2694,12 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <dependency ref="pkg:maven/org.springdoc/springdoc-openapi-starter-webmvc-ui@2.5.0?type=jar"/>
       <dependency ref="pkg:maven/com.talanlabs/avatar-generator-8bit@1.1.0?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.10.0?type=jar"/>
+    <dependency ref="pkg:maven/org.apache.commons/commons-csv@1.11.0?type=jar">
+      <dependency ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar"/>
+      <dependency ref="pkg:maven/commons-codec/commons-codec@1.16.1?type=jar"/>
+    </dependency>
     <dependency ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar"/>
+    <dependency ref="pkg:maven/commons-codec/commons-codec@1.16.1?type=jar"/>
     <dependency ref="pkg:maven/org.iban4j/iban4j@3.2.8-RELEASE?type=jar"/>
     <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter-web@3.2.5?type=jar">
       <dependency ref="pkg:maven/org.springframework.boot/spring-boot-starter@3.2.5?type=jar"/>
@@ -2948,7 +2952,6 @@ writes to specify Java code for type-checking by the Checker Framework.</descrip
       <dependency ref="pkg:maven/commons-io/commons-io@2.16.1?type=jar"/>
       <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.13.0?type=jar"/>
     </dependency>
-    <dependency ref="pkg:maven/commons-codec/commons-codec@1.16.1?type=jar"/>
     <dependency ref="pkg:maven/org.apache.commons/commons-lang3@3.13.0?type=jar"/>
     <dependency ref="pkg:maven/xerces/xercesImpl@2.12.0?type=jar">
       <dependency ref="pkg:maven/xml-apis/xml-apis@1.4.01?type=jar"/>
