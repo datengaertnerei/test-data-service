@@ -49,7 +49,6 @@ jobs:
     - name: Build and analyze main
       run: |
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
-        chmod u+x ./mvnw
         ./mvnw -B clean package org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
