@@ -48,7 +48,6 @@ jobs:
     # Next step will start build & deploy maven site with additional artifacts for the Maven site
     - name: Build and analyze dev
       run: |
-        chmod u+x ./mvnw
         git config --global user.email "jens.dibbern@gmail.com"
         git config --global user.name "datengaertnerei"
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf

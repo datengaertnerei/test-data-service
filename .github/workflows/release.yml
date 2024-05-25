@@ -39,7 +39,6 @@ jobs:
         echo $RELTAG
         git branch $RELBRANCH
         git checkout $RELBRANCH
-        chmod u+x ./mvnw
         echo "Maven Release Prepare"
         ./mvnw clean release:prepare
         echo "Maven Release Perform"
