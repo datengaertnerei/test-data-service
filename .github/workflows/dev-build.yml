@@ -55,8 +55,6 @@ jobs:
         tail -f ./mvn-build.log &
         ./mvnw -B --log-file ./mvn-build.log deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dorg.slf4j.simpleLogger.defaultLogLevel=warn 
         cp ./mvn-build.log target/site/mvn-build.log.txt
-        npm install --global @cyclonedx/cyclonedx-npm
-        cyclonedx-npm --output-file target/site/frontend-sbom.json --ignore-npm-errors src/app/package.json
         mkdir ~/site-tmp
         cp -r target/site/* ~/site-tmp
         cp -r target/test-data-service-oas.json ~/site-tmp
