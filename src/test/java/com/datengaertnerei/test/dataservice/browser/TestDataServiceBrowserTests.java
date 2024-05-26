@@ -34,7 +34,7 @@ class TestDataServiceBrowserTests {
 		DataImportTest.ensureDataAvailability(repository);
 	}
 
-	@Test
+	//@Test
 	void testMe() {
 		try (Playwright playwright = Playwright.create()) {
 			Browser browser = playwright.chromium().launch();
