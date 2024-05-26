@@ -34,7 +34,7 @@ class TestDataServiceBrowserTests {
 		DataImportTest.ensureDataAvailability(repository);
 	}
 
-	//@Test
+	@Test
 	void testMe() {
 		try (Playwright playwright = Playwright.create()) {
 			Browser browser = playwright.chromium().launch();
@@ -42,10 +42,10 @@ class TestDataServiceBrowserTests {
 			Consumer<String> c = new Consumer<>() {
 				@Override
 				public void accept(String t) {
-					fail(t);					
+					fail(t);
 				}
 			};
-			page.onPageError(c );
+			page.onPageError(c);
 			page.navigate("http://localhost:" + randomServerPort);
 			assertNotEquals("", page.textContent("#name"));
 			assertNotEquals("", page.textContent("#street"));
