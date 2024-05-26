@@ -34,35 +34,35 @@ public class CreditCard {
 	/**
 	 * @return getter
 	 */
-	public String getNumber() {
+	public final String getNumber() {
 		return number;
 	}
 
 	/**
 	 * @return getter
 	 */
-	public String getType() {
+	public final String getType() {
 		return type;
 	}
 
 	/**
 	 * @return getter
 	 */
-	public String getCvc() {
+	public final String getCvc() {
 		return cvc;
 	}
 
 	/**
 	 * @return getter
 	 */
-	public LocalDate getExpiry() {
+	public final LocalDate getExpiry() {
 		return expiry;
 	}
 
 	/**
 	 * @param expiry setter
 	 */
-	public void setExpiry(LocalDate expiry) {
+	public final void setExpiry(LocalDate expiry) {
 		this.expiry = expiry;
 	}
 
