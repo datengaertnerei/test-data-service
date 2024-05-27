@@ -10,4 +10,4 @@ There is a [REST API Documentation](api.html) based on the [REST API OpenAPI Spe
 
 ## Software bill of material
 
-The build process export bill of material files in [CycloneDX](https://cyclonedx.org/) format for [frontend](frontend-sbom.json) and [backend](test-data-service-bom.json).
+The build process export bill of material files in [CycloneDX](https://cyclonedx.org/) format: [test-data-service-bom.json](test-data-service-bom.json).
