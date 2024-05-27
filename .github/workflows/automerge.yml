@@ -31,13 +31,19 @@ jobs:
             function handleChecked(branch, number, checks){
               const checks_list = checks.check_runs;
               
-              if(checks_list.length == 2 && checks_list[0].conclusion == "success" && checks_list[1].conclusion == "success" ){
-                console.log("Merge PR "+number);
-                github.request("PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge", {
-                  owner: owner,
-                  repo: repo,
-                  pull_number: number,	
-                }).then(deleteBranch(branch));
+              try {
+                 if(checks_list.length == 2 && checks_list[0].conclusion == "success" && checks_list[1].conclusion == "success" ){
+                   console.log("Merge PR "+number);
+                   github.request("PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge", {
+                     owner: owner,
+                     repo: repo,
+                     pull_number: number,	
+                   })
+                }
+                catch(e){
+                   return;
+                }
+                deleteBranch(branch);
               }
                 
             }

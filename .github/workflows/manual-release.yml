@@ -1,0 +1,10 @@
+name: manual-release
+
+concurrency: dev-build
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  start-release:
+    uses: datengaertnerei/test-data-service/.github/workflows/release.yml@main
