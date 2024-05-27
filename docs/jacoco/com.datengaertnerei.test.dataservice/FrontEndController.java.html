@@ -39,8 +39,11 @@ import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
 
+/**
+ * 
+ */
 @Controller
-<span class="fc" id="L43">public class FrontEndController {</span>
+<span class="fc" id="L46">public class FrontEndController {</span>
 
 	@Autowired
 	private IPersonGenerator persong;
@@ -51,30 +54,34 @@ import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
 	@Autowired
 	private IBankGenerator bankg;
 
+	/**
+	 * @param model
+	 * @return
+	 */
 	@GetMapping(path = &quot;/&quot;)
 	public String index(Model model) {
-<span class="nc" id="L56">		Person p = persong.createRandomPerson(AgeRange.ADULT);</span>
-<span class="nc" id="L57">		model.addAttribute(&quot;givenName&quot;, p.getGivenName());</span>
-<span class="nc" id="L58">		model.addAttribute(&quot;familyName&quot;, p.getFamilyName());</span>
-<span class="nc" id="L59">		model.addAttribute(&quot;gender&quot;, p.getGender());</span>
-<span class="nc" id="L60">		model.addAttribute(&quot;birthDate&quot;, p.getBirthDate()</span>
-<span class="nc" id="L61">				.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN)));</span>
-<span class="nc" id="L62">		model.addAttribute(&quot;email&quot;, p.getEmail());</span>
-<span class="nc" id="L63">		model.addAttribute(&quot;addressLocality&quot;, p.getAddress().getAddressLocality());</span>
-<span class="nc" id="L64">		model.addAttribute(&quot;postalCode&quot;, p.getAddress().getPostalCode());</span>
-<span class="nc" id="L65">		model.addAttribute(&quot;streetAddress&quot;, p.getAddress().getStreetAddress());</span>
-<span class="nc" id="L66">		model.addAttribute(&quot;houseNumber&quot;, p.getAddress().getHouseNumber());</span>
-<span class="nc" id="L67">		model.addAttribute(&quot;taxId&quot;, p.getTaxId());</span>
+<span class="fc" id="L63">		Person p = persong.createRandomPerson(AgeRange.ADULT);</span>
+<span class="fc" id="L64">		model.addAttribute(&quot;givenName&quot;, p.getGivenName());</span>
+<span class="fc" id="L65">		model.addAttribute(&quot;familyName&quot;, p.getFamilyName());</span>
+<span class="fc" id="L66">		model.addAttribute(&quot;gender&quot;, p.getGender());</span>
+<span class="fc" id="L67">		model.addAttribute(&quot;birthDate&quot;, p.getBirthDate()</span>
+<span class="fc" id="L68">				.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN)));</span>
+<span class="fc" id="L69">		model.addAttribute(&quot;email&quot;, p.getEmail());</span>
+<span class="fc" id="L70">		model.addAttribute(&quot;addressLocality&quot;, p.getAddress().getAddressLocality());</span>
+<span class="fc" id="L71">		model.addAttribute(&quot;postalCode&quot;, p.getAddress().getPostalCode());</span>
+<span class="fc" id="L72">		model.addAttribute(&quot;streetAddress&quot;, p.getAddress().getStreetAddress());</span>
+<span class="fc" id="L73">		model.addAttribute(&quot;houseNumber&quot;, p.getAddress().getHouseNumber());</span>
+<span class="fc" id="L74">		model.addAttribute(&quot;taxId&quot;, p.getTaxId());</span>
 
-<span class="nc" id="L69">		model.addAttribute(&quot;landline&quot;, phoneg.generatePhoneNumber(p.getAddress().getAddressLocality()).getPhoneNumber());</span>
-<span class="nc" id="L70">		model.addAttribute(&quot;mobile&quot;, phoneg.generateMobileNumber().getPhoneNumber());</span>
+<span class="fc" id="L76">		model.addAttribute(&quot;landline&quot;, phoneg.generatePhoneNumber(p.getAddress().getAddressLocality()).getPhoneNumber());</span>
+<span class="fc" id="L77">		model.addAttribute(&quot;mobile&quot;, phoneg.generateMobileNumber().getPhoneNumber());</span>
 
-<span class="nc" id="L72">		CreditCard cc = bankg.generateCreditCard();</span>
-<span class="nc" id="L73">		model.addAttribute(&quot;cctype&quot;, cc.getType());</span>
-<span class="nc" id="L74">		model.addAttribute(&quot;ccno&quot;, cc.getNumber());</span>
-<span class="nc" id="L75">		model.addAttribute(&quot;iban&quot;, bankg.generateAccount(p.getAddress().getAddressLocality()).getIban());</span>
+<span class="fc" id="L79">		CreditCard cc = bankg.generateCreditCard();</span>
+<span class="fc" id="L80">		model.addAttribute(&quot;cctype&quot;, cc.getType());</span>
+<span class="fc" id="L81">		model.addAttribute(&quot;ccno&quot;, cc.getNumber());</span>
+<span class="fc" id="L82">		model.addAttribute(&quot;iban&quot;, bankg.generateAccount(p.getAddress().getAddressLocality()).getIban());</span>
 
-<span class="nc" id="L77">		return &quot;front&quot;;</span>
+<span class="fc" id="L84">		return &quot;front&quot;;</span>
 	}
 
 }
