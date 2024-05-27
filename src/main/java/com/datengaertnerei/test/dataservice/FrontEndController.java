@@ -39,6 +39,9 @@ import com.datengaertnerei.test.dataservice.person.IPersonGenerator;
 import com.datengaertnerei.test.dataservice.person.Person;
 import com.datengaertnerei.test.dataservice.phone.IPhoneGenerator;
 
+/**
+ * 
+ */
 @Controller
 public class FrontEndController {
 
@@ -51,6 +54,10 @@ public class FrontEndController {
 	@Autowired
 	private IBankGenerator bankg;
 
+	/**
+	 * @param model
+	 * @return
+	 */
 	@GetMapping(path = "/")
 	public String index(Model model) {
 		Person p = persong.createRandomPerson(AgeRange.ADULT);
