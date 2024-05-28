@@ -1,9 +1,7 @@
 name: automerge
 
 on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '0 4 * * *'
+  workflow_call:
     
 jobs:
   merge:
@@ -41,6 +39,7 @@ jobs:
                    })
                 }
                 catch(e){
+                   console.log("Branch not merged:\n "+e)
                    return;
                 }
                 deleteBranch(branch);
