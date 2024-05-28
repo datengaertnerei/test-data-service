@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.2</version>
+		<version>3.3.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.datengaertnerei.test</groupId>
 	<artifactId>data-service</artifactId>
-	<version>1.0.16</version>
+	<version>2.0.0</version>
 	<name>Test data service</name>
 	<description>Web Service to provide valid test data for german
 		fictitious persons.
@@ -43,10 +43,12 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:https://github.com/datengaertnerei/test-data-service.git</connection>
-		<developerConnection>scm:git:https://github.com/datengaertnerei/test-data-service.git</developerConnection>
+		<connection>
+			scm:git:https://github.com/datengaertnerei/test-data-service.git</connection>
+		<developerConnection>
+			scm:git:https://github.com/datengaertnerei/test-data-service.git</developerConnection>
 		<url>https://github.com/datengaertnerei/test-data-service</url>
-		<tag>V1.0.16</tag>
+		<tag>V2.0.0</tag>
 	</scm>
 
 	<distributionManagement>
@@ -56,12 +58,13 @@
 			<url>https://maven.pkg.github.com/datengaertnerei/test-data-service
 			</url>
 		</repository>
-		<downloadUrl>https://github.com/datengaertnerei/test-data-service/packages/411378</downloadUrl>
+		<downloadUrl>
+			https://github.com/datengaertnerei/test-data-service/packages/411378</downloadUrl>
 	</distributionManagement>
 
 	<properties>
 		<java.version>17</java.version>
-		<cucumber.version>7.15.0</cucumber.version>
+		<cucumber.version>7.18.0</cucumber.version>
 		<sonar.projectKey>datengaertnerei_test-data-service</sonar.projectKey>
 		<sonar.organization>datengaertnerei</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -71,17 +74,17 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
-			<version>1.10.0</version>
+			<version>1.11.0</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.15.1</version>
+			<version>2.16.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.iban4j</groupId>
 			<artifactId>iban4j</artifactId>
-			<version>3.2.7-RELEASE</version>
+			<version>3.2.8-RELEASE</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -90,12 +93,16 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			</dependency>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -120,7 +127,7 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.3.0</version>
+			<version>2.5.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.talanlabs</groupId>
@@ -130,7 +137,7 @@
 		<dependency>
 			<groupId>au.com.dius.pact.provider</groupId>
 			<artifactId>junit5spring</artifactId>
-			<version>4.6.6</version>
+			<version>4.6.9</version>
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
@@ -175,7 +182,7 @@
 		<dependency>
 			<groupId>com.microsoft.playwright</groupId>
 			<artifactId>playwright</artifactId>
-			<version>1.41.2</version>
+			<version>1.44.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -185,22 +192,22 @@
 			<dependency>
 				<groupId>com.google.protobuf</groupId>
 				<artifactId>protobuf-java</artifactId>
-				<version>3.25.2</version>
+				<version>3.25.3</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
-				<version>33.0.0-jre</version>
+				<version>33.2.0-jre</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-compress</artifactId>
-				<version>1.25.0</version>
+				<version>1.26.2</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-logging</groupId>
 				<artifactId>commons-logging</artifactId>
-				<version>1.3.0</version>
+				<version>1.3.2</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -218,14 +225,15 @@
 						<arg>-verbose</arg>
 						<arg>-Werror</arg>
 						<arg>-Xlint:all</arg>
-						<arg>-Xlint:-path</arg><!-- due to dependency mess of PBF component -->
+						<arg>-Xlint:-path</arg><!-- due to dependency mess of
+						PBF component -->
 					</compilerArgs>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.gaul</groupId>
 				<artifactId>modernizer-maven-plugin</artifactId>
-				<version>2.7.0</version>
+				<version>2.9.0</version>
 				<configuration>
 					<javaVersion>${java.version}</javaVersion>
 				</configuration>
@@ -266,7 +274,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.11</version>
+				<version>0.8.12</version>
 				<executions>
 					<execution>
 						<id>default-prepare-agent</id>
@@ -302,64 +310,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- using the exec plugin instead of the frontend plugin - the later 
-				does not work properly with Windows OS -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>3.1.1</version>
-				<executions>
-					<execution>
-						<phase>initialize</phase>
-						<id>yarn-install</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>yarn</executable>
-							<workingDirectory>src/app</workingDirectory>
-							<arguments>
-								<argument>install</argument>
-							</arguments>
-							<environmentVariables>
-								<LANG>de_DE</LANG>
-							</environmentVariables>
-						</configuration>
-					</execution>
-					<execution>
-						<phase>initialize</phase>
-						<id>update-browserlist</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>npx</executable>
-							<workingDirectory>src/app</workingDirectory>
-							<arguments>
-								<argument>browserslist@latest</argument>
-								<argument>--update-db</argument>
-							</arguments>
-						</configuration>
-					</execution>
-					<execution>
-						<id>yarn-build</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>yarn</executable>
-							<workingDirectory>src/app</workingDirectory>
-							<arguments>
-								<argument>build</argument>
-							</arguments>
-							<environmentVariables>
-								<LANG>de_DE</LANG>
-							</environmentVariables>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
@@ -384,7 +334,7 @@
 			<plugin>
 				<groupId>org.cyclonedx</groupId>
 				<artifactId>cyclonedx-maven-plugin</artifactId>
-				<version>2.7.11</version>
+				<version>2.8.0</version>
 				<executions>
 					<execution>
 						<phase>package</phase>

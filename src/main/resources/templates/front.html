@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Random Test Data</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    body { 
+    	text-align: center;
+    	font-family: sans-serif;
+    	font-size: xx-large; 
+    }
+    </style>    
+</head>
+<body>
+    <h1>Random Test Person</h1>
+    <p id="name" th:text="${givenName} + ' ' + ${familyName}" />
+    <p id="street" th:text="${streetAddress} + ' ' + ${houseNumber}" />
+    <p id="city" th:text="${postalCode} + ' ' + ${addressLocality}" />
+    <p id="birthdate" th:text="${birthDate} + ' - ID: ' + ${taxId}"/>
+    <p id="email" th:text="${email}" />
+    <p id="mobile" th:text="${mobile}" />
+    <p id="landline" th:text="${landline}" />
+    <p id="iban" th:text="${iban}" />
+    <p id="creditcard" th:text="${cctype} + ' ' + ${ccno}" />
+    <img th:src="@{/api/v1/avatar(gender=${gender})}" />
+    <p><a href="/swagger-ui.html">Swagger UI</a> - <a href="https://github.com/datengaertnerei/test-data-service">GitHub Repo</a></p>
+    
+</body>
+</html>

@@ -42,10 +42,10 @@ class TestDataServiceBrowserTests {
 			Consumer<String> c = new Consumer<>() {
 				@Override
 				public void accept(String t) {
-					fail(t);					
+					fail(t);
 				}
 			};
-			page.onPageError(c );
+			page.onPageError(c);
 			page.navigate("http://localhost:" + randomServerPort);
 			assertNotEquals("", page.textContent("#name"));
 			assertNotEquals("", page.textContent("#street"));

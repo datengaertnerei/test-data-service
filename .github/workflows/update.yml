@@ -14,15 +14,15 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@6c3b1c91e8873ae0c705b0709f957c7a6a5eaf10
+        uses: step-security/harden-runner@f4f3f445f343c08c93d7771433e8dee4267e05b9
         with:
           disable-sudo: true
           egress-policy: audit #outbound hosts constantly subject to change by action providers
 
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@b80ff79f1755d06ba70441c368a6fe801f5f3a62
 
       - name: Set up Python 
-        uses: actions/setup-python@871daa956ca9ea99f3c3e30acb424b7960676734
+        uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d
         with:
           python-version: 3.x
           

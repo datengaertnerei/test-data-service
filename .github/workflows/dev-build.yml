@@ -16,30 +16,30 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@6c3b1c91e8873ae0c705b0709f957c7a6a5eaf10
+      uses: step-security/harden-runner@f4f3f445f343c08c93d7771433e8dee4267e05b9
       with:
         disable-sudo: true
         egress-policy: audit #sonarcloud aws generic hostname unfortunately subject to change
 
-    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+    - uses: actions/checkout@b80ff79f1755d06ba70441c368a6fe801f5f3a62
       with:
         fetch-depth: '0'
     
-    - name: Set up JDK 17
-      uses: actions/setup-java@7a445ee88d4e23b52c33fdc7601e40278616c7f8
+    - name: Set up JDK 21
+      uses: actions/setup-java@2e74cbce18569d23ca8b812590dbb83f13ac7c5a
       with:
-        java-version: 17
+        java-version: 21
         distribution: 'temurin'
         
     - name: Cache Maven packages
-      uses: actions/cache@a2ed59d39b352305bdd2f628719a53b2cc4f9613
+      uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
     
     - name: Cache SonarCloud packages
-      uses: actions/cache@a2ed59d39b352305bdd2f628719a53b2cc4f9613
+      uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
       with:
         path: ~/.sonar/cache
         key: ${{ runner.os }}-sonar
@@ -53,14 +53,12 @@ jobs:
         export OSM_IMPORT_FILE=https://github.com/datengaertnerei/test-data-service/raw/develop/data/osm-small.pbf
         touch ./mvn-build.log
         tail -f ./mvn-build.log &
-        mvn -B --log-file ./mvn-build.log deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dorg.slf4j.simpleLogger.defaultLogLevel=warn 
+        ./mvnw -B --log-file ./mvn-build.log deploy site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dorg.slf4j.simpleLogger.defaultLogLevel=warn -Djdk.instrument.traceUsage
         cp ./mvn-build.log target/site/mvn-build.log.txt
-        npm install --global @cyclonedx/cyclonedx-npm
-        cyclonedx-npm --output-file target/site/frontend-sbom.json --ignore-npm-errors src/app/package.json
         mkdir ~/site-tmp
         cp -r target/site/* ~/site-tmp
         cp -r target/test-data-service-oas.json ~/site-tmp
-        cp -r target/test-data-service-bom.* ~/site-tmp
+        cp -r target/classes/META-INF/sbom/test-data-service-bom.* ~/site-tmp
         git stash
         git checkout gh_pages
         cp -r ~/site-tmp/* docs
@@ -73,4 +71,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         
-    - uses: codecov/codecov-action@b8a1d6a4243f1ff280a5533872c4d80179cc5b4a
+    - uses: codecov/codecov-action@a1504ae490860991a4176aed26b42989650a91d7
