@@ -77,6 +77,14 @@ class TestDataServiceApiTests {
 	void contextLoads() {
 		assertThat(restController).isNotNull();
 	}
+	
+	@Test
+	void checkBoundaries() {
+		long offset = repository.min() - 1L; 
+		long amount = repository.count();
+		assertThat(repository.getReferenceById(offset + 1L)).isNotNull();
+		assertThat(repository.getReferenceById(offset + amount)).isNotNull();
+	}
 
 	/**
 	 * Consecutive calls should create different (random) results for

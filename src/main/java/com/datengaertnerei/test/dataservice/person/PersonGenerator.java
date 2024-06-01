@@ -70,7 +70,6 @@ public class PersonGenerator implements IPersonGenerator {
 	private List<String> maleNames;
 	private List<String> eyecolors;
 	private List<String> professions;
-	private Long offset;
 	private TaxIdGenerator taxIdGenerator;
 	
 	@Value("${application.defaultfile}")
@@ -79,14 +78,11 @@ public class PersonGenerator implements IPersonGenerator {
 	@Autowired
 	private PostalAddressRepository repository;
 
-	private Long repoCount;
-
 	/**
 	 * 
 	 */
 	@PostConstruct
 	public void init() {
-		repoCount = 0L;
 		try {
 			surnames = loadValues(RES_SURNAMES);
 			femaleNames = loadValues(RES_FEMALE);
@@ -114,7 +110,6 @@ public class PersonGenerator implements IPersonGenerator {
 				minAddressId = repository.min();
 				maxAddressId = repository.max();
 			}
-			offset = minAddressId - 1L; // needed for random access by ID
 		} catch (MalformedURLException e) {
 			log.error("Could not import OSM data:", e);
 		}
@@ -129,11 +124,7 @@ public class PersonGenerator implements IPersonGenerator {
 	}
 
 	private Long getCount() {
-		// cache address repo count, this method is called for every random address to return
-		if(repoCount == 0) {
-			repoCount = repository.count() < Integer.MAX_VALUE ? repository.count() : Integer.MAX_VALUE;
-		}
-		return repoCount;
+		return repository.count() < Integer.MAX_VALUE ? repository.count() : Integer.MAX_VALUE;
 	}
 
 	/**
@@ -315,6 +306,8 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return
 	 */
 	private Long randomId() {
+
+		Long offset = repository.min() - 1L; 
 		Long result = (long) random.nextInt(getCount().intValue());
 
 		// add offset for first ID
