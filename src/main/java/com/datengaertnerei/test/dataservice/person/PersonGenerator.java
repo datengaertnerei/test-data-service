@@ -34,6 +34,7 @@ import java.text.Normalizer.Form;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Random;
 
@@ -71,7 +72,7 @@ public class PersonGenerator implements IPersonGenerator {
 	private List<String> eyecolors;
 	private List<String> professions;
 	private TaxIdGenerator taxIdGenerator;
-	
+
 	@Value("${application.defaultfile}")
 	private String defaultFile;
 
@@ -98,10 +99,10 @@ public class PersonGenerator implements IPersonGenerator {
 		Long maxAddressId = null == repository.max() ? 0L : repository.max();
 
 		String importFile = System.getenv("OSM_IMPORT_FILE");
-		if(0L == maxAddressId && null == importFile) {
+		if (0L == maxAddressId && null == importFile) {
 			importFile = defaultFile;
 		}
-		
+
 		try {
 			if (null != importFile && importFile.length() != 0) {
 				log.info("Importing OSM dump");
@@ -135,9 +136,12 @@ public class PersonGenerator implements IPersonGenerator {
 	@Override
 	public Person createRandomPerson(AgeRange range) {
 		Person randomPerson = createBasicPerson(range);
-		Optional<PostalAddress> address = repository.findById(randomId());
+		Long randomId = randomId();
+		Optional<PostalAddress> address = repository.findById(randomId);
 		if (address.isPresent()) {
 			randomPerson.setAddress(address.orElseThrow());
+		} else {
+			throw new NoSuchElementException("Random ID not found: "+randomId); 
 		}
 
 		return randomPerson;
@@ -307,7 +311,7 @@ public class PersonGenerator implements IPersonGenerator {
 	 */
 	private Long randomId() {
 
-		Long offset = repository.min() - 1L; 
+		Long offset = repository.min();
 		Long result = (long) random.nextInt(getCount().intValue());
 
 		// add offset for first ID
@@ -319,19 +323,19 @@ public class PersonGenerator implements IPersonGenerator {
 	 * @return
 	 */
 	private Person createBasicPerson(AgeRange range) {
-		String gender = random.nextBoolean() ? MALE : FEMALE; 
+		String gender = random.nextBoolean() ? MALE : FEMALE;
 		String firstname;
 		if (MALE.equals(gender)) {
 			firstname = maleNames.get(random.nextInt(maleNames.size())).trim();
 		} else {
 			firstname = femaleNames.get(random.nextInt(femaleNames.size())).trim();
 		}
-		
+
 		// turn to non-binary for 5%
-		if(random.nextFloat(1F) > 0.95F) {
+		if (random.nextFloat(1F) > 0.95F) {
 			gender = NON_BINARY;
 		}
-		
+
 		String surname = surnames.get(random.nextInt(surnames.size())).trim();
 
 		String eyecolor = eyecolors.get(random.nextInt(eyecolors.size())).trim();
