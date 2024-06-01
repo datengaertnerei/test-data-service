@@ -6,9 +6,10 @@ name: maven-main-build
 concurrency: build
 
 on: 
-  schedule:
+  workflow_call:
+#  schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 5 15 * *'
+#    - cron:  '0 5 15 * *'
 
 jobs:
   build:
