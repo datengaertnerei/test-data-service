@@ -225,7 +225,7 @@ import jakarta.annotation.PostConstruct;
 		double height;
 		do {
 <span class="fc" id="L227">			height = random.nextGaussian() * 10.0 + 165.0;</span>
-<span class="fc bfc" id="L228" title="All 4 branches covered.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
+<span class="pc bpc" id="L228" title="1 of 4 branches missed.">		} while (height &lt; 150.0 || height &gt; 190.0);</span>
 <span class="fc bfc" id="L229" title="All 2 branches covered.">		if (MALE.equals(gender)) {</span>
 <span class="fc" id="L230">			height += 10.0;</span>
 		}
@@ -332,8 +332,8 @@ import jakarta.annotation.PostConstruct;
 		}
 
 		// turn to non-binary for 5%
-<span class="fc bfc" id="L335" title="All 2 branches covered.">		if (random.nextFloat(1F) &gt; 0.95F) {</span>
-<span class="fc" id="L336">			gender = NON_BINARY;</span>
+<span class="pc bpc" id="L335" title="1 of 2 branches missed.">		if (random.nextFloat(1F) &gt; 0.95F) {</span>
+<span class="nc" id="L336">			gender = NON_BINARY;</span>
 		}
 
 <span class="fc" id="L339">		String surname = surnames.get(random.nextInt(surnames.size())).trim();</span>
