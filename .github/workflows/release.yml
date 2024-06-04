@@ -66,7 +66,7 @@ jobs:
       # Create pull request - must run with a different GH token to allow merge check action trigger
     - name: Create pull request to main
       id: cpr_main
-      run: gh pr create --base $BASE --head $HEAD --title $TITLE --body $BODY
+      run: gh pr create --base $BASE --head $HEAD --title $TITLE --body $BODY --label release
       env:
         GITHUB_TOKEN: ${{ secrets.REL_SECRET }}
         HEAD: ${{ steps.mvnrel.outputs.prsource }}
@@ -77,7 +77,7 @@ jobs:
       # Create pull request - must run with a different GH token to allow merge check action trigger
     - name: Create pull request to dev
       id: cpr_dev
-      run: gh pr create --base $BASE --head $HEAD --title $TITLE --body $BODY
+      run: gh pr create --base $BASE --head $HEAD --title $TITLE --body $BODY --label release
       env:
         GITHUB_TOKEN: ${{ secrets.REL_SECRET }}
         HEAD: ${{ steps.mvnrel.outputs.release_branch }}
