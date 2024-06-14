@@ -1,9 +1,0 @@
-name: manual-merge
-
-on:
-  workflow_dispatch:
-    
-jobs:
-  start-release:
-    uses: datengaertnerei/test-data-service/.github/workflows/automerge.yml@develop
-    secrets: inherit
