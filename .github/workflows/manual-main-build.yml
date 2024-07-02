@@ -1,0 +1,9 @@
+name: manual-main-build
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  start-release:
+    uses: datengaertnerei/test-data-service/.github/workflows/docker.yml@develop
+    secrets: inherit

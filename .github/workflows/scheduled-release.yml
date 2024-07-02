@@ -1,7 +1,9 @@
-name: manual-release
+name: scheduled-release
 
 on:
-  workflow_dispatch:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 2 15 * *'
     
 jobs:
   start-release:

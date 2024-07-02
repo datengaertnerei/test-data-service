@@ -28,6 +28,7 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -104,6 +105,7 @@ class AddressSink implements Sink {
 
 	private PostalAddressRepository repository;
 	private int importCounter = 0;
+	private HashSet<String> postCodes = new HashSet<>(); 
 
 	/**
 	 * @param repository
@@ -171,8 +173,9 @@ class AddressSink implements Sink {
 			default: // just skip to the next tag
 			}
 		}
-		if (tagCount > 4 && country != null && country.equals(COUNTRY)) {
+		if (tagCount > 4 && country != null && country.equals(COUNTRY) && !postCodes.contains(postcode)) {
 
+			postCodes.add(postcode);
 			PostalAddress pa = new PostalAddress(country, city, postcode, street, housenumber);
 			repository.saveAndFlush(pa);
 		}
