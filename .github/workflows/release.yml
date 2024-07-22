@@ -71,8 +71,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.REL_SECRET }}
         HEAD: ${{ steps.mvnrel.outputs.prsource }}
         BASE: master
-        TITLE: "Merge ${{ steps.mvnrel.outputs.prsource }} to main"
-        BODY: ":crown: *An automated PR*"          
+        TITLE: "'Merge ${{ steps.mvnrel.outputs.prsource }} to main'"
+        BODY: "':crown: *An automated PR*'"          
     
       # Create pull request - must run with a different GH token to allow merge check action trigger
     - name: Create pull request to dev
@@ -82,5 +82,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.REL_SECRET }}
         HEAD: ${{ steps.mvnrel.outputs.release_branch }}
         BASE: develop
-        TITLE: "\"Merge ${{ steps.mvnrel.outputs.release_branch }} to dev\""
-        BODY: "\":crown: *An automated PR*\""
+        TITLE: "'Merge ${{ steps.mvnrel.outputs.release_branch }} to dev'"
+        BODY: "':crown: *An automated PR*'"
