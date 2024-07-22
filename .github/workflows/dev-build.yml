@@ -58,7 +58,7 @@ jobs:
         mkdir ~/site-tmp
         cp -r target/site/* ~/site-tmp
         cp -r target/test-data-service-oas.json ~/site-tmp
-        cp -r target/classes/META-INF/sbom/test-data-service-bom.* ~/site-tmp
+        cp -r target/classes/META-INF/sbom/application.cdx.json ~/site-tmp/test-data-service-bom.json
         git stash
         git checkout gh_pages
         cp -r ~/site-tmp/* docs
