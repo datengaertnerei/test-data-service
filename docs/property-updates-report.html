@@ -78,7 +78,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" /></td>
 <td># of properties using the latest version available</td>
-<td>106</td></tr>
+<td>104</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -86,11 +86,11 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>3</td></tr>
+<td>4</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is a minor version update</td>
-<td>59</td></tr>
+<td>60</td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is a major version update</td>
@@ -170,12 +170,12 @@
 <td><b>3.6.0</b></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${byte-buddy.version}</td>
 <td>1.14.19</td>
 <td></td>
 <td></td>
-<td></td>
+<td><b>1.15.0</b></td>
 <td></td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" /></td>
@@ -1063,7 +1063,7 @@
 <td>12.6.3.jre11</td>
 <td></td>
 <td></td>
-<td><b>12.8.0.jre11</b></td>
+<td><b>12.8.1.jre11</b></td>
 <td></td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
@@ -1146,11 +1146,11 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${postgresql.version}</td>
 <td>42.7.3</td>
 <td></td>
-<td></td>
+<td><b>42.7.4</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -1566,7 +1566,7 @@
 <td>${undertow.version}</td>
 <td>2.3.13.Final</td>
 <td></td>
-<td><b>2.3.15.Final</b></td>
+<td><b>2.3.16.Final</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -1880,7 +1880,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer minor version available. Minor updates are sometimes passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${byte-buddy.version}</td></tr>
@@ -1891,18 +1891,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">1.14.19</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>1.15.0</b>&#160;<i>Latest Minor</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">1.14.19</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section>
 <h2>${cache2k.version}</h2>
@@ -5279,7 +5282,7 @@
 <td style="text-align: left;">12.6.3.jre11</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">12.7.0<br />12.7.0.jre8-preview<br />12.7.0.jre11-preview<br />12.7.1.jre8-preview<br />12.7.1.jre11-preview<br />12.8.0.jre8<br /><b>12.8.0.jre11</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">12.7.0<br />12.7.0.jre8-preview<br />12.7.0.jre11-preview<br />12.7.1.jre8-preview<br />12.7.1.jre11-preview<br />12.8.0.jre8<br />12.8.0.jre11<br />12.8.1.jre8<br /><b>12.8.1.jre11</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">12.6.3.jre11</td></tr>
@@ -5604,7 +5607,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${postgresql.version}</td></tr>
@@ -5615,18 +5618,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">42.7.3</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>42.7.4</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">42.7.3</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section>
 <h2>${prometheus-client.version}</h2>
@@ -7169,7 +7175,7 @@
 <td style="text-align: left;">2.3.13.Final</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">2.3.14.Final<br /><b>2.3.15.Final</b>&#160;<i>Latest Incremental</i></td></tr>
+<td style="text-align: left;">2.3.14.Final<br />2.3.15.Final<br /><b>2.3.16.Final</b>&#160;<i>Latest Incremental</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">2.3.13.Final</td></tr>
