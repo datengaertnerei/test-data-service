@@ -4,49 +4,51 @@
   "serialNumber" : "urn:uuid:db2ae644-c738-3071-8c35-befdd1e10fae",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2024-10-07T23:01:42Z",
+    "timestamp" : "2024-10-08T09:37:35Z",
     "tools" : [
       {
         "vendor" : "OWASP Foundation",
         "name" : "CycloneDX Maven plugin",
-        "version" : "2.8.2",
+        "version" : "2.9.0",
         "hashes" : [
           {
             "alg" : "MD5",
-            "content" : "3bb2c0a57386c1551f09c3328474c1b6"
+            "content" : "dfaeab7ec837ce07874e2ee66fdc57d3"
           },
           {
             "alg" : "SHA-1",
-            "content" : "3b287e981e81263165b606ca210ed42a9f6bced1"
+            "content" : "8bab47bafc8183d0a5f37790ff55ed05ead1ae2d"
           },
           {
             "alg" : "SHA-256",
-            "content" : "37fab69d06c0d402de9fe600381f63bb5b98f864ea8589c52d71bbd6dd60d293"
+            "content" : "67117e03eae4a03ca8bab3add044995f4899aa21798a2510b8265ef8101e90ac"
           },
           {
             "alg" : "SHA-512",
-            "content" : "f65b4722540a930422d4a28cb54c982dbe01fdb41717c3b95e9836137856cabed2b836b1b9e0394798d99e9973ce6931c61675cbed859238cab1a99d3063786f"
+            "content" : "ae6b706516bb76da806b7854aef9e348fa593f5159ae9d693ad38942165c0ebc0846d977a477f6029612d43468fd2cd73a5aa253c228a94fb8d184e0acefc3d2"
           },
           {
             "alg" : "SHA-384",
-            "content" : "55fc5a528d5fd426d306f26e6a73fd8cf9e779a101f31591ca084c8f615d8073d80cc24ee04ea1df209051842e481080"
+            "content" : "ee872354d8b0dcd6f9835a913b3aaba70d9365a46043be78020183282a1e9fca812e969246cbe31d642541591b46648b"
           },
           {
             "alg" : "SHA3-384",
-            "content" : "888b88d83887fe1e3c62f6ab3f11501ae4e97dfc0d954b6eec3b0133dfccb92e984a6ace18fb6965cf215e0cd01de9aa"
+            "content" : "e5167f9e7ceba3b7b4d1900c404543907868745334bedc69cdf79c271727148413033a3b1426b733b7549e612e44adee"
           },
           {
             "alg" : "SHA3-256",
-            "content" : "26a3386e02289680b9e6d24900824d52a35238ce76cb0e67ba3090fc638f269b"
+            "content" : "41fc0bc2275f354e2c7da01041ce73ce677364799cba53920a180aa5d4571c63"
           },
           {
             "alg" : "SHA3-512",
-            "content" : "a229e418d8af12002e51e39bf1201b7ea86a9a883386524386383454e970cc3cfb44cb1020022ff91e96349d8db8575768052e1bbaf415478e8e99d9e4e22d0f"
+            "content" : "ed7f97900b09b818dbc0b8a23c00a2843e1bc34e2e8eb5b6df52533af0a15b721de6f7d5c2fd9352b8d4fde768e080053b40a16f0f9f04c336fe9b44abe83fc0"
           }
         ]
       }
     ],
     "component" : {
+      "type" : "application",
+      "bom-ref" : "pkg:maven/com.datengaertnerei.test/data-service@2.0.3-SNAPSHOT?type=jar",
       "publisher" : "Datengärtnerei",
       "group" : "com.datengaertnerei.test",
       "name" : "data-service",
@@ -56,7 +58,7 @@
         {
           "license" : {
             "id" : "MIT",
-            "url" : "https://opensource.org/licenses/MIT"
+            "url" : "https://opensource.org/license/mit/"
           }
         }
       ],
@@ -78,9 +80,7 @@
           "type" : "vcs",
           "url" : "https://github.com/datengaertnerei/test-data-service"
         }
-      ],
-      "type" : "application",
-      "bom-ref" : "pkg:maven/com.datengaertnerei.test/data-service@2.0.3-SNAPSHOT?type=jar"
+      ]
     },
     "properties" : [
       {
@@ -95,6 +95,8 @@
   },
   "components" : [
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-csv@1.12.0?type=jar",
       "publisher" : "The Apache Software Foundation",
       "group" : "org.apache.commons",
       "name" : "commons-csv",
@@ -169,11 +171,11 @@
           "type" : "vcs",
           "url" : "https://gitbox.apache.org/repos/asf?p=commons-csv.git"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.commons/commons-csv@1.12.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/commons-codec/commons-codec@1.16.1?type=jar",
       "publisher" : "The Apache Software Foundation",
       "group" : "commons-codec",
       "name" : "commons-codec",
@@ -248,11 +250,11 @@
           "type" : "vcs",
           "url" : "https://github.com/apache/commons-codec"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/commons-codec/commons-codec@1.16.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/commons-io/commons-io@2.17.0?type=jar",
       "publisher" : "The Apache Software Foundation",
       "group" : "commons-io",
       "name" : "commons-io",
@@ -327,11 +329,11 @@
           "type" : "vcs",
           "url" : "https://gitbox.apache.org/repos/asf?p=commons-io.git"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/commons-io/commons-io@2.17.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.iban4j/iban4j@3.2.10-RELEASE?type=jar",
       "group" : "org.iban4j",
       "name" : "iban4j",
       "version" : "3.2.10-RELEASE",
@@ -393,11 +395,11 @@
           "type" : "vcs",
           "url" : "scm:git:https://github.com/arturmkrtchyan/iban4j/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.iban4j/iban4j@3.2.10-RELEASE?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-web@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter-web",
@@ -459,11 +461,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-web@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter",
@@ -525,11 +527,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot",
@@ -591,11 +593,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-autoconfigure",
@@ -657,11 +659,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-autoconfigure@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-logging@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter-logging",
@@ -723,11 +725,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-logging@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/ch.qos.logback/logback-classic@1.5.8?type=jar",
       "publisher" : "QOS.ch",
       "group" : "ch.qos.logback",
       "name" : "logback-classic",
@@ -795,11 +797,11 @@
           "type" : "vcs",
           "url" : "https://github.com/qos-ch/logback/logback-classic"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/ch.qos.logback/logback-classic@1.5.8?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/ch.qos.logback/logback-core@1.5.8?type=jar",
       "publisher" : "QOS.ch",
       "group" : "ch.qos.logback",
       "name" : "logback-core",
@@ -867,11 +869,11 @@
           "type" : "vcs",
           "url" : "https://github.com/qos-ch/logback/logback-core"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/ch.qos.logback/logback-core@1.5.8?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.logging.log4j/log4j-to-slf4j@2.23.1?type=jar",
       "publisher" : "The Apache Software Foundation",
       "group" : "org.apache.logging.log4j",
       "name" : "log4j-to-slf4j",
@@ -946,11 +948,11 @@
           "type" : "vcs",
           "url" : "https://github.com/apache/logging-log4j2"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.logging.log4j/log4j-to-slf4j@2.23.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar",
       "publisher" : "The Apache Software Foundation",
       "group" : "org.apache.logging.log4j",
       "name" : "log4j-api",
@@ -1025,11 +1027,11 @@
           "type" : "vcs",
           "url" : "https://github.com/apache/logging-log4j2"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.logging.log4j/log4j-api@2.23.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.slf4j/jul-to-slf4j@2.0.16?type=jar",
       "publisher" : "QOS.ch",
       "group" : "org.slf4j",
       "name" : "jul-to-slf4j",
@@ -1074,7 +1076,7 @@
         {
           "license" : {
             "id" : "MIT",
-            "url" : "https://opensource.org/licenses/MIT"
+            "url" : "https://opensource.org/license/mit/"
           }
         }
       ],
@@ -1092,11 +1094,11 @@
           "type" : "vcs",
           "url" : "https://github.com/qos-ch/slf4j/slf4j-parent/jul-to-slf4j"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.slf4j/jul-to-slf4j@2.0.16?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/jakarta.annotation/jakarta.annotation-api@2.1.1?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "jakarta.annotation",
       "name" : "jakarta.annotation-api",
@@ -1171,11 +1173,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/common-annotations-api"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/jakarta.annotation/jakarta.annotation-api@2.1.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.yaml/snakeyaml@2.2?type=jar",
       "group" : "org.yaml",
       "name" : "snakeyaml",
       "version" : "2.2",
@@ -1240,11 +1242,11 @@
           "type" : "vcs",
           "url" : "https://bitbucket.org/snakeyaml/snakeyaml/src"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.yaml/snakeyaml@2.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-json@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter-json",
@@ -1306,11 +1308,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-json@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.17.2?type=jar",
       "publisher" : "FasterXML",
       "group" : "com.fasterxml.jackson.core",
       "name" : "jackson-databind",
@@ -1376,11 +1378,11 @@
           "type" : "vcs",
           "url" : "https://github.com/FasterXML/jackson-databind"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.17.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.17.2?type=jar",
       "publisher" : "FasterXML",
       "group" : "com.fasterxml.jackson.core",
       "name" : "jackson-annotations",
@@ -1446,11 +1448,11 @@
           "type" : "vcs",
           "url" : "https://github.com/FasterXML/jackson-annotations"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.17.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.17.2?type=jar",
       "publisher" : "FasterXML",
       "group" : "com.fasterxml.jackson.core",
       "name" : "jackson-core",
@@ -1516,11 +1518,11 @@
           "type" : "vcs",
           "url" : "https://github.com/FasterXML/jackson-core"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.17.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jdk8@2.17.2?type=jar",
       "publisher" : "FasterXML",
       "group" : "com.fasterxml.jackson.datatype",
       "name" : "jackson-datatype-jdk8",
@@ -1586,11 +1588,11 @@
           "type" : "vcs",
           "url" : "http://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jdk8"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jdk8@2.17.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jsr310@2.17.2?type=jar",
       "publisher" : "FasterXML",
       "group" : "com.fasterxml.jackson.datatype",
       "name" : "jackson-datatype-jsr310",
@@ -1656,11 +1658,11 @@
           "type" : "vcs",
           "url" : "http://github.com/FasterXML/jackson-modules-java8/jackson-datatype-jsr310"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.fasterxml.jackson.datatype/jackson-datatype-jsr310@2.17.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.module/jackson-module-parameter-names@2.17.2?type=jar",
       "publisher" : "FasterXML",
       "group" : "com.fasterxml.jackson.module",
       "name" : "jackson-module-parameter-names",
@@ -1726,11 +1728,11 @@
           "type" : "vcs",
           "url" : "http://github.com/FasterXML/jackson-modules-java8/jackson-module-parameter-names"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.fasterxml.jackson.module/jackson-module-parameter-names@2.17.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-tomcat@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter-tomcat",
@@ -1792,11 +1794,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-tomcat@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@10.1.30?type=jar",
       "group" : "org.apache.tomcat.embed",
       "name" : "tomcat-embed-core",
       "version" : "10.1.30",
@@ -1849,11 +1851,11 @@
           "type" : "website",
           "url" : "https://tomcat.apache.org/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@10.1.30?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@10.1.30?type=jar",
       "group" : "org.apache.tomcat.embed",
       "name" : "tomcat-embed-el",
       "version" : "10.1.30",
@@ -1906,11 +1908,11 @@
           "type" : "website",
           "url" : "https://tomcat.apache.org/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.tomcat.embed/tomcat-embed-el@10.1.30?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@10.1.30?type=jar",
       "group" : "org.apache.tomcat.embed",
       "name" : "tomcat-embed-websocket",
       "version" : "10.1.30",
@@ -1963,11 +1965,11 @@
           "type" : "website",
           "url" : "https://tomcat.apache.org/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@10.1.30?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-web@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-web",
@@ -2029,11 +2031,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-web@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-beans@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-beans",
@@ -2095,11 +2097,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-beans@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/io.micrometer/micrometer-observation@1.13.4?type=jar",
       "group" : "io.micrometer",
       "name" : "micrometer-observation",
       "version" : "1.13.4",
@@ -2152,11 +2154,11 @@
           "type" : "website",
           "url" : "https://github.com/micrometer-metrics/micrometer"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/io.micrometer/micrometer-observation@1.13.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/io.micrometer/micrometer-commons@1.13.4?type=jar",
       "group" : "io.micrometer",
       "name" : "micrometer-commons",
       "version" : "1.13.4",
@@ -2209,11 +2211,11 @@
           "type" : "website",
           "url" : "https://github.com/micrometer-metrics/micrometer"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/io.micrometer/micrometer-commons@1.13.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-webmvc@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-webmvc",
@@ -2275,11 +2277,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-webmvc@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-aop@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-aop",
@@ -2341,11 +2343,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-aop@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-expression@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-expression",
@@ -2407,11 +2409,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-expression@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-thymeleaf@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter-thymeleaf",
@@ -2473,11 +2475,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-thymeleaf@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.thymeleaf/thymeleaf-spring6@3.1.2.RELEASE?type=jar",
       "publisher" : "Thymeleaf",
       "group" : "org.thymeleaf",
       "name" : "thymeleaf-spring6",
@@ -2539,11 +2541,11 @@
           "type" : "vcs",
           "url" : "https://github.com/thymeleaf/thymeleaf/thymeleaf-lib/thymeleaf-spring6"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.thymeleaf/thymeleaf-spring6@3.1.2.RELEASE?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.thymeleaf/thymeleaf@3.1.2.RELEASE?type=jar",
       "publisher" : "Thymeleaf",
       "group" : "org.thymeleaf",
       "name" : "thymeleaf",
@@ -2605,11 +2607,11 @@
           "type" : "vcs",
           "url" : "https://github.com/thymeleaf/thymeleaf/thymeleaf-lib/thymeleaf"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.thymeleaf/thymeleaf@3.1.2.RELEASE?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.attoparser/attoparser@2.0.7.RELEASE?type=jar",
       "publisher" : "The ATTOPARSER team",
       "group" : "org.attoparser",
       "name" : "attoparser",
@@ -2671,11 +2673,11 @@
           "type" : "vcs",
           "url" : "scm:git:git@github.com:attoparser/attoparser.git"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.attoparser/attoparser@2.0.7.RELEASE?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.unbescape/unbescape@1.1.6.RELEASE?type=jar",
       "publisher" : "The UNBESCAPE team",
       "group" : "org.unbescape",
       "name" : "unbescape",
@@ -2737,11 +2739,11 @@
           "type" : "vcs",
           "url" : "scm:git:git@github.com:unbescape/unbescape.git"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.unbescape/unbescape@1.1.6.RELEASE?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar",
       "publisher" : "QOS.ch",
       "group" : "org.slf4j",
       "name" : "slf4j-api",
@@ -2786,7 +2788,7 @@
         {
           "license" : {
             "id" : "MIT",
-            "url" : "https://opensource.org/licenses/MIT"
+            "url" : "https://opensource.org/license/mit/"
           }
         }
       ],
@@ -2804,11 +2806,11 @@
           "type" : "vcs",
           "url" : "https://github.com/qos-ch/slf4j/slf4j-parent/slf4j-api"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.slf4j/slf4j-api@2.0.16?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-data-jpa@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter-data-jpa",
@@ -2870,11 +2872,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-data-jpa@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-aop@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter-aop",
@@ -2936,11 +2938,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-aop@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.aspectj/aspectjweaver@1.9.22.1?type=jar",
       "group" : "org.aspectj",
       "name" : "aspectjweaver",
       "version" : "1.9.22.1",
@@ -3001,11 +3003,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse/org.aspectj"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.aspectj/aspectjweaver@1.9.22.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-jdbc@3.3.4?type=jar",
       "publisher" : "VMware, Inc.",
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter-jdbc",
@@ -3067,11 +3069,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-boot"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.boot/spring-boot-starter-jdbc@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.zaxxer/HikariCP@5.1.0?type=jar",
       "publisher" : "Zaxxer.com",
       "group" : "com.zaxxer",
       "name" : "HikariCP",
@@ -3137,11 +3139,11 @@
           "type" : "vcs",
           "url" : "https://github.com/brettwooldridge/HikariCP"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.zaxxer/HikariCP@5.1.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-jdbc@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-jdbc",
@@ -3203,11 +3205,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-jdbc@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.hibernate.orm/hibernate-core@6.5.3.Final?type=jar",
       "publisher" : "Hibernate.org",
       "group" : "org.hibernate.orm",
       "name" : "hibernate-core",
@@ -3270,11 +3272,11 @@
           "type" : "vcs",
           "url" : "https://github.com/hibernate/hibernate-orm"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.hibernate.orm/hibernate-core@6.5.3.Final?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/jakarta.persistence/jakarta.persistence-api@3.1.0?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "jakarta.persistence",
       "name" : "jakarta.persistence-api",
@@ -3349,11 +3351,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/jpa-api.git"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/jakarta.persistence/jakarta.persistence-api@3.1.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/jakarta.transaction/jakarta.transaction-api@2.0.1?type=jar",
       "publisher" : "EE4J Community",
       "group" : "jakarta.transaction",
       "name" : "jakarta.transaction-api",
@@ -3428,11 +3430,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/jta-api"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/jakarta.transaction/jakarta.transaction-api@2.0.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.hibernate.common/hibernate-commons-annotations@6.0.6.Final?type=jar",
       "publisher" : "Hibernate.org",
       "group" : "org.hibernate.common",
       "name" : "hibernate-commons-annotations",
@@ -3495,11 +3497,11 @@
           "type" : "vcs",
           "url" : "http://github.com/hibernate/hibernate-commons-annotations"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.hibernate.common/hibernate-commons-annotations@6.0.6.Final?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/io.smallrye/jandex@3.1.2?type=jar",
       "group" : "io.smallrye",
       "name" : "jandex",
       "version" : "3.1.2",
@@ -3564,11 +3566,11 @@
           "type" : "vcs",
           "url" : "https://github.com/smallrye/jandex/jandex/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/io.smallrye/jandex@3.1.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/net.bytebuddy/byte-buddy@1.14.19?type=jar",
       "group" : "net.bytebuddy",
       "name" : "byte-buddy",
       "version" : "1.14.19",
@@ -3629,11 +3631,11 @@
           "type" : "issue-tracker",
           "url" : "https://github.com/raphw/byte-buddy/issues"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/net.bytebuddy/byte-buddy@1.14.19?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.glassfish.jaxb/jaxb-runtime@4.0.5?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "org.glassfish.jaxb",
       "name" : "jaxb-runtime",
@@ -3703,11 +3705,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-runtime-parent/jaxb-runtime"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.glassfish.jaxb/jaxb-runtime@4.0.5?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.glassfish.jaxb/jaxb-core@4.0.5?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "org.glassfish.jaxb",
       "name" : "jaxb-core",
@@ -3777,11 +3779,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-core"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.glassfish.jaxb/jaxb-core@4.0.5?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.eclipse.angus/angus-activation@2.0.2?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "org.eclipse.angus",
       "name" : "angus-activation",
@@ -3851,11 +3853,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/angus-activation/angus-activation"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.eclipse.angus/angus-activation@2.0.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.glassfish.jaxb/txw2@4.0.5?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "org.glassfish.jaxb",
       "name" : "txw2",
@@ -3925,11 +3927,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/jaxb-ri.git/jaxb-txw-parent/txw2"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.glassfish.jaxb/txw2@4.0.5?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.sun.istack/istack-commons-runtime@4.1.2?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "com.sun.istack",
       "name" : "istack-commons-runtime",
@@ -3999,11 +4001,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/jaxb-istack-commons/istack-commons-runtime"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.sun.istack/istack-commons-runtime@4.1.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/jakarta.inject/jakarta.inject-api@2.0.1?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "jakarta.inject",
       "name" : "jakarta.inject-api",
@@ -4073,11 +4075,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/injection-api"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/jakarta.inject/jakarta.inject-api@2.0.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.antlr/antlr4-runtime@4.13.0?type=jar",
       "publisher" : "ANTLR",
       "group" : "org.antlr",
       "name" : "antlr4-runtime",
@@ -4148,11 +4150,11 @@
           "type" : "vcs",
           "url" : "https://github.com/antlr/antlr4/tree/master/antlr4-runtime"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.antlr/antlr4-runtime@4.13.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.data/spring-data-jpa@3.3.4?type=jar",
       "publisher" : "Pivotal Software, Inc.",
       "group" : "org.springframework.data",
       "name" : "spring-data-jpa",
@@ -4214,11 +4216,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-data-jpa/spring-data-jpa"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.data/spring-data-jpa@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework.data/spring-data-commons@3.3.4?type=jar",
       "publisher" : "Pivotal Software, Inc.",
       "group" : "org.springframework.data",
       "name" : "spring-data-commons",
@@ -4280,11 +4282,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-data-commons"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework.data/spring-data-commons@3.3.4?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-orm@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-orm",
@@ -4346,11 +4348,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-orm@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-tx@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-tx",
@@ -4412,11 +4414,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-tx@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-aspects@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-aspects",
@@ -4478,11 +4480,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-aspects@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.hibernate.validator/hibernate-validator@8.0.1.Final?type=jar",
       "group" : "org.hibernate.validator",
       "name" : "hibernate-validator",
       "version" : "8.0.1.Final",
@@ -4552,11 +4554,11 @@
           "type" : "vcs",
           "url" : "http://github.com/hibernate/hibernate-validator/hibernate-validator"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.hibernate.validator/hibernate-validator@8.0.1.Final?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/jakarta.validation/jakarta.validation-api@3.0.2?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "jakarta.validation",
       "name" : "jakarta.validation-api",
@@ -4627,11 +4629,11 @@
           "type" : "vcs",
           "url" : "https://github.com/eclipse-ee4j/beanvalidation-api"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/jakarta.validation/jakarta.validation-api@3.0.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.jboss.logging/jboss-logging@3.5.3.Final?type=jar",
       "publisher" : "JBoss by Red Hat",
       "group" : "org.jboss.logging",
       "name" : "jboss-logging",
@@ -4702,11 +4704,11 @@
           "type" : "vcs",
           "url" : "https://github.com/jboss-logging/jboss-logging/tree/main/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.jboss.logging/jboss-logging@3.5.3.Final?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml/classmate@1.7.0?type=jar",
       "publisher" : "fasterxml.com",
       "group" : "com.fasterxml",
       "name" : "classmate",
@@ -4772,11 +4774,11 @@
           "type" : "vcs",
           "url" : "https://github.com/FasterXML/java-classmate"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.fasterxml/classmate@1.7.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.h2database/h2@2.2.224?type=jar",
       "group" : "com.h2database",
       "name" : "h2",
       "version" : "2.2.224",
@@ -4839,11 +4841,11 @@
           "type" : "vcs",
           "url" : "https://github.com/h2database/h2database"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.h2database/h2@2.2.224?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.2?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "jakarta.xml.bind",
       "name" : "jakarta.xml.bind-api",
@@ -4913,11 +4915,11 @@
           "type" : "vcs",
           "url" : "https://github.com/jakartaee/jaxb-api.git/jakarta.xml.bind-api"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@4.0.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.3?type=jar",
       "publisher" : "Eclipse Foundation",
       "group" : "jakarta.activation",
       "name" : "jakarta.activation-api",
@@ -4987,11 +4989,11 @@
           "type" : "vcs",
           "url" : "https://github.com/jakartaee/jaf-api"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/jakarta.activation/jakarta.activation-api@2.1.3?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-core@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-core",
@@ -5053,11 +5055,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-core@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-jcl@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-jcl",
@@ -5119,11 +5121,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-jcl@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar",
       "group" : "org.openstreetmap.osmosis",
       "name" : "osmosis-pbf2",
       "version" : "0.48.3",
@@ -5180,11 +5182,11 @@
           "type" : "vcs",
           "url" : "https://github.com/openstreetmap/osmosis"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.openstreetmap.osmosis/osmosis-pbf2@0.48.3?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar",
       "group" : "org.openstreetmap.osmosis",
       "name" : "osmosis-core",
       "version" : "0.48.3",
@@ -5241,11 +5243,11 @@
           "type" : "vcs",
           "url" : "https://github.com/openstreetmap/osmosis"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.openstreetmap.osmosis/osmosis-core@0.48.3?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/net.sf.jpf/jpf@1.5?type=jar",
       "group" : "net.sf.jpf",
       "name" : "jpf",
       "version" : "1.5",
@@ -5303,11 +5305,11 @@
           "type" : "vcs",
           "url" : "http://jpf.cvs.sourceforge.net/jpf/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/net.sf.jpf/jpf@1.5?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.woodstox/woodstox-core@5.1.0?type=jar",
       "publisher" : "FasterXML",
       "group" : "com.fasterxml.woodstox",
       "name" : "woodstox-core",
@@ -5373,11 +5375,11 @@
           "type" : "vcs",
           "url" : "https://github.com/FasterXML/woodstox"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.fasterxml.woodstox/woodstox-core@5.1.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.codehaus.woodstox/stax2-api@4.1?type=jar",
       "publisher" : "fasterxml.com",
       "group" : "org.codehaus.woodstox",
       "name" : "stax2-api",
@@ -5443,11 +5445,11 @@
           "type" : "vcs",
           "url" : "http://github.com/FasterXML/stax2-api"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.codehaus.woodstox/stax2-api@4.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-compress@1.27.1?type=jar",
       "publisher" : "The Apache Software Foundation",
       "group" : "org.apache.commons",
       "name" : "commons-compress",
@@ -5522,11 +5524,11 @@
           "type" : "vcs",
           "url" : "https://gitbox.apache.org/repos/asf?p=commons-compress.git"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.commons/commons-compress@1.27.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/xerces/xercesImpl@2.12.0?type=jar",
       "group" : "xerces",
       "name" : "xercesImpl",
       "version" : "2.12.0",
@@ -5583,11 +5585,11 @@
           "type" : "vcs",
           "url" : "https://svn.apache.org/repos/asf/xerces/java/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/xerces/xercesImpl@2.12.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/xml-apis/xml-apis@1.4.01?type=jar",
       "group" : "xml-apis",
       "name" : "xml-apis",
       "version" : "1.4.01",
@@ -5664,11 +5666,11 @@
           "type" : "vcs",
           "url" : "https://svn.apache.org/viewvc/xml/commons/tags/xml-commons-external-1_4_01/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/xml-apis/xml-apis@1.4.01?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar",
       "group" : "org.openstreetmap.osmosis",
       "name" : "osmosis-osm-binary",
       "version" : "0.48.3",
@@ -5726,11 +5728,11 @@
           "type" : "vcs",
           "url" : "https://github.com/openstreetmap/osmosis"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.guava/guava@33.3.1-jre?type=jar",
       "group" : "com.google.guava",
       "name" : "guava",
       "version" : "33.3.1-jre",
@@ -5799,11 +5801,11 @@
           "type" : "vcs",
           "url" : "https://github.com/google/guava/guava"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.google.guava/guava@33.3.1-jre?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.guava/failureaccess@1.0.2?type=jar",
       "group" : "com.google.guava",
       "name" : "failureaccess",
       "version" : "1.0.2",
@@ -5872,11 +5874,11 @@
           "type" : "vcs",
           "url" : "https://github.com/google/guava/failureaccess"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.google.guava/failureaccess@1.0.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar",
       "group" : "com.google.guava",
       "name" : "listenablefuture",
       "version" : "9999.0-empty-to-avoid-conflict-with-guava",
@@ -5945,11 +5947,11 @@
           "type" : "vcs",
           "url" : "https://github.com/google/guava/listenablefuture"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.google.guava/listenablefuture@9999.0-empty-to-avoid-conflict-with-guava?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar",
       "group" : "com.google.code.findbugs",
       "name" : "jsr305",
       "version" : "3.0.2",
@@ -6010,11 +6012,11 @@
           "type" : "vcs",
           "url" : "https://code.google.com/p/jsr-305/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.google.code.findbugs/jsr305@3.0.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.checkerframework/checker-qual@3.43.0?type=jar",
       "group" : "org.checkerframework",
       "name" : "checker-qual",
       "version" : "3.43.0",
@@ -6071,11 +6073,11 @@
           "type" : "vcs",
           "url" : "https://github.com/typetools/checker-framework.git"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.checkerframework/checker-qual@3.43.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.errorprone/error_prone_annotations@2.28.0?type=jar",
       "publisher" : "Google LLC",
       "group" : "com.google.errorprone",
       "name" : "error_prone_annotations",
@@ -6133,11 +6135,11 @@
           "type" : "vcs",
           "url" : "https://github.com/google/error-prone/error_prone_annotations"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.google.errorprone/error_prone_annotations@2.28.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.j2objc/j2objc-annotations@3.0.0?type=jar",
       "group" : "com.google.j2objc",
       "name" : "j2objc-annotations",
       "version" : "3.0.0",
@@ -6198,11 +6200,11 @@
           "type" : "vcs",
           "url" : "http://github.com/google/j2objc"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.google.j2objc/j2objc-annotations@3.0.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.protobuf/protobuf-java@3.25.5?type=jar",
       "group" : "com.google.protobuf",
       "name" : "protobuf-java",
       "version" : "3.25.5",
@@ -6264,11 +6266,11 @@
           "type" : "vcs",
           "url" : "https://github.com/protocolbuffers/protobuf/protobuf-java"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.google.protobuf/protobuf-java@3.25.5?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springdoc/springdoc-openapi-starter-webmvc-ui@2.6.0?type=jar",
       "group" : "org.springdoc",
       "name" : "springdoc-openapi-starter-webmvc-ui",
       "version" : "2.6.0",
@@ -6325,11 +6327,11 @@
           "type" : "distribution",
           "url" : "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springdoc/springdoc-openapi-starter-webmvc-ui@2.6.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springdoc/springdoc-openapi-starter-webmvc-api@2.6.0?type=jar",
       "group" : "org.springdoc",
       "name" : "springdoc-openapi-starter-webmvc-api",
       "version" : "2.6.0",
@@ -6386,11 +6388,11 @@
           "type" : "distribution",
           "url" : "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springdoc/springdoc-openapi-starter-webmvc-api@2.6.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springdoc/springdoc-openapi-starter-common@2.6.0?type=jar",
       "group" : "org.springdoc",
       "name" : "springdoc-openapi-starter-common",
       "version" : "2.6.0",
@@ -6447,11 +6449,11 @@
           "type" : "distribution",
           "url" : "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springdoc/springdoc-openapi-starter-common@2.6.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/io.swagger.core.v3/swagger-core-jakarta@2.2.22?type=jar",
       "group" : "io.swagger.core.v3",
       "name" : "swagger-core-jakarta",
       "version" : "2.2.22",
@@ -6521,11 +6523,11 @@
           "type" : "vcs",
           "url" : "https://github.com/swagger-api/swagger-core/modules/swagger-core-jakarta"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/io.swagger.core.v3/swagger-core-jakarta@2.2.22?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/io.swagger.core.v3/swagger-annotations-jakarta@2.2.22?type=jar",
       "group" : "io.swagger.core.v3",
       "name" : "swagger-annotations-jakarta",
       "version" : "2.2.22",
@@ -6595,11 +6597,11 @@
           "type" : "vcs",
           "url" : "https://github.com/swagger-api/swagger-core/modules/swagger-annotations-jakarta"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/io.swagger.core.v3/swagger-annotations-jakarta@2.2.22?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/io.swagger.core.v3/swagger-models-jakarta@2.2.22?type=jar",
       "group" : "io.swagger.core.v3",
       "name" : "swagger-models-jakarta",
       "version" : "2.2.22",
@@ -6669,11 +6671,11 @@
           "type" : "vcs",
           "url" : "https://github.com/swagger-api/swagger-core/modules/swagger-models-jakarta"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/io.swagger.core.v3/swagger-models-jakarta@2.2.22?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml@2.17.2?type=jar",
       "publisher" : "FasterXML",
       "group" : "com.fasterxml.jackson.dataformat",
       "name" : "jackson-dataformat-yaml",
@@ -6739,11 +6741,11 @@
           "type" : "vcs",
           "url" : "https://github.com/FasterXML/jackson-dataformats-text/jackson-dataformat-yaml"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml@2.17.2?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.webjars/swagger-ui@5.17.14?type=jar",
       "group" : "org.webjars",
       "name" : "swagger-ui",
       "version" : "5.17.14",
@@ -6805,11 +6807,11 @@
           "type" : "vcs",
           "url" : "https://github.com/swagger-api/swagger-ui"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.webjars/swagger-ui@5.17.14?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.talanlabs/avatar-generator-8bit@1.1.0?type=jar",
       "publisher" : "Talanlabs",
       "group" : "com.talanlabs",
       "name" : "avatar-generator-8bit",
@@ -6879,11 +6881,11 @@
           "type" : "vcs",
           "url" : "https://gitlab.talanlabs.com/gabriel-allaigre/avatar-generator-parent/avatar-generator-8bit"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.talanlabs/avatar-generator-8bit@1.1.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.talanlabs/avatar-generator@1.1.0?type=jar",
       "publisher" : "Talanlabs",
       "group" : "com.talanlabs",
       "name" : "avatar-generator",
@@ -6953,11 +6955,11 @@
           "type" : "vcs",
           "url" : "https://gitlab.talanlabs.com/gabriel-allaigre/avatar-generator-parent/avatar-generator"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.talanlabs/avatar-generator@1.1.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.jhlabs/filters@2.0.235-1?type=jar",
       "group" : "com.jhlabs",
       "name" : "filters",
       "version" : "2.0.235-1",
@@ -7018,11 +7020,11 @@
           "type" : "vcs",
           "url" : "https://github.com/axet/jhlabs"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.jhlabs/filters@2.0.235-1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.reflections/reflections@0.9.10?type=jar",
       "group" : "org.reflections",
       "name" : "reflections",
       "version" : "0.9.10",
@@ -7097,11 +7099,11 @@
           "type" : "vcs",
           "url" : "https://github.com/ronmamo/reflections/issues"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.reflections/reflections@0.9.10?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.javassist/javassist@3.19.0-GA?type=jar",
       "group" : "org.javassist",
       "name" : "javassist",
       "version" : "3.19.0-GA",
@@ -7177,11 +7179,11 @@
           "type" : "vcs",
           "url" : "scm:git:git@github.com:jboss-javassist/javassist.git"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.javassist/javassist@3.19.0-GA?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/com.google.code.findbugs/annotations@2.0.1?type=jar",
       "group" : "com.google.code.findbugs",
       "name" : "annotations",
       "version" : "2.0.1",
@@ -7239,11 +7241,11 @@
           "type" : "vcs",
           "url" : "http://findbugs.googlecode.com/svn/trunk/"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/com.google.code.findbugs/annotations@2.0.1?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.springframework/spring-context@6.1.13?type=jar",
       "publisher" : "Spring IO",
       "group" : "org.springframework",
       "name" : "spring-context",
@@ -7305,11 +7307,11 @@
           "type" : "vcs",
           "url" : "https://github.com/spring-projects/spring-framework"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.springframework/spring-context@6.1.13?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.apache.commons/commons-lang3@3.14.0?type=jar",
       "publisher" : "The Apache Software Foundation",
       "group" : "org.apache.commons",
       "name" : "commons-lang3",
@@ -7384,11 +7386,11 @@
           "type" : "vcs",
           "url" : "https://gitbox.apache.org/repos/asf?p=commons-lang.git"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/org.apache.commons/commons-lang3@3.14.0?type=jar"
+      ]
     },
     {
+      "type" : "library",
+      "bom-ref" : "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar",
       "publisher" : "The Apache Software Foundation",
       "group" : "commons-logging",
       "name" : "commons-logging",
@@ -7463,9 +7465,7 @@
           "type" : "vcs",
           "url" : "https://gitbox.apache.org/repos/asf/commons-logging"
         }
-      ],
-      "type" : "library",
-      "bom-ref" : "pkg:maven/commons-logging/commons-logging@1.3.4?type=jar"
+      ]
     }
   ],
   "dependencies" : [
