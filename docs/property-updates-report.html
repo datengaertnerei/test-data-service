@@ -78,7 +78,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" /></td>
 <td># of properties using the latest version available</td>
-<td>92</td></tr>
+<td>91</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -86,7 +86,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>15</td></tr>
+<td>16</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -862,7 +862,7 @@
 <td>${logback.version}</td>
 <td>1.5.8</td>
 <td></td>
-<td><b>1.5.10</b></td>
+<td><b>1.5.11</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -1047,7 +1047,7 @@
 <td>5.11.0</td>
 <td></td>
 <td></td>
-<td><b>5.14.1</b></td>
+<td><b>5.14.2</b></td>
 <td></td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
@@ -1072,7 +1072,7 @@
 <td></td>
 <td></td>
 <td><b>8.4.0</b></td>
-<td><b>9.0.0</b></td></tr>
+<td><b>9.1.0</b></td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" /></td>
 <td>${native-build-tools-plugin.version}</td>
@@ -1290,11 +1290,11 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${reactor-bom.version}</td>
 <td>2023.0.10</td>
 <td></td>
-<td></td>
+<td><b>2023.0.11</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -4521,7 +4521,7 @@
 <td style="text-align: left;">1.5.8</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">1.5.9<br /><b>1.5.10</b>&#160;<i>Latest Incremental</i></td></tr>
+<td style="text-align: left;">1.5.9<br />1.5.10<br /><b>1.5.11</b>&#160;<i>Latest Incremental</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">1.5.8</td></tr>
@@ -5245,7 +5245,7 @@
 <td style="text-align: left;">5.11.0</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">5.12.0<br />5.13.0<br />5.14.0<br /><b>5.14.1</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">5.12.0<br />5.13.0<br />5.14.0<br />5.14.1<br /><b>5.14.2</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">5.11.0</td></tr>
@@ -5341,7 +5341,7 @@
 <td style="text-align: left;">8.3.0</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;"><b>8.4.0</b>&#160;<i>Latest Minor</i><br /><b>9.0.0</b>&#160;<i>Latest Major</i></td></tr>
+<td style="text-align: left;"><b>8.4.0</b>&#160;<i>Latest Minor</i><br />9.0.0<br /><b>9.1.0</b>&#160;<i>Latest Major</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">8.3.0</td></tr>
@@ -6183,7 +6183,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${reactor-bom.version}</td></tr>
@@ -6194,18 +6194,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">2023.0.10</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>2023.0.11</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">2023.0.10</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section>
 <h2>${rest-assured.version}</h2>
