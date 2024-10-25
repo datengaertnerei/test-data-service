@@ -78,7 +78,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" /></td>
 <td># of properties using the latest version available</td>
-<td>98</td></tr>
+<td>97</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -86,7 +86,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>2</td></tr>
+<td>3</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -858,11 +858,11 @@
 <td><b>2.24.1</b></td>
 <td><b>3.0.0-beta2</b></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${logback.version}</td>
 <td>1.5.11</td>
 <td></td>
-<td></td>
+<td><b>1.5.12</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -919,7 +919,7 @@
 <td>3.6.1</td>
 <td></td>
 <td></td>
-<td><b>3.8.0</b></td>
+<td><b>3.8.1</b></td>
 <td></td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
@@ -1191,7 +1191,7 @@
 <td>2.3.2</td>
 <td></td>
 <td></td>
-<td><b>2.5.0-rc1</b></td>
+<td><b>2.5.0-rc2</b></td>
 <td></td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" /></td>
@@ -4500,7 +4500,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${logback.version}</td></tr>
@@ -4511,18 +4511,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">1.5.11</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>1.5.12</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">1.5.11</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section>
 <h2>${lombok.version}</h2>
@@ -4724,7 +4727,7 @@
 <td style="text-align: left;">3.6.1</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">3.7.0<br />3.7.1<br /><b>3.8.0</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">3.7.0<br />3.7.1<br />3.8.0<br /><b>3.8.1</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">3.6.1</td></tr>
@@ -5782,7 +5785,7 @@
 <td style="text-align: left;">2.3.2</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">2.4.0-rc1<br />2.4.0-rc2<br /><b>2.5.0-rc1</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">2.4.0-rc1<br />2.4.0-rc2<br />2.4.0-rc3<br />2.5.0-rc1<br /><b>2.5.0-rc2</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">2.3.2</td></tr>
