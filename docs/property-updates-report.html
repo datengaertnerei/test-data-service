@@ -78,7 +78,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" /></td>
 <td># of properties using the latest version available</td>
-<td>97</td></tr>
+<td>95</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -86,7 +86,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>4</td></tr>
+<td>6</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -175,7 +175,7 @@
 <td>1.14.19</td>
 <td></td>
 <td></td>
-<td><b>1.15.9</b></td>
+<td><b>1.15.10</b></td>
 <td></td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" /></td>
@@ -434,11 +434,11 @@
 <td></td>
 <td><b>6.0.0</b></td></tr>
 <tr class="a">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${hsqldb.version}</td>
 <td>2.7.3</td>
 <td></td>
-<td></td>
+<td><b>2.7.4</b></td>
 <td></td>
 <td></td></tr>
 <tr class="b">
@@ -746,11 +746,11 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${jooq.version}</td>
 <td>3.19.14</td>
 <td></td>
-<td></td>
+<td><b>3.19.15</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -832,7 +832,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td><b>2.1.0-Beta2</b></td></tr>
+<td><b>2.1.0-RC</b></td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td>${lettuce.version}</td>
@@ -1103,7 +1103,7 @@
 <td>4.1.114.Final</td>
 <td></td>
 <td></td>
-<td><b>4.2.0.Alpha5</b></td>
+<td><b>4.2.0.Beta1</b></td>
 <td></td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
@@ -1892,7 +1892,7 @@
 <td style="text-align: left;">1.14.19</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">1.15.0<br />1.15.1<br />1.15.2<br />1.15.3<br />1.15.4<br />1.15.5<br />1.15.7<br />1.15.8<br /><b>1.15.9</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">1.15.0<br />1.15.1<br />1.15.2<br />1.15.3<br />1.15.4<br />1.15.5<br />1.15.7<br />1.15.8<br />1.15.9<br /><b>1.15.10</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">1.14.19</td></tr>
@@ -2894,7 +2894,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${hsqldb.version}</td></tr>
@@ -2905,18 +2905,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">2.7.3</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>2.7.4</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">2.7.3</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section>
 <h2>${htmlunit.version}</h2>
@@ -4067,7 +4070,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${jooq.version}</td></tr>
@@ -4078,18 +4081,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">3.19.14</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>3.19.15</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">3.19.14</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section>
 <h2>${json-path.version}</h2>
@@ -4384,7 +4390,7 @@
 <td style="text-align: left;">1.9.25</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">2.0.0-Beta1<br />2.0.0-Beta2<br />2.0.0-Beta3<br />2.0.0-Beta4<br />2.0.0-Beta5<br />2.0.0-RC1<br />2.0.0-RC2<br />2.0.0-RC3<br />2.0.0<br />2.0.10-RC<br />2.0.10-RC2<br />2.0.10<br />2.0.20-Beta1<br />2.0.20-Beta2<br />2.0.20-RC<br />2.0.20-RC2<br />2.0.20<br />2.0.21-RC<br />2.0.21<br />2.1.0-Beta1<br /><b>2.1.0-Beta2</b>&#160;<i>Latest Major</i></td></tr>
+<td style="text-align: left;">2.0.0-Beta1<br />2.0.0-Beta2<br />2.0.0-Beta3<br />2.0.0-Beta4<br />2.0.0-Beta5<br />2.0.0-RC1<br />2.0.0-RC2<br />2.0.0-RC3<br />2.0.0<br />2.0.10-RC<br />2.0.10-RC2<br />2.0.10<br />2.0.20-Beta1<br />2.0.20-Beta2<br />2.0.20-RC<br />2.0.20-RC2<br />2.0.20<br />2.0.21-RC<br />2.0.21<br />2.1.0-Beta1<br />2.1.0-Beta2<br /><b>2.1.0-RC</b>&#160;<i>Latest Major</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">1.9.25</td></tr>
@@ -5448,7 +5454,7 @@
 <td style="text-align: left;">4.1.114.Final</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">4.2.0.Alpha1<br />4.2.0.Alpha2<br />4.2.0.Alpha3<br />4.2.0.Alpha4<br /><b>4.2.0.Alpha5</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">4.2.0.Alpha1<br />4.2.0.Alpha2<br />4.2.0.Alpha3<br />4.2.0.Alpha4<br />4.2.0.Alpha5<br /><b>4.2.0.Beta1</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">4.1.114.Final</td></tr>
