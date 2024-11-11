@@ -78,7 +78,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" /></td>
 <td># of properties using the latest version available</td>
-<td>94</td></tr>
+<td>93</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -86,7 +86,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>8</td></tr>
+<td>9</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -682,13 +682,13 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${jaybird.version}</td>
 <td>5.0.6.java11</td>
 <td></td>
 <td></td>
 <td></td>
-<td></td></tr>
+<td><b>6.0.0-beta-1</b></td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td>${jboss-logging.version}</td>
@@ -1095,7 +1095,7 @@
 <td>5.25.0</td>
 <td></td>
 <td></td>
-<td><b>5.26.1</b></td>
+<td><b>5.26.2</b></td>
 <td></td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
@@ -1119,7 +1119,7 @@
 <td>1.37.0</td>
 <td></td>
 <td></td>
-<td><b>1.44.0</b></td>
+<td><b>1.44.1</b></td>
 <td></td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
@@ -1550,9 +1550,9 @@
 <td>${tomcat.version}</td>
 <td>10.1.31</td>
 <td></td>
+<td><b>10.1.33</b></td>
 <td></td>
-<td></td>
-<td><b>11.0.0</b></td></tr>
+<td><b>11.0.1</b></td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td>${unboundid-ldapsdk.version}</td>
@@ -3829,7 +3829,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer major version available. Major updates are rarely passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${jaybird.version}</td></tr>
@@ -3840,18 +3840,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">5.0.6.java11</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>6.0.0-beta-1</b>&#160;<i>Latest Major</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">5.0.6.java11</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section>
 <h2>${jboss-logging.version}</h2>
@@ -5425,7 +5428,7 @@
 <td style="text-align: left;">5.25.0</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">5.26.0<br /><b>5.26.1</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">5.26.0<br />5.26.1<br /><b>5.26.2</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">5.25.0</td></tr>
@@ -5521,7 +5524,7 @@
 <td style="text-align: left;">1.37.0</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">1.38.0<br />1.39.0<br />1.40.0<br />1.41.0<br />1.42.0<br />1.42.1<br />1.43.0<br /><b>1.44.0</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">1.38.0<br />1.39.0<br />1.40.0<br />1.41.0<br />1.42.0<br />1.42.1<br />1.43.0<br />1.44.0<br /><b>1.44.1</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">1.37.0</td></tr>
@@ -7129,7 +7132,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer major version available. Major updates are rarely passive.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${tomcat.version}</td></tr>
@@ -7141,7 +7144,7 @@
 <td style="text-align: left;">10.1.31</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">11.0.0-M1<br />11.0.0-M3<br />11.0.0-M4<br />11.0.0-M5<br />11.0.0-M6<br />11.0.0-M7<br />11.0.0-M9<br />11.0.0-M10<br />11.0.0-M11<br />11.0.0-M12<br />11.0.0-M13<br />11.0.0-M14<br />11.0.0-M15<br />11.0.0-M16<br />11.0.0-M17<br />11.0.0-M18<br />11.0.0-M19<br />11.0.0-M20<br />11.0.0-M21<br />11.0.0-M22<br />11.0.0-M24<br />11.0.0-M25<br />11.0.0-M26<br /><b>11.0.0</b>&#160;<i>Latest Major</i></td></tr>
+<td style="text-align: left;"><b>10.1.33</b>&#160;<i>Latest Incremental</i><br />11.0.0-M1<br />11.0.0-M3<br />11.0.0-M4<br />11.0.0-M5<br />11.0.0-M6<br />11.0.0-M7<br />11.0.0-M9<br />11.0.0-M10<br />11.0.0-M11<br />11.0.0-M12<br />11.0.0-M13<br />11.0.0-M14<br />11.0.0-M15<br />11.0.0-M16<br />11.0.0-M17<br />11.0.0-M18<br />11.0.0-M19<br />11.0.0-M20<br />11.0.0-M21<br />11.0.0-M22<br />11.0.0-M24<br />11.0.0-M25<br />11.0.0-M26<br />11.0.0<br /><b>11.0.1</b>&#160;<i>Latest Major</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">10.1.31</td></tr>
