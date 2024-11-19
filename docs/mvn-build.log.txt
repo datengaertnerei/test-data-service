@@ -1,6 +1,6 @@
 [WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
-22:49:52.962 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.person.DataImportTest]: DataImportTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-22:49:53.188 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.person.DataImportTest
+22:54:49.051 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.person.DataImportTest]: DataImportTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:54:49.274 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.person.DataImportTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -11,40 +11,40 @@
 
  :: Spring Boot ::                (v3.3.5)
 
-2024-11-19T22:49:53.973Z  INFO 2416 --- [           main] c.d.t.dataservice.person.DataImportTest  : Starting DataImportTest using Java 21.0.5 with PID 2416 (started by runner in /home/runner/work/test-data-service/test-data-service)
-2024-11-19T22:49:53.975Z  INFO 2416 --- [           main] c.d.t.dataservice.person.DataImportTest  : No active profile set, falling back to 1 default profile: "default"
-2024-11-19T22:49:56.206Z  INFO 2416 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-11-19T22:49:56.401Z  INFO 2416 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 186 ms. Found 1 JPA repository interface.
-2024-11-19T22:49:57.311Z  INFO 2416 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-11-19T22:49:57.355Z  INFO 2416 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-11-19T22:49:57.356Z  INFO 2416 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-11-19T22:49:57.433Z  INFO 2416 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-11-19T22:49:57.435Z  INFO 2416 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2987 ms
-2024-11-19T22:49:57.663Z  INFO 2416 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-11-19T22:49:57.729Z  INFO 2416 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-11-19T22:49:57.776Z  INFO 2416 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-11-19T22:49:58.101Z  INFO 2416 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-11-19T22:49:58.147Z  INFO 2416 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-11-19T22:49:58.606Z  INFO 2416 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdata user=SA
-2024-11-19T22:49:58.608Z  INFO 2416 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-11-19T22:49:58.652Z  WARN 2416 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-11-19T22:49:59.671Z  INFO 2416 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-11-19T22:49:59.762Z  INFO 2416 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-11-19T22:49:59.993Z  INFO 2416 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-11-19T22:50:00.672Z  INFO 2416 --- [           main] c.d.t.d.person.PersonGenerator           : Importing OSM dump
-2024-11-19T22:50:01.580Z  INFO 2416 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
-2024-11-19T22:50:02.554Z  INFO 2416 --- [           main] c.d.t.d.person.PersonGenerator           : Address count: 33
-2024-11-19T22:50:03.496Z  INFO 2416 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 45609 (http) with context path '/'
-2024-11-19T22:50:03.510Z  INFO 2416 --- [           main] c.d.t.dataservice.person.DataImportTest  : Started DataImportTest in 9.982 seconds (process running for 12.917)
-2024-11-19T22:50:03.514Z  INFO 2416 --- [           main] c.d.t.d.DataServiceApplication           : Started with bean count of 338
+2024-11-19T22:54:49.871Z  INFO 2341 --- [           main] c.d.t.dataservice.person.DataImportTest  : Starting DataImportTest using Java 21.0.5 with PID 2341 (started by runner in /home/runner/work/test-data-service/test-data-service)
+2024-11-19T22:54:49.873Z  INFO 2341 --- [           main] c.d.t.dataservice.person.DataImportTest  : No active profile set, falling back to 1 default profile: "default"
+2024-11-19T22:54:52.151Z  INFO 2341 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-19T22:54:52.370Z  INFO 2341 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 206 ms. Found 1 JPA repository interface.
+2024-11-19T22:54:53.010Z  INFO 2341 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-11-19T22:54:53.039Z  INFO 2341 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-19T22:54:53.040Z  INFO 2341 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-19T22:54:53.110Z  INFO 2341 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-19T22:54:53.111Z  INFO 2341 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2807 ms
+2024-11-19T22:54:53.291Z  INFO 2341 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-19T22:54:53.375Z  INFO 2341 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-19T22:54:53.422Z  INFO 2341 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-19T22:54:53.870Z  INFO 2341 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-19T22:54:53.918Z  INFO 2341 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-19T22:54:54.380Z  INFO 2341 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdata user=SA
+2024-11-19T22:54:54.387Z  INFO 2341 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-19T22:54:54.429Z  WARN 2341 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-19T22:54:55.438Z  INFO 2341 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-19T22:54:55.524Z  INFO 2341 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-19T22:54:55.807Z  INFO 2341 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-19T22:54:56.613Z  INFO 2341 --- [           main] c.d.t.d.person.PersonGenerator           : Importing OSM dump
+2024-11-19T22:54:57.482Z  INFO 2341 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
+2024-11-19T22:54:58.467Z  INFO 2341 --- [           main] c.d.t.d.person.PersonGenerator           : Address count: 33
+2024-11-19T22:54:59.378Z  INFO 2341 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 39649 (http) with context path '/'
+2024-11-19T22:54:59.392Z  INFO 2341 --- [           main] c.d.t.dataservice.person.DataImportTest  : Started DataImportTest in 9.923 seconds (process running for 11.94)
+2024-11-19T22:54:59.396Z  INFO 2341 --- [           main] c.d.t.d.DataServiceApplication           : Started with bean count of 338
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (/home/runner/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
-OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
-2024-11-19T22:50:04.400Z  INFO 2416 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
-2024-11-19T22:50:04.914Z  INFO 2416 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests]: TestDataServiceBrowserTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-11-19T22:50:04.925Z  INFO 2416 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests
+2024-11-19T22:55:00.002Z  INFO 2341 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
+2024-11-19T22:55:00.557Z  INFO 2341 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests]: TestDataServiceBrowserTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-19T22:55:00.586Z  INFO 2341 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests
 Playwright Host validation warning: 
 ╔══════════════════════════════════════════════════════╗
 ║ Host system is missing dependencies to run browsers. ║
@@ -81,25 +81,25 @@ Playwright Host validation warning:
 ║     libGLESv2.so.2                                   ║
 ║     libx264.so                                       ║
 ╚══════════════════════════════════════════════════════╝
-    at validateDependenciesLinux (/tmp/playwright-java-2170422319838175419/package/lib/server/registry/dependencies.js:216:9)
+    at validateDependenciesLinux (/tmp/playwright-java-4733744952196420686/package/lib/server/registry/dependencies.js:216:9)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async Registry._validateHostRequirements (/tmp/playwright-java-2170422319838175419/package/lib/server/registry/index.js:707:43)
-    at async Registry._validateHostRequirementsForExecutableIfNeeded (/tmp/playwright-java-2170422319838175419/package/lib/server/registry/index.js:805:7)
-    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/tmp/playwright-java-2170422319838175419/package/lib/server/registry/index.js:794:43)
-    at async t.<anonymous> (/tmp/playwright-java-2170422319838175419/package/lib/cli/program.js:119:7)
-2024-11-19T22:50:17.357Z  INFO 2416 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-19T22:50:17.358Z  INFO 2416 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-11-19T22:50:17.359Z  INFO 2416 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-11-19T22:50:19.210Z  INFO 2416 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests]: TestDataServiceApiTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-11-19T22:50:19.219Z  INFO 2416 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests
-2024-11-19T22:50:19.863Z  INFO 2416 --- [o-auto-1-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 398 ms
-2024-11-19T22:50:20.313Z  INFO 2416 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.restassured.RestApiTest]: RestApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-11-19T22:50:20.321Z  INFO 2416 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.restassured.RestApiTest
+    at async Registry._validateHostRequirements (/tmp/playwright-java-4733744952196420686/package/lib/server/registry/index.js:707:43)
+    at async Registry._validateHostRequirementsForExecutableIfNeeded (/tmp/playwright-java-4733744952196420686/package/lib/server/registry/index.js:805:7)
+    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/tmp/playwright-java-4733744952196420686/package/lib/server/registry/index.js:794:43)
+    at async t.<anonymous> (/tmp/playwright-java-4733744952196420686/package/lib/cli/program.js:119:7)
+2024-11-19T22:55:13.765Z  INFO 2341 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-19T22:55:13.765Z  INFO 2341 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-19T22:55:13.766Z  INFO 2341 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-11-19T22:55:14.887Z  INFO 2341 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests]: TestDataServiceApiTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-19T22:55:14.896Z  INFO 2341 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests
+2024-11-19T22:55:15.589Z  INFO 2341 --- [o-auto-1-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 424 ms
+2024-11-19T22:55:16.010Z  INFO 2341 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.restassured.RestApiTest]: RestApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-19T22:55:16.018Z  INFO 2341 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.restassured.RestApiTest
 
 Verifying a pact between consumer and test-data-provider
   [Using File src/test/resources/pacts/bundles.json]
   A successful api GET call for a bundle
-2024-11-19T22:50:22.315Z  WARN 2416 --- [       Thread-7] au.com.dius.pact.core.support.Metrics    : 
+2024-11-19T22:55:18.202Z  WARN 2341 --- [       Thread-7] au.com.dius.pact.core.support.Metrics    : 
             Please note: we are tracking events anonymously to gather important usage statistics like JVM version
             and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
             variable to 'true'.
@@ -107,12 +107,12 @@ Verifying a pact between consumer and test-data-provider
     returns a response which
       has status code 200 (OK)
       has a matching body (OK)
-2024-11-19T22:50:22.506Z  WARN 2416 --- [           main] a.c.d.p.p.DefaultTestResultAccumulator   : Skipping publishing of verification results as it has been disabled (pact.verifier.publishResults is not 'true')
-2024-11-19T22:50:22.609Z  INFO 2416 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-11-19T22:50:22.615Z  INFO 2416 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
-2024-11-19T22:50:22.710Z  INFO 2416 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-11-19T22:50:22.711Z  INFO 2416 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
-[WARNING] Corrupted channel by directly writing to native stream in forked JVM 1. See FAQ web page and the dump file /home/runner/work/test-data-service/test-data-service/target/surefire-reports/2024-11-19T22-49-50_494-jvmRun1.dumpstream
+2024-11-19T22:55:18.382Z  WARN 2341 --- [           main] a.c.d.p.p.DefaultTestResultAccumulator   : Skipping publishing of verification results as it has been disabled (pact.verifier.publishResults is not 'true')
+2024-11-19T22:55:18.475Z  INFO 2341 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-19T22:55:18.479Z  INFO 2341 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
+2024-11-19T22:55:18.577Z  INFO 2341 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-19T22:55:18.578Z  INFO 2341 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
+[WARNING] Corrupted channel by directly writing to native stream in forked JVM 1. See FAQ web page and the dump file /home/runner/work/test-data-service/test-data-service/target/surefire-reports/2024-11-19T22-54-47_381-jvmRun1.dumpstream
 [WARNING] Overwriting artifact's file from /home/runner/work/test-data-service/test-data-service/target/data-service-2.0.3-SNAPSHOT.jar to /home/runner/work/test-data-service/test-data-service/target/classes
 [WARNING] Overwriting artifact's file from /home/runner/work/test-data-service/test-data-service/target/data-service-2.0.3-SNAPSHOT.jar to /home/runner/work/test-data-service/test-data-service/target/classes
 [WARNING] Overwriting artifact's file from /home/runner/work/test-data-service/test-data-service/target/data-service-2.0.3-SNAPSHOT.jar to /home/runner/work/test-data-service/test-data-service/target/classes
