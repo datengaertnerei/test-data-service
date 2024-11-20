@@ -4,7 +4,7 @@
   "serialNumber" : "urn:uuid:db2ae644-c738-3071-8c35-befdd1e10fae",
   "version" : 1,
   "metadata" : {
-    "timestamp" : "2024-11-20T19:54:21Z",
+    "timestamp" : "2024-11-20T19:59:45Z",
     "tools" : [
       {
         "vendor" : "OWASP Foundation",
@@ -254,45 +254,45 @@
     },
     {
       "type" : "library",
-      "bom-ref" : "pkg:maven/commons-io/commons-io@2.17.0?type=jar",
+      "bom-ref" : "pkg:maven/commons-io/commons-io@2.18.0?type=jar",
       "publisher" : "The Apache Software Foundation",
       "group" : "commons-io",
       "name" : "commons-io",
-      "version" : "2.17.0",
+      "version" : "2.18.0",
       "description" : "The Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more.",
       "scope" : "required",
       "hashes" : [
         {
           "alg" : "MD5",
-          "content" : "f6232d0e290d58bb93f74f67165bf91f"
+          "content" : "8cce74ccf461cd6502ae04c908eca917"
         },
         {
           "alg" : "SHA-1",
-          "content" : "ddcc8433eb019fb48fe25207c0278143f3e1d7e2"
+          "content" : "44084ef756763795b31c578403dd028ff4a22950"
         },
         {
           "alg" : "SHA-256",
-          "content" : "4aa4ca48f3dfd30b78220b7881d8cb93eac4093ec94361b6befa9487998a550b"
+          "content" : "f3ca0f8d63c40e23a56d54101c60d5edee136b42d84bfb85bc7963093109cf8b"
         },
         {
           "alg" : "SHA-512",
-          "content" : "98bc665c16268ff1074f415f493ba66d214ac23665b6e964086b60d523b35b1b03fd2e79211e84aa8ebf0921ea028f992827e4642fd086d7104a408b454d38ce"
+          "content" : "786778529435d8a14ab6ce2176cdf2b9ee6585a71893b785f26257122166dcefc7c4af3f612eda3974b06c16d06fc357178bf28b9b74010e9bc04c33221adc2f"
         },
         {
           "alg" : "SHA-384",
-          "content" : "4dabc3cd47eec79ae537e48739f9abbc64e9b75f63809f35f062d54b8d737de0ba282d7d35a236940b9152e1c54f5918"
+          "content" : "4be7ad9b352412ddad3eb00f2e44f1236216d3e713546d34d71f3aa8e589b06636abf22dad0c28e11a0cd7b54ea0496a"
         },
         {
           "alg" : "SHA3-384",
-          "content" : "fb7a6dec31b6170f729143103c47fead49d50b0d9f58c42ec55a593b23d30c4c43114579790f1e43adfc598f684d4493"
+          "content" : "d003d33c2cd37806d9d8f0576b65fd51fc1f02bfed7716279474556ef98abfaaddb5b5622762b64458bec6b57f77ceca"
         },
         {
           "alg" : "SHA3-256",
-          "content" : "bafc20a1433479b07bd526655f244eee5fe1c99cbf75a0ac27e82237f9c6589b"
+          "content" : "89019fd824ce65aa33554a848dce2ca47f09c3a261fd22c699342d99579e91d9"
         },
         {
           "alg" : "SHA3-512",
-          "content" : "47d71f864268c8ced739b8a78a906fdc9777ed0eae3b56218a8d4e19d1787564ab39edf6034b08700c12cfca47edf505551e6352163a9bb50a93279890e241e1"
+          "content" : "6edaba8f76bd3e96421ae3611fb32414b064c5ef2fdefd7402f3052c5849e06aa6dfdd218a6df97b25cdd7997df0c9d643af960c4294f2e89dffb052b4b9d8cd"
         }
       ],
       "licenses" : [
@@ -303,7 +303,7 @@
           }
         }
       ],
-      "purl" : "pkg:maven/commons-io/commons-io@2.17.0?type=jar",
+      "purl" : "pkg:maven/commons-io/commons-io@2.18.0?type=jar",
       "externalReferences" : [
         {
           "type" : "website",
@@ -7473,7 +7473,7 @@
       "ref" : "pkg:maven/com.datengaertnerei.test/data-service@2.0.3-SNAPSHOT?type=jar",
       "dependsOn" : [
         "pkg:maven/org.apache.commons/commons-csv@1.12.0?type=jar",
-        "pkg:maven/commons-io/commons-io@2.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar",
         "pkg:maven/org.iban4j/iban4j@3.2.10-RELEASE?type=jar",
         "pkg:maven/org.springframework.boot/spring-boot-starter-web@3.3.5?type=jar",
         "pkg:maven/org.springframework.boot/spring-boot-starter-thymeleaf@3.3.5?type=jar",
@@ -7488,12 +7488,12 @@
     {
       "ref" : "pkg:maven/org.apache.commons/commons-csv@1.12.0?type=jar",
       "dependsOn" : [
-        "pkg:maven/commons-io/commons-io@2.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar",
         "pkg:maven/commons-codec/commons-codec@1.16.1?type=jar"
       ]
     },
     {
-      "ref" : "pkg:maven/commons-io/commons-io@2.17.0?type=jar",
+      "ref" : "pkg:maven/commons-io/commons-io@2.18.0?type=jar",
       "dependsOn" : [ ]
     },
     {
@@ -7959,7 +7959,7 @@
         "pkg:maven/org.openstreetmap.osmosis/osmosis-osm-binary@0.48.3?type=jar",
         "pkg:maven/com.google.guava/guava@33.3.1-jre?type=jar",
         "pkg:maven/com.google.protobuf/protobuf-java@3.25.5?type=jar",
-        "pkg:maven/commons-io/commons-io@2.17.0?type=jar"
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar"
       ]
     },
     {
@@ -7997,7 +7997,7 @@
       "ref" : "pkg:maven/org.apache.commons/commons-compress@1.27.1?type=jar",
       "dependsOn" : [
         "pkg:maven/commons-codec/commons-codec@1.16.1?type=jar",
-        "pkg:maven/commons-io/commons-io@2.17.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.18.0?type=jar",
         "pkg:maven/org.apache.commons/commons-lang3@3.14.0?type=jar"
       ]
     },
