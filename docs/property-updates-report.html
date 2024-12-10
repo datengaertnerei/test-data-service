@@ -78,7 +78,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" /></td>
 <td># of properties using the latest version available</td>
-<td>117</td></tr>
+<td>113</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -86,7 +86,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>17</td></tr>
+<td>21</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -746,11 +746,11 @@
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${jooq.version}</td>
 <td>3.19.15</td>
 <td></td>
-<td></td>
+<td><b>3.19.16</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -1026,19 +1026,19 @@
 <td></td>
 <td></td></tr>
 <tr class="a">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${micrometer-tracing.version}</td>
 <td>1.4.0</td>
 <td></td>
-<td></td>
+<td><b>1.4.1</b></td>
 <td></td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${micrometer.version}</td>
 <td>1.14.1</td>
 <td></td>
-<td></td>
+<td><b>1.14.2</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -1103,7 +1103,7 @@
 <td>4.1.115.Final</td>
 <td></td>
 <td></td>
-<td><b>4.2.0.Beta1</b></td>
+<td><b>4.2.0.RC1</b></td>
 <td></td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
@@ -1282,11 +1282,11 @@
 <td></td>
 <td></td></tr>
 <tr class="a">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${reactor-bom.version}</td>
 <td>2024.0.0</td>
 <td></td>
-<td></td>
+<td><b>2024.0.1</b></td>
 <td></td>
 <td></td></tr>
 <tr class="b">
@@ -4051,7 +4051,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${jooq.version}</td></tr>
@@ -4062,18 +4062,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">3.19.15</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>3.19.16</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">3.19.15</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section><a id="a.24.7Bjson-path.version.7D"></a>
 <h2>${json-path.version}</h2>
@@ -5120,7 +5123,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${micrometer-tracing.version}</td></tr>
@@ -5131,25 +5134,28 @@
 <th>Current Version</th>
 <td style="text-align: left;">1.4.0</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>1.4.1</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">1.4.0</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section><a id="a.24.7Bmicrometer.version.7D"></a>
 <h2>${micrometer.version}</h2>
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${micrometer.version}</td></tr>
@@ -5160,18 +5166,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">1.14.1</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>1.14.2</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">1.14.1</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section><a id="a.24.7Bmockito.version.7D"></a>
 <h2>${mockito.version}</h2>
@@ -5405,7 +5414,7 @@
 <td style="text-align: left;">4.1.115.Final</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">4.2.0.Alpha1<br />4.2.0.Alpha2<br />4.2.0.Alpha3<br />4.2.0.Alpha4<br />4.2.0.Alpha5<br /><b>4.2.0.Beta1</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">4.2.0.Alpha1<br />4.2.0.Alpha2<br />4.2.0.Alpha3<br />4.2.0.Alpha4<br />4.2.0.Alpha5<br />4.2.0.Beta1<br /><b>4.2.0.RC1</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">4.1.115.Final</td></tr>
@@ -6090,7 +6099,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${reactor-bom.version}</td></tr>
@@ -6101,18 +6110,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">2024.0.0</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>2024.0.1</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">2024.0.0</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section><a id="a.24.7Brest-assured.version.7D"></a>
 <h2>${rest-assured.version}</h2>
