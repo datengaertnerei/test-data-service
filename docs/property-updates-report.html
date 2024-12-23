@@ -78,7 +78,7 @@
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" /></td>
 <td># of properties using the latest version available</td>
-<td>124</td></tr>
+<td>123</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -86,7 +86,7 @@
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>3</td></tr>
+<td>4</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" /></td>
 <td># of properties where the next version available is a minor version update</td>
@@ -330,11 +330,11 @@
 <td><b>10.22.0</b></td>
 <td><b>11.1.0</b></td></tr>
 <tr class="b">
-<td><img src="images/icon_success_sml.gif" /></td>
+<td><img src="images/icon_warning_sml.gif" /></td>
 <td>${freemarker.version}</td>
 <td>2.3.33</td>
 <td></td>
-<td></td>
+<td><b>2.3.34</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -487,7 +487,7 @@
 <td>15.0.11.Final</td>
 <td></td>
 <td></td>
-<td><b>15.1.1.Final</b></td>
+<td><b>15.1.3.Final</b></td>
 <td></td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" /></td>
@@ -735,7 +735,7 @@
 <td>12.0.16</td>
 <td></td>
 <td></td>
-<td><b>12.1.0.alpha0</b></td>
+<td><b>12.1.0.alpha1</b></td>
 <td></td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" /></td>
@@ -862,7 +862,7 @@
 <td>${logback.version}</td>
 <td>1.5.12</td>
 <td></td>
-<td><b>1.5.14</b></td>
+<td><b>1.5.15</b></td>
 <td></td>
 <td></td></tr>
 <tr class="a">
@@ -2480,7 +2480,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;"><img src="images/icon_success_sml.gif" />&#160;No newer versions available.</td></tr>
+<td style="text-align: left;"><img src="images/icon_warning_sml.gif" />&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${freemarker.version}</td></tr>
@@ -2491,18 +2491,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">2.3.33</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>2.3.34</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">2.3.33</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section><a id="a.24.7Bgit-commit-id-maven-plugin.version.7D"></a>
 <h2>${git-commit-id-maven-plugin.version}</h2>
@@ -3067,7 +3070,7 @@
 <td style="text-align: left;">15.0.11.Final</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">15.1.0.Final<br />15.1.0.Dev01<br />15.1.0.Dev02<br />15.1.0.Dev03<br />15.1.0.Dev04<br />15.1.0.Dev05<br /><b>15.1.1.Final</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">15.1.0.Final<br />15.1.0.Dev01<br />15.1.0.Dev02<br />15.1.0.Dev03<br />15.1.0.Dev04<br />15.1.0.Dev05<br />15.1.1.Final<br />15.1.2.Final<br /><b>15.1.3.Final</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">15.0.11.Final</td></tr>
@@ -3999,7 +4002,7 @@
 <td style="text-align: left;">12.0.16</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;"><b>12.1.0.alpha0</b>&#160;<i>Latest Minor</i></td></tr>
+<td style="text-align: left;">12.1.0.alpha0<br /><b>12.1.0.alpha1</b>&#160;<i>Latest Minor</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">12.0.16</td></tr>
@@ -4490,7 +4493,7 @@
 <td style="text-align: left;">1.5.12</td></tr>
 <tr class="a">
 <th>Newer versions</th>
-<td style="text-align: left;">1.5.13<br /><b>1.5.14</b>&#160;<i>Latest Incremental</i></td></tr>
+<td style="text-align: left;">1.5.13<br />1.5.14<br /><b>1.5.15</b>&#160;<i>Latest Incremental</i></td></tr>
 <tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">1.5.12</td></tr>
