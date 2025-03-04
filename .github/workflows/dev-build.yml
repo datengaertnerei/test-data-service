@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@4cfb9f26cca112bc5b7c19358eff8bfa8b26d7aa
+      uses: step-security/harden-runner@539365ba33fd040cf8c4db243b6f0ed3b32c3283
       with:
         disable-sudo: true
         egress-policy: audit #sonarcloud aws generic hostname unfortunately subject to change
