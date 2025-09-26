@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-alpine
+FROM eclipse-temurin:25-alpine
 
 # create non-root user for security reasons
 RUN addgroup -S testdata && adduser -S testdata -G testdata
