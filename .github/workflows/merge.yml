@@ -25,7 +25,7 @@ jobs:
         disable-sudo: true
         egress-policy: audit #outbound hosts constantly subject to change by action providers
         
-    - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+    - uses: actions/checkout@c2d88d3ecc89a9ef08eebf45d9637801dcee7eb5
     - name: Set up JDK 21
       uses: actions/setup-java@46c56d6f92c88cf540acf95a12a4a41197499222
       with:
