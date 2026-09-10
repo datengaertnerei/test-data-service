@@ -6,10 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.person.DataImportTest;
@@ -30,9 +30,8 @@ public class CucumberSpringContextConfiguration {
 	private ResponseEntity<BankAccount> response;
 	private String city;
 
-	/** autowired test template (see Spring Boot doc) */
-	@Autowired
-	protected TestRestTemplate restTemplate;
+	/** rest template for test calls */
+	private RestTemplate restTemplate = new RestTemplate();
 
 	/** local server port will be dynamic */
 	@LocalServerPort
