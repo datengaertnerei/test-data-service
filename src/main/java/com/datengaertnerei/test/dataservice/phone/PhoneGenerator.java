@@ -68,7 +68,7 @@ public class PhoneGenerator implements IPhoneGenerator {
 			InputStream inStream = getClass().getResourceAsStream("prefixlist.csv");
 			Reader in = new InputStreamReader(inStream);
 
-			Iterable<CSVRecord> records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).build()
+			Iterable<CSVRecord> records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).get()
 					.parse(in);
 			for (CSVRecord r : records) {
 				if (r.size() >= 2) {
