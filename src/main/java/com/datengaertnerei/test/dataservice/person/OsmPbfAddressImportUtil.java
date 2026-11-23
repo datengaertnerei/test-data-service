@@ -26,6 +26,7 @@ package com.datengaertnerei.test.dataservice.person;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.util.Collection;
 import java.util.HashSet;
@@ -68,7 +69,7 @@ public class OsmPbfAddressImportUtil {
 	 */
 	public static boolean importAddresses(String inputUrl, PostalAddressRepository repository) throws MalformedURLException {
 
-		URL url = new URL(inputUrl);
+		URL url = URI.create(inputUrl).toURL();
 		
 		Supplier<InputStream> supplier = () -> {
 			try {
