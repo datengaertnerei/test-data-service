@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClient;
 
 import com.datengaertnerei.test.dataservice.bank.BankAccount;
 import com.datengaertnerei.test.dataservice.person.DataImportTest;
@@ -30,8 +30,8 @@ public class CucumberSpringContextConfiguration {
 	private ResponseEntity<BankAccount> response;
 	private String city;
 
-	/** rest template for test calls */
-	private RestTemplate restTemplate = new RestTemplate();
+	/** rest client for test calls */
+	private RestClient restClient = RestClient.create();
 
 	/** local server port will be dynamic */
 	@LocalServerPort
@@ -55,8 +55,10 @@ public class CucumberSpringContextConfiguration {
 	@When("the client asks for bank account in {word}")
 	public void getBankAccount(String city) {
 		this.city = city;
-		response = restTemplate.getForEntity("http://localhost:" + serverPort + "/api/v1/account/" + city,
-				BankAccount.class);
+		response = restClient.get()
+				.uri("http://localhost:" + serverPort + "/api/v1/account/" + city)
+				.retrieve()
+				.toEntity(BankAccount.class);
 	}
 
 	/**
