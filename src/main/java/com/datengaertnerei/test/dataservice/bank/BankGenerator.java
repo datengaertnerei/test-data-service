@@ -73,7 +73,7 @@ public class BankGenerator implements IBankGenerator {
 
 		Iterable<CSVRecord> records;
 		try {
-			records = CSVFormat.Builder.create().setDelimiter(';').build().parse(in);
+			records = CSVFormat.Builder.create().setDelimiter(';').get().parse(in);
 			for (CSVRecord r : records) {
 				if (r.size() >= 2) {
 					String type = r.get(0);
@@ -96,7 +96,7 @@ public class BankGenerator implements IBankGenerator {
 			InputStream inStream = getClass().getResourceAsStream("banklist.csv");
 			Reader in = new InputStreamReader(inStream);
 
-			Iterable<CSVRecord> records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).build()
+			Iterable<CSVRecord> records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).get()
 					.parse(in);
 			for (CSVRecord r : records) {
 				if (r.size() >= 5) {
