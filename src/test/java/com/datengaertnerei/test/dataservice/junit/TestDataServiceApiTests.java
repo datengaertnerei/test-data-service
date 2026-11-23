@@ -10,12 +10,14 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
@@ -349,7 +351,7 @@ class TestDataServiceApiTests {
 
 		try {
 			//
-			URL url = new URL("http://localhost:" + port + "/v3/api-docs");
+			URL url = URI.create("http://localhost:" + port + "/v3/api-docs").toURL();
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			int status = con.getResponseCode();
 			if (HttpURLConnection.HTTP_OK != status) {
@@ -372,7 +374,7 @@ class TestDataServiceApiTests {
 			}
 			parser.close();
 
-			BufferedWriter writer = new BufferedWriter(new FileWriter("target/test-data-service-oas.json", Charset.forName("UTF-8")));
+			BufferedWriter writer = Files.newBufferedWriter(Path.of("target/test-data-service-oas.json"), StandardCharsets.UTF_8);
 			writer.write(content.toString());
 			writer.close();
 

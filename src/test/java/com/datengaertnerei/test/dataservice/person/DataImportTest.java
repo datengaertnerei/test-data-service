@@ -41,7 +41,7 @@ public class DataImportTest {
 
 	@Test
 	void shouldFailOnMissingFile() {
-		assertThrows(MalformedURLException.class, () -> {
+		assertThrows(IllegalArgumentException.class, () -> {
 			OsmPbfAddressImportUtil.importAddresses("will-not-exist", repository);
 		});
 	}
