@@ -5,9 +5,7 @@ concurrency: dev-build
 on:
   workflow_call:
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: write-all
 	    
 jobs:
   build:
