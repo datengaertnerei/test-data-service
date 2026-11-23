@@ -73,7 +73,7 @@ public class BankGenerator implements IBankGenerator {
 
 		Iterable&lt;CSVRecord&gt; records;
 		try {
-<span class="fc" id="L76">			records = CSVFormat.Builder.create().setDelimiter(';').build().parse(in);</span>
+<span class="fc" id="L76">			records = CSVFormat.Builder.create().setDelimiter(';').get().parse(in);</span>
 <span class="fc bfc" id="L77" title="All 2 branches covered.">			for (CSVRecord r : records) {</span>
 <span class="pc bpc" id="L78" title="1 of 2 branches missed.">				if (r.size() &gt;= 2) {</span>
 <span class="fc" id="L79">					String type = r.get(0);</span>
@@ -96,7 +96,7 @@ public class BankGenerator implements IBankGenerator {
 <span class="fc" id="L96">			InputStream inStream = getClass().getResourceAsStream(&quot;banklist.csv&quot;);</span>
 <span class="fc" id="L97">			Reader in = new InputStreamReader(inStream);</span>
 
-<span class="fc" id="L99">			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).build()</span>
+<span class="fc" id="L99">			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(true).get()</span>
 <span class="fc" id="L100">					.parse(in);</span>
 <span class="fc bfc" id="L101" title="All 2 branches covered.">			for (CSVRecord r : records) {</span>
 <span class="pc bpc" id="L102" title="1 of 2 branches missed.">				if (r.size() &gt;= 5) {</span>
@@ -208,4 +208,4 @@ public class BankGenerator implements IBankGenerator {
 <span class="fc" id="L208">		return sum % 10;</span>
 	}
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

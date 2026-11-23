@@ -76,7 +76,7 @@
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  			InputStream inStream = getClass().getResourceAsStream(<span class="jxr_string">"prefixlist.csv"</span>);
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>  			Reader in = <strong class="jxr_keyword">new</strong> InputStreamReader(inStream);
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>  
-<a class="jxr_linenumber" name="L71" href="#L71">71</a>  			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(<strong class="jxr_keyword">true</strong>).build()
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>  			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(<strong class="jxr_keyword">true</strong>).get()
 <a class="jxr_linenumber" name="L72" href="#L72">72</a>  					.parse(in);
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>  			<strong class="jxr_keyword">for</strong> (CSVRecord r : records) {
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>  				<strong class="jxr_keyword">if</strong> (r.size() &gt;= 2) {
@@ -124,6 +124,6 @@
 <a class="jxr_linenumber" name="L116" href="#L116">116</a> }
 </pre>
 <hr/>
-<div id="footer">© 2018–2024 <a href="http://www.datengaertnerei.com/">Datengärtnerei</a></div>
+<div id="footer">© 2018–2026 <a href="http://www.datengaertnerei.com/">Datengärtnerei</a></div>
 </body>
 </html>

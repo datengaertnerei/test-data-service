@@ -81,7 +81,7 @@
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>  
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>  		Iterable&lt;CSVRecord&gt; records;
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>  		<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="L76" href="#L76">76</a>  			records = CSVFormat.Builder.create().setDelimiter(';').build().parse(in);
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>  			records = CSVFormat.Builder.create().setDelimiter(';').get().parse(in);
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>  			<strong class="jxr_keyword">for</strong> (CSVRecord r : records) {
 <a class="jxr_linenumber" name="L78" href="#L78">78</a>  				<strong class="jxr_keyword">if</strong> (r.size() &gt;= 2) {
 <a class="jxr_linenumber" name="L79" href="#L79">79</a>  					String type = r.get(0);
@@ -104,7 +104,7 @@
 <a class="jxr_linenumber" name="L96" href="#L96">96</a>  			InputStream inStream = getClass().getResourceAsStream(<span class="jxr_string">"banklist.csv"</span>);
 <a class="jxr_linenumber" name="L97" href="#L97">97</a>  			Reader in = <strong class="jxr_keyword">new</strong> InputStreamReader(inStream);
 <a class="jxr_linenumber" name="L98" href="#L98">98</a>  
-<a class="jxr_linenumber" name="L99" href="#L99">99</a>  			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(<strong class="jxr_keyword">true</strong>).build()
+<a class="jxr_linenumber" name="L99" href="#L99">99</a>  			Iterable&lt;CSVRecord&gt; records = CSVFormat.Builder.create().setDelimiter(';').setSkipHeaderRecord(<strong class="jxr_keyword">true</strong>).get()
 <a class="jxr_linenumber" name="L100" href="#L100">100</a> 					.parse(in);
 <a class="jxr_linenumber" name="L101" href="#L101">101</a> 			<strong class="jxr_keyword">for</strong> (CSVRecord r : records) {
 <a class="jxr_linenumber" name="L102" href="#L102">102</a> 				<strong class="jxr_keyword">if</strong> (r.size() &gt;= 5) {
@@ -218,6 +218,6 @@
 <a class="jxr_linenumber" name="L210" href="#L210">210</a> }
 </pre>
 <hr/>
-<div id="footer">© 2018–2024 <a href="http://www.datengaertnerei.com/">Datengärtnerei</a></div>
+<div id="footer">© 2018–2026 <a href="http://www.datengaertnerei.com/">Datengärtnerei</a></div>
 </body>
 </html>
