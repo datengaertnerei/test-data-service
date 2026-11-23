@@ -4,16 +4,16 @@ concurrency: dev-build
 
 on:
   workflow_call:
-    
+
+permissions:
+	contents: write
+	pull-requests: write
+	    
 jobs:
   build:
 
     runs-on: ubuntu-latest
-	
-	permissions:
-		contents: write
-		pull-requests: write
-	
+		
     steps:
     - name: Harden Runner
       uses: step-security/harden-runner@fe104658747b27e96e4f7e80cd0a94068e53901d
