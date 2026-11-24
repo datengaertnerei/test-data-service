@@ -78,7 +78,7 @@
 <tr class="b">
 <td>&#x2714; Success</td>
 <td># of properties using the latest version available</td>
-<td>153</td></tr>
+<td>151</td></tr>
 <tr class="a">
 <td>&#x26a0; Warning</td>
 <td># of properties where the next version available is smaller than an incremental version update</td>
@@ -86,7 +86,7 @@
 <tr class="b">
 <td>&#x26a0; Warning</td>
 <td># of properties where the next version available is an incremental version update</td>
-<td>9</td></tr>
+<td>11</td></tr>
 <tr class="a">
 <td>&#x26a0; Warning</td>
 <td># of properties where the next version available is a minor version update</td>
@@ -322,11 +322,11 @@
 <td></td>
 <td></td></tr>
 <tr class="a">
-<td>&#x2714; Success</td>
+<td>&#x26a0; Warning</td>
 <td>${elasticsearch-client.version}</td>
 <td>9.5.6</td>
 <td></td>
-<td></td>
+<td><b>9.5.7</b></td>
 <td></td>
 <td></td></tr>
 <tr class="b">
@@ -1170,11 +1170,11 @@
 <td></td>
 <td></td></tr>
 <tr class="a">
-<td>&#x2714; Success</td>
+<td>&#x26a0; Warning</td>
 <td>${postgresql.version}</td>
 <td>42.7.14</td>
 <td></td>
-<td></td>
+<td><b>42.7.15</b></td>
 <td></td>
 <td></td></tr>
 <tr class="b">
@@ -2499,7 +2499,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;">&#x2714; Success&#160;No newer versions available.</td></tr>
+<td style="text-align: left;">&#x26a0; Warning&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${elasticsearch-client.version}</td></tr>
@@ -2510,18 +2510,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">9.5.6</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>9.5.7</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">9.5.6</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section><a id="a.24.7Bflyway.version.7D"></a>
 <h2>${flyway.version}</h2>
@@ -5648,7 +5651,7 @@
 <table class="table table-striped">
 <tr class="a">
 <th>Status</th>
-<td style="text-align: left;">&#x2714; Success&#160;No newer versions available.</td></tr>
+<td style="text-align: left;">&#x26a0; Warning&#160;There is at least one newer incremental version available. Incremental updates are typically passive.</td></tr>
 <tr class="b">
 <th>Property</th>
 <td style="text-align: left;">${postgresql.version}</td></tr>
@@ -5659,18 +5662,21 @@
 <th>Current Version</th>
 <td style="text-align: left;">42.7.14</td></tr>
 <tr class="a">
+<th>Newer versions</th>
+<td style="text-align: left;"><b>42.7.15</b>&#160;<i>Latest Incremental</i></td></tr>
+<tr class="b">
 <th>Allowed version range</th>
 <td style="text-align: left;">42.7.14</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Infer associations from project</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Only use release versions</th>
 <td style="text-align: left;">No</td></tr>
-<tr class="b">
+<tr class="a">
 <th>Include projects from reactor</th>
 <td style="text-align: left;">Yes</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Always use reactor projects (even if older or -SNAPSHOT)</th>
 <td style="text-align: left;">Yes</td></tr></table></section><section><a id="a.24.7Bprometheus-client.version.7D"></a>
 <h2>${prometheus-client.version}</h2>
