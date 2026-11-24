@@ -4,7 +4,12 @@ concurrency: dev-build
 
 on:
   workflow_call:
-    
+
+permissions:
+  contents: write
+  pull-requests: write
+  packages: write
+
 jobs:
   build:
 
@@ -19,7 +24,7 @@ jobs:
       
     - uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
     
-    - name: Set up JDK 21
+    - name: Set up JDK
       uses: actions/setup-java@1d018f9b8b9b505bb578a83b230fabcce01af93b
       with:
         java-version: 25
@@ -37,6 +42,8 @@ jobs:
         echo $RELTAG
         git branch $RELBRANCH
         git checkout $RELBRANCH
+        git push origin $RELBRANCH
+        git fetch origin
         echo "Maven Release Prepare"
         ./mvnw clean release:prepare
         echo "Maven Release Perform"
