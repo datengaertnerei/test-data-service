@@ -1,7 +1,7 @@
 [WARNING] Using credentials of server 'github' for repository https://maven.pkg.github.com/datengaertnerei/test-data-service, although no repository or mirror with this id is declared in settings or on the command line and the server declares no <repositoryOrigins>. Declare 'https://maven.pkg.github.com' in <repositoryOrigins> of that server in settings to bind these credentials explicitly, or set maven.repository.credentialScope=strict to refuse such credential use.
 [WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
-05:43:48.330 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests]: TestDataServiceBrowserTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-05:43:48.647 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests
+07:13:54.614 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.person.DataImportTest]: DataImportTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+07:13:54.881 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.person.DataImportTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -12,22 +12,22 @@
 
  :: Spring Boot ::                (v4.2.0)
 
-2026-11-24T05:43:49.533Z  INFO 3193 --- [           main] c.d.t.d.b.TestDataServiceBrowserTests    : Starting TestDataServiceBrowserTests using Java 25.0.5 with PID 3193 (started by runner in /home/runner/work/test-data-service/test-data-service)
-2026-11-24T05:43:49.537Z  INFO 3193 --- [           main] c.d.t.d.b.TestDataServiceBrowserTests    : No active profile set, falling back to 1 default profile: "default"
-2026-11-24T05:43:51.195Z  INFO 3193 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-11-24T05:43:51.431Z  INFO 3193 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 222 ms. Found 1 JPA repository interface.
-2026-11-24T05:43:52.271Z  INFO 3193 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
-2026-11-24T05:43:52.295Z  INFO 3193 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-24T05:43:52.296Z  INFO 3193 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-24T05:43:52.366Z  INFO 3193 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2327 ms
-2026-11-24T05:43:52.598Z  INFO 3193 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-11-24T05:43:52.664Z  INFO 3193 --- [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.15.Final
-2026-11-24T05:43:53.263Z  INFO 3193 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-11-24T05:43:53.328Z  INFO 3193 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-11-24T05:43:53.686Z  INFO 3193 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdata user=SA
-2026-11-24T05:43:53.689Z  INFO 3193 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-11-24T05:43:53.721Z  WARN 3193 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-11-24T05:43:53.751Z  INFO 3193 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-11-24T07:13:55.605Z  INFO 3132 --- [           main] c.d.t.dataservice.person.DataImportTest  : Starting DataImportTest using Java 25.0.5 with PID 3132 (started by runner in /home/runner/work/test-data-service/test-data-service)
+2026-11-24T07:13:55.609Z  INFO 3132 --- [           main] c.d.t.dataservice.person.DataImportTest  : No active profile set, falling back to 1 default profile: "default"
+2026-11-24T07:13:56.851Z  INFO 3132 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-24T07:13:57.004Z  INFO 3132 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 1 JPA repository interface.
+2026-11-24T07:13:57.523Z  INFO 3132 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-11-24T07:13:57.539Z  INFO 3132 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-24T07:13:57.540Z  INFO 3132 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-24T07:13:57.604Z  INFO 3132 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1673 ms
+2026-11-24T07:13:57.783Z  INFO 3132 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-24T07:13:57.851Z  INFO 3132 --- [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.15.Final
+2026-11-24T07:13:58.362Z  INFO 3132 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-24T07:13:58.403Z  INFO 3132 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-24T07:13:58.711Z  INFO 3132 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/testdata user=SA
+2026-11-24T07:13:58.713Z  INFO 3132 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-24T07:13:58.740Z  WARN 3132 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-24T07:13:58.763Z  INFO 3132 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:h2:file:./data/testdata]
 	Database driver: H2 JDBC Driver
 	Database dialect: H2Dialect
@@ -39,47 +39,68 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-11-24T05:43:55.018Z  INFO 3193 --- [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-24T05:43:55.098Z  INFO 3193 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-24T05:43:55.198Z  INFO 3193 --- [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-24T05:43:56.153Z  INFO 3193 --- [           main] c.d.t.d.person.PersonGenerator           : Importing OSM dump
-2026-11-24T05:43:57.231Z  WARN 3193 --- [           main] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Fileformat$BlobHeader
+2026-11-24T07:13:59.703Z  INFO 3132 --- [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-24T07:13:59.771Z  INFO 3132 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-24T07:13:59.846Z  INFO 3132 --- [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-24T07:14:00.566Z  INFO 3132 --- [           main] c.d.t.d.person.PersonGenerator           : Importing OSM dump
+2026-11-24T07:14:01.607Z  WARN 3132 --- [           main] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Fileformat$BlobHeader
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.237Z  WARN 3193 --- [           main] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Fileformat$Blob
+2026-11-24T07:14:01.611Z  WARN 3132 --- [           main] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Fileformat$Blob
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.243Z  WARN 3193 --- [           main] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$HeaderBBox
+2026-11-24T07:14:01.616Z  WARN 3132 --- [           main] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$HeaderBBox
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.244Z  WARN 3193 --- [           main] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$HeaderBlock
+2026-11-24T07:14:01.617Z  WARN 3132 --- [           main] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$HeaderBlock
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.265Z  WARN 3193 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$StringTable
+2026-11-24T07:14:01.632Z  WARN 3132 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$StringTable
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.286Z  WARN 3193 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$DenseInfo
+2026-11-24T07:14:01.647Z  WARN 3132 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$DenseInfo
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.293Z  WARN 3193 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$DenseNodes
+2026-11-24T07:14:01.649Z  WARN 3132 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$DenseNodes
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.294Z  WARN 3193 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$PrimitiveGroup
+2026-11-24T07:14:01.650Z  WARN 3132 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$PrimitiveGroup
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.295Z  WARN 3193 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$PrimitiveBlock
+2026-11-24T07:14:01.650Z  WARN 3132 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$PrimitiveBlock
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.316Z  INFO 3193 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
-2026-11-24T05:43:57.895Z  WARN 3193 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$Info
+2026-11-24T07:14:01.661Z  INFO 3132 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
+2026-11-24T07:14:02.068Z  WARN 3132 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$Info
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:57.898Z  WARN 3193 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$Way
+2026-11-24T07:14:02.068Z  WARN 3132 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$Way
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:58.293Z  WARN 3193 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$Relation
+2026-11-24T07:14:02.339Z  WARN 3132 --- [pool-3-thread-1] com.google.protobuf.GeneratedMessage     : Vulnerable protobuf generated type in use: crosby.binary.Osmformat$Relation
 As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
-2026-11-24T05:43:58.410Z  INFO 3193 --- [           main] c.d.t.d.person.PersonGenerator           : Address count: 33
-2026-11-24T05:44:00.136Z  INFO 3193 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 33441 (http) with context path '/'
-2026-11-24T05:44:00.147Z  INFO 3193 --- [           main] c.d.t.d.b.TestDataServiceBrowserTests    : Started TestDataServiceBrowserTests in 11.148 seconds (process running for 14.38)
-2026-11-24T05:44:00.151Z  INFO 3193 --- [           main] c.d.t.d.DataServiceApplication           : Started with bean count of 320
-2026-11-24T05:44:00.152Z  WARN 3193 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-11-24T05:44:00.153Z  WARN 3193 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-24T07:14:02.397Z  INFO 3132 --- [           main] c.d.t.d.person.PersonGenerator           : Address count: 33
+2026-11-24T07:14:03.563Z  INFO 3132 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 44381 (http) with context path '/'
+2026-11-24T07:14:03.569Z  INFO 3132 --- [           main] c.d.t.dataservice.person.DataImportTest  : Started DataImportTest in 8.39 seconds (process running for 10.961)
+2026-11-24T07:14:03.571Z  INFO 3132 --- [           main] c.d.t.d.DataServiceApplication           : Started with bean count of 320
+2026-11-24T07:14:03.572Z  WARN 3132 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-24T07:14:03.572Z  WARN 3132 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
 Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 WARNING: A Java agent has been loaded dynamically (/home/runner/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.17/byte-buddy-agent-1.18.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-11-24T07:14:03.892Z  INFO 3132 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
+2026-11-24T07:14:04.340Z  INFO 3132 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.restassured.RestApiTest]: RestApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-24T07:14:04.349Z  INFO 3132 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.restassured.RestApiTest
+2026-11-24T07:14:04.534Z  INFO 3132 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-24T07:14:04.534Z  INFO 3132 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-24T07:14:04.536Z  INFO 3132 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+
+Verifying a pact between consumer and test-data-provider
+  [Using File src/test/resources/pacts/bundles.json]
+  A successful api GET call for a bundle
+2026-11-24T07:14:05.909Z  WARN 3132 --- [       Thread-5] au.com.dius.pact.core.support.Metrics    : 
+            Please note: we are tracking events anonymously to gather important usage statistics like JVM version
+            and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
+            variable to 'true'.
+            
+    returns a response which
+      has status code 200 (OK)
+      has a matching body (OK)
+2026-11-24T07:14:06.109Z  WARN 3132 --- [           main] a.c.d.p.p.DefaultTestResultAccumulator   : Skipping publishing of verification results as it has been disabled (pact.verifier.publishResults is not 'true')
+2026-11-24T07:14:06.116Z  INFO 3132 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests]: TestDataServiceBrowserTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-24T07:14:06.123Z  INFO 3132 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.browser.TestDataServiceBrowserTests
 Playwright Host validation warning: 
 ╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ║ Host system is missing dependencies to run browsers.                                                 ║
@@ -107,42 +128,20 @@ Playwright Host validation warning:
 ║                                                                                                      ║
 ║ <3 Playwright Team                                                                                   ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════════════════╝
-    at validateDependenciesLinux (/tmp/playwright-java-13039779267887272545/package/lib/coreBundle.js:33958:9)
-    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
-    at async Registry._validateHostRequirements (/tmp/playwright-java-13039779267887272545/package/lib/coreBundle.js:35219:18)
-    at async Registry._validateHostRequirementsForExecutableIfNeeded (/tmp/playwright-java-13039779267887272545/package/lib/coreBundle.js:35353:11)
-    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/tmp/playwright-java-13039779267887272545/package/lib/coreBundle.js:35334:13)
-    at async installBrowsers (/tmp/playwright-java-13039779267887272545/package/lib/coreBundle.js:72905:5)
-    at async _Command.<anonymous> (/tmp/playwright-java-13039779267887272545/package/lib/coreBundle.js:76603:7)
-2026-11-24T05:44:19.119Z  INFO 3193 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-11-24T05:44:19.120Z  INFO 3193 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-11-24T05:44:19.121Z  INFO 3193 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-11-24T05:44:21.905Z  INFO 3193 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests]: TestDataServiceApiTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-11-24T05:44:21.921Z  INFO 3193 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests
-2026-11-24T05:44:23.064Z  INFO 3193 --- [o-auto-1-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 734 ms
-
-Verifying a pact between consumer and test-data-provider
-  [Using File src/test/resources/pacts/bundles.json]
-  A successful api GET call for a bundle
-2026-11-24T05:44:24.255Z  WARN 3193 --- [       Thread-7] au.com.dius.pact.core.support.Metrics    : 
-            Please note: we are tracking events anonymously to gather important usage statistics like JVM version
-            and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
-            variable to 'true'.
-            
-    returns a response which
-      has status code 200 (OK)
-      has a matching body (OK)
-2026-11-24T05:44:24.571Z  WARN 3193 --- [           main] a.c.d.p.p.DefaultTestResultAccumulator   : Skipping publishing of verification results as it has been disabled (pact.verifier.publishResults is not 'true')
-2026-11-24T05:44:24.580Z  INFO 3193 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.person.DataImportTest]: DataImportTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-11-24T05:44:24.599Z  INFO 3193 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.person.DataImportTest
-2026-11-24T05:44:24.619Z  INFO 3193 --- [           main] c.d.test.dataservice.person.AddressSink  : processing 1
-2026-11-24T05:44:25.250Z  INFO 3193 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.restassured.RestApiTest]: RestApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-11-24T05:44:25.260Z  INFO 3193 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.restassured.RestApiTest
-2026-11-24T05:44:26.362Z  INFO 3193 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-11-24T05:44:26.368Z  INFO 3193 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
-2026-11-24T05:44:26.522Z  INFO 3193 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-11-24T05:44:26.524Z  INFO 3193 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
-[WARNING] Corrupted channel by directly writing to native stream in forked JVM 1. See FAQ web page and the dump file /home/runner/work/test-data-service/test-data-service/target/surefire-reports/2026-11-24T05-43-45_648-jvmRun1.dumpstream
+    at validateDependenciesLinux (/tmp/playwright-java-6662736515737827609/package/lib/coreBundle.js:33958:9)
+    at async Registry._validateHostRequirements (/tmp/playwright-java-6662736515737827609/package/lib/coreBundle.js:35219:18)
+    at async Registry._validateHostRequirementsForExecutableIfNeeded (/tmp/playwright-java-6662736515737827609/package/lib/coreBundle.js:35353:11)
+    at async Registry.validateHostRequirementsForExecutablesIfNeeded (/tmp/playwright-java-6662736515737827609/package/lib/coreBundle.js:35334:13)
+    at async installBrowsers (/tmp/playwright-java-6662736515737827609/package/lib/coreBundle.js:72905:5)
+    at async _Command.<anonymous> (/tmp/playwright-java-6662736515737827609/package/lib/coreBundle.js:76603:7)
+2026-11-24T07:14:22.731Z  INFO 3132 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests]: TestDataServiceApiTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-24T07:14:22.738Z  INFO 3132 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.junit.TestDataServiceApiTests
+2026-11-24T07:14:23.460Z  INFO 3132 --- [o-auto-1-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 470 ms
+2026-11-24T07:14:23.884Z  INFO 3132 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-24T07:14:23.915Z  INFO 3132 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
+2026-11-24T07:14:24.061Z  INFO 3132 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration]: CucumberSpringContextConfiguration does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-24T07:14:24.063Z  INFO 3132 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.datengaertnerei.test.dataservice.DataServiceApplication for test class com.datengaertnerei.test.dataservice.cucumber.CucumberSpringContextConfiguration
+[WARNING] Corrupted channel by directly writing to native stream in forked JVM 1. See FAQ web page and the dump file /home/runner/work/test-data-service/test-data-service/target/surefire-reports/2026-11-24T07-13-52_537-jvmRun1.dumpstream
 [WARNING] Using credentials of server 'github' for repository scm:git:ssh://git@github.com/ronmamo/reflections.git, although no repository or mirror with this id is declared in settings or on the command line and the server declares no <repositoryOrigins>. Declare its origin in <repositoryOrigins> of that server in settings to bind these credentials explicitly, or set maven.repository.credentialScope=strict to refuse such credential use.
 [WARNING] Could not transfer metadata /.meta/prefixes.txt from/to github (https://maven.pkg.github.com/datengaertnerei/test-data-service): HTTP Status: 422
 [WARNING] Overwriting artifact's file from /home/runner/work/test-data-service/test-data-service/target/data-service-2.0.4-SNAPSHOT.jar to /home/runner/work/test-data-service/test-data-service/target/classes
@@ -468,3 +467,4 @@ Verifying a pact between consumer and test-data-provider
 [WARNING] ^
 [WARNING] 3 warnings
 [WARNING] Using an unspecified version instead of an explicit plugin version may introduce breaking analysis changes at an unwanted time. It is highly recommended to use an explicit version, e.g. 'org.sonarsource.scanner.maven:sonar-maven-plugin:5.9.0.7382'.
+[WARNING] Cannot parse '.github/workflows/release.yml:44:1'
