@@ -47,7 +47,7 @@ jobs:
       # Create pull request - must run with a different GH token to allow merge check action trigger
       - name: Create pull request to dev
         id: cpr_dev
-        run: gh pr create --base $BASE --head $HEAD --title "$TITLE" --body "$BODY"
+        run: gh pr create --base "$BASE" --head "$HEAD" --title "$TITLE" --body "$BODY" 
         env:
           GITHUB_TOKEN: ${{ secrets.REL_SECRET }}
           HEAD: update-data
