@@ -26,7 +26,7 @@ jobs:
         egress-policy: audit #outbound hosts constantly subject to change by action providers
         
     - uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
-    - name: Set up JDK 21
+    - name: Set up JDK
       uses: actions/setup-java@1d018f9b8b9b505bb578a83b230fabcce01af93b
       with:
         java-version: 25
